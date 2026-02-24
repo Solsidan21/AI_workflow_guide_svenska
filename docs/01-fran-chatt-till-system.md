@@ -41,8 +41,24 @@ Chatten ger dock mer kontext än många inser. När du chattar med Claude bygger
 
 Men den kontexten är **flyktig**. Den försvinner när du stänger fliken eller startar en ny session. Den är bunden till en enda konversation. Och den är **manuell** — du bygger upp den från noll varje gång genom att kopiera in text, ladda upp filer och förklara vem du är och vad du behöver. Det är just den begränsningen som resten av spektrumet löser.
 
-**Vad du vinner:** Snabba svar, bollplank, sammanfattningar — och djupare kontext än du kanske tror.
-**Vad du saknar:** Persistens mellan sessioner, regler som alltid gäller, automatisering.
+#### Projekt i Claude Chat
+
+Det finns dock ett steg mellan ren chatt och Claude Code som många missar: **Projekt** (Projects). Ett projekt i Claude Chat fungerar som en delad arbetsyta där du kan:
+
+- **Ladda upp filer** som alla konversationer inom projektet har tillgång till — årsredovisningar, rapporter, datamängder
+- **Skriva projektinstruktioner** som automatiskt gäller för varje ny konversation (i princip en enklare version av CLAUDE.md)
+- **Starta flera konversationer** inom samma projekt, där alla delar samma filer och instruktioner
+
+Det liknar faktiskt Claude Code-konceptet mer än du tror. Precis som CLAUDE.md ger Claude regler och kontext, ger projektinstruktionerna Claude en "grundförståelse" som gäller varje gång. Och precis som Claude Code arbetar mot filer i din mappstruktur, arbetar Chat-projekt mot de filer du laddat upp.
+
+**Skillnaden mot Claude Code** är att du fortfarande arbetar i webbläsaren, inte kan skapa egna kommandon (skills), och att Claude inte kan skriva tillbaka till dina filer. Projektet sparar kontext — men det bygger inte ett system.
+
+**En viktig begränsning:** PDF-filer fungerar i projekt, men de förbrukar mycket kontext (tokens) varje gång Claude läser dem. En stor årsredovisning kan äta upp en betydande del av det tillgängliga kontextfönstret. Vi går in på djupet om PDF-problemet — och hur du löser det — i kapitel 04.
+
+**Tumregel:** Projekt i Claude Chat är ett utmärkt mellansteg om du har ett avgränsat uppdrag med ett par filer och vill slippa upprepa instruktioner. Men för pågående arbete med många filer, automatisering och full kontroll är Claude Code nästa steg.
+
+**Vad du vinner:** Snabba svar, bollplank, sammanfattningar — och med Projekt: delad kontext och instruktioner över flera konversationer.
+**Vad du saknar:** Lokal filåtkomst, automatisering, skills, mappstruktur som kontext.
 
 ### Claude i Excel och PowerPoint
 

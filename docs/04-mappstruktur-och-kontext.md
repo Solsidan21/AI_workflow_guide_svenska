@@ -149,7 +149,63 @@ data/finansiellt/arsredovisning-2024/
 
 **Tumregel:** Behåll alltid original-PDF:en — den är din källa och ditt kvitto. Men låt Claude arbeta mot Markdown-versionerna. Det är skillnaden mellan att kopiera samma bok varje gång och att ha bra anteckningar.
 
-### 7. README-filer
+### 7. Från analys till färdigt dokument — PDF och Word som slutprodukt
+
+Du har nu lärt dig att **Markdown är det bästa arbetsformatet** för AI — lätt att läsa, billigt i tokens, enkelt att strukturera. Men till slut behöver du ofta leverera ett dokument som kollegor, styrelser eller kunder faktiskt vill öppna: en PDF eller ett Word-dokument.
+
+Lösningen är att låta Claude arbeta i Markdown genom hela processen — och konvertera till rätt format **i sista steget**.
+
+**Arbetsflödet:**
+
+```
+data/ (råmaterial)  →  analys/ (Markdown)  →  output/ (PDF/Word)
+                    Claude analyserar          Claude formaterar
+                    enligt CLAUDE.md           enligt regler
+```
+
+Du kan styra det här direkt i din CLAUDE.md eller i en skill. Beskriv hur det färdiga dokumentet ska se ut — rubriker, sidbrytningar, typsnitt, marginaler — och be Claude generera filen som sista steg.
+
+**Hur det fungerar i praktiken:**
+
+Claude Code kan skapa PDF- och Word-filer genom verktyg som `pandoc` (gratis, installeras via terminalen) eller Python-bibliotek som `python-docx` och `reportlab`. Du behöver inte kunna dessa verktyg själv — Claude hanterar det åt dig. Det enda du behöver göra är att **beskriva formatet i dina regler**.
+
+**Exempel — output-regler i CLAUDE.md:**
+
+```markdown
+## Output-format
+
+### Rapporter
+- Skapa alltid en Markdown-version först i analys/
+- Konvertera sedan till PDF med pandoc
+- Använd mallen i mallar/rapport-layout.yaml för sidmarginaler,
+  typsnitt och sidhuvud/sidfot
+- Filnamn: output/rapporter/[typ]-[datum].pdf
+
+### Memos
+- Skapa som Word-dokument (.docx) med python-docx
+- Följ formatmallen i mallar/memo-format.md:
+  - Typsnitt: Calibri 11pt
+  - Rubriker: Calibri Bold 14pt
+  - Marginaler: 2,5 cm
+  - Sidhuvud: Bolagsnamn + datum
+- Spara: output/memos/[namn]-[datum].docx
+```
+
+**Exempel — skill som avslutar med PDF:**
+
+```markdown
+# Skill: Kvartalsrapport
+
+1. Läs data i data/finansiellt/ för aktuellt kvartal
+2. Beräkna nyckeltal enligt CLAUDE.md
+3. Skriv rapport i Markdown: analys/kvartalsrapport-YYYY-QX.md
+4. Konvertera till PDF med layout från mallar/rapport-layout.yaml
+5. Spara: output/rapporter/kvartalsrapport-YYYY-QX.pdf
+```
+
+**Poängen:** Markdown-filen i `analys/` är ditt arbetsdokument — lätt att redigera, billigt att läsa för AI. PDF:en eller Word-dokumentet i `output/` är din leverans — snyggt formaterad enligt de ramar du satt upp. Du får det bästa av båda världar: effektivt AI-arbete och professionella slutprodukter.
+
+### 8. README-filer
 
 En kort `README.md` i varje mapp hjälper både dig och Claude att förstå vad mappen innehåller.
 
