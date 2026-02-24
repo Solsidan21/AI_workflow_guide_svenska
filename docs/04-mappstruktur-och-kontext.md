@@ -493,4 +493,6 @@ AI-verktygen är kraftfulla, men de är just verktyg. Din expertis — förmåga
 
 ---
 
-*Det här är det sista kapitlet. Gå tillbaka till [startsidan](index.md) för att utforska mallar och andra resurser.*
+*Nästa kapitel: [05 — PE-arbetsflöden med Claude](05-pe-arbetsfloden.md)*
+>
+> *Tillbaka till [startsidan](index.md)*

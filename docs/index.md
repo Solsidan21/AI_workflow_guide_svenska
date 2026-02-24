@@ -38,6 +38,7 @@ Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal för
 | 02 | [Claude Code](02-claude-code.md) | Praktisk guide till verktyget som förändrar allt |
 | 03 | [Claude Cowork](03-claude-cowork.md) | Autonom AI som arbetar självständigt |
 | 04 | [Mappstruktur och kontext](04-mappstruktur-och-kontext.md) | Det som binder ihop allt — CLAUDE.md, filer och struktur |
+| 05 | [PE-arbetsflöden med Claude](05-pe-arbetsfloden.md) | Norvik Capital-exemplet — hela ekosystemet i praktiken |
 
 ---
 
