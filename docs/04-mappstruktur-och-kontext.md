@@ -1,36 +1,36 @@
 # Kapitel 04 — Mappstruktur och kontext
 
-> *Det har ar kapitlet som binder ihop allt. Struktur ar inte administration — det ar det som gor AI bra.*
+> *Det här är kapitlet som binder ihop allt. Struktur är inte administration — det är det som gör AI bra.*
 
 ---
 
-## Varfor mappstruktur spelar roll
+## Varför mappstruktur spelar roll
 
-Nar Claude Code startar laser den inte bara din prompt. Den ser **filnamn, mappnamn och hela projektstrukturen**. Allt detta ar kontext som paverkar kvaliteten pa svaren.
+När Claude Code startar läser den inte bara din prompt. Den ser **filnamn, mappnamn och hela projektstrukturen**. Allt detta är kontext som påverkar kvaliteten på svaren.
 
-**Analogi:** Tva skrivbord. Det ena ar valorganiserat — mappar med etiketter, tydliga namn, logisk ordning. Om du ber nagon hitta "Q3-kassaflodet for Bolag X" tar det sekunder.
+**Analogi:** Två skrivbord. Det ena är välorganiserat — mappar med etiketter, tydliga namn, logisk ordning. Om du ber någon hitta "Q3-kassaflödet för Bolag X" tar det sekunder.
 
-Det andra ar kaotiskt — papper overallt, oklara filnamn. Samma fraga tar minuter, och svaret kanske inte ens ar korrekt.
+Det andra är kaotiskt — papper överallt, oklara filnamn. Samma fråga tar minuter, och svaret kanske inte ens är korrekt.
 
-AI fungerar pa exakt samma satt. **Bra struktur = battre svar.**
+AI fungerar på exakt samma sätt. **Bra struktur = bättre svar.**
 
-### Filnamn och mappnamn AR instruktioner
+### Filnamn och mappnamn ÄR instruktioner
 
-Nar Claude ser:
+När Claude ser:
 
 ```
 data/finansiellt/arsredovisning-2024.pdf
 ```
 
-...forstar den automatiskt vad filen ar, vilket ar, och var den passar in. Utan att du behover forklara nagot.
+...förstår den automatiskt vad filen är, vilket år, och var den passar in. Utan att du behöver förklara något.
 
-Jamfor med:
+Jämför med:
 
 ```
 dokument/fil3.pdf
 ```
 
-Har forstar Claude ingenting. Du maste forklara allt i din prompt — varje gang.
+Här förstår Claude ingenting. Du måste förklara allt i din prompt — varje gång.
 
 ---
 
@@ -38,25 +38,25 @@ Har forstar Claude ingenting. Du maste forklara allt i din prompt — varje gang
 
 ### 1. Beskrivande namn
 
-**Sa har:**
+**Så här:**
 ```
 kassaflodesanalys-2024-Q3.md
 konkurrentoversikt-nordisk-hr-tech.md
 styrelsepresentation-2024-12.pptx
 ```
 
-**Inte sa har:**
+**Inte så här:**
 ```
 analys1.md
 rapport-final-v2-SISTA.md
 dok.pptx
 ```
 
-**Tumregel:** Skulle en kollega forsta vad filen innehaller bara genom att se filnamnet? Om ja — bra namn.
+**Tumregel:** Skulle en kollega förstå vad filen innehåller bara genom att se filnamnet? Om ja — bra namn.
 
 ### 2. Logisk hierarki
 
-Organisera filer i en tradstruktur som speglar hur du tanker om arbetet.
+Organisera filer i en trädstruktur som speglar hur du tänker om arbetet.
 
 ```
 projekt/bolag-x/
@@ -67,11 +67,11 @@ projekt/bolag-x/
 └── output/
 ```
 
-Inte 50 filer i en platt lista. **Tumregel:** Om en mapp har fler an 10-15 filer, bryt ut undermappar.
+Inte 50 filer i en platt lista. **Tumregel:** Om en mapp har fler än 10-15 filer, bryt ut undermappar.
 
 ### 3. Konsistens
 
-Anvand samma monster overallt. Om du anvander `kebab-case` (ord-med-bindestreck) for filnamn, gor det konsekvent. Om du anvander YYYY-MM-DD for datum, gor det overallt.
+Använd samma mönster överallt. Om du använder `kebab-case` (ord-med-bindestreck) för filnamn, gör det konsekvent. Om du använder YYYY-MM-DD för datum, gör det överallt.
 
 **Konsistent:**
 ```
@@ -89,170 +89,170 @@ KF_Q3_24.md
 
 ### 4. Separation av data, analys och output
 
-Hall tre typer av material atskillt:
+Håll tre typer av material åtskilt:
 
-| Mapp | Innehall | Exempel |
+| Mapp | Innehåll | Exempel |
 |------|---------|---------|
-| `data/` | Radata som du **fatt** | Arsredovisningar, CSV-exporter, rapporter |
-| `analys/` | Material du **skapat** genom bearbetning | Kassaflodesberakningar, modeller |
-| `output/` | **Fardigt** material for leverans | Rapporter, presentationer, memos |
+| `data/` | Rådata som du **fått** | Årsredovisningar, CSV-exporter, rapporter |
+| `analys/` | Material du **skapat** genom bearbetning | Kassaflödesberäkningar, modeller |
+| `output/` | **Färdigt** material för leverans | Rapporter, presentationer, memos |
 
-Varfor? Du kan alltid ga tillbaka till radata om nagot ar fel. Och du blandar aldrig ihop arbetsunderlag med fardiga leveranser.
+Varför? Du kan alltid gå tillbaka till rådata om något är fel. Och du blandar aldrig ihop arbetsunderlag med färdiga leveranser.
 
 ### 5. README-filer
 
-En kort `README.md` i varje mapp hjalper bade dig och Claude att forsta vad mappen innehaller.
+En kort `README.md` i varje mapp hjälper både dig och Claude att förstå vad mappen innehåller.
 
 **Exempel — `data/finansiellt/README.md`:**
 ```markdown
 # Finansiell data
 
-Arsredovisningar och kvartalsdata for Bolag X.
+Årsredovisningar och kvartalsdata för Bolag X.
 
 ## Filer
-- arsredovisning-YYYY.pdf — Officiella arsredovisningar
+- arsredovisning-YYYY.pdf — Officiella årsredovisningar
 - kvartalsdata-YYYY.csv — Revenue, EBITDA, nettoresultat per kvartal
 
-## Kallor
-- Arsredovisningar: Bolagsverket / bolaget direkt
+## Källor
+- Årsredovisningar: Bolagsverket / bolaget direkt
 - Kvartalsdata: CFO-rapportering
 ```
 
 ---
 
-## CLAUDE.md pa djupet
+## CLAUDE.md på djupet
 
-I kapitel 02 gick vi igenom grunderna. Har gar vi djupare.
+I kapitel 02 gick vi igenom grunderna. Här går vi djupare.
 
 ### Placering och hierarki
 
-Claude Code laser **alla** CLAUDE.md-filer den stoter pa i mappstrukturen. Det innebar att du kan ha en hierarki av instruktioner:
+Claude Code läser **alla** CLAUDE.md-filer den stöter på i mappstrukturen. Det innebär att du kan ha en hierarki av instruktioner:
 
 ```
 mitt-projekt/
-├── CLAUDE.md                    # Overgripande regler
+├── CLAUDE.md                    # Övergripande regler
 ├── data/
-│   └── CLAUDE.md                # Regler for datahantering
+│   └── CLAUDE.md                # Regler för datahantering
 ├── analys/
-│   └── CLAUDE.md                # Regler for analyser
+│   └── CLAUDE.md                # Regler för analyser
 └── output/
-    └── CLAUDE.md                # Regler for output-format
+    └── CLAUDE.md                # Regler för output-format
 ```
 
 **Hur det fungerar:**
 
-- **Rot-CLAUDE.md** galler for allt arbete. Har placerar du: sprak, ton, projektbeskrivning, generella riktlinjer.
-- **Mapp-specifika CLAUDE.md** galler *utover* rot-reglerna nar Claude arbetar i den mappen.
+- **Rot-CLAUDE.md** gäller för allt arbete. Här placerar du: språk, ton, projektbeskrivning, generella riktlinjer.
+- **Mapp-specifika CLAUDE.md** gäller *utöver* rot-reglerna när Claude arbetar i den mappen.
 
-Claude laser alla CLAUDE.md-filer uppat i hierarkin fran den mapp den arbetar i. Sa om Claude arbetar i `analys/kassaflode/` laser den:
+Claude läser alla CLAUDE.md-filer uppåt i hierarkin från den mapp den arbetar i. Så om Claude arbetar i `analys/kassaflode/` läser den:
 
 1. `analys/kassaflode/CLAUDE.md` (om den finns)
 2. `analys/CLAUDE.md` (om den finns)
 3. `CLAUDE.md` (i roten)
 
-Du behover inte upprepa generella regler i varje CLAUDE.md — bara det som ar specifikt for just den mappen.
+Du behöver inte upprepa generella regler i varje CLAUDE.md — bara det som är specifikt för just den mappen.
 
-### Vad en bra CLAUDE.md innehaller
+### Vad en bra CLAUDE.md innehåller
 
 **Komplett checklista:**
 
 | Sektion | Syfte | Exempel |
 |---------|-------|---------|
-| **Roll** | Vem Claude "ar" i projektet | "Erfaren PE-analytiker med fokus pa nordiska SaaS-bolag" |
+| **Roll** | Vem Claude "är" i projektet | "Erfaren PE-analytiker med fokus på nordiska SaaS-bolag" |
 | **Projektkontext** | Vad projektet handlar om | Bolag, storlek, fas, syfte |
-| **Regler** | Format, sprak, stil | MSEK, svenska, tabeller for jamforelser |
-| **Vanliga uppgifter** | Steg-for-steg for aterkommande arbete | Kassaflodesanalys, konkurrentoversikt |
+| **Regler** | Format, språk, stil | MSEK, svenska, tabeller för jämförelser |
+| **Vanliga uppgifter** | Steg-för-steg för återkommande arbete | Kassaflödesanalys, konkurrentöversikt |
 | **Filstruktur** | Var Claude hittar vad | data/finansiellt/, analys/, output/ |
-| **Mallar** | Vilka mallar som ska anvandas | mallar/investment-memo-mall.md |
+| **Mallar** | Vilka mallar som ska användas | mallar/investment-memo-mall.md |
 
-### Fullstandigt exempel
+### Fullständigt exempel
 
 ```markdown
-# CLAUDE.md — Portfoljbolag X
+# CLAUDE.md — Portföljbolag X
 
 ## Roll
-Du ar en erfaren PE-analytiker med fokus pa nordiska SaaS-bolag.
-Noggrann med siffror, koncis i formuleringar, fokuserad pa
+Du är en erfaren PE-analytiker med fokus på nordiska SaaS-bolag.
+Noggrann med siffror, koncis i formuleringar, fokuserad på
 investeringsbeslutet.
 
 ## Projektkontext
-Bolag X ar ett svenskt HR-tech SaaS-bolag, grundat 2015.
-Cirka 200 anstallda, ~150 MSEK i intakter (2024).
-Vi befinner oss i initial evaluering — fokus pa att forsta
-marknad, tillvaxt och finansiell profil.
+Bolag X är ett svenskt HR-tech SaaS-bolag, grundat 2015.
+Cirka 200 anställda, ~150 MSEK i intäkter (2024).
+Vi befinner oss i initial evaluering — fokus på att förstå
+marknad, tillväxt och finansiell profil.
 
 ## Regler
 
 ### Format
-- Sprak: svenska
-- Ton: formell men tillganglig
-- Siffror: MSEK, en decimal, mellanslag som tusentalsavgransare (1 000)
+- Språk: svenska
+- Ton: formell men tillgänglig
+- Siffror: MSEK, en decimal, mellanslag som tusentalsavgränsare (1 000)
 - Procent: en decimal (12,3%)
 - Datum: YYYY-MM-DD
-- Tabeller for all jamforande data
+- Tabeller för all jämförande data
 
-### Struktur for rapporter
+### Struktur för rapporter
 1. Sammanfattning (3-5 meningar)
 2. Bakgrund / kontext
 3. Analys med data och tabeller
 4. Slutsatser
-5. Nasta steg / rekommendation
+5. Nästa steg / rekommendation
 
 ### Undvik
 - Spekulationer utan datagrund
 - Buzzwords ("paradigmskifte", "game-changer")
-- Blandning av svenska och engelska i lopande text
+- Blandning av svenska och engelska i löpande text
 - Investeringsrekommendationer utan tydlig analys
 
 ## Vanliga uppgifter
 
-### Kassaflodesanalys
-1. Las data/finansiellt/
-2. Berakna Revenue, EBITDA, Capex, delta rorelsekapital, FCF
-3. Tabell med arlig jamforelse + tillvaxt
+### Kassaflödesanalys
+1. Läs data/finansiellt/
+2. Beräkna Revenue, EBITDA, Capex, delta rörelsekapital, FCF
+3. Tabell med årlig jämförelse + tillväxt
 4. FCF-konvertering (FCF/EBITDA)
 5. Trendkommentar (3-5 meningar)
 6. Spara: analys/kassaflode/kassaflode-YYYY-MM-DD.md
 
-### Konkurrentoversikt
-1. Las data/marknad/
-2. 5-10 konkurrenter: namn, land, intakter, tillvaxt, produkt, agare
-3. Tabell sorterad efter intakter
-4. Kort jamforande analys
+### Konkurrentöversikt
+1. Läs data/marknad/
+2. 5-10 konkurrenter: namn, land, intäkter, tillväxt, produkt, ägare
+3. Tabell sorterad efter intäkter
+4. Kort jämförande analys
 5. Spara: analys/konkurrenter/
 
 ### Investment memo
-1. Anvand mallar/investment-memo-mall.md
-2. Fyll i alla sektioner baserat pa tillganglig data
+1. Använd mallar/investment-memo-mall.md
+2. Fyll i alla sektioner baserat på tillgänglig data
 3. Markera saknad data med [DATA SAKNAS]
 4. Spara: output/memos/
 
 ## Filstruktur
-- data/finansiellt/ — Arsredovisningar, kvartalsdata
+- data/finansiellt/ — Årsredovisningar, kvartalsdata
 - data/marknad/ — Branschrapporter, konkurrentinfo
 - data/operativt/ — KPI:er, organisation
-- analys/ — Bearbetade analyser (skapa har)
-- output/ — Fardiga leveranser
+- analys/ — Bearbetade analyser (skapa här)
+- output/ — Färdiga leveranser
 - mallar/ — Rapportmallar
 
 ## Mallar
 - mallar/investment-memo-mall.md
 - mallar/kvartalsrapport-mall.md
-Folj mallen exakt vad galler struktur. Anpassa innehallet.
+Följ mallen exakt vad gäller struktur. Anpassa innehållet.
 ```
 
 ---
 
-## Exempelmappstruktur for PE-arbete
+## Exempelmappstruktur för PE-arbete
 
-Har ar en komplett, beprövad struktur:
+Här är en komplett, beprövad struktur:
 
 ```
 portfoljbolag-x/
-├── CLAUDE.md                          # Overgripande instruktioner
+├── CLAUDE.md                          # Övergripande instruktioner
 │
 ├── data/
-│   ├── README.md                      # Beskrivning av datakallor
+│   ├── README.md                      # Beskrivning av datakällor
 │   ├── finansiellt/
 │   │   ├── arsredovisning-2022.pdf
 │   │   ├── arsredovisning-2023.pdf
@@ -269,13 +269,13 @@ portfoljbolag-x/
 │       └── churn-data-2022-2024.csv
 │
 ├── analys/
-│   ├── CLAUDE.md                      # Regler for analyser
+│   ├── CLAUDE.md                      # Regler för analyser
 │   ├── kassaflode/
 │   ├── vardering/
 │   └── scenarioanalys/
 │
 ├── output/
-│   ├── CLAUDE.md                      # Regler for output-format
+│   ├── CLAUDE.md                      # Regler för output-format
 │   ├── rapporter/
 │   ├── presentationer/
 │   └── memos/
@@ -291,21 +291,21 @@ portfoljbolag-x/
         └── due-diligence.md
 ```
 
-Med den har strukturen kan du skriva:
+Med den här strukturen kan du skriva:
 
 ```
 /kassaflodesanalys
 ```
 
-Och Claude vet automatiskt: var data finns, hur analysen ska goras, var resultatet ska sparas, och vilket format som galler. Noll upprepning.
+Och Claude vet automatiskt: var data finns, hur analysen ska göras, var resultatet ska sparas, och vilket format som gäller. Noll upprepning.
 
 ---
 
-## Praktisk ovning — Skapa din forsta AI-projektstruktur
+## Praktisk övning — Skapa din första AI-projektstruktur
 
 ### Steg 1: Skapa mappstrukturen
 
-Oppna terminalen:
+Öppna terminalen:
 
 ```bash
 mkdir mitt-forsta-ai-projekt
@@ -315,27 +315,27 @@ mkdir -p data analys output mallar .claude/skills
 
 ### Steg 2: Skriv din CLAUDE.md
 
-Skapa filen `CLAUDE.md` i rotmappen. Borja enkelt:
+Skapa filen `CLAUDE.md` i rotmappen. Börja enkelt:
 
 ```markdown
 # CLAUDE.md
 
 ## Roll
-Du ar min assistent for [beskriv projektet].
+Du är min assistent för [beskriv projektet].
 
 ## Regler
-- Skriv pa svenska
+- Skriv på svenska
 - Var koncis och faktadriven
-- Anvand tabeller for jamforelser
+- Använd tabeller för jämförelser
 
 ## Filstruktur
-- data/ — Kallmaterial och radata
+- data/ — Källmaterial och rådata
 - analys/ — Bearbetade analyser
-- output/ — Fardiga leveranser
+- output/ — Färdiga leveranser
 - mallar/ — Rapportmallar
 ```
 
-### Steg 3: Lagg in dina filer
+### Steg 3: Lägg in dina filer
 
 Kopiera relevant material till `data/`. Ge filerna beskrivande namn.
 
@@ -350,24 +350,24 @@ claude
 
 ```
 > Visa mig alla filer i projektet och beskriv vad du ser
-> Las filerna i data/ och skapa en sammanfattning. Spara som analys/initial-sammanfattning.md
+> Läs filerna i data/ och skapa en sammanfattning. Spara som analys/initial-sammanfattning.md
 ```
 
 ### Steg 6: Bygg ut
 
-Gor CLAUDE.md mer detaljerad. Skapa skills for uppgifter du gor ofta. Over tid vaxer projektet och Claude blir battre och battre pa att hjalpa dig.
+Gör CLAUDE.md mer detaljerad. Skapa skills för uppgifter du gör ofta. Över tid växer projektet och Claude blir bättre och bättre på att hjälpa dig.
 
 ---
 
-## Fardiga startpunkter
+## Färdiga startpunkter
 
-I det har repots [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates)-mapp hittar du fardiga mallar — CLAUDE.md-exempel, skill-filer och projektstrukturer for:
+I det här repots [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates)-mapp hittar du färdiga mallar — CLAUDE.md-exempel, skill-filer och projektstrukturer för:
 
-- **Private Equity** — investeringsanalys, kassaflode, due diligence
+- **Private Equity** — investeringsanalys, kassaflöde, due diligence
 - **Konsulting** — marknadsanalys, strategisk rekommendation
-- **Marknadsforing** — innehallsplanering, kampanjanalys
+- **Marknadsföring** — innehållsplanering, kampanjanalys
 
-Anvand dem som utgangspunkt och anpassa till ditt arbete.
+Använd dem som utgångspunkt och anpassa till ditt arbete.
 
 ---
 
@@ -375,16 +375,16 @@ Anvand dem som utgangspunkt och anpassa till ditt arbete.
 
 Du har nu hela bilden:
 
-- **Kapitel 00** gav dig ordforradet
-- **Kapitel 01** forklarade varfor du ska sluta upprepa dig
+- **Kapitel 00** gav dig ordförrådet
+- **Kapitel 01** förklarade varför du ska sluta upprepa dig
 - **Kapitel 02** visade hur Claude Code fungerar i praktiken
-- **Kapitel 03** oppnade dorren till autonom AI med Cowork
+- **Kapitel 03** öppnade dörren till autonom AI med Cowork
 - **Kapitel 04** band ihop allt med struktur, CLAUDE.md och kontext
 
-Det viktigaste ar inte att du implementerar allt pa en gang. Borja med en CLAUDE.md och en mapp med data. Testa en riktig uppgift. Lagg till en skill nar du marke att du upprepar dig. Over tid vaxer systemet — och varje session blir battre an den foregaende.
+Det viktigaste är inte att du implementerar allt på en gång. Börja med en CLAUDE.md och en mapp med data. Testa en riktig uppgift. Lägg till en skill när du märker att du upprepar dig. Över tid växer systemet — och varje session blir bättre än den föregående.
 
-AI-verktygen ar kraftfulla, men de ar just verktyg. Din expertis — formagan att stalla ratt fragor, bedoma svar kritiskt och fatta beslut — ar det som gor skillnaden. Claude gor dig snabbare. Men det ar du som styr.
+AI-verktygen är kraftfulla, men de är just verktyg. Din expertis — förmågan att ställa rätt frågor, bedöma svar kritiskt och fatta beslut — är det som gör skillnaden. Claude gör dig snabbare. Men det är du som styr.
 
 ---
 
-*Det har ar det sista kapitlet. Ga tillbaka till [startsidan](index.md) for att utforska mallar och andra resurser.*
+*Det här är det sista kapitlet. Gå tillbaka till [startsidan](index.md) för att utforska mallar och andra resurser.*
