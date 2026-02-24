@@ -1,14 +1,18 @@
-# Från chatt till system — en guide för dig som vill ta AI till nästa nivå
+# AI-instruktionsbok — Från Chat till Code
 
 **Du använder redan AI. Det här är guiden som visar vad som händer när du ger den regler, struktur och minne.**
 
 ---
 
-Du chattar med Claude eller ChatGPT varje dag. Du vet hur man skriver en bra prompt. Du får bra svar.
+Du använder sannolikt redan ChatGPT eller Claude dagligen — kanske laddar du upp filer, har skapat Custom GPTs, eller experimenterat med Projects. Du vet hur man skriver en bra prompt och du får bra svar.
 
 Men du gör samma sak om och om igen. Varje session börjar från noll. Du kopierar data fram och tillbaka. Du förklarar samma kontext för tionde gången.
 
 **Den här guiden handlar om språnget från att chatta med AI till att bygga ett system som gör AI 10x bättre på just ditt jobb.**
+
+Guiden använder **Claude som huvudexempel**, men principerna gäller oavsett AI-verktyg. Där det är relevant visar vi hur koncept översätts mellan verktyg.
+
+> **Planerat:** Ett dedikerat jämförelsekapitel ("Vilket verktyg för vilken uppgift?") är på väg.
 
 ---
 
@@ -30,7 +34,7 @@ Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal för
 | Nr | Kapitel | Beskrivning |
 |----|---------|-------------|
 | 00 | [Varför bli lite teknisk](00-varfor-bli-teknisk.md) | De ~10 begrepp som öppnar dörren till nästa nivå |
-| 01 | [Från chatt till system](01-fran-chatt-till-system.md) | Varför du ska sluta upprepa dig — och vad alternativen är |
+| 01 | [AI-verktygslandskapet](01-fran-chatt-till-system.md) | Verktyg, trappan från chatt till system, och varför du ska sluta upprepa dig |
 | 02 | [Claude Code](02-claude-code.md) | Praktisk guide till verktyget som förändrar allt |
 | 03 | [Claude Cowork](03-claude-cowork.md) | Autonom AI som arbetar självständigt |
 | 04 | [Mappstruktur och kontext](04-mappstruktur-och-kontext.md) | Det som binder ihop allt — CLAUDE.md, filer och struktur |

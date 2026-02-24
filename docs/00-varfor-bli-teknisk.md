@@ -93,7 +93,7 @@ Det här är de tio begreppen. Inget av dem är svårare än att lära sig ett n
 
 **Analogi:** Tänk på en restaurang. Du (programmet) vill ha mat från köket (en annan tjänst). Du pratar inte direkt med kocken — du ger din beställning till kyparen (API:et), som vidarebefordrar den och kommer tillbaka med rätt.
 
-**Varför det spelar roll:** När någon säger "kopplat Claude till sitt system via API:et" menar de att deras verktyg kan skicka frågor till Claude och få svar automatiskt — utan att någon sitter i chatten. Du behöver inte bygga något med API:er själv, men att förstå begreppet gör att du kan ha en informerad diskussion med tekniska kollegor.
+**Varför det spelar roll:** När någon säger "kopplat AI:n till sitt system via API:et" menar de att deras verktyg kan skicka frågor till en AI-modell och få svar automatiskt — utan att någon sitter i chatten. Alla stora AI-leverantörer (OpenAI, Anthropic, Google) erbjuder API:er. Du behöver inte bygga något med API:er själv, men att förstå begreppet gör att du kan ha en informerad diskussion med tekniska kollegor.
 
 ---
 

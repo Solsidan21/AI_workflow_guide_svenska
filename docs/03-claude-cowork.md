@@ -2,6 +2,9 @@
 
 > *Om Claude Code är en assistent vid ditt skrivbord, så är Cowork en junior analytiker du skickar iväg med ett uppdrag — och som kommer tillbaka med resultatet.*
 
+!!! note "Det här kapitlet är Claude-specifikt"
+    Claude Cowork är Anthropics lösning för autonoma AI-agenter. Liknande koncept finns hos andra leverantörer — t.ex. ChatGPT:s **Operator** och Googles **Gemini agents** — men ekosystemen skiljer sig åt. Principen att delegera väldefinierade uppgifter till en autonom AI gäller oavsett verktyg.
+
 ---
 
 ## Vad är det?

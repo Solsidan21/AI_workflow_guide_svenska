@@ -1,8 +1,25 @@
-# Kapitel 01 — Från chatt till system
+# Kapitel 01 — AI-verktygslandskapet
 
 > *Du chattar med AI. Men visste du att du kan bygga ett system som gör AI 10x bättre på just ditt jobb?*
 
-Det här är det viktigaste kapitlet i hela guiden. Inte för att det är det mest tekniska — utan för att det förklarar *varför* resten spelar roll.
+Det här är det viktigaste kapitlet i hela guiden. Inte för att det är det mest tekniska — utan för att det förklarar *varför* resten spelar roll — och var de olika AI-verktygen passar in.
+
+---
+
+## De stora AI-verktygen — en snabb karta
+
+Innan vi dyker in: det finns idag flera kraftfulla AI-verktyg, och du använder förmodligen redan minst ett av dem. Här är en snabb översikt:
+
+| Verktyg | Styrka | Bra för |
+|---------|--------|---------|
+| **ChatGPT** (OpenAI) | Störst användarbas, Custom GPTs, bred pluginmiljö | Allround-chatt, anpassade GPT:er, bildgenerering |
+| **Claude** (Anthropic) | Starkt på långa dokument, brett ekosystem (Chat → Code → Cowork) | Kunskapsarbete, analys, systembyggande |
+| **Gemini** (Google) | Djup Google-integration, stark på sökning | Research, sammanfattning, arbete i Google Workspace |
+| **Copilot** (Microsoft) | Inbyggd i Microsoft 365 | Excel, PowerPoint, Word — direkt i verktygen du redan använder |
+
+**Varför Claude som huvudexempel?** Claude erbjuder det bredaste spektrumet från enkel chatt till autonoma agenter (Cowork), med ett mellanlager (Claude Code) som ger kunskapsarbetare möjlighet att bygga persistenta system — regler, skills och mappstruktur. Det gör det till det mest illustrativa exemplet för den resa den här guiden beskriver. Men principerna — persistent kontext, regler, återanvändbara arbetsflöden — gäller oavsett verktyg.
+
+> **Planerat:** Ett dedikerat jämförelsekapitel med djupare analys av vilket verktyg som passar bäst för vilken typ av arbete är på väg.
 
 ---
 
@@ -22,47 +39,63 @@ Det här är inte ett problem med dina prompts. Det är ett problem med *arbetsf
 
 ## Spektrumet: från engångsprompt till system
 
-Claudes ekosystem är inte ett verktyg — det är ett spektrum. Varje steg ger dig mer kraft, mer automatisering och mindre upprepning.
+AI-verktygslandskapet är inte ett enda verktyg — det är ett spektrum. Varje steg ger dig mer kraft, mer automatisering och mindre upprepning.
 
 ```
   Engångsprompt                                          System
   (det du gör idag)                            (det du kan bygga)
 
   ├──────────┼──────────────┼──────────────┼──────────────┤
-  Chat       Claude i       Claude Code    Claude Cowork
-             Excel/PPT
+  AI-chatten    AI i           Claude Code    Claude Cowork
+  (Claude/      Excel/PPT
+   ChatGPT/
+   Gemini)
 ```
 
-### Claude Chat
+### AI-chatten (Claude / ChatGPT / Gemini)
 
 Du känner det redan. Du skriver en prompt, får ett svar. Snabbt och kraftfullt — men flyktigt.
 
-Chatten ger dock mer kontext än många inser. När du chattar med Claude bygger du upp kontext på flera nivåer: hela konversationshistoriken, uppladdade filer och det samlade utbytet av frågor och svar. En lång konversation där du delar bakgrund, siffror och dokument kan ge imponerande resultat — ibland förvånansvärt bra.
+Chatten ger dock mer kontext än många inser. När du chattar med AI:n bygger du upp kontext på flera nivåer: hela konversationshistoriken, uppladdade filer och det samlade utbytet av frågor och svar. En lång konversation där du delar bakgrund, siffror och dokument kan ge imponerande resultat — ibland förvånansvärt bra.
 
 Men den kontexten är **flyktig**. Den försvinner när du stänger fliken eller startar en ny session. Den är bunden till en enda konversation. Och den är **manuell** — du bygger upp den från noll varje gång genom att kopiera in text, ladda upp filer och förklara vem du är och vad du behöver. Det är just den begränsningen som resten av spektrumet löser.
 
-#### Projekt i Claude Chat
+#### Projekt och Custom GPTs — delad kontext i chatten
 
-Det finns dock ett steg mellan ren chatt och Claude Code som många missar: **Projekt** (Projects). Ett projekt i Claude Chat fungerar som en delad arbetsyta där du kan:
+Det finns ett steg mellan ren chatt och Code-verktyg som många missar. Både Claude och ChatGPT erbjuder sätt att skapa **persistent kontext** direkt i chatten:
 
-- **Ladda upp filer** som alla konversationer inom projektet har tillgång till — årsredovisningar, rapporter, datamängder
-- **Skriva projektinstruktioner** som automatiskt gäller för varje ny konversation (i princip en enklare version av CLAUDE.md)
-- **Starta flera konversationer** inom samma projekt, där alla delar samma filer och instruktioner
+- **Claude Projects** — en delad arbetsyta där du laddar upp filer, skriver projektinstruktioner och startar flera konversationer som alla delar samma kontext.
+- **ChatGPT Custom GPTs** — anpassade GPT:er med instruktioner, uppladdade filer och (valfritt) kopplingar till externa tjänster via Actions.
 
-Det liknar faktiskt Claude Code-konceptet mer än du tror. Precis som CLAUDE.md ger Claude regler och kontext, ger projektinstruktionerna Claude en "grundförståelse" som gäller varje gång. Och precis som Claude Code arbetar mot filer i din mappstruktur, arbetar Chat-projekt mot de filer du laddat upp.
+Koncepten mappar mot varandra:
 
-**Skillnaden mot Claude Code** är att du fortfarande arbetar i webbläsaren, inte kan skapa egna kommandon (skills), och att Claude inte kan skriva tillbaka till dina filer. Projektet sparar kontext — men det bygger inte ett system.
+| Koncept | Claude Projects | ChatGPT Custom GPTs |
+|---------|----------------|-------------------|
+| **Persistenta instruktioner** | Projektinstruktioner (fritext) | System-prompt i GPT-konfigurationen |
+| **Uppladdade filer** | Ja, delas över konversationer | Ja, via Knowledge |
+| **Flera konversationer** | Ja, inom projektet | Ja, varje GPT kan användas av flera |
+| **Delning** | Inom team (Claude for Work) | Kan publiceras i GPT Store |
+| **Koppling till externa tjänster** | Nej (kräver Code/API) | Ja, via Actions |
 
-**En viktig begränsning:** PDF-filer fungerar i projekt, men de förbrukar mycket kontext (tokens) varje gång Claude läser dem. En stor årsredovisning kan äta upp en betydande del av det tillgängliga kontextfönstret. Vi går in på djupet om PDF-problemet — och hur du löser det — i kapitel 04.
+Det liknar faktiskt Claude Code-konceptet mer än du tror. Precis som CLAUDE.md ger Claude regler och kontext, ger projektinstruktionerna (eller GPT-konfigurationen) AI:n en "grundförståelse" som gäller varje gång.
 
-**Tumregel:** Projekt i Claude Chat är ett utmärkt mellansteg om du har ett avgränsat uppdrag med ett par filer och vill slippa upprepa instruktioner. Men för pågående arbete med många filer, automatisering och full kontroll är Claude Code nästa steg.
+**Skillnaden mot Claude Code** är att du fortfarande arbetar i webbläsaren, inte kan skapa egna kommandon (skills), och att AI:n inte kan skriva tillbaka till dina filer. Projektet sparar kontext — men det bygger inte ett system.
 
-**Vad du vinner:** Snabba svar, bollplank, sammanfattningar — och med Projekt: delad kontext och instruktioner över flera konversationer.
+**En viktig begränsning:** PDF-filer fungerar i projekt (och Custom GPTs), men de förbrukar mycket kontext (tokens) varje gång AI:n läser dem. En stor årsredovisning kan äta upp en betydande del av det tillgängliga kontextfönstret. Vi går in på djupet om PDF-problemet — och hur du löser det — i kapitel 04.
+
+**Tumregel:** Projects/Custom GPTs är ett utmärkt mellansteg om du har ett avgränsat uppdrag med ett par filer och vill slippa upprepa instruktioner. Men för pågående arbete med många filer, automatisering och full kontroll är nästa steg i spektrumet.
+
+**Vad du vinner:** Snabba svar, bollplank, sammanfattningar — och med Projects/Custom GPTs: delad kontext och instruktioner över flera konversationer.
 **Vad du saknar:** Lokal filåtkomst, automatisering, skills, mappstruktur som kontext.
 
-### Claude i Excel och PowerPoint
+### AI i Excel och PowerPoint
 
-Claude som tillägg direkt i Office-programmen. Du markerar data i Excel och ställer en fråga. Du beskriver en presentation och Claude skapar ett utkast i PowerPoint.
+AI som tillägg direkt i Office-programmen. Du markerar data i Excel och ställer en fråga. Du beskriver en presentation och AI:n skapar ett utkast i PowerPoint.
+
+Här finns två huvudalternativ:
+
+- **Claude-tillägget** — installeras som add-in i Excel/PowerPoint. Kräver Claude Pro. Bra på analys och längre texter.
+- **Microsoft Copilot** — inbyggt i Microsoft 365 (kräver Copilot-licens). Djupare integration med Office — kan t.ex. skapa pivottabeller, diagram och hela presentationer direkt.
 
 **Styrkan:** Du stannar i verktyget du redan arbetar i. Ingen kontextväxling. Perfekt för snabba frågor, formelhjälp och första utkast.
 
@@ -105,16 +138,16 @@ För att göra skillnaden konkret, låt oss jämföra hur tre vanliga PE-uppgift
 
 ### Kassaflödesanalys
 
-| | Chat | Claude i Excel | Claude Code |
+| | Chat | AI i Excel | Claude Code |
 |--|------|---------------|-------------|
-| **Du gör** | Kopierar siffror från årsredovisningen, klistrar in, skriver prompt med instruktioner för format och beräkning | Markerar celler i kalkylbladet, frågar Claude i sidopanelen | Skriver: `/kassaflodesanalys` |
+| **Du gör** | Kopierar siffror från årsredovisningen, klistrar in, skriver prompt med instruktioner för format och beräkning | Markerar celler i kalkylbladet, frågar AI:n i sidopanelen | Skriver: `/kassaflodesanalys` |
 | **Claude gör** | Svarar med text och tabeller i chatten | Svarar med formler och sammanfattning i Excel | Läser filer i data/, beräknar FCF, skapar rapport, sparar på rätt ställe |
 | **Resultat** | Text i chattfönster som du måste kopiera | Svar i Excel-panel | Färdig rapport som Markdown-fil i analys/kassaflode/ |
 | **Nästa gång** | Börja om från början | Börja om från början | Kör samma skill — samma kvalitet, noll upprepning |
 
 ### Investment memo
 
-| | Chat | Claude i Excel | Claude Code |
+| | Chat | AI i Excel | Claude Code |
 |--|------|---------------|-------------|
 | **Du gör** | Klistrar in bakgrund, siffror, målstruktur i en lång prompt | Ej lämpligt verktyg | Skriver: `/investment-memo` |
 | **Claude gör** | Skriver ett memo baserat på det du gett | — | Läser all data i projektet, följer mallen i mallar/, fyller i alla sektioner |
@@ -122,7 +155,7 @@ För att göra skillnaden konkret, låt oss jämföra hur tre vanliga PE-uppgift
 
 ### Due diligence-checklista
 
-| | Chat | Claude i Excel | Claude Code |
+| | Chat | AI i Excel | Claude Code |
 |--|------|---------------|-------------|
 | **Du gör** | Beskriver bolaget och ber om en checklista | Ej lämpligt verktyg | Skriver: `/due-diligence-checklista` |
 | **Claude gör** | Genererar en generisk lista | — | Skapar checklista anpassad efter bolagets bransch, storlek och de data som redan finns i projektet |
@@ -132,17 +165,23 @@ Mönstret är tydligt: **ju längre åt höger i spektrumet, desto mindre upprep
 
 ---
 
-## Claude i Excel och PowerPoint — kort översikt
+## AI i Excel och PowerPoint — kort översikt
 
-Claude finns som tillägg (add-in) direkt i Microsoft Excel och PowerPoint. Det kräver Microsoft 365 och minst Claude Pro (20 USD/månad).
+Det finns idag två huvudvägar att använda AI direkt i Microsoft Office:
 
-**I Excel** markerar du celler och ställer frågor: "Sammanfatta trenderna i det här kassaflödet", "Skriv en formel som beräknar IRR", "Identifiera dubbletter i kolumn A." Svaren kommer direkt i programmet — snabbt och utan kontextväxling.
+**Claude-tillägget** finns som add-in i Microsoft Excel och PowerPoint. Det kräver Microsoft 365 och minst Claude Pro. Du markerar celler och ställer frågor: "Sammanfatta trenderna i det här kassaflödet", "Skriv en formel som beräknar IRR", "Identifiera dubbletter i kolumn A." I PowerPoint kan du beskriva en presentation och få ett utkast, eller generera speaker notes.
 
-**I PowerPoint** kan du beskriva en presentation och få ett utkast med slides, be Claude förkorta text på en slide, eller generera speaker notes.
+**Microsoft Copilot** är inbyggt i Microsoft 365 (med Copilot-licens) och har djupare integration — det kan skapa pivottabeller, generera diagram, bygga hela presentationer från ett Word-dokument och koppla samman data mellan Office-appar.
 
-Det är ett bra verktyg för snabba, avgränsade frågor när du redan arbetar i Office. Men det saknar det som gör Claude Code kraftfullt: persistent kontext, regler och återanvändbara arbetsflöden. Varje fråga börjar från noll.
+| | Claude-tillägg | Microsoft Copilot |
+|--|---------------|-------------------|
+| **Styrka** | Stark analys, bra på text och resonemang | Djup Office-integration, kan skapa diagram/pivottabeller |
+| **Begränsning** | Kan inte modifiera kalkylbladet direkt | Ibland ytligare resonemang |
+| **Kräver** | Claude Pro + Microsoft 365 | Microsoft 365 Copilot-licens |
 
-**Tumregel:** Använd Excel/PPT-tillägget för snabba operativa frågor. Använd Claude Code för allt som gynnas av kontext, regler och struktur.
+Båda är bra verktyg för snabba, avgränsade frågor när du redan arbetar i Office. Men ingen av dem har det som gör Claude Code kraftfullt: persistent kontext, regler och återanvändbara arbetsflöden. Varje fråga börjar från noll.
+
+**Tumregel:** Använd AI i Excel/PPT för snabba operativa frågor. Använd Claude Code för allt som gynnas av kontext, regler och struktur.
 
 ---
 

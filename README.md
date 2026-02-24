@@ -1,4 +1,4 @@
-# Claude Instruktionsbok — Från chatt till system
+# AI-instruktionsbok — Från Chat till Code
 
 **En guide för dig som redan använder AI men vill ta språnget från engångsprompts till ett system som gör AI 10x bättre på just ditt jobb.**
 
@@ -6,9 +6,22 @@
 
 ## Om den här guiden
 
-Du chattar med Claude eller ChatGPT varje dag. Du vet hur man skriver en bra prompt. Du får bra svar.
+Du använder sannolikt redan ChatGPT eller Claude dagligen — kanske laddar du upp filer, har skapat Custom GPTs, eller experimenterat med Projects. Du vet hur man skriver en bra prompt och du får bra svar.
 
 Men du upprepar dig. Varje session börjar från noll. Du kopierar data fram och tillbaka. Den här guiden visar vad som händer när du ger AI regler, struktur och minne — och går från att chatta till att bygga ett system.
+
+**Guiden använder Claude som huvudexempel genomgående**, men principerna — persistent kontext, regler, mappstruktur, återanvändbara arbetsflöden — gäller oavsett vilket AI-verktyg du använder. Där det är relevant pekar vi ut hur koncept översätts mellan verktyg (t.ex. Custom GPTs ↔ Claude Projects).
+
+### AI-verktyg som täcks
+
+| Verktyg | Roll i guiden | Styrka |
+|---------|--------------|--------|
+| **Claude** | Huvudexempel genomgående | Bred verktygslåda (Chat → Code → Cowork), starkt på kunskapsarbete och långa dokument |
+| **ChatGPT** | Refereras regelbundet | Störst användarbas, Custom GPTs, bra allround |
+| **Gemini** | Nämns där relevant | Djup Google-integration, stark på sökning och sammanfattning |
+| **Copilot** | Nämns där relevant | Inbyggd i Microsoft 365, naturlig för Excel/PowerPoint/Word |
+
+> **Planerat:** Ett dedikerat jämförelsekapitel ("Vilket verktyg för vilken uppgift?") är på väg. Håll utkik i kommande versioner av guiden.
 
 Guiden är skriven för **kunskapsarbetare** som använder AI dagligen men inte tagit steget bortom chatten:
 
@@ -27,7 +40,7 @@ Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal för
 | Nr | Kapitel | Beskrivning |
 |----|---------|-------------|
 | 00 | [Varför bli lite teknisk](docs/00-varfor-bli-teknisk.md) | De ~10 begrepp som öppnar dörren till nästa nivå |
-| 01 | [Från chatt till system](docs/01-fran-chatt-till-system.md) | Varför du ska sluta upprepa dig — och vad alternativen är |
+| 01 | [AI-verktygslandskapet](docs/01-fran-chatt-till-system.md) | Verktyg, trappan från chatt till system, och varför du ska sluta upprepa dig |
 | 02 | [Claude Code](docs/02-claude-code.md) | Praktisk guide till verktyget som förändrar allt |
 | 03 | [Claude Cowork](docs/03-claude-cowork.md) | Autonom AI som arbetar självständigt |
 | 04 | [Mappstruktur och kontext](docs/04-mappstruktur-och-kontext.md) | Det som binder ihop allt — CLAUDE.md, filer och struktur |

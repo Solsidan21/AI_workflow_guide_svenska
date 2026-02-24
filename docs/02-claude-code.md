@@ -2,6 +2,9 @@
 
 > *Verktyget som tar dig från engångsprompts till ett system där AI arbetar med dina filer, följer dina regler och gör sig smartare över tid.*
 
+!!! note "Det här kapitlet är Claude-specifikt"
+    Claude Code är Anthropics verktyg och har ingen direkt motsvarighet hos andra leverantörer. Liknande koncept finns dock i **Cursor** (AI-editor med filåtkomst och regler), **GitHub Copilot Workspace** och **Windsurf**. Principerna — persistent kontext, instruktionsfiler, återanvändbara arbetsflöden — går att tillämpa oavsett verktyg.
+
 ---
 
 ## Vad är Claude Code?

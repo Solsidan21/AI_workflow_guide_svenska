@@ -489,7 +489,7 @@ Du har nu hela bilden:
 
 Det viktigaste är inte att du implementerar allt på en gång. Börja med en CLAUDE.md och en mapp med data. Testa en riktig uppgift. Lägg till en skill när du märker att du upprepar dig. Över tid växer systemet — och varje session blir bättre än den föregående.
 
-AI-verktygen är kraftfulla, men de är just verktyg. Din expertis — förmågan att ställa rätt frågor, bedöma svar kritiskt och fatta beslut — är det som gör skillnaden. Claude gör dig snabbare. Men det är du som styr.
+AI-verktygen är kraftfulla, men de är just verktyg. Din expertis — förmågan att ställa rätt frågor, bedöma svar kritiskt och fatta beslut — är det som gör skillnaden. AI:n gör dig snabbare. Men det är du som styr.
 
 ---
 
