@@ -35,10 +35,14 @@ Claudes ekosystem är inte ett verktyg — det är ett spektrum. Varje steg ger 
 
 ### Claude Chat
 
-Du känner det redan. Du skriver en prompt, får ett svar. Snabbt och kraftfullt — men flyktigt. Varje session är en enstaka interaktion.
+Du känner det redan. Du skriver en prompt, får ett svar. Snabbt och kraftfullt — men flyktigt.
 
-**Vad du vinner:** Snabba svar, bollplank, sammanfattningar.
-**Vad du saknar:** Persistens, regler, automatisering.
+Chatten ger dock mer kontext än många inser. När du chattar med Claude bygger du upp kontext på flera nivåer: hela konversationshistoriken, uppladdade filer och det samlade utbytet av frågor och svar. En lång konversation där du delar bakgrund, siffror och dokument kan ge imponerande resultat — ibland förvånansvärt bra.
+
+Men den kontexten är **flyktig**. Den försvinner när du stänger fliken eller startar en ny session. Den är bunden till en enda konversation. Och den är **manuell** — du bygger upp den från noll varje gång genom att kopiera in text, ladda upp filer och förklara vem du är och vad du behöver. Det är just den begränsningen som resten av spektrumet löser.
+
+**Vad du vinner:** Snabba svar, bollplank, sammanfattningar — och djupare kontext än du kanske tror.
+**Vad du saknar:** Persistens mellan sessioner, regler som alltid gäller, automatisering.
 
 ### Claude i Excel och PowerPoint
 

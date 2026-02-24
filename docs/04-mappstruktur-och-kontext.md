@@ -99,7 +99,57 @@ Håll tre typer av material åtskilt:
 
 Varför? Du kan alltid gå tillbaka till rådata om något är fel. Och du blandar aldrig ihop arbetsunderlag med färdiga leveranser.
 
-### 5. README-filer
+### 5. PDF-problemet — varför filformat spelar roll
+
+Du har säkert PDF:er i din datamapp. Årsredovisningar, branschrapporter, avtal. Det är naturligt — PDF är branschstandard. Men för AI är PDF ett av de svåraste formaten att arbeta med.
+
+**Tre saker gör PDF:er problematiska:**
+
+1. **AI måste tolka hela dokumentet.** Den kan inte "bläddra" till rätt sida. Den processar allt från framsida till appendix, oavsett vad du frågar om.
+2. **Det förbrukar enormt med tokens.** En 50-sidig årsredovisning kan äta upp tusentals tokens bara för att läsas in — även om du bara behöver tre rader.
+3. **Formatering tolkas ofta fel.** Tabeller, kolumner och sidbrytningar i PDF:er översätts dåligt till text. Siffror som var tydliga i originalet kan bli röriga.
+
+**Analogi:** Det är som att ge en konsult en hel bokhylla när du egentligen bara behöver ett kalkylblad. Konsulten klarar det — men det tar tid, kostar pengar och risken för missförstånd ökar.
+
+Konsekvensen? Varje gång du ber AI "läs årsredovisningen och hitta EBITDA" använder den en stor del av sitt kontextfönster bara på att läsa in dokumentet. Det finns en bättre lösning.
+
+### 6. Bearbeta en gång, skriv om till Markdown
+
+Istället för att mata AI med samma PDF om och om igen, gör jobbet **en gång**. Du (eller Claude) läser PDF:en, extraherar det relevanta innehållet och skriver om det till välstrukturerade Markdown-filer.
+
+**Före:**
+```
+data/finansiellt/arsredovisning-2024.pdf    ← 50 sidor, tusentals tokens varje gång
+```
+
+**Efter:**
+```
+data/finansiellt/arsredovisning-2024/
+├── nyckeltal.md           # Revenue, EBITDA, nettoresultat i tabell
+├── kassaflodesanalys.md   # FCF, capex, rörelsekapital
+├── risker.md              # Väsentliga risker och osäkerhetsfaktorer
+└── noter.md               # Relevanta noter (goodwill, avskrivningar)
+```
+
+**Skillnaden:**
+
+| | PDF varje gång | Markdown (bearbetad en gång) |
+|--|---|---|
+| **Tokens** | Tusentals per inläsning | Några hundra per fil |
+| **Precision** | AI läser allt, hittar kanske rätt | AI läser exakt rätt fil |
+| **Hastighet** | Långsamt | Snabbt |
+| **Återanvändning** | Samma kostnad varje session | Gratis efter första gången |
+
+**Så här gör du i praktiken:**
+
+1. Öppna en Claude Code-session i ditt projekt
+2. Be Claude: *"Läs arsredovisning-2024.pdf och extrahera nyckeltal, kassaflödesdata, risker och relevanta noter. Spara som separata Markdown-filer i data/finansiellt/arsredovisning-2024/"*
+3. Granska resultatet — kontrollera att siffrorna stämmer
+4. Från och med nu använder alla analyser de bearbetade Markdown-filerna istället för PDF:en
+
+**Tumregel:** Behåll alltid original-PDF:en — den är din källa och ditt kvitto. Men låt Claude arbeta mot Markdown-versionerna. Det är skillnaden mellan att kopiera samma bok varje gång och att ha bra anteckningar.
+
+### 7. README-filer
 
 En kort `README.md` i varje mapp hjälper både dig och Claude att förstå vad mappen innehåller.
 

@@ -121,7 +121,7 @@ Det här är de tio begreppen. Inget av dem är svårare än att lära sig ett n
 
 **Analogi:** Ordräknaren i Word, fast för AI. Claude bryter ner text i tokens och bearbetar dem en i taget. Varje modell har en maximal kontextlängd mätt i tokens.
 
-**Varför det spelar roll:** Om någon säger "det ryms inte i kontextfönstret" menar de att texten överskrider AI:ns tokengräns. Du slipper räkna tokens i praktiken, men det förklarar varför du ibland behöver sammanfatta (med `/compact` i Claude Code) för att frigöra plats.
+**Varför det spelar roll:** Om någon säger "det ryms inte i kontextfönstret" menar de att texten överskrider AI:ns tokengräns. Du slipper räkna tokens i praktiken, men det förklarar varför du ibland behöver sammanfatta (med `/compact` i Claude Code) för att frigöra plats. Filformat spelar också roll — en obearbetad PDF förbrukar många fler tokens än samma information i Markdown (mer om det i [kapitel 04](04-mappstruktur-och-kontext.md)).
 
 ---
 
