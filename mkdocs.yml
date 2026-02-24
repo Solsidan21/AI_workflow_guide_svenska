@@ -1,6 +1,6 @@
 site_name: AI Workflow Guide
 site_url: https://solsidan21.github.io/AI_workflow_guide_svenska/
-site_description: En praktisk guide till hur du kan använda Claudes AI-ekosystem i arbetslivet
+site_description: En guide för dig som redan använder AI men vill ta språnget från chatt till system
 repo_url: https://github.com/Solsidan21/AI_workflow_guide_svenska
 repo_name: Solsidan21/AI_workflow_guide_svenska
 
@@ -48,9 +48,7 @@ nav:
   - Start: index.md
   - Kapitel:
       - 00 — Varför bli lite teknisk: 00-varfor-bli-teknisk.md
-      - 01 — Introduktion: 01-introduktion.md
-      - 02 — Claude Chat: 02-claude-chat.md
-      - 03 — Excel och PowerPoint: 03-excel-powerpoint.md
-      - 04 — Claude Code: 04-claude-code.md
-      - 05 — Claude Cowork: 05-claude-cowork.md
-      - 06 — Mappstruktur och kontext: 06-mappstruktur-och-kontext.md
+      - 01 — Från chatt till system: 01-fran-chatt-till-system.md
+      - 02 — Claude Code: 02-claude-code.md
+      - 03 — Claude Cowork: 03-claude-cowork.md
+      - 04 — Mappstruktur och kontext: 04-mappstruktur-och-kontext.md
