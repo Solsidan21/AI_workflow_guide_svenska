@@ -186,7 +186,7 @@ Föreläsningarna bygger på varandra i denna ordning:
 - Notation: vektorer skrivs med pil ovanför (ā), inte fetstil
 ```
 
-Det här är det som löser det mesta av screenshot-cirkusen. Claude träffar inte alltid rätt på första försöket — men den är pricksäker från början istället för att jag ska behöva korrigera metod och notation i tre omgångar.
+Det här löser inte allt — Claude missar fortfarande ibland. Men istället för femton minuter av screenshots och "nej, inte den metoden" handlar det om en snabb korrigering. Claude är redan i rätt spår.
 
 ---
 
