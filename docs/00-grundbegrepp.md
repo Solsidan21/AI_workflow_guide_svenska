@@ -79,9 +79,9 @@ Det här är de tio begreppen. Inget av dem är svårare än att lära sig ett n
 
 ## 6. CLAUDE.md
 
-**Vad det är:** En speciell fil som du lägger i ditt projekt för att ge Claude instruktioner. Claude läser den automatiskt innan den börjar arbeta.
+**Vad det är:** En speciell fil i ditt projekt som ger Claude instruktioner. Claude Code skapar den åt dig baserat på din beskrivning — du berättar vad projektet handlar om, och CLAUDE.md genereras automatiskt. Sedan läser Claude den varje gång den börjar arbeta.
 
-**Analogi:** Tänk dig att du får en ny konsult på kontoret. Första dagen ger du hen ett introduktionsdokument: "Så här jobbar vi, det här är våra konventioner, de här filerna är viktiga." CLAUDE.md är exakt det dokumentet — fast för AI.
+**Analogi:** Tänk dig att du får en ny konsult på kontoret. Första dagen finns det redan ett introduktionsdokument klart: "Så här jobbar vi, det här är våra konventioner, de här filerna är viktiga." CLAUDE.md är exakt det dokumentet — fast för AI.
 
 **Varför det spelar roll:** Det här är den enskilt viktigaste grejen i hela den här guiden. Med en CLAUDE.md behöver du aldrig upprepa samma instruktioner. Claude följer dina regler, din stil och din struktur — automatiskt, varje gång. Det är skillnaden mellan att chatta med AI och att ha ett system.
 

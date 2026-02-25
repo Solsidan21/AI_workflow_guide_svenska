@@ -4,6 +4,8 @@
 
 Du vet redan hur man skriver en prompt. Det här kapitlet handlar om allt det andra: vad kontext egentligen är, varför det avgör kvaliteten på svaren, och vilka tekniker som gör störst skillnad i praktiken.
 
+Promptteknik handlar inte bara om att formulera frågor i en chatt. Det handlar om att kunna **beskriva vad du vill ha** — tillräckligt tydligt för att Claude Code ska kunna bygga det åt dig. Samma tekniker som gör en chattfråga bättre gör också en projektbeskrivning bättre.
+
 ---
 
 ## Vad är kontext — och varför det avgör allt
@@ -119,6 +121,21 @@ Om du vill ha ett specifikt format, visa ett exempel:
 - Noterbart: [En viktig observation]"
 
 Exempel kommunicerar format snabbare och tydligare än långa beskrivningar.
+
+---
+
+## Från chatt till Code — promptteknik i praktiken
+
+Alla teknikerna ovan fungerar utmärkt i en vanlig AI-chatt. Men de blir ännu kraftfullare när du använder dem för att **beskriva ett helt projekt** för Claude Code.
+
+Workflowet ser ut så här:
+
+1. **Börja i chatten.** Öppna Claude Chat (eller ChatGPT, Gemini) och beskriv vad du vill skapa. Använd teknikerna ovan — var specifik, ge kontext, ge exempel.
+2. **Iterera.** Diskutera med chatten. Förfina din bild av projektet, strukturen och reglerna.
+3. **Be om en terminalredo prompt.** När bilden är tydlig, be chatten sammanfatta allt som en prompt du kan ge till Claude Code.
+4. **Ge prompten till Claude Code.** Claude Code bygger hela strukturen — mappar, CLAUDE.md, skills — baserat på din beskrivning.
+
+Det här är kärnan i guiden: **du beskriver, Claude bygger.** Och ju bättre du är på att beskriva — med kontext, specificitet och struktur — desto bättre blir resultatet.
 
 ---
 

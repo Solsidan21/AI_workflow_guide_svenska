@@ -4,6 +4,8 @@
 
 Det här är guidens viktigaste kapitel. Inte för att det är det mest tekniska, utan för att det beskriver **arbetssättet** som gör allt annat möjligt. Mappstruktur, CLAUDE.md, skills, och framför allt: det grundläggande arbetsflödet som förvandlar dina dokument till ett AI-system.
 
+En viktig poäng: **du skapar inte det här manuellt.** Du beskriver vad du behöver — i en chatt eller direkt i Claude Code — och Claude bygger strukturen åt dig. Det här kapitlet förklarar *varför* en bra struktur ser ut som den gör, så att du förstår vad Claude Code skapar och kan guida den rätt.
+
 ---
 
 ## Varför mappstruktur spelar roll
@@ -124,7 +126,7 @@ En kort `README.md` i varje mapp hjälper både dig och Claude att förstå vad 
 
 ## Det centrala arbetsflödet — PDF till system
 
-Det här avsnittet beskriver det grundläggande arbetssätt som gör allt annat möjligt. Det är enkelt, men det förändrar allt.
+Det här avsnittet beskriver det grundläggande arbetssätt som gör allt annat möjligt. Det är enkelt, men det förändrar allt. **Du behöver inte göra stegen manuellt** — du beskriver vad du vill ha, och Claude Code utför dem.
 
 ### Problemet
 
@@ -158,7 +160,7 @@ Du har dokument — PDF:er, rapporter, kursböcker, branschdata. Du vill att AI 
 
 ### Steg 1: Samla dina dokument
 
-Skapa en projektmapp med logisk struktur och lägg in dina dokument:
+Claude Code skapar en projektmapp med logisk struktur. Det enda du gör manuellt är att kopiera in dina dokument (PDF:er, CSV:er etc.) i rätt mapp. Resultatet ser ut ungefär så här:
 
 ```
 mitt-projekt/
@@ -214,24 +216,21 @@ data/rapporter/arsredovisning-2024/
 
 ### Steg 3: Publicera till GitHub
 
-Initiera ett Git-repo och pusha till GitHub:
+Claude Code kan initiera ett Git-repo och publicera till GitHub åt dig — be om det i din prompt, eller säg det i en session:
 
 ```
-git init
-git add -A
-git commit -m "Initial projektstruktur med extraherade data"
-git push
+> Initiera ett Git-repo och pusha projektet till GitHub.
 ```
 
 Nu finns ditt projekt versionshanterat och tillgängligt. Varje ändring loggas. Du kan alltid gå tillbaka.
 
 ### Steg 4: Koppla repot som Claude-projekt
 
-Här händer magin. I Claude Chat:
+Här händer magin. I Claude Chat kan du koppla ditt GitHub-repo som kunskapskälla till ett projekt:
 
-1. Skapa ett nytt projekt
-2. Koppla ditt GitHub-repo som kunskapskälla
-3. Skriv projektinstruktioner (baserade på din CLAUDE.md)
+1. Skapa ett nytt projekt i Claude Chat
+2. Koppla ditt GitHub-repo
+3. Claude Chat har nu samma kontext som Claude Code
 
 Nu har du **samma kunskap tillgänglig i både Claude Code och Claude Chat**. Du arbetar i Code när du behöver automation och filhantering. Du arbetar i Chat när du behöver snabba frågor och bollplank. Båda delar samma kunskapsbas.
 
@@ -266,7 +265,7 @@ Claude Code kan skapa PDF- och Word-filer genom verktyg som `pandoc` eller Pytho
 
 ### Vad är det?
 
-En Markdown-fil som du placerar i roten av din projektmapp. När Claude Code startar läser den CLAUDE.md automatiskt och följer instruktionerna. Varje session, utan att du behöver säga något.
+En Markdown-fil i roten av din projektmapp. Claude Code skapar den åt dig baserat på din beskrivning av projektet — vem du är, vad du arbetar med, vilka regler som gäller. Sedan läser Claude den automatiskt varje session och följer instruktionerna, utan att du behöver säga något.
 
 **Det är skillnaden mellan en assistent som börjar från noll varje dag och en som känner projektet.**
 
@@ -401,9 +400,9 @@ mitt-projekt/
 └── ...
 ```
 
-### Hur skapar du en skill?
+### Hur skapas en skill?
 
-Skapa en Markdown-fil med instruktioner:
+Claude Code skapar skills baserat på din beskrivning. Du kan säga "skapa en skill som sammanfattar rapporter" och Claude bygger filen åt dig. En typisk skill-fil ser ut så här:
 
 **`.claude/skills/sammanfattning.md`**
 ```markdown
@@ -480,70 +479,67 @@ Och Claude vet automatiskt: var data finns, hur analysen ska göras, var resulta
 
 ---
 
-## Praktisk övning — skapa din första projektstruktur
+## Praktisk övning — starta ditt första projekt
 
-### Steg 1: Skapa mappstrukturen
+### Steg 1: Börja i chatten
 
-```bash
-mkdir mitt-projekt
-cd mitt-projekt
-mkdir -p data/rapporter data/extraherat analys output mallar .claude/skills
-```
+Öppna Claude Chat (eller ChatGPT, Gemini — valfri AI-chatt) och beskriv ditt projekt:
 
-### Steg 2: Skriv din CLAUDE.md
+> *"Jag jobbar som [din roll] och behöver hjälp med [ditt område]. Jag har [beskriv dina dokument — årsredovisningar, rapporter, kursböcker etc.]. Jag vill kunna analysera dem, ställa frågor mot dem och skapa sammanfattningar och rapporter. Hjälp mig tänka igenom hur ett bra AI-system för det här skulle se ut."*
 
-Skapa filen `CLAUDE.md` i rotmappen. Börja enkelt:
+Diskutera och iterera. Ställ frågor. Förfina bilden av vad du behöver.
 
-```markdown
-# CLAUDE.md
+### Steg 2: Ta fram en terminalredo prompt
 
-## Roll
-Du är min assistent för [beskriv projektet].
+När du har en tydlig bild, be chatten skapa en prompt du kan ge direkt till Claude Code:
 
-## Regler
-- Skriv på svenska
-- Var koncis och faktadriven
-- Använd tabeller för jämförelser
+> *"Bra, nu vill jag sätta upp det här som ett Claude Code-projekt. Skriv en komplett prompt jag kan klistra in i Claude Code som skapar hela mappstrukturen, en CLAUDE.md med reglerna vi diskuterat, och grundläggande skills för mina vanligaste uppgifter."*
 
-## Filstruktur
-- data/ — Källmaterial och rådata
-- analys/ — Bearbetade analyser
-- output/ — Färdiga leveranser
-- mallar/ — Rapportmallar
-```
-
-### Steg 3: Lägg in dina filer
-
-Kopiera relevant material till `data/`. Ge filerna beskrivande namn.
-
-### Steg 4: Starta Claude Code och extrahera
-
-```bash
-cd mitt-projekt
-claude
-```
+Chatten ger dig en prompt som kan se ut ungefär så här:
 
 ```
-> Läs alla PDF:er i data/rapporter/ och extrahera nyckeltal och
+Skapa ett projekt för en [din roll] som arbetar med [ditt område].
+
+Mappstruktur:
+- data/ med undermappar för [dina dokumenttyper]
+- data/extraherat/ för bearbetade Markdown-versioner
+- analys/ för bearbetade analyser
+- output/ för färdiga leveranser
+- mallar/ för dokumentmallar
+
+CLAUDE.md ska innehålla:
+- Roll: [beskrivning]
+- Regler: svenska, [format], [ton]
+- Filstruktur: beskriv var allt finns
+
+Skapa skills för:
+- /sammanfattning — sammanfatta valfritt dokument
+- /[din vanligaste uppgift]
+
+Initiera ett Git-repo.
+```
+
+### Steg 3: Ge prompten till Claude Code
+
+1. Skapa en tom mapp för ditt projekt (det enda manuella steget)
+2. Öppna terminalen i den mappen
+3. Starta Claude Code med `claude`
+4. Klistra in prompten
+
+Claude Code skapar hela strukturen — mappar, CLAUDE.md, skills, README-filer och Git-repo. Du behöver inte skriva en enda fil själv.
+
+### Steg 4: Lägg in dina filer och extrahera
+
+Kopiera dina dokument (PDF:er, rapporter, CSV:er) till `data/`-mappen. Sedan i Claude Code:
+
+```
+> Läs alla PDF:er i data/ och extrahera nyckeltal och
 > sammanfattningar till Markdown-filer i data/extraherat/
 ```
 
-### Steg 5: Initiera Git och pusha
+### Steg 5: Bygg ut över tid
 
-```bash
-git init
-git add -A
-git commit -m "Initial projektstruktur"
-git push
-```
-
-### Steg 6: Koppla som Claude-projekt
-
-Skapa ett projekt i Claude Chat, koppla repot, och skriv projektinstruktioner baserade på din CLAUDE.md.
-
-### Steg 7: Bygg ut
-
-Gör CLAUDE.md mer detaljerad. Skapa skills för uppgifter du gör ofta. Över tid växer projektet och Claude blir bättre och bättre på att hjälpa dig.
+Ditt system växer med dig. Be Claude Code lägga till fler skills när du upptäcker återkommande uppgifter. Uppdatera CLAUDE.md när du vill justera regler eller ton. Koppla repot som ett Claude-projekt i Claude Chat för snabba frågor. Varje session blir bättre än den föregående.
 
 ---
 
@@ -551,7 +547,7 @@ Gör CLAUDE.md mer detaljerad. Skapa skills för uppgifter du gör ofta. Över t
 
 I det här repots [`templates/`](../templates/)-mapp hittar du färdiga mallar — CLAUDE.md-exempel, skill-filer och projektstrukturer för olika roller och branscher.
 
-Använd dem som utgångspunkt och anpassa till ditt arbete.
+Du kan ge dem som kontext till Claude Code: "Använd mallen i templates/ som utgångspunkt och anpassa till mitt projekt."
 
 ---
 

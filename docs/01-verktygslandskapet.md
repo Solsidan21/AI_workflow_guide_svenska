@@ -116,9 +116,23 @@ Båda är bra verktyg för snabba, avgränsade frågor när du redan arbetar i O
 
 ## Steg 3: Claude Code — ditt AI-system i terminalen
 
-Här sker språnget. Claude Code är ett CLI-verktyg (Command Line Interface) där Claude arbetar direkt med dina filer, följer dina regler och kan utföra återanvändbara arbetsflöden.
+Här sker språnget. Claude Code är ett verktyg där Claude arbetar direkt med dina filer, följer dina regler och kan utföra återanvändbara arbetsflöden.
 
-### Vad det är
+**Du behöver inte kunna programmera.** Du behöver inte kunna terminalen. Du behöver bara kunna beskriva vad du vill ha — och det kan du redan.
+
+### Hur du börjar — från chatt till Code
+
+Det naturliga sättet att börja med Claude Code är inte i terminalen — det är i chatten:
+
+1. **Öppna en AI-chatt** (Claude Chat, ChatGPT, Gemini — spelar ingen roll)
+2. **Beskriv vad du vill skapa** — ditt projekt, ditt arbete, dina behov
+3. **Diskutera och iterera** tills du har en tydlig bild
+4. **Be chatten ta fram en terminalredo prompt** — en komplett beskrivning du kan ge till Claude Code
+5. **Klistra in prompten i Claude Code** — och Claude bygger allt åt dig
+
+Det enda manuella steget? Skapa en tom mapp och starta Claude Code. Resten — mappstruktur, CLAUDE.md, skills, README-filer — skapar Claude Code baserat på din beskrivning.
+
+### Vad det innebär i praktiken
 
 **Tänksätt:** Föreställ dig en extremt kompetent assistent som sitter bredvid dig vid datorn. Du pekar på en mapp med data och säger "analysera det här och skriv en sammanfattning." Assistenten läser filerna, gör beräkningarna, skriver rapporten och sparar den på rätt ställe.
 
@@ -143,9 +157,9 @@ Skillnaden är inte att Claude Code är "smartare" — det är samma AI-modell. 
 
 ### De två nyckelkoncepten
 
-**CLAUDE.md** är en instruktionsfil som du placerar i ditt projekt. Claude läser den automatiskt varje session — dina regler, din kontext, din stil. Det är skillnaden mellan en assistent som börjar från noll varje dag och en som känner projektet.
+**CLAUDE.md** är en instruktionsfil i ditt projekt som Claude Code skapar baserat på din beskrivning. Claude läser den automatiskt varje session — dina regler, din kontext, din stil. Det är skillnaden mellan en assistent som börjar från noll varje dag och en som känner projektet.
 
-**Skills** är återanvändbara arbetsflöden. Du beskriver en uppgift steg för steg i en Markdown-fil, och sedan kan du köra den med ett enda kommando. Istället för att förklara hur en kassaflödesanalys ska göras varje gång, skriver du `/kassaflodesanalys` och Claude utför alla stegen.
+**Skills** är återanvändbara arbetsflöden. Claude Code skapar dem baserat på dina behov — du beskriver en uppgift du gör ofta, och Claude bygger en skill som utför alla stegen med ett enda kommando. Istället för att förklara hur en kassaflödesanalys ska göras varje gång, skriver du `/kassaflodesanalys` och Claude utför alla stegen.
 
 > Hur du sätter upp CLAUDE.md och skills i praktiken täcks i [kapitel 03](03-mappstruktur-och-arbetssatt.md).
 

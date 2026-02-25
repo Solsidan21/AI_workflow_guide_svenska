@@ -8,7 +8,7 @@ De tidigare kapitlen har gått igenom koncepten: trappan, kontexthantering, mapp
 
 Norvik Capital finns inte på riktigt. Men strukturen, arbetsflödena och exemplen är byggda för att vara realistiska — du ska kunna ta dem och anpassa till din egen firma.
 
-> Allt som refereras i det här kapitlet finns som färdiga filer i [`templates/private-equity/firma-exempel/`](../templates/private-equity/firma-exempel/). Du kan kopiera hela mappen och börja använda den direkt.
+> Allt som refereras i det här kapitlet finns som färdiga filer i [`templates/private-equity/firma-exempel/`](../templates/private-equity/firma-exempel/). Du kan ge dem som utgångspunkt till Claude Code — beskriv vad du vill anpassa så bygger Claude resten.
 
 ---
 
@@ -226,7 +226,7 @@ Hjälper med struktur och innehåll:
 
 ### Claude Code
 
-Allt som gynnas av kontext, automatisering och konsistens.
+Allt som gynnas av kontext, automatisering och konsistens. Så här beskriver du typiska uppgifter:
 
 **Screening med kontext:**
 ```
@@ -389,71 +389,68 @@ Om svaret innehåller något värdefullt — dokumentera det.
 
 ---
 
-## Kom igång — steg för steg
+## Kom igång — så här beskriver du det för Claude Code
 
-### Vecka 1: Grunden
+### Börja i chatten
 
-**Steg 1: Skapa mappstrukturen**
+Öppna Claude Chat och beskriv din situation:
 
-```bash
-mkdir -p min-firma
-mkdir -p min-firma/portfoljbolag/bolag-x/{bolagsdata,analys,styrelsearbete,output}
-mkdir -p min-firma/gemensamt/{skills,learnings}
-```
+> *"Jag jobbar på en PE-firma med [X] portföljbolag. Vi gör nordisk mid-market PE, och jag behöver ett AI-system som hjälper med screening, portföljbolagsanalys, styrelsematerial och LP-rapportering. Hjälp mig tänka igenom vad det borde innehålla."*
 
-**Steg 2: Skriv din första CLAUDE.md**
+Diskutera och iterera. Be sedan chatten ta fram en terminalredo prompt.
 
-```markdown
-# CLAUDE.md — [Din firma]
+### En exempelprompt för Claude Code
 
-## Roll
-Du är en erfaren PE-analytiker på [din firma] med fokus på
-nordiska mid-market-investeringar.
-
-## Regler
-- Skriv på svenska
-- Siffror i MSEK, en decimal
-- Börja alltid med Executive Summary
-- Avsluta med rekommendation och nästa steg
-- Spekulera inte — markera saknad data med [DATA SAKNAS]
-
-## Filstruktur
-- portfoljbolag/[bolag]/bolagsdata/ — Finansiell rådata
-- portfoljbolag/[bolag]/analys/ — Bearbetade analyser
-- portfoljbolag/[bolag]/output/ — Färdiga leveranser
-- gemensamt/skills/ — Återanvändbara arbetsflöden
-```
-
-**Steg 3: Testa med en riktig uppgift**
+Här är en prompt du kan anpassa och ge till Claude Code:
 
 ```
-> Läs filerna i bolagsdata/ och sammanfatta nyckeltal för de senaste
-> tre åren: omsättning, EBITDA, kassaflöde. Presentera som tabell.
+Skapa ett PE-firmaprojekt med följande struktur:
+
+- firma/ med undermappar för compliance, fundraising och investor-relations
+- fonder/fond-I/ med fonddata, rapportering och prestanda
+- portfoljbolag/ med en mapp per bolag (bolag-x), vardera med
+  bolagsdata, analys, styrelsearbete, vardeskapande och output
+- pipeline/ med screening, aktiva-processer och avslutade
+- gemensamt/ med mallar, skills, ramverk, learnings och branschdata
+
+Skapa en CLAUDE.md i roten med:
+- Roll: erfaren PE-analytiker, nordisk mid-market
+- Regler: svenska, MSEK, en decimal, Executive Summary först,
+  rekommendation sist
+- Markera saknad data med [DATA SAKNAS]
+
+Skapa bolagsspecifika CLAUDE.md-filer för bolag-x med relevanta KPI:er.
+
+Skapa en pipeline/CLAUDE.md med screeningkriterier:
+- EV: 100–500 MSEK, Norden, positiv EBITDA, minst 30 MSEK omsättning
+
+Skapa skills för:
+- /screening — screening av nya investeringsmöjligheter
+- /kvartalsrapport — sammanställ kvartalsrapport för portföljbolag
+- /lp-rapport — sammanställ LP-rapport för fonden
+
+Initiera ett Git-repo.
 ```
 
-### Vecka 2–3: Bygg ut
+Claude Code skapar hela strukturen — alla mappar, CLAUDE.md-filer på varje nivå, skills och Git-repo.
 
-- Lägg till bolagsspecifika CLAUDE.md-filer
-- Skapa din första skill (screening eller kvartalsrapport)
-- Starta `gemensamt/learnings/LEARNINGS.md`
+### Nästa steg
 
-### Vecka 4+: Iterera
-
-- Lägg till fler bolag och pipeline
-- Granska lärdomar och inarbeta de bästa
-- Kopiera och anpassa exempelstrukturen från `templates/`
+1. **Lägg in dina filer** — kopiera årsredovisningar, kvartalsdata och andra dokument till rätt `bolagsdata/`-mappar
+2. **Extrahera till Markdown** — be Claude Code läsa PDF:erna och skapa Markdown-versioner
+3. **Testa med en riktig uppgift** — till exempel: *"Sammanfatta nyckeltal för de senaste tre åren för bolag X"*
+4. **Iterera** — be Claude Code justera CLAUDE.md, lägga till fler skills, starta en lärdomsfil
 
 ### Vad ger mest effekt snabbast?
 
-| Åtgärd | Tidsinsats | Effekt |
-|--------|------------|--------|
-| Skriv en rot-CLAUDE.md med grundregler | 10 minuter | Slipper förklara format och ton varje session |
-| Lägg bolagsdata i strukturerad mapp | 30 minuter | Claude hittar rätt data utan att du pekar |
-| Skapa en skill för vanligaste uppgiften | 20 minuter | Samma kvalitet varje gång |
-| Lägg till bolagsspecifik CLAUDE.md | 15 minuter | Claude förstår bolaget utan förklaring |
-| Starta en lärdomsfil | 5 minuter | Systemet börjar bli bättre över tid |
+| Åtgärd | Effekt |
+|--------|--------|
+| Ge Claude Code en bra projektbeskrivning | Hela grundstrukturen skapas på minuter |
+| Kopiera in bolagsdata och extrahera till Markdown | Claude hittar rätt data utan att du pekar |
+| Testa en vanlig uppgift (screening, kvartalsrapport) | Du ser direkt vad som fungerar och behöver justeras |
+| Starta en lärdomsfil | Systemet börjar bli bättre över tid |
 
-Börja uppifrån. Varje steg ger effekt i sig självt.
+Börja enkelt. Varje session gör systemet lite bättre.
 
 ---
 
