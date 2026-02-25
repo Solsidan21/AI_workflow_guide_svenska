@@ -46,10 +46,14 @@ markdown_extensions:
 
 nav:
   - Start: index.md
-  - Kapitel:
-      - 00 — Varför bli lite teknisk: 00-varfor-bli-teknisk.md
-      - 01 — AI-verktygslandskapet: 01-fran-chatt-till-system.md
-      - 02 — Claude Code: 02-claude-code.md
-      - 03 — Claude Cowork: 03-claude-cowork.md
-      - 04 — Mappstruktur och kontext: 04-mappstruktur-och-kontext.md
-      - 05 — PE-arbetsflöden med Claude: 05-pe-arbetsfloden.md
+  - Del 1 — Förstå landskapet:
+      - 00 — Grundbegrepp: 00-grundbegrepp.md
+      - 01 — AI-verktygslandskapet: 01-verktygslandskapet.md
+      - 02 — Promptteknik och kontext: 02-promptteknik-och-kontext.md
+      - 03 — Mappstruktur och arbetssätt: 03-mappstruktur-och-arbetssatt.md
+      - 04 — Strukturerad kontext: 04-strukturerad-kontext.md
+  - Del 2 — Praktiska exempel:
+      - 05 — Exempel: Studier: 05-exempel-studier.md
+      - 06 — Exempel: Private Equity: 06-exempel-private-equity.md
+      - 07 — Exempel: Marknadsförare: 07-exempel-marknadsforing.md
+      - 08 — Exempel: Konsult: 08-exempel-konsult.md

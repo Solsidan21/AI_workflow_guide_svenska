@@ -1,4 +1,4 @@
-# Exempel: Studier — Hela kursen i fickan
+# Kapitel 05 — Exempel: Studier — Hela kursen i fickan
 
 > *Hur du förvandlar en hel kurs till ett AI-system som hjälper dig plugga smartare.*
 
@@ -8,6 +8,6 @@ Kommer snart — hur du sätter upp ett kursrepo med PDF→Markdown→GitHub→C
 
 ---
 
-> *Föregående kapitel: [03 — Mappstruktur och arbetssätt](03-mappstruktur-och-arbetssatt.md)*
+> *Föregående kapitel: [04 — Strukturerad kontext](04-strukturerad-kontext.md)*
 >
-> *Nästa kapitel: [05 — Exempel: Private Equity](05-exempel-private-equity.md)*
+> *Nästa kapitel: [06 — Exempel: Private Equity](06-exempel-private-equity.md)*

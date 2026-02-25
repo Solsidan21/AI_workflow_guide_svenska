@@ -35,15 +35,16 @@ Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal för
 | 01 | [AI-verktygslandskapet](01-verktygslandskapet.md) | Trappan från chatt till system — Chat, Office, Code och Cowork |
 | 02 | [Promptteknik och kontext](02-promptteknik-och-kontext.md) | Varför kontext avgör allt — och teknikerna som gör skillnad |
 | 03 | [Mappstruktur och arbetssätt](03-mappstruktur-och-arbetssatt.md) | Det centrala arbetsflödet — CLAUDE.md, skills och PDF→Markdown→GitHub |
+| 04 | [Strukturerad kontext](04-strukturerad-kontext.md) | Varför navigerbar kontext + regler slår maxad kontext |
 
 ## Del 2 — Praktiska exempel
 
 | Nr | Kapitel | Beskrivning |
 |----|---------|-------------|
-| 04 | [Exempel: Studier](04-exempel-studier.md) | Hela kursen i fickan *(kommer snart)* |
-| 05 | [Exempel: Private Equity](05-exempel-private-equity.md) | Norvik Capital — hela firmans AI-system i praktiken |
-| 06 | [Exempel: Marknadsförare](06-exempel-marknadsforing.md) | AI i det dagliga arbetet *(kommer snart)* |
-| 07 | [Exempel: Konsult](07-exempel-konsult.md) | Från analys till leverans *(kommer snart)* |
+| 05 | [Exempel: Studier](05-exempel-studier.md) | Hela kursen i fickan *(kommer snart)* |
+| 06 | [Exempel: Private Equity](06-exempel-private-equity.md) | Norvik Capital — hela firmans AI-system i praktiken |
+| 07 | [Exempel: Marknadsförare](07-exempel-marknadsforing.md) | AI i det dagliga arbetet *(kommer snart)* |
+| 08 | [Exempel: Konsult](08-exempel-konsult.md) | Från analys till leverans *(kommer snart)* |
 
 ---
 

@@ -8,6 +8,6 @@ Kommer snart.
 
 ---
 
-> *Föregående kapitel: [05 — Exempel: Private Equity](05-exempel-private-equity.md)*
+> *Föregående kapitel: [06 — Exempel: Private Equity](06-exempel-private-equity.md)*
 >
-> *Nästa kapitel: [07 — Exempel: Konsult](07-exempel-konsult.md)*
+> *Nästa kapitel: [08 — Exempel: Konsult](08-exempel-konsult.md)*

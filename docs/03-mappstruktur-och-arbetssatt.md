@@ -567,4 +567,4 @@ Det viktigaste är inte att strukturen är perfekt från dag ett. Det viktigaste
 
 > *Föregående kapitel: [02 — Promptteknik och kontext](02-promptteknik-och-kontext.md)*
 >
-> *Nästa kapitel: [04 — Exempel: Studier](04-exempel-studier.md)*
+> *Nästa kapitel: [04 — Strukturerad kontext](04-strukturerad-kontext.md)*
