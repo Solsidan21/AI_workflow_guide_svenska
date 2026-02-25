@@ -4,7 +4,7 @@
 
 ---
 
-De tidigare kapitlen har gått igenom koncepten: kontext, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur jag — Arvid, som skrivit den här guiden — använder samma principer för mina egna studier. Inte för att klara tentan, utan för att faktiskt förstå materialet.
+De tidigare kapitlen har gått igenom koncepten: kontext, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur jag — Arvid, som skrivit den här guiden — använder samma principer för mina egna studier. Inte för att memorera lösningar, utan för att klara tentan genom att faktiskt kunna materialet.
 
 Jag läser ekonomie kandidatprogrammet och är inte programmerare. Men jag har byggt hela det system som beskrivs här, och det har förändrat hur jag pluggar. Arbetsflödet fungerar för vilken kurs som helst — du ska kunna ta det och anpassa till dina egna.
 
@@ -18,7 +18,7 @@ Jag läser ekonomie kandidatprogrammet och är inte programmerare. Men jag har b
 | **Termin** | Valfri termin, VT 2026 |
 | **Kurser** | Algebra & vektorgeometri, Envariabelsanalys |
 | **Verktyg** | Claude Chat med projekt + Claude Code |
-| **Mål** | Förstå matten — inte bara klara tentan |
+| **Mål** | Klara tentan genom att faktiskt kunna materialet |
 | **Teknisk nivå** | Inte programmerare |
 
 Jag läser två mattekurser parallellt. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill kunna ställa frågor mot kursmaterialet, få förklaringar med kursens metoder och öva inför tenta — utan att börja om från noll varje gång.
@@ -343,7 +343,7 @@ Varje lärdom gör systemet bättre. Efter några veckor vet Claude exakt vilken
 
 Öppna Claude Chat och beskriv din situation:
 
-> *"Jag läser [kurs 1] och [kurs 2] på universitet. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill bygga ett AI-system som hjälper mig plugga — med fokus på att förstå, inte bara klara tentan. Hjälp mig tänka igenom hur det borde se ut."*
+> *"Jag läser [kurs 1] och [kurs 2] på universitet. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill bygga ett AI-system som hjälper mig plugga — med fokus på att faktiskt kunna materialet, inte bara memorera lösningar. Hjälp mig tänka igenom hur det borde se ut."*
 
 Diskutera och iterera. Be sedan chatten ta fram en terminalredo prompt.
 
