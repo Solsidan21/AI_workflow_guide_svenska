@@ -436,6 +436,130 @@ Cowork gör det tunga lyftet. Code gör det precisa arbetet med kontext och regl
 
 ---
 
+## Samarbete i praktiken — hur teamet delar på strukturen
+
+Hittills har kapitlet beskrivit vad en enskild person kan göra med verktygen. Men Norvik Capital är sex personer. Hur delar de på strukturen? Hur säkerställer de att en skill som analytikern bygger kommer partnern till godo — utan att alla behöver sitta i terminalen?
+
+Det finns inget etablerat "rätt sätt" att organisera AI-samarbete i ett litet PE-team ännu. Men det finns pragmatiska lösningar som fungerar idag.
+
+### Claude Team-planen — rekommendationen för team
+
+Anthropic erbjuder en Team-plan (från $25/månad per person, minst 5 användare) som är den naturliga utgångspunkten för ett team som Norvik Capital. Den ger:
+
+- **Delade projekt (Projects)** — hela teamet kan se och arbeta mot samma kunskapsbas och instruktioner
+- **Flexibel åtkomst** — varje projekt kan vara privat, delat med specifika kollegor, eller synligt för hela organisationen
+- **Claude Code för alla** — samtliga teammedlemmar får tillgång
+- **Mer användning per person** än Pro-planen
+- **Central administration och fakturering** — en faktura, en admin
+
+Enterprise-planen finns för organisationer som behöver mer — audit logs, SSO, SAML, anpassade avtal och dataresidency. Men för ett 6-personsteam räcker Team-planen gott.
+
+### Vad som delas vs vad som är individuellt
+
+Teamets AI-arbete organiseras i tre lager:
+
+| Lager | Vad | Hur det delas | Verktyg |
+|-------|-----|---------------|---------|
+| **Gemensam infrastruktur** | Mallar, skills, CLAUDE.md-filer, ramverk, branschdata | Git-repo (GitHub/GitLab) | Claude Code |
+| **Gemensam kunskap** | Årsredovisningar, DD-rapporter, styrelsematerial per portföljbolag | Delade Projects i Claude Chat (Team-planen) | Claude Chat |
+| **Individuellt arbete** | Pågående analyser, utkast, egna anteckningar | Privata konversationer och projekt | Valfritt verktyg |
+
+Logiken:
+
+**Git-repot** innehåller allt som inte är konfidentiellt men som alla behöver — mappstrukturen, CLAUDE.md-filerna, skills, mallar. Det är firmans "AI-playbook". När analytikern förbättrar en skill eller lägger till en lärdom pushar hen till repot och alla får det.
+
+**Delade Projects i Claude Chat** är var det dagliga arbetet sker för de flesta i teamet. Partnern skapar ett projekt för "CloudFlow AB — Styrelsemöte Q3", laddar upp styrelsepaket och senaste kvartalsdata, och skriver Custom Instructions baserade på CloudFlows CLAUDE.md. VP:n kan sedan öppna samma projekt och ställa frågor mot samma material.
+
+**Privata konversationer** är för arbete som pågår — utkast, hypoteser, analyser som inte är redo att delas.
+
+### Arbetsflöde i praktiken — en typisk vecka på Norvik
+
+Så här kan en vecka se ut i praktiken:
+
+**Måndag — Ny deal-teaser**
+
+En deal-teaser kom in över helgen. Analytikern öppnar Claude Code i firma-repot, navigerar till `pipeline/` och kör screening-skillen på bolaget. Screening-memot sparas som en Markdown-fil i `pipeline/screening/` och pushas till repot. Partnern läser det i GitHub — eller drar ner repot lokalt om hen föredrar det.
+
+**Tisdag — Styrelsemöte förbereds**
+
+VP:n förbereder CloudFlows styrelsemöte. Hon öppnar det delade Claude Chat-projektet "CloudFlow — Styrelsearbete", där årsredovisningar och tidigare styrelsepaket redan finns uppladdade. Hon ber Claude sammanfatta avvikelser mot budget och föreslå diskussionspunkter. Eftersom Custom Instructions i projektet är baserade på CloudFlows CLAUDE.md får hon svar i rätt format och med rätt KPI:er redan från start.
+
+**Onsdag — Snabb fråga på språng**
+
+Partnern sitter i ett möte och behöver snabbt kolla en multipel. Han öppnar Claude Chat på telefonen och frågar: *"Vad är typiska EV/EBITDA-multiplar för nordisk bemanning?"* Snabb fråga, inget projekt behövs.
+
+**Torsdag — Modellarbete och memo**
+
+Analytikern arbetar i Excel med en LBO-modell för en pipeline-deal. Han använder Claude i Excel för att validera formler och testa scenarier. Senare på dagen kör han Claude Code för att generera ett strukturerat screening-memo baserat på modellen — med kontext från `pipeline/CLAUDE.md` och screening-skillen.
+
+**Fredag — LP-underlag**
+
+IR-ansvarig använder Cowork för att sammanställa underlag till nästa LP-uppdatering. Hon ger ett detaljerat uppdrag på morgonen och har ett utkast vid lunch. Hon öppnar det delade projektet "Fond I — LP-rapportering" i Claude Chat och itererar på utkastet i chatten.
+
+Notera mönstret: alla sex personerna använder AI under veckan, men de använder **olika verktyg** beroende på roll och uppgift. Och de drar alla nytta av samma underliggande struktur.
+
+### Git-repot som "AI-playbook"
+
+Git-repot med mappstrukturen, CLAUDE.md-filerna och skills är inte bara till för Claude Code — det är firmans dokumenterade arbetssätt för AI. Även teammedlemmar som aldrig öppnar terminalen drar nytta av det:
+
+- **Custom Instructions i delade Chat-projekt** kopieras från (eller inspireras av) CLAUDE.md-filerna i repot. När analytikern uppdaterar CloudFlows CLAUDE.md med nya KPI-definitioner kan VP:n kopiera samma text till sitt Chat-projekt.
+- **Skills-filerna fungerar som processdokumentation.** En skill som beskriver hur en screening ska göras — vilka kriterier, vilken struktur, vilken ton — är läsbar för alla, oavsett om de körs i Claude Code eller inte. Det är firmans "så här gör vi en screening".
+- **LEARNINGS.md är teamets gemensamma minnesbank.** Analytikern dokumenterar en lärdom om att LP-rapporter inte ska innehålla bolagsinterna KPI:er. Nästa gång IR-ansvarig skriver en LP-rapport i Chat kan hon kolla LEARNINGS.md för att undvika samma misstag.
+
+### Datasäkerhet och konfidentialitet
+
+Att använda AI i team kräver tydliga gränser för vad som hamnar var:
+
+- **Git-repot ska vara privat** — använd GitHub Private repo eller GitLab med åtkomstkontroll
+- **Lägg aldrig faktisk konfidentiell data i Git-repot** — bara mallar, skills, ramverk och anonymiserade exempel. Årsredovisningar, avtal och kundlistor hör inte hemma där
+- **Konfidentiell data hanteras i Claude Chat Projects** där åtkomsten styrs per projekt
+- **Med Team-planen** hanteras data enligt Anthropics användarpolicy — data används inte för att träna modeller
+- **Enterprise-planen** ger ytterligare säkerhet (audit logs, SSO, dataresidency-alternativ) — relevant för firmor med strikta compliance-krav
+- **Kontrollera alltid med firmans IT/compliance** innan känslig data laddas upp till någon molntjänst
+
+| Typ av data | Hör hemma i | Hör INTE hemma i |
+|-------------|-------------|-------------------|
+| CLAUDE.md-filer, skills, mallar | Git-repo | — |
+| Anonymiserade ramverk och branschdata | Git-repo | — |
+| Årsredovisningar, finansiell data | Claude Chat Projects (delat) | Git-repo |
+| DD-rapporter, avtal | Claude Chat Projects (begränsad åtkomst) | Git-repo |
+| Pågående utkast, hypoteser | Privata konversationer | Git-repo, delade Projects |
+
+### Om teamet inte vill använda terminalen
+
+Var realistisk: i ett 6-personsteam kommer kanske 1–2 personer använda Claude Code. Resten använder Chat. Och det är helt okej.
+
+Mappstrukturen och CLAUDE.md-filerna som det här kapitlet beskriver ger mest kraft i Claude Code. Men **samma principer** — tydliga instruktioner, strukturerad kunskap, konsekvent format — appliceras i Claude Chat genom Custom Instructions och Project Knowledge. Du förlorar automatiseringen och skills, men du behåller konsekvensen.
+
+Den som använder Claude Code blir teamets "AI-infrastruktur-person" — den som underhåller skills, CLAUDE.md och mallar som alla andra drar nytta av. Det är en naturlig rollfördelning:
+
+| Roll | Huvudverktyg | Bidrar med | Konsumerar |
+|------|-------------|------------|------------|
+| **Analytiker** | Claude Code, Excel | Bygger skills, underhåller CLAUDE.md, screening-memon | Branschdata, ramverk |
+| **VP / Director** | Claude Chat (Projects) | Styrelsematerial, bolagsanalyser | Skills (som processdokumentation), CLAUDE.md (som Custom Instructions) |
+| **Partner** | Claude Chat, telefon | Strategiska beslut, snabba frågor | Screening-memon, rapporter |
+| **IR / Admin** | Claude Chat, Cowork | LP-rapporter, fonddokumentation | Mallar, LEARNINGS.md |
+
+Alla bidrar. Alla konsumerar. Men de gör det med **olika verktyg** och på **olika nivåer**.
+
+### Checklista — samarbete i teamet
+
+| # | Åtgärd | Ansvarig | Klart? |
+|---|--------|----------|--------|
+| 1 | Skapa ett privat Git-repo med firmans mappstruktur | Analytiker / IT | ☐ |
+| 2 | Aktivera Claude Team-plan och bjud in teamet | Admin | ☐ |
+| 3 | Skriv rot-CLAUDE.md med firmans generella regler | Analytiker + Partner | ☐ |
+| 4 | Skapa CLAUDE.md per portföljbolag med bolagsspecifik kontext | Ansvarig per bolag | ☐ |
+| 5 | Skapa delade Claude Chat Projects per portföljbolag/fond | Ansvarig per bolag | ☐ |
+| 6 | Kopiera CLAUDE.md-innehåll till Custom Instructions i varje projekt | Den som skapar projektet | ☐ |
+| 7 | Bygg 1–2 skills för de vanligaste arbetsflödena | Analytiker | ☐ |
+| 8 | Starta LEARNINGS.md och etablera granskningsrutin | Teamet | ☐ |
+| 9 | Etablera rutin: uppdateringar i repot → uppdatera Chat-projekt | Alla | ☐ |
+
+Börja med steg 1–3. Resten kan läggas till successivt.
+
+---
+
 ## Självinlärning — hur Claude blir bättre över tid
 
 Det här är kapitlets viktigaste avsnitt. Allt annat — mappstruktur, CLAUDE.md, skills — är värdefullt i sig. Men **självinlärning** är det som gör systemet bättre för varje uppdrag istället för att stå stilla.
