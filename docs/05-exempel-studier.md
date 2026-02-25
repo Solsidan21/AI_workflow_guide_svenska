@@ -4,13 +4,13 @@
 
 ---
 
-De tidigare kapitlen har gått igenom koncepten: kontext, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur en student använder samma principer — inte för att klara tentan, utan för att faktiskt förstå materialet. Vi följer Arvid genom en termin med två mattekurser.
+De tidigare kapitlen har gått igenom koncepten: kontext, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur jag — Arvid, som skrivit den här guiden — använder samma principer för mina egna studier. Inte för att klara tentan, utan för att faktiskt förstå materialet.
 
-Arvid finns inte på riktigt. Men situationen, frustrationen och lösningen är byggda för att vara realistiska — du ska kunna ta arbetsflödet och anpassa det till dina egna kurser.
+Jag läser ekonomie kandidatprogrammet och är inte programmerare. Men jag har byggt hela det system som beskrivs här, och det har förändrat hur jag pluggar. Arbetsflödet fungerar för vilken kurs som helst — du ska kunna ta det och anpassa till dina egna.
 
 ---
 
-## Arvid i korthet
+## Min situation
 
 | | |
 |---|---|
@@ -19,35 +19,35 @@ Arvid finns inte på riktigt. Men situationen, frustrationen och lösningen är 
 | **Kurser** | Algebra & vektorgeometri, Envariabelsanalys |
 | **Verktyg** | Claude Chat med projekt + Claude Code |
 | **Mål** | Förstå matten — inte bara klara tentan |
-| **Teknisk nivå** | Inte programmerare. Har läst guidens Del 1. |
+| **Teknisk nivå** | Inte programmerare |
 
-Arvid läser två mattekurser parallellt. Han har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Han vill kunna ställa frågor mot kursmaterialet, få förklaringar med kursens metoder och öva inför tenta — utan att börja om från noll varje gång.
+Jag läser två mattekurser parallellt. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill kunna ställa frågor mot kursmaterialet, få förklaringar med kursens metoder och öva inför tenta — utan att börja om från noll varje gång.
 
 ---
 
 ## Problemet: Screenshot-cirkusen
 
-Arvid sitter med en uppgift i algebra. Han tar en screenshot, skickar den till Claude. Claude löser uppgiften — snabbt och korrekt. Men med Gauss-eliminering. Kursen har inte gått igenom Gauss-eliminering ännu. De använder ekvivalenta ekvationer och substitution.
+Jag sitter med en uppgift i algebra. Tar en screenshot, skickar till Claude. Claude löser uppgiften — snabbt och korrekt. Men med Gauss-eliminering. Min kurs har inte gått igenom Gauss-eliminering ännu. Vi använder ekvivalenta ekvationer och substitution.
 
-Arvid tar en ny screenshot — den här gången på facit — och skriver: "Lös som de gör här istället." Claude anpassar sig halvvägs, men blandar fortfarande in notation som inte matchar kursen.
+Jag tar en ny screenshot — den här gången på facit — och skriver: "Lös som de gör här istället." Claude anpassar sig halvvägs, men blandar fortfarande in notation som inte matchar kursen.
 
-Tredje försöket: Arvid tvingar Claude att läsa igenom en hel föreläsnings-PDF. Claude processar 40 sidor, hittar till slut rätt avsnitt, och svarar: "Ah, ni använder den metoden. Då kan jag förklara det så här."
+Tredje försöket: jag tvingar Claude att läsa igenom en hel föreläsnings-PDF. Claude processar 40 sidor, hittar till slut rätt avsnitt, och svarar: "Ah, ni använder den metoden. Då kan jag förklara det så här."
 
 Femton minuter. Varje gång.
 
 Nästa dag, ny uppgift. Samma kurs. Samma problem — Claude har glömt allt.
 
-Det här är exakt det problem som [kapitel 04](04-strukturerad-kontext.md) beskriver: ostrukturerad kontext kostar tid och ger sämre svar. Arvid ger Claude rätt information — men i fel format, utan regler, och utan minne mellan sessioner.
+Det här är exakt det problem som [kapitel 04](04-strukturerad-kontext.md) beskriver: ostrukturerad kontext kostar tid och ger sämre svar. Jag ger Claude rätt information — men i fel format, utan regler, och utan minne mellan sessioner.
 
 ---
 
 ## Lösningen steg för steg
 
-Arvids lösning följer arbetsflödet från [kapitel 03](03-mappstruktur-och-arbetssatt.md): samla, extrahera, publicera, koppla. Anpassat för studier.
+Min lösning följer arbetsflödet från [kapitel 03](03-mappstruktur-och-arbetssatt.md): samla, extrahera, publicera, koppla. Anpassat för studier.
 
 ### Steg 1 — Samla kursmaterial
 
-Arvid samlar allt han redan har:
+Jag samlade allt jag redan hade:
 
 - Föreläsningsanteckningar (PDF:er eller handskrivna → fotograferade)
 - Kursplan med lärandemål och examination
@@ -55,11 +55,11 @@ Arvid samlar allt han redan har:
 - Övningsuppgifter med facit
 - Gamla tentor med lösningsförslag
 
-Det mesta finns redan som PDF på kurshemsidan. Arvid laddar ner allt och lägger det i en mapp på datorn.
+Det mesta fanns redan som PDF på kurshemsidan. Jag laddade ner allt och la det i en mapp.
 
 ### Steg 2 — Claude Code extraherar till Markdown
 
-Arvid öppnar Claude Code i sin kursmapp och skriver:
+Jag öppnade Claude Code i kursmappen och skrev:
 
 ```
 Jag har lagt kursens föreläsningsanteckningar som PDF:er i pdf-original/.
@@ -113,11 +113,11 @@ mattekurser/
     └── envariabel/
 ```
 
-Notera: `pdf-original/` behålls som arkiv — Arvid arbetar aldrig direkt mot PDF:erna efter extraktion.
+Notera: `pdf-original/` behålls som arkiv — jag arbetar aldrig direkt mot PDF:erna efter extraktion.
 
 ### Steg 4 — Publicera och koppla
 
-Arvid ber Claude Code initiera ett Git-repo och pusha till GitHub. Sedan skapar han ett projekt i Claude Chat kopplat till repot. Nu har han samma kursmaterial tillgängligt i både Claude Code och Claude Chat — på bussen, i biblioteket, vid skrivbordet.
+Jag bad Claude Code initiera ett Git-repo och pusha till GitHub. Sedan skapade jag ett projekt i Claude Chat kopplat till repot. Nu har jag samma kursmaterial tillgängligt i både Claude Code och Claude Chat — på bussen, i biblioteket, vid skrivbordet.
 
 ---
 
@@ -125,7 +125,7 @@ Arvid ber Claude Code initiera ett Git-repo och pusha till GitHub. Sedan skapar 
 
 ### Rot-nivå: mattekurser/CLAUDE.md
 
-Den övergripande CLAUDE.md sätter regler som gäller för alla kurser:
+Min övergripande CLAUDE.md sätter regler som gäller för alla kurser:
 
 ```markdown
 ## Roll
@@ -159,7 +159,7 @@ universitetsmatte. Du är duktig på att förklara steg för steg.
 
 ### Kursnivå: algebra-vektorgeometri/CLAUDE.md
 
-Den kursspecifika CLAUDE.md lägger till det som är unikt för kursen:
+Den kursspecifika CLAUDE.md lägger till det som är unikt för just den kursen:
 
 ```markdown
 ## Kursöversikt
@@ -186,7 +186,7 @@ Föreläsningarna bygger på varandra i denna ordning:
 - Notation: vektorer skrivs med pil ovanför (ā), inte fetstil
 ```
 
-Det här är det som löser screenshot-cirkusen. Arvid behöver aldrig mer säga "nej, inte den metoden" — Claude vet redan vilka metoder kursen använder.
+Det här är det som löser screenshot-cirkusen. Jag behöver aldrig mer säga "nej, inte den metoden" — Claude vet redan vilka metoder kursen använder.
 
 ---
 
@@ -194,11 +194,11 @@ Det här är det som löser screenshot-cirkusen. Arvid behöver aldrig mer säga
 
 ### Claude Chat — snabba frågor och förklaring
 
-Arvid sitter på bussen och repeterar inför föreläsningen. Han öppnar Claude Chat (kopplat till kursrepot) på telefonen:
+Jag sitter på bussen och repeterar inför föreläsningen. Öppnar Claude Chat (kopplat till kursrepot) på telefonen:
 
 > *"Förklara vad en linjär avbildning är, med ett enkelt exempel."*
 
-Claude svarar med kursens terminologi och refererar till föreläsning 04 — utan att Arvid behöver peka ut vilken fil som är relevant.
+Claude svarar med kursens terminologi och refererar till föreläsning 04 — utan att jag behöver peka ut vilken fil som är relevant.
 
 > *"Jag fattar inte beviset för att determinanten av en produkt är produkten av determinanterna. Kan du gå igenom det steg för steg?"*
 
@@ -206,7 +206,7 @@ Claude hittar beviset i föreläsning 03 och bryter ner det.
 
 ### Claude Code — övning och tentaförberedelse
 
-Vid skrivbordet använder Arvid Claude Code för mer strukturerat arbete:
+Vid skrivbordet använder jag Claude Code för mer strukturerat arbete:
 
 **Vägledd övning:**
 ```
@@ -215,7 +215,7 @@ Vid skrivbordet använder Arvid Claude Code för mer strukturerat arbete:
 > lösningen utan att ge svaret direkt.
 ```
 
-Claude läser övningsfilerna, förstår svårighetsgraden, och skapar en liknande uppgift. När Arvid löser den steg för steg ger Claude feedback — inte facit.
+Claude läser övningsfilerna, förstår svårighetsgraden, och skapar en liknande uppgift. När jag löser den steg för steg ger Claude feedback — inte facit.
 
 **Tentaförberedelse:**
 ```
@@ -250,7 +250,7 @@ Claude kopplar ihop föreläsning 04 (linjära avbildningar) med föreläsning 0
 
 ## Skills för studier
 
-Arvid ber Claude Code skapa skills för sina vanligaste uppgifter:
+Jag har skapat skills för mina vanligaste uppgifter:
 
 ### /forklara — Förklara ett begrepp
 
@@ -294,11 +294,11 @@ Arvid ber Claude Code skapa skills för sina vanligaste uppgifter:
 
 ---
 
-## Självinlärning — systemet som lär sig med Arvid
+## Självinlärning — systemet som lär sig med mig
 
-Precis som i [kapitel 06](06-exempel-private-equity.md) kan Arvid bygga ett lärdomssystem. Men för studier ser det lite annorlunda ut.
+Precis som i [kapitel 06](06-exempel-private-equity.md) går det att bygga ett lärdomssystem. För studier ser det lite annorlunda ut.
 
-### Vad Arvid trackar
+### Vad jag trackar
 
 ```markdown
 ## Lärdomar
@@ -319,7 +319,7 @@ Precis som i [kapitel 06](06-exempel-private-equity.md) kan Arvid bygga ett lär
 - **Status:** [INARBETAD] — uppdaterat /ova-skillen
 ```
 
-Varje lärdom gör systemet bättre. Efter några veckor vet Claude exakt vilken notation, vilka metoder och vilken svårighetsgrad som gäller — utan att Arvid förklarar det.
+Varje lärdom gör systemet bättre. Efter några veckor vet Claude exakt vilken notation, vilka metoder och vilken svårighetsgrad som gäller — utan att jag förklarar det.
 
 ---
 
@@ -393,9 +393,9 @@ Det här kapitlet har visat hur koncepten från Del 1 hänger ihop för studier:
 - **Skills** som gör vanliga studiemoment repeterbara — förklara, öva, analysera tentor
 - **Självinlärning** som gör systemet bättre för varje vecka
 
-Arvid är fiktiv. Men arbetsflödet fungerar för vilken kurs som helst — juridik, ekonomi, naturvetenskap, språk. Principen är densamma: ge AI rätt material i rätt format med regler som hjälper den fokusera.
+Arbetsflödet fungerar för vilken kurs som helst — juridik, ekonomi, naturvetenskap, språk. Principen är densamma: ge AI rätt material i rätt format med regler som hjälper den fokusera.
 
-Femton minuter per screenshot, eller femton minuter en gång för att bygga systemet. Arvid valde det andra.
+Femton minuter per screenshot, eller femton minuter en gång för att bygga systemet. Jag valde det andra.
 
 ---
 
