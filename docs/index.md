@@ -41,7 +41,7 @@ Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal för
 
 | Nr | Kapitel | Beskrivning |
 |----|---------|-------------|
-| 05 | [Exempel: Studier](05-exempel-studier.md) | Hela kursen i fickan *(kommer snart)* |
+| 05 | [Exempel: Studier](05-exempel-studier.md) | Hela kursen i fickan — AI-system för universitetsstudier |
 | 06 | [Exempel: Private Equity](06-exempel-private-equity.md) | Norvik Capital — hela firmans AI-system i praktiken |
 | 07 | [Exempel: Marknadsförare](07-exempel-marknadsforing.md) | AI i det dagliga arbetet *(kommer snart)* |
 | 08 | [Exempel: Konsult](08-exempel-konsult.md) | Från analys till leverans *(kommer snart)* |

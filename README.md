@@ -32,7 +32,7 @@ Guiden är skriven för **kunskapsarbetare** som använder AI dagligen men inte 
 
 | Nr | Kapitel | Beskrivning |
 |----|---------|-------------|
-| 05 | [Exempel: Studier](docs/05-exempel-studier.md) | Hela kursen i fickan *(kommer snart)* |
+| 05 | [Exempel: Studier](docs/05-exempel-studier.md) | Hela kursen i fickan — AI-system för universitetsstudier |
 | 06 | [Exempel: Private Equity](docs/06-exempel-private-equity.md) | Norvik Capital — hela firmans AI-system i praktiken |
 | 07 | [Exempel: Marknadsförare](docs/07-exempel-marknadsforing.md) | AI i det dagliga arbetet *(kommer snart)* |
 | 08 | [Exempel: Konsult](docs/08-exempel-konsult.md) | Från analys till leverans *(kommer snart)* |
