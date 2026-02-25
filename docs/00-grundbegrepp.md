@@ -1,6 +1,6 @@
-# Kapitel 00 — Varför det lönar sig att bli lite teknisk
+# Kapitel 00 — Grundbegrepp
 
-> *Du är redan bra på AI. Här är det lilla extra som tar dig till en helt annan nivå.*
+> *Du är redan bra på AI. Här är de tio begreppen som tar dig till en helt annan nivå.*
 
 Du vet hur man skriver en bra prompt. Du får bra svar från Claude eller ChatGPT. Men varje gång du startar en ny session börjar du från noll — samma kontext, samma instruktioner, samma format.
 
@@ -24,7 +24,7 @@ Det här är de tio begreppen. Inget av dem är svårare än att lära sig ett n
 
 **Vad det är:** Ett textbaserat sätt att ge instruktioner till din dator. Istället för att klicka på ikoner skriver du kommandon.
 
-**Analogi:** Skillnaden mellan att peka på saker i en butik och att skriva en beställningslista. Båda fungerar, men skriftliga instruktioner kan vara mycket mer exakta: "Öppna mappen portfoljbolag-x, läs alla PDF:er i data/finansiellt/ och skriv en sammanfattning."
+**Analogi:** Skillnaden mellan att peka på saker i en butik och att skriva en beställningslista. Båda fungerar, men skriftliga instruktioner kan vara mycket mer exakta: "Öppna mappen mitt-projekt, läs alla PDF:er i data/ och skriv en sammanfattning."
 
 **Varför det spelar roll:** Claude Code lever i terminalen. Du behöver inte lära dig kommandon — Claude hjälper dig. Men att veta att terminalen finns, och att den inte är farlig, är steget som skiljer dig från "chattanvändare" till "AI-systembyggare".
 
@@ -121,7 +121,7 @@ Det här är de tio begreppen. Inget av dem är svårare än att lära sig ett n
 
 **Analogi:** Ordräknaren i Word, fast för AI. Claude bryter ner text i tokens och bearbetar dem en i taget. Varje modell har en maximal kontextlängd mätt i tokens.
 
-**Varför det spelar roll:** Om någon säger "det ryms inte i kontextfönstret" menar de att texten överskrider AI:ns tokengräns. Du slipper räkna tokens i praktiken, men det förklarar varför du ibland behöver sammanfatta (med `/compact` i Claude Code) för att frigöra plats. Filformat spelar också roll — en obearbetad PDF förbrukar många fler tokens än samma information i Markdown (mer om det i [kapitel 04](04-mappstruktur-och-kontext.md)).
+**Varför det spelar roll:** Om någon säger "det ryms inte i kontextfönstret" menar de att texten överskrider AI:ns tokengräns. Du slipper räkna tokens i praktiken, men det förklarar varför du ibland behöver sammanfatta för att frigöra plats. Filformat spelar också roll — en obearbetad PDF förbrukar många fler tokens än samma information i Markdown (mer om det i [kapitel 02](02-promptteknik-och-kontext.md)).
 
 ---
 
@@ -131,4 +131,6 @@ Tio begrepp. Inget av dem är raketvetenskap. Men tillsammans ger de dig ett spr
 
 Det viktiga är inte att du memorerar definitionerna. Det viktiga är att du inte känns avskräckt när du ser orden dyka upp. Du har nu kartan — resten av guiden visar vägen.
 
-> *Nästa kapitel: [01 — Från chatt till system](01-fran-chatt-till-system.md)*
+---
+
+> *Nästa kapitel: [01 — AI-verktygslandskapet](01-verktygslandskapet.md)*

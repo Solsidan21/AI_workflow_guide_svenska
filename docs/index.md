@@ -1,4 +1,4 @@
-# AI-instruktionsbok — Från Chat till Code
+# AI-djupdykningsguide — Från Chat till System
 
 **Du använder redan AI. Det här är guiden som visar vad som händer när du ger den regler, struktur och minne.**
 
@@ -10,9 +10,7 @@ Men du gör samma sak om och om igen. Varje session börjar från noll. Du kopie
 
 **Den här guiden handlar om språnget från att chatta med AI till att bygga ett system som gör AI 10x bättre på just ditt jobb.**
 
-Guiden använder **Claude som huvudexempel**, men principerna gäller oavsett AI-verktyg. Där det är relevant visar vi hur koncept översätts mellan verktyg.
-
-> **Planerat:** Ett dedikerat jämförelsekapitel ("Vilket verktyg för vilken uppgift?") är på väg.
+Guiden använder **Claude som huvudexempel**, men principerna gäller oavsett AI-verktyg.
 
 ---
 
@@ -23,30 +21,36 @@ För dig som:
 - Använder AI dagligen men upprepar samma typ av prompt gång på gång
 - Vet vad en bra prompt är men vill ha mer än engångssvar
 - Arbetar med analys, rapporter, presentationer eller beslutsunderlag
-- Är nyfiken på vad "Claude Code", "CLAUDE.md" och "skills" är — och varför alla pratar om det
+- Är nyfiken på vad "Claude Code", "CLAUDE.md" och "skills" är
 
 Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal förut. Men du behöver vara redo att ta ett steg utanför chatten.
 
 ---
 
-## Kapitel
+## Del 1 — Förstå landskapet
 
 | Nr | Kapitel | Beskrivning |
 |----|---------|-------------|
-| 00 | [Varför bli lite teknisk](00-varfor-bli-teknisk.md) | De ~10 begrepp som öppnar dörren till nästa nivå |
-| 01 | [AI-verktygslandskapet](01-fran-chatt-till-system.md) | Verktyg, trappan från chatt till system, och varför du ska sluta upprepa dig |
-| 02 | [Claude Code](02-claude-code.md) | Praktisk guide till verktyget som förändrar allt |
-| 03 | [Claude Cowork](03-claude-cowork.md) | Autonom AI som arbetar självständigt |
-| 04 | [Mappstruktur och kontext](04-mappstruktur-och-kontext.md) | Det som binder ihop allt — CLAUDE.md, filer och struktur |
-| 05 | [PE-arbetsflöden med Claude](05-pe-arbetsfloden.md) | Norvik Capital-exemplet — hela ekosystemet i praktiken |
+| 00 | [Grundbegrepp](00-grundbegrepp.md) | De ~10 begrepp som öppnar dörren till nästa nivå |
+| 01 | [AI-verktygslandskapet](01-verktygslandskapet.md) | Trappan från chatt till system — Chat, Office, Code och Cowork |
+| 02 | [Promptteknik och kontext](02-promptteknik-och-kontext.md) | Varför kontext avgör allt — och teknikerna som gör skillnad |
+| 03 | [Mappstruktur och arbetssätt](03-mappstruktur-och-arbetssatt.md) | Det centrala arbetsflödet — CLAUDE.md, skills och PDF→Markdown→GitHub |
+
+## Del 2 — Praktiska exempel
+
+| Nr | Kapitel | Beskrivning |
+|----|---------|-------------|
+| 04 | [Exempel: Studier](04-exempel-studier.md) | Hela kursen i fickan *(kommer snart)* |
+| 05 | [Exempel: Private Equity](05-exempel-private-equity.md) | Norvik Capital — hela firmans AI-system i praktiken |
+| 06 | [Exempel: Marknadsförare](06-exempel-marknadsforing.md) | AI i det dagliga arbetet *(kommer snart)* |
+| 07 | [Exempel: Konsult](07-exempel-konsult.md) | Från analys till leverans *(kommer snart)* |
 
 ---
 
 ## Mallar
 
-I repots [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates)-mapp finns färdiga startpunkter — CLAUDE.md-exempel, skills och projektstrukturer för Private Equity, marknadsföring och konsulting.
+I repots [`templates/`](../templates/)-mapp finns färdiga startpunkter — CLAUDE.md-exempel, skills och projektstrukturer för Private Equity, marknadsföring och konsulting.
 
 ---
 
-!!! tip "Allt innehåll på svenska"
-    Tekniska termer förklaras första gången de dyker upp. Engelska facktermer används bara när det är branschstandard (till exempel "prompt", "skill", "repository").
+> Allt innehåll på svenska. Tekniska termer förklaras första gången de dyker upp. Engelska facktermer används bara när det är branschstandard.
