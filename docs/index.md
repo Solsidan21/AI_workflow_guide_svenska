@@ -36,6 +36,9 @@ Du behöver inte kunna programmera. Jag kan inte det heller. Men du är redo att
 
 Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad som händer när du ger AI regler, struktur och minne.
 
+!!! info "En insikt som förändrade mitt arbetsflöde"
+    Det enklaste sättet att göra AI bättre är inte att skriva bättre promptar — det är att sluta mata den med råa PDF:er. PDF:er kostar mångfalt mer kontext, tabeller feltolkas, och AI:n kan inte navigera till rätt sida. Kapitel 02 och 03 visar hur du löser det.
+
 ---
 
 ## Kapitelöversikt

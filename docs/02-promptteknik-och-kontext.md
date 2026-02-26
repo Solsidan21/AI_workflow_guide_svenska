@@ -40,16 +40,7 @@ Moderna modeller som Claude har stora kontextfönster — nog för att hantera l
 
 ### Varför filformat spelar roll
 
-Inte all information kostar lika mycket kontext:
-
-| Format | Kontextkostnad | Precision |
-|--------|---------------|-----------|
-| **Markdown** | Låg — ren text, minimal overhead | Hög — AI läser exakt det som står |
-| **CSV** | Låg — strukturerad data | Hög — tydliga kolumner och rader |
-| **PDF** | Hög — AI måste tolka hela dokumentet | Varierande — tabeller kan feltolkas |
-| **Excel (.xlsx)** | Medel till hög | God — men kräver konvertering |
-
-En 50-sidig PDF förbrukar enormt med tokens varje gång den läses — även om du bara behöver tre rader. Samma information i Markdown kostar en bråkdel. Mer om hur du löser detta i [kapitel 03](03-mappstruktur-och-arbetssatt.md).
+Inte all information kostar lika mycket kontext. En 50-sidig PDF förbrukar enormt med tokens varje gång den läses — även om du bara behöver tre rader. Samma information i Markdown kostar en bråkdel. Se [PDF-problemet](#pdf-problemet-den-vanligaste-flaskhalsen) nedan och [kapitel 03](03-mappstruktur-och-arbetssatt.md) för hur du löser det.
 
 ---
 
@@ -191,17 +182,27 @@ Claude kan arbeta med de flesta vanliga filtyper:
 | **PowerPoint (.pptx)** | Ja | Ja | Textinnehåll extraheras |
 | **Kod** | Ja | Ja | Alla vanliga programmeringsspråk |
 
-### PDF-problemet
+---
 
-PDF:er är branschstandard för rapporter och officiella dokument. Men för AI är de problematiska:
+## PDF-problemet — den vanligaste flaskhalsen
 
-1. **AI måste tolka hela dokumentet.** Den kan inte "bläddra" till rätt sida — den processar allt från framsida till appendix.
-2. **Det förbrukar enormt med tokens.** En 50-sidig årsredovisning äter upp tusentals tokens varje gång den läses in.
-3. **Formatering tolkas ofta fel.** Tabeller, kolumner och sidbrytningar i PDF:er översätts dåligt till text.
+De flesta kunskapsarbetare har sina viktigaste dokument som PDF:er — årsredovisningar, rapporter, kursböcker, avtal. Och PDF:er fungerar i alla AI-verktyg. Så vad är problemet?
 
-**Analogi:** Det är som att ge en konsult en hel bokhylla när du egentligen bara behöver ett kalkylblad. Konsulten klarar det — men det tar tid och risken för missförstånd ökar.
+PDF:er är byggda för människor att läsa på skärm. De är **inte byggda för AI att arbeta med.** Tre saker gör dem problematiska:
 
-Lösningen? Bearbeta PDF:er till Markdown en gång — sedan arbetar du mot den bearbetade versionen. Mer om detta i [kapitel 03](03-mappstruktur-och-arbetssatt.md).
+**1. AI:n måste tolka hela dokumentet.** Den kan inte "bläddra" till rätt sida — den processar allt från framsida till appendix, varje gång.
+
+**2. Det förbrukar enormt med kontext.** En 50-sidig årsredovisning äter tusentals tokens varje gång den läses in. Samma information i Markdown kostar en bråkdel.
+
+**3. Formatering tolkas ofta fel.** Tabeller, kolumner och sidbrytningar i PDF:er översätts dåligt till text. Siffror hamnar i fel kolumn. Formler försvinner.
+
+| Format | Kontextkostnad | Precision |
+|--------|---------------|-----------|
+| **Markdown** | Låg — ren text, minimal overhead | Hög — AI läser exakt det som står |
+| **CSV** | Låg — strukturerad data | Hög — tydliga kolumner och rader |
+| **PDF** | Hög — AI måste tolka hela dokumentet | Varierande — tabeller kan feltolkas |
+
+**Lösningen** är inte att sluta använda PDF:er — de är ofta det enda formatet du får. Lösningen är att bearbeta dem till Markdown *en gång*, och sedan arbeta mot den bearbetade versionen. Originalet behåller du som källa. Exakt hur du gör det beskrivs i [kapitel 03](03-mappstruktur-och-arbetssatt.md).
 
 ---
 
