@@ -1,36 +1,40 @@
-# Sluta hoppas att AI:n förstår
+# AI-djupdykning — Från chatt till system
 
-> **Du har redan bra promptar och smarta uppsättningar. Den här guiden visar hur du går från "det funkar oftast" till "den gör exakt vad jag vill, varje gång."**
-
----
-
-Du har Custom GPTs med instruktioner.
-Du har Projects med filer.
-Resultatet är bra — ibland.
-
-Men du kan inte riktigt förklara varför det funkar när det funkar.
-Och du vet inte vad som gick fel när det inte gör det.
-
-**Den här guiden visar hur du bygger AI-system du faktiskt kan styra —
-med regler, struktur och minne som inte försvinner.**
-
-Guiden använder **Claude som huvudexempel**, men principerna gäller oavsett AI-verktyg.
+> *Jag heter Arvid, läser ekonomi och har ingen teknisk bakgrund. Under några intensiva veckor dök jag djupt ner i hur AI-verktyg faktiskt fungerar — bortom chatten. Det här är vad jag önskar att någon hade förklarat för mig innan jag började.*
 
 ---
 
-!!! tip "Du behöver inte programmera"
-    Jag som skrivit guiden — Arvid — läser ekonomie kandidatprogrammet och är inte programmerare. Allt du ser här har jag byggt utan att kunna koda. Du behöver inte ha öppnat en terminal förut, men du behöver vara redo att ta ett steg utanför chatten.
+## Varför den här guiden finns
+
+I början av 2025 hörde jag alla prata om AI — att man måste lära sig koda, att jobb kommer försvinna, att allt förändras. Så jag tänkte: om AI verkligen är så kraftfullt borde jag kunna bygga den app jag gått och tänkt på länge.
+
+Jag startade. Och fick börja om. Tre gånger på tre veckor — för att jag inte förstod hur man faktiskt bygger ett system, inte bara chattar med AI. Parallellt upptäckte jag vad verktygen kunde göra i arbetslivet: jag satte upp en agent åt min mamma som automatiserade uppgifter som normalt tog timmar.
+
+När jag sedan försökte förklara allt jag lärt mig för familj och vänner utan teknisk bakgrund insåg jag hur svårt det var. Det här är resultatet — guiden jag önskar att jag hade haft innan jag dök in i det här enorma området.
+
+Den är skriven för dig som redan använder AI dagligen men vill förstå hur du bygger system som gör AI 10x bättre på just ditt jobb. Inte genom bättre promptar — utan genom struktur, regler och minne.
+
+Du behöver inte kunna programmera. Jag kan inte det heller. Men du är redo att ta ett steg utanför chatten.
+
+---
+
+!!! tip "Varför Claude som huvudexempel?"
+    Jag började faktiskt med OpenAI:s Codex via ChatGPT Pro, testade sedan Claude Code, och använder Cursor för apputveckling. Jag kan inte säga vilken AI som är "bäst" — landskapet förändras varje vecka och det finns starka alternativ från OpenAI, Google, Meta och DeepSeek.
+
+    Anledningen till att Claude är huvudexemplet i den här guiden är konkret: **Claude Projects har en inbyggd GitHub-integration.** Jag syncar mitt repo till ett projekt, och Claude ser alla ändringar automatiskt — utan att jag behöver ladda ner och ladda upp filer varje gång jag pushar. Det sparar enormt med tid och gör arbetsflödet smidigt.
+
+    Det är den enda anledningen jag med säkerhet kan peka på. Principerna i guiden — regler, struktur, persistent kontext — fungerar oavsett verktyg.
 
 ---
 
 ## Känner du igen dig?
 
-- Du har en Custom GPT som ger bra svar — men ibland helt ignorerar sina instruktioner, och du vet inte varför
-- Du laddar upp filer i ett Project varje gång, men Claude verkar glömma hälften ändå
+- Du har en Custom GPT eller ett Claude-projekt som ger bra svar — men ibland helt ignorerar sina instruktioner, och du vet inte varför
+- Du laddar upp filer varje gång, men AI:n verkar glömma hälften ändå
 - Du kopierar samma kontext mellan sessioner och undrar om det finns ett bättre sätt
-- Du vill att AI:n ska följa *kursens* metod, inte sin egen — men vet inte hur du tvingar den
+- Du vill att AI:n ska följa *din* metod, inte sin egen — men vet inte hur du styr den
 
-Om något av det stämmer in är du på rätt ställe.
+Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad som händer när du ger AI regler, struktur och minne.
 
 ---
 

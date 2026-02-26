@@ -17,7 +17,7 @@ Det finns idag flera kraftfulla AI-verktyg, och du använder förmodligen redan 
 | **Gemini** (Google) | Djup Google-integration, stark på sökning | Research, sammanfattning, arbete i Google Workspace |
 | **Copilot** (Microsoft) | Inbyggd i Microsoft 365 | Excel, PowerPoint, Word — direkt i verktygen du redan använder |
 
-**Varför Claude som huvudexempel?** Claude erbjuder det bredaste spektrumet från enkel chatt till autonoma agenter, med ett mellanlager (Claude Code) som ger kunskapsarbetare möjlighet att bygga persistenta system — regler, skills och mappstruktur. Det gör det till det mest illustrativa exemplet för den resa den här guiden beskriver. Men principerna — persistent kontext, regler, återanvändbara arbetsflöden — gäller oavsett verktyg.
+**Varför Claude som huvudexempel?** Kort svar: det är verktyget jag själv lärt mig med, och Claude Projects GitHub-integration gör arbetsflödet smidigt. Längre förklaring finns på [startsidan](index.md). Principerna i guiden — persistent kontext, regler, återanvändbara arbetsflöden — gäller oavsett verktyg.
 
 ---
 

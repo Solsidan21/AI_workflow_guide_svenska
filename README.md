@@ -1,6 +1,6 @@
-# AI-djupdykningsguide — Från Chat till System
+# AI-djupdykning — Från chatt till system
 
-**En guide för dig som redan använder AI men vill ta språnget från engångsprompts till ett system som gör AI 10x bättre på just ditt jobb.**
+**En guide för dig som redan använder AI men vill förstå hur du bygger system som gör AI 10x bättre på just ditt jobb.**
 
 ---
 
