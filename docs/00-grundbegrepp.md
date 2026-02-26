@@ -1,12 +1,12 @@
 # Kapitel 00 — Grundbegrepp
 
-> *Du är redan bra på AI. Här är de tio begreppen som tar dig till en helt annan nivå.*
+> *Du är redan bra på AI. Här är de elva begreppen som tar dig till en helt annan nivå.*
 
 Du vet hur man skriver en bra prompt. Du får bra svar från Claude eller ChatGPT. Men varje gång du startar en ny session börjar du från noll — samma kontext, samma instruktioner, samma format.
 
 Det beror inte på att du gör något fel. Det beror på att du saknar ett ordförråd — en handfull tekniska begrepp som öppnar dörren till verktyg där AI faktiskt kan minnas, följa regler och arbeta med dina filer.
 
-Det här är de tio begreppen. Inget av dem är svårare än att lära sig ett nytt Excel-kortkommando. Men tillsammans förändrar de hur du arbetar med AI.
+Det här är de elva begreppen. Inget av dem är svårare än att lära sig ett nytt Excel-kortkommando. Men tillsammans förändrar de hur du arbetar med AI.
 
 ---
 
@@ -125,9 +125,19 @@ Det här är de tio begreppen. Inget av dem är svårare än att lära sig ett n
 
 ---
 
+## 11. Agent (AI-agent)
+
+**Vad det är:** Ett AI-system som inte bara svarar på frågor utan kan *agera* — planera steg, använda verktyg, fatta beslut och utföra uppgifter självständigt. En agent kan till exempel söka på webben, skicka mejl, skapa filer eller köra kod — allt baserat på ett övergripande mål du ger den.
+
+**Analogi:** Skillnaden mellan att fråga en kollega "vad tycker du om det här?" (chatt) och att säga "ta hand om det här och återkom när det är klart" (agent). Kollegan planerar själv vilka steg som behövs, vilka verktyg som krävs och i vilken ordning saker ska göras.
+
+**Varför det spelar roll:** Du hör allt oftare om "marknadsföringsagenter", "kodagenter" och "research-agenter". Det är inte magi — det är AI som fått tillgång till verktyg och regler, precis som det systemtänk den här guiden beskriver. Claude Cowork är ett exempel: istället för att du ger instruktioner steg för steg kan AI:n arbeta mer självständigt inom ramarna du satt upp.
+
+---
+
 ## Du är redo
 
-Tio begrepp. Inget av dem är raketvetenskap. Men tillsammans ger de dig ett språk för att ta dig bortom chatten.
+Elva begrepp. Inget av dem är raketvetenskap. Men tillsammans ger de dig ett språk för att ta dig bortom chatten.
 
 Det viktiga är inte att du memorerar definitionerna. Det viktiga är att du inte känns avskräckt när du ser orden dyka upp. Du har nu kartan — resten av guiden visar vägen.
 
