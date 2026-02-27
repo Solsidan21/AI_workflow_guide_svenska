@@ -24,7 +24,7 @@ Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal för
 Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad som händer när du ger AI regler, struktur och minne.
 
 ??? note "Vem har skrivit det här?"
-    Jag heter Arvid, läser ekonomi och har ingen teknisk bakgrund. Det är enormt mycket snack om AI just nu, så jag tänkte: om det verkligen stämmer borde jag kunna bygga den app jag gått och tänkt på länge.
+    Jag heter Arvid, läser ekonomi och matematik på Lunds Universitet och har egentligen ingen teknisk bakgrund. Det är enormt mycket snack om AI just nu, så jag tänkte: om det verkligen stämmer borde jag kunna bygga den app jag gått och tänkt på länge.
 
     Jag startade. Och fick börja om. Tre gånger på tre veckor, för att jag inte förstod hur man faktiskt bygger ett system, inte bara chattar med AI. Parallellt upptäckte jag vad verktygen kunde göra i arbetslivet: jag satte upp en agent åt min mamma som automatiserade uppgifter som normalt tog timmar.
 
