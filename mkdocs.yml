@@ -44,6 +44,11 @@ markdown_extensions:
   - toc:
       permalink: true
 
+extra:
+  analytics:
+    provider: google
+    property: G-YDFX3B82KF
+
 nav:
   - Start: index.md
   - Del 1 — Förstå landskapet:
