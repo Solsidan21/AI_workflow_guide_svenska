@@ -4,9 +4,9 @@
 
 ---
 
-De tidigare kapitlen har gått igenom koncepten: kontext, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur jag — Arvid, som skrivit den här guiden — använder samma principer för mina egna studier. Inte för att memorera lösningar, utan för att klara tentan genom att faktiskt kunna materialet.
+De tidigare kapitlen har gått igenom koncepten: kontext, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur jag, Arvid, som skrivit den här guiden, använder samma principer för mina egna studier. Inte för att memorera lösningar, utan för att klara tentan genom att faktiskt kunna materialet.
 
-Jag läser ekonomie kandidatprogrammet och är inte programmerare. Men jag har byggt hela det system som beskrivs här, och det har förändrat hur jag pluggar. Arbetsflödet fungerar för vilken kurs som helst — du ska kunna ta det och anpassa till dina egna.
+Jag läser ekonomie kandidatprogrammet och är inte programmerare. Men jag har byggt hela det system som beskrivs här, och det har förändrat hur jag pluggar. Arbetsflödet fungerar för vilken kurs som helst. Du ska kunna ta det och anpassa till dina egna.
 
 ---
 
@@ -21,23 +21,23 @@ Jag läser ekonomie kandidatprogrammet och är inte programmerare. Men jag har b
 | **Mål** | Klara tentan genom att faktiskt kunna materialet |
 | **Teknisk nivå** | Inte programmerare |
 
-Jag läser två mattekurser parallellt. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill kunna ställa frågor mot kursmaterialet, få förklaringar med kursens metoder och öva inför tenta — utan att börja om från noll varje gång.
+Jag läser två mattekurser parallellt. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill kunna ställa frågor mot kursmaterialet, få förklaringar med kursens metoder och öva inför tenta, utan att börja om från noll varje gång.
 
 ---
 
 ## Problemet: Screenshot-cirkusen
 
-Jag sitter med en uppgift i algebra. Tar en screenshot, skickar till Claude. Claude löser uppgiften — snabbt och korrekt. Men med Gauss-eliminering. Min kurs har inte gått igenom Gauss-eliminering ännu. Vi använder ekvivalenta ekvationer och substitution.
+Jag sitter med en uppgift i algebra. Tar en screenshot, skickar till Claude. Claude löser uppgiften, snabbt och korrekt. Men med Gauss-eliminering. Min kurs har inte gått igenom Gauss-eliminering ännu. Vi använder ekvivalenta ekvationer och substitution.
 
-Jag tar en ny screenshot — den här gången på facit — och skriver: "Lös som de gör här istället." Claude anpassar sig halvvägs, men blandar fortfarande in notation som inte matchar kursen.
+Jag tar en ny screenshot, den här gången på facit, och skriver: "Lös som de gör här istället." Claude anpassar sig halvvägs, men blandar fortfarande in notation som inte matchar kursen.
 
 Tredje försöket: jag tvingar Claude att läsa igenom en hel föreläsnings-PDF. Claude processar 40 sidor, hittar till slut rätt avsnitt, och svarar: "Ah, ni använder den metoden. Då kan jag förklara det så här."
 
 Femton minuter. Varje gång.
 
-Nästa dag, ny uppgift. Samma kurs. Samma problem — Claude har glömt allt.
+Nästa dag, ny uppgift. Samma kurs. Samma problem: Claude har glömt allt.
 
-Det här är exakt det problem som [kapitel 04](04-strukturerad-kontext.md) beskriver: ostrukturerad kontext kostar tid och ger sämre svar. Jag ger Claude rätt information — men i fel format, utan regler, och utan minne mellan sessioner.
+Det här är exakt det problem som [kapitel 04](04-strukturerad-kontext.md) beskriver: ostrukturerad kontext kostar tid och ger sämre svar. Jag ger Claude rätt information, men i fel format, utan regler, och utan minne mellan sessioner.
 
 ---
 
@@ -113,11 +113,11 @@ mattekurser/
     └── envariabel/
 ```
 
-Notera: `pdf-original/` behålls som arkiv — jag arbetar aldrig direkt mot PDF:erna efter extraktion.
+Notera: `pdf-original/` behålls som arkiv. Jag arbetar aldrig direkt mot PDF:erna efter extraktion.
 
 ### Steg 4 — Publicera och koppla
 
-Jag bad Claude Code initiera ett Git-repo och pusha till GitHub. Sedan skapade jag ett projekt i Claude Chat kopplat till repot. Nu har jag samma kursmaterial tillgängligt i både Claude Code och Claude Chat — på bussen, i biblioteket, vid skrivbordet.
+Jag bad Claude Code initiera ett Git-repo och pusha till GitHub. Sedan skapade jag ett projekt i Claude Chat kopplat till repot. Nu har jag samma kursmaterial tillgängligt i både Claude Code och Claude Chat, på bussen, i biblioteket, vid skrivbordet.
 
 ---
 
@@ -186,7 +186,7 @@ Föreläsningarna bygger på varandra i denna ordning:
 - Notation: vektorer skrivs med pil ovanför (ā), inte fetstil
 ```
 
-Det här löser inte allt — Claude missar fortfarande ibland. Men istället för femton minuter av screenshots och "nej, inte den metoden" handlar det om en snabb korrigering. Claude är redan i rätt spår.
+Det här löser inte allt. Claude missar fortfarande ibland. Men istället för femton minuter av screenshots och "nej, inte den metoden" handlar det om en snabb korrigering. Claude är redan i rätt spår.
 
 ---
 
@@ -213,13 +213,13 @@ Code hanterar filerna, jag pushar, och nästa gång jag öppnar Chat har projekt
 
 ### Claude Chat — dagligt pluggande
 
-Allt faktiskt pluggande gör jag i Claude Chat. Projektet är kopplat till GitHub-repot, så Chat har tillgång till alla föreläsningar, regler och kursmaterial — utan att jag behöver sitta i terminalen.
+Allt faktiskt pluggande gör jag i Claude Chat. Projektet är kopplat till GitHub-repot, så Chat har tillgång till alla föreläsningar, regler och kursmaterial, utan att jag behöver sitta i terminalen.
 
 **Snabba frågor — på bussen, i biblioteket:**
 
 > *"Förklara vad en linjär avbildning är, med ett enkelt exempel."*
 
-Claude svarar med kursens terminologi och refererar till föreläsning 04 — utan att jag behöver peka ut vilken fil som är relevant.
+Claude svarar med kursens terminologi och refererar till föreläsning 04, utan att jag behöver peka ut vilken fil som är relevant.
 
 > *"Jag fattar inte beviset för att determinanten av en produkt är produkten av determinanterna. Kan du gå igenom det steg för steg?"*
 
@@ -229,7 +229,7 @@ Claude hittar beviset i föreläsning 03 och bryter ner det.
 
 > *"Jag vill öva på linjära ekvationssystem. Ge mig en uppgift på samma nivå som övning 2, uppgift 3–5. Vägled mig genom lösningen utan att ge svaret direkt."*
 
-Claude läser övningsfilerna, förstår svårighetsgraden, och skapar en liknande uppgift. Om jag tyckte en uppgift var svår och vill göra en till — men det inte finns fler i kursmaterialet — skapar Chat en ny direkt.
+Claude läser övningsfilerna, förstår svårighetsgraden, och skapar en liknande uppgift. Om jag tyckte en uppgift var svår och vill göra en till, men det inte finns fler i kursmaterialet, skapar Chat en ny direkt.
 
 **Förklara på djupet:**
 
@@ -245,7 +245,7 @@ Claude läser samtliga tentor, identifierar mönster, och ger en datadriven stud
 
 ### Varför Chat för pluggande?
 
-Chat-UI:t är bättre för det som pluggande faktiskt är — konversation. Jag ställer en fråga, får ett svar, följer upp, ber om ett till exempel. Det flödet funkar sämre i en terminal. Och eftersom Chat-projektet är syncat med GitHub har det exakt samma kontext som Code byggde — CLAUDE.md-regler, kursmaterial, allt.
+Chat-UI:t är bättre för det som pluggande faktiskt är: konversation. Jag ställer en fråga, får ett svar, följer upp, ber om ett till exempel. Det flödet funkar sämre i en terminal. Och eftersom Chat-projektet är syncat med GitHub har det exakt samma kontext som Code byggde: CLAUDE.md-regler, kursmaterial, allt.
 
 ### Typisk vecka
 
@@ -262,9 +262,9 @@ Chat-UI:t är bättre för det som pluggande faktiskt är — konversation. Jag 
 
 ## Skills — strukturerade arbetssätt
 
-Skills är en Claude Code-funktion: Markdown-filer i `.claude/skills/` som definierar steg-för-steg-arbetssätt. I Code triggar du dem med `/forklara` eller `/ova`. Men i praktiken behöver jag dem sällan direkt — eftersom Chat-projektet är syncat med GitHub har Claude redan tillgång till samma filer, och CLAUDE.md-reglerna ser till att Claude följer rätt approach oavsett. Jag skriver bara "skapa en övningsuppgift om determinanter" i Chat och det funkar.
+Skills är en Claude Code-funktion: Markdown-filer i `.claude/skills/` som definierar steg-för-steg-arbetssätt. I Code triggar du dem med `/forklara` eller `/ova`. Men i praktiken behöver jag dem sällan direkt, eftersom Chat-projektet är syncat med GitHub har Claude redan tillgång till samma filer, och CLAUDE.md-reglerna ser till att Claude följer rätt approach oavsett. Jag skriver bara "skapa en övningsuppgift om determinanter" i Chat och det funkar.
 
-Skills är ändå värda att skapa. De tvingar dig att tänka igenom *hur* du vill att Claude ska arbeta — och det gör både Code och Chat bättre.
+Skills är ändå värda att skapa. De tvingar dig att tänka igenom *hur* du vill att Claude ska arbeta, och det gör både Code och Chat bättre.
 
 ### /forklara — Förklara ett begrepp
 
@@ -333,7 +333,7 @@ Precis som i [kapitel 06](06-exempel-private-equity.md) går det att bygga ett l
 - **Status:** [INARBETAD] — uppdaterat /ova-skillen
 ```
 
-Varje lärdom gör systemet bättre. Efter några veckor vet Claude exakt vilken notation, vilka metoder och vilken svårighetsgrad som gäller — utan att jag förklarar det.
+Varje lärdom gör systemet bättre. Efter några veckor vet Claude exakt vilken notation, vilka metoder och vilken svårighetsgrad som gäller, utan att jag förklarar det.
 
 ---
 
@@ -343,7 +343,7 @@ Varje lärdom gör systemet bättre. Efter några veckor vet Claude exakt vilken
 
 Öppna Claude Chat och beskriv din situation:
 
-> *"Jag läser [kurs 1] och [kurs 2] på universitet. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill bygga ett AI-system som hjälper mig plugga — med fokus på att faktiskt kunna materialet, inte bara memorera lösningar. Hjälp mig tänka igenom hur det borde se ut."*
+> *"Jag läser [kurs 1] och [kurs 2] på universitet. Jag har föreläsningsanteckningar, kursplaner, formelsamlingar och gamla tentor som PDF:er. Jag vill bygga ett AI-system som hjälper mig plugga, med fokus på att faktiskt kunna materialet, inte bara memorera lösningar. Hjälp mig tänka igenom hur det borde se ut."*
 
 Diskutera och iterera. Be sedan chatten ta fram en terminalredo prompt.
 
@@ -379,10 +379,10 @@ Initiera ett Git-repo.
 
 ### Nästa steg
 
-1. **Lägg in dina PDF:er** — kopiera föreläsningar, kursplan, formelsamling och tentor till rätt mappar
-2. **Extrahera till Markdown** — be Claude Code läsa PDF:erna och skapa Markdown-versioner
-3. **Testa i Chat med en riktig uppgift** — till exempel: *"Jag fattar inte det här med linjärt beroende — förklara"*
-4. **Iterera** — justera CLAUDE.md när Claude använder fel metod eller notation, lägg till fler skills
+1. **Lägg in dina PDF:er:** kopiera föreläsningar, kursplan, formelsamling och tentor till rätt mappar
+2. **Extrahera till Markdown:** be Claude Code läsa PDF:erna och skapa Markdown-versioner
+3. **Testa i Chat med en riktig uppgift:** till exempel: *"Jag fattar inte det här med linjärt beroende, förklara"*
+4. **Iterera:** justera CLAUDE.md när Claude använder fel metod eller notation, lägg till fler skills
 
 ### Vad ger mest effekt snabbast?
 
@@ -401,13 +401,13 @@ Börja med en kurs. Lägg in föreläsningarna. Testa att fråga något. Systeme
 
 Det här kapitlet har visat hur koncepten från Del 1 hänger ihop för studier:
 
-- **Mappstruktur** som speglar kurserna — en mapp per kurs med föreläsningar, övningar och tentor
+- **Mappstruktur** som speglar kurserna: en mapp per kurs med föreläsningar, övningar och tentor
 - **CLAUDE.md-hierarki** med pedagogiska regler på rotnivå och kursspecifika metoder och notation per kurs
-- **Rätt verktyg för rätt uppgift** — Code bygger systemet, Chat är den dagliga studiepartnern
-- **Skills** som gör vanliga studiemoment repeterbara — förklara, öva, analysera tentor
+- **Rätt verktyg för rätt uppgift:** Code bygger systemet, Chat är den dagliga studiepartnern
+- **Skills** som gör vanliga studiemoment repeterbara: förklara, öva, analysera tentor
 - **Självinlärning** som gör systemet bättre för varje vecka
 
-Arbetsflödet fungerar för vilken kurs som helst — juridik, ekonomi, naturvetenskap, språk. Principen är densamma: ge AI rätt material i rätt format med regler som hjälper den fokusera.
+Arbetsflödet fungerar för vilken kurs som helst: juridik, ekonomi, naturvetenskap, språk. Principen är densamma: ge AI rätt material i rätt format med regler som hjälper den fokusera.
 
 Femton minuter per screenshot, eller femton minuter en gång för att bygga systemet. Jag valde det andra.
 

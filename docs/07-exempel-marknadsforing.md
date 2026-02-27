@@ -1,6 +1,6 @@
 # Exempel: Marknadsförare — AI i det dagliga arbetet
 
-> *Från kampanjplanering till innehållsproduktion — hur du bygger ett system som gör varje brief bättre.*
+> *Från kampanjplanering till innehållsproduktion: hur du bygger ett system som gör varje brief bättre.*
 
 ---
 

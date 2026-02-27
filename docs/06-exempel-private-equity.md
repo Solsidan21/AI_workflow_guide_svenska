@@ -1,14 +1,14 @@
 # Exempel: Private Equity — Hela firmans AI-system
 
-> *Du har lärt dig verktygen. Nu visar vi hur en hel PE-firma kan använda dem — från screening till exit, med en AI som blir bättre för varje uppdrag.*
+> *Du har lärt dig verktygen. Nu visar vi hur en hel PE-firma kan använda dem: från screening till exit, med en AI som blir bättre för varje uppdrag.*
 
 ---
 
-De tidigare kapitlen har gått igenom koncepten: trappan, kontexthantering, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur allt hänger ihop i praktiken — genom att följa en fiktiv PE-firma, **Norvik Capital**, genom hela deras arbetsdag.
+De tidigare kapitlen har gått igenom koncepten: trappan, kontexthantering, mappstruktur, CLAUDE.md och skills. Det här kapitlet visar hur allt hänger ihop i praktiken, genom att följa en fiktiv PE-firma, **Norvik Capital**, genom hela deras arbetsdag.
 
-Norvik Capital finns inte på riktigt. Men strukturen, arbetsflödena och exemplen är byggda för att vara realistiska — du ska kunna ta dem och anpassa till din egen firma.
+Norvik Capital finns inte på riktigt. Men strukturen, arbetsflödena och exemplen är byggda för att vara realistiska. Du ska kunna ta dem och anpassa till din egen firma.
 
-> Allt som refereras i det här kapitlet finns som färdiga filer i [`templates/private-equity/firma-exempel/`](../templates/private-equity/firma-exempel/). Du kan ge dem som utgångspunkt till Claude Code — beskriv vad du vill anpassa så bygger Claude resten.
+> Allt som refereras i det här kapitlet finns som färdiga filer i [`templates/private-equity/firma-exempel/`](../templates/private-equity/firma-exempel/). Du kan ge dem som utgångspunkt till Claude Code. Beskriv vad du vill anpassa så bygger Claude resten.
 
 ---
 
@@ -19,18 +19,18 @@ Norvik Capital finns inte på riktigt. Men strukturen, arbetsflödena och exempl
 | **Firma** | Norvik Capital |
 | **Grundat** | 2018 |
 | **Kontor** | Stockholm |
-| **Strategi** | Nordisk mid-market PE — majoritets- och betydande minoritetsinvesteringar |
+| **Strategi** | Nordisk mid-market PE: majoritets- och betydande minoritetsinvesteringar |
 | **Team** | 6 personer: 2 partners, 2 VP/directors, 1 analytiker, 1 IR/admin |
 | **Aktiv fond** | Norvik Capital Fund I (vintage 2020, 500 MSEK) |
 | **Portfölj** | 4 bolag: CloudFlow (SaaS), Nordisk Precision (industri), Arbetslyft (bemanning), MedTech Nordic (medtech) |
 
-Norvik är ett litet team som hanterar en bred portfölj. Varje person bär flera hattar. Det gör dem till det perfekta exemplet — det är exakt i sådana organisationer som AI ger störst effekt.
+Norvik är ett litet team som hanterar en bred portfölj. Varje person bär flera hattar. Det gör dem till det perfekta exemplet. Det är exakt i sådana organisationer som AI ger störst effekt.
 
 ---
 
 ## Firmans mappstruktur
 
-Mappstrukturen speglar firmans verksamhet: firma, fonder, portföljbolag, pipeline och delade resurser. Principerna från [kapitel 03](03-mappstruktur-och-arbetssatt.md) — beskrivande namn, logisk hierarki, separation av data och analys — tillämpas konsekvent.
+Mappstrukturen speglar firmans verksamhet: firma, fonder, portföljbolag, pipeline och delade resurser. Principerna från [kapitel 03](03-mappstruktur-och-arbetssatt.md) (beskrivande namn, logisk hierarki, separation av data och analys) tillämpas konsekvent.
 
 ```
 firma-exempel/
@@ -86,7 +86,7 @@ Strukturen speglar tre separata nivåer med helt olika informationsbehov:
 | **Fond** | `fonder/fond-I/` | LP-rapportering, fondprestanda | Kvartalsvis |
 | **Portföljbolag** | `portfoljbolag/[bolag]/` | Analys, styrelsematerial, värdeskapande | Löpande |
 
-Separationen gör att Claude får **rätt kontext utan brus**. När du arbetar i `portfoljbolag/cloudflow-ab/` behöver Claude inte veta om fundraising eller LP-villkor — men den behöver veta allt om CloudFlows SaaS-nyckeltal.
+Separationen gör att Claude får **rätt kontext utan brus**. När du arbetar i `portfoljbolag/cloudflow-ab/` behöver Claude inte veta om fundraising eller LP-villkor, men den behöver veta allt om CloudFlows SaaS-nyckeltal.
 
 ### Strukturen följer en investerings livscykel
 
@@ -101,7 +101,7 @@ portfoljbolag/     fonder/fond-I/     portfoljbolag/
 vardeskapande/
 ```
 
-Mappen `gemensamt/` är firmans kunskapsbibliotek — mallar, skills, ramverk och branschdata som används på flera ställen. Principen: **en källa, många användare.**
+Mappen `gemensamt/` är firmans kunskapsbibliotek: mallar, skills, ramverk och branschdata som används på flera ställen. Principen: **en källa, många användare.**
 
 ---
 
@@ -187,7 +187,7 @@ Varje portföljbolag har sin egen CLAUDE.md. CloudFlows innehåller SaaS-specifi
   Exkludera engångsintäkter.
 ```
 
-Nordisk Precisions CLAUDE.md ser helt annorlunda ut — den fokuserar på industrispecifika KPI:er som OEE, orderbok och kapacitetsutnyttjande.
+Nordisk Precisions CLAUDE.md ser helt annorlunda ut. Den fokuserar på industrispecifika KPI:er som OEE, orderbok och kapacitetsutnyttjande.
 
 ---
 
@@ -214,7 +214,7 @@ Perfekt när du redan har data i ett kalkylblad:
 
 > *"Skriv en formel som beräknar rullande 12-månaders EBITDA baserat på månadsdata i kolumn C."*
 
-> *"Kontrollera om balansräkningen stämmer — balanserar tillgångar med skulder plus eget kapital?"*
+> *"Kontrollera om balansräkningen stämmer, balanserar tillgångar med skulder plus eget kapital?"*
 
 ### Claude i PowerPoint
 
@@ -285,7 +285,7 @@ Norvik Capital är sex personer. Hur delar de på strukturen?
 | **Gemensam kunskap** | Årsredovisningar, DD-rapporter, styrelsematerial | Delade Projects i Claude Chat | Claude Chat |
 | **Individuellt arbete** | Pågående analyser, utkast, anteckningar | Privata konversationer | Valfritt verktyg |
 
-**Git-repot** innehåller allt som inte är konfidentiellt men som alla behöver — mappstrukturen, CLAUDE.md-filerna, skills, mallar. Det är firmans "AI-playbook".
+**Git-repot** innehåller allt som inte är konfidentiellt men som alla behöver: mappstrukturen, CLAUDE.md-filerna, skills, mallar. Det är firmans "AI-playbook".
 
 **Delade Projects i Claude Chat** är var det dagliga arbetet sker för de flesta. Partnern skapar ett projekt för "CloudFlow AB — Styrelsemöte Q3", laddar upp styrelsepaket och kvartalsdata, och skriver projektinstruktioner baserade på CloudFlows CLAUDE.md.
 
@@ -334,12 +334,12 @@ AI-modellen i sig förändras inte mellan sessioner. Men du kan bygga minnet **u
 
 Norvik Capitals självinlärningssystem:
 
-1. **Claude utför en uppgift** — till exempel en kvartalsrapport
-2. **Claude reflekterar** — vad fungerade, vad var problematiskt?
-3. **En lärdom dokumenteras** — konkret, generaliserbar, formulerad som instruktion
-4. **Användaren granskar** — bekräftar att lärdomen är korrekt
-5. **Lärdomen inarbetas** — skrivs in i relevant CLAUDE.md eller skill-fil
-6. **Nästa session blir bättre** — Claude läser den uppdaterade instruktionen automatiskt
+1. **Claude utför en uppgift,** till exempel en kvartalsrapport
+2. **Claude reflekterar:** vad fungerade, vad var problematiskt?
+3. **En lärdom dokumenteras:** konkret, generaliserbar, formulerad som instruktion
+4. **Användaren granskar:** bekräftar att lärdomen är korrekt
+5. **Lärdomen inarbetas:** skrivs in i relevant CLAUDE.md eller skill-fil
+6. **Nästa session blir bättre:** Claude läser den uppdaterade instruktionen automatiskt
 
 ### Implementering
 
@@ -383,7 +383,7 @@ Om svaret innehåller något värdefullt — dokumentera det.
 
 **Lärdomar kan vara felaktiga.** Mänsklig granskning är inte valfritt.
 
-**Instruktionsbloat.** Varje inarbetad lärdom gör CLAUDE.md längre. Var disciplinerad — inarbeta bara det som verkligen förbättrar konsistensen.
+**Instruktionsbloat.** Varje inarbetad lärdom gör CLAUDE.md längre. Var disciplinerad: inarbeta bara det som verkligen förbättrar konsistensen.
 
 **Dåliga mönster kan förstärkas.** Om en felaktig lärdom inarbetas fortsätter Claude att följa den. Granskningssteget är ditt skydd.
 
@@ -432,14 +432,14 @@ Skapa skills för:
 Initiera ett Git-repo.
 ```
 
-Claude Code skapar hela strukturen — alla mappar, CLAUDE.md-filer på varje nivå, skills och Git-repo.
+Claude Code skapar hela strukturen: alla mappar, CLAUDE.md-filer på varje nivå, skills och Git-repo.
 
 ### Nästa steg
 
-1. **Lägg in dina filer** — kopiera årsredovisningar, kvartalsdata och andra dokument till rätt `bolagsdata/`-mappar
-2. **Extrahera till Markdown** — be Claude Code läsa PDF:erna och skapa Markdown-versioner
-3. **Testa med en riktig uppgift** — till exempel: *"Sammanfatta nyckeltal för de senaste tre åren för bolag X"*
-4. **Iterera** — be Claude Code justera CLAUDE.md, lägga till fler skills, starta en lärdomsfil
+1. **Lägg in dina filer:** kopiera årsredovisningar, kvartalsdata och andra dokument till rätt `bolagsdata/`-mappar
+2. **Extrahera till Markdown:** be Claude Code läsa PDF:erna och skapa Markdown-versioner
+3. **Testa med en riktig uppgift:** till exempel: *"Sammanfatta nyckeltal för de senaste tre åren för bolag X"*
+4. **Iterera:** be Claude Code justera CLAUDE.md, lägga till fler skills, starta en lärdomsfil
 
 ### Vad ger mest effekt snabbast?
 
@@ -458,9 +458,9 @@ Börja enkelt. Varje session gör systemet lite bättre.
 
 Det här kapitlet har visat hur koncepten från Del 1 hänger ihop i PE-praktiken:
 
-- **Mappstruktur** som speglar firmans verksamhet — från fond till portföljbolag till pipeline
+- **Mappstruktur** som speglar firmans verksamhet: från fond till portföljbolag till pipeline
 - **CLAUDE.md-hierarki** med firmaregler, fondspecifikt och bolagsspecifikt
-- **Rätt verktyg för rätt uppgift** — Chat, Excel, PowerPoint, Code och Cowork i kombination
+- **Rätt verktyg för rätt uppgift:** Chat, Excel, PowerPoint, Code och Cowork i kombination
 - **Teamsamarbete** där alla bidrar och konsumerar, med olika verktyg
 - **Självinlärning** som gör systemet bättre för varje session
 

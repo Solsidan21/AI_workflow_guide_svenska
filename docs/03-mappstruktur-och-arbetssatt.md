@@ -1,10 +1,10 @@
 # Kapitel 03 — Mappstruktur och arbetssätt
 
-> *Det här är kapitlet som binder ihop allt. Struktur är inte administration — det är det som gör AI bra.*
+> *Det här är kapitlet som binder ihop allt. Struktur är inte administration. Det är det som gör AI bra.*
 
 Det här är guidens viktigaste kapitel. Inte för att det är det mest tekniska, utan för att det beskriver **arbetssättet** som gör allt annat möjligt. Mappstruktur, CLAUDE.md, skills, och framför allt: det grundläggande arbetsflödet som förvandlar dina dokument till ett AI-system.
 
-En viktig poäng: **du skapar inte det här manuellt.** Du beskriver vad du behöver — i en chatt eller direkt i Claude Code — och Claude bygger strukturen åt dig. Det här kapitlet förklarar *varför* en bra struktur ser ut som den gör, så att du förstår vad Claude Code skapar och kan guida den rätt.
+En viktig poäng: **du skapar inte det här manuellt.** Du beskriver vad du behöver (i en chatt eller direkt i Claude Code) och Claude bygger strukturen åt dig. Det här kapitlet förklarar *varför* en bra struktur ser ut som den gör, så att du förstår vad Claude Code skapar och kan guida den rätt.
 
 ---
 
@@ -12,9 +12,9 @@ En viktig poäng: **du skapar inte det här manuellt.** Du beskriver vad du beh�
 
 När Claude Code startar läser den inte bara din prompt. Den ser **filnamn, mappnamn och hela projektstrukturen**. Allt detta är kontext som påverkar kvaliteten på svaren.
 
-**Analogi:** Två skrivbord. Det ena är välorganiserat — mappar med etiketter, tydliga namn, logisk ordning. Om du ber någon hitta "Q3-rapporten" tar det sekunder.
+**Analogi:** Två skrivbord. Det ena är välorganiserat: mappar med etiketter, tydliga namn, logisk ordning. Om du ber någon hitta "Q3-rapporten" tar det sekunder.
 
-Det andra är kaotiskt — papper överallt, oklara filnamn. Samma fråga tar minuter, och svaret kanske inte ens är korrekt.
+Det andra är kaotiskt: papper överallt, oklara filnamn. Samma fråga tar minuter, och svaret kanske inte ens är korrekt.
 
 AI fungerar på exakt samma sätt. **Bra struktur = bättre svar.**
 
@@ -34,7 +34,7 @@ Jämför med:
 dokument/fil3.pdf
 ```
 
-Här förstår Claude ingenting. Du måste förklara allt i din prompt — varje gång.
+Här förstår Claude ingenting. Du måste förklara allt i din prompt, varje gång.
 
 ---
 
@@ -56,7 +56,7 @@ rapport-final-v2-SISTA.md
 dok.pptx
 ```
 
-**Tumregel:** Skulle en kollega förstå vad filen innehåller bara genom att se filnamnet? Om ja — bra namn.
+**Tumregel:** Skulle en kollega förstå vad filen innehåller bara genom att se filnamnet? Om ja, bra namn.
 
 ### 2. Logisk hierarki
 
@@ -107,7 +107,7 @@ Varför? Du kan alltid gå tillbaka till rådata om något är fel. Och du bland
 
 En kort `README.md` i varje mapp hjälper både dig och Claude att förstå vad mappen innehåller:
 
-**Exempel — `data/finansiellt/README.md`:**
+**Exempel: `data/finansiellt/README.md`:**
 ```markdown
 # Finansiell data
 
@@ -126,11 +126,11 @@ En kort `README.md` i varje mapp hjälper både dig och Claude att förstå vad 
 
 ## Det centrala arbetsflödet — PDF till system
 
-Det här avsnittet beskriver det grundläggande arbetssätt som gör allt annat möjligt. Det är enkelt, men det förändrar allt. **Du behöver inte göra stegen manuellt** — du beskriver vad du vill ha, och Claude Code utför dem.
+Det här avsnittet beskriver det grundläggande arbetssätt som gör allt annat möjligt. Det är enkelt, men det förändrar allt. **Du behöver inte göra stegen manuellt.** Du beskriver vad du vill ha, och Claude Code utför dem.
 
 ### Problemet
 
-Du har dokument — PDF:er, rapporter, kursböcker, branschdata. Du vill att AI ska kunna arbeta med dem intelligent, konsekvent och utan att du behöver kopiera text varje gång.
+Du har dokument: PDF:er, rapporter, kursböcker, branschdata. Du vill att AI ska kunna arbeta med dem intelligent, konsekvent och utan att du behöver kopiera text varje gång.
 
 ### Lösningen: fyra steg
 
@@ -212,11 +212,11 @@ data/rapporter/arsredovisning-2024/
 | **Hastighet** | Långsamt | Snabbt |
 | **Återanvändning** | Samma kostnad varje session | Gratis efter första gången |
 
-**Viktigt:** Behåll alltid original-PDF:en — den är din källa och ditt kvitto. Men låt Claude arbeta mot Markdown-versionerna.
+**Viktigt:** Behåll alltid original-PDF:en. Den är din källa och ditt kvitto. Men låt Claude arbeta mot Markdown-versionerna.
 
 ### Steg 3: Publicera till GitHub
 
-Claude Code kan initiera ett Git-repo och publicera till GitHub åt dig — be om det i din prompt, eller säg det i en session:
+Claude Code kan initiera ett Git-repo och publicera till GitHub åt dig. Be om det i din prompt, eller säg det i en session:
 
 ```
 > Initiera ett Git-repo och pusha projektet till GitHub.
@@ -236,11 +236,11 @@ Nu har du **samma kunskap tillgänglig i både Claude Code och Claude Chat**. Du
 
 ### Varför det här förändrar allt
 
-- **Dokument bearbetas en gång** — inte varje session
-- **Markdown är billigt** — mer plats i kontextfönstret för din fråga
-- **GitHub ger versionshantering** — du kan alltid gå tillbaka
-- **Samma kunskap överallt** — Code och Chat delar samma data
-- **Teamet kan samarbeta** — alla har tillgång till samma repo
+- **Dokument bearbetas en gång,** inte varje session
+- **Markdown är billigt:** mer plats i kontextfönstret för din fråga
+- **GitHub ger versionshantering:** du kan alltid gå tillbaka
+- **Samma kunskap överallt:** Code och Chat delar samma data
+- **Teamet kan samarbeta:** alla har tillgång till samma repo
 
 Det här är inte ett avancerat arbetsflöde. Det är **grundflödet** som gör allt annat möjligt.
 
@@ -257,7 +257,7 @@ data/ (råmaterial)  →  analys/ (Markdown)  →  output/ (PDF/Word)
                     Claude analyserar          Claude formaterar
 ```
 
-Claude Code kan skapa PDF- och Word-filer genom verktyg som `pandoc` eller Python-bibliotek. Du behöver inte kunna dessa verktyg själv — Claude hanterar det. Det enda du behöver göra är att beskriva formatet.
+Claude Code kan skapa PDF- och Word-filer genom verktyg som `pandoc` eller Python-bibliotek. Du behöver inte kunna dessa verktyg själv. Claude hanterar det. Det enda du behöver göra är att beskriva formatet.
 
 ---
 
@@ -265,7 +265,7 @@ Claude Code kan skapa PDF- och Word-filer genom verktyg som `pandoc` eller Pytho
 
 ### Vad är det?
 
-En Markdown-fil i roten av din projektmapp. Claude Code skapar den åt dig baserat på din beskrivning av projektet — vem du är, vad du arbetar med, vilka regler som gäller. Sedan läser Claude den automatiskt varje session och följer instruktionerna, utan att du behöver säga något.
+En Markdown-fil i roten av din projektmapp. Claude Code skapar den åt dig baserat på din beskrivning av projektet: vem du är, vad du arbetar med, vilka regler som gäller. Sedan läser Claude den automatiskt varje session och följer instruktionerna, utan att du behöver säga något.
 
 **Det är skillnaden mellan en assistent som börjar från noll varje dag och en som känner projektet.**
 
@@ -367,7 +367,7 @@ Claude läser alla CLAUDE.md-filer uppåt i hierarkin. Om Claude arbetar i `anal
 2. `analys/CLAUDE.md` (om den finns)
 3. `CLAUDE.md` (i roten)
 
-Du behöver inte upprepa generella regler i varje CLAUDE.md — bara det som är specifikt för just den mappen.
+Du behöver inte upprepa generella regler i varje CLAUDE.md, bara det som är specifikt för just den mappen.
 
 ### Tumregler för placering
 
@@ -432,12 +432,12 @@ Claude läser instruktionsfilen och utför alla stegen. Samma resultat varje gå
 
 ### Skill-idéer för olika roller
 
-- `/sammanfattning` — Sammanfatta valfritt dokument enligt fast format
-- `/kvartalsrapport` — Skapa rapport baserat på data i projektet
-- `/konkurrentanalys` — Kartlägg och jämför aktörer
-- `/motesforberedelse` — Sammanställ underlag inför möte
-- `/presentationsunderlag` — Struktur för presentation
-- `/dataextraktion` — Extrahera nyckeltal från PDF till Markdown
+- `/sammanfattning:` Sammanfatta valfritt dokument enligt fast format
+- `/kvartalsrapport:` Skapa rapport baserat på data i projektet
+- `/konkurrentanalys:` Kartlägg och jämför aktörer
+- `/motesforberedelse:` Sammanställ underlag inför möte
+- `/presentationsunderlag:` Struktur för presentation
+- `/dataextraktion:` Extrahera nyckeltal från PDF till Markdown
 
 ---
 
@@ -483,9 +483,9 @@ Och Claude vet automatiskt: var data finns, hur analysen ska göras, var resulta
 
 ### Steg 1: Börja i chatten
 
-Öppna Claude Chat (eller ChatGPT, Gemini — valfri AI-chatt) och beskriv ditt projekt:
+Öppna Claude Chat (eller ChatGPT, Gemini, valfri AI-chatt) och beskriv ditt projekt:
 
-> *"Jag jobbar som [din roll] och behöver hjälp med [ditt område]. Jag har [beskriv dina dokument — årsredovisningar, rapporter, kursböcker etc.]. Jag vill kunna analysera dem, ställa frågor mot dem och skapa sammanfattningar och rapporter. Hjälp mig tänka igenom hur ett bra AI-system för det här skulle se ut."*
+> *"Jag jobbar som [din roll] och behöver hjälp med [ditt område]. Jag har [beskriv dina dokument: årsredovisningar, rapporter, kursböcker etc.]. Jag vill kunna analysera dem, ställa frågor mot dem och skapa sammanfattningar och rapporter. Hjälp mig tänka igenom hur ett bra AI-system för det här skulle se ut."*
 
 Diskutera och iterera. Ställ frågor. Förfina bilden av vad du behöver.
 
@@ -526,7 +526,7 @@ Initiera ett Git-repo.
 3. Starta Claude Code med `claude`
 4. Klistra in prompten
 
-Claude Code skapar hela strukturen — mappar, CLAUDE.md, skills, README-filer och Git-repo. Du behöver inte skriva en enda fil själv.
+Claude Code skapar hela strukturen: mappar, CLAUDE.md, skills, README-filer och Git-repo. Du behöver inte skriva en enda fil själv.
 
 ### Steg 4: Lägg in dina filer och extrahera
 
@@ -545,7 +545,7 @@ Ditt system växer med dig. Be Claude Code lägga till fler skills när du uppt�
 
 ## Färdiga startpunkter
 
-I det här repots [`templates/`](../templates/)-mapp hittar du färdiga mallar — CLAUDE.md-exempel, skill-filer och projektstrukturer för olika roller och branscher.
+I det här repots [`templates/`](../templates/)-mapp hittar du färdiga mallar: CLAUDE.md-exempel, skill-filer och projektstrukturer för olika roller och branscher.
 
 Du kan ge dem som kontext till Claude Code: "Använd mallen i templates/ som utgångspunkt och anpassa till mitt projekt."
 
@@ -555,13 +555,13 @@ Du kan ge dem som kontext till Claude Code: "Använd mallen i templates/ som utg
 
 Det här kapitlet har täckt tre saker:
 
-1. **Mappstruktur** — Beskrivande namn, logisk hierarki, separation av data/analys/output. Struktur *är* kontext.
+1. **Mappstruktur:** Beskrivande namn, logisk hierarki, separation av data/analys/output. Struktur *är* kontext.
 
-2. **Det centrala arbetsflödet** — Samla dokument → Extrahera till Markdown → Pusha till GitHub → Koppla som Claude-projekt. Det här är grundflödet som gör allt annat möjligt.
+2. **Det centrala arbetsflödet:** Samla dokument → Extrahera till Markdown → Pusha till GitHub → Koppla som Claude-projekt. Det här är grundflödet som gör allt annat möjligt.
 
-3. **CLAUDE.md och skills** — Regler som alltid gäller och arbetsflöden som kan återanvändas. Systemet som gör att AI blir bättre på just ditt jobb.
+3. **CLAUDE.md och skills:** Regler som alltid gäller och arbetsflöden som kan återanvändas. Systemet som gör att AI blir bättre på just ditt jobb.
 
-Det viktigaste är inte att strukturen är perfekt från dag ett. Det viktigaste är att du **börjar** — och låter systemet växa med dig.
+Det viktigaste är inte att strukturen är perfekt från dag ett. Det viktigaste är att du **börjar**, och låter systemet växa med dig.
 
 ---
 
