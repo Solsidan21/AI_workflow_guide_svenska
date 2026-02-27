@@ -28,7 +28,7 @@ Allt detta kallas **kontext**. Och det är kontexten, inte bara prompten, som av
 
 ### Vad det är
 
-Varje AI-modell har ett **kontextfönster**: en maximal mängd information den kan ha "i huvudet" samtidigt. Det mäts i tokens (du lärde dig om tokens i [kapitel 00](00-grundbegrepp.md)).
+Varje AI-modell har ett **kontextfönster**: en maximal mängd information den kan ha "i huvudet" samtidigt. Det mäts i tokens (du lärde dig om tokens i [kapitel 03](03-begreppen.md)).
 
 **Analogi:** Tänk på kontextfönstret som ett skrivbord. Det rymmer en viss mängd papper. Du kan lägga dit din fråga, konversationshistoriken, uppladdade filer och instruktioner. Men om du lägger dit en hel bokhylla med dokument blir skrivbordet fullt, och en del trillar ner på golvet.
 
@@ -40,7 +40,7 @@ Moderna modeller som Claude har stora kontextfönster, nog för att hantera lån
 
 ### Varför filformat spelar roll
 
-Inte all information kostar lika mycket kontext. En 50-sidig PDF förbrukar enormt med tokens varje gång den läses, även om du bara behöver tre rader. Samma information i Markdown kostar en bråkdel. Se [PDF-problemet](#pdf-problemet-den-vanligaste-flaskhalsen) nedan och [kapitel 03](03-mappstruktur-och-arbetssatt.md) för hur du löser det.
+Inte all information kostar lika mycket kontext. En 50-sidig PDF förbrukar enormt med tokens varje gång den läses, även om du bara behöver tre rader. Samma information i Markdown kostar en bråkdel. Se [PDF-problemet](#pdf-problemet-den-vanligaste-flaskhalsen) nedan och [kapitel 04](04-mappstruktur-och-arbetssatt.md) för hur du löser det.
 
 ---
 
@@ -202,7 +202,7 @@ PDF:er är byggda för människor att läsa på skärm. De är **inte byggda fö
 | **CSV** | Låg: strukturerad data | Hög: tydliga kolumner och rader |
 | **PDF** | Hög: AI måste tolka hela dokumentet | Varierande: tabeller kan feltolkas |
 
-**Lösningen** är inte att sluta använda PDF:er. De är ofta det enda formatet du får. Lösningen är att bearbeta dem till Markdown *en gång*, och sedan arbeta mot den bearbetade versionen. Originalet behåller du som källa. Exakt hur du gör det beskrivs i [kapitel 03](03-mappstruktur-och-arbetssatt.md).
+**Lösningen** är inte att sluta använda PDF:er. De är ofta det enda formatet du får. Lösningen är att bearbeta dem till Markdown *en gång*, och sedan arbeta mot den bearbetade versionen. Originalet behåller du som källa. Exakt hur du gör det beskrivs i [kapitel 04](04-mappstruktur-och-arbetssatt.md).
 
 ---
 
@@ -276,4 +276,4 @@ Det viktigaste att ta med sig: **kontext slår promptkvalitet**. En medioker pro
 
 > *Föregående kapitel: [01 — AI-verktygslandskapet](01-verktygslandskapet.md)*
 >
-> *Nästa kapitel: [03 — Mappstruktur och arbetssätt](03-mappstruktur-och-arbetssatt.md)*
+> *Nästa kapitel: [03 — Begreppen som tar dig till nästa nivå](03-begreppen.md)*

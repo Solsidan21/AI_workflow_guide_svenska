@@ -161,7 +161,7 @@ Skillnaden är inte att Claude Code är "smartare", det är samma AI-modell. Ski
 
 **Skills** är återanvändbara arbetsflöden. Claude Code skapar dem baserat på dina behov. Du beskriver en uppgift du gör ofta, och Claude bygger en skill som utför alla stegen med ett enda kommando. Istället för att förklara hur en kassaflödesanalys ska göras varje gång, skriver du `/kassaflodesanalys` och Claude utför alla stegen.
 
-> Hur du sätter upp CLAUDE.md och skills i praktiken täcks i [kapitel 03](03-mappstruktur-och-arbetssatt.md).
+> Hur du sätter upp CLAUDE.md och skills i praktiken täcks i [kapitel 04](04-mappstruktur-och-arbetssatt.md).
 
 ---
 
@@ -250,6 +250,4 @@ Du behöver inte göra allt på en gång. Men om du tar bort en sak från det h�
 
 ---
 
-> *Föregående kapitel: [00 — Grundbegrepp](00-grundbegrepp.md)*
->
 > *Nästa kapitel: [02 — Promptteknik och kontext](02-promptteknik-och-kontext.md)*

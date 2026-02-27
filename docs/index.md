@@ -1,20 +1,16 @@
 # AI-djupdykning — Från chatt till system
 
-> *Jag heter Arvid, läser ekonomi och har ingen teknisk bakgrund. Under några intensiva veckor dök jag djupt ner i hur AI-verktyg faktiskt fungerar, bortom chatten. Det här är vad jag önskar att någon hade förklarat för mig innan jag började.*
+> **Du använder redan AI dagligen och får bra svar. Den här guiden visar vad som händer när du går från "det funkar oftast" till "den gör exakt vad jag vill, varje gång."**
 
 ---
 
-## Varför den här guiden finns
+Du använder sannolikt redan ChatGPT eller Claude dagligen. Du vet hur man skriver en bra prompt och du får bra svar.
 
-Det är jävla mycket snack om AI just nu. AI förbättras höger och vänster, AI ska ta över jobb, och du behöver tydligen inte kunna programmera för att bygga appar. Så jag tänkte: om det verkligen stämmer borde jag kunna bygga den app jag gått och tänkt på länge.
+Men du gör samma sak om och om igen. Varje session börjar från noll. Du kopierar data fram och tillbaka. Du förklarar samma kontext för tionde gången.
 
-Jag startade. Och fick börja om. Tre gånger på tre veckor, för att jag inte förstod hur man faktiskt bygger ett system, inte bara chattar med AI. Parallellt upptäckte jag vad verktygen kunde göra i arbetslivet: jag satte upp en agent åt min mamma som automatiserade uppgifter som normalt tog timmar.
+**Den här guiden handlar om språnget från att chatta med AI till att bygga system som gör AI 10x bättre på just ditt jobb.** Inte genom bättre promptar, utan genom struktur, regler och minne.
 
-När jag sedan försökte förklara allt jag lärt mig för familj och vänner utan teknisk bakgrund insåg jag hur svårt det var. Det här är resultatet: guiden jag önskar att jag hade haft innan jag dök in i det här enorma området.
-
-Den är skriven för dig som redan använder AI dagligen men vill förstå hur du bygger system som gör AI 10x bättre på just ditt jobb. Inte genom bättre promptar, utan genom struktur, regler och minne.
-
-Du behöver inte kunna programmera. Jag kan inte det heller. Men du är redo att ta ett steg utanför chatten.
+Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal förut. Men du är redo att ta ett steg utanför chatten.
 
 ---
 
@@ -27,8 +23,15 @@ Du behöver inte kunna programmera. Jag kan inte det heller. Men du är redo att
 
 Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad som händer när du ger AI regler, struktur och minne.
 
+??? note "Vem har skrivit det här?"
+    Jag heter Arvid, läser ekonomi och har ingen teknisk bakgrund. Det är enormt mycket snack om AI just nu, så jag tänkte: om det verkligen stämmer borde jag kunna bygga den app jag gått och tänkt på länge.
+
+    Jag startade. Och fick börja om. Tre gånger på tre veckor, för att jag inte förstod hur man faktiskt bygger ett system, inte bara chattar med AI. Parallellt upptäckte jag vad verktygen kunde göra i arbetslivet: jag satte upp en agent åt min mamma som automatiserade uppgifter som normalt tog timmar.
+
+    När jag sedan försökte förklara allt jag lärt mig för familj och vänner utan teknisk bakgrund insåg jag hur svårt det var. Det här är resultatet: guiden jag önskar att jag hade haft innan jag dök in i det här enorma området.
+
 !!! info "En insikt som förändrade mitt arbetsflöde"
-    Det enklaste sättet att göra AI bättre är inte att skriva bättre promptar. Det är att sluta mata den med råa PDF:er. PDF:er kostar mångfalt mer kontext, tabeller feltolkas, och AI:n kan inte navigera till rätt sida. Kapitel 02 och 03 visar hur du löser det.
+    Det enklaste sättet att göra AI bättre är inte att skriva bättre promptar. Det är att sluta mata den med råa PDF:er. PDF:er kostar mångfalt mer kontext, tabeller feltolkas, och AI:n kan inte navigera till rätt sida. Kapitel 02 och 04 visar hur du löser det.
 
 ---
 
@@ -36,33 +39,33 @@ Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad
 
 === "Del 1 — Förstå landskapet"
 
-    **[00 — Grundbegrepp](00-grundbegrepp.md)**
-    De ~10 begrepp som öppnar dörren till nästa nivå
-
     **[01 — AI-verktygslandskapet](01-verktygslandskapet.md)**
     Trappan från chatt till system: Chat, Office, Code och Cowork
 
     **[02 — Promptteknik och kontext](02-promptteknik-och-kontext.md)**
     Varför kontext avgör allt, och teknikerna som gör skillnad
 
-    **[03 — Mappstruktur och arbetssätt](03-mappstruktur-och-arbetssatt.md)**
+    **[03 — Begreppen som tar dig till nästa nivå](03-begreppen.md)**
+    Din referens för resten av guiden: de begrepp som binder ihop allt
+
+    **[04 — Mappstruktur och arbetssätt](04-mappstruktur-och-arbetssatt.md)**
     Det centrala arbetsflödet: CLAUDE.md, skills och PDF→Markdown→GitHub
 
-    **[04 — Strukturerad kontext](04-strukturerad-kontext.md)**
+    **[05 — Strukturerad kontext](05-strukturerad-kontext.md)**
     Varför navigerbar kontext + regler slår maxad kontext
 
 === "Del 2 — Praktiska exempel"
 
-    **[05 — Exempel: Studier](05-exempel-studier.md)**
+    **[06 — Exempel: Studier](06-exempel-studier.md)**
     Hela kursen i fickan: AI-system för universitetsstudier
 
-    **[06 — Exempel: Private Equity](06-exempel-private-equity.md)**
+    **[07 — Exempel: Private Equity](07-exempel-private-equity.md)**
     Norvik Capital: hela firmans AI-system i praktiken
 
-    **[07 — Exempel: Marknadsförare](07-exempel-marknadsforing.md)**
+    **[08 — Exempel: Marknadsförare](08-exempel-marknadsforing.md)**
     AI i det dagliga arbetet *(kommer snart)*
 
-    **[08 — Exempel: Konsult](08-exempel-konsult.md)**
+    **[09 — Exempel: Konsult](09-exempel-konsult.md)**
     Från analys till leverans *(kommer snart)*
 
 ---

@@ -1,12 +1,10 @@
-# Kapitel 00 — Grundbegrepp
+# Kapitel 03 — Begreppen som tar dig till nästa nivå
 
-> *Du är redan bra på AI. Här är de elva begreppen som tar dig till en helt annan nivå.*
+> *Du har sett verktygslandskapet och hur prompting fungerar. Här är begreppen som binder ihop allt.*
 
-Du vet hur man skriver en bra prompt. Du får bra svar från Claude eller ChatGPT. Men varje gång du startar en ny session börjar du från noll — samma kontext, samma instruktioner, samma format.
+Du har nu sett trappan från chatt till system och förstår varför kontext avgör kvaliteten på svaren. Det här kapitlet ger dig de elva begreppen som dyker upp genom resten av guiden.
 
-Det beror inte på att du gör något fel. Det beror på att du saknar ett ordförråd — en handfull tekniska begrepp som öppnar dörren till verktyg där AI faktiskt kan minnas, följa regler och arbeta med dina filer.
-
-Det här är de elva begreppen. Inget av dem är svårare än att lära sig ett nytt Excel-kortkommando. Men tillsammans förändrar de hur du arbetar med AI.
+Du behöver inte memorera dem. Kom tillbaka hit när du stöter på ett ord du inte känner igen. Inget av begreppen är svårare än att lära sig ett nytt Excel-kortkommando, men tillsammans är de nyckeln till att ta steget från chatt till system.
 
 ---
 
@@ -135,12 +133,14 @@ Det här är de elva begreppen. Inget av dem är svårare än att lära sig ett 
 
 ---
 
-## Du är redo
+## Din referens
 
-Elva begrepp. Inget av dem är raketvetenskap. Men tillsammans ger de dig ett språk för att ta dig bortom chatten.
+Elva begrepp. Inget av dem är raketvetenskap. Du behöver inte memorera dem. Det här kapitlet är din referens. Nästa gång du stöter på ett ord du inte känner igen, kom tillbaka hit.
 
-Det viktiga är inte att du memorerar definitionerna. Det viktiga är att du inte känns avskräckt när du ser orden dyka upp. Du har nu kartan — resten av guiden visar vägen.
+Nu har du ordförrådet. Resten av guiden visar hur du använder det i praktiken.
 
 ---
 
-> *Nästa kapitel: [01 — AI-verktygslandskapet](01-verktygslandskapet.md)*
+> *Föregående kapitel: [02 — Promptteknik och kontext](02-promptteknik-och-kontext.md)*
+>
+> *Nästa kapitel: [04 — Mappstruktur och arbetssätt](04-mappstruktur-och-arbetssatt.md)*

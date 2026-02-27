@@ -37,13 +37,13 @@ Femton minuter. Varje gång.
 
 Nästa dag, ny uppgift. Samma kurs. Samma problem: Claude har glömt allt.
 
-Det här är exakt det problem som [kapitel 04](04-strukturerad-kontext.md) beskriver: ostrukturerad kontext kostar tid och ger sämre svar. Jag ger Claude rätt information, men i fel format, utan regler, och utan minne mellan sessioner.
+Det här är exakt det problem som [kapitel 05](05-strukturerad-kontext.md) beskriver: ostrukturerad kontext kostar tid och ger sämre svar. Jag ger Claude rätt information, men i fel format, utan regler, och utan minne mellan sessioner.
 
 ---
 
 ## Lösningen steg för steg
 
-Min lösning följer arbetsflödet från [kapitel 03](03-mappstruktur-och-arbetssatt.md): samla, extrahera, publicera, koppla. Anpassat för studier.
+Min lösning följer arbetsflödet från [kapitel 04](04-mappstruktur-och-arbetssatt.md): samla, extrahera, publicera, koppla. Anpassat för studier.
 
 ### Steg 1 — Samla kursmaterial
 
@@ -310,7 +310,7 @@ Skills är ändå värda att skapa. De tvingar dig att tänka igenom *hur* du vi
 
 ## Självinlärning — systemet som lär sig med mig
 
-Precis som i [kapitel 06](06-exempel-private-equity.md) går det att bygga ett lärdomssystem. För studier ser det lite annorlunda ut.
+Precis som i [kapitel 07](07-exempel-private-equity.md) går det att bygga ett lärdomssystem. För studier ser det lite annorlunda ut.
 
 ### Vad jag trackar
 
@@ -413,6 +413,6 @@ Femton minuter per screenshot, eller femton minuter en gång för att bygga syst
 
 ---
 
-> *Föregående kapitel: [04 — Strukturerad kontext](04-strukturerad-kontext.md)*
+> *Föregående kapitel: [05 — Strukturerad kontext](05-strukturerad-kontext.md)*
 >
-> *Nästa kapitel: [06 — Exempel: Private Equity](06-exempel-private-equity.md)*
+> *Nästa kapitel: [07 — Exempel: Private Equity](07-exempel-private-equity.md)*

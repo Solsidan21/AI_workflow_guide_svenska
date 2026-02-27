@@ -1,4 +1,4 @@
-# Kapitel 04 — Strukturerad kontext
+# Kapitel 05 — Strukturerad kontext
 
 > *Du har gett AI hela kursboken, alla rapporter och ett halvår av mejl. Varför ger den fortfarande generiska svar?*
 
@@ -35,7 +35,7 @@ PDF:er är gjorda för människor att läsa på skärm eller skriva ut. De är *
 - **Opålitlig extraktion.** Tabeller, formler och layout bryts ofta vid tolkning. Siffror hamnar fel. Kolumner blandas ihop.
 - **Ingen navigering.** AI:n kan inte "bläddra" till rätt sida. Den processar allt, från framsida till appendix, varje gång.
 
-Du har redan läst om detta i [kapitel 02](02-promptteknik-och-kontext.md) och [kapitel 03](03-mappstruktur-och-arbetssatt.md). Poängen här är inte att upprepa det, utan att koppla det till det andra problemet.
+Du har redan läst om detta i [kapitel 02](02-promptteknik-och-kontext.md) och [kapitel 04](04-mappstruktur-och-arbetssatt.md). Poängen här är inte att upprepa det, utan att koppla det till det andra problemet.
 
 ### Problem 2 — Ostrukturerad kontext
 
@@ -79,7 +79,7 @@ Du behöver inte skriva Markdown manuellt. Du ber Claude extrahera det viktiga f
 
 Filnamn och mappar **är** instruktioner. När Claude ser `data/finansiellt/arsredovisning-2024/nyckeltal.md` vet den exakt vad filen innehåller, utan att du förklarat det. Jämför med `dokument/fil3.pdf`. Då vet Claude ingenting.
 
-Det här är inte arkivering för arkiveringens skull. Det är kontext som AI:n använder varje gång den letar efter information. (Mer om detta i [kapitel 03](03-mappstruktur-och-arbetssatt.md).)
+Det här är inte arkivering för arkiveringens skull. Det är kontext som AI:n använder varje gång den letar efter information. (Mer om detta i [kapitel 04](04-mappstruktur-och-arbetssatt.md).)
 
 ### 3. CLAUDE.md som styr fokus
 
@@ -103,10 +103,10 @@ Samma fråga. Samma underliggande information. Men helt olika kvalitet på svare
 
 ## Koppling framåt
 
-Du har nu bilden av *varför* strukturerad kontext gör skillnad. Del 2 visar hur det ser ut i praktiken: för [studier](05-exempel-studier.md), för [Private Equity](06-exempel-private-equity.md), för [marknadsföring](07-exempel-marknadsforing.md). Men principen är densamma: ge AI rätt information i rätt format med regler som hjälper den fokusera.
+Du har nu bilden av *varför* strukturerad kontext gör skillnad. Del 2 visar hur det ser ut i praktiken: för [studier](06-exempel-studier.md), för [Private Equity](07-exempel-private-equity.md), för [marknadsföring](08-exempel-marknadsforing.md). Men principen är densamma: ge AI rätt information i rätt format med regler som hjälper den fokusera.
 
 ---
 
-> *Föregående kapitel: [03 — Mappstruktur och arbetssätt](03-mappstruktur-och-arbetssatt.md)*
+> *Föregående kapitel: [04 — Mappstruktur och arbetssätt](04-mappstruktur-och-arbetssatt.md)*
 >
-> *Nästa kapitel: [05 — Exempel: Studier](05-exempel-studier.md)*
+> *Nästa kapitel: [06 — Exempel: Studier](06-exempel-studier.md)*

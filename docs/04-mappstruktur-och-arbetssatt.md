@@ -1,4 +1,4 @@
-# Kapitel 03 — Mappstruktur och arbetssätt
+# Kapitel 04 — Mappstruktur och arbetssätt
 
 > *Det här är kapitlet som binder ihop allt. Struktur är inte administration. Det är det som gör AI bra.*
 
@@ -565,6 +565,6 @@ Det viktigaste är inte att strukturen är perfekt från dag ett. Det viktigaste
 
 ---
 
-> *Föregående kapitel: [02 — Promptteknik och kontext](02-promptteknik-och-kontext.md)*
+> *Föregående kapitel: [03 — Begreppen som tar dig till nästa nivå](03-begreppen.md)*
 >
-> *Nästa kapitel: [04 — Strukturerad kontext](04-strukturerad-kontext.md)*
+> *Nästa kapitel: [05 — Strukturerad kontext](05-strukturerad-kontext.md)*
