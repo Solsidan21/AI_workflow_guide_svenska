@@ -30,7 +30,7 @@ Norvik är ett litet team som hanterar en bred portfölj. Varje person bär fler
 
 ## Firmans mappstruktur
 
-Mappstrukturen speglar firmans verksamhet: firma, fonder, portföljbolag, pipeline och delade resurser. Principerna från [kapitel 04](04-mappstruktur-och-arbetssatt.md) (beskrivande namn, logisk hierarki, separation av data och analys) tillämpas konsekvent.
+Mappstrukturen speglar firmans verksamhet: firma, fonder, portföljbolag, pipeline och delade resurser. Principerna från [kapitel 03](03-mappstruktur-och-arbetssatt.md) (beskrivande namn, logisk hierarki, separation av data och analys) tillämpas konsekvent.
 
 ```
 firma-exempel/
@@ -107,7 +107,7 @@ Mappen `gemensamt/` är firmans kunskapsbibliotek: mallar, skills, ramverk och b
 
 ## CLAUDE.md-hierarkin i praktiken
 
-CLAUDE.md-hierarkin (beskriven i [kapitel 04](04-mappstruktur-och-arbetssatt.md)) appliceras på tre nivåer hos Norvik Capital.
+CLAUDE.md-hierarkin (beskriven i [kapitel 03](03-mappstruktur-och-arbetssatt.md)) appliceras på tre nivåer hos Norvik Capital.
 
 ### Nivå 1: Firmabrett (rot-CLAUDE.md)
 
@@ -468,6 +468,6 @@ Norvik Capital är fiktivt. Men strukturen och arbetsflödena är byggda för at
 
 ---
 
-> *Föregående kapitel: [06 — Exempel: Studier](06-exempel-studier.md)*
+> *Föregående kapitel: [05 — Exempel: Studier](05-exempel-studier.md)*
 >
-> *Nästa kapitel: [08 — Exempel: Marknadsförare](08-exempel-marknadsforing.md)*
+> *Nästa kapitel: [07 — Exempel: Marknadsförare](07-exempel-marknadsforing.md)*

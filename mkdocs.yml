@@ -49,11 +49,11 @@ nav:
   - Del 1 — Förstå landskapet:
       - 01 — AI-verktygslandskapet: 01-verktygslandskapet.md
       - 02 — Promptteknik och kontext: 02-promptteknik-och-kontext.md
-      - 03 — Begreppen som tar dig till nästa nivå: 03-begreppen.md
-      - 04 — Mappstruktur och arbetssätt: 04-mappstruktur-och-arbetssatt.md
-      - 05 — Strukturerad kontext: 05-strukturerad-kontext.md
+      - 03 — Mappstruktur och arbetssätt: 03-mappstruktur-och-arbetssatt.md
+      - 04 — Strukturerad kontext: 04-strukturerad-kontext.md
   - Del 2 — Praktiska exempel:
-      - "06 — Exempel: Studier": 06-exempel-studier.md
-      - "07 — Exempel: Private Equity": 07-exempel-private-equity.md
-      - "08 — Exempel: Marknadsförare": 08-exempel-marknadsforing.md
-      - "09 — Exempel: Konsult": 09-exempel-konsult.md
+      - "05 — Exempel: Studier": 05-exempel-studier.md
+      - "06 — Exempel: Private Equity": 06-exempel-private-equity.md
+      - "07 — Exempel: Marknadsförare": 07-exempel-marknadsforing.md
+      - "08 — Exempel: Konsult": 08-exempel-konsult.md
+  - Ordlista: ordlista.md

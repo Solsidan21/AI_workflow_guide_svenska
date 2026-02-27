@@ -1,10 +1,8 @@
-# Kapitel 03 — Begreppen som tar dig till nästa nivå
+# Ordlista
 
-> *Du har sett verktygslandskapet och hur prompting fungerar. Här är begreppen som binder ihop allt.*
+> *Den här sidan är din referens. Du behöver inte läsa den från början till slut.*
 
-Du har nu sett trappan från chatt till system och förstår varför kontext avgör kvaliteten på svaren. Det här kapitlet ger dig de elva begreppen som dyker upp genom resten av guiden.
-
-Du behöver inte memorera dem. Kom tillbaka hit när du stöter på ett ord du inte känner igen. Inget av begreppen är svårare än att lära sig ett nytt Excel-kortkommando, men tillsammans är de nyckeln till att ta steget från chatt till system.
+Här samlar vi de begrepp som dyker upp genom guiden. Kom tillbaka hit när du stöter på ett ord du inte känner igen. Inget av begreppen är svårare än att lära sig ett nytt Excel-kortkommando.
 
 ---
 
@@ -133,14 +131,6 @@ Du behöver inte memorera dem. Kom tillbaka hit när du stöter på ett ord du i
 
 ---
 
-## Din referens
-
-Elva begrepp. Inget av dem är raketvetenskap. Du behöver inte memorera dem. Det här kapitlet är din referens. Nästa gång du stöter på ett ord du inte känner igen, kom tillbaka hit.
-
-Nu har du ordförrådet. Resten av guiden visar hur du använder det i praktiken.
-
 ---
 
-> *Föregående kapitel: [02 — Promptteknik och kontext](02-promptteknik-och-kontext.md)*
->
-> *Nästa kapitel: [04 — Mappstruktur och arbetssätt](04-mappstruktur-och-arbetssatt.md)*
+> *Tillbaka till [startsidan](index.md)*

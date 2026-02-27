@@ -31,7 +31,7 @@ Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad
     När jag sedan försökte förklara allt jag lärt mig för familj och vänner utan teknisk bakgrund insåg jag hur svårt det var. Det här är resultatet: guiden jag önskar att jag hade haft innan jag dök in i det här enorma området.
 
 !!! info "En insikt som förändrade mitt arbetsflöde"
-    Det enklaste sättet att göra AI bättre är inte att skriva bättre promptar. Det är att sluta mata den med råa PDF:er. PDF:er kostar mångfalt mer kontext, tabeller feltolkas, och AI:n kan inte navigera till rätt sida. Kapitel 02 och 04 visar hur du löser det.
+    Det enklaste sättet att göra AI bättre är inte att skriva bättre promptar. Det är att sluta mata den med råa PDF:er. PDF:er kostar mångfalt mer kontext, tabeller feltolkas, och AI:n kan inte navigera till rätt sida. Kapitel 02 och 03 visar hur du löser det.
 
 ---
 
@@ -45,28 +45,30 @@ Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad
     **[02 — Promptteknik och kontext](02-promptteknik-och-kontext.md)**
     Varför kontext avgör allt, och teknikerna som gör skillnad
 
-    **[03 — Begreppen som tar dig till nästa nivå](03-begreppen.md)**
-    Din referens för resten av guiden: de begrepp som binder ihop allt
-
-    **[04 — Mappstruktur och arbetssätt](04-mappstruktur-och-arbetssatt.md)**
+    **[03 — Mappstruktur och arbetssätt](03-mappstruktur-och-arbetssatt.md)**
     Det centrala arbetsflödet: CLAUDE.md, skills och PDF→Markdown→GitHub
 
-    **[05 — Strukturerad kontext](05-strukturerad-kontext.md)**
+    **[04 — Strukturerad kontext](04-strukturerad-kontext.md)**
     Varför navigerbar kontext + regler slår maxad kontext
 
 === "Del 2 — Praktiska exempel"
 
-    **[06 — Exempel: Studier](06-exempel-studier.md)**
+    **[05 — Exempel: Studier](05-exempel-studier.md)**
     Hela kursen i fickan: AI-system för universitetsstudier
 
-    **[07 — Exempel: Private Equity](07-exempel-private-equity.md)**
+    **[06 — Exempel: Private Equity](06-exempel-private-equity.md)**
     Norvik Capital: hela firmans AI-system i praktiken
 
-    **[08 — Exempel: Marknadsförare](08-exempel-marknadsforing.md)**
+    **[07 — Exempel: Marknadsförare](07-exempel-marknadsforing.md)**
     AI i det dagliga arbetet *(kommer snart)*
 
-    **[09 — Exempel: Konsult](09-exempel-konsult.md)**
+    **[08 — Exempel: Konsult](08-exempel-konsult.md)**
     Från analys till leverans *(kommer snart)*
+
+=== "Referens"
+
+    **[Ordlista](ordlista.md)**
+    Alla begrepp på ett ställe. Kom tillbaka hit när du stöter på ett ord du inte känner igen.
 
 ---
 

@@ -120,6 +120,9 @@ Här sker språnget. Claude Code är ett verktyg där Claude arbetar direkt med 
 
 **Du behöver inte kunna programmera.** Du behöver inte kunna terminalen. Du behöver bara kunna beskriva vad du vill ha, och det kan du redan.
 
+??? info "Vad är terminalen?"
+    Datorns textbaserade kommandofönster. Istället för att klicka på ikoner skriver du kommandon. Du behöver inte lära dig kommandon, Claude hjälper dig. Fler begrepp finns i [ordlistan](ordlista.md).
+
 ### Hur du börjar — från chatt till Code
 
 Det naturliga sättet att börja med Claude Code är inte i terminalen, det är i chatten:
@@ -161,7 +164,7 @@ Skillnaden är inte att Claude Code är "smartare", det är samma AI-modell. Ski
 
 **Skills** är återanvändbara arbetsflöden. Claude Code skapar dem baserat på dina behov. Du beskriver en uppgift du gör ofta, och Claude bygger en skill som utför alla stegen med ett enda kommando. Istället för att förklara hur en kassaflödesanalys ska göras varje gång, skriver du `/kassaflodesanalys` och Claude utför alla stegen.
 
-> Hur du sätter upp CLAUDE.md och skills i praktiken täcks i [kapitel 04](04-mappstruktur-och-arbetssatt.md).
+> Hur du sätter upp CLAUDE.md och skills i praktiken täcks i [kapitel 03](03-mappstruktur-och-arbetssatt.md).
 
 ---
 

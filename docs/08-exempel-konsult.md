@@ -8,6 +8,6 @@ Kommer snart.
 
 ---
 
-> *Föregående kapitel: [08 — Exempel: Marknadsförare](08-exempel-marknadsforing.md)*
+> *Föregående kapitel: [07 — Exempel: Marknadsförare](07-exempel-marknadsforing.md)*
 >
 > *Tillbaka till [startsidan](../README.md)*
