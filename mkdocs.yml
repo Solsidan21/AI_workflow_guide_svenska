@@ -48,6 +48,14 @@ extra:
   analytics:
     provider: google
     property: G-YDFX3B82KF
+  consent:
+    title: Cookie-samtycke
+    description: >-
+      Vi använder cookies för att mäta trafik via Google Analytics.
+      Du kan välja att godkänna eller avvisa detta.
+    actions:
+      - accept
+      - reject
 
 nav:
   - Start: index.md
