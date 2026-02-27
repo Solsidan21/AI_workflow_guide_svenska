@@ -1,6 +1,6 @@
-# AI-djupdykning — Från chatt till system
+# AI Workflow Guide — Från chatt till system
 
-> **Du använder redan AI dagligen och får bra svar. Den här guiden visar vad som händer när du går från "det funkar oftast" till "den gör exakt vad jag vill, varje gång."**
+> *Jag heter Arvid, läser ekonomi och matematik på Lunds Universitet och har egentligen ingen teknisk bakgrund. Under några intensiva veckor dök jag djupt ner i hur AI-verktyg faktiskt fungerar — bortom chatten. Det här är vad jag önskar att någon hade förklarat för mig innan jag började.*
 
 ---
 
