@@ -14,14 +14,16 @@ Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal för
 
 ---
 
-## Känner du igen dig?
+## Vad blir möjligt?
 
-- Du har en Custom GPT eller ett Claude-projekt som ger bra svar, men ibland helt ignorerar sina instruktioner, och du vet inte varför
-- Du laddar upp filer varje gång, men AI:n verkar glömma hälften ändå
-- Du kopierar samma kontext mellan sessioner och undrar om det finns ett bättre sätt
-- Du vill att AI:n ska följa *din* metod, inte sin egen, men vet inte hur du styr den
+När du går från chatt till system öppnas helt nya sätt att arbeta med AI:
 
-Om något av det stämmer in är du på rätt ställe. Den här guiden visar vad som händer när du ger AI regler, struktur och minne.
+- **Studier:** Synca hela din kurs — kursplan, föreläsningsanteckningar, övningar — till ett AI-projekt och få en studieassistent som kan kursen utantill
+- **Private Equity:** Peka AI mot en datamapp, säg "screening-memo på det här bolaget" och få ett komplett utkast i ditt format på sekunder
+- **Marknadsföring:** Bygg ett arbetsflöde som genererar kanalanpassat innehåll med rätt varumärkeston, utan att du förklarar brand guidelines varje gång
+- **Konsulting:** Definiera firmans metodik en gång och låt varje analys följa den automatiskt
+
+Det kräver att du sätter dig in i hur verktygen fungerar bortom chatten. Den här guiden finns för att ge dig kartan och hjälpa dig komma igång på egen hand.
 
 ??? note "Vem har skrivit det här?"
     Jag heter Arvid, läser ekonomi och matematik på Lunds Universitet och har egentligen ingen teknisk bakgrund. Det är enormt mycket snack om AI just nu, så jag tänkte: om det verkligen stämmer borde jag kunna bygga den app jag gått och tänkt på länge.
