@@ -8,9 +8,9 @@ Du använder sannolikt redan ChatGPT eller Claude dagligen. Du vet hur man skriv
 
 Men du gör samma sak om och om igen. Varje session börjar från noll. Du kopierar data fram och tillbaka. Du förklarar samma kontext för tionde gången.
 
-**Den här guiden handlar om språnget från att chatta med AI till att bygga system som gör AI 10x bättre på just ditt jobb.** Inte genom bättre promptar, utan genom struktur, regler och minne.
+**Den här guiden handlar om en insikt: AI:n du redan använder är tillräckligt smart för att göra mycket mer än du tror.** Inte genom bättre promptar, utan genom att ge den bättre förutsättningar: struktur, regler och kontext.
 
-Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal förut. Men du är redo att ta ett steg utanför chatten.
+Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal förut. Men du är redo att förstå varför AI ibland ger fantastiska svar och ibland generiska, och vad du kan göra åt det.
 
 ---
 
@@ -23,7 +23,7 @@ När du går från chatt till system öppnas helt nya sätt att arbeta med AI:
 - **Marknadsföring:** Bygg ett arbetsflöde som genererar kanalanpassat innehåll med rätt varumärkeston, utan att du förklarar brand guidelines varje gång
 - **Konsulting:** Definiera firmans metodik en gång och låt varje analys följa den automatiskt
 
-Det kräver att du sätter dig in i hur verktygen fungerar bortom chatten. Den här guiden finns för att ge dig kartan och hjälpa dig komma igång på egen hand.
+Det kräver inte att du lär dig ett specifikt verktyg eller arbetsflöde. Verktygen förändras ständigt. Men principerna bakom dem, att ge AI rätt kontext i rätt format, håller oavsett. Den här guiden finns för att ge dig den förståelsen.
 
 ??? note "Vem har skrivit det här?"
     Jag heter Arvid, läser ekonomi och matematik på Lunds Universitet och har egentligen ingen teknisk bakgrund. Det är enormt mycket snack om AI just nu, så jag tänkte: om det verkligen stämmer borde jag kunna bygga den app jag gått och tänkt på länge.
@@ -60,12 +60,6 @@ Det kräver att du sätter dig in i hur verktygen fungerar bortom chatten. Den h
 
     **[06 — Exempel: Private Equity](06-exempel-private-equity.md)**
     Norvik Capital: hela firmans AI-system i praktiken
-
-    **[07 — Exempel: Marknadsförare](07-exempel-marknadsforing.md)**
-    AI i det dagliga arbetet *(kommer snart)*
-
-    **[08 — Exempel: Konsult](08-exempel-konsult.md)**
-    Från analys till leverans *(kommer snart)*
 
 === "Referens"
 

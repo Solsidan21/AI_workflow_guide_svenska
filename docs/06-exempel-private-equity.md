@@ -470,4 +470,4 @@ Norvik Capital är fiktivt. Men strukturen och arbetsflödena är byggda för at
 
 > *Föregående kapitel: [05 — Exempel: Studier](05-exempel-studier.md)*
 >
-> *Nästa kapitel: [07 — Exempel: Marknadsförare](07-exempel-marknadsforing.md)*
+> *Tillbaka till [startsidan](index.md)*

@@ -1,8 +1,8 @@
 # Kapitel 01 — AI-verktygslandskapet
 
-> *Du chattar redan med AI. Men visste du att det finns ett helt spektrum av verktyg, och att de flesta kunskapsarbetare bara använder det första steget?*
+> *Du chattar redan med AI. Den ger bra svar. Men du vet att den borde kunna ge bättre. Det handlar inte om modellen. Det handlar om hur du arbetar med den.*
 
-Det här kapitlet ger dig kartan. Vi går igenom de stora AI-verktygen, vad de gör, vad de är bra på, och hur de hänger ihop i en trappa från enkel chatt till autonoma agenter.
+Det här kapitlet ger dig kartan. Vi går igenom de stora AI-verktygen, vad de gör, vad de är bra på, och hur de ger AI olika förutsättningar att leverera.
 
 ---
 
@@ -168,24 +168,24 @@ Skillnaden är inte att Claude Code är "smartare", det är samma AI-modell. Ski
 
 ---
 
-## Steg 4: Claude Cowork — autonom AI i molnet
+## Steg 4: Claude Cowork — AI som arbetar med dig på skrivbordet
 
-Om Claude Code är en assistent vid ditt skrivbord, så är Cowork en junior analytiker du skickar iväg med ett uppdrag, och som kommer tillbaka med resultatet.
+Om Claude Code är en assistent du samarbetar med i terminalen, så är Cowork en assistent med ett grafiskt gränssnitt som kan arbeta med dina filer, surfa på webben och utföra uppgifter direkt på din dator.
 
 ### Vad det är
 
-Claude Cowork är en autonom AI-agent som körs i molnet. Du beskriver en uppgift, Cowork planerar sitt angreppssätt, arbetar igenom det steg för steg, och levererar ett färdigt resultat.
+Claude Cowork är en del av Claude-skrivbordsappen. Den körs lokalt på din dator i en säker sandlåda, med tillgång till en arbetsmapp du väljer. Du beskriver en uppgift, Cowork arbetar igenom den steg för steg, och levererar resultatet.
 
 Det som skiljer det från Claude Code:
 
-- **Körs i molnet:** du behöver inte ha datorn igång
-- **Arbetar självständigt:** webbsökning, kodexekvering, dataanalys
-- **Hanterar längre uppgifter:** saker som tar 15–60 minuter manuellt
-- **Enklare gränssnitt:** ingen terminal krävs
+- **Grafiskt gränssnitt:** ingen terminal krävs
+- **Arbetar självständigt:** webbsökning, kodexekvering, dataanalys, filhantering
+- **Lokal exekvering:** körs på din dator, dina filer lämnar inte maskinen
+- **Enklare att komma igång:** välj en mapp och beskriv uppgiften
 
 ### Vem passar det för?
 
-Cowork är för dig som har uppgifter som är tidskrävande men väldefinierade. Research, sammanställningar, kartläggningar. Uppgifter där du vill ge ett uppdrag och få tillbaka ett resultat utan att övervaka varje steg.
+Cowork är för dig som vill att AI arbetar med dina filer och uppgifter utan att gå via terminalen. Research, sammanställningar, dokumentskapande. Uppgifter där du vill ge ett uppdrag och få tillbaka ett resultat.
 
 ### Konkreta exempel
 
@@ -197,9 +197,9 @@ Cowork är för dig som har uppgifter som är tidskrävande men väldefinierade.
 
 **Instruktionskvalitet är avgörande.** Vaga uppdrag ger vaga resultat. Var tydlig med: vad du vill ha, i vilket format, vad som är viktigt.
 
-**Granska alltid resultatet.** Behandla Cowork-leveranser som ett första utkast från en junior medarbetare.
+**Granska alltid resultatet.** Behandla leveranser som ett första utkast från en junior medarbetare.
 
-**Molnbaserat = datahantering.** Data skickas till Anthropics servrar. För känslig information, kontrollera med din organisation.
+**Produkten utvecklas snabbt.** Cowork är relativt nytt och funktionaliteten förändras löpande. Kolla Anthropics dokumentation för senaste status.
 
 ---
 
@@ -207,10 +207,10 @@ Cowork är för dig som har uppgifter som är tidskrävande men väldefinierade.
 
 | Aspekt | Claude Code | Claude Cowork |
 |--------|------------|---------------|
-| **Var körs det** | Din dator (terminalen) | Molnet |
+| **Var körs det** | Din dator (terminalen) | Din dator (grafiskt gränssnitt) |
 | **Interaktion** | Iterativt, ni arbetar tillsammans | Ge uppdrag, få resultat |
-| **Bäst för** | Arbete med lokala filer, finjustering, systembyggande | Längre research, autonoma uppgifter |
-| **Kontroll** | Hög: du ser varje steg | Lägre: agenten arbetar självständigt |
+| **Bäst för** | Arbete med lokala filer, finjustering, systembyggande | Längre research, dokumentskapande, filhantering utan terminal |
+| **Kontroll** | Hög: du ser varje steg | Mer självständigt arbete |
 | **CLAUDE.md och skills** | Ja, hela systemet | Nej, instruktionen är ditt uppdrag |
 
 ---
@@ -234,22 +234,24 @@ Cowork gör det tunga lyftet. Code gör det precisa arbetet med kontext och regl
 
 ## Nyckelinsikten
 
-Skillnaden mellan Chat och Code är inte teknisk svårighet. Det är skillnaden mellan att skriva samma mejl från grunden varje gång och att ha en mall med förifyllda fält.
+AI:n du använder idag är redan kapabel till mycket mer än vad de flesta får ut av den. Skillnaden mellan ett generiskt svar och ett briljant svar handlar nästan aldrig om modellen. Det handlar om förutsättningarna du ger den.
 
-I chatten är din prompt allt. Varje gång du öppnar en ny konversation börjar du med tomt papper.
+I chatten är din prompt allt. Varje gång du öppnar en ny konversation börjar du med tomt papper. AI:n vet ingenting om dig, ditt projekt eller dina förväntningar.
 
-Med Claude Code bygger du ett **system**:
+Med strukturerad kontext ger du AI:n det den behöver för att leverera:
 
-- **CLAUDE.md:** regler som alltid gäller
-- **Skills:** återanvändbara arbetsflöden
-- **Mappstruktur:** data, analys och output på rätt ställe
-- **Mallar:** standardformat för rapporter och presentationer
+- **Regler** som alltid gäller (genom CLAUDE.md eller projektinstruktioner)
+- **Återanvändbara arbetsflöden** (skills eller liknande)
+- **Organiserad data** på rätt ställe istället för allt i en hög
+- **Mallar** som definierar format och förväntningar
 
-Systemet gör att AI **blir smartare över tid** på just ditt jobb. Inte för att modellen förändras, utan för att den kontext och de regler du byggt upp gör varje session bättre än den föregående.
+Det gör inte AI:n smartare. Den är redan smart. Det gör att den kan *använda* sin kapacitet på just ditt problem.
+
+Verktygen som beskrivs i den här guiden kommer att förändras. Nya versioner, nya produkter, nya arbetsflöden. Men principen att AI levererar bättre med rätt kontext, regler och struktur kommer att hålla.
 
 Du behöver inte göra allt på en gång. Men om du tar bort en sak från det här kapitlet, låt det vara detta:
 
-**Sluta börja från noll. Börja bygga ett system.**
+**AI:n är redan tillräckligt smart. Det är förutsättningarna som gör skillnaden.**
 
 ---
 

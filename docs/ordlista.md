@@ -131,6 +131,4 @@ Här samlar vi de begrepp som dyker upp genom guiden. Kom tillbaka hit när du s
 
 ---
 
----
-
 > *Tillbaka till [startsidan](index.md)*

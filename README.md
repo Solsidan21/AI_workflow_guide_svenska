@@ -1,6 +1,6 @@
 # AI-djupdykning — Från chatt till system
 
-**En guide för dig som redan använder AI men vill förstå hur du bygger system som gör AI 10x bättre på just ditt jobb.**
+**En guide för dig som redan använder AI men vill förstå varför den ibland briljerar och ibland ger generiska svar, och vad du kan göra åt det.**
 
 ---
 
@@ -8,11 +8,11 @@
 
 Du använder sannolikt redan ChatGPT eller Claude dagligen — kanske laddar du upp filer, har skapat Custom GPTs, eller experimenterat med Projects. Du vet hur man skriver en bra prompt och du får bra svar.
 
-Men du upprepar dig. Varje session börjar från noll. Du kopierar data fram och tillbaka. Den här guiden visar vad som händer när du ger AI regler, struktur och minne — och går från att chatta till att bygga ett system.
+Men du upprepar dig. Varje session börjar från noll. Du kopierar data fram och tillbaka. AI:n är inte problemet. Den är redan smart nog. Problemet är förutsättningarna du ger den. Den här guiden visar vad som händer när du ger AI struktur, regler och kontext istället för råa PDF:er och improviserade prompts.
 
 **Guiden använder Claude som huvudexempel**, men principerna — persistent kontext, regler, mappstruktur, återanvändbara arbetsflöden — gäller oavsett vilket AI-verktyg du använder. Där det är relevant pekar vi ut hur koncept översätts mellan verktyg.
 
-Guiden är skriven för **kunskapsarbetare** som använder AI dagligen men inte tagit steget bortom chatten. Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal förut. Men du är redo att ta nästa steg.
+Guiden är skriven för **kunskapsarbetare** som använder AI dagligen men inte fått ut dess fulla potential. Du behöver inte kunna programmera. Du behöver inte ha öppnat en terminal förut. Men du är nyfiken på varför AI ibland levererar exakt det du behöver och ibland missar helt, och vad du kan göra annorlunda.
 
 ---
 
@@ -33,8 +33,6 @@ Guiden är skriven för **kunskapsarbetare** som använder AI dagligen men inte 
 |----|---------|-------------|
 | 05 | [Exempel: Studier](docs/05-exempel-studier.md) | Hela kursen i fickan — AI-system för universitetsstudier |
 | 06 | [Exempel: Private Equity](docs/06-exempel-private-equity.md) | Norvik Capital — hela firmans AI-system i praktiken |
-| 07 | [Exempel: Marknadsförare](docs/07-exempel-marknadsforing.md) | AI i det dagliga arbetet *(kommer snart)* |
-| 08 | [Exempel: Konsult](docs/08-exempel-konsult.md) | Från analys till leverans *(kommer snart)* |
 
 ### Referens
 
@@ -58,7 +56,7 @@ Du kan läsa guiden från början till slut, eller hoppa direkt till det du beh�
 
 - **Vill förstå verktygen?** [Kapitel 01](docs/01-verktygslandskapet.md) ger dig hela kartan från chatt till autonoma agenter.
 - **Vill förstå prompting och kontext?** [Kapitel 02](docs/02-promptteknik-och-kontext.md) visar teknikerna som gör störst skillnad.
-- **Vill förstå arbetssättet?** [Kapitel 03](docs/03-mappstruktur-och-arbetssatt.md) är guidens viktigaste kapitel — det centrala arbetsflödet.
+- **Vill förstå hur struktur och kontext gör skillnad?** [Kapitel 03](docs/03-mappstruktur-och-arbetssatt.md) visar det i praktiken.
 - **Vill se ett konkret exempel?** [Kapitel 06](docs/06-exempel-private-equity.md) visar hur en hel PE-firma sätter upp sitt AI-system.
 - **Behöver du ett begrepp förklarat?** [Ordlistan](docs/ordlista.md) har alla tekniska termer samlade.
 

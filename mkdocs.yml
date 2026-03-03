@@ -1,6 +1,6 @@
 site_name: "AI Workflow Guide — Från chatt till system"
 site_url: https://solsidan21.github.io/AI_workflow_guide_svenska/
-site_description: En guide för dig som redan använder AI men vill ta språnget från chatt till system
+site_description: En guide för dig som redan använder AI men vill förstå hur du ger den rätt förutsättningar
 repo_url: https://github.com/Solsidan21/AI_workflow_guide_svenska
 repo_name: Solsidan21/AI_workflow_guide_svenska
 
@@ -54,6 +54,4 @@ nav:
   - Del 2 — Praktiska exempel:
       - "05 — Exempel: Studier": 05-exempel-studier.md
       - "06 — Exempel: Private Equity": 06-exempel-private-equity.md
-      - "07 — Exempel: Marknadsförare": 07-exempel-marknadsforing.md
-      - "08 — Exempel: Konsult": 08-exempel-konsult.md
   - Ordlista: ordlista.md
