@@ -1,0 +1,1665 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="En guide för dig som redan använder AI men vill förstå hur du ger den rätt förutsättningar">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/01-verktygslandskapet/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../02-promptteknik-och-kontext/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>01 — AI-verktygslandskapet - AI Workflow Guide — Från chatt till system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-01-ai-verktygslandskapet" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI Workflow Guide — Från chatt till system" class="md-header__button md-logo" aria-label="AI Workflow Guide — Från chatt till system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Workflow Guide — Från chatt till system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01 — AI-verktygslandskapet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Del 1 — Förstå landskapet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-exempel-studier/" class="md-tabs__link">
+          
+  
+  
+  Del 2 — Praktiska exempel
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Workflow Guide — Från chatt till system" class="md-nav__button md-logo" aria-label="AI Workflow Guide — Från chatt till system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Workflow Guide — Från chatt till system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1 — Förstå landskapet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1 — Förstå landskapet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 — AI-verktygslandskapet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 — AI-verktygslandskapet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-stora-ai-verktygen-en-snabb-karta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De stora AI-verktygen — en snabb karta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemet-du-redan-kanner-till" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemet du redan känner till
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trappan-fran-engangsprompt-till-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trappan: från engångsprompt till system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-1-ai-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: AI-chatten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steg 1: AI-chatten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundupplevelsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grundupplevelsen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projekt-och-custom-gpts-delad-kontext-i-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt och Custom GPTs — delad kontext i chatten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-2-ai-i-office-excel-powerpoint-och-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: AI i Office — Excel, PowerPoint och Word
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-3-claude-code-ditt-ai-system-i-terminalen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: Claude Code — ditt AI-system i terminalen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steg 3: Claude Code — ditt AI-system i terminalen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hur-du-borjar-fran-chatt-till-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur du börjar — från chatt till Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-innebar-i-praktiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det innebär i praktiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-det-ar-ett-sprang-jamfort-med-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför det är ett språng jämfört med chatten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-tva-nyckelkoncepten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De två nyckelkoncepten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-4-claude-cowork-ai-som-arbetar-med-dig-pa-skrivbordet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: Claude Cowork — AI som arbetar med dig på skrivbordet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steg 4: Claude Cowork — AI som arbetar med dig på skrivbordet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vem-passar-det-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vem passar det för?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konkreta-exempel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Konkreta exempel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#begransningar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Begränsningar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-vs-cowork-en-jamforelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code vs Cowork — en jämförelse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kombinera-verktygen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kombinera verktygen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nyckelinsikten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nyckelinsikten
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-promptteknik-och-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 — Promptteknik och kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-mappstruktur-och-arbetssatt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 — Mappstruktur och arbetssätt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-strukturerad-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 — Strukturerad kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2 — Praktiska exempel
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2 — Praktiska exempel
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-exempel-studier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 — Exempel: Studier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-exempel-private-equity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 — Exempel: Private Equity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-stora-ai-verktygen-en-snabb-karta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De stora AI-verktygen — en snabb karta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemet-du-redan-kanner-till" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemet du redan känner till
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trappan-fran-engangsprompt-till-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trappan: från engångsprompt till system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-1-ai-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: AI-chatten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steg 1: AI-chatten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundupplevelsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grundupplevelsen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projekt-och-custom-gpts-delad-kontext-i-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt och Custom GPTs — delad kontext i chatten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-2-ai-i-office-excel-powerpoint-och-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: AI i Office — Excel, PowerPoint och Word
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-3-claude-code-ditt-ai-system-i-terminalen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: Claude Code — ditt AI-system i terminalen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steg 3: Claude Code — ditt AI-system i terminalen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hur-du-borjar-fran-chatt-till-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur du börjar — från chatt till Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-innebar-i-praktiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det innebär i praktiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-det-ar-ett-sprang-jamfort-med-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför det är ett språng jämfört med chatten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-tva-nyckelkoncepten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De två nyckelkoncepten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-4-claude-cowork-ai-som-arbetar-med-dig-pa-skrivbordet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: Claude Cowork — AI som arbetar med dig på skrivbordet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steg 4: Claude Cowork — AI som arbetar med dig på skrivbordet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vem-passar-det-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vem passar det för?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konkreta-exempel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Konkreta exempel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#begransningar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Begränsningar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-vs-cowork-en-jamforelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code vs Cowork — en jämförelse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kombinera-verktygen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kombinera verktygen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nyckelinsikten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nyckelinsikten
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kapitel-01-ai-verktygslandskapet">Kapitel 01 — AI-verktygslandskapet<a class="headerlink" href="#kapitel-01-ai-verktygslandskapet" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Du chattar redan med AI. Den ger bra svar. Men du vet att den borde kunna ge bättre. Det handlar inte om modellen. Det handlar om hur du arbetar med den.</em></p>
+</blockquote>
+<p>Det här kapitlet ger dig kartan. Vi går igenom de stora AI-verktygen, vad de gör, vad de är bra på, och hur de ger AI olika förutsättningar att leverera.</p>
+<hr />
+<h2 id="de-stora-ai-verktygen-en-snabb-karta">De stora AI-verktygen — en snabb karta<a class="headerlink" href="#de-stora-ai-verktygen-en-snabb-karta" title="Permanent link">&para;</a></h2>
+<p>Det finns idag flera kraftfulla AI-verktyg, och du använder förmodligen redan minst ett av dem:</p>
+<table>
+<thead>
+<tr>
+<th>Verktyg</th>
+<th>Styrka</th>
+<th>Bra för</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ChatGPT</strong> (OpenAI)</td>
+<td>Störst användarbas, Custom GPTs, bred pluginmiljö</td>
+<td>Allround-chatt, anpassade GPT:er, bildgenerering</td>
+</tr>
+<tr>
+<td><strong>Claude</strong> (Anthropic)</td>
+<td>Starkt på långa dokument, brett ekosystem (Chat → Code → Cowork)</td>
+<td>Kunskapsarbete, analys, systembyggande</td>
+</tr>
+<tr>
+<td><strong>Gemini</strong> (Google)</td>
+<td>Djup Google-integration, stark på sökning</td>
+<td>Research, sammanfattning, arbete i Google Workspace</td>
+</tr>
+<tr>
+<td><strong>Copilot</strong> (Microsoft)</td>
+<td>Inbyggd i Microsoft 365</td>
+<td>Excel, PowerPoint, Word, direkt i verktygen du redan använder</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Varför Claude som huvudexempel?</strong> Kort svar: det är verktyget jag själv lärt mig med, och Claude Projects GitHub-integration gör arbetsflödet smidigt. Längre förklaring finns på <a href="../">startsidan</a>. Principerna i guiden (persistent kontext, regler, återanvändbara arbetsflöden) gäller oavsett verktyg.</p>
+<hr />
+<h2 id="problemet-du-redan-kanner-till">Problemet du redan känner till<a class="headerlink" href="#problemet-du-redan-kanner-till" title="Permanent link">&para;</a></h2>
+<p>Du använder Claude eller ChatGPT dagligen. Du får bra svar. Men tre saker gnager:</p>
+<p><strong>1. Du upprepar dig.</strong> Varje gång du startar en ny session förklarar du samma sak: vem du är, hur du vill ha svaret, vilken kontext som gäller. Du har kanske till och med en prompt sparad någonstans som du klistrar in varje gång.</p>
+<p><strong>2. Varje session börjar från noll.</strong> Igår bad du Claude analysera ett kassaflöde och fick en utmärkt analys. Idag öppnar du en ny konversation, och Claude har ingen aning om vad ni pratade om.</p>
+<p><strong>3. Du kopierar data fram och tillbaka.</strong> Du öppnar en årsredovisning, kopierar relevanta siffror, klistrar in dem i chatten, får ett svar, kopierar svaret till ett dokument. För varje ny fråga börjar du om.</p>
+<p>Det här är inte ett problem med dina prompts. Det är ett problem med <em>arbetsflödet</em>. Och det finns en lösning.</p>
+<hr />
+<h2 id="trappan-fran-engangsprompt-till-system">Trappan: från engångsprompt till system<a class="headerlink" href="#trappan-fran-engangsprompt-till-system" title="Permanent link">&para;</a></h2>
+<p>AI-verktygslandskapet är inte ett enda verktyg, det är ett spektrum. Varje steg ger dig mer kraft, mer automatisering och mindre upprepning.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  Engångsprompt                                          System
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  (det du gör idag)                            (det du kan bygga)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├──────────┼──────────────┼──────────────┼──────────────┤
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  AI-chatten    AI i           Claude Code    Claude Cowork
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  (Claude/      Excel/PPT
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   ChatGPT/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   Gemini)
+</code></pre></div>
+<p>Det här är guidens kärna: <strong>trappan</strong>. Varje steg löser begränsningarna i det föregående. Du behöver inte ta alla steg, men att förstå vilka som finns gör att du kan välja rätt verktyg för rätt uppgift.</p>
+<hr />
+<h2 id="steg-1-ai-chatten">Steg 1: AI-chatten<a class="headerlink" href="#steg-1-ai-chatten" title="Permanent link">&para;</a></h2>
+<h3 id="grundupplevelsen">Grundupplevelsen<a class="headerlink" href="#grundupplevelsen" title="Permanent link">&para;</a></h3>
+<p>Du känner det redan. Du skriver en prompt, får ett svar. Snabbt och kraftfullt, men flyktigt.</p>
+<p>Chatten ger dock mer kontext än många inser. När du chattar bygger du upp kontext på flera nivåer: hela konversationshistoriken, uppladdade filer och det samlade utbytet av frågor och svar. En lång konversation där du delar bakgrund, siffror och dokument kan ge imponerande resultat.</p>
+<p>Men den kontexten är <strong>flyktig</strong>. Den försvinner när du stänger fliken eller startar en ny session. Den är bunden till en enda konversation. Och den är <strong>manuell</strong>: du bygger upp den från noll varje gång.</p>
+<h3 id="projekt-och-custom-gpts-delad-kontext-i-chatten">Projekt och Custom GPTs — delad kontext i chatten<a class="headerlink" href="#projekt-och-custom-gpts-delad-kontext-i-chatten" title="Permanent link">&para;</a></h3>
+<p>Det finns ett steg mellan ren chatt och Code-verktyg som många missar. Både Claude och ChatGPT erbjuder sätt att skapa <strong>persistent kontext</strong> direkt i chatten:</p>
+<ul>
+<li><strong>Claude Projects:</strong> en delad arbetsyta där du laddar upp filer, skriver projektinstruktioner och startar flera konversationer som alla delar samma kontext.</li>
+<li><strong>ChatGPT Custom GPTs:</strong> anpassade GPT:er med instruktioner, uppladdade filer och (valfritt) kopplingar till externa tjänster via Actions.</li>
+</ul>
+<p>Koncepten mappar mot varandra:</p>
+<table>
+<thead>
+<tr>
+<th>Koncept</th>
+<th>Claude Projects</th>
+<th>ChatGPT Custom GPTs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Persistenta instruktioner</strong></td>
+<td>Projektinstruktioner (fritext)</td>
+<td>System-prompt i GPT-konfigurationen</td>
+</tr>
+<tr>
+<td><strong>Uppladdade filer</strong></td>
+<td>Ja, delas över konversationer</td>
+<td>Ja, via Knowledge</td>
+</tr>
+<tr>
+<td><strong>Flera konversationer</strong></td>
+<td>Ja, inom projektet</td>
+<td>Ja, varje GPT kan användas av flera</td>
+</tr>
+<tr>
+<td><strong>Delning</strong></td>
+<td>Inom team (Claude for Work)</td>
+<td>Kan publiceras i GPT Store</td>
+</tr>
+</tbody>
+</table>
+<p>Precis som CLAUDE.md ger Claude Code regler och kontext, ger projektinstruktionerna (eller GPT-konfigurationen) AI:n en "grundförståelse" som gäller varje gång. <strong>Skillnaden mot Claude Code</strong> är att du fortfarande arbetar i webbläsaren, inte kan skapa egna kommandon (skills), och att AI:n inte kan skriva tillbaka till dina filer.</p>
+<p><strong>Tumregel:</strong> Projects/Custom GPTs är ett utmärkt mellansteg om du har ett avgränsat uppdrag med ett par filer och vill slippa upprepa instruktioner. Men för pågående arbete med många filer, automatisering och full kontroll är nästa steg i trappan.</p>
+<p><strong>Vad du vinner:</strong> Snabba svar, bollplank, sammanfattningar, och med Projects/Custom GPTs: delad kontext över flera konversationer.</p>
+<p><strong>Vad du saknar:</strong> Lokal filåtkomst, automatisering, skills, mappstruktur som kontext.</p>
+<hr />
+<h2 id="steg-2-ai-i-office-excel-powerpoint-och-word">Steg 2: AI i Office — Excel, PowerPoint och Word<a class="headerlink" href="#steg-2-ai-i-office-excel-powerpoint-och-word" title="Permanent link">&para;</a></h2>
+<p>AI som tillägg direkt i Office-programmen. Du markerar data i Excel och ställer en fråga. Du beskriver en presentation och AI:n skapar ett utkast i PowerPoint.</p>
+<p>Här finns två huvudalternativ:</p>
+<ul>
+<li><strong>Claude-tillägget:</strong> installeras som add-in i Excel/PowerPoint. Bra på analys och längre texter.</li>
+<li><strong>Microsoft Copilot:</strong> inbyggt i Microsoft 365 (med Copilot-licens). Djupare integration med Office, kan skapa pivottabeller, diagram och hela presentationer direkt.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Claude-tillägg</th>
+<th>Microsoft Copilot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Styrka</strong></td>
+<td>Stark analys, bra på text och resonemang</td>
+<td>Djup Office-integration, kan skapa diagram/pivottabeller</td>
+</tr>
+<tr>
+<td><strong>Begränsning</strong></td>
+<td>Kan inte modifiera kalkylbladet direkt</td>
+<td>Ibland ytligare resonemang</td>
+</tr>
+</tbody>
+</table>
+<p>Båda är bra verktyg för snabba, avgränsade frågor när du redan arbetar i Office.</p>
+<p><strong>Styrkan:</strong> Du stannar i verktyget du redan arbetar i. Ingen kontextväxling. Perfekt för snabba frågor, formelhjälp och första utkast.</p>
+<p><strong>Svagheten:</strong> Varje fråga börjar fortfarande från noll. Det finns ingen CLAUDE.md, inga skills, inget minne. Du måste förklara kontexten varje gång.</p>
+<p><strong>Tumregel:</strong> Använd AI i Excel/PPT för snabba operativa frågor. Använd Claude Code för allt som gynnas av kontext, regler och struktur.</p>
+<hr />
+<h2 id="steg-3-claude-code-ditt-ai-system-i-terminalen">Steg 3: Claude Code — ditt AI-system i terminalen<a class="headerlink" href="#steg-3-claude-code-ditt-ai-system-i-terminalen" title="Permanent link">&para;</a></h2>
+<p>Här sker språnget. Claude Code är ett verktyg där Claude arbetar direkt med dina filer, följer dina regler och kan utföra återanvändbara arbetsflöden.</p>
+<p><strong>Du behöver inte kunna programmera.</strong> Du behöver inte kunna terminalen. Du behöver bara kunna beskriva vad du vill ha, och det kan du redan.</p>
+<details class="info">
+<summary>Vad är terminalen?</summary>
+<p>Datorns textbaserade kommandofönster. Istället för att klicka på ikoner skriver du kommandon. Du behöver inte lära dig kommandon, Claude hjälper dig. Fler begrepp finns i <a href="../ordlista/">ordlistan</a>.</p>
+</details>
+<h3 id="hur-du-borjar-fran-chatt-till-code">Hur du börjar — från chatt till Code<a class="headerlink" href="#hur-du-borjar-fran-chatt-till-code" title="Permanent link">&para;</a></h3>
+<p>Det naturliga sättet att börja med Claude Code är inte i terminalen, det är i chatten:</p>
+<ol>
+<li><strong>Öppna en AI-chatt</strong> (Claude Chat, ChatGPT, Gemini, spelar ingen roll)</li>
+<li><strong>Beskriv vad du vill skapa:</strong> ditt projekt, ditt arbete, dina behov</li>
+<li><strong>Diskutera och iterera</strong> tills du har en tydlig bild</li>
+<li><strong>Be chatten ta fram en terminalredo prompt:</strong> en komplett beskrivning du kan ge till Claude Code</li>
+<li><strong>Klistra in prompten i Claude Code:</strong> Claude bygger allt åt dig</li>
+</ol>
+<p>Det enda manuella steget? Skapa en tom mapp och starta Claude Code. Resten (mappstruktur, CLAUDE.md, skills, README-filer) skapar Claude Code baserat på din beskrivning.</p>
+<h3 id="vad-det-innebar-i-praktiken">Vad det innebär i praktiken<a class="headerlink" href="#vad-det-innebar-i-praktiken" title="Permanent link">&para;</a></h3>
+<p><strong>Tänksätt:</strong> Föreställ dig en extremt kompetent assistent som sitter bredvid dig vid datorn. Du pekar på en mapp med data och säger "analysera det här och skriv en sammanfattning." Assistenten läser filerna, gör beräkningarna, skriver rapporten och sparar den på rätt ställe.</p>
+<p>Med Claude Code kan du:</p>
+<ul>
+<li><strong>Läsa filer</strong> på din dator: PDF:er, Excel-exporter, textfiler, CSV</li>
+<li><strong>Skriva och redigera filer:</strong> rapporter, analyser, sammanställningar</li>
+<li><strong>Köra kommandon:</strong> organisera mappar, bearbeta data, automatisera uppgifter</li>
+<li><strong>Följa regler:</strong> genom CLAUDE.md och skills som du definierar</li>
+</ul>
+<h3 id="varfor-det-ar-ett-sprang-jamfort-med-chatten">Varför det är ett språng jämfört med chatten<a class="headerlink" href="#varfor-det-ar-ett-sprang-jamfort-med-chatten" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Chatt</th>
+<th>Claude Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Du kopierar in text manuellt</td>
+<td>Claude läser dina filer direkt</td>
+</tr>
+<tr>
+<td>Du får svar i chattfönster att kopiera</td>
+<td>Claude skriver filer på din dator</td>
+</tr>
+<tr>
+<td>Du förklarar regler varje session</td>
+<td>CLAUDE.md gör att reglerna alltid gäller</td>
+</tr>
+<tr>
+<td>Samma prompt varje gång</td>
+<td>Skills automatiserar återanvändbara arbetsflöden</td>
+</tr>
+<tr>
+<td>Kontextfönstret är allt som finns</td>
+<td>Hela mappstrukturen är kontext</td>
+</tr>
+</tbody>
+</table>
+<p>Skillnaden är inte att Claude Code är "smartare", det är samma AI-modell. Skillnaden är att du ger den <strong>bättre förutsättningar</strong> att göra ett bra jobb.</p>
+<h3 id="de-tva-nyckelkoncepten">De två nyckelkoncepten<a class="headerlink" href="#de-tva-nyckelkoncepten" title="Permanent link">&para;</a></h3>
+<p><strong>CLAUDE.md</strong> är en instruktionsfil i ditt projekt som Claude Code skapar baserat på din beskrivning. Claude läser den automatiskt varje session: dina regler, din kontext, din stil. Det är skillnaden mellan en assistent som börjar från noll varje dag och en som känner projektet.</p>
+<p><strong>Skills</strong> är återanvändbara arbetsflöden. Claude Code skapar dem baserat på dina behov. Du beskriver en uppgift du gör ofta, och Claude bygger en skill som utför alla stegen med ett enda kommando. Istället för att förklara hur en kassaflödesanalys ska göras varje gång, skriver du <code>/kassaflodesanalys</code> och Claude utför alla stegen.</p>
+<blockquote>
+<p>Hur du sätter upp CLAUDE.md och skills i praktiken täcks i <a href="../03-mappstruktur-och-arbetssatt/">kapitel 03</a>.</p>
+</blockquote>
+<hr />
+<h2 id="steg-4-claude-cowork-ai-som-arbetar-med-dig-pa-skrivbordet">Steg 4: Claude Cowork — AI som arbetar med dig på skrivbordet<a class="headerlink" href="#steg-4-claude-cowork-ai-som-arbetar-med-dig-pa-skrivbordet" title="Permanent link">&para;</a></h2>
+<p>Om Claude Code är en assistent du samarbetar med i terminalen, så är Cowork en assistent med ett grafiskt gränssnitt som kan arbeta med dina filer, surfa på webben och utföra uppgifter direkt på din dator.</p>
+<h3 id="vad-det-ar">Vad det är<a class="headerlink" href="#vad-det-ar" title="Permanent link">&para;</a></h3>
+<p>Claude Cowork är en del av Claude-skrivbordsappen. Den körs lokalt på din dator i en säker sandlåda, med tillgång till en arbetsmapp du väljer. Du beskriver en uppgift, Cowork arbetar igenom den steg för steg, och levererar resultatet.</p>
+<p>Det som skiljer det från Claude Code:</p>
+<ul>
+<li><strong>Grafiskt gränssnitt:</strong> ingen terminal krävs</li>
+<li><strong>Arbetar självständigt:</strong> webbsökning, kodexekvering, dataanalys, filhantering</li>
+<li><strong>Lokal exekvering:</strong> körs på din dator, dina filer lämnar inte maskinen</li>
+<li><strong>Enklare att komma igång:</strong> välj en mapp och beskriv uppgiften</li>
+</ul>
+<h3 id="vem-passar-det-for">Vem passar det för?<a class="headerlink" href="#vem-passar-det-for" title="Permanent link">&para;</a></h3>
+<p>Cowork är för dig som vill att AI arbetar med dina filer och uppgifter utan att gå via terminalen. Research, sammanställningar, dokumentskapande. Uppgifter där du vill ge ett uppdrag och få tillbaka ett resultat.</p>
+<h3 id="konkreta-exempel">Konkreta exempel<a class="headerlink" href="#konkreta-exempel" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Marknadskartläggning:</strong> "Kartlägg den nordiska HR-tech-marknaden. Identifiera de 10 största spelarna med intäkter, tillväxt och ägarbild."</li>
+<li><strong>Dataanalys:</strong> "Gå igenom bifogad årsredovisning. Extrahera nyckeltal för de senaste tre åren. Beräkna CAGR och marginaltrend."</li>
+<li><strong>Dokumentskapande:</strong> "Skriv ett utkast till rapport baserat på bifogade data. Följ strukturen: sammanfattning, analys, slutsatser, rekommendation."</li>
+</ul>
+<h3 id="begransningar">Begränsningar<a class="headerlink" href="#begransningar" title="Permanent link">&para;</a></h3>
+<p><strong>Instruktionskvalitet är avgörande.</strong> Vaga uppdrag ger vaga resultat. Var tydlig med: vad du vill ha, i vilket format, vad som är viktigt.</p>
+<p><strong>Granska alltid resultatet.</strong> Behandla leveranser som ett första utkast från en junior medarbetare.</p>
+<p><strong>Produkten utvecklas snabbt.</strong> Cowork är relativt nytt och funktionaliteten förändras löpande. Kolla Anthropics dokumentation för senaste status.</p>
+<hr />
+<h2 id="code-vs-cowork-en-jamforelse">Code vs Cowork — en jämförelse<a class="headerlink" href="#code-vs-cowork-en-jamforelse" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>Claude Code</th>
+<th>Claude Cowork</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Var körs det</strong></td>
+<td>Din dator (terminalen)</td>
+<td>Din dator (grafiskt gränssnitt)</td>
+</tr>
+<tr>
+<td><strong>Interaktion</strong></td>
+<td>Iterativt, ni arbetar tillsammans</td>
+<td>Ge uppdrag, få resultat</td>
+</tr>
+<tr>
+<td><strong>Bäst för</strong></td>
+<td>Arbete med lokala filer, finjustering, systembyggande</td>
+<td>Längre research, dokumentskapande, filhantering utan terminal</td>
+</tr>
+<tr>
+<td><strong>Kontroll</strong></td>
+<td>Hög: du ser varje steg</td>
+<td>Mer självständigt arbete</td>
+</tr>
+<tr>
+<td><strong>CLAUDE.md och skills</strong></td>
+<td>Ja, hela systemet</td>
+<td>Nej, instruktionen är ditt uppdrag</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kombinera-verktygen">Kombinera verktygen<a class="headerlink" href="#kombinera-verktygen" title="Permanent link">&para;</a></h2>
+<p>Det mest kraftfulla arbetsflödet använder flera verktyg:</p>
+<table>
+<thead>
+<tr>
+<th>Steg</th>
+<th>Verktyg</th>
+<th>Uppgift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Cowork</strong></td>
+<td>Researcha marknaden, samla data</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Code</strong></td>
+<td>Bearbeta resultatet, skapa strukturerad analys</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Excel</strong></td>
+<td>Bygg modell baserad på analysdata</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Code</strong></td>
+<td>Generera rapport med kontext och regler</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>PowerPoint</strong></td>
+<td>Finjustera presentationen visuellt</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Chat</strong></td>
+<td>Bollplank och snabba frågor</td>
+</tr>
+</tbody>
+</table>
+<p>Cowork gör det tunga lyftet. Code gör det precisa arbetet med kontext och regler. Excel och PowerPoint avslutar med operativa detaljer och visuell polish. Chat är alltid tillgängligt för snabba frågor.</p>
+<hr />
+<h2 id="nyckelinsikten">Nyckelinsikten<a class="headerlink" href="#nyckelinsikten" title="Permanent link">&para;</a></h2>
+<p>AI:n du använder idag är redan kapabel till mycket mer än vad de flesta får ut av den. Skillnaden mellan ett generiskt svar och ett briljant svar handlar nästan aldrig om modellen. Det handlar om förutsättningarna du ger den.</p>
+<p>I chatten är din prompt allt. Varje gång du öppnar en ny konversation börjar du med tomt papper. AI:n vet ingenting om dig, ditt projekt eller dina förväntningar.</p>
+<p>Med strukturerad kontext ger du AI:n det den behöver för att leverera:</p>
+<ul>
+<li><strong>Regler</strong> som alltid gäller (genom CLAUDE.md eller projektinstruktioner)</li>
+<li><strong>Återanvändbara arbetsflöden</strong> (skills eller liknande)</li>
+<li><strong>Organiserad data</strong> på rätt ställe istället för allt i en hög</li>
+<li><strong>Mallar</strong> som definierar format och förväntningar</li>
+</ul>
+<p>Det gör inte AI:n smartare. Den är redan smart. Det gör att den kan <em>använda</em> sin kapacitet på just ditt problem.</p>
+<p>Verktygen som beskrivs i den här guiden kommer att förändras. Nya versioner, nya produkter, nya arbetsflöden. Men principen att AI levererar bättre med rätt kontext, regler och struktur kommer att hålla.</p>
+<p>Du behöver inte göra allt på en gång. Men om du tar bort en sak från det här kapitlet, låt det vara detta:</p>
+<p><strong>AI:n är redan tillräckligt smart. Det är förutsättningarna som gör skillnaden.</strong></p>
+<hr />
+<blockquote>
+<p><em>Nästa kapitel: <a href="../02-promptteknik-och-kontext/">02 — Promptteknik och kontext</a></em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

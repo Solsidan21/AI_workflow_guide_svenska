@@ -1,0 +1,2305 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="En guide för dig som redan använder AI men vill förstå hur du ger den rätt förutsättningar">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/03-mappstruktur-och-arbetssatt/">
+      
+      
+        <link rel="prev" href="../02-promptteknik-och-kontext/">
+      
+      
+        <link rel="next" href="../04-strukturerad-kontext/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>03 — Mappstruktur och arbetssätt - AI Workflow Guide — Från chatt till system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-03-mappstruktur-och-arbetssatt" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI Workflow Guide — Från chatt till system" class="md-header__button md-logo" aria-label="AI Workflow Guide — Från chatt till system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Workflow Guide — Från chatt till system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03 — Mappstruktur och arbetssätt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-verktygslandskapet/" class="md-tabs__link">
+          
+  
+  
+  Del 1 — Förstå landskapet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-exempel-studier/" class="md-tabs__link">
+          
+  
+  
+  Del 2 — Praktiska exempel
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Workflow Guide — Från chatt till system" class="md-nav__button md-logo" aria-label="AI Workflow Guide — Från chatt till system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Workflow Guide — Från chatt till system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1 — Förstå landskapet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1 — Förstå landskapet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-verktygslandskapet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 — AI-verktygslandskapet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-promptteknik-och-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 — Promptteknik och kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 — Mappstruktur och arbetssätt
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 — Mappstruktur och arbetssätt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#varfor-mappstruktur-spelar-roll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför mappstruktur spelar roll
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Varför mappstruktur spelar roll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filnamn-och-mappnamn-ar-instruktioner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filnamn och mappnamn ÄR instruktioner
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principer-for-bra-struktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principer för bra struktur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principer för bra struktur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-beskrivande-namn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Beskrivande namn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logisk-hierarki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Logisk hierarki
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-konsistens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Konsistens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-separation-av-data-analys-och-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Separation av data, analys och output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-readme-filer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. README-filer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#det-centrala-arbetsflodet-pdf-till-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Det centrala arbetsflödet — PDF till system
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Det centrala arbetsflödet — PDF till system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#losningen-fyra-steg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lösningen: fyra steg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-1-samla-dina-dokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: Samla dina dokument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-2-extrahera-till-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: Extrahera till Markdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-3-publicera-till-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: Publicera till GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-4-koppla-repot-som-claude-projekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: Koppla repot som Claude-projekt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-det-har-forandrar-allt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför det här förändrar allt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fran-analys-till-fardigt-dokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Från analys till färdigt dokument
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claudemd-ditt-projekts-regelverk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLAUDE.md — ditt projekts regelverk
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLAUDE.md — ditt projekts regelverk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-ar-det" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad är det?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var-placeras-den" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Var placeras den?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vad-en-bra-claudemd-innehaller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad en bra CLAUDE.md innehåller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#komplett-generellt-exempel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Komplett generellt exempel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placering-och-hierarki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placering och hierarki
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tumregler-for-placering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tumregler för placering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills-ateranvandbara-arbetsfloden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills — återanvändbara arbetsflöden
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skills — återanvändbara arbetsflöden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-ar-en-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad är en skill?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var-placeras-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Var placeras de?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-skapas-en-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur skapas en skill?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-anvander-du-den" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur använder du den?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-ideer-for-olika-roller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill-idéer för olika roller
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exempelmappstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exempelmappstruktur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktisk-ovning-starta-ditt-forsta-projekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Praktisk övning — starta ditt första projekt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Praktisk övning — starta ditt första projekt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steg-1-borja-i-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: Börja i chatten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-2-ta-fram-en-terminalredo-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: Ta fram en terminalredo prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-3-ge-prompten-till-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: Ge prompten till Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-4-lagg-in-dina-filer-och-extrahera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: Lägg in dina filer och extrahera
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-5-bygg-ut-over-tid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 5: Bygg ut över tid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fardiga-startpunkter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Färdiga startpunkter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sammanfattning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sammanfattning
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-strukturerad-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 — Strukturerad kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2 — Praktiska exempel
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2 — Praktiska exempel
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-exempel-studier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 — Exempel: Studier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-exempel-private-equity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 — Exempel: Private Equity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#varfor-mappstruktur-spelar-roll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför mappstruktur spelar roll
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Varför mappstruktur spelar roll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filnamn-och-mappnamn-ar-instruktioner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filnamn och mappnamn ÄR instruktioner
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principer-for-bra-struktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principer för bra struktur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principer för bra struktur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-beskrivande-namn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Beskrivande namn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logisk-hierarki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Logisk hierarki
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-konsistens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Konsistens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-separation-av-data-analys-och-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Separation av data, analys och output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-readme-filer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. README-filer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#det-centrala-arbetsflodet-pdf-till-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Det centrala arbetsflödet — PDF till system
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Det centrala arbetsflödet — PDF till system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#losningen-fyra-steg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lösningen: fyra steg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-1-samla-dina-dokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: Samla dina dokument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-2-extrahera-till-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: Extrahera till Markdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-3-publicera-till-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: Publicera till GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-4-koppla-repot-som-claude-projekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: Koppla repot som Claude-projekt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-det-har-forandrar-allt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför det här förändrar allt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fran-analys-till-fardigt-dokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Från analys till färdigt dokument
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claudemd-ditt-projekts-regelverk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLAUDE.md — ditt projekts regelverk
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLAUDE.md — ditt projekts regelverk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-ar-det" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad är det?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var-placeras-den" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Var placeras den?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vad-en-bra-claudemd-innehaller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad en bra CLAUDE.md innehåller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#komplett-generellt-exempel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Komplett generellt exempel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placering-och-hierarki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placering och hierarki
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tumregler-for-placering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tumregler för placering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills-ateranvandbara-arbetsfloden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills — återanvändbara arbetsflöden
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skills — återanvändbara arbetsflöden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-ar-en-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad är en skill?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var-placeras-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Var placeras de?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-skapas-en-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur skapas en skill?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-anvander-du-den" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur använder du den?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-ideer-for-olika-roller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill-idéer för olika roller
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exempelmappstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exempelmappstruktur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktisk-ovning-starta-ditt-forsta-projekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Praktisk övning — starta ditt första projekt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Praktisk övning — starta ditt första projekt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steg-1-borja-i-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: Börja i chatten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-2-ta-fram-en-terminalredo-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: Ta fram en terminalredo prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-3-ge-prompten-till-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: Ge prompten till Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-4-lagg-in-dina-filer-och-extrahera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: Lägg in dina filer och extrahera
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steg-5-bygg-ut-over-tid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 5: Bygg ut över tid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fardiga-startpunkter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Färdiga startpunkter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sammanfattning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sammanfattning
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kapitel-03-mappstruktur-och-arbetssatt">Kapitel 03 — Mappstruktur och arbetssätt<a class="headerlink" href="#kapitel-03-mappstruktur-och-arbetssatt" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Det här är kapitlet som binder ihop allt. Struktur är inte administration. Det är det som gör AI bra.</em></p>
+</blockquote>
+<p>Det här är guidens viktigaste kapitel. Inte för att det är det mest tekniska, utan för att det beskriver <strong>arbetssättet</strong> som gör allt annat möjligt. Mappstruktur, CLAUDE.md, skills, och framför allt: det grundläggande arbetsflödet som förvandlar dina dokument till ett AI-system.</p>
+<p>En viktig poäng: <strong>du skapar inte det här manuellt.</strong> Du beskriver vad du behöver (i en chatt eller direkt i Claude Code) och Claude bygger strukturen åt dig. Det här kapitlet förklarar <em>varför</em> en bra struktur ser ut som den gör, så att du förstår vad Claude Code skapar och kan guida den rätt.</p>
+<hr />
+<h2 id="varfor-mappstruktur-spelar-roll">Varför mappstruktur spelar roll<a class="headerlink" href="#varfor-mappstruktur-spelar-roll" title="Permanent link">&para;</a></h2>
+<p>När Claude Code startar läser den inte bara din prompt. Den ser <strong>filnamn, mappnamn och hela projektstrukturen</strong>. Allt detta är kontext som påverkar kvaliteten på svaren.</p>
+<p><strong>Analogi:</strong> Två skrivbord. Det ena är välorganiserat: mappar med etiketter, tydliga namn, logisk ordning. Om du ber någon hitta "Q3-rapporten" tar det sekunder.</p>
+<p>Det andra är kaotiskt: papper överallt, oklara filnamn. Samma fråga tar minuter, och svaret kanske inte ens är korrekt.</p>
+<p>AI fungerar på exakt samma sätt. <strong>Bra struktur = bättre svar.</strong></p>
+<h3 id="filnamn-och-mappnamn-ar-instruktioner">Filnamn och mappnamn ÄR instruktioner<a class="headerlink" href="#filnamn-och-mappnamn-ar-instruktioner" title="Permanent link">&para;</a></h3>
+<p>När Claude ser:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>data/finansiellt/arsredovisning-2024.pdf
+</code></pre></div>
+<p>...förstår den automatiskt vad filen är, vilket år, och var den passar in. Utan att du behöver förklara något.</p>
+<p>Jämför med:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dokument/fil3.pdf
+</code></pre></div>
+<p>Här förstår Claude ingenting. Du måste förklara allt i din prompt, varje gång.</p>
+<hr />
+<h2 id="principer-for-bra-struktur">Principer för bra struktur<a class="headerlink" href="#principer-for-bra-struktur" title="Permanent link">&para;</a></h2>
+<h3 id="1-beskrivande-namn">1. Beskrivande namn<a class="headerlink" href="#1-beskrivande-namn" title="Permanent link">&para;</a></h3>
+<p><strong>Så här:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kassaflodesanalys-2024-Q3.md
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>konkurrentoversikt-nordisk-marknad.md
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>styrelsepresentation-2024-12.pptx
+</code></pre></div></p>
+<p><strong>Inte så här:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>analys1.md
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>rapport-final-v2-SISTA.md
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>dok.pptx
+</code></pre></div></p>
+<p><strong>Tumregel:</strong> Skulle en kollega förstå vad filen innehåller bara genom att se filnamnet? Om ja, bra namn.</p>
+<h3 id="2-logisk-hierarki">2. Logisk hierarki<a class="headerlink" href="#2-logisk-hierarki" title="Permanent link">&para;</a></h3>
+<p>Organisera filer i en trädstruktur som speglar hur du tänker om arbetet:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mitt-projekt/
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── data/
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>│   ├── finansiellt/
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│   └── marknad/
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>├── analys/
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>└── output/
+</code></pre></div>
+<p>Inte 50 filer i en platt lista. <strong>Tumregel:</strong> Om en mapp har fler än 10–15 filer, bryt ut undermappar.</p>
+<h3 id="3-konsistens">3. Konsistens<a class="headerlink" href="#3-konsistens" title="Permanent link">&para;</a></h3>
+<p>Använd samma mönster överallt. Om du använder <code>kebab-case</code> (ord-med-bindestreck) för filnamn, gör det konsekvent. Om du använder YYYY-MM-DD för datum, gör det överallt.</p>
+<p><strong>Konsistent:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kvartalsrapport-2024-Q1.md
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kvartalsrapport-2024-Q2.md
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>kvartalsrapport-2024-Q3.md
+</code></pre></div></p>
+<p><strong>Inkonsistent:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kvartalsrapport Q1 2024.md
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kvartalsrapp-2024-q2.md
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>KR_Q3_24.md
+</code></pre></div></p>
+<h3 id="4-separation-av-data-analys-och-output">4. Separation av data, analys och output<a class="headerlink" href="#4-separation-av-data-analys-och-output" title="Permanent link">&para;</a></h3>
+<p>Håll tre typer av material åtskilt:</p>
+<table>
+<thead>
+<tr>
+<th>Mapp</th>
+<th>Innehåll</th>
+<th>Exempel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/</code></td>
+<td>Rådata som du <strong>fått</strong></td>
+<td>Rapporter, CSV-exporter, dokument</td>
+</tr>
+<tr>
+<td><code>analys/</code></td>
+<td>Material du <strong>skapat</strong> genom bearbetning</td>
+<td>Sammanfattningar, beräkningar, modeller</td>
+</tr>
+<tr>
+<td><code>output/</code></td>
+<td><strong>Färdigt</strong> material för leverans</td>
+<td>Rapporter, presentationer, memos</td>
+</tr>
+</tbody>
+</table>
+<p>Varför? Du kan alltid gå tillbaka till rådata om något är fel. Och du blandar aldrig ihop arbetsunderlag med färdiga leveranser.</p>
+<h3 id="5-readme-filer">5. README-filer<a class="headerlink" href="#5-readme-filer" title="Permanent link">&para;</a></h3>
+<p>En kort <code>README.md</code> i varje mapp hjälper både dig och Claude att förstå vad mappen innehåller:</p>
+<p><strong>Exempel: <code>data/finansiellt/README.md</code>:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gh"># Finansiell data</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Årsredovisningar och kvartalsdata.
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="gu">## Filer</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">-</span><span class="w"> </span>arsredovisning-YYYY.pdf — Officiella årsredovisningar
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">-</span><span class="w"> </span>kvartalsdata-YYYY.csv — Revenue, EBITDA, nettoresultat per kvartal
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="gu">## Källor</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">-</span><span class="w"> </span>Årsredovisningar: Bolagsverket / bolaget direkt
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">-</span><span class="w"> </span>Kvartalsdata: Intern rapportering
+</code></pre></div></p>
+<hr />
+<h2 id="det-centrala-arbetsflodet-pdf-till-system">Det centrala arbetsflödet — PDF till system<a class="headerlink" href="#det-centrala-arbetsflodet-pdf-till-system" title="Permanent link">&para;</a></h2>
+<p>Det här avsnittet beskriver det grundläggande arbetssätt som gör allt annat möjligt. Det är enkelt, men det förändrar allt. <strong>Du behöver inte göra stegen manuellt.</strong> Du beskriver vad du vill ha, och Claude Code utför dem.</p>
+<h3 id="problemet">Problemet<a class="headerlink" href="#problemet" title="Permanent link">&para;</a></h3>
+<p>Du har dokument: PDF:er, rapporter, kursböcker, branschdata. Du vill att AI ska kunna arbeta med dem intelligent, konsekvent och utan att du behöver kopiera text varje gång.</p>
+<h3 id="losningen-fyra-steg">Lösningen: fyra steg<a class="headerlink" href="#losningen-fyra-steg" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>   PDF:er och dokument
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>          │
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>          ▼
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>   ┌─────────────────┐
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>   │  1. SAMLA       │  Lägg dokument i data/
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>   └────────┬────────┘
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>            │
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            ▼
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>   ┌─────────────────┐
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>   │  2. EXTRAHERA   │  Claude Code → Markdown
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>   └────────┬────────┘
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>            │
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>            ▼
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>   ┌─────────────────┐
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>   │  3. PUBLICERA   │  Push till GitHub
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>   └────────┬────────┘
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>            │
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>            ▼
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>   ┌─────────────────┐
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>   │  4. KOPPLA      │  Repo som Claude-projekt
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>   └─────────────────┘
+</code></pre></div>
+<h3 id="steg-1-samla-dina-dokument">Steg 1: Samla dina dokument<a class="headerlink" href="#steg-1-samla-dina-dokument" title="Permanent link">&para;</a></h3>
+<p>Claude Code skapar en projektmapp med logisk struktur. Det enda du gör manuellt är att kopiera in dina dokument (PDF:er, CSV:er etc.) i rätt mapp. Resultatet ser ut ungefär så här:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mitt-projekt/
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>├── data/
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>│   ├── rapporter/
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>│   │   ├── arsredovisning-2024.pdf
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>│   │   └── branschrapport-2024.pdf
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>│   └── underlag/
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>│       ├── kunddata-2024.csv
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>│       └── projektbeskrivning.docx
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>├── analys/
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>├── output/
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>└── CLAUDE.md
+</code></pre></div>
+<h3 id="steg-2-extrahera-till-markdown">Steg 2: Extrahera till Markdown<a class="headerlink" href="#steg-2-extrahera-till-markdown" title="Permanent link">&para;</a></h3>
+<p>Det här är nyckelsteget. Istället för att mata AI med samma tunga PDF varje gång, bearbetar du dokumentet <strong>en gång</strong> och sparar det som lättläst Markdown.</p>
+<p>I Claude Code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&gt; Läs arsredovisning-2024.pdf och extrahera:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>&gt; - Nyckeltal (revenue, EBITDA, nettoresultat) som tabell
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>&gt; - Kassaflödesdata
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>&gt; - Väsentliga risker
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>&gt; Spara som separata Markdown-filer i data/rapporter/arsredovisning-2024/
+</code></pre></div>
+<p><strong>Före:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>data/rapporter/arsredovisning-2024.pdf    ← 50 sidor, tusentals tokens varje gång
+</code></pre></div></p>
+<p><strong>Efter:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>data/rapporter/arsredovisning-2024/
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>├── nyckeltal.md           # Revenue, EBITDA, nettoresultat i tabell
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>├── kassaflodesdata.md     # FCF, capex, rörelsekapital
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>└── risker.md              # Väsentliga risker och osäkerhetsfaktorer
+</code></pre></div></p>
+<p><strong>Skillnaden:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>PDF varje gång</th>
+<th>Markdown (bearbetad en gång)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tokens</strong></td>
+<td>Tusentals per inläsning</td>
+<td>Några hundra per fil</td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>AI läser allt, hittar kanske rätt</td>
+<td>AI läser exakt rätt fil</td>
+</tr>
+<tr>
+<td><strong>Hastighet</strong></td>
+<td>Långsamt</td>
+<td>Snabbt</td>
+</tr>
+<tr>
+<td><strong>Återanvändning</strong></td>
+<td>Samma kostnad varje session</td>
+<td>Gratis efter första gången</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Viktigt:</strong> Behåll alltid original-PDF:en. Den är din källa och ditt kvitto. Men låt Claude arbeta mot Markdown-versionerna.</p>
+<h3 id="steg-3-publicera-till-github">Steg 3: Publicera till GitHub<a class="headerlink" href="#steg-3-publicera-till-github" title="Permanent link">&para;</a></h3>
+<p>Claude Code kan initiera ett Git-repo och publicera till GitHub åt dig. Be om det i din prompt, eller säg det i en session:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>&gt; Initiera ett Git-repo och pusha projektet till GitHub.
+</code></pre></div>
+<p>Nu finns ditt projekt versionshanterat och tillgängligt. Varje ändring loggas. Du kan alltid gå tillbaka.</p>
+<h3 id="steg-4-koppla-repot-som-claude-projekt">Steg 4: Koppla repot som Claude-projekt<a class="headerlink" href="#steg-4-koppla-repot-som-claude-projekt" title="Permanent link">&para;</a></h3>
+<p>Här händer magin. I Claude Chat kan du koppla ditt GitHub-repo som kunskapskälla till ett projekt:</p>
+<ol>
+<li>Skapa ett nytt projekt i Claude Chat</li>
+<li>Koppla ditt GitHub-repo</li>
+<li>Claude Chat har nu samma kontext som Claude Code</li>
+</ol>
+<p>Nu har du <strong>samma kunskap tillgänglig i både Claude Code och Claude Chat</strong>. Du arbetar i Code när du behöver automation och filhantering. Du arbetar i Chat när du behöver snabba frågor och bollplank. Båda delar samma kunskapsbas.</p>
+<h3 id="varfor-det-har-forandrar-allt">Varför det här förändrar allt<a class="headerlink" href="#varfor-det-har-forandrar-allt" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dokument bearbetas en gång,</strong> inte varje session</li>
+<li><strong>Markdown är billigt:</strong> mer plats i kontextfönstret för din fråga</li>
+<li><strong>GitHub ger versionshantering:</strong> du kan alltid gå tillbaka</li>
+<li><strong>Samma kunskap överallt:</strong> Code och Chat delar samma data</li>
+<li><strong>Teamet kan samarbeta:</strong> alla har tillgång till samma repo</li>
+</ul>
+<p>Det här är inte ett avancerat arbetsflöde. Det är <strong>grundflödet</strong> som gör allt annat möjligt.</p>
+<hr />
+<h2 id="fran-analys-till-fardigt-dokument">Från analys till färdigt dokument<a class="headerlink" href="#fran-analys-till-fardigt-dokument" title="Permanent link">&para;</a></h2>
+<p>Du har nu lärt dig att Markdown är det bästa arbetsformatet för AI. Men till slut behöver du ofta leverera ett dokument som kollegor eller kunder vill öppna: en PDF eller ett Word-dokument.</p>
+<p>Lösningen: låt Claude arbeta i Markdown genom hela processen och konvertera till rätt format <strong>i sista steget</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>data/ (råmaterial)  →  analys/ (Markdown)  →  output/ (PDF/Word)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>                    Claude analyserar          Claude formaterar
+</code></pre></div>
+<p>Claude Code kan skapa PDF- och Word-filer genom verktyg som <code>pandoc</code> eller Python-bibliotek. Du behöver inte kunna dessa verktyg själv. Claude hanterar det. Det enda du behöver göra är att beskriva formatet.</p>
+<hr />
+<h2 id="claudemd-ditt-projekts-regelverk">CLAUDE.md — ditt projekts regelverk<a class="headerlink" href="#claudemd-ditt-projekts-regelverk" title="Permanent link">&para;</a></h2>
+<h3 id="vad-ar-det">Vad är det?<a class="headerlink" href="#vad-ar-det" title="Permanent link">&para;</a></h3>
+<p>En Markdown-fil i roten av din projektmapp. Claude Code skapar den åt dig baserat på din beskrivning av projektet: vem du är, vad du arbetar med, vilka regler som gäller. Sedan läser Claude den automatiskt varje session och följer instruktionerna, utan att du behöver säga något.</p>
+<p><strong>Det är skillnaden mellan en assistent som börjar från noll varje dag och en som känner projektet.</strong></p>
+<h3 id="var-placeras-den">Var placeras den?<a class="headerlink" href="#var-placeras-den" title="Permanent link">&para;</a></h3>
+<p>Direkt i projektmappens rot:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mitt-projekt/
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>├── CLAUDE.md          &lt;-- Här
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>├── data/
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>├── analys/
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>└── output/
+</code></pre></div>
+<h3 id="vad-en-bra-claudemd-innehaller">Vad en bra CLAUDE.md innehåller<a class="headerlink" href="#vad-en-bra-claudemd-innehaller" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sektion</th>
+<th>Syfte</th>
+<th>Exempel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Roll</strong></td>
+<td>Vem Claude "är" i projektet</td>
+<td>"Erfaren analytiker med fokus på nordiska marknaden"</td>
+</tr>
+<tr>
+<td><strong>Projektkontext</strong></td>
+<td>Vad projektet handlar om</td>
+<td>Kort beskrivning, fas, syfte</td>
+</tr>
+<tr>
+<td><strong>Regler</strong></td>
+<td>Format, språk, stil</td>
+<td>MSEK, svenska, tabeller för jämförelser</td>
+</tr>
+<tr>
+<td><strong>Vanliga uppgifter</strong></td>
+<td>Steg-för-steg för återkommande arbete</td>
+<td>Sammanfattning, analys, rapportgenerering</td>
+</tr>
+<tr>
+<td><strong>Filstruktur</strong></td>
+<td>Var Claude hittar vad</td>
+<td>data/, analys/, output/</td>
+</tr>
+<tr>
+<td><strong>Mallar</strong></td>
+<td>Vilka mallar som ska användas</td>
+<td>mallar/rapport-mall.md</td>
+</tr>
+</tbody>
+</table>
+<h3 id="komplett-generellt-exempel">Komplett generellt exempel<a class="headerlink" href="#komplett-generellt-exempel" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="gh"># CLAUDE.md — Mitt projekt</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="gu">## Roll</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Du är en erfaren analytiker. Noggrann med siffror,
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>koncis i formuleringar, fokuserad på det väsentliga.
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="gu">## Projektkontext</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>[Kort beskrivning av projektet — vad det handlar om,
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>vilken fas det befinner sig i, vad målet är.]
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="gu">## Regler</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="gu">### Format</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="k">-</span><span class="w"> </span>Språk: svenska
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="k">-</span><span class="w"> </span>Ton: formell men tillgänglig
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="k">-</span><span class="w"> </span>Siffror: MSEK, en decimal, mellanslag som tusentalsavgränsare (1 000)
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="k">-</span><span class="w"> </span>Datum: YYYY-MM-DD
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="k">-</span><span class="w"> </span>Tabeller för all jämförande data
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="gu">### Struktur för rapporter</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="k">1.</span> Sammanfattning (3–5 meningar)
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="k">2.</span> Bakgrund / kontext
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="k">3.</span> Analys med data och tabeller
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="k">4.</span> Slutsatser
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="k">5.</span> Nästa steg / rekommendation
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="gu">### Undvik</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="k">-</span><span class="w"> </span>Spekulationer utan datagrund
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="k">-</span><span class="w"> </span>Buzzwords
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="k">-</span><span class="w"> </span>Blandning av svenska och engelska i löpande text
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="gu">## Vanliga uppgifter</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="gu">### Sammanfattning av rapport</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="k">1.</span> Läs dokumentet i data/
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="k">2.</span> Extrahera nyckeltal och huvudpunkter
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="k">3.</span> Presentera som tabell + 5 punkter
+<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="k">4.</span> Spara i analys/
+<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>
+<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span class="gu">## Filstruktur</span>
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a><span class="k">-</span><span class="w"> </span>data/ — Källmaterial och rådata
+<a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a><span class="k">-</span><span class="w"> </span>analys/ — Bearbetade analyser
+<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a><span class="k">-</span><span class="w"> </span>output/ — Färdiga leveranser
+<a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a><span class="k">-</span><span class="w"> </span>mallar/ — Rapportmallar
+</code></pre></div>
+<h3 id="placering-och-hierarki">Placering och hierarki<a class="headerlink" href="#placering-och-hierarki" title="Permanent link">&para;</a></h3>
+<p>Claude Code läser <strong>alla</strong> CLAUDE.md-filer den stöter på i mappstrukturen. Det innebär att du kan ha en hierarki:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mitt-projekt/
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>├── CLAUDE.md                    # Övergripande regler
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>├── data/
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>│   └── CLAUDE.md                # Regler för datahantering
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>├── analys/
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>│   └── CLAUDE.md                # Regler för analyser
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>└── output/
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    └── CLAUDE.md                # Regler för output-format
+</code></pre></div>
+<p><strong>Hur det fungerar:</strong></p>
+<ul>
+<li><strong>Rot-CLAUDE.md</strong> gäller för allt arbete. Här placerar du: språk, ton, projektbeskrivning, generella riktlinjer.</li>
+<li><strong>Mapp-specifika CLAUDE.md</strong> gäller <em>utöver</em> rot-reglerna när Claude arbetar i den mappen.</li>
+</ul>
+<p>Claude läser alla CLAUDE.md-filer uppåt i hierarkin. Om Claude arbetar i <code>analys/kvartalsrapport/</code> läser den:</p>
+<ol>
+<li><code>analys/kvartalsrapport/CLAUDE.md</code> (om den finns)</li>
+<li><code>analys/CLAUDE.md</code> (om den finns)</li>
+<li><code>CLAUDE.md</code> (i roten)</li>
+</ol>
+<p>Du behöver inte upprepa generella regler i varje CLAUDE.md, bara det som är specifikt för just den mappen.</p>
+<h3 id="tumregler-for-placering">Tumregler för placering<a class="headerlink" href="#tumregler-for-placering" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fråga att ställa</th>
+<th>Svaret styr placeringen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Gäller det oavsett var jag arbetar i projektet?"</td>
+<td>→ Rot-CLAUDE.md</td>
+</tr>
+<tr>
+<td>"Gäller det bara för analyser / bara för output?"</td>
+<td>→ Mapp-specifik CLAUDE.md</td>
+</tr>
+<tr>
+<td>"Gäller det bara för en specifik uppgift?"</td>
+<td>→ En skill-fil istället</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="skills-ateranvandbara-arbetsfloden">Skills — återanvändbara arbetsflöden<a class="headerlink" href="#skills-ateranvandbara-arbetsfloden" title="Permanent link">&para;</a></h2>
+<h3 id="vad-ar-en-skill">Vad är en skill?<a class="headerlink" href="#vad-ar-en-skill" title="Permanent link">&para;</a></h3>
+<p>En skill är en Markdown-fil med steg-för-steg-instruktioner för en återkommande uppgift. Istället för att skriva om instruktionerna varje gång, aktiverar du skillen med ett kommando.</p>
+<h3 id="var-placeras-de">Var placeras de?<a class="headerlink" href="#var-placeras-de" title="Permanent link">&para;</a></h3>
+<p>I mappen <code>.claude/skills/</code> i ditt projekt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mitt-projekt/
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>├── CLAUDE.md
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>├── .claude/
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│   └── skills/
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>│       ├── sammanfattning.md
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>│       ├── kvartalsrapport.md
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>│       └── konkurrentanalys.md
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>└── ...
+</code></pre></div>
+<h3 id="hur-skapas-en-skill">Hur skapas en skill?<a class="headerlink" href="#hur-skapas-en-skill" title="Permanent link">&para;</a></h3>
+<p>Claude Code skapar skills baserat på din beskrivning. Du kan säga "skapa en skill som sammanfattar rapporter" och Claude bygger filen åt dig. En typisk skill-fil ser ut så här:</p>
+<p><strong><code>.claude/skills/sammanfattning.md</code></strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="gh"># Sammanfatta rapport</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>När den här skillen aktiveras:
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">1.</span> Fråga vilken fil som ska sammanfattas (om inte angiven)
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">2.</span> Läs filen
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">3.</span> Extrahera:
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Nyckeltal i tabellform
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Huvudsakliga slutsatser (max 5 punkter)
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Risker eller svagheter (om tillämpligt)
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="k">4.</span> Presentera med sammanfattning först, sedan tabell, sedan punktlista
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="k">5.</span> Spara som analys/sammanfattning-[filnamn]-YYYY-MM-DD.md
+</code></pre></div></p>
+<h3 id="hur-anvander-du-den">Hur använder du den?<a class="headerlink" href="#hur-anvander-du-den" title="Permanent link">&para;</a></h3>
+<p>I en Claude Code-session:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/sammanfattning
+</code></pre></div>
+<p>Claude läser instruktionsfilen och utför alla stegen. Samma resultat varje gång, utan att du behöver skriva om instruktionerna.</p>
+<h3 id="skill-ideer-for-olika-roller">Skill-idéer för olika roller<a class="headerlink" href="#skill-ideer-for-olika-roller" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>/sammanfattning:</code> Sammanfatta valfritt dokument enligt fast format</li>
+<li><code>/kvartalsrapport:</code> Skapa rapport baserat på data i projektet</li>
+<li><code>/konkurrentanalys:</code> Kartlägg och jämför aktörer</li>
+<li><code>/motesforberedelse:</code> Sammanställ underlag inför möte</li>
+<li><code>/presentationsunderlag:</code> Struktur för presentation</li>
+<li><code>/dataextraktion:</code> Extrahera nyckeltal från PDF till Markdown</li>
+</ul>
+<hr />
+<h2 id="exempelmappstruktur">Exempelmappstruktur<a class="headerlink" href="#exempelmappstruktur" title="Permanent link">&para;</a></h2>
+<p>Här är en komplett startpunkt som fungerar för de flesta projekt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>mitt-projekt/
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>├── CLAUDE.md                          # Övergripande instruktioner
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>│
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>├── data/
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>│   ├── README.md                      # Beskrivning av datakällor
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>│   ├── rapporter/                     # PDF:er och originaldokument
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>│   ├── extraherat/                    # Bearbetade Markdown-versioner
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>│   └── underlag/                      # Övriga dokument, CSV:er
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>│
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>├── analys/                            # Bearbetade analyser
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>│   └── CLAUDE.md                      # Regler för analyser
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>│
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>├── output/                            # Färdiga leveranser
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>│   ├── CLAUDE.md                      # Regler för output-format
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>│   ├── rapporter/
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>│   └── presentationer/
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>│
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>├── mallar/                            # Dokumentmallar
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>│
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>└── .claude/
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>    └── skills/                        # Återanvändbara arbetsflöden
+</code></pre></div>
+<p>Med den här strukturen kan du skriva:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>&gt; Sammanfatta alla rapporter i data/rapporter/ och spara i analys/
+</code></pre></div>
+<p>Och Claude vet automatiskt: var data finns, hur analysen ska göras, var resultatet ska sparas, och vilket format som gäller.</p>
+<hr />
+<h2 id="praktisk-ovning-starta-ditt-forsta-projekt">Praktisk övning — starta ditt första projekt<a class="headerlink" href="#praktisk-ovning-starta-ditt-forsta-projekt" title="Permanent link">&para;</a></h2>
+<h3 id="steg-1-borja-i-chatten">Steg 1: Börja i chatten<a class="headerlink" href="#steg-1-borja-i-chatten" title="Permanent link">&para;</a></h3>
+<p>Öppna Claude Chat (eller ChatGPT, Gemini, valfri AI-chatt) och beskriv ditt projekt:</p>
+<blockquote>
+<p><em>"Jag jobbar som [din roll] och behöver hjälp med [ditt område]. Jag har [beskriv dina dokument: årsredovisningar, rapporter, kursböcker etc.]. Jag vill kunna analysera dem, ställa frågor mot dem och skapa sammanfattningar och rapporter. Hjälp mig tänka igenom hur ett bra AI-system för det här skulle se ut."</em></p>
+</blockquote>
+<p>Diskutera och iterera. Ställ frågor. Förfina bilden av vad du behöver.</p>
+<h3 id="steg-2-ta-fram-en-terminalredo-prompt">Steg 2: Ta fram en terminalredo prompt<a class="headerlink" href="#steg-2-ta-fram-en-terminalredo-prompt" title="Permanent link">&para;</a></h3>
+<p>När du har en tydlig bild, be chatten skapa en prompt du kan ge direkt till Claude Code:</p>
+<blockquote>
+<p><em>"Bra, nu vill jag sätta upp det här som ett Claude Code-projekt. Skriv en komplett prompt jag kan klistra in i Claude Code som skapar hela mappstrukturen, en CLAUDE.md med reglerna vi diskuterat, och grundläggande skills för mina vanligaste uppgifter."</em></p>
+</blockquote>
+<p>Chatten ger dig en prompt som kan se ut ungefär så här:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Skapa ett projekt för en [din roll] som arbetar med [ditt område].
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Mappstruktur:
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>- data/ med undermappar för [dina dokumenttyper]
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>- data/extraherat/ för bearbetade Markdown-versioner
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>- analys/ för bearbetade analyser
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>- output/ för färdiga leveranser
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>- mallar/ för dokumentmallar
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>CLAUDE.md ska innehålla:
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>- Roll: [beskrivning]
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>- Regler: svenska, [format], [ton]
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>- Filstruktur: beskriv var allt finns
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>Skapa skills för:
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>- /sammanfattning — sammanfatta valfritt dokument
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>- /[din vanligaste uppgift]
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>Initiera ett Git-repo.
+</code></pre></div>
+<h3 id="steg-3-ge-prompten-till-claude-code">Steg 3: Ge prompten till Claude Code<a class="headerlink" href="#steg-3-ge-prompten-till-claude-code" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Skapa en tom mapp för ditt projekt (det enda manuella steget)</li>
+<li>Öppna terminalen i den mappen</li>
+<li>Starta Claude Code med <code>claude</code></li>
+<li>Klistra in prompten</li>
+</ol>
+<p>Claude Code skapar hela strukturen: mappar, CLAUDE.md, skills, README-filer och Git-repo. Du behöver inte skriva en enda fil själv.</p>
+<h3 id="steg-4-lagg-in-dina-filer-och-extrahera">Steg 4: Lägg in dina filer och extrahera<a class="headerlink" href="#steg-4-lagg-in-dina-filer-och-extrahera" title="Permanent link">&para;</a></h3>
+<p>Kopiera dina dokument (PDF:er, rapporter, CSV:er) till <code>data/</code>-mappen. Sedan i Claude Code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>&gt; Läs alla PDF:er i data/ och extrahera nyckeltal och
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>&gt; sammanfattningar till Markdown-filer i data/extraherat/
+</code></pre></div>
+<h3 id="steg-5-bygg-ut-over-tid">Steg 5: Bygg ut över tid<a class="headerlink" href="#steg-5-bygg-ut-over-tid" title="Permanent link">&para;</a></h3>
+<p>Ditt system växer med dig. Be Claude Code lägga till fler skills när du upptäcker återkommande uppgifter. Uppdatera CLAUDE.md när du vill justera regler eller ton. Koppla repot som ett Claude-projekt i Claude Chat för snabba frågor. Varje session blir bättre än den föregående.</p>
+<hr />
+<h2 id="fardiga-startpunkter">Färdiga startpunkter<a class="headerlink" href="#fardiga-startpunkter" title="Permanent link">&para;</a></h2>
+<p>I det här repots <a href="../templates/"><code>templates/</code></a>-mapp hittar du färdiga mallar: CLAUDE.md-exempel, skill-filer och projektstrukturer för olika roller och branscher.</p>
+<p>Du kan ge dem som kontext till Claude Code: "Använd mallen i templates/ som utgångspunkt och anpassa till mitt projekt."</p>
+<hr />
+<h2 id="sammanfattning">Sammanfattning<a class="headerlink" href="#sammanfattning" title="Permanent link">&para;</a></h2>
+<p>Det här kapitlet har täckt tre saker:</p>
+<ol>
+<li>
+<p><strong>Mappstruktur:</strong> Beskrivande namn, logisk hierarki, separation av data/analys/output. Struktur <em>är</em> kontext.</p>
+</li>
+<li>
+<p><strong>Det centrala arbetsflödet:</strong> Samla dokument → Extrahera till Markdown → Pusha till GitHub → Koppla som Claude-projekt. Det här är grundflödet som gör allt annat möjligt.</p>
+</li>
+<li>
+<p><strong>CLAUDE.md och skills:</strong> Regler som alltid gäller och arbetsflöden som kan återanvändas. Systemet som gör att AI blir bättre på just ditt jobb.</p>
+</li>
+</ol>
+<p>Det viktigaste är inte att strukturen är perfekt från dag ett. Det viktigaste är att du <strong>börjar</strong>, och låter systemet växa med dig.</p>
+<hr />
+<blockquote>
+<p><em>Föregående kapitel: <a href="../02-promptteknik-och-kontext/">02 — Promptteknik och kontext</a></em></p>
+<p><em>Nästa kapitel: <a href="../04-strukturerad-kontext/">04 — Strukturerad kontext</a></em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

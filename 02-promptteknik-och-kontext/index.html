@@ -1,0 +1,1859 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="En guide för dig som redan använder AI men vill förstå hur du ger den rätt förutsättningar">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/02-promptteknik-och-kontext/">
+      
+      
+        <link rel="prev" href="../01-verktygslandskapet/">
+      
+      
+        <link rel="next" href="../03-mappstruktur-och-arbetssatt/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>02 — Promptteknik och kontext - AI Workflow Guide — Från chatt till system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-02-promptteknik-och-kontext" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI Workflow Guide — Från chatt till system" class="md-header__button md-logo" aria-label="AI Workflow Guide — Från chatt till system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Workflow Guide — Från chatt till system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02 — Promptteknik och kontext
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-verktygslandskapet/" class="md-tabs__link">
+          
+  
+  
+  Del 1 — Förstå landskapet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-exempel-studier/" class="md-tabs__link">
+          
+  
+  
+  Del 2 — Praktiska exempel
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Workflow Guide — Från chatt till system" class="md-nav__button md-logo" aria-label="AI Workflow Guide — Från chatt till system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Workflow Guide — Från chatt till system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1 — Förstå landskapet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1 — Förstå landskapet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-verktygslandskapet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 — AI-verktygslandskapet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 — Promptteknik och kontext
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 — Promptteknik och kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vad-ar-kontext-och-varfor-det-avgor-allt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad är kontext — och varför det avgör allt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontextfonstret-ains-arbetsminne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kontextfönstret — AI:ns arbetsminne
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kontextfönstret — AI:ns arbetsminne">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vad-som-hander-i-praktiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad som händer i praktiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-filformat-spelar-roll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför filformat spelar roll
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompttekniker-som-gor-skillnad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompttekniker som gör skillnad
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompttekniker som gör skillnad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-var-specifik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Var specifik
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ge-kontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ge kontext
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-be-om-steg-for-steg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Be om steg-för-steg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-iterera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Iterera
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-beratta-vad-du-inte-vill-ha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Berätta vad du INTE vill ha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ge-exempel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ge exempel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fran-chatt-till-code-promptteknik-i-praktiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Från chatt till Code — promptteknik i praktiken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-persistent-kunskap-i-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt — persistent kunskap i chatten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projekt — persistent kunskap i chatten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-du-tanker-kring-det" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur du tänker kring det
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projektinstruktioner-chattens-version-av-claudemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projektinstruktioner — chattens version av CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filhantering-vad-fungerar-och-hur-du-tanker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filhantering — vad fungerar och hur du tänker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filhantering — vad fungerar och hur du tänker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vilka-filtyper-fungerar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vilka filtyper fungerar?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdf-problemet-den-vanligaste-flaskhalsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF-problemet — den vanligaste flaskhalsen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifacts-claude-skapar-saker-at-dig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifacts — Claude skapar saker åt dig
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifacts — Claude skapar saker åt dig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nar-skapas-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        När skapas de?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-det-spelar-roll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför det spelar roll
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minne-claude-som-kommer-ihag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minne — Claude som kommer ihåg
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minne — Claude som kommer ihåg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-det-fungerar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur det fungerar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-du-hanterar-det" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur du hanterar det
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sammanfattning-sa-far-du-battre-svar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sammanfattning — så får du bättre svar
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-mappstruktur-och-arbetssatt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 — Mappstruktur och arbetssätt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-strukturerad-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 — Strukturerad kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2 — Praktiska exempel
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2 — Praktiska exempel
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-exempel-studier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 — Exempel: Studier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-exempel-private-equity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 — Exempel: Private Equity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vad-ar-kontext-och-varfor-det-avgor-allt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad är kontext — och varför det avgör allt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontextfonstret-ains-arbetsminne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kontextfönstret — AI:ns arbetsminne
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kontextfönstret — AI:ns arbetsminne">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vad-som-hander-i-praktiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad som händer i praktiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-filformat-spelar-roll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför filformat spelar roll
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompttekniker-som-gor-skillnad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompttekniker som gör skillnad
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompttekniker som gör skillnad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-var-specifik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Var specifik
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ge-kontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ge kontext
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-be-om-steg-for-steg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Be om steg-för-steg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-iterera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Iterera
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-beratta-vad-du-inte-vill-ha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Berätta vad du INTE vill ha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ge-exempel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ge exempel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fran-chatt-till-code-promptteknik-i-praktiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Från chatt till Code — promptteknik i praktiken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-persistent-kunskap-i-chatten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projekt — persistent kunskap i chatten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projekt — persistent kunskap i chatten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-du-tanker-kring-det" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur du tänker kring det
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projektinstruktioner-chattens-version-av-claudemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projektinstruktioner — chattens version av CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filhantering-vad-fungerar-och-hur-du-tanker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filhantering — vad fungerar och hur du tänker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filhantering — vad fungerar och hur du tänker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vilka-filtyper-fungerar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vilka filtyper fungerar?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdf-problemet-den-vanligaste-flaskhalsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF-problemet — den vanligaste flaskhalsen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifacts-claude-skapar-saker-at-dig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifacts — Claude skapar saker åt dig
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifacts — Claude skapar saker åt dig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nar-skapas-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        När skapas de?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-det-spelar-roll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför det spelar roll
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minne-claude-som-kommer-ihag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minne — Claude som kommer ihåg
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minne — Claude som kommer ihåg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vad-det-ar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad det är
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-det-fungerar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur det fungerar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hur-du-hanterar-det" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur du hanterar det
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sammanfattning-sa-far-du-battre-svar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sammanfattning — så får du bättre svar
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kapitel-02-promptteknik-och-kontext">Kapitel 02 — Promptteknik och kontext<a class="headerlink" href="#kapitel-02-promptteknik-och-kontext" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Skillnaden mellan ett okej svar och ett briljant svar handlar sällan om prompten. Det handlar om kontexten runtomkring.</em></p>
+</blockquote>
+<p>Du vet redan hur man skriver en prompt. Det här kapitlet handlar om allt det andra: vad kontext egentligen är, varför det avgör kvaliteten på svaren, och vilka tekniker som gör störst skillnad i praktiken.</p>
+<p>Promptteknik handlar inte bara om att formulera frågor i en chatt. Det handlar om att kunna <strong>beskriva vad du vill ha</strong>, tillräckligt tydligt för att Claude Code ska kunna bygga det åt dig. Samma tekniker som gör en chattfråga bättre gör också en projektbeskrivning bättre.</p>
+<hr />
+<h2 id="vad-ar-kontext-och-varfor-det-avgor-allt">Vad är kontext — och varför det avgör allt<a class="headerlink" href="#vad-ar-kontext-och-varfor-det-avgor-allt" title="Permanent link">&para;</a></h2>
+<p>När Claude svarar på en fråga baseras svaret på <strong>all information som finns tillgänglig</strong> i det ögonblicket:</p>
+<ul>
+<li>Din aktuella prompt</li>
+<li>Hela konversationshistoriken</li>
+<li>Uppladdade filer</li>
+<li>Projektinstruktioner (om du använder Projects)</li>
+<li>CLAUDE.md och skills (om du använder Claude Code)</li>
+</ul>
+<p>Allt detta kallas <strong>kontext</strong>. Och det är kontexten, inte bara prompten, som avgör kvaliteten på svaret.</p>
+<p><strong>Analogi:</strong> Tänk dig att du ber en konsult analysera ett bolag. Om du bara säger "analysera bolaget" får du ett generiskt svar. Men om du ger konsulten årsredovisningen, branschrapporter, en briefing om vad ni letar efter och en mall för hur rapporten ska se ut, då får du ett helt annat resultat. Inte för att konsulten plötsligt blev smartare, utan för att kontexten gav bättre förutsättningar.</p>
+<hr />
+<h2 id="kontextfonstret-ains-arbetsminne">Kontextfönstret — AI:ns arbetsminne<a class="headerlink" href="#kontextfonstret-ains-arbetsminne" title="Permanent link">&para;</a></h2>
+<h3 id="vad-det-ar">Vad det är<a class="headerlink" href="#vad-det-ar" title="Permanent link">&para;</a></h3>
+<p>Varje AI-modell har ett <strong>kontextfönster</strong>: en maximal mängd information den kan ha "i huvudet" samtidigt. Det mäts i tokens (du lärde dig om <strong>tokens</strong> (AI:ns enhet för textlängd, ungefär tre fjärdedelar av ett ord, se <a href="../ordlista/">ordlistan</a>)).</p>
+<p><strong>Analogi:</strong> Tänk på kontextfönstret som ett skrivbord. Det rymmer en viss mängd papper. Du kan lägga dit din fråga, konversationshistoriken, uppladdade filer och instruktioner. Men om du lägger dit en hel bokhylla med dokument blir skrivbordet fullt, och en del trillar ner på golvet.</p>
+<h3 id="vad-som-hander-i-praktiken">Vad som händer i praktiken<a class="headerlink" href="#vad-som-hander-i-praktiken" title="Permanent link">&para;</a></h3>
+<p>Moderna modeller som Claude har stora kontextfönster, nog för att hantera långa dokument och komplexa konversationer. Men kontexten är inte oändlig. I en lång konversation kan Claude börja tappa de tidigaste detaljerna. Det är inte ett fel, det är en fysisk begränsning.</p>
+<p><strong>Praktiskt tips:</strong> I Claude Code kan du köra <code>/compact</code> för att sammanfatta konversationen hittills och frigöra plats i kontextfönstret. I Claude Chat kan du starta en ny konversation inom samma projekt. Projektinstruktionerna och filerna finns kvar, men konversationshistoriken börjar om.</p>
+<h3 id="varfor-filformat-spelar-roll">Varför filformat spelar roll<a class="headerlink" href="#varfor-filformat-spelar-roll" title="Permanent link">&para;</a></h3>
+<p>Inte all information kostar lika mycket kontext. En 50-sidig PDF förbrukar enormt med tokens varje gång den läses, även om du bara behöver tre rader. Samma information i <strong>Markdown</strong> (ett enkelt textformat med rubriker, listor och tabeller, se <a href="../ordlista/">ordlistan</a>) kostar en bråkdel. Se <a href="#pdf-problemet-den-vanligaste-flaskhalsen">PDF-problemet</a> nedan och <a href="../03-mappstruktur-och-arbetssatt/">kapitel 03</a> för hur du löser det.</p>
+<hr />
+<h2 id="prompttekniker-som-gor-skillnad">Prompttekniker som gör skillnad<a class="headerlink" href="#prompttekniker-som-gor-skillnad" title="Permanent link">&para;</a></h2>
+<h3 id="1-var-specifik">1. Var specifik<a class="headerlink" href="#1-var-specifik" title="Permanent link">&para;</a></h3>
+<p><strong>Inte så här:</strong> "Gör en analys av det här bolaget."</p>
+<p><strong>Utan så här:</strong> "Analysera kassaflödet baserat på bifogad årsredovisning. Presentera revenue, EBITDA, capex och fritt kassaflöde i en tabell per år. Kommentera trender i 3–5 meningar."</p>
+<p>Specificitet gör att AI:n inte behöver gissa vad du menar. Ju mer du specificerar format, innehåll och struktur, desto närmare ditt förväntade resultat hamnar svaret.</p>
+<h3 id="2-ge-kontext">2. Ge kontext<a class="headerlink" href="#2-ge-kontext" title="Permanent link">&para;</a></h3>
+<p>Berätta inte bara <em>vad</em> du vill ha, berätta <em>varför</em> och <em>för vem</em>.</p>
+<p><strong>Utan kontext:</strong> "Sammanfatta den här rapporten."</p>
+<p><strong>Med kontext:</strong> "Sammanfatta den här rapporten i 5 punkter för en styrelseledamot som behöver förstå de viktigaste riskerna. Fokusera på finansiella avvikelser och operativa utmaningar."</p>
+<p>Kontexten styr tonläget, detaljnivån och vinkeln.</p>
+<h3 id="3-be-om-steg-for-steg">3. Be om steg-för-steg<a class="headerlink" href="#3-be-om-steg-for-steg" title="Permanent link">&para;</a></h3>
+<p>För komplexa uppgifter, be AI:n arbeta steg för steg:</p>
+<p>"Analysera det här bolagets finansiella utveckling:
+1. Sammanfatta nyckeltal (revenue, EBITDA, nettoresultat) per år
+2. Beräkna tillväxttakt (CAGR) över perioden
+3. Identifiera de tre viktigaste trenderna
+4. Ge en bedömning av finansiell hälsa"</p>
+<p>Steg-för-steg-instruktioner minskar risken att AI:n hoppar över delmoment eller blandar ihop resultat.</p>
+<h3 id="4-iterera">4. Iterera<a class="headerlink" href="#4-iterera" title="Permanent link">&para;</a></h3>
+<p>Det bästa sättet att arbeta med AI är <strong>iterativt</strong>. Börja brett, förfina, rikta om.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Du: &quot;Sammanfatta årsredovisningen.&quot;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Claude: [Sammanfattning]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Du: &quot;Bra, men fokusera mer på kassaflödet. Lägg till en tabell.&quot;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Claude: [Uppdaterad sammanfattning med tabell]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Du: &quot;Perfekt. Lägg till en kort risksektion.&quot;
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Claude: [Slutgiltig version]
+</code></pre></div>
+<p>Tre korta iterationer ger ofta bättre resultat än en lång, perfekt formulerad prompt.</p>
+<h3 id="5-beratta-vad-du-inte-vill-ha">5. Berätta vad du INTE vill ha<a class="headerlink" href="#5-beratta-vad-du-inte-vill-ha" title="Permanent link">&para;</a></h3>
+<p>AI:n kan vara för hjälpsam. Den lägger till information, gör antaganden eller skriver i en ton du inte bad om. Negativa instruktioner hjälper:</p>
+<ul>
+<li>"Spekulera inte. Om data saknas, ange det tydligt"</li>
+<li>"Inga buzzwords eller säljspråk"</li>
+<li>"Inkludera inte information som inte finns i de bifogade filerna"</li>
+<li>"Max 500 ord"</li>
+</ul>
+<h3 id="6-ge-exempel">6. Ge exempel<a class="headerlink" href="#6-ge-exempel" title="Permanent link">&para;</a></h3>
+<p>Om du vill ha ett specifikt format, visa ett exempel:</p>
+<p>"Sammanfatta varje bolag enligt detta format:</p>
+<p><strong>Bolagsnamn</strong> — Kort beskrivning (1 mening)
+- Omsättning: X MSEK
+- Tillväxt: X%
+- Noterbart: [En viktig observation]"</p>
+<p>Exempel kommunicerar format snabbare och tydligare än långa beskrivningar.</p>
+<hr />
+<h2 id="fran-chatt-till-code-promptteknik-i-praktiken">Från chatt till Code — promptteknik i praktiken<a class="headerlink" href="#fran-chatt-till-code-promptteknik-i-praktiken" title="Permanent link">&para;</a></h2>
+<p>Alla teknikerna ovan fungerar utmärkt i en vanlig AI-chatt. Men de blir ännu kraftfullare när du använder dem för att <strong>beskriva ett helt projekt</strong> för Claude Code.</p>
+<p>Workflowet ser ut så här:</p>
+<ol>
+<li><strong>Börja i chatten.</strong> Öppna Claude Chat (eller ChatGPT, Gemini) och beskriv vad du vill skapa. Använd teknikerna ovan: var specifik, ge kontext, ge exempel.</li>
+<li><strong>Iterera.</strong> Diskutera med chatten. Förfina din bild av projektet, strukturen och reglerna.</li>
+<li><strong>Be om en terminalredo prompt.</strong> När bilden är tydlig, be chatten sammanfatta allt som en prompt du kan ge till Claude Code.</li>
+<li><strong>Ge prompten till Claude Code.</strong> Claude Code bygger hela strukturen (mappar, CLAUDE.md, skills) baserat på din beskrivning.</li>
+</ol>
+<p>Det här är kärnan i guiden: <strong>du beskriver, Claude bygger.</strong> Och ju bättre du är på att beskriva (med kontext, specificitet och struktur), desto bättre blir resultatet.</p>
+<hr />
+<h2 id="projekt-persistent-kunskap-i-chatten">Projekt — persistent kunskap i chatten<a class="headerlink" href="#projekt-persistent-kunskap-i-chatten" title="Permanent link">&para;</a></h2>
+<p>Claude Projects (och ChatGPT Custom GPTs) löser ett av chattens största problem: att varje session börjar från noll.</p>
+<h3 id="vad-det-ar_1">Vad det är<a class="headerlink" href="#vad-det-ar_1" title="Permanent link">&para;</a></h3>
+<p>Ett projekt i Claude Chat är en arbetsyta med:</p>
+<ul>
+<li><strong>Projektinstruktioner:</strong> regler och kontext som gäller för alla konversationer inom projektet</li>
+<li><strong>Projektkunskap:</strong> uppladdade filer som Claude kan referera till</li>
+<li><strong>Flera konversationer:</strong> du kan starta nya chattar utan att förlora kontext</li>
+</ul>
+<h3 id="hur-du-tanker-kring-det">Hur du tänker kring det<a class="headerlink" href="#hur-du-tanker-kring-det" title="Permanent link">&para;</a></h3>
+<p>Skapa ett projekt per avgränsad arbetskontext. Exempel:</p>
+<ul>
+<li>"Kvartalsrapportering — Bolag X" med årsredovisningar och rapportmallar</li>
+<li>"Marknadskartläggning — Norden" med branschrapporter</li>
+<li>"Kursmaterial — Finansiell analys" med kursböcker och föreläsningsanteckningar</li>
+</ul>
+<h3 id="projektinstruktioner-chattens-version-av-claudemd">Projektinstruktioner — chattens version av CLAUDE.md<a class="headerlink" href="#projektinstruktioner-chattens-version-av-claudemd" title="Permanent link">&para;</a></h3>
+<p>Skriv projektinstruktioner som ger Claude rätt kontext från start:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Du analyserar finansiell data för bolag X, ett svenskt SaaS-bolag.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Svara alltid på svenska. Siffror i MSEK med en decimal.
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Börja alltid med en sammanfattning i 3–5 punkter.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Fokusera på: revenue, EBITDA, kassaflöde och tillväxt.
+</code></pre></div>
+<p>Med bra projektinstruktioner slipper du upprepa samma kontext i varje ny konversation.</p>
+<hr />
+<h2 id="filhantering-vad-fungerar-och-hur-du-tanker">Filhantering — vad fungerar och hur du tänker<a class="headerlink" href="#filhantering-vad-fungerar-och-hur-du-tanker" title="Permanent link">&para;</a></h2>
+<h3 id="vilka-filtyper-fungerar">Vilka filtyper fungerar?<a class="headerlink" href="#vilka-filtyper-fungerar" title="Permanent link">&para;</a></h3>
+<p>Claude kan arbeta med de flesta vanliga filtyper:</p>
+<table>
+<thead>
+<tr>
+<th>Filtyp</th>
+<th>Fungerar i Chat</th>
+<th>Fungerar i Code</th>
+<th>Kommentar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PDF</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>Bra men kontextkrävande</td>
+</tr>
+<tr>
+<td><strong>Word (.docx)</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>God texttolkning</td>
+</tr>
+<tr>
+<td><strong>Excel (.xlsx, .csv)</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>CSV är mest effektivt</td>
+</tr>
+<tr>
+<td><strong>Bilder (.png, .jpg)</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>Claude kan läsa och tolka bilder</td>
+</tr>
+<tr>
+<td><strong>Markdown (.md)</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>Det mest effektiva formatet</td>
+</tr>
+<tr>
+<td><strong>Text (.txt)</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>Ren text, inga formateringsproblem</td>
+</tr>
+<tr>
+<td><strong>PowerPoint (.pptx)</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>Textinnehåll extraheras</td>
+</tr>
+<tr>
+<td><strong>Kod</strong></td>
+<td>Ja</td>
+<td>Ja</td>
+<td>Alla vanliga programmeringsspråk</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pdf-problemet-den-vanligaste-flaskhalsen">PDF-problemet — den vanligaste flaskhalsen<a class="headerlink" href="#pdf-problemet-den-vanligaste-flaskhalsen" title="Permanent link">&para;</a></h2>
+<p>De flesta kunskapsarbetare har sina viktigaste dokument som PDF:er: årsredovisningar, rapporter, kursböcker, avtal. Och PDF:er fungerar i alla AI-verktyg. Så vad är problemet?</p>
+<p>PDF:er är byggda för människor att läsa på skärm. De är <strong>inte byggda för AI att arbeta med.</strong> Tre saker gör dem problematiska:</p>
+<p><strong>1. AI:n måste tolka hela dokumentet.</strong> Den kan inte "bläddra" till rätt sida. Den processar allt från framsida till appendix, varje gång.</p>
+<p><strong>2. Det förbrukar enormt med kontext.</strong> En 50-sidig årsredovisning äter tusentals tokens varje gång den läses in. Samma information i Markdown kostar en bråkdel.</p>
+<p><strong>3. Formatering tolkas ofta fel.</strong> Tabeller, kolumner och sidbrytningar i PDF:er översätts dåligt till text. Siffror hamnar i fel kolumn. Formler försvinner.</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Kontextkostnad</th>
+<th>Precision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Markdown</strong></td>
+<td>Låg: ren text, minimal overhead</td>
+<td>Hög: AI läser exakt det som står</td>
+</tr>
+<tr>
+<td><strong>CSV</strong></td>
+<td>Låg: strukturerad data</td>
+<td>Hög: tydliga kolumner och rader</td>
+</tr>
+<tr>
+<td><strong>PDF</strong></td>
+<td>Hög: AI måste tolka hela dokumentet</td>
+<td>Varierande: tabeller kan feltolkas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lösningen</strong> är inte att sluta använda PDF:er. De är ofta det enda formatet du får. Lösningen är att bearbeta dem till Markdown <em>en gång</em>, och sedan arbeta mot den bearbetade versionen. Originalet behåller du som källa. Exakt hur du gör det beskrivs i <a href="../03-mappstruktur-och-arbetssatt/">kapitel 03</a>.</p>
+<hr />
+<h2 id="artifacts-claude-skapar-saker-at-dig">Artifacts — Claude skapar saker åt dig<a class="headerlink" href="#artifacts-claude-skapar-saker-at-dig" title="Permanent link">&para;</a></h2>
+<h3 id="vad-det-ar_2">Vad det är<a class="headerlink" href="#vad-det-ar_2" title="Permanent link">&para;</a></h3>
+<p>Artifacts är en funktion i Claude Chat där Claude skapar fristående innehåll som visas i ett eget fönster bredvid konversationen. Det kan vara:</p>
+<ul>
+<li><strong>Dokument:</strong> rapporter, sammanfattningar, memos</li>
+<li><strong>Kod:</strong> program, skript, webbsidor</li>
+<li><strong>Tabeller och diagram:</strong> visualiseringar av data</li>
+<li><strong>Interaktiva element:</strong> kalkylatorer, enkla verktyg</li>
+</ul>
+<h3 id="nar-skapas-de">När skapas de?<a class="headerlink" href="#nar-skapas-de" title="Permanent link">&para;</a></h3>
+<p>Claude skapar automatiskt en artifact när resultatet är tillräckligt substantiellt och fristående. En kort sammanfattning hamnar i chatten. En hel rapport, en tabell med 20 rader, eller ett kodblock hamnar som artifact.</p>
+<h3 id="varfor-det-spelar-roll">Varför det spelar roll<a class="headerlink" href="#varfor-det-spelar-roll" title="Permanent link">&para;</a></h3>
+<p>Artifacts gör att du kan:</p>
+<ul>
+<li>Kopiera resultatet enkelt (utan att leta i en lång konversation)</li>
+<li>Iterera på ett specifikt dokument ("Uppdatera artifact:en med en risksektion")</li>
+<li>Ladda ner eller dela resultatet</li>
+</ul>
+<p>Du behöver inte be om artifacts, de skapas automatiskt. Men du kan styra formatet genom att be om till exempel "skapa en tabell" eller "skriv ett komplett memo".</p>
+<hr />
+<h2 id="minne-claude-som-kommer-ihag">Minne — Claude som kommer ihåg<a class="headerlink" href="#minne-claude-som-kommer-ihag" title="Permanent link">&para;</a></h2>
+<h3 id="vad-det-ar_3">Vad det är<a class="headerlink" href="#vad-det-ar_3" title="Permanent link">&para;</a></h3>
+<p>Claude har en minnesfunktion som låter den komma ihåg saker mellan konversationer. Det är inte samma sak som projektinstruktioner (som du skriver manuellt). Minnet byggs upp automatiskt baserat på saker du berättar.</p>
+<h3 id="hur-det-fungerar">Hur det fungerar<a class="headerlink" href="#hur-det-fungerar" title="Permanent link">&para;</a></h3>
+<p>Under en konversation kan Claude spara information som du uttryckligen delar:</p>
+<ul>
+<li>"Jag jobbar på en konsultfirma med fokus på energisektorn"</li>
+<li>"Jag föredrar alltid svar på svenska med siffror i MSEK"</li>
+<li>"Jag använder alltid tabellformat för jämförelser"</li>
+</ul>
+<p>Denna information finns sedan tillgänglig i framtida konversationer, även utanför projekt.</p>
+<h3 id="hur-du-hanterar-det">Hur du hanterar det<a class="headerlink" href="#hur-du-hanterar-det" title="Permanent link">&para;</a></h3>
+<p>Du kan se och redigera vad Claude kommer ihåg i inställningarna. Det är bra att då och då kontrollera att minnena är korrekta och relevanta.</p>
+<p><strong>Viktigt:</strong> Minne är ett komplement till projektinstruktioner, inte en ersättning. Minnet är personligt och generellt. Projektinstruktioner är specifika för en arbetskontext. Använd båda.</p>
+<hr />
+<h2 id="sammanfattning-sa-far-du-battre-svar">Sammanfattning — så får du bättre svar<a class="headerlink" href="#sammanfattning-sa-far-du-battre-svar" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Teknik</th>
+<th>Effekt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ge kontext</strong> (vem, varför, för vem)</td>
+<td>AI:n förstår uppgiften bättre</td>
+</tr>
+<tr>
+<td><strong>Var specifik</strong> (format, struktur, längd)</td>
+<td>Resultatet matchar dina förväntningar</td>
+</tr>
+<tr>
+<td><strong>Steg-för-steg</strong></td>
+<td>Komplexa uppgifter bryts ner korrekt</td>
+</tr>
+<tr>
+<td><strong>Iterera</strong></td>
+<td>Förfina successivt istället för att jaga den perfekta prompten</td>
+</tr>
+<tr>
+<td><strong>Negativa instruktioner</strong></td>
+<td>Undvik oönskat innehåll och ton</td>
+</tr>
+<tr>
+<td><strong>Exempel</strong></td>
+<td>Format kommuniceras direkt</td>
+</tr>
+<tr>
+<td><strong>Projekt/CLAUDE.md</strong></td>
+<td>Kontexten är redan på plats, du slipper upprepa dig</td>
+</tr>
+<tr>
+<td><strong>Bearbeta filer</strong></td>
+<td>Markdown istället för PDF sparar tokens och ökar precision</td>
+</tr>
+</tbody>
+</table>
+<p>Det viktigaste att ta med sig: <strong>kontext slår promptkvalitet</strong>. En medioker prompt med utmärkt kontext (rätt filer, bra instruktioner, tydlig mappstruktur) ger nästan alltid ett bättre resultat än en perfekt prompt utan kontext.</p>
+<hr />
+<blockquote>
+<p><em>Föregående kapitel: <a href="../01-verktygslandskapet/">01 — AI-verktygslandskapet</a></em></p>
+<p><em>Nästa kapitel: <a href="../03-mappstruktur-och-arbetssatt/">03 — Mappstruktur och arbetssätt</a></em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
