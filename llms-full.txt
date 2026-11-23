@@ -36,7 +36,7 @@ Sedan kan du slå upp det du undrar över här på sajten.
 | Om du undrar | Läs |
 |---|---|
 | Varför börjar varje chatt från noll, och vad är steget efter chatten? | [01 Från chatt till system](01-fran-chatt-till-system.md) |
-| Varför blir svaren generiska fast jag ger mycket material? | [02 Kontext och prompter](02-kontext-och-prompter.md) |
+| Måste jag skriva långa prompter för att få bra svar? | [02 Kontext i stället för långa prompter](02-kontext.md) |
 | Hur ordnar jag mina filer så att Claude hittar rätt? | [03 Struktur som kontext](03-struktur.md) |
 | Hur hänger projekt, GitHub, Drive och schemalagda uppgifter ihop? | [04 Arkitekturen](04-arkitekturen.md) |
 | Hur får jag ett upplägg som passar hur jag lär mig? | [05 Individanpassad inlärning](05-individanpassad-inlarning.md) |
@@ -213,29 +213,30 @@ Det viktigaste i kapitlet är att modellen inte blir smartare på vägen uppför
     Ställ en fråga i taget innan du föreslår något.
     ```
 
-Nästa: [Kapitel 02: Kontext och prompter](02-kontext-och-prompter.md)
+Nästa: [Kapitel 02: Kontext i stället för långa prompter](02-kontext.md)
 
 
 ---
-Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext-och-prompter.md
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext.md
 
-# Kapitel 02 — Kontext och prompter
+# Kapitel 02 — Kontext i stället för långa prompter
 
-*Skillnaden mellan ett okej svar och ett bra svar ligger sällan i hur du formulerar frågan. Den ligger i vad modellen har framför sig när den svarar.*
+*Det känns uråldrigt att prata om hur man skriver en bra prompt. Poängen med ett upplägg är att du kan vara kort och vag, eftersom allt Claude behöver veta redan finns på plats.*
 
 !!! abstract "Kort version"
-    - Svarets kvalitet avgörs mest av vad modellen har framför sig, inte av hur frågan är formulerad.
+    - Svarets kvalitet avgörs mest av vad modellen har framför sig, inte av hur lång eller välformulerad frågan är.
+    - Med instruktioner, kunskap och regler i ett projekt räcker en kort fråga som "uppgift 11 i 13.5".
     - Kontextfönstret är ett begränsat skrivbord, så det lönar sig att lägga dit rätt material och inte allt.
-    - Sex tekniker gör störst skillnad: var specifik, berätta varför, be om stegen, iterera, säg vad du inte vill ha och visa ett exempel.
+    - När jag korrigerar Claude ändras svaret direkt, och återkommande korrigeringar kan bli en regel i projektet.
     - Filer och minne har fällor som går att undvika med några enkla vanor.
 
 ---
 
-Du vet redan hur man skriver en prompt. Det här kapitlet handlar om det som omger den: vad kontext är, varför den avgör kvaliteten, vilka tekniker som gör störst skillnad och hur du undviker de vanligaste fällorna med filer och minne.
+Det här kapitlet handlar om vad kontext är, varför den väger tyngre än prompten, hur en kort fråga kan ge rätt svar och hur systemet lär sig av det jag rättar. Där finns också de vanligaste fällorna med filer och minne.
 
 ## Vad kontext är
 
-När Claude svarar bygger svaret på all information som finns tillgänglig i det ögonblicket: din fråga, konversationen hittills, uppladdade filer, projektets instruktioner och kunskap, och i Claude Code även regelfilerna i mappen. Allt det tillsammans är kontexten.
+När Claude svarar bygger svaret på all information som finns tillgänglig i det ögonblicket: min fråga, konversationen hittills, uppladdade filer, projektets instruktioner och kunskap, och i Claude Code även regelfilerna i mappen. Allt det tillsammans är kontexten.
 
 ??? begrepp "Begrepp: Kontext"
     **Vad det är:** Allt som modellen har framför sig när den svarar: din fråga, tidigare meddelanden, bifogade filer och instruktionsfiler.
@@ -246,9 +247,7 @@ När Claude svarar bygger svaret på all information som finns tillgänglig i de
 
     [Se alla begrepp i ordlistan](ordlista.md#kontext)
 
-Tänk dig att du ber en konsult analysera ett bolag. Säger du bara "analysera bolaget" får du ett generiskt svar. Ger du konsulten årsredovisningen, en branschrapport, en beskrivning av vad du letar efter och en mall för hur rapporten ska se ut, får du något helt annat. Konsulten blev inte plötsligt smartare. Förutsättningarna blev bättre. Samma sak gäller en AI.
-
-Det gäller också i plugget. Frågar jag "förklara kritiska punkter" får jag en lärobokstext. Har jag ett projekt där kursboken finns som text, där reglerna säger att varje steg ska motiveras och där Claude vet att jag inte är nöjd förrän jag förstår varför, får jag en förklaring som passar mig.
+Tänk dig en konsult som ska analysera ett bolag. Får konsulten bara orden "analysera bolaget" blir svaret generiskt. Får konsulten årsredovisningen, en branschrapport, en beskrivning av vad jag letar efter och en mall för rapporten, blir resultatet ett helt annat. Konsulten blev inte smartare. Förutsättningarna blev bättre. Samma sak gäller en AI.
 
 ## Kontextfönstret är ett skrivbord
 
@@ -263,9 +262,7 @@ Varje modell kan hålla en viss mängd information i huvudet åt gången. Den gr
 
     [Se alla begrepp i ordlistan](ordlista.md#kontextfonster)
 
-Tänk på det som ett skrivbord. Det rymmer en viss mängd papper. Du kan lägga dit din fråga, samtalet, filer och instruktioner. Lägger du dit en hel bokhylla blir skrivbordet fullt, och något hamnar på golvet. I ett långt samtal kan de tidigaste detaljerna bli mindre tydliga, vilket är en begränsning och inget fel.
-
-Mängden mäts i tokens.
+Tänk på det som ett skrivbord. Det rymmer en viss mängd papper. Lägger jag dit en hel bokhylla blir det fullt, och något hamnar på golvet. I ett långt samtal kan de tidigaste detaljerna bli mindre tydliga, vilket är en begränsning och inget fel. Mängden mäts i tokens.
 
 ??? begrepp "Begrepp: Token"
     **Vad det är:** Den enhet som modeller räknar text i. En token är ungefär ett kort ord eller en ordbit, och svenska ord blir ofta flera tokens.
@@ -276,13 +273,11 @@ Mängden mäts i tokens.
 
     [Se alla begrepp i ordlistan](ordlista.md#token)
 
-Praktiskt innebär det två saker. I ett långt samtal kan det löna sig att starta ett nytt, inom samma projekt, så att instruktionerna och filerna finns kvar men historiken börjar om. I Claude Code kan du köra `/compact` för att sammanfatta samtalet och frigöra plats. Och du bör tänka på vad som ligger på skrivbordet: en dokumentmängd du inte behöver gör att det du behöver får mindre plats.
+Praktiskt betyder det att jag startar ett nytt samtal inom samma projekt när ett blir långt, så att instruktionerna och filerna finns kvar men historiken börjar om. I Claude Code kan jag köra `/compact` för att sammanfatta samtalet och frigöra plats. Och jag lägger bara på skrivbordet det jag behöver.
 
 ## PDF-problemet
 
-De flesta har sina viktigaste dokument som PDF: kursböcker, rapporter, årsredovisningar, avtal. AI-verktyg kan läsa dem, så vad är problemet? PDF är byggt för att människor ska läsa på en skärm. Det är inte byggt för att en AI ska arbeta med det, av tre skäl.
-
-Modellen måste ta in hela dokumentet för att hitta det du frågar om. Den kan inte bläddra till rätt sida. En lång bok kostar därför många tokens varje gång den läses, även om du bara behöver tre rader. Och formateringen översätts ofta dåligt: tabeller hamnar i fel kolumner, formler förvanskas och sidbrytningar klipper mitt i meningar.
+De flesta har sina viktigaste dokument som PDF, till exempel kursböcker, rapporter och avtal. Formatet är byggt för att människor ska läsa på en skärm, inte för att en AI ska arbeta med det. Modellen måste ta in hela dokumentet för att hitta tre rader, så en lång bok kostar många tokens varje gång. Tabeller och formler översätts dessutom ofta dåligt.
 
 Samma innehåll som Markdown, ett enkelt textformat med rubriker, listor och tabeller, kostar en bråkdel och läses exakt som det står.
 
@@ -295,85 +290,64 @@ Samma innehåll som Markdown, ett enkelt textformat med rubriker, listor och tab
 
     [Se alla begrepp i ordlistan](ordlista.md#markdown)
 
-| Format | Kontextkostnad | Precision |
-|---|---|---|
-| Markdown | Låg | Hög, modellen läser exakt det som står |
-| CSV | Låg | Hög, tydliga kolumner och rader |
-| PDF | Hög | Varierande, tabeller och formler kan feltolkas |
+Lösningen är inte att sluta använda PDF. Jag bearbetar dem till Markdown en gång, arbetar mot den versionen och sparar originalet som källa. Hur det går till beskrivs i kapitel 03, och vad det betyder för kostnaden finns i kapitel 09.
 
-Lösningen är inte att sluta använda PDF. Det är ofta det enda du får. Du bearbetar dem till Markdown en gång, arbetar mot den versionen och sparar originalet som källa. Hur det går till beskrivs i kapitel 03. I kursen jag visar i kapitel 05 ligger hela kursboken som Markdown, uppdelad per avsnitt, så att Claude kan gå direkt till rätt ställe.
+## Kort fråga, rätt svar
 
-## Sex tekniker som gör skillnad
+Så här såg det ut när jag arbetade i en vanlig chatt. Varje gång jag ville ha hjälp med en uppgift skrev jag ungefär så här:
 
-Teknikerna fungerar i en vanlig chatt. De blir ännu viktigare när du beskriver ett helt system för Claude Code att bygga, eftersom det du kan beskriva tydligt är det du kan få byggt.
-
-### 1. Var specifik
-
-Vagt: "Förklara Taylorutveckling."
-
-Specifikt: "Förklara Taylorutveckling av andra ordningen för en funktion av två variabler. Visa varje steg, definiera varje symbol du inför och avsluta med ett räknat exempel i punkten (0, 0)."
-
-Ju mer du anger om innehåll, format och längd, desto mindre behöver modellen gissa.
-
-### 2. Berätta varför och för vem
-
-Berätta inte bara vad du vill ha utan också syftet och mottagaren.
-
-Utan sammanhang: "Sammanfatta den här rapporten."
-
-Med sammanhang: "Sammanfatta rapporten i fem punkter åt någon som ska besluta om en investering och bara har tio minuter. Lyft de största riskerna först."
-
-Sammanhanget styr ton, detaljnivå och vinkel.
-
-### 3. Be om stegen
-
-För komplexa uppgifter hjälper det att dela upp arbetet:
-
-1. Sammanfatta nyckeltalen per år.
-2. Beräkna tillväxten över perioden.
-3. Identifiera de tre tydligaste trenderna.
-4. Ge en samlad bedömning.
-
-Då minskar risken att modellen hoppar över ett moment eller blandar ihop resultat.
-
-### 4. Iterera
-
-Det bästa sättet att arbeta är i korta varv. Börja brett, titta på svaret, rikta om. Tre korta justeringar ger ofta ett bättre resultat än en lång, perfekt formulerad prompt.
-
-```
-Du: Sammanfatta kapitlet.
-Claude: [sammanfattning]
-Du: Bra, men fokusera på hur Hessianen hänger ihop med Taylor.
-Claude: [ny version]
-Du: Lägg till ett exempel med en funktion av två variabler.
-Claude: [slutversion]
+```text
+Jag läser flervariabelanalys på Lunds universitet, kursen MATB21. Jag är
+ekonomistudent och har läst envariabelanalys, så förklara på den nivån.
+Använd samma notation som kursboken, till exempel ∇f för gradienten.
+Visa varje steg och motivera varför du gör det. Svara på svenska, avsluta
+med en kort kontroll av resultatet. Uppgiften är uppgift 11 i avsnitt 13.5.
 ```
 
-### 5. Säg vad du inte vill ha
+Det är fem rader som jag skrev om och om igen, och glömde jag en av dem fick jag ett svar som inte passade. Med ett projekt som är uppsatt skriver jag i stället:
 
-En AI vill gärna hjälpa till, och ibland för mycket. Den lägger till egna antaganden, fyller luckor med gissningar eller skriver i en ton du inte bad om. Negativa instruktioner hjälper: "Gissa inte. Saknas underlag, säg det." "Inga säljfraser." "Använd bara det som står i de bifogade filerna." "Högst 300 ord."
-
-### 6. Visa ett exempel
-
-Vill du ha ett särskilt format, visa det:
-
-```
-Beskriv varje begrepp så här:
-
-Begrepp: en mening om vad det är
-Behövs för: vilket begrepp som bygger på det
-Vanligt fel: ett typiskt misstag
+```text
+uppgift 11 i 13.5
 ```
 
-Ett exempel förmedlar format snabbare än en lång beskrivning.
+eller:
 
-## Beskriv, så bygger Claude
+```text
+förklara gradienten igen
+```
 
-Teknikerna ovan blir mest värda när du använder dem för att beskriva ett helt projekt. Börja i en vanlig chatt och förklara vad du vill skapa. Diskutera tills bilden är tydlig. Be sedan chatten sammanfatta allt som en beskrivning du ger till Claude Code, som bygger mappar, regelfiler och skript. Du beskriver, Claude bygger, och ju tydligare du beskriver desto bättre blir resultatet.
+Det räcker, eftersom projektets instruktioner redan säger vilken kurs det är, vilken nivå jag ligger på, vilken notation som gäller och att varje steg ska motiveras. Kunskapsfilerna innehåller kursboken, så Claude vet vad uppgift 11 i 13.5 är utan att jag klistrar in den. Uppsättningen av ett sådant projekt visar jag i kapitel 05.
+
+Det här är hela poängen med upplägget. Jag lägger arbetet en gång, i instruktioner, filer och regler, och sedan kostar varje fråga nästan ingenting att ställa.
+
+## Systemet lär sig av dina korrigeringar
+
+Ingen instruktion blir komplett på första försöket. Då gör jag det enklaste möjliga: jag säger det.
+
+- "Kortare."
+- "Visa alla steg."
+- "Använd kursens notation."
+
+Claude ändrar svaret direkt. Gäller korrigeringen bara just den här uppgiften är det slut där. Verkar den gälla framöver kan minnet spara den som en preferens, så att nästa samtal börjar på rätt sätt.
+
+Det finns ett steg till. En rad i projektinstruktionerna kan be Claude själv påpeka när en korrigering borde bli en permanent regel. Jag har lagt in något i den här stilen:
+
+```text
+När jag korrigerar hur du svarar och det verkar gälla framöver: föreslå en
+formulering jag kan lägga in i projektinstruktionerna.
+```
+
+Kommer jag med samma korrigering för tredje gången svarar Claude med ett förslag på en rad att lägga in. Jag bestämmer själv om den läggs in. Claude ändrar aldrig mina instruktioner på egen hand, och det är en fördel: instruktionerna är den del av systemet där jag ser exakt vad som gäller. Över tid blir de kortare frågorna möjliga just för att korrigeringarna samlas där.
+
+## När en längre instruktion ändå är rätt
+
+Ibland skriver jag fortfarande en lång text. Skillnaden är att den då inte är en engångsprompt. Jag skriver långt när jag formulerar en regel som ska ligga kvar, till exempel hur förklaringar ska byggas upp eller vad Claude aldrig ska gissa. En sådan text lönar sig eftersom den används varje gång.
+
+Claude skriver dessutom ofta bättre prompter till sig själv än jag gör. Behöver en uppgift en detaljerad instruktion kan jag därför be Claude formulera den. Hur det går till beskrivs i kapitel 09.
 
 ## Minne: vad Claude kommer ihåg mellan samtal
 
-Instruktioner och filer i ett projekt är något du skriver och styr. Minnet är något Claude bygger upp själv av vad du berättar.
+Instruktioner och filer i ett projekt är något jag skriver och styr. Minnet är något Claude bygger upp själv av det jag berättar.
 
 ??? begrepp "Begrepp: Minne"
     **Vad det är:** En funktion där Claude sparar uppgifter om dig och ditt arbete mellan chattar. Projekt har sitt eget minne, skilt från minnet i andra projekt.
@@ -386,37 +360,15 @@ Så här fungerar det i Claude. Minnet är påslaget som standard på Free, Pro 
 
 Varje projekt har sitt eget minne som inte blandas med andra projekts. Vill du ha full isolering kan du stänga av kontominnet för projektet. Du kan också slå av minnet för ett enskilt samtal, och inkognitochattar sparas varken i historiken eller i minnet. Ta för vana att då och då titta på vad som sparats och rensa det som är fel eller inaktuellt. ChatGPT har också ett minne, med begränsat utrymme i gratisnivån och mer i de dyrare planerna.
 
-Hur du ska tänka om det: minnet är ett komplement, aldrig grunden. Det är en sammanfattning som modellen själv väljer. Det som måste gälla varje gång, som hur du vill ha förklaringar eller vilka regler som styr en kurs, hör hemma i projektinstruktioner eller en regelfil, där du ser exakt vad som står.
+Minnet är ett komplement, aldrig grunden. Det är en sammanfattning som modellen själv väljer. Det som måste gälla varje gång hör hemma i projektinstruktioner eller en regelfil, där jag ser exakt vad som står.
 
-## Artifacts: resultat som blir egna objekt
+## Artifacts
 
-När Claude gör något som är fristående, som ett dokument, en tabell, ett litet program eller en interaktiv sida, kan det visas som en artifact i ett eget fönster bredvid samtalet.
-
-??? begrepp "Begrepp: Artifact"
-    **Vad det är:** Ett färdigt dokument, en liten app eller en sida som Claude skapar vid sidan av chatten och som du kan öppna, ändra och spara.
-
-    **Liknelse:** Ett utkast som läggs på bordet bredvid samtalet, så att det går att arbeta vidare i.
-
-    **Varför det spelar roll här:** Artifacts är ett sätt att få något användbart ut ur en chatt, som en översikt, ett övningsprov eller ett litet verktyg, i stället för text som försvinner uppåt i flödet.
-
-    [Se alla begrepp i ordlistan](ordlista.md#artifact)
-
-Det gör resultatet lätt att kopiera, ladda ned och bygga vidare på: "lägg till en risksektion i dokumentet" i stället för att leta i ett långt samtal. Du kan styra genom att be om det uttryckligen, till exempel "skriv det som ett dokument" eller "gör en tabell".
+När Claude gör något fristående, som ett dokument, en tabell eller en liten sida, kan det visas som en artifact i ett eget fönster bredvid samtalet. Då kan jag be om ändringar i just det objektet i stället för att leta i ett långt samtal.
 
 ## Sammanfattning
 
-| Teknik | Effekt |
-|---|---|
-| Berätta varför och för vem | Modellen förstår uppgiften |
-| Var specifik | Resultatet matchar det du förväntar dig |
-| Be om stegen | Komplexa uppgifter delas upp rätt |
-| Iterera | Du förfinar i stället för att jaga den perfekta prompten |
-| Säg vad du inte vill ha | Mindre gissningar och brus |
-| Visa ett exempel | Formatet blir rätt direkt |
-| Projekt och regelfiler | Kontexten finns på plats, du slipper upprepa dig |
-| Markdown i stället för PDF | Färre tokens och högre precision |
-
-Det viktigaste att ta med sig är att kontext slår promptkvalitet. En medelmåttig prompt med rätt filer, tydliga regler och bra struktur ger nästan alltid bättre resultat än en perfekt prompt utan något av det. Det är också därför samma upplägg fungerar oavsett om du läser en kurs, förbereder ett möte eller sköter ett projekt.
+Det viktigaste att ta med sig är att kontext slår promptkvalitet. En kort fråga med rätt filer, tydliga regler och bra struktur ger nästan alltid bättre resultat än en perfekt prompt utan något av det.
 
 ---
 
@@ -424,10 +376,10 @@ Det viktigaste att ta med sig är att kontext slår promptkvalitet. En medelmåt
     Klistra in det här i en ny konversation i Claude eller ChatGPT:
 
     ```text
-    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext-och-prompter.md
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
-    Fråga vilken uppgift jag brukar få tunna svar på och vilket material jag har till den.
-    Hjälp mig sedan att skriva om en av mina egna prompter med teknikerna i kapitlet och förklara vad som blev bättre.
+    Fråga vad jag upprepar i mina prompter i dag, till exempel kurs, nivå, ton eller format.
+    Hjälp mig sedan att flytta det till projektinstruktioner, så att mina frågor kan bli kortare.
     Ställ en fråga i taget innan du föreslår något.
     ```
 

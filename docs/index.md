@@ -28,7 +28,7 @@ Sedan kan du slå upp det du undrar över här på sajten.
 | Om du undrar | Läs |
 |---|---|
 | Varför börjar varje chatt från noll, och vad är steget efter chatten? | [01 Från chatt till system](01-fran-chatt-till-system.md) |
-| Varför blir svaren generiska fast jag ger mycket material? | [02 Kontext och prompter](02-kontext-och-prompter.md) |
+| Måste jag skriva långa prompter för att få bra svar? | [02 Kontext i stället för långa prompter](02-kontext.md) |
 | Hur ordnar jag mina filer så att Claude hittar rätt? | [03 Struktur som kontext](03-struktur.md) |
 | Hur hänger projekt, GitHub, Drive och schemalagda uppgifter ihop? | [04 Arkitekturen](04-arkitekturen.md) |
 | Hur får jag ett upplägg som passar hur jag lär mig? | [05 Individanpassad inlärning](05-individanpassad-inlarning.md) |

@@ -128,4 +128,4 @@ Det viktigaste i kapitlet är att modellen inte blir smartare på vägen uppför
     Ställ en fråga i taget innan du föreslår något.
     ```
 
-Nästa: [Kapitel 02: Kontext och prompter](02-kontext-och-prompter.md)
+Nästa: [Kapitel 02: Kontext i stället för långa prompter](02-kontext.md)

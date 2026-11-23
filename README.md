@@ -11,7 +11,7 @@ Jag använder mina egna universitetskurser som konkret exempel, framför allt Fl
 **Del 1: Grunden**
 
 1. [Från chatt till system](docs/01-fran-chatt-till-system.md): verktygen i dag, från chatt till Claude Code
-2. [Kontext och prompter](docs/02-kontext-och-prompter.md): varför kontext avgör kvaliteten
+2. [Kontext i stället för långa prompter](docs/02-kontext.md): därför räcker en kort fråga
 3. [Struktur som kontext](docs/03-struktur.md): mappar, Markdown, CLAUDE.md och skills
 
 **Del 2: Mitt system**

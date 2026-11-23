@@ -60,7 +60,7 @@ nav:
   - Start: index.md
   - "Del 1: Grunden":
       - "01 Från chatt till system": 01-fran-chatt-till-system.md
-      - "02 Kontext och prompter": 02-kontext-och-prompter.md
+      - "02 Kontext i stället för långa prompter": 02-kontext.md
       - "03 Struktur som kontext": 03-struktur.md
   - "Del 2: Mitt system":
       - "04 Arkitekturen": 04-arkitekturen.md

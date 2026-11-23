@@ -6,7 +6,7 @@ Hela guiden i en fil: https://raw.githubusercontent.com/Solsidan21/AI_workflow_g
 
 - [Start](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/index.md)
 - [01 Från chatt till system](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md)
-- [02 Kontext och prompter](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext-och-prompter.md)
+- [02 Kontext i stället för långa prompter](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext.md)
 - [03 Struktur som kontext](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md)
 - [04 Arkitekturen](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md)
 - [05 Individanpassad inlärning](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/05-individanpassad-inlarning.md)
