@@ -1,6 +1,6 @@
 # AI Workflow Guide: Från chatt till system
 
-*Samma AI-modeller finns tillgängliga för alla. Det som skiljer ett generiskt svar från ett användbart är skalet runt modellen, och med en vanlig prenumeration kan du bygga ett eget.*
+*Samma AI-modeller finns tillgängliga för alla. Det som skiljer ett generiskt svar från ett användbart är vad modellen får att arbeta med, och med en vanlig prenumeration kan du bygga ett eget system som ger den rätt förutsättningar.*
 
 ---
 
@@ -10,13 +10,11 @@ Jag heter Arvid och läser nationalekonomi vid Lunds universitet. Jag har byggt 
 
 Det här är guiden jag önskar att jag hade haft när jag började. Den är skriven för dig som inte är tekniker.
 
-## Tesen: modellen är densamma, skalet är det som skiljer
+## Tesen: du betalar redan för det viktigaste
 
-Modellerna kommer från ett fåtal stora labb, och alla som betalar för en prenumeration når i praktiken samma modeller. Ändå upplever folk helt olika nytta av dem. Förklaringen är det som byggs runt modellen: vilka verktyg den får, vilka källor den läser, vilka instruktioner den följer och vilka arbetsflöden den ingår i. Det kallas ett skal, på engelska *harness*.
+Modellerna kommer från ett fåtal stora labb, och alla som betalar för en prenumeration når i praktiken samma modeller. Ändå upplever folk helt olika nytta av dem. Förklaringen är vad modellen får att arbeta med: vilka källor den läser, vilka regler den följer, vilka verktyg den har och vilka rutiner den ingår i.
 
-Bolag gör just det här som affär. Juristplattformen [Legora](https://legora.com/wip-legal-benchmark-2) beskriver modellen som resonemangsmotorn och bygger verktyg, skills, juridiska källor och arbetsflöden runt den. Appbyggaren [Lovable](https://claude.com/customers/lovable) låter en huvudagent dela ut deluppgifter till subagenter och matchar varje uppgift mot den modell som passar bäst. Båda lever på modeller de inte själva har tränat.
-
-Poängen med guiden är att en privatperson kan bygga sitt eget skal för eget bruk. Det blir mindre och enklare än ett bolags, men det är ditt, och det är anpassat efter hur just du arbetar. Kapitel 08 går igenom vad som går att bygga själv och vad som inte går att kopiera.
+Det mesta av det kan du ordna själv. Ett välordnat filsystem, några regelfiler, några skript och ett par schemalagda uppgifter räcker långt. Den som har en prenumeration hos Claude eller ChatGPT har sällan anledning att också betala för en rad separata AI-tjänster som var och en gör en liten del av samma sak. Kapitel 08 går igenom vad en prenumeration räcker till och när en färdig tjänst ändå kan vara rätt val.
 
 ## Plugget är exemplet, inte ämnet
 
@@ -55,8 +53,8 @@ Ett centralt projekt som håller koll på helheten och skickar en plan varje mor
 **[Kapitel 07: Att bygga vidare på](07-bygga-vidare.md)**
 Sätt att utveckla systemet vidare, och idéer utanför plugget.
 
-**[Kapitel 08: Modellen och skalet](08-modellen-och-skalet.md)**
-Tesen i detalj, nyanserna, och vad en vanlig prenumeration räcker till.
+**[Kapitel 08: Vad en prenumeration räcker till](08-vad-en-prenumeration-racker-till.md)**
+Vad du redan betalar för, vad ditt eget system täcker och när en färdig tjänst är värd pengarna.
 
 **[Bilaga: Samma upplägg i arbetslivet](bilaga-arbetsliv.md)**
 En kort version av hur upplägget ser ut i ett investeringsbolag, med pekare till färdiga mallar.

@@ -122,4 +122,4 @@ Det här är samma byggstenar i andra miljöer, utan att något av det är beslu
 
 Gemensamt för alla fyra är att ingen av dem kräver mer än en vanlig prenumeration och en mapp. Börja med det som skaver mest i just din vardag, bygg det minsta som hjälper, och låt nästa steg komma ur det du märker.
 
-Nästa: [Kapitel 08: Modellen och skalet](08-modellen-och-skalet.md)
+Nästa: [Kapitel 08: Vad en prenumeration räcker till](08-vad-en-prenumeration-racker-till.md)

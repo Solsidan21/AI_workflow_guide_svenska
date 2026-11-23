@@ -12,12 +12,7 @@ Jag är en sådan student som inte passar ordningen. Jag lär mig nerifrån och 
 
 Med en vanlig prenumeration på Claude går det att bygga ett upplägg runt det. Det handlar inte om att kringgå kursen. Tentan, målen och kursboken är desamma. Det som ändras är vägen dit: vilken ordning jag läser i, hur saker förklaras, vad jag övar på och vad som följs upp.
 
-Den här guidens tes är att modellen är densamma för alla, och att skillnaden ligger i det som byggs runt den. Företag bygger ett sådant skal runt modellerna för sina kunder. Du kan bygga ett för dig själv, och det här kapitlet visar vad det kan göra för inlärning.
-
-??? begrepp "Begrepp: Skal (harness)"
-    --8<-- "skal.md"
-
-    [Se alla begrepp i ordlistan](ordlista.md#skal)
+Allt det här ryms i den prenumeration jag redan har. Det krävs ingen särskild studieapp, bara att modellen får rätt material och rätt regler.
 
 Plugget är exemplet i det här kapitlet, inte ämnet. Allt som beskrivs nedan fungerar likadant när du ska lära dig ett nytt jobb, en bransch eller en hobby. Jag återkommer till det i slutet.
 

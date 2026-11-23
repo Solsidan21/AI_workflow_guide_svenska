@@ -108,20 +108,6 @@
 
 --8<-- "subagent.md"
 
-## Modellen och skalet
-
-### Skal (harness) { #skal }
-
---8<-- "skal.md"
-
-### Finjustering { #finjustering }
-
---8<-- "finjustering.md"
-
-### Routing { #routing }
-
---8<-- "routing.md"
-
 ---
 
 Tillbaka till [startsidan](index.md).

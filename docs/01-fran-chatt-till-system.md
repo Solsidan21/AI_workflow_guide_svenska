@@ -4,16 +4,11 @@
 
 ---
 
-## Samma modell, olika skal
+## Samma modell, olika förutsättningar
 
-När du öppnar Claude eller ChatGPT pratar du med en modell från ett av de stora labben. Modellen är densamma för alla som betalar för samma plan. Ändå får en person ut mycket mer av den än en annan, och skillnaden ligger nästan alltid i vad som finns runt modellen: vilka filer den ser, vilka regler den följer, vilka verktyg den får använda.
+När du öppnar Claude eller ChatGPT pratar du med en modell från ett av de stora labben. Modellen är densamma för alla som betalar för samma plan. Ändå får en person ut mycket mer av den än en annan, och skillnaden ligger nästan alltid i vad modellen får att arbeta med: vilka filer den ser, vilka regler den följer, vilka verktyg den får använda.
 
-??? begrepp "Begrepp: Skal (harness)"
-    --8<-- "skal.md"
-
-    [Se alla begrepp i ordlistan](ordlista.md#skal)
-
-Bolag som Legora och Lovable bygger sådana skal som affär. Med en vanlig prenumeration kan du bygga ett eget för eget bruk. Det här kapitlet går igenom byggstenarna, i den ordning de blir användbara. Exemplen kommer från mina kurser, men plugget är bara ett fall. Samma steg fungerar i ett jobb, i en hobby eller när du ska hålla ordning på vardagen.
+Det här kapitlet går igenom byggstenarna, i den ordning de blir användbara. Exemplen kommer från mina kurser, men plugget är bara ett fall. Samma steg fungerar i ett jobb, i en hobby eller när du ska hålla ordning på vardagen.
 
 ## Problemet du redan känner till
 

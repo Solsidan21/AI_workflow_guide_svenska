@@ -1,8 +1,8 @@
-# AI-workflowguiden: ditt eget skal runt modellen
+# AI-workflowguiden: från chatt till eget system
 
 **Läs guiden på [solsidan21.github.io/AI_workflow_guide_svenska](https://solsidan21.github.io/AI_workflow_guide_svenska/).**
 
-Samma AI-modeller finns tillgängliga för alla. Bolag som Legora och Lovable bygger sina produkter som ett skal runt modeller från de stora labben: verktyg, källor, instruktioner och arbetsflöden. Den här guiden visar hur du bygger ditt eget skal för eget bruk med en vanlig prenumeration. Claude är huvudspåret, och ChatGPT och Codex tas upp där det finns motsvarigheter.
+Samma AI-modeller finns tillgängliga för alla. Det som avgör nyttan är vad modellen får att arbeta med: källor, regler, verktyg och rutiner. Den här guiden visar hur du bygger ett eget system för det med en vanlig prenumeration, i stället för att betala för en rad separata AI-tjänster. Claude är huvudspåret, och ChatGPT och Codex tas upp där det finns motsvarigheter.
 
 Jag använder mina egna universitetskurser som konkret exempel, framför allt Flervariabelanalys ([kursrepot finns här](https://github.com/Solsidan21/Flervariabelanalys_ht26)). Plugget är exemplet, inte ämnet. Samma upplägg fungerar i ett jobb, en hobby eller i vardagen.
 
@@ -21,9 +21,9 @@ Jag använder mina egna universitetskurser som konkret exempel, framför allt Fl
 6. [Hjärnan](docs/06-hjarnan.md): ett centralt projekt som håller koll på helheten
 7. [Att bygga vidare på](docs/07-bygga-vidare.md): sätt att utveckla systemet
 
-**Del 3: Modellen och skalet**
+**Del 3: Helheten**
 
-8. [Modellen och skalet](docs/08-modellen-och-skalet.md): vad bolagen bygger, och vad du kan bygga själv
+8. [Vad en prenumeration räcker till](docs/08-vad-en-prenumeration-racker-till.md): vad du redan betalar för och när en färdig tjänst är värd pengarna
 - [Bilaga: Samma upplägg i arbetslivet](docs/bilaga-arbetsliv.md)
 - [Ordlista](docs/ordlista.md)
 

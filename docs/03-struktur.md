@@ -2,7 +2,7 @@
 
 *Du kan ge en modell hela kursboken och ändå få generiska svar. Skillnaden ligger oftare i hur materialet är ordnat än i hur mycket det är.*
 
-Det här kapitlet handlar om det som gör ett skal värt att bygga: ordning. Jag använder en kursmapp som exempel, men samma tänk fungerar för en projektmapp på jobbet, en hobby eller en flytt. Där det finns material och återkommande uppgifter lönar sig struktur.
+Det här kapitlet handlar om det som gör ett eget system värt att bygga: ordning. Jag använder en kursmapp som exempel, men samma tänk fungerar för en projektmapp på jobbet, en hobby eller en flytt. Där det finns material och återkommande uppgifter lönar sig struktur.
 
 ## Mer material ger inte automatiskt bättre svar
 
