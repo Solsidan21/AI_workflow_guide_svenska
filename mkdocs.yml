@@ -81,7 +81,7 @@ extra:
         name: GitHub
         checked: true
   # Fyll i koden från Search Console (bara värdet i content="..."):
-  google_site_verification: ""
+  google_site_verification: "hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4"
 
 nav:
   - Start: index.md
