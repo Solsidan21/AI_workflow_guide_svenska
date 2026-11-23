@@ -2,6 +2,12 @@
 
 *Skillnaden mellan ett okej svar och ett bra svar ligger sällan i hur du formulerar frågan. Den ligger i vad modellen har framför sig när den svarar.*
 
+!!! abstract "Kort version"
+    - Svarets kvalitet avgörs mest av vad modellen har framför sig, inte av hur frågan är formulerad.
+    - Kontextfönstret är ett begränsat skrivbord, så det lönar sig att lägga dit rätt material och inte allt.
+    - Sex tekniker gör störst skillnad: var specifik, berätta varför, be om stegen, iterera, säg vad du inte vill ha och visa ett exempel.
+    - Filer och minne har fällor som går att undvika med några enkla vanor.
+
 ---
 
 Du vet redan hur man skriver en prompt. Det här kapitlet handlar om det som omger den: vad kontext är, varför den avgör kvaliteten, vilka tekniker som gör störst skillnad och hur du undviker de vanligaste fällorna med filer och minne.
@@ -170,5 +176,16 @@ Det gör resultatet lätt att kopiera, ladda ned och bygga vidare på: "lägg ti
 Det viktigaste att ta med sig är att kontext slår promptkvalitet. En medelmåttig prompt med rätt filer, tydliga regler och bra struktur ger nästan alltid bättre resultat än en perfekt prompt utan något av det. Det är också därför samma upplägg fungerar oavsett om du läser en kurs, förbereder ett möte eller sköter ett projekt.
 
 ---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext-och-prompter.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilken uppgift jag brukar få tunna svar på och vilket material jag har till den.
+    Hjälp mig sedan att skriva om en av mina egna prompter med teknikerna i kapitlet och förklara vad som blev bättre.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
 
 Nästa: [Kapitel 03: Struktur som kontext](03-struktur.md)

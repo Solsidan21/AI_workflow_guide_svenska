@@ -2,6 +2,13 @@
 
 *Du kan ge en modell hela kursboken och ändå få generiska svar. Skillnaden ligger oftare i hur materialet är ordnat än i hur mycket det är.*
 
+!!! abstract "Kort version"
+    - Hur materialet är ordnat spelar ofta större roll än hur mycket material modellen får.
+    - Namn och mappar fungerar som instruktioner, så en tydlig mappstruktur ger bättre svar.
+    - Dokument i Markdown är lättare för modellen att läsa än PDF:er.
+    - En CLAUDE.md eller motsvarande regelfil följer med mappen och styr hur Claude arbetar.
+    - Skills låter dig beskriva en återkommande uppgift en gång och återanvända den.
+
 Det här kapitlet handlar om det som gör ett eget system värt att bygga: ordning. Jag använder en kursmapp som exempel, men samma tänk fungerar för en projektmapp på jobbet, en hobby eller en flytt. Där det finns material och återkommande uppgifter lönar sig struktur.
 
 ## Mer material ger inte automatiskt bättre svar
@@ -151,5 +158,16 @@ Börja i en vanlig chatt och beskriv vad du arbetar med och vad du vill kunna g�
 Det viktigaste är inte att strukturen är perfekt från början. Den ska vara tillräckligt tydlig för att Claude ska hitta rätt, och den kan förbättras medan du använder den. I repots [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/)-mapp finns färdiga mallar för olika roller som du kan ge Claude Code som utgångspunkt.
 
 Struktur är det som gör att en vanlig prenumeration börjar fungera som ett eget system. Nästa steg är att se hur flera sådana mappar hänger ihop.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilket område jag arbetar med mest och hur mitt material ser ut i dag.
+    Hjälp mig sedan att föreslå en enkel mappstruktur och skriva ett första utkast till en regelfil för just det området.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
 
 Nästa: [Kapitel 04: Arkitekturen](04-arkitekturen.md)

@@ -2,6 +2,13 @@
 
 *En kurs är byggd för 500 studenter, eller 30. Med AI kan upplägget formas efter hur just du lär dig, och kursens ramar och mål ligger kvar. Kapitlet visar hur jag gjort det i Flervariabelanalys, och hur du gör ditt eget.*
 
+!!! abstract "Kort version"
+    - Kurser är byggda för en genomsnittlig student, och med AI kan upplägget formas efter hur just du lär dig.
+    - Det börjar med en kartläggning av kursen och hur kapitlen hänger ihop, innan några uppgifter.
+    - Ordningen följer begreppens beroenden, och konkreta bilder gör att abstrakta begrepp fastnar.
+    - Regler i projektet tvingar fram förståelse i stället för memorering, och gamla tentor används som test.
+    - Du formar ditt eget upplägg genom att beskriva hur du lär dig och vilka regler Claude ska följa.
+
 ---
 
 ## Problemet med den genomsnittliga studenten
@@ -249,5 +256,16 @@ Det finns ett exempel på hur en sådan översättning kan se ut i [bilagan om a
 Det som bär hela vägen är en enkel tanke. Modellen är densamma för dig som för alla andra. Det som skiljer är vad du ger den att arbeta med och vilka regler du sätter. Det går att göra på en eftermiddag, med den prenumeration du redan har, och det blir bättre för varje vecka.
 
 ---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/05-individanpassad-inlarning.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga hur jag lär mig bäst, vad jag har svårt för och vilken kurs eller vilket ämne jag vill börja med.
+    Hjälp mig sedan att skriva ett första utkast till en personlig beskrivning och några regler för mitt eget upplägg.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
 
 *Nästa: [Kapitel 06: Hjärnan](06-hjarnan.md)*

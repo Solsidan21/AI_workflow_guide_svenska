@@ -1,0 +1,2075 @@
+# AI-workflowguiden (hela texten)
+
+Guiden beskriver en persons upplägg och är inget facit. Använd det som passar läsaren och ställ frågor om resten.
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/index.md
+
+# AI-workflowguiden
+
+*Samma AI-modeller finns tillgängliga för alla. Det som skiljer ett generiskt svar från ett användbart är vad modellen får att arbeta med, och med en vanlig prenumeration kan du bygga ett eget system som ger den rätt förutsättningar.*
+
+## Börja här: låt din Claude läsa guiden
+
+Du behöver inte läsa guiden från början till slut. Det snabbaste sättet att komma igång är att låta din egen Claude (eller ChatGPT) läsa den och hjälpa dig utifrån din situation. Klistra in det här i en ny konversation:
+
+```text
+Läs den här guiden om att bygga ett eget AI-arbetsflöde:
+https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+
+Guiden beskriver en persons upplägg och är inget facit. Ta det som passar
+mig och strunta i resten.
+
+Intervjua mig först, en fråga i taget: vad jag använder AI till i dag,
+vad som stör mig mest, om det gäller studier, jobb eller något annat,
+och hur mycket jag vill bygga själv.
+
+Föreslå sedan ett första konkret steg som jag kan göra i dag, och hänvisa
+till det kapitel i guiden där jag kan läsa mer om jag vill.
+```
+
+Sedan kan du slå upp det du undrar över här på sajten.
+
+## Hitta det du behöver
+
+| Om du undrar | Läs |
+|---|---|
+| Varför börjar varje chatt från noll, och vad är steget efter chatten? | [01 Från chatt till system](01-fran-chatt-till-system.md) |
+| Varför blir svaren generiska fast jag ger mycket material? | [02 Kontext och prompter](02-kontext-och-prompter.md) |
+| Hur ordnar jag mina filer så att Claude hittar rätt? | [03 Struktur som kontext](03-struktur.md) |
+| Hur hänger projekt, GitHub, Drive och schemalagda uppgifter ihop? | [04 Arkitekturen](04-arkitekturen.md) |
+| Hur får jag ett upplägg som passar hur jag lär mig? | [05 Individanpassad inlärning](05-individanpassad-inlarning.md) |
+| Kan Claude hålla koll på helheten och skicka en plan varje morgon? | [06 Hjärnan](06-hjarnan.md) |
+| Vad kan jag bygga till när grunden fungerar? | [07 Att bygga vidare på](07-bygga-vidare.md) |
+| Vilken modell ska jag använda, och spelar benchmarks någon roll? | [08 Modellerna](08-modellerna.md) |
+| Varför slår jag i användningsgränsen hela tiden? | [09 Därför slår du i taket](09-anvandningsgransen.md) |
+| Behöver jag betala för fler AI-tjänster? | [10 Vad en prenumeration räcker till](10-vad-en-prenumeration-racker-till.md) |
+| Hur ser det här ut på ett jobb? | [Bilaga: Arbetslivet](bilaga-arbetsliv.md) |
+| Vad betyder ett ord? | [Ordlista](ordlista.md) |
+
+Varje kapitel börjar med en kort version på några rader och slutar med en prompt som låter dig göra kapitlets steg tillsammans med din Claude. Nya begrepp förklaras i hopfällda rutor som du fäller ut vid behov.
+
+## Vem jag är
+
+Jag heter Arvid och läser nationalekonomi vid Lunds universitet. Jag har byggt upp ett sätt att arbeta med Claude som gör att jag slipper börja om varje gång: en mapp per kurs, regler som Claude följer, projekt som känner till kursen och några schemalagda uppgifter som håller ordning på helheten.
+
+Jag visar allt med mina egna kurser som exempel, framför allt flervariabelanalys. Plugget är exemplet, inte ämnet. Upplägget bygger på tre saker som finns överallt: material som är ordnat så att en AI kan navigera i det, regler som talar om hur du vill arbeta, och en rutin som håller läget uppdaterat. Det fungerar lika bra i ett jobb, en hobby eller i vardagen.
+
+## Tesen: du betalar redan för det viktigaste
+
+Alla som betalar för en prenumeration når i praktiken samma modeller. Ändå upplever folk helt olika nytta av dem, och förklaringen är vad modellen får att arbeta med. Det mesta av det kan du ordna själv: ett välordnat filsystem, några regelfiler, några skript och ett par schemalagda uppgifter räcker långt. Den som har Claude eller ChatGPT har sällan anledning att också betala för en rad separata AI-tjänster som var och en gör en liten del av samma sak.
+
+Claude är huvudspåret eftersom det är det jag använder. ChatGPT och Codex tas upp där det finns en motsvarighet.
+
+!!! info "Bra att veta"
+    Verktygen och priserna ändras snabbt, så kontrollera aktuella uppgifter hos leverantören. I repots [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates) finns färdiga mallar med regelfiler och skills för private equity, konsultarbete och marknadsföring.
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md
+
+# Kapitel 01 — Från chatt till system
+
+*Du chattar redan med AI och får bra svar. Det här kapitlet visar stegen från en vanlig chatt till ett system som minns, följer dina regler och arbetar åt dig medan du gör annat.*
+
+!!! abstract "Kort version"
+    - Samma modell ger olika resultat beroende på vilka filer, regler och verktyg den får arbeta med.
+    - Trappan går från chatt via projekt och Claude-appen på datorn till Claude Code, och varje steg lägger till något nytt.
+    - Samma funktioner finns under olika namn hos Claude och ChatGPT, så upplägget går att flytta mellan dem.
+    - Du behöver inte ta alla steg, utan väljer det steg som löser ditt nuvarande problem.
+
+---
+
+## Samma modell, olika förutsättningar
+
+När du öppnar Claude eller ChatGPT pratar du med en modell från ett av de stora labben. Modellen är densamma för alla som betalar för samma plan. Ändå får en person ut mycket mer av den än en annan, och skillnaden ligger nästan alltid i vad modellen får att arbeta med: vilka filer den ser, vilka regler den följer, vilka verktyg den får använda.
+
+Det här kapitlet går igenom byggstenarna, i den ordning de blir användbara. Exemplen kommer från mina kurser, men plugget är bara ett fall. Samma steg fungerar i ett jobb, i en hobby eller när du ska hålla ordning på vardagen.
+
+## Problemet du redan känner till
+
+Tre saker gnager när du bara chattar. Du upprepar dig: vem du är, hur du vill ha svaret, vad som gäller. Varje samtal börjar från noll, så det du lade en timme på igår är borta idag. Och du kopierar material fram och tillbaka mellan dokument och chattfönster.
+
+Det är inget fel på dina prompter. Det är arbetsflödet som saknar något, och det kan byggas.
+
+## Trappan
+
+Verktygen kan ses som fyra steg. Varje steg löser en begränsning i det förra. Du behöver inte ta alla, men det hjälper att veta vilka som finns.
+
+```
+  Chatt  ->  Projekt  ->  Claude-appen på datorn  ->  Claude Code
+  (flyktig)  (delad       (lokala mappar,             (full kontroll,
+             kontext)     schemalagda uppgifter)      regelfiler, skills)
+```
+
+### Steg 1: Chatten
+
+Du skriver, du får svar. Kontexten är konversationen och de filer du laddat upp, och den finns bara i just det samtalet. Det räcker för en snabb fråga eller ett bollplank. Claude och ChatGPT har dessutom ett minne som sparar saker mellan samtal, vilket kapitel 02 går igenom, men det är en sammanfattning som modellen själv väljer, inte något du styr fullt ut.
+
+### Steg 2: Projekt
+
+Ett projekt är ett arbetsrum med egna instruktioner och egna filer, där alla samtal delar samma utgångsläge. Claude har projekt på alla planer, även gratisplanen, där man kan ha upp till fem. ChatGPT har också projekt, och dessutom Custom GPTs om du vill paketera instruktioner och filer som en egen assistent.
+
+??? begrepp "Begrepp: Projekt"
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och egen kunskap, till exempel uppladdade filer eller ett kopplat GitHub-repo. Instruktionerna gäller i alla chattar i projektet.
+
+    **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
+
+    **Varför det spelar roll här:** Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.
+
+    [Se alla begrepp i ordlistan](ordlista.md#projekt)
+
+Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kunskapen är kursmaterialet. Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
+
+Projekt är ett bra mellansteg när du har ett avgränsat uppdrag och vill slippa upprepa dig. Gränsen går där du vill att Claude ska skriva tillbaka till filer, köra något på egen hand eller arbeta utan att du sitter där.
+
+### Steg 3: Claude-appen på datorn
+
+Claude finns som app för datorn, och där får du något som webbläsaren inte ger. Du kan koppla lokala mappar, och Claude kan då läsa och skriva filer i just de mapparna och inga andra. Du kan ge ett längre uppdrag och låta Claude arbeta medan du är borta. Du kan också skapa schemalagda uppgifter, som körs i molnet utan att din dator är påslagen. Funktionerna kräver en betalplan.
+
+??? begrepp "Begrepp: Schemalagd uppgift"
+    **Vad det är:** En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.
+
+    **Liknelse:** En väckarklocka som inte bara ringer utan också gör jobbet.
+
+    **Varför det spelar roll här:** Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.
+
+    [Se alla begrepp i ordlistan](ordlista.md#schemalagd-uppgift)
+
+Jag använder schemalagda uppgifter för tre saker: ett morgonbrev som sammanfattar läget, en kort koll på eftermiddagen och en nattlig synk av ett hobbyprojekt. De läser dokument och kalender och skickar ett meddelande. Kapitel 06 visar hur det är uppbyggt.
+
+Här gäller samma regel som för allt Claude levererar: läs resultatet som ett utkast från en snabb medarbetare. Tydliga uppdrag ger bättre resultat än vaga, och det är värt att vara noga med vad som får ändras och vad som bara får läsas.
+
+ChatGPT har motsvarigheter: ett agentläge som kan utföra uppgifter åt dig, och Tasks för uppgifter som körs vid bestämda tider. Vilka som ingår i vilken plan ändras, så titta på [chatgpt.com/pricing](https://chatgpt.com/pricing).
+
+### Steg 4: Claude Code
+
+Claude Code är samma slags assistent, men du styr den med text och den arbetar direkt i en mapp på din dator. Den kan läsa hela mappstrukturen, skapa och redigera filer, köra skript och följa regler som du skrivit ned i en fil.
+
+??? begrepp "Begrepp: Claude Code"
+    **Vad det är:** Anthropics verktyg för att låta Claude arbeta direkt i dina mappar: läsa filer, skriva och ändra dem och köra kommandon. Det startas från terminalen och ingår i betalplanerna.
+
+    **Liknelse:** En assistent som sitter vid din dator och får öppna mapparna, i stället för att du skickar texten fram och tillbaka.
+
+    **Varför det spelar roll här:** Claude Code är verktyget som bygger och underhåller mappstrukturen, regelfilerna och skripten. Du beskriver vad du vill ha, och det skapar filerna.
+
+    [Se alla begrepp i ordlistan](ordlista.md#claude-code)
+
+Du behöver inte kunna programmera. Du beskriver vad du vill ha, och Claude Code skapar mappar, regelfiler och skript. Ett bra sätt att börja är att först prata ut ditt projekt i en vanlig chatt, tills du har en tydlig bild, och sedan be chatten sammanfatta det som en färdig beskrivning som du klistrar in i Claude Code. Det enda du gör för hand är att skapa en tom mapp.
+
+Regelfilen heter CLAUDE.md och läses i början av varje session. Den är skillnaden mellan en assistent som börjar om varje dag och en som känner projektet. Dessutom kan du lägga upp återanvändbara arbetssätt som skills, och även det tar kapitel 03 upp.
+
+OpenAI har en motsvarighet som heter Codex, med regelfilen AGENTS.md.
+
+??? begrepp "Begrepp: Codex"
+    **Vad det är:** OpenAI:s kodagent. Den arbetar i repon, kan läsa och ändra filer och följer regler i en AGENTS.md.
+
+    **Varför det spelar roll här:** Codex är motsvarigheten till Claude Code i ChatGPT-världen. Struktur som mappar, tydliga namn och en regelfil hjälper på samma sätt där.
+
+    [Se alla begrepp i ordlistan](ordlista.md#codex)
+
+Jag började faktiskt med Codex och bytte senare till Claude Code. Jag kan inte säga att den ena är bäst, och landskapet ändras ofta. Jag använder Claude som huvudspår här eftersom det är det jag kan bäst, och för att jag kan lägga mina GitHub-repon som kunskap i ett Claude-projekt, vilket gör att kursprojektet alltid ser senaste versionen.
+
+## Samma ting under olika namn
+
+| Det du vill ha | Claude | ChatGPT |
+|---|---|---|
+| Samlad kontext för ett uppdrag | Projekt | Projekt, Custom GPTs |
+| Minne mellan samtal | Minne och sökning i tidigare chattar | Minne |
+| Regelfil i en mapp | CLAUDE.md | AGENTS.md |
+| Agent som arbetar med kod och filer | Claude Code | Codex |
+| Uppgifter vid bestämda tider | Schemalagda uppgifter | Tasks |
+| Återanvändbara arbetssätt | Skills | Custom GPTs |
+
+Tabellen är en förenkling. Funktionerna är inte identiska, men de löser samma problem, och det du lär dig av ett verktyg går att överföra till det andra.
+
+## Planer och priser
+
+Priser och gränser ändras ofta, så läs alltid av leverantörens egen sida innan du bestämmer dig. Det här är läget när guiden skrevs.
+
+Claude har en gratisplan med begränsad användning. Pro kostar 20 dollar i månaden, eller 17 dollar i månaden om du betalar för ett år i förväg, och ger mer användning, Claude Code och fler modeller. Max börjar på 100 dollar i månaden och ger fem gånger så mycket användning som Pro. Källa: [claude.com/pricing](https://claude.com/pricing). Anthropic har ingen egen studentrabatt på prissidan, men ditt lärosäte kan ha ett avtal, så fråga.
+
+ChatGPT har också en gratisnivå och flera betalnivåer, med bland annat Plus och Pro, där de högre nivåerna ger mer av agentläge, Codex och djup research. Exakta priser står på [chatgpt.com/pricing](https://chatgpt.com/pricing).
+
+Min egen bedömning är att Claude Pro räcker långt för det som beskrivs i guiden. Du kan börja på gratisplanen med projekt och chatt och uppgradera när du märker att du vill ha lokala mappar, schemalagda uppgifter eller Claude Code.
+
+## Vilket steg ska du välja?
+
+Börja där ditt problem finns. Om du upprepar dig, skapa ett projekt. Om du vill att Claude ska arbeta direkt med filer på din dator, prova appen eller Claude Code. Om du vill att något ska ske utan att du ber om det, skapa en schemalagd uppgift.
+
+Det viktigaste i kapitlet är att modellen inte blir smartare på vägen uppför trappan. Det som förändras är vad den har att jobba med: egna filer, egna regler, egna rutiner. Nästa kapitel handlar om hur du ger den det på bästa sätt.
+
+---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vad jag använder AI till idag och vad som skaver mest.
+    Hjälp mig sedan att välja vilket steg i trappan som passar mig och att ta det första konkreta steget i min egen vardag.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 02: Kontext och prompter](02-kontext-och-prompter.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext-och-prompter.md
+
+# Kapitel 02 — Kontext och prompter
+
+*Skillnaden mellan ett okej svar och ett bra svar ligger sällan i hur du formulerar frågan. Den ligger i vad modellen har framför sig när den svarar.*
+
+!!! abstract "Kort version"
+    - Svarets kvalitet avgörs mest av vad modellen har framför sig, inte av hur frågan är formulerad.
+    - Kontextfönstret är ett begränsat skrivbord, så det lönar sig att lägga dit rätt material och inte allt.
+    - Sex tekniker gör störst skillnad: var specifik, berätta varför, be om stegen, iterera, säg vad du inte vill ha och visa ett exempel.
+    - Filer och minne har fällor som går att undvika med några enkla vanor.
+
+---
+
+Du vet redan hur man skriver en prompt. Det här kapitlet handlar om det som omger den: vad kontext är, varför den avgör kvaliteten, vilka tekniker som gör störst skillnad och hur du undviker de vanligaste fällorna med filer och minne.
+
+## Vad kontext är
+
+När Claude svarar bygger svaret på all information som finns tillgänglig i det ögonblicket: din fråga, konversationen hittills, uppladdade filer, projektets instruktioner och kunskap, och i Claude Code även regelfilerna i mappen. Allt det tillsammans är kontexten.
+
+??? begrepp "Begrepp: Kontext"
+    **Vad det är:** Allt som modellen har framför sig när den svarar: din fråga, tidigare meddelanden, bifogade filer och instruktionsfiler.
+
+    **Liknelse:** Ju bättre förberedd en konsult är inför mötet, desto bättre råd ger hon. Modellen är konsulten och kontexten är underlaget hon får.
+
+    **Varför det spelar roll här:** Modellen är densamma för alla. Det som skiljer ett generiskt svar från ett användbart är oftast vilken kontext du har gett den och hur den är ordnad.
+
+    [Se alla begrepp i ordlistan](ordlista.md#kontext)
+
+Tänk dig att du ber en konsult analysera ett bolag. Säger du bara "analysera bolaget" får du ett generiskt svar. Ger du konsulten årsredovisningen, en branschrapport, en beskrivning av vad du letar efter och en mall för hur rapporten ska se ut, får du något helt annat. Konsulten blev inte plötsligt smartare. Förutsättningarna blev bättre. Samma sak gäller en AI.
+
+Det gäller också i plugget. Frågar jag "förklara kritiska punkter" får jag en lärobokstext. Har jag ett projekt där kursboken finns som text, där reglerna säger att varje steg ska motiveras och där Claude vet att jag inte är nöjd förrän jag förstår varför, får jag en förklaring som passar mig.
+
+## Kontextfönstret är ett skrivbord
+
+Varje modell kan hålla en viss mängd information i huvudet åt gången. Den gränsen kallas kontextfönster.
+
+??? begrepp "Begrepp: Kontextfönster"
+    **Vad det är:** Den mängd text, mätt i tokens, som en modell kan hålla i sig på en gång. Allt som ryms i fönstret kan modellen ta hänsyn till, resten är osynligt för den.
+
+    **Liknelse:** Ett skrivbord med begränsad yta. Det du vill arbeta med måste ligga uppe på bordet, och för mycket papper gör det svårt att hitta rätt.
+
+    **Varför det spelar roll här:** Därför lönar det sig att ge modellen rätt filer och inte alla filer. Utrymmet delas mellan ditt underlag, dina regler och själva frågan.
+
+    [Se alla begrepp i ordlistan](ordlista.md#kontextfonster)
+
+Tänk på det som ett skrivbord. Det rymmer en viss mängd papper. Du kan lägga dit din fråga, samtalet, filer och instruktioner. Lägger du dit en hel bokhylla blir skrivbordet fullt, och något hamnar på golvet. I ett långt samtal kan de tidigaste detaljerna bli mindre tydliga, vilket är en begränsning och inget fel.
+
+Mängden mäts i tokens.
+
+??? begrepp "Begrepp: Token"
+    **Vad det är:** Den enhet som modeller räknar text i. En token är ungefär ett kort ord eller en ordbit, och svenska ord blir ofta flera tokens.
+
+    **Liknelse:** Som ordräknaren i Word, fast med enheter som modellen själv använder.
+
+    **Varför det spelar roll här:** Tokens avgör hur mycket som ryms i kontextfönstret och hur snabbt användningsutrymmet i din plan går åt. En PDF kostar många fler tokens än samma innehåll som ren text.
+
+    [Se alla begrepp i ordlistan](ordlista.md#token)
+
+Praktiskt innebär det två saker. I ett långt samtal kan det löna sig att starta ett nytt, inom samma projekt, så att instruktionerna och filerna finns kvar men historiken börjar om. I Claude Code kan du köra `/compact` för att sammanfatta samtalet och frigöra plats. Och du bör tänka på vad som ligger på skrivbordet: en dokumentmängd du inte behöver gör att det du behöver får mindre plats.
+
+## PDF-problemet
+
+De flesta har sina viktigaste dokument som PDF: kursböcker, rapporter, årsredovisningar, avtal. AI-verktyg kan läsa dem, så vad är problemet? PDF är byggt för att människor ska läsa på en skärm. Det är inte byggt för att en AI ska arbeta med det, av tre skäl.
+
+Modellen måste ta in hela dokumentet för att hitta det du frågar om. Den kan inte bläddra till rätt sida. En lång bok kostar därför många tokens varje gång den läses, även om du bara behöver tre rader. Och formateringen översätts ofta dåligt: tabeller hamnar i fel kolumner, formler förvanskas och sidbrytningar klipper mitt i meningar.
+
+Samma innehåll som Markdown, ett enkelt textformat med rubriker, listor och tabeller, kostar en bråkdel och läses exakt som det står.
+
+??? begrepp "Begrepp: Markdown"
+    **Vad det är:** Ett sätt att formatera text med vanliga tecken. Rubriker skrivs med brädgård, listor med bindestreck och fetstil med stjärnor. Filerna får ändelsen .md.
+
+    **Liknelse:** I Word klickar du på knappar för att formatera. I Markdown skriver du formateringen rakt i texten, så att den syns även utan program.
+
+    **Varför det spelar roll här:** Markdown är lättläst för både människor och modeller och kostar få tokens. Därför omvandlar man PDF:er och anteckningar till Markdown, och därför skrivs regelfiler som CLAUDE.md i samma format.
+
+    [Se alla begrepp i ordlistan](ordlista.md#markdown)
+
+| Format | Kontextkostnad | Precision |
+|---|---|---|
+| Markdown | Låg | Hög, modellen läser exakt det som står |
+| CSV | Låg | Hög, tydliga kolumner och rader |
+| PDF | Hög | Varierande, tabeller och formler kan feltolkas |
+
+Lösningen är inte att sluta använda PDF. Det är ofta det enda du får. Du bearbetar dem till Markdown en gång, arbetar mot den versionen och sparar originalet som källa. Hur det går till beskrivs i kapitel 03. I kursen jag visar i kapitel 05 ligger hela kursboken som Markdown, uppdelad per avsnitt, så att Claude kan gå direkt till rätt ställe.
+
+## Sex tekniker som gör skillnad
+
+Teknikerna fungerar i en vanlig chatt. De blir ännu viktigare när du beskriver ett helt system för Claude Code att bygga, eftersom det du kan beskriva tydligt är det du kan få byggt.
+
+### 1. Var specifik
+
+Vagt: "Förklara Taylorutveckling."
+
+Specifikt: "Förklara Taylorutveckling av andra ordningen för en funktion av två variabler. Visa varje steg, definiera varje symbol du inför och avsluta med ett räknat exempel i punkten (0, 0)."
+
+Ju mer du anger om innehåll, format och längd, desto mindre behöver modellen gissa.
+
+### 2. Berätta varför och för vem
+
+Berätta inte bara vad du vill ha utan också syftet och mottagaren.
+
+Utan sammanhang: "Sammanfatta den här rapporten."
+
+Med sammanhang: "Sammanfatta rapporten i fem punkter åt någon som ska besluta om en investering och bara har tio minuter. Lyft de största riskerna först."
+
+Sammanhanget styr ton, detaljnivå och vinkel.
+
+### 3. Be om stegen
+
+För komplexa uppgifter hjälper det att dela upp arbetet:
+
+1. Sammanfatta nyckeltalen per år.
+2. Beräkna tillväxten över perioden.
+3. Identifiera de tre tydligaste trenderna.
+4. Ge en samlad bedömning.
+
+Då minskar risken att modellen hoppar över ett moment eller blandar ihop resultat.
+
+### 4. Iterera
+
+Det bästa sättet att arbeta är i korta varv. Börja brett, titta på svaret, rikta om. Tre korta justeringar ger ofta ett bättre resultat än en lång, perfekt formulerad prompt.
+
+```
+Du: Sammanfatta kapitlet.
+Claude: [sammanfattning]
+Du: Bra, men fokusera på hur Hessianen hänger ihop med Taylor.
+Claude: [ny version]
+Du: Lägg till ett exempel med en funktion av två variabler.
+Claude: [slutversion]
+```
+
+### 5. Säg vad du inte vill ha
+
+En AI vill gärna hjälpa till, och ibland för mycket. Den lägger till egna antaganden, fyller luckor med gissningar eller skriver i en ton du inte bad om. Negativa instruktioner hjälper: "Gissa inte. Saknas underlag, säg det." "Inga säljfraser." "Använd bara det som står i de bifogade filerna." "Högst 300 ord."
+
+### 6. Visa ett exempel
+
+Vill du ha ett särskilt format, visa det:
+
+```
+Beskriv varje begrepp så här:
+
+Begrepp: en mening om vad det är
+Behövs för: vilket begrepp som bygger på det
+Vanligt fel: ett typiskt misstag
+```
+
+Ett exempel förmedlar format snabbare än en lång beskrivning.
+
+## Beskriv, så bygger Claude
+
+Teknikerna ovan blir mest värda när du använder dem för att beskriva ett helt projekt. Börja i en vanlig chatt och förklara vad du vill skapa. Diskutera tills bilden är tydlig. Be sedan chatten sammanfatta allt som en beskrivning du ger till Claude Code, som bygger mappar, regelfiler och skript. Du beskriver, Claude bygger, och ju tydligare du beskriver desto bättre blir resultatet.
+
+## Minne: vad Claude kommer ihåg mellan samtal
+
+Instruktioner och filer i ett projekt är något du skriver och styr. Minnet är något Claude bygger upp själv av vad du berättar.
+
+??? begrepp "Begrepp: Minne"
+    **Vad det är:** En funktion där Claude sparar uppgifter om dig och ditt arbete mellan chattar. Projekt har sitt eget minne, skilt från minnet i andra projekt.
+
+    **Varför det spelar roll här:** Minne är bra för bestående fakta om dig, men det går inte att styra lika exakt som en fil. Det som måste vara rätt ska ligga i filer och regler du själv kontrollerar.
+
+    [Se alla begrepp i ordlistan](ordlista.md#minne)
+
+Så här fungerar det i Claude. Minnet är påslaget som standard på Free, Pro och Max, och sparas som enskilda ämnen medan du chattar. Känsliga ämnen som hälsa, politik och religion sparas inte som standard, och uppgifter som id-nummer och kontonummer sparas aldrig. På betalplaner kan Claude dessutom söka i tidigare samtal. Chattar utanför projekt kan sökas överallt, medan projektchattar bara kan sökas inom sitt eget projekt.
+
+Varje projekt har sitt eget minne som inte blandas med andra projekts. Vill du ha full isolering kan du stänga av kontominnet för projektet. Du kan också slå av minnet för ett enskilt samtal, och inkognitochattar sparas varken i historiken eller i minnet. Ta för vana att då och då titta på vad som sparats och rensa det som är fel eller inaktuellt. ChatGPT har också ett minne, med begränsat utrymme i gratisnivån och mer i de dyrare planerna.
+
+Hur du ska tänka om det: minnet är ett komplement, aldrig grunden. Det är en sammanfattning som modellen själv väljer. Det som måste gälla varje gång, som hur du vill ha förklaringar eller vilka regler som styr en kurs, hör hemma i projektinstruktioner eller en regelfil, där du ser exakt vad som står.
+
+## Artifacts: resultat som blir egna objekt
+
+När Claude gör något som är fristående, som ett dokument, en tabell, ett litet program eller en interaktiv sida, kan det visas som en artifact i ett eget fönster bredvid samtalet.
+
+??? begrepp "Begrepp: Artifact"
+    **Vad det är:** Ett färdigt dokument, en liten app eller en sida som Claude skapar vid sidan av chatten och som du kan öppna, ändra och spara.
+
+    **Liknelse:** Ett utkast som läggs på bordet bredvid samtalet, så att det går att arbeta vidare i.
+
+    **Varför det spelar roll här:** Artifacts är ett sätt att få något användbart ut ur en chatt, som en översikt, ett övningsprov eller ett litet verktyg, i stället för text som försvinner uppåt i flödet.
+
+    [Se alla begrepp i ordlistan](ordlista.md#artifact)
+
+Det gör resultatet lätt att kopiera, ladda ned och bygga vidare på: "lägg till en risksektion i dokumentet" i stället för att leta i ett långt samtal. Du kan styra genom att be om det uttryckligen, till exempel "skriv det som ett dokument" eller "gör en tabell".
+
+## Sammanfattning
+
+| Teknik | Effekt |
+|---|---|
+| Berätta varför och för vem | Modellen förstår uppgiften |
+| Var specifik | Resultatet matchar det du förväntar dig |
+| Be om stegen | Komplexa uppgifter delas upp rätt |
+| Iterera | Du förfinar i stället för att jaga den perfekta prompten |
+| Säg vad du inte vill ha | Mindre gissningar och brus |
+| Visa ett exempel | Formatet blir rätt direkt |
+| Projekt och regelfiler | Kontexten finns på plats, du slipper upprepa dig |
+| Markdown i stället för PDF | Färre tokens och högre precision |
+
+Det viktigaste att ta med sig är att kontext slår promptkvalitet. En medelmåttig prompt med rätt filer, tydliga regler och bra struktur ger nästan alltid bättre resultat än en perfekt prompt utan något av det. Det är också därför samma upplägg fungerar oavsett om du läser en kurs, förbereder ett möte eller sköter ett projekt.
+
+---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext-och-prompter.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilken uppgift jag brukar få tunna svar på och vilket material jag har till den.
+    Hjälp mig sedan att skriva om en av mina egna prompter med teknikerna i kapitlet och förklara vad som blev bättre.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 03: Struktur som kontext](03-struktur.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md
+
+# Kapitel 03 — Struktur som kontext
+
+*Du kan ge en modell hela kursboken och ändå få generiska svar. Skillnaden ligger oftare i hur materialet är ordnat än i hur mycket det är.*
+
+!!! abstract "Kort version"
+    - Hur materialet är ordnat spelar ofta större roll än hur mycket material modellen får.
+    - Namn och mappar fungerar som instruktioner, så en tydlig mappstruktur ger bättre svar.
+    - Dokument i Markdown är lättare för modellen att läsa än PDF:er.
+    - En CLAUDE.md eller motsvarande regelfil följer med mappen och styr hur Claude arbetar.
+    - Skills låter dig beskriva en återkommande uppgift en gång och återanvända den.
+
+Det här kapitlet handlar om det som gör ett eget system värt att bygga: ordning. Jag använder en kursmapp som exempel, men samma tänk fungerar för en projektmapp på jobbet, en hobby eller en flytt. Där det finns material och återkommande uppgifter lönar sig struktur.
+
+## Mer material ger inte automatiskt bättre svar
+
+De flesta som börjar använda AI på allvar gör likadant. De laddar upp filer, skriver några rader instruktioner och lägger till mer material när svaren känns tunna. Det hjälper till en punkt, sedan planar det ut.
+
+Modellen är redan tillräckligt smart för att förstå materialet. Den vet bara inte var den ska titta. Tänk dig en kompetent konsult som får 200 osorterade sidor och fem minuter. Hälften av tiden går åt till att sortera i stället för att tänka.
+
+Två studenter inför en tenta visar skillnaden. Den ena har alla utskrivna föreläsningar och hela kursboken i en hög. Den andra har en pärm med flikar, en sammanfattning per kapitel och en innehållsförteckning. De har samma information, men den andra hittar svaret på tio sekunder.
+
+Det jag har lärt mig sammanfattas så här: navigerbar kontext tillsammans med regler slår maxad kontext. Du gör inte modellen smartare. Du låter den använda det den kan.
+
+## Namn och mappar är instruktioner
+
+När Claude arbetar i en mapp ser den inte bara filernas innehåll. Den ser också filnamn, mappnamn och hur allt hänger ihop. Det är kontext som du inte behöver skriva i någon prompt.
+
+Jämför `07_fulltext/kap_13/13.5.md` med `dokument/fil3.pdf`. Det första säger vad filen är, vilket kapitel och vilket avsnitt. Det andra tvingar dig att förklara allt, varje gång.
+
+Några vanor som gör skillnad:
+
+- Beskrivande namn. Skulle en kurskamrat förstå vad filen innehåller utifrån namnet?
+- En logisk hierarki. Bryt ut undermappar när en mapp får fler än tio till femton filer.
+- Samma mönster överallt, till exempel små bokstäver med bindestreck och datum som ÅÅÅÅ-MM-DD.
+- Material du fått, material du gjort och färdiga leveranser i separata mappar, så att du alltid kan gå tillbaka till originalet.
+- En kort README i mappar där det inte är självklart vad som ligger.
+
+Du behöver inte skapa det här för hand. Beskriv vad du behöver, så bygger Claude Code strukturen åt dig. Kunskapen du behöver är varför den ser ut som den gör, så att du kan styra.
+
+## Exempel: en kursmapp
+
+Så här ser skelettet ut i mitt repo för en av mattekurserna. Alla mina kurser har samma upplägg, och du kan titta på det i det [offentliga repot för Flervariabelanalys](https://github.com/Solsidan21/Flervariabelanalys_ht26).
+
+```
+flervariabelanalys/
+├── CLAUDE.md
+├── 00_index/            översikt och uppgiftsindex
+├── 01_kursmaterial/     kursplan, kapitelguide
+├── 02_forelasningar/
+├── 04_studieplan/       veckoplan
+├── 05_tentor/           gamla tentor och lösningsförslag
+├── 06_bokinnehall/      en sammanfattning per kapitel
+├── 07_fulltext/         boken som Markdown, en fil per avsnitt
+└── scripts/             skript som bygger index och kontrollerar täckning
+```
+
+Numreringen gör att mapparna hamnar i samma ordning överallt, och jag ser direkt var något ska ligga. Samma skelett i varje kurs betyder att Claude hittar rätt även i en kurs jag precis har startat. På jobbet vore motsvarigheten en mapp per kund eller per projekt med samma fasta delar.
+
+## Från PDF till Markdown
+
+Kursmaterial kommer oftast som PDF. Det är det sämsta formatet att ge en modell. En PDF är tung att läsa in, tabeller och formler tolkas ofta fel, och du betalar samma pris varje gång filen används.
+
+??? begrepp "Begrepp: Token"
+    **Vad det är:** Den enhet som modeller räknar text i. En token är ungefär ett kort ord eller en ordbit, och svenska ord blir ofta flera tokens.
+
+    **Liknelse:** Som ordräknaren i Word, fast med enheter som modellen själv använder.
+
+    **Varför det spelar roll här:** Tokens avgör hur mycket som ryms i kontextfönstret och hur snabbt användningsutrymmet i din plan går åt. En PDF kostar många fler tokens än samma innehåll som ren text.
+
+    [Se alla begrepp i ordlistan](ordlista.md#token)
+
+Lösningen är att bearbeta dokumentet en gång och spara resultatet som Markdown.
+
+??? begrepp "Begrepp: Markdown"
+    **Vad det är:** Ett sätt att formatera text med vanliga tecken. Rubriker skrivs med brädgård, listor med bindestreck och fetstil med stjärnor. Filerna får ändelsen .md.
+
+    **Liknelse:** I Word klickar du på knappar för att formatera. I Markdown skriver du formateringen rakt i texten, så att den syns även utan program.
+
+    **Varför det spelar roll här:** Markdown är lättläst för både människor och modeller och kostar få tokens. Därför omvandlar man PDF:er och anteckningar till Markdown, och därför skrivs regelfiler som CLAUDE.md i samma format.
+
+    [Se alla begrepp i ordlistan](ordlista.md#markdown)
+
+Flödet har fyra steg:
+
+1. Samla. Lägg originalen i en mapp. Behåll alltid PDF:en, den är din källa.
+2. Extrahera. Be Claude Code läsa PDF:en och skriva den som Markdown, uppdelad i filer som följer materialets egen struktur.
+3. Publicera. Lägg mappen i ett Git-repo och skicka det till GitHub.
+4. Koppla. Lägg repot som kunskap i ett Claude-projekt.
+
+??? begrepp "Begrepp: GitHub"
+    **Vad det är:** En webbtjänst där Git-repon lagras och kan delas. Ett repo kan vara privat eller offentligt, och man kan lägga till det som kunskap i ett Claude-projekt.
+
+    **Liknelse:** Ett gemensamt arkiv i molnet där alla ser samma senaste version av mappen.
+
+    **Varför det spelar roll här:** GitHub gör att samma material når både Claude Code på datorn och Claude i ett projekt. Du bearbetar underlaget en gång och återanvänder det överallt.
+
+    [Se alla begrepp i ordlistan](ordlista.md#github)
+
+Skillnaden märks tydligt. Hela kursboken som PDF kostar tusentals tokens för varje inläsning och modellen får leta själv. Som Markdown, en fil per avsnitt, läser den precis det avsnitt som frågan gäller och kostar en bråkdel. Dessutom går det att länka rakt in i texten. I mitt upplägg har varje definition och övning en egen rubrik, så att jag kan peka på ett exakt ställe. Hur jag använder det för att lära mig tar jag upp i [kapitel 05](05-individanpassad-inlarning.md).
+
+Extraktionen är den del som är lätt att göra slarvigt. Min regel är att ingen definition eller sats får saknas, och jag har skript som kontrollerar täckningen. En tidig lärdom var att sidgränser kan tappa innehåll, så texten delas efter avsnitt och inte efter sida.
+
+När du till slut behöver ett Word-dokument eller en PDF kan du arbeta i Markdown hela vägen och be Claude Code konvertera i sista steget, till exempel med verktyget pandoc. Arbetsformatet och leveransformatet behöver inte vara samma.
+
+## CLAUDE.md: reglerna som följer med mappen
+
+En mapp med bra struktur är en bra start, men modellen vet fortfarande inte hur du vill arbeta. Det är reglerfilens uppgift.
+
+??? begrepp "Begrepp: CLAUDE.md"
+    **Vad det är:** En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.
+
+    **Liknelse:** Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.
+
+    **Varför det spelar roll här:** Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.
+
+    [Se alla begrepp i ordlistan](ordlista.md#claude-md)
+
+Filen ligger i projektets rot, och Claude Code skriver den gärna åt dig om du beskriver projektet. En bra fil har fyra delar: vad projektet är, vilka regler som gäller för format och språk, var saker ligger och hur återkommande uppgifter ska göras.
+
+Ett utdrag ur en kursfil kan se ut så här:
+
+```markdown
+# CLAUDE.md
+
+## Så här arbetar vi
+- Visa fullständiga steg, inte bara svar.
+- Motivera varje steg och definiera varje ny symbol.
+- Läs teorin i 07_fulltext/ innan en uppgift löses.
+
+## Var saker ligger
+- 00_index/uppgiftsindex.md: vilken uppgift som finns var
+- 05_tentor/: gamla tentor och lösningsförslag
+```
+
+Reglerna är kursspecifika, men formen går att kopiera. Ett projekt på jobbet skulle ha regler om språk, tonläge, hur siffror skrivs och vilka mallar som gäller.
+
+OpenAI har en motsvarighet för sin kodagent Codex. Den heter AGENTS.md och är också en vanlig textfil i repot som agenten läser före arbetet. Idén är densamma, så en tydligt skriven regelfil går att flytta mellan verktygen.
+
+### Flera nivåer
+
+Du kan ha en CLAUDE.md i flera mappar. Den i roten gäller allt arbete. En fil i en undermapp gäller dessutom när Claude arbetar där, och du behöver bara skriva det som är specifikt för just den mappen. Som tumregel gäller att det som alltid ska gälla hör hemma i roten, det som bara gäller en typ av arbete hör hemma i en undermapp, och det som gäller en enskild uppgift passar bättre som en skill.
+
+I Claude-projekten i appen finns ingen fil att lägga i mappen. Där fungerar projektinstruktionerna som motsvarighet. Jag håller dem som en kortversion av CLAUDE.md i repot, så att de viktigaste reglerna gäller direkt.
+
+## Skills: uppgifter som du bara beskriver en gång
+
+Vissa uppgifter återkommer. Att förklara ett begrepp i ett fast format, att gå igenom en gammal tenta eller att sammanfatta ett kapitel är exempel. Utan hjälp skriver du om instruktionen varje gång, och den blir lite annorlunda varje gång.
+
+??? begrepp "Begrepp: Skill"
+    **Vad det är:** En mapp med en fil som heter SKILL.md, plus eventuella hjälpfiler. Filen beskriver en återkommande uppgift steg för steg, och Claude laddar den när uppgiften passar.
+
+    **Liknelse:** Ett recept i receptboken. Du skriver det en gång, och sedan lagas rätten likadant varje gång.
+
+    **Varför det spelar roll här:** Skills gör att en uppgift du gör ofta, till exempel att förklara ett begrepp i ett fast format, blir ett knapptryck och inte en lång prompt som skrivs om varje gång.
+
+    [Se alla begrepp i ordlistan](ordlista.md#skill)
+
+En skill är alltså en mapp, till exempel `.claude/skills/forklara/`, med en fil `SKILL.md` i. Överst står ett namn och en kort beskrivning av när skillen ska användas. Därunder står stegen:
+
+```markdown
+---
+name: forklara
+description: Förklara ett begrepp utifrån varför det gäller, med en konkret bild.
+---
+
+1. Fråga vilket begrepp det gäller, om det inte är angivet.
+2. Slå upp definitionen i 07_fulltext/ och ange avsnittet.
+3. Förklara varför definitionen ser ut som den gör.
+4. Ge en konkret bild och ett litet exempel.
+```
+
+Du kan skriva en skill själv, men det går snabbare att be Claude Code skapa den utifrån en beskrivning av vad du vill ha. Granska den sedan, eftersom det är du som vet hur resultatet ska se ut.
+
+## Hur du kommer igång
+
+Börja i en vanlig chatt och beskriv vad du arbetar med och vad du vill kunna göra. Be sedan chatten formulera en prompt som du kan ge till Claude Code, med mappstruktur, en första CLAUDE.md och en eller två skills. Skapa en tom mapp, starta Claude Code i den och klistra in prompten. Lägg in dina dokument, be Claude Code göra Markdown av dem och bygg ut över tid. Varje gång du märker att du förklarar samma sak två gånger är det ett tecken på att regeln ska in i en CLAUDE.md eller en skill.
+
+Det viktigaste är inte att strukturen är perfekt från början. Den ska vara tillräckligt tydlig för att Claude ska hitta rätt, och den kan förbättras medan du använder den. I repots [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/)-mapp finns färdiga mallar för olika roller som du kan ge Claude Code som utgångspunkt.
+
+Struktur är det som gör att en vanlig prenumeration börjar fungera som ett eget system. Nästa steg är att se hur flera sådana mappar hänger ihop.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilket område jag arbetar med mest och hur mitt material ser ut i dag.
+    Hjälp mig sedan att föreslå en enkel mappstruktur och skriva ett första utkast till en regelfil för just det området.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 04: Arkitekturen](04-arkitekturen.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md
+
+# Kapitel 04 — Arkitekturen
+
+> *Några mappar, några projekt och ett par dokument räcker långt, så länge det är tydligt vem som skriver vad och var saker bor. Här visar jag hur delarna hänger ihop i min egen setup.*
+
+!!! abstract "Kort version"
+    - Upplägget består av fem lager, från sådant som sällan ändras till sådant som ändras varje dag.
+    - Ett projekt per område ger ren kontext, och Drive eller liknande fungerar som delat skikt.
+    - Varje dokument har en enda skrivare men många läsare, vilket förhindrar dubbletter och inaktuell information.
+    - Det stabila och delade hålls isär från det föränderliga och privata.
+    - Du bygger lagren i den takt behovet uppstår, och inget av dem måste göras om i efterhand.
+
+Hittills har guiden handlat om enskilda delar: hur du skriver prompter, hur du ordnar material i mappar och hur CLAUDE.md styr arbetet. Det här kapitlet handlar om helheten. När du har fler än ett område, till exempel flera kurser samtidigt, behöver delarna ett gemensamt upplägg. Annars börjar information ligga på fel ställen, bli inaktuell eller dupliceras.
+
+Jag använder mina kurser som exempel eftersom det är där jag byggt mest. Upplägget är inte bundet till plugg. Mot slutet av kapitlet visar jag hur exakt samma arkitektur ser ut i ett jobb.
+
+## Fem lager
+
+Min setup består av fem lager. Det enklaste sättet att se dem är en skiss där information rör sig från sådant som sällan ändras till sådant som ändras varje dag.
+
+```
+  LOKALT (~/Projects/Plugg)             GITHUB
+  en mapp = ett repo per kurs   --->    samma repo, pushas med ett skript
+  (kursmaterial, fulltext, tentor)            |
+                                              | läggs till som kunskap
+                                              v
+                             CLAUDE-PROJEKT, ett per kurs
+                             (+ ett centralt projekt för helheten)
+                                   |                       ^
+                  skriver status   |                       | läser
+                                   v                       |
+                    GOOGLE DRIVE, en delad mapp
+                    en att göra-lista + ett statusdokument per kurs
+                                   |
+                  läses av         v
+                    SCHEMALAGDA UPPGIFTER (morgon, eftermiddag, natt)
+                    + GOOGLE KALENDER (allt som har en fast tid)
+```
+
+Gå igenom skissen uppifrån och ned. Det som ligger högst upp är stabilt och delat. Det som ligger längst ned är föränderligt och personligt. Den fördelningen är hela poängen med arkitekturen, och jag återkommer till den.
+
+## Lokala mappar och GitHub
+
+Alla mina kursmappar ligger på samma ställe på datorn, och varje kurs är ett eget repo. Alla repon har samma skelett: en mapp för översikt och index, en för kursmaterial, en för föreläsningar, en för studieplan, en för gamla tentor, en för bokens innehåll, en för fulltext och en för skript. Att skelettet är detsamma gör att Claude hittar rätt oavsett kurs. Kapitel 03 går igenom varför.
+
+??? begrepp "Begrepp: Repo"
+    **Vad det är:** Förkortning för repository: en projektmapp som Git håller koll på, med alla filer och hela ändringshistoriken.
+
+    **Liknelse:** En projektmapp med inbyggd dagbok som skriver ned varje ändring.
+
+    **Varför det spelar roll här:** I mitt upplägg har varje kurs ett eget repo med samma skelett. Då vet både jag och Claude var tentor, fulltext och studieplan ligger, oavsett kurs.
+
+    [Se alla begrepp i ordlistan](ordlista.md#repo)
+
+Repona synkas till GitHub. Där kan de läggas till som kunskap i ett Claude-projekt, vilket är kopplingen mellan filerna på min dator och det Claude faktiskt har framför sig när jag pratar med den.
+
+??? begrepp "Begrepp: GitHub"
+    **Vad det är:** En webbtjänst där Git-repon lagras och kan delas. Ett repo kan vara privat eller offentligt, och man kan lägga till det som kunskap i ett Claude-projekt.
+
+    **Liknelse:** Ett gemensamt arkiv i molnet där alla ser samma senaste version av mappen.
+
+    **Varför det spelar roll här:** GitHub gör att samma material når både Claude Code på datorn och Claude i ett projekt. Du bearbetar underlaget en gång och återanvänder det överallt.
+
+    [Se alla begrepp i ordlistan](ordlista.md#github)
+
+Själva pushandet sköter jag med ett litet skript som pushar alla kursrepon i ett svep. Det går att dubbelklicka på i filhanteraren, så att synken inte kräver att jag öppnar en terminal. Det är en detalj som låter obetydlig, men en rutin som är besvärlig att köra är en rutin som slutar köras.
+
+Vem skriver här? Jag och Claude Code bygger repona tillsammans. Efter att en kurs är uppsatt är innehållet i huvudsak statiskt. Claude i kursprojektet läser repot men skriver aldrig till det.
+
+## Ett projekt per område
+
+Varje kurs har ett eget Claude-projekt med kursens repo som kunskap. Projektinstruktionerna är en kortversion av CLAUDE.md i repot. Anledningen är praktisk: instruktionerna i projektet är det första Claude ser, så de viktigaste reglerna ska stå där utan att Claude först behöver läsa hela filträdet.
+
+??? begrepp "Begrepp: Projekt"
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och egen kunskap, till exempel uppladdade filer eller ett kopplat GitHub-repo. Instruktionerna gäller i alla chattar i projektet.
+
+    **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
+
+    **Varför det spelar roll här:** Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.
+
+    [Se alla begrepp i ordlistan](ordlista.md#projekt)
+
+Att ha ett projekt per område och inte ett enda stort projekt för allt har två fördelar. Kontexten blir ren, så Claude blandar inte ihop reglerna för en kurs med en annans. Och det går att ge varje projekt just de regler som passar området. En kurs där matematisk kommunikation examineras kräver andra instruktioner än en kurs som bygger på modeller och begreppsdistinktioner.
+
+Utöver kursprojekten har jag ett centralt projekt som håller koll på helheten. Det får ett eget kapitel, kapitel 06.
+
+## Drive som delat skikt
+
+Här kommer arkitekturens viktigaste beslut. Kursprojekten behöver ett sätt att berätta för varandra, och för mina schemalagda uppgifter, hur det går. Jag valde Google Drive för det. I en delad mapp finns två sorters dokument: en att göra-lista och ett statusdokument per kurs.
+
+Statusdokumentet har samma sektioner i varje kurs: nästa examination, läget, vad som är kvar, nästa pass, vad jag är osäker på och en logg. Det skrivs av kursprojektet, i takt med att jag arbetar. Det är kort, daterat och handlar bara om nuläget.
+
+Anslutningen mellan Claude och Drive sker via en connector.
+
+??? begrepp "Begrepp: Connector"
+    **Vad det är:** En koppling mellan Claude och en annan tjänst, till exempel Google Drive, Kalender eller GitHub, så att Claude kan läsa eller skriva där du tillåter det.
+
+    **Liknelse:** Ett uttag i väggen: apparaten fungerar utan det, men får tillgång till något den inte hade själv.
+
+    **Varför det spelar roll här:** Connectors gör att Claude kan läsa din kalender eller ett delat dokument i stället för att du kopierar in innehållet. Det är en förutsättning för ett system som hänger ihop.
+
+    [Se alla begrepp i ordlistan](ordlista.md#connector)
+
+Varför Drive och inte GitHub? Två skäl. Jag ville inte behöva pusha något manuellt för att en plan ska uppdateras. Och de schemalagda uppgifterna körs i molnet, utan att min dator är påslagen, så de behöver komma åt statusen utan att något körs lokalt. Ett dokument i Drive uppfyller båda kraven.
+
+Allt som har en fast tid bor i kalendern. Det som saknar tid bor i listan eller statusdokumenten. Det går att tycka att det är en liten sak, men regeln gör att jag aldrig behöver fundera på var en uppgift hör hemma.
+
+## Schemalagda uppgifter
+
+Ovanpå Drive och kalendern ligger schemalagda uppgifter, alltså instruktioner som Claude kör på bestämda tider utan att jag är inblandad.
+
+??? begrepp "Begrepp: Schemalagd uppgift"
+    **Vad det är:** En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.
+
+    **Liknelse:** En väckarklocka som inte bara ringer utan också gör jobbet.
+
+    **Varför det spelar roll här:** Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.
+
+    [Se alla begrepp i ordlistan](ordlista.md#schemalagd-uppgift)
+
+Jag har tre. En körs på morgonen och sammanfattar läget, en körs på eftermiddagen och gör en kort avstämning, och en körs på natten och synkar ett hobbyprojekts statusfiler till ett kalkylark. Två av dem läser bara. Den tredje skriver, men bara i ett enda ark och enligt strikta regler: aldrig ta bort något, alltid logga ändringen. De två första beskrivs i kapitel 06.
+
+## Principen: en skrivare per dokument, många läsare
+
+Det som håller ihop arkitekturen är en enda regel. Varje dokument har exakt en skrivare. Alla andra får läsa.
+
+| Vad | Vem skriver | Vem läser |
+|---|---|---|
+| Kursrepot | jag och Claude Code, vid uppsättning | kursprojektet |
+| Statusdokument per kurs | kursprojektet | det centrala projektet och de schemalagda uppgifterna |
+| Att göra-listan | det centrala projektet, när jag nämner något | de schemalagda uppgifterna |
+| Kalendern | det centrala projektet, för sådant med fast tid | alla |
+| Speglingsarket för hobbyprojektet | bara den nattliga uppgiften | jag |
+
+Regeln löser ett problem som annars dyker upp snabbt. Om två projekt kan skriva i samma dokument skriver de över varandra, eller så uppstår två versioner av sanningen och ingen vet vilken som gäller. Med en skrivare per dokument finns alltid ett svar på frågan "var ska jag titta?", och ett fel går att spåra till en enda källa.
+
+Det betyder också att det centrala projektet aldrig ändrar i kursernas statusdokument, hur frestande det än är när det ser att något är fel. Det rätta är att rapportera felet och låta kursprojektet rätta det. Ett litet extra steg, men det gör att jag kan lita på att varje dokument speglar vad dess ägare faktiskt vet.
+
+## Stabilt och delat, föränderligt och privat
+
+Arkitekturen delar upp information efter två egenskaper på samma gång.
+
+Kursmaterial är stabilt. Det ändras sällan, det är detsamma för alla som läser kursen och det är ofta redan offentligt. Det passar i ett repo på GitHub, där det är versionshanterat och där flera verktyg kan läsa det.
+
+Status är föränderlig och personlig. Hur långt jag har kommit, vad jag är osäker på och vad jag ska göra i morgon ändras varje dag och angår ingen annan. Det passar i Drive, där det kan skrivas om utan att något behöver versioneras eller pushas.
+
+En praktisk konsekvens är att gränsen mellan offentligt och privat följer lagren. Det som ligger i repona kan jag visa upp. Det som ligger i Drive är mitt. Därför skriver jag i varje CLAUDE.md en kort regel om vad som får hamna i repot, så att inget privat av misstag följer med vid nästa push.
+
+??? begrepp "Begrepp: CLAUDE.md"
+    **Vad det är:** En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.
+
+    **Liknelse:** Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.
+
+    **Varför det spelar roll här:** Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.
+
+    [Se alla begrepp i ordlistan](ordlista.md#claude-md)
+
+## Samma arkitektur i ett jobb
+
+Inget i det här är specifikt för kurser. Byt ut orden så ser det ut så här.
+
+| I mitt plugg | I ett jobb |
+|---|---|
+| Ett repo per kurs | En mapp per kund, projekt eller affär med avtal, underlag och mallar |
+| Kursprojekt med repot som kunskap | Ett Claude-projekt per kund eller team med mappen som kunskap |
+| Statusdokument per kurs | Ett statusdokument per kund: läget, nästa steg, öppna frågor |
+| Att göra-listan | En gemensam lista över åtaganden |
+| Kalender | Kalender, precis som förut |
+| Morgon och eftermiddag | En sammanfattning inför dagens möten och en avstämning på eftermiddagen |
+
+Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt och privat blir status, anteckningar och bedömningar. Principen om en skrivare per dokument gäller oförändrad: den som äger kundrelationen skriver statusdokumentet, andra läser. Samma upplägg fungerar för en hobby med flera delprojekt, för ett föreningsuppdrag eller för ett litet företag.
+
+Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till ett statusdokument när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilka områden jag har parallellt och var information hamnar fel eller blir inaktuell.
+    Hjälp mig sedan att rita upp vilka lager jag behöver nu och vilket som är det första jag ska skapa.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 05: Individanpassad inlärning](05-individanpassad-inlarning.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/05-individanpassad-inlarning.md
+
+# Kapitel 05 — Individanpassad inlärning
+
+*En kurs är byggd för 500 studenter, eller 30. Med AI kan upplägget formas efter hur just du lär dig, och kursens ramar och mål ligger kvar. Kapitlet visar hur jag gjort det i Flervariabelanalys, och hur du gör ditt eget.*
+
+!!! abstract "Kort version"
+    - Kurser är byggda för en genomsnittlig student, och med AI kan upplägget formas efter hur just du lär dig.
+    - Det börjar med en kartläggning av kursen och hur kapitlen hänger ihop, innan några uppgifter.
+    - Ordningen följer begreppens beroenden, och konkreta bilder gör att abstrakta begrepp fastnar.
+    - Regler i projektet tvingar fram förståelse i stället för memorering, och gamla tentor används som test.
+    - Du formar ditt eget upplägg genom att beskriva hur du lär dig och vilka regler Claude ska följa.
+
+---
+
+## Problemet med den genomsnittliga studenten
+
+En kurs har en bok, en föreläsningsserie och en ordning som passar ungefär alla. Det är rimligt. Ingen lärare kan bygga trettio olika kurser, och ännu mindre femhundra. Resultatet är ändå att ordningen, tempot och förklaringarna är valda för en student som inte finns.
+
+Jag är en sådan student som inte passar ordningen. Jag lär mig nerifrån och upp. Jag har svårt att acceptera en regel innan jag förstår varför den gäller, och när en bit saknas faller jag tillbaka på att memorera procedurer. Det tar mig igenom en tenta men det känns inte som förståelse, och det håller inte till nästa kurs. Det som får något att klicka är en helhetsbild och en konkret bild, till exempel att uppskatta var en bil befinner sig när man vet hur fort den kör. Och jag lär mig mer av det som intresserar mig än av det som är svårt.
+
+Med en vanlig prenumeration på Claude går det att bygga ett upplägg runt det. Det handlar inte om att kringgå kursen. Tentan, målen och kursboken är desamma. Det som ändras är vägen dit: vilken ordning jag läser i, hur saker förklaras, vad jag övar på och vad som följs upp.
+
+Allt det här ryms i den prenumeration jag redan har. Det krävs ingen särskild studieapp, bara att modellen får rätt material och rätt regler.
+
+Plugget är exemplet i det här kapitlet, inte ämnet. Allt som beskrivs nedan fungerar likadant när du ska lära dig ett nytt jobb, en bransch eller en hobby. Jag återkommer till det i slutet.
+
+---
+
+## Mitt fall: Flervariabelanalys
+
+Kursen är MATB21 Flervariabelanalys på Lunds universitet, hösten 2026. Boken är Adams och Essex *Calculus*. Hela upplägget ligger öppet på GitHub, så du kan titta på de riktiga filerna: [Flervariabelanalys_ht26](https://github.com/Solsidan21/Flervariabelanalys_ht26). Jag hänvisar dit genom hela kapitlet.
+
+Innan jag går in på mekanismerna vill jag visa var det började.
+
+### Screenshot-cirkusen
+
+På vårterminen läste jag Algebra och vektorgeometri. Jag satt med en uppgift, tog en screenshot och skickade den till Claude. Claude löste den snabbt och korrekt, men med Gauss-eliminering. Min kurs hade inte kommit dit. Vi använde ekvivalenta ekvationer och substitution.
+
+Jag tog en ny screenshot, den här gången på facit, och skrev: "Lös som de gör här istället." Claude anpassade sig halvvägs men blandade fortfarande in notation som inte hörde till kursen. Tredje försöket var att tvinga Claude att läsa en hel föreläsnings-PDF på fyrtio sidor. Det funkade till slut, men det tog femton minuter. Nästa dag, ny uppgift, och Claude hade glömt allt.
+
+Felet låg inte i modellen. Den fick kursens material i fel format, utan regler och utan minne mellan samtalen. Det här kapitlet handlar om vad som hände när jag i stället byggde ett system där kursens egen text och mina egna regler alltid finns med. De tekniska delarna, alltså mappar, Markdown och CLAUDE.md, förklaras i [kapitel 03](03-struktur.md). Här visar jag vad de används till för att lära sig.
+
+---
+
+## Steg 1: kartläggning före uppgifter
+
+De flesta pluggplaner börjar med uppgifterna. Räkna 13.1 uppgift 5, 7, 14, sedan 13.2. Det är rimligt om man redan har en bild av området. Jag har ingen sådan bild på förhand, och uppgifter utan bild blir mekanik.
+
+Därför börjar mitt upplägg med en kartläggning av kursen. Innan jag räknar något går Claude och jag igenom hur kapitlen hänger ihop och vad kursen i stort handlar om. I kursrepot finns det på två ställen. Det ena är [kapitelguiden](https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/01_kursmaterial/kapitelguide.md), som för varje sektion anger ämnet, rekommenderade uppgifter och vad som är en "typisk lösning", alltså vilken sorts tänkande uppgifterna kräver. Det andra är en sammanfattning per kapitel i [`06_bokinnehall/`](https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/06_bokinnehall/kap_13_partiella_derivator.md). Sammanfattningen av kapitel 13 börjar så här:
+
+```text
+Kapitlet bygger upp begreppen i en tydlig kedja: funktioner av flera
+variabler och deras grafer/nivåkurvor (13.1) -> gränsvärden och
+kontinuitet (13.2) -> partiella derivator, en variabel i taget (13.3)
+-> ... -> gradienten och riktningsderivator (13.7) -> implicita
+funktioner (13.8) -> Taylors formel för flera variabler (13.9).
+```
+
+Det är en kedja jag kan hålla i huvudet. Och längre ned i samma fil står varför kapitlet spelar roll: det är förutsättningen för kapitel 14 om extremvärden, och Jacobideterminanten från 13.8 återkommer i variabelbytena i kapitel 15. När jag sedan sitter med en uppgift vet jag var i kedjan jag befinner mig.
+
+Planen i mitt kursdokument är med flit omvänd mot en vanlig uppgiftsplan. Först kartläggning och förståelse, sedan en genomgång per avsnitt, och först därefter en uppgift per avsnitt som test. Uppgiften visar om jag förstått. Den är inte själva inlärningen.
+
+??? begrepp "Begrepp: Markdown"
+    **Vad det är:** Ett sätt att formatera text med vanliga tecken. Rubriker skrivs med brädgård, listor med bindestreck och fetstil med stjärnor. Filerna får ändelsen .md.
+
+    **Liknelse:** I Word klickar du på knappar för att formatera. I Markdown skriver du formateringen rakt i texten, så att den syns även utan program.
+
+    **Varför det spelar roll här:** Markdown är lättläst för både människor och modeller och kostar få tokens. Därför omvandlar man PDF:er och anteckningar till Markdown, och därför skrivs regelfiler som CLAUDE.md i samma format.
+
+    [Se alla begrepp i ordlistan](ordlista.md#markdown)
+
+---
+
+## Steg 2: ordning efter begreppens beroenden
+
+Boken har en ordning, och den är inte alltid min. När jag byggde om planen flyttade jag Taylors formel före kritiska punkter. Skälet är beroendet: andraderivatatestet för extremvärden använder Hessianen, och Hessianen bygger på Taylorutvecklingen till andra ordningen. Läser man kritiska punkter först får man en regel för hur man klassificerar dem utan att veta varför regeln ser ut som den gör. Det är precis den sortens regel jag har svårt att acceptera.
+
+Det syns i kursens egen text också. I sammanfattningen av kapitel 14 står att andraderivatatestet bygger på definitheten hos Hessianmatrisen, och att beviset går via Taylors formel. Beroendet finns alltså redan i materialet. Det som saknades var att planen följde det.
+
+Veckoplanen i [`04_studieplan/veckoplan.md`](https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/04_studieplan/veckoplan.md) är byggd så. Taylors formel (13.9) ligger vecka 4 och extremvärden (14.1 och 14.2) vecka 5. En sak till är värd att nämna om den filen: varje vecka har ett fält "Mål" som är skrivet som en förmåga och inte som ett kapitelnummer. Veckan med Taylor har målet att kunna ställa upp Taylorpolynom av andra ordningen för funktioner av flera variabler. Veckan efter har målet att kunna klassificera kritiska punkter med Hessianen. Den som läser planen ser direkt vad som ska sitta, och vad som i så fall bygger på vad.
+
+Så här kan du få fram ordningen i din egen kurs. Be Claude läsa kursplanen och kapitelrubrikerna och göra en lista över vilka begrepp som förutsätter vilka. Titta sedan på var boken eller föreläsningarna går emot den ordningen. Du behöver inte ändra på något, men du vet var du kommer att behöva gå tillbaka.
+
+---
+
+## Steg 3: konkreta bilder
+
+När ett begrepp inte klickar ber jag om en bild. Mitt tydligaste exempel är gradienten. Den är en regel, men den ser olika ut beroende på vad man tillämpar den på. Bilden som fungerade för mig var ett berg. Tänk dig en graf z = h(x, y) som ett landskap och nivåkurvorna som höjdkurvorna på en vandringskarta. Gradienten av h pekar uppför, åt det håll där berget stiger brantast, och den är vinkelrät mot höjdkurvan. Kursboken säger samma sak som en sats:
+
+```text
+THEOREM 6: If f(x, y) is differentiable at the point (a, b) and
+grad f(a, b) is not 0, then grad f(a, b) is a normal vector to the
+level curve of f that passes through (a, b).
+```
+
+Satsen har jag läst många gånger. Berget är det som gjorde att jag trodde på den. Och bilden bär längre än till den ena satsen: tät gruppering av nivåkurvor betyder brant terräng, vilket kapitel 13 också påpekar med en hänvisning till topografiska kartor.
+
+Bilder kommer med en risk. En liknelse som är nästan rätt kan ge ett fel som sitter kvar. Därför har jag en fråga som jag ställer själv, och det är den som ligger kvar under rubriken "Osäkert" i mitt kursdokument. Om grafen är z = h(x, y), pekar gradienten av h uppför i kartan, medan gradienten av F(x, y, z) = z minus h(x, y) är normal till tangentplanet i rummet. Två gradienter, två olika objekt, samma regel. Jag lät den stå som osäker tills jag testat den på en riktig tentauppgift. En bild är en genväg till förståelse, och förståelsen prövas mot uppgifter.
+
+---
+
+## Steg 4: regler som tvingar fram förståelse
+
+Det som flyttar upplägget från att vara en idé till att fungera varje dag är reglerna i [`CLAUDE.md`](https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/CLAUDE.md). Där står sådant som annars hade stått i en prompt jag skrev om varje dag.
+
+??? begrepp "Begrepp: CLAUDE.md"
+    **Vad det är:** En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.
+
+    **Liknelse:** Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.
+
+    **Varför det spelar roll här:** Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.
+
+    [Se alla begrepp i ordlistan](ordlista.md#claude-md)
+
+Tre regler gör mest för förståelsen. Den första är att visa hela lösningen och inte bara svaret. Så här står det i filen, i min förkortning:
+
+```text
+Visa fullständiga steg, inte bara svar. Kursen examinerar matematisk
+kommunikation lika mycket som rätt svar: motivera varje steg, definiera
+symboler du inför, och ange vilken sats eller metod som används.
+```
+
+Den andra är att varje ny symbol definieras och varje sats får sitt namn och sin sektion. Då slipper jag stå med ett h eller ett theta som dykt upp utan förklaring. Den tredje är att teorin läses först. Innan Claude löser en uppgift ska den läsa hela sektionens text, inklusive definitioner, satser och lösta exempel, och lösningen ska utgå från kursens egen text. Det löser en stor del av screenshot-problemet: Claude gissar inte längre vilken metod kursen använder, den slår upp den.
+
+Kursen följer dessutom 10:e upplagan medan min fulltext kommer ur den 9:e. Det finns en regel för det också: nämn alltid båda numren. Det är en liten sak, men den visar vad en regelfil är bra till. Allt som annars hade blivit en förvirring om och om igen skrivs ned en gång.
+
+Ett tips om regler: skriv dem när något går fel. Varje gång Claude gör något som irriterar mig, till exempel hoppar över ett steg, byter notation eller lånar en metod från en annan kurs, frågar jag mig om det ska bli en rad i CLAUDE.md. Efter några veckor har filen blivit en beskrivning av hur jag vill ha det.
+
+??? begrepp "Begrepp: Projekt"
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och egen kunskap, till exempel uppladdade filer eller ett kopplat GitHub-repo. Instruktionerna gäller i alla chattar i projektet.
+
+    **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
+
+    **Varför det spelar roll här:** Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.
+
+    [Se alla begrepp i ordlistan](ordlista.md#projekt)
+
+Kursen har sitt eget projekt i Claude, med repot som kunskap. Projektinstruktionerna är en kortare version av CLAUDE.md, så att de viktigaste reglerna alltid finns med. Det är samma upplägg som i kapitel 04, men tillämpat på en enda kurs.
+
+---
+
+## Steg 5: teorin precis där den behövs
+
+Regeln om att läsa teorin först fungerar bara om Claude hittar rätt text snabbt. Femton minuter med en PDF på fyrtio sidor är precis det jag ville bort från. Så fulltexten är byggd för att gå att slå upp i.
+
+Varje sektion i boken ligger som en egen fil, [`07_fulltext/kap_13/13.7.md`](https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/07_fulltext/kap_13/13.7.md) för sektion 13.7 om gradienter. I filen har varje definition, sats och exempel en egen rubrik:
+
+```text
+## DEFINITION 6
+## EXAMPLE 1
+## THEOREM 6
+### PROOF
+...
+## Exercises 13.7
+### Uppgift 1
+### Uppgift 2
+```
+
+Varje övning har alltså en egen rubrik, och en rubrik är ett ankare man kan länka till. När jag skriver "uppgift 11 i 13.5" går Claude direkt till `07_fulltext/kap_13/13.5.md#uppgift-11`, läser teorin som står ovanför och löser uppgiften med den. Boksidorna finns kvar som markörer i texten, så jag kan alltid gå till boken om jag vill se figuren.
+
+Ovanpå det ligger [`00_index/uppgiftsindex.md`](https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/00_index/uppgiftsindex.md), en tabell över sektion, uppgiftsspann och filväg. Den är inte skriven för hand. Ett skript, [`scripts/build_uppgiftsindex.py`](https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/scripts/build_uppgiftsindex.py), genererar den ur de faktiska rubrikerna, så att indexet inte kan komma ur synk med texterna. Det är ett litet exempel på något jag har lärt mig av det här: allt som kan genereras bör genereras. Då behöver jag aldrig fråga mig om indexet stämmer.
+
+Skripten ersätter inte tänkandet, men de tar bort en sorts fel. Jag har också ett skript som kontrollerar att ingen sats eller definition försvunnit när jag extraherade boken ur PDF, för där hade jag tappat innehåll vid sidgränser. Det kan du läsa mer om i [kapitel 03](03-struktur.md).
+
+---
+
+## Steg 6: veckoplan med mål som förmågor
+
+Veckoplanen nämnde jag redan i samband med ordningen. Det finns en poäng till med den. En kursplan säger vilka kapitel som hör till vilken vecka. Den säger inte vad jag ska kunna efteråt.
+
+Jag skriver varje veckas mål som en förmåga som går att pröva: "avgöra om ett gränsvärde existerar genom att jämföra olika vägar", "tillämpa kedjeregeln med variabelträd i flera led", "verifiera villkoren i implicita funktionssatsen". Ett kapitelnummer kan jag läsa utan att ha förstått något. En förmåga kan jag inte intyga utan att visa den. När veckan är slut är frågan om jag kan göra det, och inte om jag har läst klart.
+
+Tidsstyrningen sköts av kursdokumentet i mitt projekt, som har samma sektioner för varje kurs: Nästa examination, Läget, Kvar (med timmar per avsnitt), Nästa pass, Osäkert och Logg. Jag skriver inte mycket i det själv. Kursprojektet uppdaterar det när jag har pluggat klart, och en schemalagd uppgift läser det varje morgon och föreslår hur mycket plugg dagen kräver. Ju närmare tentan, desto tydligare förslag. Hur det hänger ihop beskrivs i [kapitel 04](04-arkitekturen.md) och [kapitel 06](06-hjarnan.md).
+
+??? begrepp "Begrepp: Schemalagd uppgift"
+    **Vad det är:** En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.
+
+    **Liknelse:** En väckarklocka som inte bara ringer utan också gör jobbet.
+
+    **Varför det spelar roll här:** Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.
+
+    [Se alla begrepp i ordlistan](ordlista.md#schemalagd-uppgift)
+
+
+
+---
+
+## Steg 7: gamla tentor som test, misstag på felnivå
+
+Gamla tentor är den bästa testen jag har. I repot ligger de som [skarpa tentor](https://github.com/Solsidan21/Flervariabelanalys_ht26/tree/main/05_tentor/skarpa_tentor) med [lösningsförslag](https://github.com/Solsidan21/Flervariabelanalys_ht26/tree/main/05_tentor/losningsforslag) i samma format, `### Uppgift N` och `### Lösning N`. Eftersom formatet är detsamma kan Claude plocka ut en uppgift, låta mig försöka och sedan jämföra med lösningsförslaget.
+
+Jag använder dem på tre sätt. De visar vilken sorts uppgifter som brukar komma, så att jag vet vilka förmågor veckomålen egentligen ska leda till. De avgör om en bild håller: den osäkra frågan om de två gradienterna prövas mot en tentauppgift och inte mot min känsla. Och de är sista kontrollen före en tenta, där jag räknar en hel tenta på tid och ser vilka sektioner som inte sitter.
+
+Det som gör att det bygger på sig själv är loggen. Den är skriven på felnivå. En rad säger inte "repetera kedjeregeln", den säger vad som gick fel: "räknade e upphöjt till 1 som 1", eller "teckenfel när ekvationerna adderades, fångat vid kontroll". Nästa pass bygger på det som faktiskt gick fel och inte på ett allmänt behov av repetition. Det är skillnaden mellan att plugga mer och att plugga rätt sak.
+
+Loggen är också där jag ser mönster. Skriver jag tre gånger att jag tappar ett minustecken i samma typ av uppgift är det inte ett slumpfel. Då är det en vana, och den kan jag arbeta med.
+
+---
+
+## Vad Claude gör, och vad jag gör
+
+Jag vill vara tydlig med en sak, eftersom det är lätt att få fel intryck. Systemet gör inte jobbet åt mig. Reglerna är byggda för att göra det motsatta: Claude ska visa stegen, motivera dem och utgå från kursens text, så att jag kan följa med och göra om det själv. Skulle jag använda upplägget för att få färdiga lösningar att skriva av skulle det fungera sämre än att inte ha något system alls, eftersom jag då skulle sakna det som tentan prövar.
+
+Arbetsfördelningen ser ut så här. Claude Code och jag bygger repot: extraherar boken, skriver skripten, justerar reglerna. Det är jobb som görs ibland. Claude i kursprojektet läser repot och är min studiekamrat i det dagliga: förklarar, ger bilder, rättar mina lösningar, föreslår nästa pass. Jag gör själva räknandet och själva tänkandet. Claude-appen på datorn kan arbeta i mina lokala mappar, och det betyder att jag kan lägga till nytt material i en mapp och att det finns med nästa gång jag frågar.
+
+Det är också en gräns. Repot är offentligt, så det innehåller bara kursmaterial och arbetssätt. Det som är personligt, som hur det går för mig och vad som är på gång, ligger i privata dokument. Mer om den gränsen finns i kapitel 04.
+
+---
+
+## Så formar du ditt eget upplägg
+
+Du behöver inte kopiera mitt. Det är viktigare att du hittar ditt eget, och det första steget är att ta reda på hur du lär dig. Det kan du göra tillsammans med Claude. Börja en ny konversation och be den intervjua dig. Du kan klistra in något i stil med det här:
+
+```text
+Jag ska läsa [kurs] och vill att du hjälper mig bygga ett upplägg som
+passar hur jag lär mig. Intervjua mig först, en fråga i taget. Fråga
+bland annat:
+1. Behöver jag förstå varför en regel gäller innan jag kan använda den,
+   eller räcker det att jag ser ett exempel?
+2. Lär jag mig bäst uppifrån (helheten först) eller nerifrån
+   (detaljerna först)?
+3. Vilken sorts förklaring har fungerat bäst för mig tidigare? Be mig
+   ge ett exempel.
+4. Vad är det som får mig att tappa intresset?
+5. Vad brukar gå fel när jag räknar: slarvfel, saknad förståelse, tid?
+6. Hur ska jag veta att jag har förstått något?
+Sammanfatta svaren i ett utkast till regler som jag kan lägga i en
+CLAUDE.md för kursen.
+```
+
+När du har svaren går du igenom mekanismerna ovan och väljer ut dem som passar:
+
+| Om du känner igen dig i det här | Prova det här |
+|---|---|
+| Du kastas runt av ordningen i boken | Be om en kartläggning av kursen först och en ordning efter begreppens beroenden |
+| Du accepterar inte en regel utan skäl | Lägg in "motivera varje steg" och "definiera varje symbol" i CLAUDE.md |
+| Du lär dig av bilder | Skriv ned de bilder som fungerat, och be om en bild när ett begrepp inte klickar |
+| Du tappar tid på att leta | Dela upp boken i en fil per avsnitt med ankare per uppgift |
+| Du repeterar fel saker | Logga misstag på felnivå och låt nästa pass bygga på dem |
+| Du vet inte om du har förstått | Skriv veckomål som förmågor och testa mot gamla tentor |
+
+Börja med en kurs och med det som stör dig mest. En enda regel i CLAUDE.md som löser ett återkommande irritationsmoment är en bra början, och det är bättre än att bygga hela systemet på en gång.
+
+Mallen för CLAUDE.md kan se ut så här i sin enklaste form:
+
+```text
+## Om mig
+Jag lär mig nerifrån och upp. Jag behöver förstå varför innan jag
+accepterar en regel.
+
+## Regler
+- Visa hela lösningen med motivering av varje steg.
+- Definiera varje symbol första gången den används.
+- Läs kursens egen text först och använd bara kursens metoder.
+- Börja alltid nytt avsnitt med hur det hänger ihop med det förra.
+- När jag ber om en förklaring: ge en konkret bild först.
+
+## Efter varje pass
+- Föreslå en loggrad som beskriver vad som gick fel, inte bara vad
+  jag ska repetera.
+```
+
+---
+
+## Samma tänk när du lär dig ett jobb
+
+Allt det här gäller lika mycket utanför universitetet. Den som börjar ett nytt jobb står inför samma problem som en student: ett område man inte har en bild av, en ordning som någon annan har valt, begrepp som bygger på varandra och en omgivning som antar att man redan kan en massa.
+
+Det finns en direkt översättning. Kartläggningen blir en genomgång av företaget, branschen eller rollen innan du börjar på de första uppgifterna. Beroendena blir frågan om vilka begrepp i jobbet som bygger på vilka. Fulltexten blir de interna dokumenten, uppdelade så att du hittar rätt avsnitt. Veckoplanens mål som förmågor blir "vad ska jag kunna efter min första månad". Gamla tentor blir tidigare projekt, avslutade affärer eller genomförda leveranser. Och loggen på felnivå blir en lista över vad som gick fel och varför, så att samma sak inte händer två gånger.
+
+Det finns ett exempel på hur en sådan översättning kan se ut i [bilagan om arbetslivet](bilaga-arbetsliv.md). Det är också ett bra ställe att börja om du inte studerar just nu.
+
+Det som bär hela vägen är en enkel tanke. Modellen är densamma för dig som för alla andra. Det som skiljer är vad du ger den att arbeta med och vilka regler du sätter. Det går att göra på en eftermiddag, med den prenumeration du redan har, och det blir bättre för varje vecka.
+
+---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/05-individanpassad-inlarning.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga hur jag lär mig bäst, vad jag har svårt för och vilken kurs eller vilket ämne jag vill börja med.
+    Hjälp mig sedan att skriva ett första utkast till en personlig beskrivning och några regler för mitt eget upplägg.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+*Nästa: [Kapitel 06: Hjärnan](06-hjarnan.md)*
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md
+
+# Kapitel 06 — Hjärnan
+
+> *Ett centralt projekt som håller koll på helheten, så att jag slipper hålla allt i huvudet. Det här kapitlet visar hur det är uppbyggt och vilka regler som gör att jag kan lita på det.*
+
+!!! abstract "Kort version"
+    - Hjärnan är ett centralt projekt som överblickar helheten i vardagen, så att du slipper hålla allt i huvudet.
+    - Kärnan är en lista med fasta rubriker och en tydlig prioriteringsordning.
+    - Dokument från andra projekt läses men ändras aldrig härifrån.
+    - Ett morgonbrev och en eftermiddagskoll gör att viktiga saker kommer till dig.
+    - Regeln att aldrig hitta på gör att du kan lita på det som står i brevet.
+
+I kapitel 04 beskrev jag arkitekturen med ett projekt per område. Det ger ren kontext, men det lämnar en fråga öppen: vem ser helheten? Ett kursprojekt vet hur det går i sin kurs, men inte vad som är viktigast just nu när flera saker pockar på uppmärksamhet samtidigt.
+
+Det är den uppgiften jag har gett åt ett eget projekt som jag kallar Hjärnan. Namnet är en halv skämtsamhet, men beskrivningen stämmer: det är ett ställe som minns och överblickar, så att jag inte behöver göra det.
+
+Mitt exempel är hur en student kan organisera sin vardag. Samma konstruktion passar för ett jobb med många parallella spår, för ett företag eller för vilken period som helst där flera saker konkurrerar om tid.
+
+## Vad projektet är
+
+Hjärnan är ett vanligt Claude-projekt. Det som gör det till något särskilt är instruktionerna och vilka källor det får läsa.
+
+??? begrepp "Begrepp: Projekt"
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och egen kunskap, till exempel uppladdade filer eller ett kopplat GitHub-repo. Instruktionerna gäller i alla chattar i projektet.
+
+    **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
+
+    **Varför det spelar roll här:** Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.
+
+    [Se alla begrepp i ordlistan](ordlista.md#projekt)
+
+Instruktionerna gör tre saker. De anger en prioritetsordning mellan livsområdena. De talar om var saker finns. Och de beskriver vad Claude ska göra när jag nämner något jag behöver eller vill göra. Jag skriver inget hårt schema, för ett schema som inte överlever första veckan är värre än inget. I stället finns en ordning att luta sig mot när något måste väljas bort: tentor och administration kring studierna först, därefter vardagssysslor, jobb och till sist sådant som är roligt.
+
+## Listan med rubriker
+
+Hjärnans kärna är ett enda dokument med en lista. Den har en rubrik per livsområde, och en sista rubrik för det som är klart. Jag har valt rubriker som motsvarar de områden jag faktiskt delar upp mitt liv i, och du väljer dina egna. Antalet spelar mindre roll än att varje sak har ett självklart hem.
+
+Reglerna för hur listan används är korta och ger mig mycket:
+
+1. När jag nämner något jag vill göra läser Claude först listan.
+2. Finns det redan där, utgår Claude från att jag vill ha hjälp med det nu och sätter igång.
+3. Finns det inte, läggs det in under rätt rubrik med dagens datum, utan att Claude frågar. Därefter frågar Claude kort om vi ska göra det nu eller senare.
+4. Om det blir senare och saken har en fast tid hamnar den i kalendern. Annars får den en påminnelse med ett datum, som fångas upp av nästa morgonbrev.
+5. När något är klart flyttas det till den sista rubriken, med datum.
+
+Det viktiga är punkt 3. Att behöva avgöra var en sak ska stå, och sedan formulera den, är exakt det som gör att man skjuter upp att skriva ned den. Om Claude gör det direkt kostar det mig ingenting att fånga en tanke. Jag vill inte heller behöva förklara mer än nödvändigt, så Claude väljer rubrik själv och skriver kort. Listan har en rad överst som visar när den senast uppdaterades, så att jag och de schemalagda uppgifterna kan se hur färsk den är.
+
+## Kursdokument som läses men aldrig ändras
+
+Förutom listan läser Hjärnan ett statusdokument per kurs. De skrivs av kursprojekten, som kapitel 04 beskrev. Här gäller ägarregeln utan undantag: Hjärnan läser dem och ändrar aldrig i dem.
+
+Det kan kännas krångligt att inte låta det centrala projektet rätta ett uppenbart fel. Men det är precis regeln som gör att systemet håller. Om Hjärnan skrev i kursdokumenten skulle kursprojekten och Hjärnan kunna ha olika bilder av samma kurs, och då vet jag inte längre vilken jag ska tro. När Hjärnan ser något som inte stämmer säger den det till mig, och jag tar det med kursprojektet.
+
+Läsningen ger ändå mycket. Hjärnan vet hur nära nästa examination är, hur många timmar som är kvar och vad jag själv har markerat som osäkert. Det räcker för att föreslå vad som är rimligt att göra en viss dag, utan att jag behöver sammanfatta något.
+
+## Morgonbrev och eftermiddagskoll
+
+De två schemalagda uppgifterna som läser listan och kursdokumenten är det som gör att Hjärnan märks i vardagen. Jag behöver inte öppna något, utan informationen kommer till mig.
+
+??? begrepp "Begrepp: Schemalagd uppgift"
+    **Vad det är:** En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.
+
+    **Liknelse:** En väckarklocka som inte bara ringer utan också gör jobbet.
+
+    **Varför det spelar roll här:** Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.
+
+    [Se alla begrepp i ordlistan](ordlista.md#schemalagd-uppgift)
+
+Morgonbrevet kommer tidigt varje dag. Det läser listan, statusdokumenten och kalendern och skriver en sammanfattning av dagen. Ju närmare en examination, desto tydligare blir förslagen om hur mycket plugg dagen kräver. Brevet kan också hämta en nyhet eller en idé utifrån mina intressen, men bara som krydda.
+
+Eftermiddagskollen är kortare. Den tittar på vad som har flyttats till den färdiga rubriken under dagen, på loggraderna i kursdokumenten och på resten av kvällens kalender, och skickar ett kort, uppmuntrande meddelande. Poängen är att det ska märkas när något har gått bra, och att jag ska få en lugn bild av hur resten av dagen ser ut.
+
+Ingen av dem ändrar något i källorna. De läser och skriver ett meddelande, och det är allt. En uppgift som körs utan att jag ser den ska ha så litet utrymme att göra fel som möjligt.
+
+## Brevet som en text, inte en lista
+
+Morgonbrevet är skrivet som ett brev. Det beror på något jag lärde mig tidigt: en punktlista med dagens uppgifter känns som en order, och jag börjar undvika den. Ett brev i löpande text, där förslagen formuleras som "du skulle kunna", känns som hjälp.
+
+Några av de val jag gjort i utformningen:
+
+- Nyheter och idéer sprids ut mellan de delar som handlar om arbete, så att brevet inte blir en lång arbetslista med en bilaga.
+- Förslag är förslag. Brevet talar om vad som vore klokt, men bestämmer ingenting.
+- Brevet håller en vänlig men saklig ton. Det ska inte peppa, och det ska inte skuldbelägga om något blivit liggande.
+
+??? begrepp "Begrepp: Prompt"
+    **Vad det är:** Den instruktion eller fråga du ger en modell. Den kan vara en enda mening eller en lång beskrivning med exempel och krav.
+
+    **Varför det spelar roll här:** I en chatt är prompten nästan allt du har. I ett system med regelfiler och mappar är den bara en del av kontexten, och därför behöver den inte upprepa det som redan står i reglerna.
+
+    [Se alla begrepp i ordlistan](ordlista.md#prompt)
+
+Brevet slutar alltid med en färdig prompt i ett kodblock. Den innehåller det första jag skulle vilja be Hjärnan om den dagen, till exempel att gå igenom en viss sak eller sätta igång med dagens viktigaste pass. Jag kopierar den, klistrar in den i Hjärnan och är igång på några sekunder. Det tar bort det besvärligaste ögonblicket i en arbetsdag, nämligen att sitta framför en tom ruta och inte veta var man ska börja.
+
+## Regeln "hitta aldrig på"
+
+Alla mina schemalagda uppgifter har en gemensam regel i sina instruktioner: hitta aldrig på. Något får bara påstås om det syns i källorna. Om en uppgift inte finns i listan nämns den inte som klar. Om ett statusdokument inte uppdaterats skriver brevet att det inte uppdaterats, och gissar inte vad som kan ha hänt.
+
+Regeln kan verka självklar, men den är nödvändig av en särskild anledning. När en uppgift körs utan att jag tittar på kan jag inte fånga ett påhitt i stunden. Och ett morgonbrev som ibland ljuger om läget är värre än inget brev, eftersom jag då måste kontrollera allt som står i det. Förtroendet för hela systemet hänger på att texten går att lita på utan kontroll.
+
+I praktiken innebär regeln att varje påstående i ett brev ska kunna kopplas till en rad i en källa. Saknas underlag skriver uppgiften det rakt ut, och föreslår hellre att jag kollar än att den fyller i luckan.
+
+## Så bygger du din egen
+
+Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar för att komma igång.
+
+1. Skapa ett projekt och en lista med rubriker för de områden du faktiskt har. Börja med tre eller fyra.
+2. Skriv projektinstruktioner med en prioritetsordning, var saker finns och de fem reglerna för hur listan används.
+3. Låt det gå en vecka med bara listan. Justera rubrikerna efter vad som känns fel.
+4. Lägg till ett statusdokument för det område som tar mest tid, med en tydlig regel om vem som skriver.
+5. Lägg till ett morgonbrev när du har något att sammanfatta. Börja enkelt, med en uppgift som bara läser, och ge den regeln om att aldrig hitta på från första dagen.
+
+Det går att göra i vilken ordning du vill, och det går att stanna efter första steget. Redan ett projekt med en lista och några tydliga regler ersätter mycket av det som annars bor i huvudet eller på lösa lappar.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilka områden som konkurrerar om min tid och vad jag oftast glömmer eller tappar bort.
+    Hjälp mig sedan att skapa en första lista med rubriker och några regler för hur den ska skötas.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 07: Att bygga vidare på](07-bygga-vidare.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/07-bygga-vidare.md
+
+# Kapitel 07 — Att bygga vidare på
+
+*Ett system som fungerar är sällan färdigt. Här går jag igenom var mitt eget system har glapp och vilka sätt det finns att utveckla det, plus några idéer som inte alls handlar om plugg.*
+
+!!! abstract "Kort version"
+    - Kapitlet är en idébank över var systemet har glapp och hur det kan utvecklas.
+    - Begrepp, misstag och repetition är de delar som oftast är minst strukturerade.
+    - Lärdomar kan föras tillbaka till gemensamma mallar och mappar, så att nästa kurs eller projekt börjar starkare.
+    - Det behöver finnas en tydlig gräns för vad som är offentligt och vad som är privat.
+    - Du väljer det som passar dig och låter resten ligga.
+
+Det som följer är inga löften om vad jag kommer att bygga. Det är en lista över möjligheter, hämtade från de ställen där jag själv märker friktion. Läs den som en idébank: välj det som passar ditt eget upplägg och låt resten ligga. Plugget är fortfarande exemplet. Varje punkt har en motsvarighet i ett jobb, en hobby eller en vardag med många bollar i luften, och jag pekar ut den där det är tydligt.
+
+## Var friktionen sitter
+
+I kapitel 05 beskrev jag hur jag läser en kurs nerifrån och upp, med förklaringar som utgår från varför. Det fungerar, men när jag letar efter svaga punkter i systemet hamnar jag nästan alltid hos begreppen. Kursmaterialet är stabilt och delat, och statusen är föränderlig och privat. Begreppen är det som binder ihop dem, och just de är den minst strukturerade delen.
+
+Begrepp finns idag på tre ställen. Definitioner och satser ligger i kursens fulltext, med rubriker som går att länka till. Begrepp jag har haft svårt för dyker upp i loggen och under en rubrik för sådant som är osäkert. Och för en av mina andra kurser finns en separat begreppsöversikt med modeller, distinktioner och fällor från gamla duggor, men den är byggd för just den kursen. Fyra saker skaver:
+
+- En förklaring som fungerade, som bilden av gradienten som berg och karta, står som en loggrad med datum. Loggen är kronologisk, så förklaringen hittas inte nästa gång begreppet dyker upp.
+- Beroendena mellan begrepp är underförstådda. Att Hessianen bygger på Taylor framgår bara av studieplanens ordning och av löptexten i sammanfattningarna.
+- Misstagen loggas, men de kopplas inte till ett begrepp. Jag kan inte fråga "vilka begrepp har jag oftast fel på?".
+- Det jag lär mig i en konversation når inte kursens repo om jag inte aktivt för över det.
+
+Allt nedan är olika sätt att möta de fyra punkterna.
+
+## En begreppsmapp per kurs
+
+Det mest närliggande draget är en mapp `begrepp/` i varje kursrepo, med en fil per begrepp och samma fyra fält i alla filer:
+
+1. Definitionen, ordagrant ur kursens egen text, med länk till ankaret i fulltexten.
+2. Varför den gäller, alltså den intuition som gör att regeln känns rimlig.
+3. En konkret bild eller analogi som har fungerat.
+4. Vanliga fel, helst hämtade från mina egna misstag och från gamla tentor.
+
+Poängen är att en förklaring som en gång har fungerat får ett hem. I stället för att dö i en logg kan den hämtas av Claude nästa gång begreppet kommer upp, också i en annan kurs där samma idé återkommer. Rubrikerna i fulltexten ger redan färdiga ankare att länka till, så filerna behöver inte kopiera kursens text.
+
+Samma tänk går att använda utanför studierna. En fil per återkommande begrepp i ett arbete, med definition, varför det spelar roll och typiska missförstånd, är en liten personlig ordlista som Claude kan läsa innan den svarar.
+
+??? begrepp "Begrepp: Repo"
+    **Vad det är:** Förkortning för repository: en projektmapp som Git håller koll på, med alla filer och hela ändringshistoriken.
+
+    **Liknelse:** En projektmapp med inbyggd dagbok som skriver ned varje ändring.
+
+    **Varför det spelar roll här:** I mitt upplägg har varje kurs ett eget repo med samma skelett. Då vet både jag och Claude var tentor, fulltext och studieplan ligger, oavsett kurs.
+
+    [Se alla begrepp i ordlistan](ordlista.md#repo)
+
+## En översikt över hur begreppen beror av varandra
+
+Den andra möjligheten är en liten fil per kurs som för varje begrepp anger vad det förutsätter och vad det behövs för. För flervariabelanalys skulle en rad kunna säga att Hessianen förutsätter Taylors formel och partiella derivator, och att den behövs för klassificering av kritiska punkter. Det är exakt den vy en läsare som går nerifrån och upp behöver, och idag finns den bara i mitt huvud.
+
+Filen kan delvis genereras. Jag har redan ett skript som bygger ett uppgiftsindex ur fulltexten, och ett liknande skript skulle kunna plocka ut hänvisningar mellan definitioner och satser. Resten skriver Claude och jag tillsammans, och jag granskar. En färdig beroendeöversikt gör också studieplanen mer exakt: ordningen på veckorna kan kontrolleras mot den i stället för att bygga på min magkänsla.
+
+Utanför plugget är motsvarigheten en översikt över vad som måste vara klart innan något annat kan börja. Det fungerar för ett projekt på jobbet lika väl som för en kurs.
+
+## Taggade misstag
+
+Om varje loggrad får en etikett med det begrepp den handlar om kan ett skript, eller Claude, sammanställa vilka begrepp som oftast går fel. Det räcker med en enkel konvention, till exempel att varje rad börjar med begreppets filnamn inom hakparenteser. Efter några veckor går det att fråga loggen vilka tre begrepp som har flest rader, och sedan lägga tiden där.
+
+Det stänger också återkopplingsslingan. Ett misstag blir inte bara en notering utan en signal till begreppsmappen: den här filen behöver en bättre bild eller ett tydligare fel i fältet för vanliga fel.
+
+## Repetition med ökande intervall
+
+Mina schemalagda uppgifter styr redan efter närhet till tentan och antal timmar som är kvar. Nästa tänkbara steg är att de också föreslår repetition av sådant som loggats som osäkert, med växande avstånd mellan tillfällena: efter en dag, efter tre, efter en vecka, och så vidare tills begreppet har suttit några gånger i rad. Underlaget vore taggarna från förra avsnittet.
+
+??? begrepp "Begrepp: Schemalagd uppgift"
+    **Vad det är:** En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.
+
+    **Liknelse:** En väckarklocka som inte bara ringer utan också gör jobbet.
+
+    **Varför det spelar roll här:** Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.
+
+    [Se alla begrepp i ordlistan](ordlista.md#schemalagd-uppgift)
+
+Det som skulle behövas är en datumkolumn per begrepp som uppdateras när jag svarar rätt eller fel, och en regel om att morgonbrevet bara föreslår det som är dags. Det är inte komplicerat, men det kräver att någon, antingen jag eller en uppgift med strikta regler, är ansvarig för att skriva till den kolumnen. Principen om en skrivare per dokument gäller även här.
+
+Specialtjänster för flashcards gör just det här färdigt och snyggt, och jag återkommer till dem i nästa kapitel. Skälet att ändå bygga själv är att repetitionen då styrs av mina egna taggade misstag och av kursens begrepp, inte av ett generiskt kortset.
+
+## Föra upp lärdomar till repot
+
+Det som jag lär mig i ett kursprojekt hamnar i statusdokumenten på Drive, medan det varaktiga materialet bor i repot. Ett avslutande steg efter varje pass kunde knyta ihop dem: de begrepp som loggats som osäkra sammanställs och föreslås som ändringar i `begrepp/`. Kursprojektet föreslår, jag läser igenom och pushar med det skript jag redan använder. Då har ingen automatisk process rätt att skriva i det som är offentligt, och en människa har sista ordet.
+
+Samma mönster är användbart i vilket system som helst med två lager. Det föränderliga får hållas lösligt, men det som ska bli bestående passerar en granskning på vägen.
+
+## En gemensam mall för nya kursrepon
+
+Skelettet i mina repon är redan likadant: ett index, kursmaterial, föreläsningar, studieplan, tentor, fulltext och skript. Det som skulle göra nästa kurs billigare är en kopierbar mall som även innehåller:
+
+- en `CLAUDE.md` med grundreglerna, till exempel att motivera varje steg och definiera symboler
+- en specifikation för hur fulltexten ska extraheras, med lärdomen att sidgränser tappar innehåll
+- verifieringsskript som kontrollerar att ingen sats eller definition saknas
+- en tom `begrepp/` med fältmallen
+
+Med en sådan mall startar varje ny kurs med samma kvalitetskontroller, och jag slipper återupptäcka samma fällor.
+
+??? begrepp "Begrepp: CLAUDE.md"
+    **Vad det är:** En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.
+
+    **Liknelse:** Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.
+
+    **Varför det spelar roll här:** Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.
+
+    [Se alla begrepp i ordlistan](ordlista.md#claude-md)
+
+Ett företag eller en förening med flera projekt har samma behov. En mall för nya projekt, med regelfil, mappskelett och kontrollskript, gör att kvaliteten inte beror på vem som startade just det här projektet. Bilagan om arbetslivet visar en större variant av det.
+
+## Fler kvalitetskontroller
+
+Idag kontrolleras fulltextens täckning av skript. Motsvarande kontroll saknas för resten. Några exempel på vad som går att kontrollera automatiskt:
+
+- att varje avsnitt i studieplanen har minst en logg- eller testrad
+- att varje begrepp som nämns i planen har en fil i `begrepp/`
+- att länkarna från begreppsfilerna till fulltextens ankare leder någonstans
+- att numreringen stämmer när kursboken finns i två upplagor, vilket just nu hålls i fas för hand
+
+Kontrollerna behöver inte vara avancerade. Ett skript som skriver ut en lista över saknade rader är värt mycket, eftersom det ersätter en känsla av att allt nog är med av ett svar som går att lita på.
+
+## Tydlig gräns för vad som är offentligt
+
+Mina kursrepon är offentliga, medan Drive och minnet är privata. Den gränsen skyddas bäst av att den står skriven där arbetet sker. En kort regel i varje `CLAUDE.md` om vad som får skrivas i repot och vad som ska stanna på Drive är ett billigt skydd mot misstag. I praktiken kan regeln lyda ungefär så här:
+
+```markdown
+## Vad som får skrivas i repot
+- Kursinnehåll, begrepp, förklaringar och studieplaner.
+- Aldrig personuppgifter, resultat, ekonomi eller annat som rör privatlivet.
+- Aldrig lösningar eller upplägg för inlämningsuppgifter.
+- Osäker? Skriv det i Drive-dokumentet i stället och fråga mig.
+```
+
+Samma sorts regel behövs på varje ställe där ett privat och ett offentligt lager möts, som i ett jobb där en del av materialet är kundens och en del är ditt eget.
+
+## Idéer utanför plugget
+
+Det här är samma byggstenar i andra miljöer, utan att något av det är beslutat.
+
+- Ett projekt för en hobby, där regelfilen beskriver hur du vill ha hjälp och en mapp samlar det du lärt dig och vill komma ihåg. Taggade misstag och intervallrepetition fungerar lika bra för en teknik i en sport eller ett instrument som för en sats i analys.
+- Ett hushållsprojekt för sådant som återkommer, som inköp, matplanering eller en årlig deklaration. En schemalagd uppgift kan påminna i tid, och en regel om att aldrig hitta på hindrar att något påstås vara gjort när det inte syns i källorna.
+- Ett arbetsprojekt för det du lär dig på ett nytt jobb: begrepp, förkortningar, interna processer. Begreppsmappen blir då en personlig introduktionsbok som växer av sig själv.
+- En enkel loggrutin för ett eget byggprojekt, där Claude ställer samma tre frågor efter varje arbetspass och föreslår vad som ska föras in i regelfilen.
+
+Gemensamt för alla fyra är att ingen av dem kräver mer än en vanlig prenumeration och en mapp. Börja med det som skaver mest i just din vardag, bygg det minsta som hjälper, och låt nästa steg komma ur det du märker.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/07-bygga-vidare.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga var jag själv märker friktion i mitt arbetssätt just nu.
+    Hjälp mig sedan att välja en av idéerna i kapitlet och bygga den minsta versionen av den.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 08: Modellerna](08-modellerna.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/08-modellerna.md
+
+# Kapitel 08 — Modellerna
+
+*Claude, ChatGPT och Gemini erbjuder var sin trappa av modeller. Det mesta av det som skiljer dem märks i verktygen runt omkring, mindre i modellerna själva.*
+
+!!! abstract "Kort version"
+    - Anthropic har fyra nivåer: Haiku, Sonnet, Opus och Fable. Högre nivå betyder bättre förmåga, men också högre pris och snabbare förbrukning av användningsgränsen.
+    - Välj den billigaste nivån som klarar uppgiften. Toppmodellen behövs sällan.
+    - Benchmarks är användbara för att se grov skillnad, men små skillnader i toppen märks sällan i vardagsbruk.
+    - Min tes är att toppmodellerna hos de stora bolagen är ungefär lika bra utanför avancerad kodning. Jämför därför produkterna: verktyg, integrationer och appar.
+    - Välj produkt efter vad du ska göra och vilka verktyg du använder.
+
+---
+
+I de här kapitlen har jag mest skrivit "Claude" som om det vore en sak. I själva verket är det en familj av modeller, och valet mellan dem påverkar både kvalitet, hastighet och hur snabbt du når användningsgränsen som kapitel 09 handlar om. Det här kapitlet går igenom trappan och ger mig anledning att säga något om hur mycket modellvalet egentligen spelar roll.
+
+## Vad en modell är
+
+??? begrepp "Begrepp: Modell"
+    **Vad det är:** Den språkmodell som genererar svaren, till exempel Claude, GPT eller Gemini. Den är tränad av ett AI-labb och finns tillgänglig för alla via tjänster och API.
+
+    **Liknelse:** Motorn i bilen.
+
+    **Varför det spelar roll här:** Modellen är densamma för alla som använder den. Det du själv kan påverka är vad den får veta, vilka verktyg den når och vilka regler den följer.
+
+    [Se alla begrepp i ordlistan](ordlista.md#modell)
+
+Namnet du ser i appen, till exempel Claude, är en produkt. Under den ligger en eller flera modeller. Produkten är modellen plus allt som sitter runt den: projekt, minne, filhantering, kopplingar till andra tjänster och appar på mobil och dator. Skillnaden mellan modell och produkt är hela poängen med kapitlet.
+
+## Anthropics trappa
+
+Anthropic har fyra nivåer, från billig och snabb till kraftfull och dyr.
+
+| Nivå | Typisk användning | API-pris per miljon tokens (indata / utdata) |
+|---|---|---|
+| Haiku | Genomläsning, sortering, kontroller, enkel extraktion | Klart billigast |
+| Sonnet | Skrivande, research, vardaglig problemlösning | 2 / 10 dollar |
+| Opus | Långa uppgifter, kodning, krävande kunskapsarbete | 4 / 20 dollar |
+| Fable | De svåraste avvägningarna och längsta agentiska uppgifterna | 8 / 40 dollar |
+
+Priserna kommer från Anthropics modellöversikt och gäller API:t, alltså det man betalar när man bygger egna program. Som privatperson med abonnemang betalar du inte per token, men siffrorna är ett bra relativt mått. Fable kostar fyra gånger så mycket som Sonnet. Det säger något om hur mycket mer beräkning som ligger bakom varje svar, och det är beräkningen som äter av din användningsgräns.
+
+Den praktiska konsekvensen är att toppmodellen drar gränsen snabbare än de andra. Anthropic skriver det uttryckligen om Fable, och det stämmer med logiken i priserna. Vilka modeller som ingår i vilken plan ändras ofta, och det enda jag kunnat belägga är Fable: den finns på alla betalplaner men inte på gratisnivån. På Pro körs den mot usage credits, alltså extra betalning, medan den på Max och Ultra ingår i planen men förbrukar veckogränsen snabbare. Titta i appen eller på Anthropics sida om din plan innan du räknar med något.
+
+Så här använder jag nivåerna:
+
+- Haiku när jag vill att något ska läsas igenom eller kontrolleras, till exempel att gå igenom ett kapitel och lista vad som inte stämmer med reglerna.
+- Sonnet till det mesta: förklaringar, research, skrivande och att bygga vidare på ett system.
+- Opus när en uppgift är lång och har många delar som måste hänga ihop.
+- Fable bara när jag fastnat på en svår avvägning och vill ha den bästa bedömningen, inte för rutinarbete.
+
+Det är min egen tumregel. Anthropic själva rekommenderar Opus som standardval för de flesta arbetsbelastningar, så välj gärna högre än jag gör om du har gott om utrymme i din plan. Principen är densamma: börja på en lägre nivå och gå upp först när resultatet inte räcker.
+
+## Motsvarigheter hos OpenAI och Google
+
+OpenAI har en liknande trappa. I ChatGPT drivs de betalda planerna av GPT-6 Sol, medan gratisnivån och Go-nivån drivs av GPT-6 Luna. Det är alltså en enklare uppdelning för användaren, där nivån följer planen. Under GPT-5.6 fanns också en mellannivå som hette Terra. Jag har inte hittat några uppgifter om API-priser för GPT-6 och påstår därför inget om dem. Codex, OpenAIs verktyg för kodning och agentarbete, har precis som Claude Code stöd för subagenter med eget modellval.
+
+Google har Gemini i två huvudspår, Pro och Flash, där Flash är den snabba och billiga och Pro den kraftfulla. Versionsnumren byts snabbt och jag har inte kunnat fastställa vilken som i dag är toppmodellen i Gemini-appen, så jag låter bli att ange någon. Allt jag skriver om konkreta modellnamn är dessutom en ögonblicksbild från november 2026 och kommer att vara förlegad snart. Trappstrukturen, med en billig, en mellan och en dyr nivå, är det som består.
+
+## Vad benchmarks säger och inte säger
+
+När en ny modell släpps följer en tabell med siffror. Några vanliga:
+
+- SWE-bench Verified: riktiga felrapporter från öppna kodprojekt där modellen ska skriva en rättning som klarar projektets tester.
+- GPQA Diamond: naturvetenskapliga frågor på forskarnivå. Testet är i princip mättat, och de bästa modellerna ligger kring 94 procent.
+- Humanity's Last Exam: ungefär 2 500 mycket svåra frågor från experter, framtagna så att tidiga modeller skulle misslyckas.
+
+??? begrepp "Begrepp: Benchmark"
+    **Vad det är:** Ett standardiserat test som många modeller får köra, så att resultaten går att jämföra i en tabell. Exempel är frågor på forskarnivå eller riktiga felrapporter från kodprojekt.
+
+    **Liknelse:** Som ett standardiserat prov i skolan. Det ger en jämförbar siffra, men visar inte hur du klarar en riktig uppgift.
+
+    **Varför det spelar roll här:** Små skillnader i toppen märks sällan i vardagsbruk, och leverantörerna väljer själva vilka siffror de visar.
+
+    [Se alla begrepp i ordlistan](ordlista.md#benchmark)
+
+Det finns flera skäl att ta siffrorna med ro. När toppmodellerna närmar sig taket på ett test blir skillnaderna små och kan vara brus. Den som tränar en modell kan dessutom ha optimerat för just provet, och bland populära frågetester har granskningar hittat att en del frågor läckt in i träningsdata. Leverantörerna väljer också själva vilka siffror de visar, och det är rimligt att anta att de lyfter fram de där de står sig bäst. Det sista är mitt eget resonemang och inget jag funnit belagt, men det följer av incitamenten.
+
+Rangordningen beror dessutom på hur man mäter. En sammanställning från Artificial Analysis i oktober 2026 hade de fyra främsta modellerna inom två poäng från varandra, där Opus låg på 58 och tre andra modeller på 56. I en annan sammanställning låg en av OpenAIs modeller på 58,9. Den som läser en enda tabell kan alltså få bilden att en modell vinner, och en annan tabell säger något annat. Glappet som verkligen var stort i den första sammanställningen låg mellan de slutna och de öppna modellerna, inte mellan de stora bolagens toppmodeller.
+
+## Min tes: jämför produkterna
+
+Det leder till det jag själv tror, och jag vill vara tydlig med att det är en bedömning och inte ett faktum. För de flesta uppgifter utanför avancerad kodning är toppmodellerna hos de stora bolagen ungefär lika bra. Förklara ett begrepp, sammanfatta en text, skriv ett utkast, hjälp mig tänka igenom ett problem: det klarar de alla, och skillnaden jag märker mellan dem är mindre än skillnaden mellan en bra och en dålig prompt. Det är också vad den som sammanställde siffrorna ovan landar i, men det är en tolkning och inget bevisat.
+
+Det som skiljer sig mer är runt omkring: vilka verktyg som finns, hur väl de kopplas till dina andra tjänster och hur apparna fungerar.
+
+??? begrepp "Begrepp: MCP"
+    **Vad det är:** Förkortning för Model Context Protocol, en öppen standard för hur AI-verktyg kopplas till andra tjänster och datakällor.
+
+    **Liknelse:** Ett gemensamt kontaktdon. Alla tjänster som följer standarden passar i alla verktyg som stöder den.
+
+    **Varför det spelar roll här:** MCP ligger bakom många connectors. Du behöver inte kunna detaljerna, men det förklarar varför samma tjänst kan kopplas till flera olika AI-verktyg.
+
+    [Se alla begrepp i ordlistan](ordlista.md#mcp)
+
+Jag valde Claude av just det skälet. Den ligger enligt min bedömning långt fram på verktyg och integrationer: projekt med egen kunskap, Claude Code med subagenter, och kopplingar till tjänster som mejl, kalender och dokument. Anthropic har också fokuserat på företag, vilket syns i vad de bygger. Det finns en siffra som pekar åt samma håll. Menlo Ventures angav i sin rapport från november 2026 att Anthropics andel av företagens utgifter för LLM-API:er steg från 40 till 55 procent, medan OpenAI gick från 27 till 31 och Google föll från 21 till 9. Läs den med försiktighet. Menlo Ventures är en riskkapitalfirma som själva är investerare i Anthropic, och siffran mäter företagens API-utgifter, inte vad en student har nytta av i vardagen.
+
+ChatGPT har sina egna starka sidor, och de är inte små. Enligt Sensor Towers mätning från maj 2026 hade ChatGPT 46,4 procent av konsumentmarknaden, Gemini 27,7 och Claude 10,3. Antalet månadsanvändare låg på över 1,1 miljarder för ChatGPT mot 245 miljoner för Claude. OpenAI uppger själva över 1,2 miljarder veckoanvändare, men siffrorna mäter olika saker och går inte att jämföra rakt av. Många fler människor använder alltså ChatGPT, och bredden i erbjudandet är större på konsumentsidan: interaktiva element som diagram och formulär i svaren, och Codex i både skrivbordsapp, terminal och kodredigerare. Är det ChatGPT dina vänner, kurskamrater eller kollegor använder kan det i sig vara ett skäl att välja den, eftersom du då delar exempel och arbetssätt.
+
+Det jag landar i är att frågan "vilken modell är bäst?" är mindre användbar än "vad ska jag göra, och vilka verktyg använder jag?". Använder du mest en chatt för frågor och förklaringar duger vilken som helst av de stora. Vill du bygga upp projekt med egen kunskap, koppla in dina tjänster och låta en agent arbeta i dina mappar, jämför då vad respektive produkt faktiskt kan göra, och prova gärna båda under en vecka med en riktig uppgift. Guiden är skriven med Claude eftersom det är vad jag använder, men upplägget går att flytta över.
+
+---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/08-modellerna.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vad jag mest använder AI till och vilken plan och vilka verktyg jag har i dag.
+    Hjälp mig sedan att välja modellnivå för tre av mina vanligaste uppgifter och att ta ett konkret första steg.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 09: Därför slår du i taket](09-anvandningsgransen.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/09-anvandningsgransen.md
+
+# Kapitel 09 — Därför slår du i taket
+
+*Många når användningsgränsen utan att bygga något alls, bara genom att plugga eller jobba. Det beror oftast på några få vanor som går att ändra.*
+
+!!! abstract "Kort version"
+    - Vid varje nytt meddelande bearbetar modellen hela konversationen igen, så en lång chatt blir dyrare för varje meddelande.
+    - Stora filer, särskilt PDF, och toppmodellen med mycket tänkande drar mest.
+    - Ny chatt per uppgift, Markdown i stället för PDF, material i projektets kunskap och rätt modell för rätt uppgift ger störst effekt.
+    - Vid större arbete kan huvudkonversationen delegera till subagenter som arbetar i egen kontext och bara skickar tillbaka en kort rapport.
+    - Delegering har en egen kostnad och lönar sig för större uppgifter, inte för en snabb fråga.
+
+---
+
+När jag först fick en betald plan trodde jag att gränsen var till för dem som bygger program. Sedan nådde jag den mitt i en tentaperiod, med enbart förklaringar och övningsfrågor. Det är vanligt. Orsaken ligger sällan i att du frågar för mycket. Den ligger i hur mycket modellen måste läsa varje gång du frågar.
+
+## Hur gränsen fungerar
+
+Anthropic beskriver två slags gränser på betalplanerna: en sessionsgräns som återställs fem timmar efter ditt första meddelande, och veckogränser. Förbrukningen delas mellan claude.ai, Claude Code och Claude Desktop, så det är ett gemensamt förråd. Hur mycket som finns kvar ser du under Settings och Usage. Anthropic förbehåller sig dessutom rätten att justera gränserna, så exakta tal är det ingen idé att lära sig utantill. Det som däremot består är vad som driver förbrukningen.
+
+## Varför långa chattar blir dyra
+
+Det viktigaste att förstå är att modellen inte minns tidigare meddelanden på egen hand. Vid varje nytt meddelande skickas hela konversationen in igen: instruktioner, allt som sagts, bifogade filer. Allt det är kontext som bearbetas på nytt.
+
+??? begrepp "Begrepp: Token"
+    **Vad det är:** Den enhet som modeller räknar text i. En token är ungefär ett kort ord eller en ordbit, och svenska ord blir ofta flera tokens.
+
+    **Liknelse:** Som ordräknaren i Word, fast med enheter som modellen själv använder.
+
+    **Varför det spelar roll här:** Tokens avgör hur mycket som ryms i kontextfönstret och hur snabbt användningsutrymmet i din plan går åt. En PDF kostar många fler tokens än samma innehåll som ren text.
+
+    [Se alla begrepp i ordlistan](ordlista.md#token)
+
+Ett exempel. Du har en chatt med femtio meddelanden och ställer nummer femtioett. Då bearbetas alla femtio tidigare meddelanden plus det nya, bara för att svara på en kort fråga. Varje meddelande kostar alltså mer än det förra. Tjugo korta frågor i en lång chatt kostar mycket mer än tjugo korta frågor i varsin ny chatt, trots att du skrivit exakt lika mycket.
+
+Det finns en mildrande mekanism som heter caching: det som redan bearbetats och inte ändrats kan återanvändas till en bråkdel av priset. Men cachen är kortlivad. På API-nivå är standardlivslängden fem minuter, och den förlängs varje gång den används. Tar du en längre paus går den ut, och nästa meddelande bearbetar hela historiken till fullt pris igen. Anthropics supportsida säger själva att cachat innehåll i projekt förfaller efter inaktivitet. Hur länge det gäller i claude.ai specifikt har jag inte sett angivet, så siffran fem minuter är en indikation och inget löfte.
+
+Filer gör det värre. En PDF läses som text plus en bild av varje sida. Det blir ungefär några tusen tokens per sida, och det är en uppskattning som varierar med hur tät sidan är. En kursbok på trehundra sidor kan då motsvara en miljon tokens, vilket är mer än en vanlig konversation rymmer. Det är där PDF-problemet från kapitel 02 blir en användningsfråga och inte bara en precisionsfråga.
+
+Anthropics egen lista över vad som driver förbrukningen är i korthet: långa meddelanden, stora bifogade filer, lång pågående konversation, verktyg som Research och webbsökning, modellval, effort-nivån, artifacts och flerstegsuppgifter som att köra kod eller skapa filer. Toppmodellen och mycket tänkande drar mer än en mindre modell med lite tänkande, vilket också syns i priserna i kapitel 08.
+
+## Vad du kan göra åt det
+
+Det här är åtgärderna jag själv fått mest ut av, i ungefär den ordningen.
+
+**Ny chatt per uppgift.** När ämnet byts, börja om. Historiken från en uppgift hjälper sällan nästa, men du betalar för den ändå. Inom ett projekt finns instruktioner och kunskap kvar, så du förlorar ingenting.
+
+**Låt Claude sammanfatta läget innan du byter chatt.** Skriv något i stil med: "Sammanfatta var vi är, vad vi bestämt och vad som återstår, så att jag kan fortsätta i en ny chatt." Klistra in sammanfattningen i den nya. Du tar med dig det viktiga och lämnar tiotusentals tokens av omvägar.
+
+**Markdown i stället för PDF.** Samma innehåll som Markdown är en bråkdel av kostnaden och läses exakt som det står. Hur du omvandlar dokument beskrivs i kapitel 03.
+
+**Material i projektets kunskap, inte uppladdat i chatten.** Innehåll i ett projekt cachas, så det räknas mindre när det återanvänds. Dessutom slår RAG på automatiskt på betalplaner när innehållet blir stort, så Claude hämtar bara det som är relevant för frågan i stället för att läsa allt.
+
+??? begrepp "Begrepp: RAG"
+    **Vad det är:** Förkortning för retrieval augmented generation. Systemet söker först fram relevanta delar ur ett större material och ger bara dem till modellen tillsammans med frågan.
+
+    **Liknelse:** Att slå upp rätt sida i kursboken i stället för att läsa hela boken inför varje fråga.
+
+    **Varför det spelar roll här:** Claude-projekt använder det automatiskt när kunskapen blir för stor för kontextfönstret. Därför gör tydliga filnamn och uppdelade filer att rätt avsnitt hittas.
+
+    [Se alla begrepp i ordlistan](ordlista.md#rag)
+
+En brasklapp: du styr inte själv när RAG används, och svaret blir beroende av vad sökningen hittar. Anthropic anger att noggrannheten ska vara jämförbar med att läsa allt, men det är deras eget påstående och jag har inte kunnat pröva det. Vid frågor där det är viktigt att inget missas kontrollerar jag därför mot källan.
+
+**Rätt modell för rätt uppgift.** Kör vardagsfrågorna på en lägre nivå och spara toppmodellen till de tillfällen där den behövs. Bara det här kan märkas tydligt över en vecka.
+
+**Samla frågor.** Tre relaterade frågor i ett komplett meddelande är billigare än tre separata, eftersom varje separat meddelande ger ett nytt varv över hela konversationen.
+
+## Orkestrering: låt en agent delegera
+
+När jag arbetar aktivt, alltså bygger om ett system, går igenom många filer eller skriver längre texter, räcker inte ovanstående. Då låter jag huvudkonversationen delegera till subagenter.
+
+??? begrepp "Begrepp: Subagent"
+    **Vad det är:** En hjälpagent som en huvudagent startar för att sköta en avgränsad deluppgift. Den arbetar med egen kontext och lämnar tillbaka ett resultat.
+
+    **Liknelse:** En projektledare som delar ut var sin del av uppdraget och sedan sätter ihop svaren.
+
+    **Varför det spelar roll här:** Subagenter låter en uppgift delas upp utan att huvudsamtalet fylls av detaljer. Samma tänk används när större system väljer rätt modell för varje deluppgift.
+
+    [Se alla begrepp i ordlistan](ordlista.md#subagent)
+
+Så fungerar det. En subagent börjar med ren kontext, alltså utan historiken från din huvudkonversation. Den får en uppgift, gör jobbet och skickar tillbaka en kort rapport. Allt mellanarbete, som läsning av filer, sökningar och testkörningar, stannar i subagentens egen kontext och belastar inte din huvudchatt. Huvudkonversationen förblir kort, och därmed billig. Dessutom kan modell väljas per subagent, så att läsning och kontroller görs på den billigaste nivån.
+
+Subagenter är väl dokumenterade i Claude Code. Jag använder dem även i Claude-appen när den arbetar agentiskt. Om du bara chattar i en vanlig konversation har du sannolikt inte tillgång till dem, och jag har inte kunnat bekräfta exakt vilka ytor som stöder det, så kolla i din egen app. OpenAIs Codex har en motsvarighet med samma princip.
+
+Här är en projektinstruktion jag utgått från. Lägg den i projektets instruktioner och justera till din situation:
+
+```text
+När vi arbetar aktivt med något som består av flera delar ska du agera orkestrerare.
+Dela upp arbetet och delegera avgränsade uppgifter till subagenter i stället för att göra allt i den här konversationen.
+Välj den billigaste modell som inte försämrar resultatet:
+Haiku för genomläsning och kontroller, Sonnet för skrivande och research, den högsta nivån bara för svåra avvägningar.
+Skriv subagenternas prompter själv. Ge varje subagent ett tydligt mål, det underlag den behöver och vad den ska lämna tillbaka.
+Be om korta rapporter och låt subagenterna spara sina resultat i filer, så att den här konversationen bara behöver läsa sammanfattningen.
+Granska rapporterna innan du går vidare, och berätta för mig om något ser fel ut.
+För små uppgifter och snabba frågor ska du svara direkt utan att delegera.
+```
+
+Den sista raden är viktig av skäl som jag kommer till strax.
+
+## Låt AI skriva prompterna
+
+En sak som förvånade mig: Claude skriver ofta bättre och mer fullständiga prompter till en subagent än jag själv gör. Skälet är enkelt. Claude har hela sammanhanget framför sig, med dina regler, filerna och vad som redan beslutats, och kan därför ta med det en subagent behöver veta. När jag skriver en prompt för hand glömmer jag halva sammanhanget, eftersom jag har det i huvudet och tar det för givet. Du behöver bara beskriva målet. Resten kan Claude formulera.
+
+## Ett exempel: den här guiden
+
+Den här guiden skrevs om på det sättet. Agenter på Haiku gick igenom befintliga kapitel och gjorde den tråkiga genomläsningen, Sonnet-agenter gjorde research och skrev utkast, och huvudkonversationen styrde arbetet och granskade det som kom tillbaka. Jag skrev inte prompterna till agenterna, det gjorde huvudkonversationen. Mitt jobb var att säga vad guiden skulle bli och att läsa resultatet kritiskt. Utan delegeringen hade huvudkonversationen fyllts av råtext från källor och gamla kapitel långt innan jag var klar.
+
+## Avvägningen
+
+Delegering är inte gratis. Varje subagent måste läsa in sitt eget underlag, och det kostar tokens. Har du tio subagenter som var och en läser samma tre filer har du betalat för de filerna tio gånger. Dessutom tillkommer kostnaden för att skriva uppdragen och läsa rapporterna.
+
+Därför lönar det sig för större uppgifter: många filer, långa dokument, arbete som annars skulle fylla huvudkonversationen med mellanresultat. För en snabb fråga eller en liten ändring är det ofta billigare att fråga direkt. Tumregeln jag använder är att om jag ändå skulle behöva läsa tiotals sidor underlag för att svara, delegerar jag. Annars gör jag det inte.
+
+Ett sista råd är att inte jaga det perfekta upplägget. Börja med att byta chatt oftare och lägga PDF-filerna i Markdown. Det räcker långt, och orkestrering är något du lägger till när du märker att de enkla greppen inte räcker.
+
+---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/09-anvandningsgransen.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga hur jag brukar arbeta när jag når användningsgränsen och vilka filer och chattar som är längst.
+    Hjälp mig sedan att ta ett konkret första steg för att dra ned förbrukningen.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 10: Vad en prenumeration räcker till](10-vad-en-prenumeration-racker-till.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/10-vad-en-prenumeration-racker-till.md
+
+# Kapitel 10 — Vad en prenumeration räcker till
+
+*Du betalar redan för en av de bästa modellerna som finns. Det här kapitlet handlar om hur långt den räcker när du bygger ditt eget system, och när det ändå kan vara värt att betala för något mer.*
+
+!!! abstract "Kort version"
+    - En vanlig prenumeration på Claude eller ChatGPT räcker långt för ett eget system.
+    - Projekt, lokala mappar och schemalagda uppgifter finns redan på betalplanerna, men innehållet skiljer sig åt mellan planer, så kontrollera själv.
+    - Färdiga AI-tjänster kan vara värda pengarna i vissa fall, men de bygger på samma modeller.
+    - Det du själv tillför är källor, regler och en rutin som håller systemet igång.
+
+## Vad du redan betalar för
+
+Hos Claude kostar Pro 20 dollar i månaden, eller 17 dollar per månad vid årsbetalning, och Max börjar på 100 dollar i månaden med fem gånger så mycket användning. Priserna står på [claude.com/pricing](https://claude.com/pricing) och kan ändras. Pro innehåller bland annat projekt och Claude Code, och på en betalplan kan du arbeta i Claude-appen på datorn med lokala mappar och schemalagda uppgifter.
+
+Hos OpenAI finns planer på flera nivåer, från gratis till betydligt dyrare. Exakta priser och vad som ingår står på [chatgpt.com/pricing](https://chatgpt.com/pricing). Där finns motsvarigheter som projekt, minne, Codex och uppgifter som körs på schema. Vilken funktion som ingår i vilken plan skiljer sig åt och ändras, så kontrollera innan du bestämmer dig. Kolla även om ditt lärosäte eller din arbetsgivare har ett avtal.
+
+??? begrepp "Begrepp: Modell"
+    **Vad det är:** Den språkmodell som genererar svaren, till exempel Claude, GPT eller Gemini. Den är tränad av ett AI-labb och finns tillgänglig för alla via tjänster och API.
+
+    **Liknelse:** Motorn i bilen.
+
+    **Varför det spelar roll här:** Modellen är densamma för alla som använder den. Det du själv kan påverka är vad den får veta, vilka verktyg den når och vilka regler den följer.
+
+    [Se alla begrepp i ordlistan](ordlista.md#modell)
+
+## Vad ditt eget system täcker
+
+Resten av guiden visar byggstenarna. Tillsammans täcker de det mesta som en betald AI-tjänst brukar erbjuda:
+
+| Behov | Så löser du det själv |
+|---|---|
+| Svar som utgår från ditt material | Kursmaterial, anteckningar och gamla tentor i en mapp, ett repo och ett projekt (kapitel 03 och 04) |
+| Svar på ditt sätt | Projektinstruktioner och en `CLAUDE.md` med dina egna regler (kapitel 03 och 05) |
+| Övning och test | Gamla tentor, uppgifter med ankare och en logg över misstag (kapitel 05) |
+| Planering och påminnelser | Ett centralt projekt, en lista och schemalagda uppgifter (kapitel 06) |
+| Återkommande arbetsflöden | Skills och skript, till exempel ett uppgiftsindex som genereras automatiskt (kapitel 03 och 05) |
+
+??? begrepp "Begrepp: RAG"
+    **Vad det är:** Förkortning för retrieval augmented generation. Systemet söker först fram relevanta delar ur ett större material och ger bara dem till modellen tillsammans med frågan.
+
+    **Liknelse:** Att slå upp rätt sida i kursboken i stället för att läsa hela boken inför varje fråga.
+
+    **Varför det spelar roll här:** Claude-projekt använder det automatiskt när kunskapen blir för stor för kontextfönstret. Därför gör tydliga filnamn och uppdelade filer att rätt avsnitt hittas.
+
+    [Se alla begrepp i ordlistan](ordlista.md#rag)
+
+Inget av det kräver att du kan programmera. Claude skriver skripten och regelfilerna tillsammans med dig. Det som krävs är att du vet vad du vill uppnå och att det du skriver ned är tydligt.
+
+## Om färdiga AI-tjänster
+
+Det finns gott om AI-tjänster för studier och för olika yrken: appar som gör flashcards och quiz av dina anteckningar, tjänster som sammanfattar föreläsningar, verktyg för jurister, säljare och utvecklare. Väldigt många av dem bygger på samma modeller som du redan har tillgång till. Det de lägger till är i grunden det den här guiden beskriver, alltså ordnade källor, instruktioner, några skript och arbetsflöden, förpackat i ett snyggare gränssnitt som är bekvämare att använda. För eget bruk kan du bygga mycket av det själv, och då blir det dessutom format efter just dig.
+
+Det finns ändå lägen där en färdig tjänst är rätt val:
+
+- Du vill inte bygga något alls och hellre betala för att slippa.
+- Du behöver något en chatt saknar, till exempel ett färdigt schema för repetition av flashcards eller en mobilapp för just det.
+- Du arbetar med data eller källor som du inte själv har tillgång till, eller med krav på säkerhet och avtal som en privat prenumeration inte uppfyller. Det gäller oftare på jobbet än i plugget.
+
+En sak gäller oavsett verktyg: förklaringar, kort och sammanfattningar som en AI har skapat kan innehålla fel och behöver granskas.
+
+## Disciplinen är din
+
+Den verkliga skillnaden mellan ett eget system och en färdig tjänst är inte tekniken utan vem som håller i det. En färdig tjänst tvingar fram ett arbetssätt. I ditt eget system är det du som bestämmer att Claude ska visa stegen i stället för att ge svaret, att misstagen loggas och att du testar dig mot gamla tentor. Det är mer frihet och mer ansvar.
+
+Det avgörande är alltså vad du gör med prenumerationen. Du har redan samma modeller som tjänsterna bygger på. Det du lägger till är dina egna källor, dina egna regler och en rutin som får systemet att fortsätta fungera. Det går att börja på en eftermiddag, det blir bättre för varje vecka, och det följer med dig från studierna till ett jobb.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/10-vad-en-prenumeration-racker-till.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilken plan jag har idag, vad jag vill använda den till och vad jag tycker saknas.
+    Hjälp mig sedan att bedöma om min nuvarande plan räcker och vad jag kan bygga först utan att betala för mer.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Bilaga: Samma upplägg i arbetslivet](bilaga-arbetsliv.md)
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/bilaga-arbetsliv.md
+
+# Bilaga — Samma upplägg i arbetslivet
+
+*Guidens exempel är en kurs, men upplägget är inte bundet till plugg. Här visas det i en fiktiv investeringsfirma, och sedan pekar jag på färdiga mallar för tre branscher.*
+
+!!! abstract "Kort version"
+    - Samma upplägg som i kapitlen går att flytta från en kurs till ett jobb.
+    - Exemplet är en påhittad investeringsfirma, och strukturen kan anpassas till andra branscher.
+    - Mappar speglar verksamheten, regelfiler finns på tre nivåer och skills tar hand om det som återkommer.
+    - Det stabila delas i teamet, medan det personliga hålls privat.
+    - Färdiga mallar finns i repot och är utgångspunkter, inte facit.
+
+Allt i guiden går att flytta från en kurs till ett jobb. Mapparna, regelfilerna, skillsen och delningen mellan det stabila och det föränderliga ser likadana ut. Det som byts ut är innehållet. Som exempel använder jag Norvik Capital, en påhittad private equity-firma med sex anställda. Firman finns inte på riktigt, men strukturen är byggd för att vara realistisk och går att anpassa.
+
+## Norvik Capital i korthet
+
+Norvik är en nordisk investerare i mellansegmentet, grundad 2018, med en fond och fyra portföljbolag inom SaaS, industri, bemanning och medtech. Teamet är litet och varje person bär flera roller, vilket är just den miljö där en gemensam struktur gör störst nytta.
+
+## Mappstrukturen speglar verksamheten
+
+Firmans mappar följer hur arbetet är organiserat, med tre nivåer som ändras i olika takt.
+
+```
+firma-exempel/
+├── CLAUDE.md          regler som gäller överallt
+├── firma/             compliance, kapitalanskaffning, investerarkontakt, team
+├── fonder/fond-I/     fondvillkor, rapportering, prestanda
+├── portfoljbolag/     en mapp per bolag, med eget CLAUDE.md
+├── pipeline/          screening, pågående due diligence, avslutade
+└── gemensamt/         mallar, skills, ramverk, lärdomar, branschdata
+```
+
+Firmanivån ändras sällan, fondnivån kvartalsvis och bolagsnivån löpande. Uppdelningen gör att Claude får rätt kontext utan brus. När någon arbetar i ett bolags mapp behöver Claude kunna allt om bolagets nyckeltal men ingenting om fondens investerarvillkor. Mappen `gemensamt/` är firmans bibliotek, byggt efter principen en källa, många användare. Det är samma tanke som att kursmaterialet i mina repon är stabilt och delat.
+
+## Regelfiler i tre nivåer
+
+??? begrepp "Begrepp: CLAUDE.md"
+    **Vad det är:** En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.
+
+    **Liknelse:** Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.
+
+    **Varför det spelar roll här:** Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.
+
+    [Se alla begrepp i ordlistan](ordlista.md#claude-md)
+
+Hos Norvik finns regelfiler på tre nivåer, och Claude läser de som ligger närmast där arbetet sker.
+
+1. **Firmanivå.** Roll, språk, valuta och datumformat, och en analysstandard: börja med en sammanfattning på högst fem punkter, avsluta med handlingsbara rekommendationer, ta med scenarier vid värdering.
+2. **Fond eller pipeline.** Fondens villkor och rapporteringsregler, eller screeningkriterierna för nya affärer med hårda krav på storlek, geografi och lönsamhet.
+3. **Bolag.** Bolagets egna definitioner och nyckeltal. Ett SaaS-bolag och en industrikoncern behöver olika mått, och definitionerna måste vara exakta, till exempel vad som får räknas in i återkommande intäkter.
+
+Det motsvarar hierarkin i en kursmapp, där en regelfil på kursnivå kompletteras av regler för ett visst avsnitt.
+
+## Skills för det som återkommer
+
+??? begrepp "Begrepp: Skill"
+    **Vad det är:** En mapp med en fil som heter SKILL.md, plus eventuella hjälpfiler. Filen beskriver en återkommande uppgift steg för steg, och Claude laddar den när uppgiften passar.
+
+    **Liknelse:** Ett recept i receptboken. Du skriver det en gång, och sedan lagas rätten likadant varje gång.
+
+    **Varför det spelar roll här:** Skills gör att en uppgift du gör ofta, till exempel att förklara ett begrepp i ett fast format, blir ett knapptryck och inte en lång prompt som skrivs om varje gång.
+
+    [Se alla begrepp i ordlistan](ordlista.md#skill)
+
+Uppgifter som upprepas blir skills: ett screeningmemo, en kvartalsrapport till styrelsen, en rapport till fondens investerare, en genomgång av ett förvärv. Varje skill beskriver stegen, formatet och vad som ska kontrolleras. På så sätt får en nyanställd samma utgångspunkt som den som varit med i åratal, och resultatet blir jämnare.
+
+## Vem delar vad
+
+Norvik skiljer på tre lager.
+
+| Lager | Innehåll | Var det bor |
+|---|---|---|
+| Gemensam infrastruktur | Mappstruktur, regelfiler, skills, mallar | Ett delat repo |
+| Gemensam kunskap | Årsredovisningar, rapporter, styrelsematerial | Delade projekt i Claude |
+| Individuellt arbete | Utkast, hypoteser, anteckningar | Privata konversationer |
+
+??? begrepp "Begrepp: Git"
+    **Vad det är:** Ett system som håller reda på varje ändring i dina filer. Du kan alltid se vad som ändrats och gå tillbaka till en tidigare version.
+
+    **Liknelse:** Spara version i Word, fast för en hel mapp och med en dagbok över varje ändring.
+
+    **Varför det spelar roll här:** Git är säkerhetsnätet när en modell får ändra filer åt dig. Går något snett backar du, och du kan prova nya upplägg utan att riskera det som fungerar.
+
+    [Se alla begrepp i ordlistan](ordlista.md#git)
+
+Repot innehåller sådant som alla behöver och som inte är konfidentiellt. Känsligt material, som avtal och finansiella data om enskilda bolag, hör hemma i projekt med begränsad åtkomst och aldrig i repot. Det är samma gräns som jag drar mellan mina offentliga kursrepon och mina privata dokument, fast med högre insatser.
+
+Verktygen skiftar efter roll. Analytikern arbetar mest i Claude Code och bygger skills. Chefer och partners arbetar i projekt i chatten, ofta från telefonen. Alla drar nytta av samma underliggande struktur.
+
+## Lärdomar som samlas
+
+Norvik bygger ett minne utanför modellen. Efter en slutförd uppgift frågar Claude sig vad som lärdes om data, struktur, format och arbetsgång, och skriver en kort lärdom i en gemensam fil. Varje lärdom har en status: ny, granskad, inarbetad eller arkiverad. Först när en människa har granskat den förs den in i en regelfil eller en skill.
+
+Granskningen är ingen formalitet. En felaktig lärdom som inarbetas upprepas av Claude vid varje uppgift, och för många inarbetade lärdomar gör regelfilerna långa och trögläsliga. Poängen är densamma som i kapitel 07: det som ska bli bestående ska passera en människa.
+
+## Mallarna i repot
+
+Det finns färdiga filer att utgå från i mappen [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/). Ge dem till Claude Code, beskriv vad du vill ändra, och låt Claude bygga resten.
+
+- **Private equity:** den kompletta firman Norvik, med mappar, regelfiler och exempel i [`firma-exempel`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/private-equity/firma-exempel/), samt en regelfil och tre skills i [`private-equity`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/private-equity/): due diligence, investeringsmemo och kassaflödesanalys.
+- **Konsult:** en regelfil och två skills i [`consulting`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/consulting/), för marknadsanalys och strategisk rekommendation.
+- **Marknadsföring:** en regelfil och två skills i [`marketing`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/marketing/), för innehållsplanering och kampanjanalys.
+
+Mallarna är utgångspunkter, inte färdiga sanningar. Byt ut siffrorna, ersätt de påhittade bolagen med dina egna uppgifter och ta bort det som inte passar. Ett bra första steg är att be Claude intervjua dig om hur din arbetsvecka ser ut och sedan föreslå vilken struktur som passar.
+
+Om du är på väg in i ett nytt jobb går samma tänk att använda för att lära sig det. Bygg en begreppsmapp för branschens ord, en regelfil som beskriver hur din chef vill ha saker levererade, och en enkel logg över vad som gick fel. Det är kapitel 05 och 07 i ett annat sammanhang.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/bilaga-arbetsliv.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vad jag jobbar med, hur min arbetsvecka ser ut och vilka uppgifter som återkommer.
+    Hjälp mig sedan att föreslå en mappstruktur och en första regelfil för mitt jobb.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+
+---
+Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/ordlista.md
+
+# Ordlista
+
+*Här samlas begreppen i guiden, ordnade efter vad de hör ihop med. Du behöver inte läsa sidan från början till slut. Kom tillbaka när du stöter på ett ord du inte känner igen.*
+
+## Modellen och det den får att arbeta med
+
+### Kontext { #kontext }
+
+**Vad det är:** Allt som modellen har framför sig när den svarar: din fråga, tidigare meddelanden, bifogade filer och instruktionsfiler.
+
+**Liknelse:** Ju bättre förberedd en konsult är inför mötet, desto bättre råd ger hon. Modellen är konsulten och kontexten är underlaget hon får.
+
+**Varför det spelar roll här:** Modellen är densamma för alla. Det som skiljer ett generiskt svar från ett användbart är oftast vilken kontext du har gett den och hur den är ordnad.
+
+### Kontextfönster { #kontextfonster }
+
+**Vad det är:** Den mängd text, mätt i tokens, som en modell kan hålla i sig på en gång. Allt som ryms i fönstret kan modellen ta hänsyn till, resten är osynligt för den.
+
+**Liknelse:** Ett skrivbord med begränsad yta. Det du vill arbeta med måste ligga uppe på bordet, och för mycket papper gör det svårt att hitta rätt.
+
+**Varför det spelar roll här:** Därför lönar det sig att ge modellen rätt filer och inte alla filer. Utrymmet delas mellan ditt underlag, dina regler och själva frågan.
+
+### Token { #token }
+
+**Vad det är:** Den enhet som modeller räknar text i. En token är ungefär ett kort ord eller en ordbit, och svenska ord blir ofta flera tokens.
+
+**Liknelse:** Som ordräknaren i Word, fast med enheter som modellen själv använder.
+
+**Varför det spelar roll här:** Tokens avgör hur mycket som ryms i kontextfönstret och hur snabbt användningsutrymmet i din plan går åt. En PDF kostar många fler tokens än samma innehåll som ren text.
+
+### Prompt { #prompt }
+
+**Vad det är:** Den instruktion eller fråga du ger en modell. Den kan vara en enda mening eller en lång beskrivning med exempel och krav.
+
+**Varför det spelar roll här:** I en chatt är prompten nästan allt du har. I ett system med regelfiler och mappar är den bara en del av kontexten, och därför behöver den inte upprepa det som redan står i reglerna.
+
+### Benchmark { #benchmark }
+
+**Vad det är:** Ett standardiserat test som många modeller får köra, så att resultaten går att jämföra i en tabell. Exempel är frågor på forskarnivå eller riktiga felrapporter från kodprojekt.
+
+**Liknelse:** Som ett standardiserat prov i skolan. Det ger en jämförbar siffra, men visar inte hur du klarar en riktig uppgift.
+
+**Varför det spelar roll här:** Små skillnader i toppen märks sällan i vardagsbruk, och leverantörerna väljer själva vilka siffror de visar.
+
+### Modell { #modell }
+
+**Vad det är:** Den språkmodell som genererar svaren, till exempel Claude, GPT eller Gemini. Den är tränad av ett AI-labb och finns tillgänglig för alla via tjänster och API.
+
+**Liknelse:** Motorn i bilen.
+
+**Varför det spelar roll här:** Modellen är densamma för alla som använder den. Det du själv kan påverka är vad den får veta, vilka verktyg den når och vilka regler den följer.
+
+### Minne { #minne }
+
+**Vad det är:** En funktion där Claude sparar uppgifter om dig och ditt arbete mellan chattar. Projekt har sitt eget minne, skilt från minnet i andra projekt.
+
+**Varför det spelar roll här:** Minne är bra för bestående fakta om dig, men det går inte att styra lika exakt som en fil. Det som måste vara rätt ska ligga i filer och regler du själv kontrollerar.
+
+### RAG { #rag }
+
+**Vad det är:** Förkortning för retrieval augmented generation. Systemet söker först fram relevanta delar ur ett större material och ger bara dem till modellen tillsammans med frågan.
+
+**Liknelse:** Att slå upp rätt sida i kursboken i stället för att läsa hela boken inför varje fråga.
+
+**Varför det spelar roll här:** Claude-projekt använder det automatiskt när kunskapen blir för stor för kontextfönstret. Därför gör tydliga filnamn och uppdelade filer att rätt avsnitt hittas.
+
+## Filer, format och versioner
+
+### Markdown { #markdown }
+
+**Vad det är:** Ett sätt att formatera text med vanliga tecken. Rubriker skrivs med brädgård, listor med bindestreck och fetstil med stjärnor. Filerna får ändelsen .md.
+
+**Liknelse:** I Word klickar du på knappar för att formatera. I Markdown skriver du formateringen rakt i texten, så att den syns även utan program.
+
+**Varför det spelar roll här:** Markdown är lättläst för både människor och modeller och kostar få tokens. Därför omvandlar man PDF:er och anteckningar till Markdown, och därför skrivs regelfiler som CLAUDE.md i samma format.
+
+### Git { #git }
+
+**Vad det är:** Ett system som håller reda på varje ändring i dina filer. Du kan alltid se vad som ändrats och gå tillbaka till en tidigare version.
+
+**Liknelse:** Spara version i Word, fast för en hel mapp och med en dagbok över varje ändring.
+
+**Varför det spelar roll här:** Git är säkerhetsnätet när en modell får ändra filer åt dig. Går något snett backar du, och du kan prova nya upplägg utan att riskera det som fungerar.
+
+### Repo (repository) { #repo }
+
+**Vad det är:** Förkortning för repository: en projektmapp som Git håller koll på, med alla filer och hela ändringshistoriken.
+
+**Liknelse:** En projektmapp med inbyggd dagbok som skriver ned varje ändring.
+
+**Varför det spelar roll här:** I mitt upplägg har varje kurs ett eget repo med samma skelett. Då vet både jag och Claude var tentor, fulltext och studieplan ligger, oavsett kurs.
+
+### GitHub { #github }
+
+**Vad det är:** En webbtjänst där Git-repon lagras och kan delas. Ett repo kan vara privat eller offentligt, och man kan lägga till det som kunskap i ett Claude-projekt.
+
+**Liknelse:** Ett gemensamt arkiv i molnet där alla ser samma senaste version av mappen.
+
+**Varför det spelar roll här:** GitHub gör att samma material når både Claude Code på datorn och Claude i ett projekt. Du bearbetar underlaget en gång och återanvänder det överallt.
+
+## Regler och återanvändbara arbetsflöden
+
+### CLAUDE.md { #claude-md }
+
+**Vad det är:** En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.
+
+**Liknelse:** Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.
+
+**Varför det spelar roll här:** Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.
+
+### AGENTS.md { #agents-md }
+
+**Vad det är:** OpenAI:s motsvarighet till CLAUDE.md. En vanlig textfil i repot som kodagenten Codex läser innan den börjar arbeta.
+
+**Varför det spelar roll här:** Idén är densamma oavsett leverantör: regler som ligger i mappen och följer med projektet. Skriver du dina regler tydligt går de att flytta mellan verktygen.
+
+### Skill { #skill }
+
+**Vad det är:** En mapp med en fil som heter SKILL.md, plus eventuella hjälpfiler. Filen beskriver en återkommande uppgift steg för steg, och Claude laddar den när uppgiften passar.
+
+**Liknelse:** Ett recept i receptboken. Du skriver det en gång, och sedan lagas rätten likadant varje gång.
+
+**Varför det spelar roll här:** Skills gör att en uppgift du gör ofta, till exempel att förklara ett begrepp i ett fast format, blir ett knapptryck och inte en lång prompt som skrivs om varje gång.
+
+### Projekt { #projekt }
+
+**Vad det är:** Ett arbetsrum i Claude med egna instruktioner och egen kunskap, till exempel uppladdade filer eller ett kopplat GitHub-repo. Instruktionerna gäller i alla chattar i projektet.
+
+**Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
+
+**Varför det spelar roll här:** Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.
+
+## Verktyg och kopplingar
+
+### Claude Code { #claude-code }
+
+**Vad det är:** Anthropics verktyg för att låta Claude arbeta direkt i dina mappar: läsa filer, skriva och ändra dem och köra kommandon. Det startas från terminalen och ingår i betalplanerna.
+
+**Liknelse:** En assistent som sitter vid din dator och får öppna mapparna, i stället för att du skickar texten fram och tillbaka.
+
+**Varför det spelar roll här:** Claude Code är verktyget som bygger och underhåller mappstrukturen, regelfilerna och skripten. Du beskriver vad du vill ha, och det skapar filerna.
+
+### Codex { #codex }
+
+**Vad det är:** OpenAI:s kodagent. Den arbetar i repon, kan läsa och ändra filer och följer regler i en AGENTS.md.
+
+**Varför det spelar roll här:** Codex är motsvarigheten till Claude Code i ChatGPT-världen. Struktur som mappar, tydliga namn och en regelfil hjälper på samma sätt där.
+
+### Terminal { #terminal }
+
+**Vad det är:** Ett textbaserat gränssnitt där du skriver kommandon till datorn i stället för att klicka. Claude Code startas därifrån.
+
+**Liknelse:** Att skriva en beställningslista i stället för att peka på varorna i butiken. Det är mer exakt, men kräver att man skriver.
+
+**Varför det spelar roll här:** Du behöver inte lära dig kommandona. Det räcker att veta att terminalen finns, att den inte är farlig och att Claude kan skriva kommandona åt dig.
+
+### Connector { #connector }
+
+**Vad det är:** En koppling mellan Claude och en annan tjänst, till exempel Google Drive, Kalender eller GitHub, så att Claude kan läsa eller skriva där du tillåter det.
+
+**Liknelse:** Ett uttag i väggen: apparaten fungerar utan det, men får tillgång till något den inte hade själv.
+
+**Varför det spelar roll här:** Connectors gör att Claude kan läsa din kalender eller ett delat dokument i stället för att du kopierar in innehållet. Det är en förutsättning för ett system som hänger ihop.
+
+### MCP { #mcp }
+
+**Vad det är:** Förkortning för Model Context Protocol, en öppen standard för hur AI-verktyg kopplas till andra tjänster och datakällor.
+
+**Liknelse:** Ett gemensamt kontaktdon. Alla tjänster som följer standarden passar i alla verktyg som stöder den.
+
+**Varför det spelar roll här:** MCP ligger bakom många connectors. Du behöver inte kunna detaljerna, men det förklarar varför samma tjänst kan kopplas till flera olika AI-verktyg.
+
+### Artifact { #artifact }
+
+**Vad det är:** Ett färdigt dokument, en liten app eller en sida som Claude skapar vid sidan av chatten och som du kan öppna, ändra och spara.
+
+**Liknelse:** Ett utkast som läggs på bordet bredvid samtalet, så att det går att arbeta vidare i.
+
+**Varför det spelar roll här:** Artifacts är ett sätt att få något användbart ut ur en chatt, som en översikt, ett övningsprov eller ett litet verktyg, i stället för text som försvinner uppåt i flödet.
+
+## Automation och agenter
+
+### Schemalagd uppgift { #schemalagd-uppgift }
+
+**Vad det är:** En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.
+
+**Liknelse:** En väckarklocka som inte bara ringer utan också gör jobbet.
+
+**Varför det spelar roll här:** Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.
+
+### Agent { #agent }
+
+**Vad det är:** Ett AI-system som själv planerar steg, använder verktyg och utför en uppgift åt dig, i stället för att bara svara på en fråga.
+
+**Liknelse:** Skillnaden mellan att fråga en kollega vad hon tycker och att be henne ta hand om saken och återkomma när den är klar.
+
+**Varför det spelar roll här:** Agenter är bara så bra som verktygen och reglerna de får. Samma struktur som hjälper dig i chatten avgör också hur väl en agent klarar sig.
+
+### Subagent { #subagent }
+
+**Vad det är:** En hjälpagent som en huvudagent startar för att sköta en avgränsad deluppgift. Den arbetar med egen kontext och lämnar tillbaka ett resultat.
+
+**Liknelse:** En projektledare som delar ut var sin del av uppdraget och sedan sätter ihop svaren.
+
+**Varför det spelar roll här:** Subagenter låter en uppgift delas upp utan att huvudsamtalet fylls av detaljer. Samma tänk används när större system väljer rätt modell för varje deluppgift.
+
+---
+
+Tillbaka till [startsidan](index.md).
+

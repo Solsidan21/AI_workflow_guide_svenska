@@ -1,0 +1,19 @@
+# AI-workflowguiden
+
+> En persons upplägg för att arbeta med Claude (och ChatGPT) med en vanlig prenumeration. Inget facit.
+
+Hela guiden i en fil: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+
+- [Start](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/index.md)
+- [01 Från chatt till system](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md)
+- [02 Kontext och prompter](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext-och-prompter.md)
+- [03 Struktur som kontext](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md)
+- [04 Arkitekturen](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md)
+- [05 Individanpassad inlärning](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/05-individanpassad-inlarning.md)
+- [06 Hjärnan](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md)
+- [07 Att bygga vidare på](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/07-bygga-vidare.md)
+- [08 Modellerna](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/08-modellerna.md)
+- [09 Därför slår du i taket](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/09-anvandningsgransen.md)
+- [10 Vad en prenumeration räcker till](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/10-vad-en-prenumeration-racker-till.md)
+- [Bilaga: Arbetslivet](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/bilaga-arbetsliv.md)
+- [Ordlista](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/ordlista.md)

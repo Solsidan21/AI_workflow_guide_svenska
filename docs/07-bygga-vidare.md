@@ -2,6 +2,13 @@
 
 *Ett system som fungerar är sällan färdigt. Här går jag igenom var mitt eget system har glapp och vilka sätt det finns att utveckla det, plus några idéer som inte alls handlar om plugg.*
 
+!!! abstract "Kort version"
+    - Kapitlet är en idébank över var systemet har glapp och hur det kan utvecklas.
+    - Begrepp, misstag och repetition är de delar som oftast är minst strukturerade.
+    - Lärdomar kan föras tillbaka till gemensamma mallar och mappar, så att nästa kurs eller projekt börjar starkare.
+    - Det behöver finnas en tydlig gräns för vad som är offentligt och vad som är privat.
+    - Du väljer det som passar dig och låter resten ligga.
+
 Det som följer är inga löften om vad jag kommer att bygga. Det är en lista över möjligheter, hämtade från de ställen där jag själv märker friktion. Läs den som en idébank: välj det som passar ditt eget upplägg och låt resten ligga. Plugget är fortfarande exemplet. Varje punkt har en motsvarighet i ett jobb, en hobby eller en vardag med många bollar i luften, och jag pekar ut den där det är tydligt.
 
 ## Var friktionen sitter
@@ -122,4 +129,15 @@ Det här är samma byggstenar i andra miljöer, utan att något av det är beslu
 
 Gemensamt för alla fyra är att ingen av dem kräver mer än en vanlig prenumeration och en mapp. Börja med det som skaver mest i just din vardag, bygg det minsta som hjälper, och låt nästa steg komma ur det du märker.
 
-Nästa: [Kapitel 08: Vad en prenumeration räcker till](08-vad-en-prenumeration-racker-till.md)
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/07-bygga-vidare.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga var jag själv märker friktion i mitt arbetssätt just nu.
+    Hjälp mig sedan att välja en av idéerna i kapitlet och bygga den minsta versionen av den.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
+
+Nästa: [Kapitel 08: Modellerna](08-modellerna.md)

@@ -2,6 +2,12 @@
 
 *Du chattar redan med AI och får bra svar. Det här kapitlet visar stegen från en vanlig chatt till ett system som minns, följer dina regler och arbetar åt dig medan du gör annat.*
 
+!!! abstract "Kort version"
+    - Samma modell ger olika resultat beroende på vilka filer, regler och verktyg den får arbeta med.
+    - Trappan går från chatt via projekt och Claude-appen på datorn till Claude Code, och varje steg lägger till något nytt.
+    - Samma funktioner finns under olika namn hos Claude och ChatGPT, så upplägget går att flytta mellan dem.
+    - Du behöver inte ta alla steg, utan väljer det steg som löser ditt nuvarande problem.
+
 ---
 
 ## Samma modell, olika förutsättningar
@@ -110,5 +116,16 @@ Börja där ditt problem finns. Om du upprepar dig, skapa ett projekt. Om du vil
 Det viktigaste i kapitlet är att modellen inte blir smartare på vägen uppför trappan. Det som förändras är vad den har att jobba med: egna filer, egna regler, egna rutiner. Nästa kapitel handlar om hur du ger den det på bästa sätt.
 
 ---
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vad jag använder AI till idag och vad som skaver mest.
+    Hjälp mig sedan att välja vilket steg i trappan som passar mig och att ta det första konkreta steget i min egen vardag.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
 
 Nästa: [Kapitel 02: Kontext och prompter](02-kontext-och-prompter.md)

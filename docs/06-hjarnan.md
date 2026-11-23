@@ -2,6 +2,13 @@
 
 > *Ett centralt projekt som håller koll på helheten, så att jag slipper hålla allt i huvudet. Det här kapitlet visar hur det är uppbyggt och vilka regler som gör att jag kan lita på det.*
 
+!!! abstract "Kort version"
+    - Hjärnan är ett centralt projekt som överblickar helheten i vardagen, så att du slipper hålla allt i huvudet.
+    - Kärnan är en lista med fasta rubriker och en tydlig prioriteringsordning.
+    - Dokument från andra projekt läses men ändras aldrig härifrån.
+    - Ett morgonbrev och en eftermiddagskoll gör att viktiga saker kommer till dig.
+    - Regeln att aldrig hitta på gör att du kan lita på det som står i brevet.
+
 I kapitel 04 beskrev jag arkitekturen med ett projekt per område. Det ger ren kontext, men det lämnar en fråga öppen: vem ser helheten? Ett kursprojekt vet hur det går i sin kurs, men inte vad som är viktigast just nu när flera saker pockar på uppmärksamhet samtidigt.
 
 Det är den uppgiften jag har gett åt ett eget projekt som jag kallar Hjärnan. Namnet är en halv skämtsamhet, men beskrivningen stämmer: det är ett ställe som minns och överblickar, så att jag inte behöver göra det.
@@ -92,5 +99,16 @@ Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar fö
 5. Lägg till ett morgonbrev när du har något att sammanfatta. Börja enkelt, med en uppgift som bara läser, och ge den regeln om att aldrig hitta på från första dagen.
 
 Det går att göra i vilken ordning du vill, och det går att stanna efter första steget. Redan ett projekt med en lista och några tydliga regler ersätter mycket av det som annars bor i huvudet eller på lösa lappar.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilka områden som konkurrerar om min tid och vad jag oftast glömmer eller tappar bort.
+    Hjälp mig sedan att skapa en första lista med rubriker och några regler för hur den ska skötas.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
 
 Nästa: [Kapitel 07: Att bygga vidare på](07-bygga-vidare.md)

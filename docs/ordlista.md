@@ -20,6 +20,10 @@
 
 --8<-- "prompt.md"
 
+### Benchmark { #benchmark }
+
+--8<-- "benchmark.md"
+
 ### Modell { #modell }
 
 --8<-- "modell.md"

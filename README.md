@@ -23,7 +23,9 @@ Jag använder mina egna universitetskurser som konkret exempel, framför allt Fl
 
 **Del 3: Helheten**
 
-8. [Vad en prenumeration räcker till](docs/08-vad-en-prenumeration-racker-till.md): vad du redan betalar för och när en färdig tjänst är värd pengarna
+8. [Modellerna](docs/08-modellerna.md): Haiku, Sonnet, Opus och Fable, benchmarks och produkt mot modell
+9. [Därför slår du i taket](docs/09-anvandningsgransen.md): användningsgränsen och hur du får mer för mindre
+10. [Vad en prenumeration räcker till](docs/10-vad-en-prenumeration-racker-till.md): vad du redan betalar för och när en färdig tjänst är värd pengarna
 - [Bilaga: Samma upplägg i arbetslivet](docs/bilaga-arbetsliv.md)
 - [Ordlista](docs/ordlista.md)
 

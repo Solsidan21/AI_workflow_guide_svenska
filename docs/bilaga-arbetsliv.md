@@ -2,6 +2,13 @@
 
 *Guidens exempel är en kurs, men upplägget är inte bundet till plugg. Här visas det i en fiktiv investeringsfirma, och sedan pekar jag på färdiga mallar för tre branscher.*
 
+!!! abstract "Kort version"
+    - Samma upplägg som i kapitlen går att flytta från en kurs till ett jobb.
+    - Exemplet är en påhittad investeringsfirma, och strukturen kan anpassas till andra branscher.
+    - Mappar speglar verksamheten, regelfiler finns på tre nivåer och skills tar hand om det som återkommer.
+    - Det stabila delas i teamet, medan det personliga hålls privat.
+    - Färdiga mallar finns i repot och är utgångspunkter, inte facit.
+
 Allt i guiden går att flytta från en kurs till ett jobb. Mapparna, regelfilerna, skillsen och delningen mellan det stabila och det föränderliga ser likadana ut. Det som byts ut är innehållet. Som exempel använder jag Norvik Capital, en påhittad private equity-firma med sex anställda. Firman finns inte på riktigt, men strukturen är byggd för att vara realistisk och går att anpassa.
 
 ## Norvik Capital i korthet
@@ -84,3 +91,14 @@ Det finns färdiga filer att utgå från i mappen [`templates/`](https://github.
 Mallarna är utgångspunkter, inte färdiga sanningar. Byt ut siffrorna, ersätt de påhittade bolagen med dina egna uppgifter och ta bort det som inte passar. Ett bra första steg är att be Claude intervjua dig om hur din arbetsvecka ser ut och sedan föreslå vilken struktur som passar.
 
 Om du är på väg in i ett nytt jobb går samma tänk att använda för att lära sig det. Bygg en begreppsmapp för branschens ord, en regelfil som beskriver hur din chef vill ha saker levererade, och en enkel logg över vad som gick fel. Det är kapitel 05 och 07 i ett annat sammanhang.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/bilaga-arbetsliv.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vad jag jobbar med, hur min arbetsvecka ser ut och vilka uppgifter som återkommer.
+    Hjälp mig sedan att föreslå en mappstruktur och en första regelfil för mitt jobb.
+    Ställ en fråga i taget innan du föreslår något.
+    ```

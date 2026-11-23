@@ -2,6 +2,13 @@
 
 > *Några mappar, några projekt och ett par dokument räcker långt, så länge det är tydligt vem som skriver vad och var saker bor. Här visar jag hur delarna hänger ihop i min egen setup.*
 
+!!! abstract "Kort version"
+    - Upplägget består av fem lager, från sådant som sällan ändras till sådant som ändras varje dag.
+    - Ett projekt per område ger ren kontext, och Drive eller liknande fungerar som delat skikt.
+    - Varje dokument har en enda skrivare men många läsare, vilket förhindrar dubbletter och inaktuell information.
+    - Det stabila och delade hålls isär från det föränderliga och privata.
+    - Du bygger lagren i den takt behovet uppstår, och inget av dem måste göras om i efterhand.
+
 Hittills har guiden handlat om enskilda delar: hur du skriver prompter, hur du ordnar material i mappar och hur CLAUDE.md styr arbetet. Det här kapitlet handlar om helheten. När du har fler än ett område, till exempel flera kurser samtidigt, behöver delarna ett gemensamt upplägg. Annars börjar information ligga på fel ställen, bli inaktuell eller dupliceras.
 
 Jag använder mina kurser som exempel eftersom det är där jag byggt mest. Upplägget är inte bundet till plugg. Mot slutet av kapitlet visar jag hur exakt samma arkitektur ser ut i ett jobb.
@@ -139,5 +146,16 @@ Inget i det här är specifikt för kurser. Byt ut orden så ser det ut så här
 Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt och privat blir status, anteckningar och bedömningar. Principen om en skrivare per dokument gäller oförändrad: den som äger kundrelationen skriver statusdokumentet, andra läser. Samma upplägg fungerar för en hobby med flera delprojekt, för ett föreningsuppdrag eller för ett litet företag.
 
 Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till ett statusdokument när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.
+
+!!! tip "Gör det med din Claude"
+    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+
+    ```text
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md
+    Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Fråga vilka områden jag har parallellt och var information hamnar fel eller blir inaktuell.
+    Hjälp mig sedan att rita upp vilka lager jag behöver nu och vilket som är det första jag ska skapa.
+    Ställ en fråga i taget innan du föreslår något.
+    ```
 
 Nästa: [Kapitel 05: Individanpassad inlärning](05-individanpassad-inlarning.md)

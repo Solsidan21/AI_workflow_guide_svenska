@@ -68,6 +68,8 @@ nav:
       - "06 Hjärnan": 06-hjarnan.md
       - "07 Att bygga vidare på": 07-bygga-vidare.md
   - "Del 3: Helheten":
-      - "08 Vad en prenumeration räcker till": 08-vad-en-prenumeration-racker-till.md
+      - "08 Modellerna": 08-modellerna.md
+      - "09 Därför slår du i taket": 09-anvandningsgransen.md
+      - "10 Vad en prenumeration räcker till": 10-vad-en-prenumeration-racker-till.md
       - "Bilaga: Arbetslivet": bilaga-arbetsliv.md
   - Ordlista: ordlista.md
