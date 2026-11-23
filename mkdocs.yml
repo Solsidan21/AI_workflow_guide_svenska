@@ -3,9 +3,13 @@ site_url: https://solsidan21.github.io/AI_workflow_guide_svenska/
 site_description: Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel
 repo_url: https://github.com/Solsidan21/AI_workflow_guide_svenska
 repo_name: Solsidan21/AI_workflow_guide_svenska
+copyright: >-
+  <a href="#__consent">Ändra cookie-inställningar</a> ·
+  <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>
 
 theme:
   name: material
+  custom_dir: overrides
   language: sv
   palette:
     - scheme: default
@@ -30,6 +34,10 @@ theme:
 
 extra_css:
   - stylesheets/begrepp.css
+  - stylesheets/consent.css
+
+not_in_nav: |
+  /integritet.md
 
 plugins:
   - search:
@@ -55,6 +63,25 @@ extra:
   analytics:
     provider: google
     property: G-YDFX3B82KF
+  consent:
+    title: Cookies
+    description: >-
+      Jag vill gärna se hur guiden används och hur läsare hittar hit.
+      Får jag använda Google Analytics för det? Det sätter cookies och
+      skickar uppgifter om ditt besök till Google. Avvisar du laddas
+      ingenting. Läs mer på sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.
+    actions:
+      - accept
+      - reject
+    cookies:
+      analytics:
+        name: Google Analytics
+        checked: true
+      github:
+        name: GitHub
+        checked: true
+  # Fyll i koden från Search Console (bara värdet i content="..."):
+  google_site_verification: ""
 
 nav:
   - Start: index.md

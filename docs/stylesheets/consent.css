@@ -1,0 +1,6 @@
+/* Avvisa ska vara lika lätt att välja som Acceptera. */
+.md-consent__controls .md-button {
+  color: var(--md-primary-bg-color);
+  background-color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+}

@@ -1,0 +1,56 @@
+name: Spara GitHub-trafik
+
+# GitHub sparar trafikstatistik i bara 14 dagar. Det här jobbet hämtar den
+# en gång per dag och lägger den i grenen traffic-data.
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: traffic
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hämta grenen traffic-data (eller skapa den)
+        run: |
+          if git ls-remote --exit-code --heads origin traffic-data; then
+            git fetch origin traffic-data
+            git worktree add data origin/traffic-data
+            git -C data checkout -B traffic-data
+          else
+            git worktree add --orphan -b traffic-data data
+          fi
+
+      - name: Hämta trafik från GitHub API
+        env:
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+          REPO: ${{ github.repository }}
+          OUT_DIR: data
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Secret TRAFFIC_TOKEN saknas. Se instruktionerna i scripts/github_traffic.py."
+            exit 1
+          fi
+          python3 scripts/github_traffic.py
+
+      - name: Commita och pusha
+        working-directory: data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Inga ändringar."
+          else
+            git commit -m "Trafik $(date -u +%F)"
+            git push origin traffic-data
+          fi
