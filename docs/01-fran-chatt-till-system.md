@@ -5,6 +5,7 @@
 !!! abstract "Kort version"
     - Samma modell ger olika resultat beroende på vilka filer, regler och verktyg den får arbeta med.
     - Trappan går från chatt via projekt och Claude-appen på datorn till Claude Code, och varje steg lägger till något nytt.
+    - Rollerna är olika: chatten för svar och diskussion, Claude Code för att bygga och ändra saker i en mapp. Hos mig är chatten där jag är mest, och Claude Code används för att utveckla systemet, inte för att plugga.
     - Samma funktioner finns under olika namn hos Claude och ChatGPT, så upplägget går att flytta mellan dem.
     - Du behöver inte ta alla steg, utan väljer det steg som löser ditt nuvarande problem.
 
@@ -34,7 +35,7 @@ Verktygen kan ses som fyra steg. Varje steg löser en begränsning i det förra.
 
 ### Steg 1: Chatten
 
-Du skriver, du får svar. Kontexten är konversationen och de filer du laddat upp, och den finns bara i just det samtalet. Det räcker för en snabb fråga eller ett bollplank. Claude och ChatGPT har dessutom ett minne som sparar saker mellan samtal, vilket kapitel 02 går igenom, men det är en sammanfattning som modellen själv väljer, inte något du styr fullt ut.
+Du skriver, du får svar. Kontexten är konversationen och de filer du laddat upp, och den finns bara i just det samtalet. Det räcker för en snabb fråga eller ett bollplank. Det är här jag är mest av tiden, till exempel när jag pluggar: jag ber om en förklaring, ställer följdfrågor och bollar fram och tillbaka tills jag förstår, helst inne i ett projekt (nästa steg). Claude och ChatGPT har dessutom ett minne som sparar saker mellan samtal, vilket kapitel 02 går igenom, men det är en sammanfattning som modellen själv väljer, inte något du styr fullt ut.
 
 ### Steg 2: Projekt
 
@@ -53,6 +54,8 @@ Projekt är ett bra mellansteg när du har ett avgränsat uppdrag och vill slipp
 
 Claude finns som app för datorn, och där får du något som webbläsaren inte ger. Du kan koppla lokala mappar, och Claude kan då läsa och skriva filer i just de mapparna och inga andra. Du kan ge ett längre uppdrag och låta Claude arbeta medan du är borta. Du kan också skapa schemalagda uppgifter, som körs i molnet utan att din dator är påslagen. Funktionerna kräver en betalplan.
 
+Den här delen av appen hette tidigare Cowork. Anthropic släppte Cowork som förhandsversion i januari 2026, och enligt min bedömning var tanken att ge den som inte vill använda en terminal det som Claude Code kan. Sedan september 2026 är Cowork inte längre en separat produkt utan en del av Claude-appen. Resonemanget om tröskeln står i [kapitel 09](09-troskeln.md).
+
 ??? begrepp "Begrepp: Schemalagd uppgift"
     --8<-- "schemalagd-uppgift.md"
 
@@ -66,7 +69,7 @@ ChatGPT har motsvarigheter: ett agentläge som kan utföra uppgifter åt dig, oc
 
 ### Steg 4: Claude Code
 
-Claude Code är samma slags assistent, men du styr den med text och den arbetar direkt i en mapp på din dator. Den kan läsa hela mappstrukturen, skapa och redigera filer, köra skript och följa regler som du skrivit ned i en fil.
+Claude Code är det mest kraftfulla steget. Du ger Claude tillgång till en mapp på din dator, styr den med text, och den kan skapa, ändra och köra saker direkt i mappen. I min egen setup använder jag den för att utveckla systemet: bygga repon, skript och regler. Jag pluggar inte i den, det gör jag i chatten. Den kan läsa hela mappstrukturen, skapa och redigera filer, köra skript och följa regler som du skrivit ned i en fil.
 
 ??? begrepp "Begrepp: Claude Code"
     --8<-- "claude-code.md"

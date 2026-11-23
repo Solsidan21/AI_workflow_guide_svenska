@@ -1,4 +1,4 @@
-# Kapitel 09 — Därför slår du i taket
+# Kapitel 10 — Därför slår du i taket
 
 *Många når användningsgränsen utan att bygga något alls, bara genom att plugga eller jobba. Det beror oftast på några få vanor som går att ändra.*
 
@@ -107,11 +107,11 @@ Ett sista råd är att inte jaga det perfekta upplägget. Börja med att byta ch
     Klistra in det här i en ny konversation i Claude eller ChatGPT:
 
     ```text
-    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/09-anvandningsgransen.md
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/10-anvandningsgransen.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
     Fråga hur jag brukar arbeta när jag når användningsgränsen och vilka filer och chattar som är längst.
     Hjälp mig sedan att ta ett konkret första steg för att dra ned förbrukningen.
     Ställ en fråga i taget innan du föreslår något.
     ```
 
-Nästa: [Kapitel 10: Vad en prenumeration räcker till](10-vad-en-prenumeration-racker-till.md)
+Nästa: [Kapitel 11: Vad en prenumeration räcker till](11-vad-en-prenumeration-racker-till.md)

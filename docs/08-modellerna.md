@@ -11,7 +11,7 @@
 
 ---
 
-I de här kapitlen har jag mest skrivit "Claude" som om det vore en sak. I själva verket är det en familj av modeller, och valet mellan dem påverkar både kvalitet, hastighet och hur snabbt du når användningsgränsen som kapitel 09 handlar om. Det här kapitlet går igenom trappan och ger mig anledning att säga något om hur mycket modellvalet egentligen spelar roll.
+I de här kapitlen har jag mest skrivit "Claude" som om det vore en sak. I själva verket är det en familj av modeller, och valet mellan dem påverkar både kvalitet, hastighet och hur snabbt du når användningsgränsen som kapitel 10 handlar om. Det här kapitlet går igenom trappan och ger mig anledning att säga något om hur mycket modellvalet egentligen spelar roll.
 
 ## Vad en modell är
 
@@ -99,4 +99,4 @@ Det jag landar i är att frågan "vilken modell är bäst?" är mindre användba
     Ställ en fråga i taget innan du föreslår något.
     ```
 
-Nästa: [Kapitel 09: Därför slår du i taket](09-anvandningsgransen.md)
+Nästa: [Kapitel 09: Tröskeln, inte förmågan](09-troskeln.md)

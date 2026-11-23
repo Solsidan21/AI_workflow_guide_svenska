@@ -53,7 +53,7 @@ Samma innehåll som Markdown, ett enkelt textformat med rubriker, listor och tab
 
     [Se alla begrepp i ordlistan](ordlista.md#markdown)
 
-Lösningen är inte att sluta använda PDF. Jag bearbetar dem till Markdown en gång, arbetar mot den versionen och sparar originalet som källa. Hur det går till beskrivs i kapitel 03, och vad det betyder för kostnaden finns i kapitel 09.
+Lösningen är inte att sluta använda PDF. Jag bearbetar dem till Markdown en gång, arbetar mot den versionen och sparar originalet som källa. Hur det går till beskrivs i kapitel 03, och vad det betyder för kostnaden finns i kapitel 10.
 
 ## Kort fråga, rätt svar
 
@@ -106,7 +106,7 @@ Kommer jag med samma korrigering för tredje gången svarar Claude med ett förs
 
 Ibland skriver jag fortfarande en lång text. Skillnaden är att den då inte är en engångsprompt. Jag skriver långt när jag formulerar en regel som ska ligga kvar, till exempel hur förklaringar ska byggas upp eller vad Claude aldrig ska gissa. En sådan text lönar sig eftersom den används varje gång.
 
-Claude skriver dessutom ofta bättre prompter till sig själv än jag gör. Behöver en uppgift en detaljerad instruktion kan jag därför be Claude formulera den. Hur det går till beskrivs i kapitel 09.
+Claude skriver dessutom ofta bättre prompter till sig själv än jag gör. Behöver en uppgift en detaljerad instruktion kan jag därför be Claude formulera den. Hur det går till beskrivs i kapitel 10.
 
 ## Minne: vad Claude kommer ihåg mellan samtal
 

@@ -1,4 +1,4 @@
-# Kapitel 10 — Vad en prenumeration räcker till
+# Kapitel 11 — Vad en prenumeration räcker till
 
 *Du betalar redan för en av de bästa modellerna som finns. Det här kapitlet handlar om hur långt den räcker när du bygger ditt eget system, och när det ändå kan vara värt att betala för något mer.*
 
@@ -60,7 +60,7 @@ Det avgörande är alltså vad du gör med prenumerationen. Du har redan samma m
     Klistra in det här i en ny konversation i Claude eller ChatGPT:
 
     ```text
-    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/10-vad-en-prenumeration-racker-till.md
+    Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/11-vad-en-prenumeration-racker-till.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
     Fråga vilken plan jag har idag, vad jag vill använda den till och vad jag tycker saknas.
     Hjälp mig sedan att bedöma om min nuvarande plan räcker och vad jag kan bygga först utan att betala för mer.

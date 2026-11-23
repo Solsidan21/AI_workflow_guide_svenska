@@ -35,8 +35,9 @@ Sedan kan du slå upp det du undrar över här på sajten.
 | Kan Claude hålla koll på helheten och skicka en plan varje morgon? | [06 Hjärnan](06-hjarnan.md) |
 | Vad kan jag bygga till när grunden fungerar? | [07 Att bygga vidare på](07-bygga-vidare.md) |
 | Vilken modell ska jag använda, och spelar benchmarks någon roll? | [08 Modellerna](08-modellerna.md) |
-| Varför slår jag i användningsgränsen hela tiden? | [09 Därför slår du i taket](09-anvandningsgransen.md) |
-| Behöver jag betala för fler AI-tjänster? | [10 Vad en prenumeration räcker till](10-vad-en-prenumeration-racker-till.md) |
+| Varför känns det som att AI plötsligt kan så mycket mer? | [09 Tröskeln, inte förmågan](09-troskeln.md) |
+| Varför slår jag i användningsgränsen hela tiden? | [10 Därför slår du i taket](10-anvandningsgransen.md) |
+| Behöver jag betala för fler AI-tjänster? | [11 Vad en prenumeration räcker till](11-vad-en-prenumeration-racker-till.md) |
 | Hur ser det här ut på ett jobb? | [Bilaga: Arbetslivet](bilaga-arbetsliv.md) |
 | Vad betyder ett ord? | [Ordlista](ordlista.md) |
 
