@@ -1487,8 +1487,8 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 
 !!! abstract "Kort version"
     - Min tes: runt 2024 och 2025 blev modellerna och kodningsverktygen så bra att de kunde användas i utvecklingen av sig själva. Det förklarar delvis det höga tempot efter att Claude Code kom.
-    - Därför kan Anthropic det senaste året lägga mer kraft på produkter som sänker den tekniska tröskeln. Cowork är det tydligaste exemplet.
-    - Tesen är min tolkning. Anthropic skriver inte själva att syftet var att sänka en tröskel, och bolaget investerar fortfarande enormt i beräkningskraft och modellträning. Det försvarbara är att AI-stödd utveckling gör att de hinner bygga mer produkt.
+    - AI-stödd utveckling gör att Anthropic hinner bygga mycket mer produkt. Förutsättningarna för produkterna fanns redan i en vanlig prenumeration, så effekten blir att fler kommer åt det som redan gick att göra. Cowork är det tydligaste exemplet.
+    - Tesen är min tolkning och en medveten förenkling. Anthropic skriver inte själva att syftet var att sänka en tröskel.
     - Modellerna har också blivit klart bättre. Förmågeöverhäng är glappet mellan vad en modell kan och vad folk använder den till.
     - Steget upp i trappan ger dig förmågor som redan finns.
 
@@ -1496,11 +1496,12 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 
 ## Min tes
 
-Resten av guiden beskriver hur jag arbetar. Här gör jag en bedömning av utvecklingen, och den ska du ta med en nypa salt. Jag är student, inte forskare, och jag har ingen insyn i hur Anthropic resonerar. Tesen har tre steg.
+Resten av guiden beskriver hur jag arbetar. Här gör jag en bedömning av utvecklingen, och den ska du ta med en nypa salt. Jag är student, inte forskare, och jag har ingen insyn i hur Anthropic resonerar. Tesen har fyra steg, och den är en medveten förenkling av något mer komplext.
 
 1. Någon gång runt 2024 och 2025 blev språkmodellerna och kodningsverktygen så bra att de kunde användas i utvecklingen av sig själva och nästa modell. Jag bedömer att det gäller Anthropic och på motsvarande sätt OpenAI.
 2. Jag tror att det är en förklaring till att takten ökade kraftigt efter att Claude Code kom. Det kändes som en ny modell eller funktion varje vecka.
-3. Eftersom modellerna nu är så bra, och utvecklingen går fortare med AI-stöd, bedömer jag att Anthropic det senaste året har kunnat lägga mer kraft på produkter som sänker den tekniska tröskeln och hjälper användarna att få ut mer av sin prenumeration.
+3. AI-stödd utveckling gör att de hinner bygga mycket mer produkt.
+4. Förutsättningarna för de nya produkterna fanns redan i en vanlig prenumeration. Produkterna fanns inte, men allt som behövdes för att bygga motsvarande själv fanns. Syftet med en produkt är förstås bara att ge något som folk tycker är användbart, inte uttryckligen att sänka en tröskel. Men i praktiken blir effekten att fler kommer åt det som redan gick att göra.
 
 Den tekniska tröskeln stoppade de flesta från att använda Claude Code. Du behövde ge Claude tillgång till rätt mappar, skapa en egen MCP-koppling till en tjänst som saknade färdig connector, och ha koll på terminal, filer och installationer. Modellen saknade sällan förmåga. Det som hindrade var vägen dit.
 
@@ -1531,7 +1532,7 @@ Den tekniska tröskeln stoppade de flesta från att använda Claude Code. Du beh
 
     [Se alla begrepp i ordlistan](ordlista.md#connector)
 
-Steg 1 och 2 har visst stöd i Anthropics egna uppgifter. Steg 3 är det svagaste.
+Steg 1 och 2 har visst stöd i Anthropics egna uppgifter. Steg 3 och 4 är mer av min egen slutsats.
 
 ## Vad som har kommit
 
@@ -1564,9 +1565,11 @@ Stämmer det att takten har ökat? [Fast Company](https://fastcompany.com/916111
 
 ## Vad Anthropic själva säger
 
-Det som stöder steg 3 är för det första namnet. När Cowork släpptes hette inlägget [Cowork: Claude Code for the rest of your work](https://claude.com/blog/cowork-research-preview). Anthropic skriver där att Cowork är byggt för kunskapsarbete som inte är kodning, och att det använder samma agentiska arbetssätt som Claude Code. [TechCrunch](https://www.techcrunch.com/2026/01/12/anthropics-new-cowork-tool-offers-claude-code-without-the-code/) skrev att verktyget delvis var inspirerat av att allt fler prenumeranter redan använde Claude Code till annat än kod, och att det inte kräver kommandorad.
+Det som stöder steg 4 är för det första namnet. När Cowork släpptes hette inlägget [Cowork: Claude Code for the rest of your work](https://claude.com/blog/cowork-research-preview). Anthropic skriver där att Cowork är byggt för kunskapsarbete som inte är kodning, och att det använder samma agentiska arbetssätt som Claude Code. [TechCrunch](https://www.techcrunch.com/2026/01/12/anthropics-new-cowork-tool-offers-claude-code-without-the-code/) skrev att verktyget delvis var inspirerat av att allt fler prenumeranter redan använde Claude Code till annat än kod, och att det inte kräver kommandorad.
 
 Nu kommer saltkornet. Det sista är reporterns beskrivning, inte ett citat. Så vitt jag kan se skriver Anthropic ingenstans att syftet var att sänka en teknisk tröskel, och ingenstans att AI-stödd utveckling var anledningen till att de prioriterade produkter. De beskriver en målgrupp och en produkt för den. Att det fungerar som en lägre tröskel är min slutsats av tidslinjen och rubriken.
+
+Jag antar också att det Anthropic släpper har hög korrelation med hur användarna använder Claude och vad de bygger, och med hur Anthropic själva använder Claude internt. De ser vad som fungerar och gör en bättre, färdig mall av det. Det är mitt antagande och inget Anthropic har sagt. Skills är ett exempel. Anthropic skriver att de [använder skills i Claude Code i stor utsträckning internt](https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills), med hundratals i aktiv användning. I [lanseringsinlägget](https://claude.com/blog/skills) står att Claude använder skills för att skapa filer som kalkylblad och presentationer. Att just skills för dokumentformat redan låg bakom filskapandet kunde jag inte belägga, så den delen är också mitt antagande.
 
 ## Modellerna har också blivit bättre
 
@@ -1584,10 +1587,6 @@ Enligt METR:s [uppdaterade mätning](https://metr.org/blog/2026-01-29-time-horiz
     **Varför det spelar roll här:** Små skillnader i toppen märks sällan i vardagsbruk, och leverantörerna väljer själva vilka siffror de visar.
 
     [Se alla begrepp i ordlistan](ordlista.md#benchmark)
-
-Här behövs också en motvikt till steg 3. Jag skrev att Anthropic har kunnat lägga mer kraft på produkter, och det får inte läsas som att bolaget lägger mindre på själva modellen. Det går inte att belägga, och mycket pekar åt andra hållet. I april 2026 [meddelade Anthropic](https://anthropic.com/news/google-broadcom-partnership-compute) sitt hittills största åtagande om beräkningskraft, flera gigawatt TPU-kapacitet från Google och Broadcom som beräknas tas i drift från 2027. Bolaget uppger att den löpande intäkten då passerat 30 miljarder dollar. I inlägget om självbyggande AI skriver Anthropic också att fronten kan kräva mer energi och beräkningskraft än vad som finns i dag.
-
-Det försvarbara är en snävare version: AI-stödd utveckling kräver färre människotimmar per funktion, så det hinns med mer produkt vid sidan av modellarbetet. Det är en tolkning, inte ett påstående om att modellträningen fått mindre resurser.
 
 Min tes är alltså för enkel i sin starkaste form. Om modellerna vore oförändrade skulle tröskeln förklara allt, men särskilt för långa, självständiga uppgifter är de märkbart bättre än när Claude Code lanserades. Båda förklaringarna gäller: modellerna har blivit bättre, och produkterna har gjort förmågan lättare att nå.
 
