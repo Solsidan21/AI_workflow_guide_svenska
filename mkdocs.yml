@@ -1,6 +1,6 @@
-site_name: "AI Workflow Guide — Från chatt till system"
+site_name: "AI-workflowguiden: ditt eget skal runt modellen"
 site_url: https://solsidan21.github.io/AI_workflow_guide_svenska/
-site_description: En guide för dig som redan använder AI men vill förstå hur du ger den rätt förutsättningar
+site_description: Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel
 repo_url: https://github.com/Solsidan21/AI_workflow_guide_svenska
 repo_name: Solsidan21/AI_workflow_guide_svenska
 
@@ -28,12 +28,19 @@ theme:
     - content.code.copy
     - toc.follow
 
+extra_css:
+  - stylesheets/begrepp.css
+
 plugins:
   - search:
       lang: sv
 
 markdown_extensions:
   - tables
+  - attr_list
+  - pymdownx.snippets:
+      base_path: [begrepp]
+      check_paths: true
   - admonition
   - pymdownx.details
   - pymdownx.highlight:
@@ -51,12 +58,16 @@ extra:
 
 nav:
   - Start: index.md
-  - Del 1 — Förstå landskapet:
-      - 01 — AI-verktygslandskapet: 01-verktygslandskapet.md
-      - 02 — Promptteknik och kontext: 02-promptteknik-och-kontext.md
-      - 03 — Mappstruktur och arbetssätt: 03-mappstruktur-och-arbetssatt.md
-      - 04 — Strukturerad kontext: 04-strukturerad-kontext.md
-  - Del 2 — Praktiska exempel:
-      - "05 — Exempel: Studier": 05-exempel-studier.md
-      - "06 — Exempel: Private Equity": 06-exempel-private-equity.md
+  - "Del 1: Grunden":
+      - "01 Från chatt till system": 01-fran-chatt-till-system.md
+      - "02 Kontext och prompter": 02-kontext-och-prompter.md
+      - "03 Struktur som kontext": 03-struktur.md
+  - "Del 2: Mitt system":
+      - "04 Arkitekturen": 04-arkitekturen.md
+      - "05 Individanpassad inlärning": 05-individanpassad-inlarning.md
+      - "06 Hjärnan": 06-hjarnan.md
+      - "07 Att bygga vidare på": 07-bygga-vidare.md
+  - "Del 3: Modellen och skalet":
+      - "08 Modellen och skalet": 08-modellen-och-skalet.md
+      - "Bilaga: Arbetslivet": bilaga-arbetsliv.md
   - Ordlista: ordlista.md

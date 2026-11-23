@@ -1,0 +1,4 @@
+:root{--md-admonition-icon--begrepp:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>')}
+.md-typeset .admonition.begrepp,.md-typeset details.begrepp{border-color:#00897b;font-size:.7rem}
+.md-typeset .begrepp>.admonition-title,.md-typeset .begrepp>summary{background-color:rgba(0,137,123,.1)}
+.md-typeset .begrepp>.admonition-title::before,.md-typeset .begrepp>summary::before{background-color:#00897b;-webkit-mask-image:var(--md-admonition-icon--begrepp);mask-image:var(--md-admonition-icon--begrepp)}
