@@ -7,6 +7,7 @@
     - Ett projekt per område ger ren kontext, och Drive eller liknande fungerar som delat skikt.
     - Varje dokument har en enda skrivare men många läsare, vilket förhindrar dubbletter och inaktuell information.
     - Det stabila och delade hålls isär från det föränderliga och privata.
+    - Regler hör hemma i projektinstruktioner, stabilt material i projektkunskap, det som ändras ofta i Drive och stora mängder rådata lokalt.
     - Du bygger lagren i den takt behovet uppstår, och inget av dem måste göras om i efterhand.
 
 Hittills har guiden handlat om enskilda delar: hur du skriver prompter, hur du ordnar material i mappar och hur CLAUDE.md styr arbetet. Det här kapitlet handlar om helheten. När du har fler än ett område, till exempel flera kurser samtidigt, behöver delarna ett gemensamt upplägg. Annars börjar information ligga på fel ställen, bli inaktuell eller dupliceras.
@@ -130,6 +131,32 @@ En praktisk konsekvens är att gränsen mellan offentligt och privat följer lag
 
     [Se alla begrepp i ordlistan](ordlista.md#claude-md)
 
+## Lokalt, i Drive eller i Claudes moln
+
+Den vanligaste frågan när man bygger sitt första upplägg är var saker ska ligga. Det finns tre platser, och de är bra på olika saker.
+
+**Claudes moln** är allt som ligger i ditt Claude-konto. Det består av fyra delar som ofta blandas ihop:
+
+- *Projektinstruktioner* är reglerna för hur Claude ska arbeta i projektet. De läses i början av varje chatt i projektet, så det som måste gälla varje gång hör hemma här.
+- *Projektkunskap* är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.
+- *Minne* är det Claude själv väljer att spara om dig mellan chattar. Det är bra för bestående fakta men går inte att styra exakt, vilket [kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom.
+- *Chatthistorik och artifacts* är samtalen och de dokument eller sidor Claude har gjort, som du kan gå tillbaka till.
+
+**Google Drive** (eller OneDrive, Notion och liknande, via en connector) är platsen för det som ändras ofta och som flera ska kunna läsa: att göra-listan, statusdokumenten, sådant du skriver tillsammans med andra. Det är också det enda av de tre som mina schemalagda uppgifter når, eftersom de körs i molnet utan att min dator är på.
+
+**Lokalt på datorn** kräver Claude-appen med kopplade mappar eller Claude Code. Här ligger det som är stort, det som ska bearbetas med verktyg och det som ska versionshanteras: mina kursrepon med fulltext och skript, regelfiler som CLAUDE.md och material som jag gör om från PDF till Markdown.
+
+| Vad det är | Var det hör hemma |
+|---|---|
+| Regler för hur Claude ska arbeta i ett område | Projektinstruktioner |
+| Stabilt material som ska läsas, till exempel en kursplan | Projektkunskap |
+| Fakta om dig som är bra att Claude minns | Minne |
+| Det som ändras varje dag, till exempel listor och status | Drive |
+| Det du delar med andra människor | Drive, i en delad mapp |
+| Stora mängder rådata, skript och sådant som versionshanteras | Lokalt, och vid behov GitHub |
+
+Du behöver inte alla tre från början. Med bara projekt och Drive kommer man långt, och det fungerar på alla enheter. Den lokala delen blir intressant först när du vill att Claude ska arbeta med många filer på en gång eller bygga saker åt dig. Setup-sessionen på sidan [Kom igång](kom-igang.md) går igenom fördelningen utifrån vad du har.
+
 ## Samma arkitektur i ett jobb
 
 Inget i det här är specifikt för kurser. Byt ut orden så ser det ut så här.
@@ -148,11 +175,12 @@ Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt
 Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till ett statusdokument när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga vilka områden jag har parallellt och var information hamnar fel eller blir inaktuell.
     Hjälp mig sedan att rita upp vilka lager jag behöver nu och vilket som är det första jag ska skapa.
     Ställ en fråga i taget innan du föreslår något.

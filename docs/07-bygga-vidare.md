@@ -130,11 +130,12 @@ Det här är samma byggstenar i andra miljöer, utan att något av det är beslu
 Gemensamt för alla fyra är att ingen av dem kräver mer än en vanlig prenumeration och en mapp. Börja med det som skaver mest i just din vardag, bygg det minsta som hjälper, och låt nästa steg komma ur det du märker.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/07-bygga-vidare.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga var jag själv märker friktion i mitt arbetssätt just nu.
     Hjälp mig sedan att välja en av idéerna i kapitlet och bygga den minsta versionen av den.
     Ställ en fråga i taget innan du föreslår något.

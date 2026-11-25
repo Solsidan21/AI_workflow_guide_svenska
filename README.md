@@ -6,6 +6,19 @@ Samma AI-modeller finns tillgängliga för alla. Det som avgör nyttan är vad m
 
 Jag använder mina egna universitetskurser som konkret exempel, framför allt Flervariabelanalys ([kursrepot finns här](https://github.com/Solsidan21/Flervariabelanalys_ht26)). Plugget är exemplet, inte ämnet. Samma upplägg fungerar i ett jobb, en hobby eller i vardagen.
 
+## Kom igång
+
+Klistra in det här i en helt ny chatt i Claude (eller ChatGPT), utanför alla projekt:
+
+```text
+Det här är en setup-session. Läs och följ instruktionerna här:
+https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md
+
+Använd den här chatten bara till att sätta upp mitt arbetssätt, inte till att jobba med mina uppgifter.
+```
+
+Din Claude frågar hur du arbetar i dag, föreslår ett upplägg, guidar dig genom att skapa ett projekt som blir din "hjärna" och flyttar sedan in chatten dit. Instruktionen den följer finns i [`setup/setup-session.md`](setup/setup-session.md). Läs mer på sidan [Kom igång](docs/kom-igang.md).
+
 ## Innehåll
 
 **Del 1: Grunden**
@@ -36,4 +49,4 @@ I [`templates/`](templates/) finns färdiga mallar med CLAUDE.md och skills för
 
 ## Teknik
 
-Sajten byggs med MkDocs Material och publiceras automatiskt när main uppdateras. Begreppsförklaringarna skrivs en gång i `begrepp/` och visas både som hopfällbara rutor i kapitlen och i ordlistan.
+Sajten byggs med MkDocs Material och publiceras automatiskt när main uppdateras. Begreppsförklaringarna skrivs en gång i `begrepp/` och visas både som hopfällbara rutor i kapitlen och i ordlistan. Setup-instruktionen skrivs en gång i `setup/` och visas även i en hopfälld ruta på sidan Kom igång.

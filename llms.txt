@@ -4,7 +4,10 @@
 
 Hela guiden i en fil: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
 
+Instruktion för en setup-session, där en AI hjälper läsaren att sätta upp sitt upplägg: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md
+
 - [Start](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/index.md)
+- [Kom igång](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/kom-igang.md)
 - [01 Från chatt till system](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md)
 - [02 Kontext i stället för långa prompter](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext.md)
 - [03 Struktur som kontext](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md)

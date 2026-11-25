@@ -104,11 +104,12 @@ Ett sista råd är att inte jaga det perfekta upplägget. Börja med att byta ch
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/10-anvandningsgransen.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga hur jag brukar arbeta när jag når användningsgränsen och vilka filer och chattar som är längst.
     Hjälp mig sedan att ta ett konkret första steg för att dra ned förbrukningen.
     Ställ en fråga i taget innan du föreslår något.

@@ -33,6 +33,10 @@ def pages(nav):
 def expand(text):
     def repl(m):
         indent, name = m.group(1), m.group(2)
+        if (ROOT / "setup" / name).exists():
+            # Setup-instruktionen bäddas inte in, så att en AI som läser hela
+            # guiden inte tar den som en instruktion till sig själv.
+            return f"{indent}(Setup-instruktionen finns på {RAW}setup/{name})"
         body = (ROOT / "begrepp" / name).read_text(encoding="utf-8").strip()
         return "\n".join(indent + line if line else line for line in body.splitlines())
 
@@ -47,6 +51,8 @@ def main():
         "> En persons upplägg för att arbeta med Claude (och ChatGPT) med en vanlig prenumeration. Inget facit.",
         "",
         f"Hela guiden i en fil: {RAW}llms-full.txt",
+        "",
+        f"Instruktion för en setup-session, där en AI hjälper läsaren att sätta upp sitt upplägg: {RAW}setup/setup-session.md",
         "",
     ]
     full = [

@@ -48,6 +48,8 @@ Ett projekt är ett arbetsrum med egna instruktioner och egna filer, där alla s
 
 Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kunskapen är kursmaterialet. Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
 
+En chatt kan flyttas in i ett projekt i efterhand, via menyn vid chattens namn. Det är så setup-sessionen på sidan [Kom igång](kom-igang.md) slutar: du skapar projektet och flyttar dit chatten där det planerades.
+
 Projekt är ett bra mellansteg när du har ett avgränsat uppdrag och vill slippa upprepa dig. Gränsen går där du vill att Claude ska skriva tillbaka till filer, köra något på egen hand eller arbeta utan att du sitter där.
 
 ### Steg 3: Claude-appen på datorn
@@ -114,18 +116,19 @@ Min egen bedömning är att Claude Pro räcker långt för det som beskrivs i gu
 
 ## Vilket steg ska du välja?
 
-Börja där ditt problem finns. Om du upprepar dig, skapa ett projekt. Om du vill att Claude ska arbeta direkt med filer på din dator, prova appen eller Claude Code. Om du vill att något ska ske utan att du ber om det, skapa en schemalagd uppgift.
+Börja där ditt problem finns. Vet du inte var, låt setup-sessionen på sidan [Kom igång](kom-igang.md) ta reda på det tillsammans med dig. Om du upprepar dig, skapa ett projekt. Om du vill att Claude ska arbeta direkt med filer på din dator, prova appen eller Claude Code. Om du vill att något ska ske utan att du ber om det, skapa en schemalagd uppgift.
 
 Det viktigaste i kapitlet är att modellen inte blir smartare på vägen uppför trappan. Det som förändras är vad den har att jobba med: egna filer, egna regler, egna rutiner. Nästa kapitel handlar om hur du ger den det på bästa sätt.
 
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga vad jag använder AI till idag och vad som skaver mest.
     Hjälp mig sedan att välja vilket steg i trappan som passar mig och att ta det första konkreta steget i min egen vardag.
     Ställ en fråga i taget innan du föreslår något.

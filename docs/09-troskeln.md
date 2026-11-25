@@ -111,11 +111,12 @@ En ironisk slutpoäng: med den här guiden arbetar jag på sätt och vis gratis 
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/09-troskeln.md
     Guiden beskriver en persons upplägg och är inget facit. Kapitlet skiljer fakta med källor från författarens egen tes, så behandla tesen som hans bedömning och ta den med en nypa salt.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga vad jag använder AI till i dag och vad som hindrar mig från nästa steg.
     Föreslå sedan ett första steg som passar mig.
     Ställ en fråga i taget innan du föreslår något.

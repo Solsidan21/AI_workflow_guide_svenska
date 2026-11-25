@@ -160,11 +160,12 @@ Det viktigaste är inte att strukturen är perfekt från början. Den ska vara t
 Struktur är det som gör att en vanlig prenumeration börjar fungera som ett eget system. Nästa steg är att se hur flera sådana mappar hänger ihop.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga vilket område jag arbetar med mest och hur mitt material ser ut i dag.
     Hjälp mig sedan att föreslå en enkel mappstruktur och skriva ett första utkast till en regelfil för just det området.
     Ställ en fråga i taget innan du föreslår något.

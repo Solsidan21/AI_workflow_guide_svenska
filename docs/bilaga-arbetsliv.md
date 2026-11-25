@@ -93,11 +93,12 @@ Mallarna är utgångspunkter, inte färdiga sanningar. Byt ut siffrorna, ersätt
 Om du är på väg in i ett nytt jobb går samma tänk att använda för att lära sig det. Bygg en begreppsmapp för branschens ord, en regelfil som beskriver hur din chef vill ha saker levererade, och en enkel logg över vad som gick fel. Det är kapitel 05 och 07 i ett annat sammanhang.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/bilaga-arbetsliv.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga vad jag jobbar med, hur min arbetsvecka ser ut och vilka uppgifter som återkommer.
     Hjälp mig sedan att föreslå en mappstruktur och en första regelfil för mitt jobb.
     Ställ en fråga i taget innan du föreslår något.

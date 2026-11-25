@@ -2,36 +2,32 @@
 
 *Samma AI-modeller finns tillgängliga för alla. Det som skiljer ett generiskt svar från ett användbart är vad modellen får att arbeta med, och med en vanlig prenumeration kan du bygga ett eget system som ger den rätt förutsättningar.*
 
-## Börja här: låt din Claude läsa guiden
+## Börja här: en setup-session med din egen Claude
 
-Du behöver inte läsa guiden från början till slut. Det snabbaste sättet att komma igång är att låta din egen Claude (eller ChatGPT) läsa den och hjälpa dig utifrån din situation. Klistra in det här i en ny konversation:
+Du behöver inte läsa guiden för att komma igång. Öppna en helt ny chatt i Claude (eller ChatGPT), utanför alla projekt, och klistra in det här:
 
 ```text
-Läs den här guiden om att bygga ett eget AI-arbetsflöde:
-https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+Det här är en setup-session. Läs och följ instruktionerna här:
+https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md
 
-Guiden beskriver en persons upplägg och är inget facit. Ta det som passar
-mig och strunta i resten.
-
-Intervjua mig först, en fråga i taget: vad jag använder AI till i dag,
-vad som stör mig mest, om det gäller studier, jobb eller något annat,
-och hur mycket jag vill bygga själv.
-
-Föreslå sedan ett första konkret steg som jag kan göra i dag, och hänvisa
-till det kapitel i guiden där jag kan läsa mer om jag vill.
+Använd den här chatten bara till att sätta upp mitt arbetssätt, inte till att jobba med mina uppgifter.
 ```
 
-Sedan kan du slå upp det du undrar över här på sajten.
+Claude frågar hur du arbetar i dag, föreslår ett upplägg som passar dig och guidar dig genom att skapa ett projekt som blir din "hjärna". Sedan flyttar du in chatten dit och fortsätter därifrån. [Kom igång](kom-igang.md) beskriver vad som händer steg för steg.
+
+Guiden här på sajten är till för när du vill förstå varför. Setup-sessionen länkar hit när det passar.
 
 ## Hitta det du behöver
 
 | Om du undrar | Läs |
 |---|---|
+| Vad händer i setup-sessionen, och varför en egen chatt för den? | [Kom igång](kom-igang.md) |
 | Varför börjar varje chatt från noll, och vad är steget efter chatten? | [01 Från chatt till system](01-fran-chatt-till-system.md) |
 | Måste jag skriva långa prompter för att få bra svar? | [02 Kontext i stället för långa prompter](02-kontext.md) |
 | Hur ordnar jag mina filer så att Claude hittar rätt? | [03 Struktur som kontext](03-struktur.md) |
 | Hur hänger projekt, GitHub, Drive och schemalagda uppgifter ihop? | [04 Arkitekturen](04-arkitekturen.md) |
 | Hur får jag ett upplägg som passar hur jag lär mig? | [05 Individanpassad inlärning](05-individanpassad-inlarning.md) |
+| Vad ska ligga på datorn, i Drive och i Claude? | [04 Arkitekturen](04-arkitekturen.md#lokalt-i-drive-eller-i-claudes-moln) |
 | Kan Claude hålla koll på helheten och skicka en plan varje morgon? | [06 Hjärnan](06-hjarnan.md) |
 | Vad kan jag bygga till när grunden fungerar? | [07 Att bygga vidare på](07-bygga-vidare.md) |
 | Vilken modell ska jag använda, och spelar benchmarks någon roll? | [08 Modellerna](08-modellerna.md) |
@@ -41,7 +37,7 @@ Sedan kan du slå upp det du undrar över här på sajten.
 | Hur ser det här ut på ett jobb? | [Bilaga: Arbetslivet](bilaga-arbetsliv.md) |
 | Vad betyder ett ord? | [Ordlista](ordlista.md) |
 
-Varje kapitel börjar med en kort version på några rader och slutar med en prompt som låter dig göra kapitlets steg tillsammans med din Claude. Nya begrepp förklaras i hopfällda rutor som du fäller ut vid behov.
+Varje kapitel börjar med en kort version på några rader och slutar med en prompt som du klistrar in i en ny chatt i ett av dina projekt, så att du gör kapitlets steg tillsammans med din Claude. Nya begrepp förklaras i hopfällda rutor som du fäller ut vid behov.
 
 ## Vem jag är
 

@@ -134,11 +134,12 @@ Det viktigaste att ta med sig är att kontext slår promptkvalitet. En kort frå
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Fråga vad jag upprepar i mina prompter i dag, till exempel kurs, nivå, ton eller format.
     Hjälp mig sedan att flytta det till projektinstruktioner, så att mina frågor kan bli kortare.
     Ställ en fråga i taget innan du föreslår något.

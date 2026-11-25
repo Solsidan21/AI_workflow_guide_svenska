@@ -90,7 +90,7 @@ I praktiken innebär regeln att varje påstående i ett brev ska kunna kopplas t
 
 ## Så bygger du din egen
 
-Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar för att komma igång.
+Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar för att komma igång. Setup-sessionen på sidan [Kom igång](kom-igang.md) gör de två första stegen tillsammans med dig.
 
 1. Skapa ett projekt och en lista med rubriker för de områden du faktiskt har. Börja med tre eller fyra.
 2. Skriv projektinstruktioner med en prioritetsordning, var saker finns och de fem reglerna för hur listan används.
@@ -101,13 +101,14 @@ Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar fö
 Det går att göra i vilken ordning du vill, och det går att stanna efter första steget. Redan ett projekt med en lista och några tydliga regler ersätter mycket av det som annars bor i huvudet eller på lösa lappar.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny konversation i Claude eller ChatGPT:
+    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
-    Fråga vilka områden som konkurrerar om min tid och vad jag oftast glömmer eller tappar bort.
-    Hjälp mig sedan att skapa en första lista med rubriker och några regler för hur den ska skötas.
+    Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
+    Titta på mina projektinstruktioner och min att göra-lista om jag har en. Fråga vad som inte fungerar och vad jag oftast glömmer eller tappar bort.
+    Hjälp mig sedan att justera rubrikerna och reglerna, eller att ta nästa steg i listan i kapitlet om jag är redo för det.
     Ställ en fråga i taget innan du föreslår något.
     ```
 

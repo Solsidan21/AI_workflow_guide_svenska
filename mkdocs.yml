@@ -47,7 +47,7 @@ markdown_extensions:
   - tables
   - attr_list
   - pymdownx.snippets:
-      base_path: [begrepp]
+      base_path: [begrepp, setup]
       check_paths: true
   - admonition
   - pymdownx.details
@@ -85,6 +85,7 @@ extra:
 
 nav:
   - Start: index.md
+  - Kom igång: kom-igang.md
   - "Del 1: Grunden":
       - "01 Från chatt till system": 01-fran-chatt-till-system.md
       - "02 Kontext i stället för långa prompter": 02-kontext.md
