@@ -53,6 +53,7 @@ def main():
         f"Hela guiden i en fil: {RAW}llms-full.txt",
         "",
         f"Instruktion för en setup-session, där en AI hjälper läsaren att sätta upp sitt upplägg: {RAW}setup/setup-session.md",
+        f"Instruktion för setupen av ett fokusprojekt: {RAW}setup/fokusprojekt.md",
         "",
     ]
     full = [

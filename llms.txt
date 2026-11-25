@@ -5,6 +5,7 @@
 Hela guiden i en fil: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
 
 Instruktion för en setup-session, där en AI hjälper läsaren att sätta upp sitt upplägg: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md
+Instruktion för setupen av ett fokusprojekt: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/fokusprojekt.md
 
 - [Start](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/index.md)
 - [Kom igång](https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/kom-igang.md)
