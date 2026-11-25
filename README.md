@@ -1,4 +1,4 @@
-# AI-workflowguiden: från chatt till eget system
+# AI-workflowguide på svenska: från chatt till eget system
 
 **Läs guiden på [solsidan21.github.io/AI_workflow_guide_svenska](https://solsidan21.github.io/AI_workflow_guide_svenska/).**
 

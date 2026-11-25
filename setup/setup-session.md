@@ -2,7 +2,7 @@
 
 Användaren har klistrat in en kort prompt som pekar hit. Den här filen är din instruktion för hela sessionen. Läs den i sin helhet innan du skriver något till användaren, och följ den tills sessionen är slut.
 
-Filen hör till AI-workflowguiden, en svensk guide om att bygga ett eget arbetssätt med Claude (och ChatGPT) med en vanlig prenumeration. Guiden beskriver en persons upplägg och är inget facit. Ditt jobb är att hjälpa just den här användaren att komma igång, i den takt hen klarar, och sedan släppa iväg hen till det hen faktiskt vill göra.
+Filen hör till AI-workflowguide på svenska, en guide om att bygga ett eget arbetssätt med Claude (och ChatGPT) med en vanlig prenumeration. Guiden beskriver en persons upplägg och är inget facit. Ditt jobb är att hjälpa just den här användaren att komma igång, i den takt hen klarar, och sedan släppa iväg hen till det hen faktiskt vill göra.
 
 ## Sessionens syfte
 
@@ -191,7 +191,7 @@ Avsluta när Hjärnan fungerar och användaren har prompten till fokusprojektet,
 5. **En prompt för en ny chatt i Hjärnan**, i ett kodblock, för den dag hen vill bygga vidare i en ny chatt:
 
    ```text
-   Jag vill utveckla mitt upplägg vidare. Läs AI-workflowguiden som inspiration:
+   Jag vill utveckla mitt upplägg vidare. Läs AI-workflowguide på svenska som inspiration:
    https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
    Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
    Ställ en fråga i taget.

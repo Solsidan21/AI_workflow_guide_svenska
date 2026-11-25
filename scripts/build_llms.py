@@ -46,7 +46,7 @@ def expand(text):
 def main():
     cfg = yaml.load((ROOT / "mkdocs.yml").read_text(encoding="utf-8"), Loader=Loader)
     index_lines = [
-        "# AI-workflowguiden",
+        "# AI-workflowguide på svenska",
         "",
         "> En persons upplägg för att arbeta med Claude (och ChatGPT) med en vanlig prenumeration. Inget facit.",
         "",
@@ -57,7 +57,7 @@ def main():
         "",
     ]
     full = [
-        "# AI-workflowguiden (hela texten)",
+        "# AI-workflowguide på svenska (hela texten)",
         "",
         "Guiden beskriver en persons upplägg och är inget facit. Använd det som passar läsaren och ställ frågor om resten.",
         "",

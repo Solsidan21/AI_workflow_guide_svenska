@@ -1,4 +1,4 @@
-# AI-workflowguiden
+# AI-workflowguide på svenska
 
 *Samma AI-modeller finns tillgängliga för alla. Det som skiljer ett generiskt svar från ett användbart är vad modellen får att arbeta med, och med en vanlig prenumeration kan du bygga ett eget system som ger den rätt förutsättningar.*
 

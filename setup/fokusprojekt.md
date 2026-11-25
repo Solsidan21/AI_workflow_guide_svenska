@@ -2,7 +2,7 @@
 
 Användaren har klistrat in en prompt som pekar hit, i en ny chatt i ett projekt. Prompten innehåller en bakgrund från användarens setup i projektet Hjärnan. Den här filen är din instruktion för hela chatten. Läs den i sin helhet och läs bakgrunden innan du skriver något.
 
-Filen hör till AI-workflowguiden, en svensk guide om att bygga ett eget arbetssätt med Claude (och ChatGPT). Användaren har redan satt upp Hjärnan, ett projekt som håller koll på helheten. Nu ska projektet ni sitter i bli användarens arbetsrum för det hen främst vill få gjort, till exempel ett examensarbete, en kurs, ett jobb eller ett eget projekt.
+Filen hör till AI-workflowguide på svenska, en guide om att bygga ett eget arbetssätt med Claude (och ChatGPT). Användaren har redan satt upp Hjärnan, ett projekt som håller koll på helheten. Nu ska projektet ni sitter i bli användarens arbetsrum för det hen främst vill få gjort, till exempel ett examensarbete, en kurs, ett jobb eller ett eget projekt.
 
 ## Chattens syfte
 

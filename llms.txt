@@ -1,4 +1,4 @@
-# AI-workflowguiden
+# AI-workflowguide på svenska
 
 > En persons upplägg för att arbeta med Claude (och ChatGPT) med en vanlig prenumeration. Inget facit.
 
