@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/Solsidan21/AI_workflow_guide_svenska",
+    "title": "Overview",
+    "count": 7,
+    "uniques": 1
+  },
+  {
+    "path": "/Solsidan21/AI_workflow_guide_svenska/actions/workflows/traffic.yml",
+    "title": "/actions/workflows/traffic.yml",
+    "count": 1,
+    "uniques": 1
+  },
+  {
+    "path": "/Solsidan21/AI_workflow_guide_svenska/blob/main/mkdocs.yml",
+    "title": "/blob/main/mkdocs.yml",
+    "count": 1,
+    "uniques": 1
+  },
+  {
+    "path": "/Solsidan21/AI_workflow_guide_svenska/branches",
+    "title": "/branches",
+    "count": 1,
+    "uniques": 1
+  }
+]
