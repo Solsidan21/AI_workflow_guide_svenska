@@ -87,7 +87,7 @@ extra:
   google_site_verification: "hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4"
   # Cloudflare Web Analytics, cookiefri besöksräkning som körs utan samtycke.
   # Fyll i token från Cloudflare (bara värdet i "token": "..."). Tom = av.
-  cloudflare_web_analytics_token: ""
+  cloudflare_web_analytics_token: "082df3d8cc544b5aae1c39e3bb90c79d"
 
 nav:
   - Start: index.md
