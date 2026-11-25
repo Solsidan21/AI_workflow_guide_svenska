@@ -66,10 +66,13 @@ extra:
   consent:
     title: Cookies
     description: >-
-      Jag vill gärna se hur guiden används och hur läsare hittar hit.
-      Får jag använda Google Analytics för det? Det sätter cookies och
-      skickar uppgifter om ditt besök till Google. Avvisar du laddas
-      ingenting. Läs mer på sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.
+      Jag respekterar din integritet. Utan cookies räknar jag bara att
+      sidan har besökts och från vilken webbplats besöket kom, inget som
+      kan kopplas till dig. Får jag också använda Google Analytics för att
+      se mer om hur guiden används? Det sätter cookies och skickar
+      uppgifter om ditt besök till Google. Avvisar du laddas det inte.
+      Du kan ändra ditt val när som helst längst ner på sidan. Läs mer på
+      sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.
     actions:
       - accept
       - reject
@@ -82,6 +85,9 @@ extra:
         checked: true
   # Fyll i koden från Search Console (bara värdet i content="..."):
   google_site_verification: "hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4"
+  # Cloudflare Web Analytics, cookiefri besöksräkning som körs utan samtycke.
+  # Fyll i token från Cloudflare (bara värdet i "token": "..."). Tom = av.
+  cloudflare_web_analytics_token: ""
 
 nav:
   - Start: index.md

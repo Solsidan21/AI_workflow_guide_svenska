@@ -2,6 +2,12 @@
 
 Den här sajten är ett privat projekt. Här står vad som samlas in när du läser den.
 
+## Besöksräkning utan cookies
+
+Alla besök räknas med Cloudflare Web Analytics. Det sätter inga cookies, sparar inget i din webbläsare och använder inte fingeravtryck för att känna igen dig. Det som räknas är vilken sida som visades, från vilken webbplats besöket kom (till exempel LinkedIn eller en sökmotor), land samt typ av enhet och webbläsare. Uppgifterna går inte att koppla till dig som person och används bara för att se hur många som läser guiden och hur de hittar hit.
+
+Cloudflare tar emot anropet och därmed din IP-adress, men använder den inte för att följa dig mellan besök eller webbplatser. Cloudflare kan behandla uppgifterna utanför EU, bland annat i USA, enligt EU:s ramverk för dataskydd mellan EU och USA.
+
 ## Google Analytics, bara om du säger ja
 
 Om du väljer **Acceptera** i cookierutan laddas Google Analytics 4. Den sätter cookies (`_ga` och `_ga_*`) och skickar uppgifter till Google om vilka sidor du läser, varifrån du kom (till exempel en sökmotor eller en länk), ungefärlig ort och land samt vilken typ av enhet och webbläsare du använder. Syftet är att se hur sajten används och hur läsare hittar hit. Uppgifterna används inte för reklam.

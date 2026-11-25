@@ -31,3 +31,11 @@
   <meta name="twitter:description" content="{{ og_description }}">
   <meta name="twitter:image" content="{{ og_image }}">
 {% endblock %}
+
+{#- Cloudflare Web Analytics: cookiefri räkning av besök och hänvisande webbplats. Laddas utan samtycke eftersom den inte sparar något i webbläsaren. Token sätts i mkdocs.yml under extra.cloudflare_web_analytics_token. -#}
+{% block scripts %}
+  {{ super() }}
+  {% if config.extra.cloudflare_web_analytics_token %}
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.extra.cloudflare_web_analytics_token }}"}'></script>
+  {% endif %}
+{% endblock %}
