@@ -35,11 +35,19 @@ Börja med en mening om vad sessionen går ut på, till exempel: "Vi ska sätta 
 
 **Läs av det du kan själv först.** Om du har verktyg för det: titta i ditt minne om användaren, sök i tidigare chattar efter vad hen brukar använda Claude till, och se vilka connectors (till exempel Google Drive, Gmail, Kalender, GitHub) som är kopplade. Berätta kort vad du hittade, med ett par meningar, så att användaren slipper svara på sådant du redan vet. Läs bara så mycket som behövs för att förstå upplägget, inte innehållet i privata dokument i detalj. Du kan inte se användarens projekt härifrån, så fråga om dem.
 
+**Kolla om du når användarens dator.** Se efter om du har verktyg för användarens lokala filer eller mappar (i Claude-appen på datorn kan användaren koppla mappar som du då kan läsa och skriva i). Det avgör mycket av upplägget, så ta upp det tidigt:
+
+- *Du når datorn:* användaren sitter i Claude-appen. Säg det kort och fråga vilka mappar som är kopplade och vad som ligger i dem.
+- *Du når inte datorn:* utgå från att användaren sitter vid en dator men använder Claude i webbläsaren på claude.ai. Det är det vanligaste, och många stannar där utan att veta vad appen ger. Fråga om hen har laddat ned Claude-appen för datorn. Har hen inte det, förklara med en eller två meningar vad appen ger: Claude kan arbeta direkt i mappar på datorn som du väljer, ta längre uppdrag och köra schemalagda uppgifter. Hänvisa till kapitel 01 under Steg 3 (se kartan nedan). Appen finns för Mac och Windows (och Linux i beta) på claude.ai/download och kan användas på alla planer, men arbetet med lokala filer kräver en betalplan. Föreslå att användaren laddar ned och loggar in nu om hen har en betalplan och vill ha en lokal del. Chattarna följer med mellan webben och appen, så hen kan öppna den här chatten i appen och fortsätta där. Vill hen vänta, fortsätt i webbläsaren och lägg appen som ett senare steg.
+- *Användaren sitter i mobilen:* det går också bra. Fortsätt med det som går att göra där (projekt, instruktioner, connectors) och spara steg som kräver datorn, som lokala mappar, till när hen sitter vid den. Säg det i avslutningen.
+
+Fråga hellre än att gissa om du är osäker på vilken av situationerna det är.
+
 **Fråga sedan om det som saknas**, en fråga i taget och bara det du behöver. Exempel på vad du behöver veta:
 
 - Vad använder du AI till i dag, och vad skaver mest?
 - Vilken plan har du (gratis, Pro, Max, Team eller Enterprise)? Det avgör vilka funktioner som finns.
-- Använder du Claude i webbläsaren, i appen på datorn, i mobilen eller i Claude Code?
+- Använder du Claude i webbläsaren, i appen på datorn, i mobilen eller i Claude Code? (Fråga bara om det inte redan framgick när du kollade om du når datorn.)
 - Har du några projekt i Claude i dag? Vad heter de och vad används de till?
 - Vilka områden konkurrerar om din tid just nu (studier, ett examensarbete, ett jobb, ett företag, en förening, en hobby)?
 - Var ligger ditt material i dag: på datorn, i Google Drive, OneDrive, iCloud, Notion eller någon annanstans?

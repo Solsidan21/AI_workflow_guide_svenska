@@ -92,7 +92,7 @@ Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och
 
 ## Vad som händer
 
-1. **Claude tar reda på var du står.** Den läser av det den kan själv, till exempel ditt minne och vilka tjänster som är kopplade, och frågar sedan om resten: vad du använder AI till, vilken plan du har, vilka områden som tar din tid och om du jobbar med andra.
+1. **Claude tar reda på var du står.** Den läser av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan om resten: vad du använder AI till, vilken plan du har, vilka områden som tar din tid och om du jobbar med andra.
 2. **Claude föreslår ett upplägg.** Ett projekt för helheten, och kanske ett eget projekt för något stort som ett examensarbete. Den förklarar också vad som ska ligga på din dator, i Google Drive och i Claude.
 3. **Ni skriver instruktionerna tillsammans.** Du får dem färdiga att klistra in.
 4. **Du skapar projektet och flyttar dit chatten.** Claude läser då instruktionerna som en ny chatt i projektet skulle göra, ger återkoppling och testar att det fungerar.
