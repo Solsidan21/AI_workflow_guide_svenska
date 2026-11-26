@@ -48,7 +48,7 @@ Ett projekt är ett arbetsrum med egna instruktioner och egna filer, där alla s
 
 Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kursmaterialet ligger i projektets kontext (rutan Kontext på projektsidan, Project knowledge på engelska och Files under Context i den nya projektvyn). Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
 
-En chatt kan flyttas in i ett projekt i efterhand, via menyn vid chattens namn. Det är så setup-sessionen på sidan [Kom igång](kom-igang.md) slutar: du skapar projektet och flyttar dit chatten där det planerades.
+En chatt kan ofta flyttas in i ett projekt i efterhand, via menyn vid chattens namn. Setup-sessionen på sidan [Kom igång](kom-igang.md) litar ändå inte på det. När du har skapat Hjärnan får du en prompt som du klistrar in i en ny chatt där. Den börjar med samma prompt som står på startsidan och har länken till guiden, så den nya chatten vet vad den bygger oavsett hur din app ser ut.
 
 #### Projekten ser olika ut hos olika användare
 

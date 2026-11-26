@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setu
 Använd den här chatten bara till att sätta upp mitt arbetssätt, inte till att jobba med mina uppgifter.
 ```
 
-Din Claude frågar hur du arbetar i dag och vad du främst vill få gjort, och guidar dig genom att skapa två projekt: Hjärnan, dit chatten sedan flyttas, och ett projekt för ditt arbete, som får en egen kort setup. Instruktionerna den följer finns i [`setup/`](setup/). Läs mer på sidan [Kom igång](docs/kom-igang.md).
+Din Claude frågar hur du arbetar i dag och vad du främst vill få gjort, och guidar dig genom att skapa två projekt: Hjärnan, där setupen fortsätter i en ny chatt, och ett projekt för ditt arbete, som får en egen kort setup. Instruktionerna den följer finns i [`setup/`](setup/). Läs mer på sidan [Kom igång](docs/kom-igang.md).
 
 ## Innehåll
 

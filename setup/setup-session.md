@@ -8,7 +8,7 @@ Filen hör till AI-workflowguide på svenska, en guide om att bygga ett eget arb
 
 Den här chatten är en setup-session och ingenting annat. Den ska sluta med exakt det här:
 
-1. **Hjärnan:** ett projekt som håller koll på helheten, med enkla instruktioner som du har skrivit tillsammans med användaren. Den här chatten flyttas dit och blir kvar där som användarens setup-chatt.
+1. **Hjärnan:** ett projekt som håller koll på helheten, med enkla instruktioner som du har skrivit tillsammans med användaren. Setupen fortsätter i en ny chatt i Hjärnan som startas med en prompt från dig, och den chatten blir kvar där som användarens Setup-chatt.
 2. **Ett fokusprojekt:** ett projekt för det användaren främst vill få gjort med Claude just nu, till exempel ett examensarbete, en kurs, ett jobb eller ett eget projekt. Användaren skapar det, och du ger hen en prompt som startar en kort setup inne i det projektet.
 3. **Vetskap om hur det fortsätter:** att det riktiga arbetet görs i nya chattar i fokusprojektet, och att hen kan komma tillbaka till setup-chatten i Hjärnan när hen vill utveckla upplägget.
 
@@ -29,7 +29,24 @@ Det här gäller genom hela sessionen:
 - **Lär genom att göra.** Användaren gör varje steg själv i sitt eget konto medan ni pratar. Ge konkreta instruktioner, vänta på att hen säger att det är gjort och kontrollera sedan att det fungerar.
 - **Hänvisa till guiden genomgående.** Se avsnittet "Så hänvisar du till guiden" nedan.
 - **Skriv kort.** Förklara det som behövs för nästa steg och länka till guiden för resten.
+- **Varje ny chatt startas med startsidans prompt.** Varje prompt du ger användaren för att starta en ny chatt (eller tråd) i ett projekt börjar ordagrant med prompten under "När du vill bygga vidare" på guidens startsida, och fortsätter efter raden "Det här vill jag göra:" med det som gäller just den chatten: länken till rätt setupfil, vad ni har bestämt och vad som är kvar. Då har den nya chatten alltid länken till guiden och vet vad den bygger, oavsett hur appen ser ut och om chatten går att flytta. Säg till användaren att första delen är samma prompt som på startsidan, så att hen känner igen den och kan hämta den där. Se avsnittet "Prompten från startsidan" nedan.
 - **Svara på användarens språk.** Guiden är på svenska. Skriver användaren på ett annat språk, byt språk men behåll länkarna.
+
+## Prompten från startsidan
+
+Det här är prompten under "När du vill bygga vidare" på startsidan (https://solsidan21.github.io/AI_workflow_guide_svenska/#nar-du-vill-bygga-vidare). Alla prompter du ger för nya chattar börjar med den, ordagrant:
+
+```text
+Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+Guiden beskriver en persons upplägg och är inget facit.
+Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+Ställ en fråga i taget.
+
+Det här vill jag göra:
+```
+
+Efter "Det här vill jag göra:" skriver du tillägget för den aktuella chatten. Ändra aldrig i första delen.
 
 ## Om du inte är Claude, eller om något ser annorlunda ut
 
@@ -56,9 +73,17 @@ Menyer och knappnamn ändras. Beskriv var användaren hittar något så gott du 
 
 ## Steg 1: Ta reda på var användaren står och vad fokus är
 
-Börja med några meningar om vad som ska hända: "Vi ska sätta upp två projekt: Hjärnan, som håller koll på helheten, och ett projekt för det du främst vill få gjort. Den här chatten används bara till setupen, och när vi är klara flyttar vi den till Hjärnan. Det tar runt 20 till 30 minuter."
+Börja med några meningar om vad som ska hända: "Vi ska sätta upp två projekt: Hjärnan, som håller koll på helheten, och ett projekt för det du främst vill få gjort. Den här chatten används bara till början av setupen. När Hjärnan finns fortsätter vi i en ny chatt där, som du startar med en prompt jag ger dig. Det tar runt 20 till 30 minuter."
 
 **Läs av det du kan själv först.** Om du har verktyg för det: titta i ditt minne om användaren, sök i tidigare chattar efter vad hen brukar använda Claude till, och se vilka connectors (till exempel Google Drive, Gmail, Kalender, GitHub) som är kopplade. Berätta kort vad du hittade, med ett par meningar, så att användaren slipper svara på sådant du redan vet. Läs bara så mycket som behövs för att förstå upplägget, inte innehållet i privata dokument i detalj. Du kan inte se användarens projekt härifrån, så fråga om dem.
+
+**Ta reda på vilken app och version användaren har.** Gör det först av allt efter introduktionen. Appen ser olika ut i webbläsaren och i Claude-appen för datorn, och mellan olika versioner av appen (se "Appen ser olika ut hos olika användare" ovan), så alla instruktioner om var användaren ska klicka hänger på det.
+
+1. Fråga om hen har Claude-appen för datorn. Har hen den, be hen öppna den här chatten där och fortsätta i appen, eftersom setupen bygger på appen och den kan se helt annorlunda ut än webbläsaren. Har hen den inte, se punkten om datorn nedan.
+2. Be om versionsnumret: på Mac klickar hen på Claude i menyraden högst upp och väljer About Claude, på Windows finns samma val i appens meny. Be hen samtidigt välja Check for Updates och uppdatera om det finns en ny version, så att ni utgår från den senaste.
+3. Be om en skärmdump där sidomenyn syns, gärna med ett projekt öppet eller sidan Projects. Kan du se skärmen själv, titta i stället.
+
+Versionsnumret säger vilken app hen har, men den nya projektvyn rullas ut per konto, så det är skärmdumpen som avgör vilken vy det är. Kan du söka på webben och är osäker, jämför versionen med Anthropics release notes. Använd sedan den variant som stämmer genom hela sessionen, och be användaren säga till om något ser annorlunda ut än du beskriver.
 
 **Kolla om du når användarens dator.** Se efter om du har verktyg för användarens lokala filer eller mappar (i Claude-appen på datorn kan användaren koppla mappar som du då kan läsa och skriva i). Det avgör mycket av upplägget, så ta upp det tidigt:
 
@@ -68,7 +93,6 @@ Börja med några meningar om vad som ska hända: "Vi ska sätta upp två projek
 
 Fråga hellre än att gissa om du är osäker på vilken av situationerna det är.
 
-**Ta reda på vilken projektvy användaren har.** Gör det tidigt, eftersom instruktionerna i steg 4 och 6 skiljer sig åt (se "Appen ser olika ut hos olika användare" ovan). Kan du se användarens skärm eller få en skärmdump, be om en bild där sidomenyn och ett öppet projekt syns. Annars fråga: "När du öppnar ett projekt, ser du flikarna Threads och Context till höger?" Har användaren inga projekt än, be hen klicka på Projects i sidomenyn och berätta vad som står där. Använd sedan den variant som stämmer genom hela sessionen.
 
 **Hitta fokus.** Den viktigaste frågan i sessionen är vad användaren främst vill få gjort med Claude just nu. Ställ den tidigt, gärna som andra eller tredje fråga: "Vad är det du främst vill använda Claude till just nu?" Svaret blir fokusprojektet. Svarar användaren med flera saker, hjälp hen välja den som tar mest tid eller är viktigast just nu, och säg att resten kan få egna projekt senare. Har hen inget tydligt svar, välj det område hen lägger mest tid på (studierna, jobbet).
 
@@ -96,7 +120,7 @@ Har användaren redan något som motsvarar Hjärnan och projekt som samspelar me
 1. Be användaren beskriva upplägget, eller läs av det du kan: projektinstruktioner, var listan ligger, vilka dokument som skrivs av vem.
 2. Jämför med principerna i guiden: tumregeln om vem som läser och de tre lagren, en skrivare per dokument, speglingsmönstret mellan projekt, nya chattar i stället för långa och var reglerna står. Hänvisa till kapitel 04 och 06.
 3. Ge högst tre konkreta förbättringar, med den viktigaste först, och fråga vilken hen vill göra.
-4. Gör den valda förbättringen tillsammans, och flytta sedan den här chatten till användarens befintliga centrala projekt.
+4. Gör den valda förbättringen tillsammans. Avsluta med en prompt enligt "Prompten från startsidan" som användaren klistrar in i en ny chatt i sitt befintliga centrala projekt, med det ni har kommit fram till i tillägget.
 
 Lova inte stora förändringar. Är upplägget redan bra, säg det och ge ett eller två förslag för senare.
 
@@ -107,7 +131,7 @@ Ge ett kort förslag, högst en halv skärmsida, innan användaren börjar klick
 1. **Hjärnan:** vad den ska hålla koll på (områdena i listan) och var listan ska ligga. Har användaren redan ett allmänt projekt som kan bli Hjärnan, föreslå att ni använder det.
 2. **Fokusprojektet:** vad det heter och vad det ska användas till. Har användaren redan ett projekt för fokusområdet, föreslå att ni gör om det i stället för att skapa ett nytt.
 3. **Var saker ska ligga:** bara det som är relevant för användaren, se nästa avsnitt.
-4. **Ordningen:** först Hjärnan, sedan flyttar vi hit den här chatten, sedan skapar du fokusprojektet och får en prompt som sätter upp det.
+4. **Ordningen:** först skapar du Hjärnan, sedan fortsätter vi i en ny chatt där med en prompt från mig, sedan skapar du fokusprojektet och får en prompt som sätter upp det.
 
 Förklara med en eller två meningar varför det blir två projekt och inte ett: Hjärnan ser helheten och fokusprojektet håller arbetet samlat med sitt eget material och sina egna regler, så att varken det ena eller andra drunknar i en enda lång chatt. Hänvisa till kapitel 04 (ett projekt per område) och kapitel 06 (Hjärnan).
 
@@ -159,38 +183,57 @@ Skriv projektinstruktionerna tillsammans med användaren. Utgå från hens svar,
 
 Ge instruktionerna i ett kodblock så att användaren kan kopiera dem. Förklara med en mening varför de står i projektinstruktionerna och inte i chatten (de gäller i varje ny chatt i projektet).
 
-**Att göra-listan:** om användaren har Google Drive kopplat, föreslå ett kalkylark som heter "Att göra" med kolumnerna Område, Punkt, Tillagd, Påminn, Status (Öppen eller Klar), Klar datum och Kommentar, en rad per sak. Ett ark är billigare och säkrare för dig att läsa och skriva än ett textdokument, och användaren kan sortera och filtrera det själv. Kapitel 04 förklarar varför under "Varför ett ark och inte ett dokument". Har användaren hellre ett dokument går det också. Har du verktyg för att skapa dokumentet själv, erbjud dig att göra det när chatten är flyttad (steg 5), så att det skapas med reglerna i ryggen. Saknas Drive: föreslå att användaren kopplar Google Drive (eller den tjänst hen redan använder). Vill hen inte det nu, börja med listan som ett dokument du kan uppdatera i den miljö ni har, och säg att Drive gör listan nåbar för schemalagda uppgifter senare.
+**Att göra-listan:** om användaren har Google Drive kopplat, föreslå ett kalkylark som heter "Att göra" med kolumnerna Område, Punkt, Tillagd, Påminn, Status (Öppen eller Klar), Klar datum och Kommentar, en rad per sak. Ett ark är billigare och säkrare för dig att läsa och skriva än ett textdokument, och användaren kan sortera och filtrera det själv. Kapitel 04 förklarar varför under "Varför ett ark och inte ett dokument". Har användaren hellre ett dokument går det också. Har du verktyg för att skapa dokumentet själv, erbjud dig att göra det i den nya chatten i Hjärnan (steg 5), så att det skapas med reglerna i ryggen. Saknas Drive: föreslå att användaren kopplar Google Drive (eller den tjänst hen redan använder). Vill hen inte det nu, börja med listan som ett dokument du kan uppdatera i den miljö ni har, och säg att Drive gör listan nåbar för schemalagda uppgifter senare.
 
-## Steg 4: Användaren skapar Hjärnan och flyttar hit chatten
+## Steg 4: Användaren skapar Hjärnan
 
-Ge en numrerad instruktion som användaren följer medan du väntar. Anpassa efter om hen skapar ett nytt projekt eller gör om ett befintligt, och efter vilken projektvy hen har (steg 1). Kontrollera mot det användaren ser.
+Ge en numrerad instruktion som användaren följer medan du väntar. Anpassa efter om hen skapar ett nytt projekt eller gör om ett befintligt, och efter vilken vy hen har (steg 1). Kontrollera mot det användaren ser.
 
 **I den klassiska vyn:**
 
-1. Gå till Projects i sidomenyn (claude.ai/projects) och skapa ett nytt projekt. Döp det till Hjärnan, eller ett namn användaren föredrar. Namn och beskrivning är bara för användaren, Claude läser dem inte.
+1. Gå till Projects i sidomenyn och skapa ett nytt projekt. Döp det till Hjärnan, eller ett namn användaren föredrar. Namn och beskrivning är bara för användaren, Claude läser dem inte.
 2. Öppna projektinstruktionerna och klistra in texten från steg 3. Spara.
 3. Koppla connectors som upplägget behöver, om de inte redan är kopplade (Google Drive, Kalender). De finns under inställningarna för connectors.
-4. Flytta den här chatten till projektet: öppna menyn vid chattens namn högst upp och välj att lägga till chatten i ett projekt ("Add to project"), välj Hjärnan.
-5. Döp gärna om chatten till "Setup", så att den är lätt att hitta när du vill utveckla upplägget senare.
-6. Skriv "flyttad" här när det är gjort.
+4. Skriv "klart" här när det är gjort.
 
 **I den nya vyn:**
 
 1. Klicka på Projects i sidomenyn och skapa ett nytt projekt. Döp det till Hjärnan, eller ett namn användaren föredrar.
 2. Öppna fliken Context till höger, klicka på Project instructions under Instructions, klistra in texten från steg 3 och spara.
 3. Koppla connectors som upplägget behöver, om de inte redan är kopplade (Google Drive, Kalender).
-4. Se om den här chatten går att flytta in i projektet via menyn vid chattens namn. Går det, gör det och skriv "flyttad" här. Går det inte, skriv "går inte" här.
+4. Skriv "klart" här när det är gjort.
 
-Om chatten inte går att flytta: skriv en kort överlämning i ett kodblock som användaren klistrar in i Hjärnans konversation. Den ska innehålla länken till den här filen (https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md), att setupen fortsätter från steg 5, vad ni har bestämt och vad som är kvar. Setupen fortsätter sedan där, och det är Hjärnans konversation som blir platsen där användaren utvecklar upplägget senare. Den här chatten kan hen döpa om till "Setup start" och lämna.
+När användaren skriver "klart", ge prompten som startar resten av setupen i Hjärnan. Den följer "Prompten från startsidan" och har det här tillägget efter "Det här vill jag göra:", ifyllt utifrån det ni har pratat om:
+
+   ```text
+   Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+   Guiden beskriver en persons upplägg och är inget facit.
+   Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+   Ställ en fråga i taget.
+
+   Det här vill jag göra:
+   Fortsätta min setup-session från steg 5. Läs och följ instruktionerna här:
+   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md
+
+   Det här projektet är min Hjärna. Det här har vi bestämt hittills:
+   - App och vy: ...
+   - Mitt fokus: ...
+   - Områdena i listan och var listan ska ligga: ...
+   - Connectors: ...
+   - Kvar att göra: steg 5 till 7
+   ```
+
+Säg till användaren att klistra in den i en ny chatt i Hjärnan (i den nya vyn: i projektets konversation), döpa chatten till "Setup" om det går, och fortsätta där. Säg att första delen är samma prompt som på startsidan under "När du vill bygga vidare". Den här chatten behövs inte längre. Vill användaren ha kvar den i Hjärnan kan hen flytta in den via menyn vid chattens namn om det valet finns, men det är inget måste.
 
 Säg i samband med det, med en eller två meningar, varför ni gör så här: en chatt i ett projekt startar med projektets instruktioner och kontext, så användaren slipper förklara sig igen, och varje nytt ämne kan få en ny kort chatt i stället för att allt hamnar i en lång. Hänvisa till kapitel 01 och 10 (se kartan nedan).
 
-## Steg 5: Efter flytten
+## Steg 5: I den nya chatten i Hjärnan
 
-När användaren skriver att chatten är flyttad:
+Läser du det här i en chatt som startades med prompten från steg 4, är du nu i Hjärnan. Läs bakgrunden i prompten och fortsätt därifrån utan att ställa om frågorna från steg 1 till 3.
 
 1. **Kontrollera att du ser projektinstruktionerna.** Om du ser dem: säg det och läs igenom dem som om du vore en ny chatt i projektet. Ge kort återkoppling om något är otydligt eller saknas, och låt användaren klistra in eventuella ändringar.
-2. **Om du inte ser instruktionerna:** be användaren kontrollera att de är sparade. Fungerar det ändå inte, skriv en kort överlämning (vad ni har bestämt och vad som är kvar) som användaren klistrar in i en ny chatt i Hjärnan, och fortsätt där.
+2. **Om du inte ser instruktionerna:** be användaren kontrollera att de är sparade och att chatten verkligen ligger i Hjärnan. Ta hjälp av en skärmdump om det behövs.
 3. **Testa en sak på riktigt.** Till exempel: skapa eller läs att göra-listan via connectorn och lägg in något användaren nämnde tidigare enligt reglerna. Det är då användaren ser att upplägget fungerar. Håll det till en sak.
 
 ## Steg 6: Fokusprojektet
@@ -202,14 +245,18 @@ Nu skapar användaren fokusprojektet. Själva uppsättningen av det sker i en eg
    - Finns det material som ska in direkt, till exempel riktlinjer, en kursplan eller ett utkast? Notera var det ligger.
 2. **Grundinstruktioner.** Skriv två eller tre rader som användaren klistrar in som projektinstruktioner så länge, till exempel vad projektet gäller och att Claude ska fråga innan den antar något. Setupen i projektet skriver om dem ordentligt.
 3. **Instruktion för att skapa projektet:** samma sätt som Hjärnan. Döp det efter området (till exempel Examensarbete). Lägg in grundinstruktionerna och, om det finns, det material som redan är klart att ladda upp eller koppla under Kontext på projektsidan (Project knowledge i den engelska appen, Files under Context i den nya vyn).
-4. **Prompten som startar setupen i fokusprojektet.** Ge en färdig prompt i ett kodblock som användaren klistrar in i en ny chatt i fokusprojektet. Den ska följa den här formen, med bakgrunden ifylld utifrån det ni har pratat om:
+4. **Prompten som startar setupen i fokusprojektet.** Ge en färdig prompt i ett kodblock som användaren klistrar in i en ny chatt i fokusprojektet (i den nya vyn: i projektets konversation). Den följer "Prompten från startsidan" och har det här tillägget efter "Det här vill jag göra:", med bakgrunden ifylld utifrån det ni har pratat om:
 
    ```text
-   Det här är en setup-session för det här projektet. Läs och följ instruktionerna här:
-   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/fokusprojekt.md
-
-   Hela guiden som instruktionerna hör till finns här, läs det du behöver:
+   Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
    https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+   Guiden beskriver en persons upplägg och är inget facit.
+   Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+   Ställ en fråga i taget.
+
+   Det här vill jag göra:
+   Sätta upp det här projektet. Det här är en setup-session för projektet, läs och följ instruktionerna här:
+   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/fokusprojekt.md
 
    Det här projektet är inte Hjärnan. Hjärnan finns redan och håller koll på helheten. Här sätter vi upp projektet för mitt arbete.
 
@@ -218,15 +265,14 @@ Nu skapar användaren fokusprojektet. Själva uppsättningen av det sker i en eg
    - Det jag främst vill ha hjälp med: ...
    - Material och var det ligger: ...
    - Jobbar med andra: ... (plan: ...)
-   - Min nivå och hur jag använder Claude: ...
+   - App och vy: ...
+   - Hur jag använder Claude i dag: ...
    - Annat som är bra att veta: ...
    ```
 
    Skriv bakgrunden kort och sakligt, med användarens egna ord där det går. Ta inte med privata detaljer som inte behövs för projektet.
 
-I den nya vyn klistrar användaren in prompten i fokusprojektets konversation i stället för i en ny chatt.
-
-Säg sedan ungefär så här: "Klistra in prompten i en ny chatt i projektet X. Där sätter vi upp projektet för ditt arbete. När den setupen är klar startar du en ny chatt i projektet och börjar arbeta."
+Säg sedan ungefär så här: "Klistra in prompten i en ny chatt i projektet X. Första delen är samma prompt som på guidens startsida, så du hittar den där också. Där sätter vi upp projektet för ditt arbete. När den setupen är klar startar du en ny chatt i projektet och börjar arbeta."
 
 Användaren behöver inte komma tillbaka hit innan hen går vidare. Gå direkt till avslutningen.
 
@@ -244,7 +290,7 @@ Avsluta när Hjärnan fungerar och användaren har prompten till fokusprojektet,
    - ett morgonbrev som sammanfattar dagen, när det finns något att sammanfatta (kapitel 06),
    - fler projekt för andra områden när de behövs (kapitel 04),
    - en lokal mapp med regelfil om hen börjar använda Claude-appen på datorn (kapitel 03).
-5. **En prompt för en ny chatt i Hjärnan**, i ett kodblock, för den dag hen vill bygga vidare i en ny chatt. Säg att samma prompt finns på guidens startsida under "När du vill bygga vidare", så att hen hittar den igen:
+5. **Prompten från startsidan**, i ett kodblock, för den dag hen vill bygga vidare i en ny chatt. Säg att det är samma prompt som inledde de andra prompterna i sessionen och att den finns på guidens startsida under "När du vill bygga vidare":
 
    ```text
    Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
@@ -313,9 +359,10 @@ Sajten finns på https://solsidan21.github.io/AI_workflow_guide_svenska/. Om du 
 
 - Den här chatten sätter upp, den arbetar inte.
 - Två projekt: Hjärnan och fokusprojektet. Inte fler i dag. Befintliga projekt får bli de två.
-- Ta reda på vilken projektvy användaren har och följ den varianten.
+- Ta först reda på app, version och vy (helst Claude-appen för datorn, versionsnummer och skärmdump) och följ den varianten.
+- Varje prompt för en ny chatt börjar ordagrant med prompten från startsidan, följd av länken till rätt setupfil och vad ni har bestämt.
 - Användaren lägger grunden. Säg vad grunden gör möjligt senare.
 - En fråga i taget, kort, användaren gör stegen själv. Värdera inte användarens nivå.
 - Vid viktiga beslut: föreslå ett avsnitt att läsa innan hen svarar.
 - Kort förklaring, sedan en länk till guiden.
-- Sessionen slutar med prompten till fokusprojektet och vetskapen om att Setup-chatten finns kvar i Hjärnan.
+- Setupen fortsätter i en ny chatt i Hjärnan och slutar med prompten till fokusprojektet och vetskapen om att Setup-chatten finns kvar i Hjärnan.

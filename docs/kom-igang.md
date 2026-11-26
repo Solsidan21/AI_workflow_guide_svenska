@@ -6,7 +6,7 @@
     - Klistra in prompten nedan i en helt ny chatt, utanför alla projekt.
     - Chatten är en setup-session och används bara till att sätta upp ditt upplägg, inte till att jobba med dina uppgifter.
     - Claude frågar hur du arbetar i dag, vad du använder den till och vad du främst vill få gjort, och anpassar sig efter det.
-    - Du får två projekt: Hjärnan, som håller koll på helheten och där setup-chatten bor kvar, och ett projekt för det du främst vill göra. Har du redan projekt kan de bli de två.
+    - Du får två projekt: Hjärnan, som håller koll på helheten och där setupen fortsätter och bor kvar, och ett projekt för det du främst vill göra. Har du redan projekt kan de bli de två.
     - Sedan börjar du arbeta. Du har lagt grunden, och upplägget växer med tiden. Ingen bygger allt i ett svep.
 
 ## Prompten
@@ -24,8 +24,8 @@ Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och
 
 ## Vad som händer
 
-1. **Claude tar reda på var du står.** Den läser av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan vad du använder Claude till och vilka projekt du har. Den viktigaste frågan är vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete. Det blir ditt fokusprojekt.
-2. **Ni sätter upp Hjärnan.** Claude skriver instruktionerna med dig, du skapar projektet och flyttar in chatten dit. Där blir den kvar som din Setup-chatt. Går chatten inte att flytta i din app, ger Claude dig en kort överlämning att klistra in i Hjärnan i stället.
+1. **Claude tar reda på var du står.** Först ber den dig öppna Claude-appen för datorn om du har den och skicka versionsnumret och en skärmdump, eftersom appen ser olika ut hos olika användare. Sedan läser den av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan vad du använder Claude till och vilka projekt du har. Den viktigaste frågan är vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete. Det blir ditt fokusprojekt.
+2. **Ni sätter upp Hjärnan.** Claude skriver instruktionerna med dig och du skapar projektet. Sedan får du en prompt som du klistrar in i en ny chatt i Hjärnan, och där fortsätter setupen. Den chatten blir kvar som din Setup-chatt.
 3. **Du skapar fokusprojektet.** Claude ger dig en prompt som du klistrar in i en ny chatt i det projektet. Där gör ni en kort setup för just ditt arbete: mål, material, hur du vill ha hjälp och om du jobbar med andra.
 4. **Du börjar arbeta.** När fokusprojektet är uppsatt startar du en ny chatt där och sätter igång.
 5. **Du kommer tillbaka när du vill.** Setup-chatten i Hjärnan finns kvar för när du vill utveckla upplägget, till exempel organisera vardagen, ta reda på hur du lär dig bäst eller lägga till fler projekt.
@@ -36,7 +36,9 @@ Ibland ber Claude dig ta ställning till något och föreslår ett avsnitt i gui
 
 ## Om din app ser annorlunda ut
 
-Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Har du fått den ser projekten annorlunda ut än i guidens beskrivningar, men upplägget är detsamma. Setup-sessionen frågar tidigt vilken vy du har, gärna med en skärmdump, och anpassar stegen efter den. [Kapitel 01](01-fran-chatt-till-system.md#projekten-ser-olika-ut-hos-olika-anvandare) förklarar skillnaden.
+Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Appen på datorn kan dessutom se annorlunda ut än Claude i webbläsaren. Upplägget är detsamma, men knapparna sitter på olika ställen. Därför börjar setup-sessionen med att be dig öppna appen för datorn, skicka versionsnumret (Claude i menyraden, About Claude) och en skärmdump, och anpassar sedan stegen efter det du ser.
+
+Varje prompt du får för en ny chatt börjar med samma text som prompten under "När du vill bygga vidare" nedan och på startsidan. Den har länken till guiden, så att varje ny chatt vet vad den bygger. [Kapitel 01](01-fran-chatt-till-system.md#projekten-ser-olika-ut-hos-olika-anvandare) förklarar skillnaden.
 
 ## Om du redan har ett upplägg
 
