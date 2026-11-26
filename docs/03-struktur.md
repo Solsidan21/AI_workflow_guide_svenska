@@ -77,7 +77,7 @@ Flödet har fyra steg:
 1. Samla. Lägg originalen i en mapp. Behåll alltid PDF:en, den är din källa.
 2. Extrahera. Be Claude Code läsa PDF:en och skriva den som Markdown, uppdelad i filer som följer materialets egen struktur.
 3. Publicera. Lägg mappen i ett Git-repo och skicka det till GitHub.
-4. Koppla. Lägg repot som kunskap i ett Claude-projekt.
+4. Koppla. Lägg till repot under Kontext på projektsidan i ett Claude-projekt (Project knowledge i den engelska appen).
 
 ??? begrepp "Begrepp: GitHub"
     --8<-- "github.md"

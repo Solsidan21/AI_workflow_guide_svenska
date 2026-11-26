@@ -2,4 +2,4 @@
 
 **Liknelse:** Att slå upp rätt sida i kursboken i stället för att läsa hela boken inför varje fråga.
 
-**Varför det spelar roll här:** Claude-projekt använder det automatiskt när kunskapen blir för stor för kontextfönstret. Därför gör tydliga filnamn och uppdelade filer att rätt avsnitt hittas.
+**Varför det spelar roll här:** Claude-projekt använder det automatiskt när materialet i projektets kontext blir för stort för kontextfönstret. Därför gör tydliga filnamn och uppdelade filer att rätt avsnitt hittas.

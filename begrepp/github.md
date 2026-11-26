@@ -1,4 +1,4 @@
-**Vad det är:** En webbtjänst där Git-repon lagras och kan delas. Ett repo kan vara privat eller offentligt, och man kan lägga till det som kunskap i ett Claude-projekt.
+**Vad det är:** En webbtjänst där Git-repon lagras och kan delas. Ett repo kan vara privat eller offentligt, och man kan lägga till det i ett Claude-projekts kontext.
 
 **Liknelse:** Ett gemensamt arkiv i molnet där alla ser samma senaste version av mappen.
 

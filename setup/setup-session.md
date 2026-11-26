@@ -35,6 +35,12 @@ Det här gäller genom hela sessionen:
 
 Guiden utgår från Claude på claude.ai och i Claude-appen. Är du ChatGPT eller en annan assistent: översätt varje steg till motsvarande funktion (projekt, projektinstruktioner, connectors eller appar, schemalagda uppgifter) och säg tydligt när en funktion saknas eller fungerar annorlunda. Kapitel 01 har en tabell över vad sakerna heter hos Claude och ChatGPT.
 
+## Namnen i appen
+
+Använd de namn som står i användarens app, inte egna översättningar. Det du vet om Claude är oftast skrivet på engelska, och en direktöversättning stämmer inte alltid med den svenska appen. Det viktigaste exemplet: materialet som alla chattar i ett projekt kan läsa heter Kontext på projektsidan i den svenska appen och Project knowledge i den engelska. Säg aldrig "projektkunskap" till användaren, det ordet finns inte i appen.
+
+Kan du se användarens app, till exempel via en skärmdump eller webbläsaren, använd namnen som står där. Annars: fråga en gång om appen är på svenska eller engelska, eller ge namnet på båda språken första gången, till exempel "Kontext (Project knowledge om appen är på engelska)". Gäller det en knapp eller meny du inte vet det svenska namnet på, ge det engelska namnet och beskriv var den sitter.
+
 Menyer och knappnamn ändras. Beskriv var användaren hittar något så gott du kan, men be hen säga till om det ser annorlunda ut, och anpassa dig efter vad hen ser. Om du kan söka på webben och är osäker på hur en funktion fungerar just nu, kontrollera på support.claude.com (eller motsvarande hjälpsida) innan du ger instruktionen.
 
 ## Steg 1: Ta reda på var användaren står och vad fokus är
@@ -101,7 +107,7 @@ Använd den här fördelningen när du resonerar. Förklara den för användaren
 **Claudes moln (det som finns i Claude-kontot):**
 
 - *Projektinstruktioner:* reglerna för hur Claude ska arbeta i projektet. Läses i början av varje chatt i projektet. Det som måste gälla varje gång ska stå här.
-- *Projektkunskap:* stabilt referensmaterial som sällan ändras, till exempel en kursplan, riktlinjer för ett examensarbete, en mall eller en beskrivning av dig själv. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som ett GitHub-repo eller en fil från Drive, kan följa med ändringar.
+- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen): stabilt referensmaterial som sällan ändras, till exempel en kursplan, riktlinjer för ett examensarbete, en mall eller en beskrivning av dig själv. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som ett GitHub-repo eller en fil från Drive, kan följa med ändringar.
 - *Minne:* det Claude själv väljer att spara om användaren mellan chattar. Bra för bestående fakta, men inte exakt styrbart. Varje projekt har sitt eget minne.
 - *Chatthistorik och artifacts:* samtal och färdiga dokument eller sidor som användaren vill komma tillbaka till.
 
@@ -117,7 +123,7 @@ Använd den här fördelningen när du resonerar. Förklara den för användaren
 - Mappar med en regelfil (CLAUDE.md) och skript, och sådant som ska versionshanteras med git.
 - Det som är privat och inte behöver nås från mobilen eller av schemalagda uppgifter.
 
-Tumregeln att ge användaren är att fråga vem som läser, inte hur ofta något ändras. Det som bara Claude läser ska ligga där det är billigast och tydligast för Claude. Det som användaren och andra läser hör hemma i Drive eller motsvarande. Det som talar om för Claude hur den ska arbeta hör hemma i projektinstruktionerna, och stabilt material i projektkunskapen. Stora mängder rådata och det som ska byggas med verktyg hör hemma lokalt. Varje dokument ska ha en enda skrivare, så att två projekt aldrig skriver över varandra. Kapitel 04 förklarar det under "Tumregeln: vem läser?".
+Tumregeln att ge användaren är att fråga vem som läser, inte hur ofta något ändras. Det som bara Claude läser ska ligga där det är billigast och tydligast för Claude. Det som användaren och andra läser hör hemma i Drive eller motsvarande. Det som talar om för Claude hur den ska arbeta hör hemma i projektinstruktionerna, och stabilt material i projektets kontext. Stora mängder rådata och det som ska byggas med verktyg hör hemma lokalt. Varje dokument ska ha en enda skrivare, så att två projekt aldrig skriver över varandra. Kapitel 04 förklarar det under "Tumregeln: vem läser?".
 
 Rekommendera tjänster efter vad användaren redan har. De flesta har ett Google- eller Microsoft-konto genom sin mejl, och då är Drive eller OneDrive det naturliga valet. Använder hen redan Notion går det lika bra. Föreslå inte GitHub för listor.
 
@@ -153,7 +159,7 @@ Ge en numrerad instruktion som användaren följer medan du väntar. Anpassa eft
 5. Döp gärna om chatten till "Setup", så att den är lätt att hitta när du vill utveckla upplägget senare.
 6. Skriv "flyttad" här när det är gjort.
 
-Säg i samband med det, med en eller två meningar, varför ni gör så här: en chatt i ett projekt startar med projektets instruktioner och kunskap, så användaren slipper förklara sig igen, och varje nytt ämne kan få en ny kort chatt i stället för att allt hamnar i en lång. Hänvisa till kapitel 01 och 10 (se kartan nedan).
+Säg i samband med det, med en eller två meningar, varför ni gör så här: en chatt i ett projekt startar med projektets instruktioner och kontext, så användaren slipper förklara sig igen, och varje nytt ämne kan få en ny kort chatt i stället för att allt hamnar i en lång. Hänvisa till kapitel 01 och 10 (se kartan nedan).
 
 ## Steg 5: Efter flytten
 
@@ -171,7 +177,7 @@ Nu skapar användaren fokusprojektet. Själva uppsättningen av det sker i en eg
    - Jobbar användaren med andra i fokusområdet? I så fall: att dela ett Claude-projekt med andra kräver Team eller Enterprise och att alla är med i samma organisation. Har gruppen inte det får var och en ett eget projekt, och gruppen delar material via till exempel en delad mapp i Drive. Detaljerna tar setupen i fokusprojektet.
    - Finns det material som ska in direkt, till exempel riktlinjer, en kursplan eller ett utkast? Notera var det ligger.
 2. **Grundinstruktioner.** Skriv två eller tre rader som användaren klistrar in som projektinstruktioner så länge, till exempel vad projektet gäller och att Claude ska fråga innan den antar något. Setupen i projektet skriver om dem ordentligt.
-3. **Instruktion för att skapa projektet:** samma sätt som Hjärnan. Döp det efter området (till exempel Examensarbete). Lägg in grundinstruktionerna och, om det finns, det material som redan är klart att ladda upp eller koppla.
+3. **Instruktion för att skapa projektet:** samma sätt som Hjärnan. Döp det efter området (till exempel Examensarbete). Lägg in grundinstruktionerna och, om det finns, det material som redan är klart att ladda upp eller koppla under Kontext på projektsidan (Project knowledge i den engelska appen).
 4. **Prompten som startar setupen i fokusprojektet.** Ge en färdig prompt i ett kodblock som användaren klistrar in i en ny chatt i fokusprojektet. Den ska följa den här formen, med bakgrunden ifylld utifrån det ni har pratat om:
 
    ```text

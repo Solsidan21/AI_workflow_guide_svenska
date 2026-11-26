@@ -46,7 +46,7 @@ Ett projekt är ett arbetsrum med egna instruktioner och egna filer, där alla s
 
     [Se alla begrepp i ordlistan](ordlista.md#projekt)
 
-Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kunskapen är kursmaterialet. Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
+Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kursmaterialet ligger i projektets kontext (rutan Kontext på projektsidan, Project knowledge på engelska). Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
 
 En chatt kan flyttas in i ett projekt i efterhand, via menyn vid chattens namn. Det är så setup-sessionen på sidan [Kom igång](kom-igang.md) slutar: du skapar projektet och flyttar dit chatten där det planerades.
 
@@ -89,7 +89,7 @@ OpenAI har en motsvarighet som heter Codex, med regelfilen AGENTS.md.
 
     [Se alla begrepp i ordlistan](ordlista.md#codex)
 
-Jag började faktiskt med Codex och bytte senare till Claude Code. Jag kan inte säga att den ena är bäst, och landskapet ändras ofta. Jag använder Claude som huvudspår här eftersom det är det jag kan bäst, och för att jag kan lägga mina GitHub-repon som kunskap i ett Claude-projekt, vilket gör att kursprojektet alltid ser senaste versionen.
+Jag började faktiskt med Codex och bytte senare till Claude Code. Jag kan inte säga att den ena är bäst, och landskapet ändras ofta. Jag använder Claude som huvudspår här eftersom det är det jag kan bäst, och för att jag kan lägga mina GitHub-repon i ett Claude-projekts kontext, vilket gör att kursprojektet alltid ser senaste versionen.
 
 ## Samma ting under olika namn
 

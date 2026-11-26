@@ -122,7 +122,7 @@ Ett tips om regler: skriv dem när något går fel. Varje gång Claude gör någ
 
     [Se alla begrepp i ordlistan](ordlista.md#projekt)
 
-Kursen har sitt eget projekt i Claude, med repot som kunskap. Projektinstruktionerna är en kortare version av CLAUDE.md, så att de viktigaste reglerna alltid finns med. Det är samma upplägg som i kapitel 04, men tillämpat på en enda kurs.
+Kursen har sitt eget projekt i Claude, med repot i projektets kontext. Projektinstruktionerna är en kortare version av CLAUDE.md, så att de viktigaste reglerna alltid finns med. Det är samma upplägg som i kapitel 04, men tillämpat på en enda kurs.
 
 ---
 

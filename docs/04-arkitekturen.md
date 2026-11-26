@@ -22,7 +22,7 @@ Den vanligaste frågan när man bygger sitt upplägg är var saker ska ligga. Ti
 |---|---|---|
 | Maskinlagret | Det som främst Claude läser och skriver: att göra-listan, läget per område, loggar och speglingar mellan projekt | Där det är billigast och tydligast för Claude, och där dina schemalagda uppgifter når det |
 | Människolagret | Det du och andra läser: en affärsplan, ett CV, en text ni skriver tillsammans | Drive eller motsvarande, eftersom delning och mobilen spelar roll |
-| Kunskapslagret | Det som talar om för Claude vad den vet och hur den ska arbeta: kursmaterial, regelfiler, projektinstruktioner och minne | Repon, projektinstruktioner, projektkunskap och minnet |
+| Kunskapslagret | Det som talar om för Claude vad den vet och hur den ska arbeta: kursmaterial, regelfiler, projektinstruktioner och minne | Repon, projektinstruktioner, projektets kontext och minnet |
 
 Lagren går in i varandra. Även maskinlagret bör gå att läsa för en människa ibland. Jag öppnar sällan min att göra-lista, eftersom morgonbrevet berättar det jag behöver veta. Men när jag blir klar med något mellan två brev vill jag kunna se allt på en gång. Därför ligger listan i ett kalkylark med flikar för Claude och en flik för mig, som [avsnittet om arket](#ett-ark-som-delat-skikt) visar. Frågan om vem som läser avgör alltså inte bara var något ska ligga, utan också vilket format det ska ha.
 
@@ -34,7 +34,7 @@ Min setup består av fem delar. Det enklaste sättet att se dem är en skiss dä
   LOKALT (~/Projects/Plugg)             GITHUB
   en mapp = ett repo per kurs   --->    samma repo, pushas med ett skript
   (kursmaterial, fulltext, tentor)            |
-                                              | läggs till som kunskap
+                                              | läggs till i projektets kontext
                                               v
                              CLAUDE-PROJEKT, ett per kurs
                              (+ ett centralt projekt för helheten)
@@ -60,7 +60,7 @@ Alla mina kursmappar ligger på samma ställe på datorn, och varje kurs är ett
 
     [Se alla begrepp i ordlistan](ordlista.md#repo)
 
-Repona synkas till GitHub. Där kan de läggas till som kunskap i ett Claude-projekt, vilket är kopplingen mellan filerna på min dator och det Claude faktiskt har framför sig när jag pratar med den.
+Repona synkas till GitHub. Där kan de läggas till i ett Claude-projekts kontext, vilket är kopplingen mellan filerna på min dator och det Claude faktiskt har framför sig när jag pratar med den.
 
 ??? begrepp "Begrepp: GitHub"
     --8<-- "github.md"
@@ -73,7 +73,7 @@ Vem skriver här? Jag och Claude Code bygger repona tillsammans. Efter att en ku
 
 ## Ett projekt per område
 
-Varje kurs har ett eget Claude-projekt med kursens repo som kunskap. Projektinstruktionerna är en kortversion av CLAUDE.md i repot. Anledningen är praktisk: instruktionerna i projektet är det första Claude ser, så de viktigaste reglerna ska stå där utan att Claude först behöver läsa hela filträdet.
+Varje kurs har ett eget Claude-projekt med kursens repo i projektets kontext. Projektinstruktionerna är en kortversion av CLAUDE.md i repot. Anledningen är praktisk: instruktionerna i projektet är det första Claude ser, så de viktigaste reglerna ska stå där utan att Claude först behöver läsa hela filträdet.
 
 ??? begrepp "Begrepp: Projekt"
     --8<-- "projekt.md"
@@ -89,7 +89,7 @@ Utöver kursprojekten har jag ett centralt projekt som håller koll på helheten
 Ett projekt kan liknas vid en mapp. Det som finns i den är det Claude har att arbeta med när du startar en chatt där. Det mesta i ditt Claude-konto går att tänka på som textfiler i sådana mappar:
 
 - *Projektinstruktionerna* är en regelfil som läses först i varje chatt i projektet.
-- *Projektkunskapen* är filerna i mappen.
+- *Projektets kontext* är filerna i mappen. I appen heter det Kontext på projektsidan, eller Project knowledge om appen är på engelska.
 - *Minnet* är korta anteckningar som Claude själv för om dig. Kontots minne gäller överallt. Varje projekt har dessutom ett eget minne som bara gäller där, och i projektets inställningar väljer du om det ska vara kopplat till kontots minne eller hållas helt för sig. [Kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom minnet närmare.
 - *Chattar och projektdokument* stannar i sitt projekt.
 - *Artifacts*, alltså de dokument och sidor Claude gör åt dig, ligger på kontot och kan nås från alla projekt.
@@ -105,7 +105,7 @@ Lösningen i min setup kallar jag speglingsmönstret. Varje projekt skriver en k
 
     Du utvecklar inte apparna från övermappen. Startar du en session där ser Claude allt på en gång, och då ökar risken att den arbetar i fel app eller blandar ihop reglerna. När du bygger en viss app öppnar du sessionen i dess mapp. Övermappen använder du till annat: att se helheten, planera mellan apparna och ändra det som gäller alla.
 
-    Översatt till Claude är varje projekt en sådan undermapp. Projektinstruktionerna motsvarar undermappens CLAUDE.md, projektkunskapen motsvarar filerna i mappen och projektets minne motsvarar en anteckningsfil som Claude själv för. Kontots minne och dina allmänna inställningar motsvarar övermappens CLAUDE.md, som gäller överallt. Varje chatt motsvarar en session.
+    Översatt till Claude är varje projekt en sådan undermapp. Projektinstruktionerna motsvarar undermappens CLAUDE.md, projektets kontext motsvarar filerna i mappen och projektets minne motsvarar en anteckningsfil som Claude själv för. Kontots minne och dina allmänna inställningar motsvarar övermappens CLAUDE.md, som gäller överallt. Varje chatt motsvarar en session.
 
     Skillnaden är att Claude inte låter dig lägga projekt i projekt. Det finns ingen övermapp som ser in i undermapparna. Hjärnan i [kapitel 06](06-hjarnan.md) är mitt sätt att gå runt det: ett vanligt projekt som spelar övermappens roll och som ser vad som händer i de andra projekten genom att de speglar sitt läge till ett delat ark.
 
@@ -199,7 +199,7 @@ Tumregeln om vem som läser säger vilket lager något hör till. Här är plats
 **Claudes moln** är allt som ligger i ditt Claude-konto. Det består av fyra delar som ofta blandas ihop:
 
 - *Projektinstruktioner* är reglerna för hur Claude ska arbeta i projektet. De läses i början av varje chatt i projektet, så det som måste gälla varje gång hör hemma här.
-- *Projektkunskap* är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.
+- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen) är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.
 - *Minne* är det Claude själv väljer att spara om dig mellan chattar. Det är bra för bestående fakta men går inte att styra exakt, vilket [kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom.
 - *Chatthistorik och artifacts* är samtalen och de dokument eller sidor Claude har gjort, som du kan gå tillbaka till.
 
@@ -210,7 +210,7 @@ Tumregeln om vem som läser säger vilket lager något hör till. Här är plats
 | Vad det är | Var det hör hemma |
 |---|---|
 | Regler för hur Claude ska arbeta i ett område | Projektinstruktioner |
-| Stabilt material som ska läsas, till exempel en kursplan | Projektkunskap |
+| Stabilt material som ska läsas, till exempel en kursplan | Projektets kontext |
 | Fakta om dig som är bra att Claude minns | Minne |
 | Listor och status som Claude skriver och du vill kunna läsa | Ett ark i Drive |
 | Det som bara Claude läser | Där det är billigast för Claude, till exempel ett repo eller en fil i projektet |
@@ -226,7 +226,7 @@ Inget i det här är specifikt för kurser. Byt ut orden så ser det ut så här
 | I mitt plugg | I ett jobb |
 |---|---|
 | Ett repo per kurs | En mapp per kund, projekt eller affär med avtal, underlag och mallar |
-| Kursprojekt med repot som kunskap | Ett Claude-projekt per kund eller team med mappen som kunskap |
+| Kursprojekt med repot i projektets kontext | Ett Claude-projekt per kund eller team med mappen i projektets kontext |
 | En rad per kurs i fliken Plugg | Ett statusdokument eller en rad per kund: läget, nästa steg, öppna frågor |
 | Att göra-listan | En gemensam lista över åtaganden |
 | Kalender | Kalender, precis som förut |
