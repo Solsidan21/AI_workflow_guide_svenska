@@ -25,8 +25,8 @@ Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och
 ## Vad som händer
 
 1. **Claude tar reda på var du står.** Först ber den dig öppna Claude-appen för datorn om du har den och skicka versionsnumret och en skärmdump, eftersom appen ser olika ut hos olika användare. Sedan läser den av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan vad du använder Claude till och vilka projekt du har. Den viktigaste frågan är vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete. Det blir ditt fokusprojekt.
-2. **Ni sätter upp Hjärnan.** Claude skriver instruktionerna med dig och du skapar projektet. Sedan får du en prompt som du klistrar in i en ny chatt i Hjärnan, och där fortsätter setupen. Den chatten blir kvar som din Setup-chatt.
-3. **Du skapar fokusprojektet.** Claude ger dig en prompt som du klistrar in i en ny chatt i det projektet. Där gör ni en kort setup för just ditt arbete: mål, material, hur du vill ha hjälp och om du jobbar med andra.
+2. **Ni sätter upp Hjärnan.** Du skapar projektet och ger det ett namn, inget mer. Sedan får du en prompt som du klistrar in i en ny chatt i Hjärnan. Där skriver ni instruktionerna och testar att det fungerar, och den chatten blir kvar som din Setup-chatt.
+3. **Du skapar fokusprojektet.** Samma sak: bara namnet, sedan en prompt som du klistrar in i en ny chatt i det projektet. Där börjar ni med ditt material. Claude går igenom det, strukturerar det och skriver om det till Markdown i en egen mapp, utan att röra originalen. Först därefter skriver ni instruktionerna: mål, hur du vill ha hjälp och om du jobbar med andra.
 4. **Du börjar arbeta.** När fokusprojektet är uppsatt startar du en ny chatt där och sätter igång.
 5. **Du kommer tillbaka när du vill.** Setup-chatten i Hjärnan finns kvar för när du vill utveckla upplägget, till exempel organisera vardagen, ta reda på hur du lär dig bäst eller lägga till fler projekt.
 
