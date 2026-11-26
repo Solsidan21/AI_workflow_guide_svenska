@@ -55,7 +55,7 @@ Guiden utgår från Claude på claude.ai och i Claude-appen. Är du ChatGPT elle
 
 ## Appen ser olika ut hos olika användare
 
-Anthropic håller på att göra om hur projekt fungerar och ser ut, och det rullas ut gradvis. Två användare med samma plan kan därför ha helt olika vyer, och en ny installation kan se annorlunda ut än en äldre. Ta reda på vilken vy användaren har innan du ger instruktioner om projekt (se Steg 1).
+Anthropic håller på att göra om hur projekt fungerar och ser ut, och det rullas ut gradvis. Två användare med samma plan kan därför ha helt olika vyer, och en ny installation kan se annorlunda ut än en äldre. Vyn kan också skilja sig mellan projekt hos samma användare: projekt som skapas med en uppdaterad app får den nya vyn, medan projekt som fanns innan behåller den klassiska tills Anthropic uppgraderar dem. Ett nytt Hjärnan eller fokusprojekt kan alltså se annorlunda ut än användarens gamla projekt. Ta reda på vilken vy användaren har innan du ger instruktioner om projekt (se Steg 1).
 
 - *Den klassiska vyn:* projektsidan visar projektets chattar, en ruta för projektinstruktionerna och rutan Kontext (Project knowledge i den engelska appen) för materialet. En befintlig chatt kan flyttas in i projektet via menyn vid chattens namn.
 - *Den nya vyn:* ett projekt öppnas som en egen konversation, och till höger finns flikarna Threads och Context. Threads är trådar som projektet startar, var och en en egen session som gör en del av arbetet och rapporterar tillbaka. Under Context finns Instructions (där Project instructions ligger), Memory, Files och Artifacts. Materialet läggs under Files och reglerna under Project instructions.
@@ -84,7 +84,7 @@ Börja med några meningar om vad som ska hända: "Vi ska sätta upp två projek
 2. Be om versionsnumret: på Mac klickar hen på Claude i menyraden högst upp och väljer About Claude, på Windows finns samma val i appens meny. Be hen samtidigt välja Check for Updates och uppdatera om det finns en ny version, så att ni utgår från den senaste.
 3. Be om en skärmdump där sidomenyn syns, gärna med ett projekt öppet eller sidan Projects. Kan du se skärmen själv, titta i stället.
 
-Versionsnumret säger vilken app hen har, men den nya projektvyn rullas ut per konto, så det är skärmdumpen som avgör vilken vy det är. Kan du söka på webben och är osäker, jämför versionen med Anthropics release notes. Använd sedan den variant som stämmer genom hela sessionen, och be användaren säga till om något ser annorlunda ut än du beskriver.
+Versionsnumret säger vilken app hen har, men den nya projektvyn rullas ut per konto och gäller nya projekt först, så det är skärmdumpen som avgör vilken vy det är. Visar skärmdumpen ett äldre projekt, säg att ett nytt projekt kan se annorlunda ut, och be om en ny skärmdump när användaren har skapat Hjärnan i steg 3. Kan du söka på webben och är osäker, jämför versionen med Anthropics release notes. Använd sedan den variant som stämmer genom hela sessionen, och be användaren säga till om något ser annorlunda ut än du beskriver.
 
 **Kolla om du når användarens dator.** Se efter om du har verktyg för användarens lokala filer eller mappar (i Claude-appen på datorn kan användaren koppla mappar som du då kan läsa och skriva i). Det avgör mycket av upplägget, så ta upp det tidigt:
 
@@ -171,7 +171,7 @@ För en ny användare räcker ofta Claudes moln och Drive. Föreslå inte lokala
 
 Ge bara de två sakerna (se "Ett nytt projekt skapas med två saker" ovan). Anpassa efter vyn hen har (steg 1).
 
-1. **Skapa projektet.** Klicka på Projects i sidomenyn och skapa ett nytt projekt. Döp det till Hjärnan, eller ett namn användaren föredrar. Namn och beskrivning är bara för användaren, Claude läser dem inte. Lägg inte in något annat än. Gör användaren om ett befintligt projekt till Hjärnan behövs inget nytt, och instruktionerna skrivs om i nästa steg. Be hen skriva "klart" när projektet finns.
+1. **Skapa projektet.** Klicka på Projects i sidomenyn och skapa ett nytt projekt. Döp det till Hjärnan, eller ett namn användaren föredrar. Namn och beskrivning är bara för användaren, Claude läser dem inte. Lägg inte in något annat än. Gör användaren om ett befintligt projekt till Hjärnan behövs inget nytt, och instruktionerna skrivs om i nästa steg. Be hen skriva "klart" när projektet finns, gärna med en skärmdump av det nya projektet, eftersom ett nytt projekt kan ha en annan vy än hens gamla.
 2. **Prompten.** När användaren skriver "klart", ge prompten som startar resten av setupen i Hjärnan. Den följer "Prompten från startsidan" och har det här tillägget efter "Det här vill jag göra:", ifyllt utifrån det ni har pratat om:
 
    ```text

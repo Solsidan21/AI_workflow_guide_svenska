@@ -36,7 +36,7 @@ Ibland ber Claude dig ta ställning till något och föreslår ett avsnitt i gui
 
 ## Om din app ser annorlunda ut
 
-Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Appen på datorn kan dessutom se annorlunda ut än Claude i webbläsaren. Upplägget är detsamma, men knapparna sitter på olika ställen. Därför börjar setup-sessionen med att be dig öppna appen för datorn, skicka versionsnumret (Claude i menyraden, About Claude) och en skärmdump, och anpassar sedan stegen efter det du ser.
+Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Nya projekt får den först, så har du projekt sedan tidigare kan Hjärnan se annorlunda ut än dem. Appen på datorn kan dessutom se annorlunda ut än Claude i webbläsaren. Upplägget är detsamma, men knapparna sitter på olika ställen. Därför börjar setup-sessionen med att be dig öppna appen för datorn, skicka versionsnumret (Claude i menyraden, About Claude) och en skärmdump, och anpassar sedan stegen efter det du ser.
 
 Varje prompt du får för en ny chatt börjar med samma text som prompten under "När du vill bygga vidare" nedan och på startsidan. Den har länken till guiden, så att varje ny chatt vet vad den bygger. [Kapitel 01](01-fran-chatt-till-system.md#projekten-ser-olika-ut-hos-olika-anvandare) förklarar skillnaden.
 

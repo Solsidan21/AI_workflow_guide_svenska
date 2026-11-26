@@ -52,7 +52,7 @@ En chatt kan ofta flyttas in i ett projekt i efterhand, via menyn vid chattens n
 
 #### Projekten ser olika ut hos olika användare
 
-Anthropic håller på att göra om projekten, och ändringen rullas ut gradvis. Du kan därför se något helt annat än en vän med samma plan. I den klassiska vyn har projektsidan en lista över chattar, en ruta för instruktionerna och rutan Kontext för materialet. I den nya vyn öppnas projektet som en egen konversation, med flikarna Threads och Context till höger. Threads är trådar som projektet startar för olika delar av arbetet. Under Context finns instruktionerna (Project instructions), projektets minne, filerna och artifacts.
+Anthropic håller på att göra om projekten, och ändringen rullas ut gradvis. Du kan därför se något helt annat än en vän med samma plan. Du kan också ha båda vyerna själv: projekt som du skapar med en uppdaterad app får den nya vyn, medan dina äldre projekt ser ut som förut tills Anthropic uppgraderar dem. I den klassiska vyn har projektsidan en lista över chattar, en ruta för instruktionerna och rutan Kontext för materialet. I den nya vyn öppnas projektet som en egen konversation, med flikarna Threads och Context till höger. Threads är trådar som projektet startar för olika delar av arbetet. Under Context finns instruktionerna (Project instructions), projektets minne, filerna och artifacts.
 
 Byggstenarna är desamma i båda: instruktioner som gäller varje gång, material som alla samtal i projektet kan läsa och ett eget minne. Allt i guiden som handlar om vad som ska stå var gäller alltså oavsett vy. Det är bara namnen och var knapparna sitter som skiljer, och setup-sessionen frågar vilken vy du har innan den säger var du ska klicka.
 
