@@ -35,11 +35,22 @@ Det här gäller genom hela sessionen:
 
 Guiden utgår från Claude på claude.ai och i Claude-appen. Är du ChatGPT eller en annan assistent: översätt varje steg till motsvarande funktion (projekt, projektinstruktioner, connectors eller appar, schemalagda uppgifter) och säg tydligt när en funktion saknas eller fungerar annorlunda. Kapitel 01 har en tabell över vad sakerna heter hos Claude och ChatGPT.
 
+## Appen ser olika ut hos olika användare
+
+Anthropic håller på att göra om hur projekt fungerar och ser ut, och det rullas ut gradvis. Två användare med samma plan kan därför ha helt olika vyer, och en ny installation kan se annorlunda ut än en äldre. Ta reda på vilken vy användaren har innan du ger instruktioner om projekt (se Steg 1).
+
+- *Den klassiska vyn:* projektsidan visar projektets chattar, en ruta för projektinstruktionerna och rutan Kontext (Project knowledge i den engelska appen) för materialet. En befintlig chatt kan flyttas in i projektet via menyn vid chattens namn.
+- *Den nya vyn:* ett projekt öppnas som en egen konversation, och till höger finns flikarna Threads och Context. Threads är trådar som projektet startar, var och en en egen session som gör en del av arbetet och rapporterar tillbaka. Under Context finns Instructions (där Project instructions ligger), Memory, Files och Artifacts. Materialet läggs under Files och reglerna under Project instructions.
+
+Funktionerna som upplägget bygger på finns i båda: instruktioner som gäller varje gång, material som alla samtal i projektet kan läsa och ett eget minne per projekt. Det är namnen och var knapparna sitter som skiljer, så upplägget i den här filen gäller i båda vyerna. Där filen säger "en ny chatt i projektet" gäller i den nya vyn det sätt appen erbjuder för att starta ett nytt samtal eller en ny tråd i projektet. Kapitel 01 förklarar skillnaden för användaren: https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#projekten-ser-olika-ut-hos-olika-anvandare. Är du osäker på hur något görs i den nya vyn, till exempel om en befintlig chatt går att flytta in, kontrollera på support.claude.com om du kan söka på webben, och fråga annars användaren vad hen ser.
+
+Säg aldrig att användaren har en gammal version eller att något är fel. Säg bara att appen ser olika ut hos olika personer just nu och att du anpassar stegen efter det hen ser.
+
 ## Namnen i appen
 
-Använd de namn som står i användarens app, inte egna översättningar. Det du vet om Claude är oftast skrivet på engelska, och en direktöversättning stämmer inte alltid med den svenska appen. Det viktigaste exemplet: materialet som alla chattar i ett projekt kan läsa heter Kontext på projektsidan i den svenska appen och Project knowledge i den engelska. Säg aldrig "projektkunskap" till användaren, det ordet finns inte i appen.
+Använd de namn som står i användarens app, inte egna översättningar. Det du vet om Claude är oftast skrivet på engelska, och en direktöversättning stämmer inte alltid med den svenska appen. Det viktigaste exemplet: materialet som alla chattar i ett projekt kan läsa heter Kontext på projektsidan i den svenska klassiska vyn, Project knowledge i den engelska och Files under fliken Context i den nya vyn. Säg aldrig "projektkunskap" till användaren, det ordet finns inte i appen.
 
-Kan du se användarens app, till exempel via en skärmdump eller webbläsaren, använd namnen som står där. Annars: fråga en gång om appen är på svenska eller engelska, eller ge namnet på båda språken första gången, till exempel "Kontext (Project knowledge om appen är på engelska)". Gäller det en knapp eller meny du inte vet det svenska namnet på, ge det engelska namnet och beskriv var den sitter.
+Kan du se användarens app, till exempel via en skärmdump, webbläsaren eller skärmen, använd namnen som står där. Annars: fråga en gång om appen är på svenska eller engelska, eller ge namnet på båda språken första gången, till exempel "Kontext (Project knowledge om appen är på engelska)". Gäller det en knapp eller meny du inte vet det svenska namnet på, ge det engelska namnet och beskriv var den sitter.
 
 Menyer och knappnamn ändras. Beskriv var användaren hittar något så gott du kan, men be hen säga till om det ser annorlunda ut, och anpassa dig efter vad hen ser. Om du kan söka på webben och är osäker på hur en funktion fungerar just nu, kontrollera på support.claude.com (eller motsvarande hjälpsida) innan du ger instruktionen.
 
@@ -56,6 +67,8 @@ Börja med några meningar om vad som ska hända: "Vi ska sätta upp två projek
 - *Användaren sitter i mobilen:* det går också bra. Fortsätt med det som går att göra där (projekt, instruktioner, connectors) och spara steg som kräver datorn, som lokala mappar, till när hen sitter vid den. Säg det i avslutningen.
 
 Fråga hellre än att gissa om du är osäker på vilken av situationerna det är.
+
+**Ta reda på vilken projektvy användaren har.** Gör det tidigt, eftersom instruktionerna i steg 4 och 6 skiljer sig åt (se "Appen ser olika ut hos olika användare" ovan). Kan du se användarens skärm eller få en skärmdump, be om en bild där sidomenyn och ett öppet projekt syns. Annars fråga: "När du öppnar ett projekt, ser du flikarna Threads och Context till höger?" Har användaren inga projekt än, be hen klicka på Projects i sidomenyn och berätta vad som står där. Använd sedan den variant som stämmer genom hela sessionen.
 
 **Hitta fokus.** Den viktigaste frågan i sessionen är vad användaren främst vill få gjort med Claude just nu. Ställ den tidigt, gärna som andra eller tredje fråga: "Vad är det du främst vill använda Claude till just nu?" Svaret blir fokusprojektet. Svarar användaren med flera saker, hjälp hen välja den som tar mest tid eller är viktigast just nu, och säg att resten kan få egna projekt senare. Har hen inget tydligt svar, välj det område hen lägger mest tid på (studierna, jobbet).
 
@@ -107,7 +120,7 @@ Använd den här fördelningen när du resonerar. Förklara den för användaren
 **Claudes moln (det som finns i Claude-kontot):**
 
 - *Projektinstruktioner:* reglerna för hur Claude ska arbeta i projektet. Läses i början av varje chatt i projektet. Det som måste gälla varje gång ska stå här.
-- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen): stabilt referensmaterial som sällan ändras, till exempel en kursplan, riktlinjer för ett examensarbete, en mall eller en beskrivning av dig själv. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som ett GitHub-repo eller en fil från Drive, kan följa med ändringar.
+- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen, Files under Context i den nya vyn): stabilt referensmaterial som sällan ändras, till exempel en kursplan, riktlinjer för ett examensarbete, en mall eller en beskrivning av dig själv. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som ett GitHub-repo eller en fil från Drive, kan följa med ändringar.
 - *Minne:* det Claude själv väljer att spara om användaren mellan chattar. Bra för bestående fakta, men inte exakt styrbart. Varje projekt har sitt eget minne.
 - *Chatthistorik och artifacts:* samtal och färdiga dokument eller sidor som användaren vill komma tillbaka till.
 
@@ -150,7 +163,9 @@ Ge instruktionerna i ett kodblock så att användaren kan kopiera dem. Förklara
 
 ## Steg 4: Användaren skapar Hjärnan och flyttar hit chatten
 
-Ge en numrerad instruktion som användaren följer medan du väntar. Anpassa efter om hen skapar ett nytt projekt eller gör om ett befintligt. För Claude ser det ut ungefär så här (kontrollera mot det användaren ser):
+Ge en numrerad instruktion som användaren följer medan du väntar. Anpassa efter om hen skapar ett nytt projekt eller gör om ett befintligt, och efter vilken projektvy hen har (steg 1). Kontrollera mot det användaren ser.
+
+**I den klassiska vyn:**
 
 1. Gå till Projects i sidomenyn (claude.ai/projects) och skapa ett nytt projekt. Döp det till Hjärnan, eller ett namn användaren föredrar. Namn och beskrivning är bara för användaren, Claude läser dem inte.
 2. Öppna projektinstruktionerna och klistra in texten från steg 3. Spara.
@@ -158,6 +173,15 @@ Ge en numrerad instruktion som användaren följer medan du väntar. Anpassa eft
 4. Flytta den här chatten till projektet: öppna menyn vid chattens namn högst upp och välj att lägga till chatten i ett projekt ("Add to project"), välj Hjärnan.
 5. Döp gärna om chatten till "Setup", så att den är lätt att hitta när du vill utveckla upplägget senare.
 6. Skriv "flyttad" här när det är gjort.
+
+**I den nya vyn:**
+
+1. Klicka på Projects i sidomenyn och skapa ett nytt projekt. Döp det till Hjärnan, eller ett namn användaren föredrar.
+2. Öppna fliken Context till höger, klicka på Project instructions under Instructions, klistra in texten från steg 3 och spara.
+3. Koppla connectors som upplägget behöver, om de inte redan är kopplade (Google Drive, Kalender).
+4. Se om den här chatten går att flytta in i projektet via menyn vid chattens namn. Går det, gör det och skriv "flyttad" här. Går det inte, skriv "går inte" här.
+
+Om chatten inte går att flytta: skriv en kort överlämning i ett kodblock som användaren klistrar in i Hjärnans konversation. Den ska innehålla länken till den här filen (https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md), att setupen fortsätter från steg 5, vad ni har bestämt och vad som är kvar. Setupen fortsätter sedan där, och det är Hjärnans konversation som blir platsen där användaren utvecklar upplägget senare. Den här chatten kan hen döpa om till "Setup start" och lämna.
 
 Säg i samband med det, med en eller två meningar, varför ni gör så här: en chatt i ett projekt startar med projektets instruktioner och kontext, så användaren slipper förklara sig igen, och varje nytt ämne kan få en ny kort chatt i stället för att allt hamnar i en lång. Hänvisa till kapitel 01 och 10 (se kartan nedan).
 
@@ -177,7 +201,7 @@ Nu skapar användaren fokusprojektet. Själva uppsättningen av det sker i en eg
    - Jobbar användaren med andra i fokusområdet? I så fall: att dela ett Claude-projekt med andra kräver Team eller Enterprise och att alla är med i samma organisation. Har gruppen inte det får var och en ett eget projekt, och gruppen delar material via till exempel en delad mapp i Drive. Detaljerna tar setupen i fokusprojektet.
    - Finns det material som ska in direkt, till exempel riktlinjer, en kursplan eller ett utkast? Notera var det ligger.
 2. **Grundinstruktioner.** Skriv två eller tre rader som användaren klistrar in som projektinstruktioner så länge, till exempel vad projektet gäller och att Claude ska fråga innan den antar något. Setupen i projektet skriver om dem ordentligt.
-3. **Instruktion för att skapa projektet:** samma sätt som Hjärnan. Döp det efter området (till exempel Examensarbete). Lägg in grundinstruktionerna och, om det finns, det material som redan är klart att ladda upp eller koppla under Kontext på projektsidan (Project knowledge i den engelska appen).
+3. **Instruktion för att skapa projektet:** samma sätt som Hjärnan. Döp det efter området (till exempel Examensarbete). Lägg in grundinstruktionerna och, om det finns, det material som redan är klart att ladda upp eller koppla under Kontext på projektsidan (Project knowledge i den engelska appen, Files under Context i den nya vyn).
 4. **Prompten som startar setupen i fokusprojektet.** Ge en färdig prompt i ett kodblock som användaren klistrar in i en ny chatt i fokusprojektet. Den ska följa den här formen, med bakgrunden ifylld utifrån det ni har pratat om:
 
    ```text
@@ -199,6 +223,8 @@ Nu skapar användaren fokusprojektet. Själva uppsättningen av det sker i en eg
    ```
 
    Skriv bakgrunden kort och sakligt, med användarens egna ord där det går. Ta inte med privata detaljer som inte behövs för projektet.
+
+I den nya vyn klistrar användaren in prompten i fokusprojektets konversation i stället för i en ny chatt.
 
 Säg sedan ungefär så här: "Klistra in prompten i en ny chatt i projektet X. Där sätter vi upp projektet för ditt arbete. När den setupen är klar startar du en ny chatt i projektet och börjar arbeta."
 
@@ -256,6 +282,7 @@ Sajten finns på https://solsidan21.github.io/AI_workflow_guide_svenska/. Om du 
 | Varför projekt och inte bara chatt, trappan från chatt till Claude Code | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#trappan |
 | Vad ett projekt är | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#steg-2-projekt |
 | Claude-appen på datorn, lokala mappar, schemalagda uppgifter | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#steg-3-claude-appen-pa-datorn |
+| Projekten ser olika ut hos olika användare, klassisk och ny vy | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#projekten-ser-olika-ut-hos-olika-anvandare |
 | Vad funktionerna heter hos Claude och ChatGPT | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#samma-ting-under-olika-namn |
 | Varför instruktioner och kontext slår långa prompter | https://solsidan21.github.io/AI_workflow_guide_svenska/02-kontext/#kort-fraga-ratt-svar |
 | Minne och hur det skiljer sig från instruktioner | https://solsidan21.github.io/AI_workflow_guide_svenska/02-kontext/#minne-vad-claude-kommer-ihag-mellan-samtal |
@@ -286,6 +313,7 @@ Sajten finns på https://solsidan21.github.io/AI_workflow_guide_svenska/. Om du 
 
 - Den här chatten sätter upp, den arbetar inte.
 - Två projekt: Hjärnan och fokusprojektet. Inte fler i dag. Befintliga projekt får bli de två.
+- Ta reda på vilken projektvy användaren har och följ den varianten.
 - Användaren lägger grunden. Säg vad grunden gör möjligt senare.
 - En fråga i taget, kort, användaren gör stegen själv. Värdera inte användarens nivå.
 - Vid viktiga beslut: föreslå ett avsnitt att läsa innan hen svarar.

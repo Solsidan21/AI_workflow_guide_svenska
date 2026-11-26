@@ -127,7 +127,7 @@ Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och
 ## Vad som händer
 
 1. **Claude tar reda på var du står.** Den läser av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan vad du använder Claude till och vilka projekt du har. Den viktigaste frågan är vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete. Det blir ditt fokusprojekt.
-2. **Ni sätter upp Hjärnan.** Claude skriver instruktionerna med dig, du skapar projektet och flyttar in chatten dit. Där blir den kvar som din Setup-chatt.
+2. **Ni sätter upp Hjärnan.** Claude skriver instruktionerna med dig, du skapar projektet och flyttar in chatten dit. Där blir den kvar som din Setup-chatt. Går chatten inte att flytta i din app, ger Claude dig en kort överlämning att klistra in i Hjärnan i stället.
 3. **Du skapar fokusprojektet.** Claude ger dig en prompt som du klistrar in i en ny chatt i det projektet. Där gör ni en kort setup för just ditt arbete: mål, material, hur du vill ha hjälp och om du jobbar med andra.
 4. **Du börjar arbeta.** När fokusprojektet är uppsatt startar du en ny chatt där och sätter igång.
 5. **Du kommer tillbaka när du vill.** Setup-chatten i Hjärnan finns kvar för när du vill utveckla upplägget, till exempel organisera vardagen, ta reda på hur du lär dig bäst eller lägga till fler projekt.
@@ -135,6 +135,10 @@ Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och
 Räkna med 20 till 30 minuter för Hjärnan och 10 till 20 minuter för fokusprojektet. Har du redan många projekt kan det ta längre tid, eftersom ni då också går igenom vad som ska bli kvar, slås ihop eller kopplas till Hjärnan.
 
 Ibland ber Claude dig ta ställning till något och föreslår ett avsnitt i guiden att läsa först. Det är inget måste, men det tar ett par minuter och gör att du förstår vad du väljer och vilket problem det löser.
+
+## Om din app ser annorlunda ut
+
+Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Har du fått den ser projekten annorlunda ut än i guidens beskrivningar, men upplägget är detsamma. Setup-sessionen frågar tidigt vilken vy du har, gärna med en skärmdump, och anpassar stegen efter den. [Kapitel 01](01-fran-chatt-till-system.md#projekten-ser-olika-ut-hos-olika-anvandare) förklarar skillnaden.
 
 ## Om du redan har ett upplägg
 
@@ -215,7 +219,7 @@ Du skriver, du får svar. Kontexten är konversationen och de filer du laddat up
 Ett projekt är ett arbetsrum med egna instruktioner och egna filer, där alla samtal delar samma utgångsläge. Claude har projekt på alla planer, även gratisplanen, där man kan ha upp till fem. ChatGPT har också projekt, och dessutom Custom GPTs om du vill paketera instruktioner och filer som en egen assistent.
 
 ??? begrepp "Begrepp: Projekt"
-    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). Instruktionerna gäller i alla chattar i projektet.
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.
 
     **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
 
@@ -223,9 +227,15 @@ Ett projekt är ett arbetsrum med egna instruktioner och egna filer, där alla s
 
     [Se alla begrepp i ordlistan](ordlista.md#projekt)
 
-Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kursmaterialet ligger i projektets kontext (rutan Kontext på projektsidan, Project knowledge på engelska). Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
+Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kursmaterialet ligger i projektets kontext (rutan Kontext på projektsidan, Project knowledge på engelska och Files under Context i den nya projektvyn). Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
 
 En chatt kan flyttas in i ett projekt i efterhand, via menyn vid chattens namn. Det är så setup-sessionen på sidan [Kom igång](kom-igang.md) slutar: du skapar projektet och flyttar dit chatten där det planerades.
+
+#### Projekten ser olika ut hos olika användare
+
+Anthropic håller på att göra om projekten, och ändringen rullas ut gradvis. Du kan därför se något helt annat än en vän med samma plan. I den klassiska vyn har projektsidan en lista över chattar, en ruta för instruktionerna och rutan Kontext för materialet. I den nya vyn öppnas projektet som en egen konversation, med flikarna Threads och Context till höger. Threads är trådar som projektet startar för olika delar av arbetet. Under Context finns instruktionerna (Project instructions), projektets minne, filerna och artifacts.
+
+Byggstenarna är desamma i båda: instruktioner som gäller varje gång, material som alla samtal i projektet kan läsa och ett eget minne. Allt i guiden som handlar om vad som ska stå var gäller alltså oavsett vy. Det är bara namnen och var knapparna sitter som skiljer, och setup-sessionen frågar vilken vy du har innan den säger var du ska klicka.
 
 Projekt är ett bra mellansteg när du har ett avgränsat uppdrag och vill slippa upprepa dig. Gränsen går där du vill att Claude ska skriva tillbaka till filer, köra något på egen hand eller arbeta utan att du sitter där.
 
@@ -585,7 +595,7 @@ Flödet har fyra steg:
 1. Samla. Lägg originalen i en mapp. Behåll alltid PDF:en, den är din källa.
 2. Extrahera. Be Claude Code läsa PDF:en och skriva den som Markdown, uppdelad i filer som följer materialets egen struktur.
 3. Publicera. Lägg mappen i ett Git-repo och skicka det till GitHub.
-4. Koppla. Lägg till repot under Kontext på projektsidan i ett Claude-projekt (Project knowledge i den engelska appen).
+4. Koppla. Lägg till repot under Kontext på projektsidan i ett Claude-projekt (Project knowledge i den engelska appen, Files under Context i den nya projektvyn).
 
 ??? begrepp "Begrepp: GitHub"
     **Vad det är:** En webbtjänst där Git-repon lagras och kan delas. Ett repo kan vara privat eller offentligt, och man kan lägga till det i ett Claude-projekts kontext.
@@ -783,7 +793,7 @@ Vem skriver här? Jag och Claude Code bygger repona tillsammans. Efter att en ku
 Varje kurs har ett eget Claude-projekt med kursens repo i projektets kontext. Projektinstruktionerna är en kortversion av CLAUDE.md i repot. Anledningen är praktisk: instruktionerna i projektet är det första Claude ser, så de viktigaste reglerna ska stå där utan att Claude först behöver läsa hela filträdet.
 
 ??? begrepp "Begrepp: Projekt"
-    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). Instruktionerna gäller i alla chattar i projektet.
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.
 
     **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
 
@@ -800,7 +810,7 @@ Utöver kursprojekten har jag ett centralt projekt som håller koll på helheten
 Ett projekt kan liknas vid en mapp. Det som finns i den är det Claude har att arbeta med när du startar en chatt där. Det mesta i ditt Claude-konto går att tänka på som textfiler i sådana mappar:
 
 - *Projektinstruktionerna* är en regelfil som läses först i varje chatt i projektet.
-- *Projektets kontext* är filerna i mappen. I appen heter det Kontext på projektsidan, eller Project knowledge om appen är på engelska.
+- *Projektets kontext* är filerna i mappen. I appen heter det Kontext på projektsidan, eller Project knowledge om appen är på engelska. I den nya projektvyn ligger det under Files i fliken Context.
 - *Minnet* är korta anteckningar som Claude själv för om dig. Kontots minne gäller överallt. Varje projekt har dessutom ett eget minne som bara gäller där, och i projektets inställningar väljer du om det ska vara kopplat till kontots minne eller hållas helt för sig. [Kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom minnet närmare.
 - *Chattar och projektdokument* stannar i sitt projekt.
 - *Artifacts*, alltså de dokument och sidor Claude gör åt dig, ligger på kontot och kan nås från alla projekt.
@@ -922,7 +932,7 @@ Tumregeln om vem som läser säger vilket lager något hör till. Här är plats
 **Claudes moln** är allt som ligger i ditt Claude-konto. Det består av fyra delar som ofta blandas ihop:
 
 - *Projektinstruktioner* är reglerna för hur Claude ska arbeta i projektet. De läses i början av varje chatt i projektet, så det som måste gälla varje gång hör hemma här.
-- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen) är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.
+- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen, Files under Context i den nya projektvyn) är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.
 - *Minne* är det Claude själv väljer att spara om dig mellan chattar. Det är bra för bestående fakta men går inte att styra exakt, vilket [kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom.
 - *Chatthistorik och artifacts* är samtalen och de dokument eller sidor Claude har gjort, som du kan gå tillbaka till.
 
@@ -1105,7 +1115,7 @@ Kursen följer dessutom 10:e upplagan medan min fulltext kommer ur den 9:e. Det 
 Ett tips om regler: skriv dem när något går fel. Varje gång Claude gör något som irriterar mig, till exempel hoppar över ett steg, byter notation eller lånar en metod från en annan kurs, frågar jag mig om det ska bli en rad i CLAUDE.md. Efter några veckor har filen blivit en beskrivning av hur jag vill ha det.
 
 ??? begrepp "Begrepp: Projekt"
-    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). Instruktionerna gäller i alla chattar i projektet.
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.
 
     **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
 
@@ -1292,7 +1302,7 @@ Mitt exempel är hur en student kan organisera sin vardag. Samma konstruktion pa
 Hjärnan är ett vanligt Claude-projekt. Det som gör det till något särskilt är instruktionerna och vilka källor det får läsa.
 
 ??? begrepp "Begrepp: Projekt"
-    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). Instruktionerna gäller i alla chattar i projektet.
+    **Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.
 
     **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
 
@@ -2333,7 +2343,7 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 
 ### Projekt { #projekt }
 
-**Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). Instruktionerna gäller i alla chattar i projektet.
+**Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.
 
 **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
 

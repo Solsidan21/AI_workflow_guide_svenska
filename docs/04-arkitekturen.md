@@ -89,7 +89,7 @@ Utöver kursprojekten har jag ett centralt projekt som håller koll på helheten
 Ett projekt kan liknas vid en mapp. Det som finns i den är det Claude har att arbeta med när du startar en chatt där. Det mesta i ditt Claude-konto går att tänka på som textfiler i sådana mappar:
 
 - *Projektinstruktionerna* är en regelfil som läses först i varje chatt i projektet.
-- *Projektets kontext* är filerna i mappen. I appen heter det Kontext på projektsidan, eller Project knowledge om appen är på engelska.
+- *Projektets kontext* är filerna i mappen. I appen heter det Kontext på projektsidan, eller Project knowledge om appen är på engelska. I den nya projektvyn ligger det under Files i fliken Context.
 - *Minnet* är korta anteckningar som Claude själv för om dig. Kontots minne gäller överallt. Varje projekt har dessutom ett eget minne som bara gäller där, och i projektets inställningar väljer du om det ska vara kopplat till kontots minne eller hållas helt för sig. [Kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom minnet närmare.
 - *Chattar och projektdokument* stannar i sitt projekt.
 - *Artifacts*, alltså de dokument och sidor Claude gör åt dig, ligger på kontot och kan nås från alla projekt.
@@ -199,7 +199,7 @@ Tumregeln om vem som läser säger vilket lager något hör till. Här är plats
 **Claudes moln** är allt som ligger i ditt Claude-konto. Det består av fyra delar som ofta blandas ihop:
 
 - *Projektinstruktioner* är reglerna för hur Claude ska arbeta i projektet. De läses i början av varje chatt i projektet, så det som måste gälla varje gång hör hemma här.
-- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen) är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.
+- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen, Files under Context i den nya projektvyn) är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.
 - *Minne* är det Claude själv väljer att spara om dig mellan chattar. Det är bra för bestående fakta men går inte att styra exakt, vilket [kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom.
 - *Chatthistorik och artifacts* är samtalen och de dokument eller sidor Claude har gjort, som du kan gå tillbaka till.
 

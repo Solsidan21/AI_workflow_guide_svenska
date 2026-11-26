@@ -46,9 +46,15 @@ Ett projekt är ett arbetsrum med egna instruktioner och egna filer, där alla s
 
     [Se alla begrepp i ordlistan](ordlista.md#projekt)
 
-Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kursmaterialet ligger i projektets kontext (rutan Kontext på projektsidan, Project knowledge på engelska). Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
+Jag har ett projekt per kurs. Projektinstruktionerna är en kort version av reglerna jag vill att Claude följer, och kursmaterialet ligger i projektets kontext (rutan Kontext på projektsidan, Project knowledge på engelska och Files under Context i den nya projektvyn). Det går att lägga till filer direkt, och i mitt fall kopplar jag in ett GitHub-repo med kursens material så att projektet ser ändringarna jag gör. Hur det hänger ihop går vi igenom i kapitel 03 och 04.
 
 En chatt kan flyttas in i ett projekt i efterhand, via menyn vid chattens namn. Det är så setup-sessionen på sidan [Kom igång](kom-igang.md) slutar: du skapar projektet och flyttar dit chatten där det planerades.
+
+#### Projekten ser olika ut hos olika användare
+
+Anthropic håller på att göra om projekten, och ändringen rullas ut gradvis. Du kan därför se något helt annat än en vän med samma plan. I den klassiska vyn har projektsidan en lista över chattar, en ruta för instruktionerna och rutan Kontext för materialet. I den nya vyn öppnas projektet som en egen konversation, med flikarna Threads och Context till höger. Threads är trådar som projektet startar för olika delar av arbetet. Under Context finns instruktionerna (Project instructions), projektets minne, filerna och artifacts.
+
+Byggstenarna är desamma i båda: instruktioner som gäller varje gång, material som alla samtal i projektet kan läsa och ett eget minne. Allt i guiden som handlar om vad som ska stå var gäller alltså oavsett vy. Det är bara namnen och var knapparna sitter som skiljer, och setup-sessionen frågar vilken vy du har innan den säger var du ska klicka.
 
 Projekt är ett bra mellansteg när du har ett avgränsat uppdrag och vill slippa upprepa dig. Gränsen går där du vill att Claude ska skriva tillbaka till filer, köra något på egen hand eller arbeta utan att du sitter där.
 

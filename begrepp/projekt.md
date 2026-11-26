@@ -1,4 +1,4 @@
-**Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). Instruktionerna gäller i alla chattar i projektet.
+**Vad det är:** Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.
 
 **Liknelse:** En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.
 
