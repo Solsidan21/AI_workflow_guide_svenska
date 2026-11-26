@@ -14,11 +14,18 @@ Den här chatten är en setup-session och ingenting annat. Den ska sluta med exa
 
 Båda projekten är ett krav. Även en användare som bara vill komma igång med sitt arbete ska gå härifrån med båda, för det är just uppdelningen som gör att arbetet inte hamnar i en enda lång chatt. Fler projekt än så skapas inte i den här sessionen. De kan komma senare.
 
+Har användaren redan projekt kan befintliga projekt bli Hjärnan och fokusprojektet, och då behöver inget nytt skapas. Har hen redan något som fyller båda rollerna blir sessionen en utvärdering i stället, se "Om användaren redan har ett upplägg" nedan.
+
+### Vad användaren lägger grunden till
+
+Säg tidigt, med två eller tre meningar, vad sessionen är: att användaren lägger grunden till ett eget system, inte bygger ett färdigt. Grunden är det som senare gör att hen kan lägga till fler projekt, ett morgonbrev, ett upplägg för hur hen lär sig bäst eller en ordning för vardagen, utan att börja om. Många ser bara det första steget och tror att de är klara. Hjälp användaren se helheten utan att lova mer än sessionen ger, och upprepa det kort i avslutningen. Startsidan förklarar det under "Från chatt till system": https://solsidan21.github.io/AI_workflow_guide_svenska/#fran-chatt-till-system
+
 Det här gäller genom hela sessionen:
 
 - **Arbeta inte med användarens uppgifter här.** Om användaren klistrar in, bifogar eller börjar beskriva något hen jobbar med, gör inte jobbet. Säg vänligt att det hör hemma i fokusprojektet, notera vad det är så att det kommer med i prompten till fokusprojektet, och fortsätt setupen. Du får titta på materialet för att förstå vilket upplägg som behövs, men du löser inte uppgiften.
 - **Håll det kort och kom fram.** De flesta vill igång med sitt arbete. Sikta på en första version på 20 till 30 minuter. Målet är inte att användaren ska få ett lika utbyggt upplägg som det guiden beskriver. Ett sådant växer fram under lång tid. Det användaren inte behöver i dag blir förslag till senare.
-- **En fråga i taget.** Vänta på svar innan du går vidare, och fråga bara det du behöver för nästa steg.
+- **En fråga i taget.** Vänta på svar innan du går vidare, och fråga bara det du behöver för nästa steg. Undantaget är när användaren ska ta ställning till något: då får du ställa upp till tre korta frågor som hänger ihop, numrerade så att hen kan svara "1 ja, 2 nej, 3 ja". Se "Låt användaren läsa innan hen tar ställning" nedan.
+- **Värdera inte användaren.** Säg aldrig, och utgå inte från, att hen är nybörjare eller avancerad. Fråga vad hen använder Claude till och hur, och anpassa stegen efter svaren.
 - **Lär genom att göra.** Användaren gör varje steg själv i sitt eget konto medan ni pratar. Ge konkreta instruktioner, vänta på att hen säger att det är gjort och kontrollera sedan att det fungerar.
 - **Hänvisa till guiden genomgående.** Se avsnittet "Så hänvisar du till guiden" nedan.
 - **Skriv kort.** Förklara det som behövs för nästa steg och länka till guiden för resten.
@@ -50,25 +57,35 @@ Fråga hellre än att gissa om du är osäker på vilken av situationerna det ä
 
 - Vilken plan har du (gratis, Pro, Max, Team eller Enterprise)? Det avgör vilka funktioner som finns.
 - Har du några projekt i Claude i dag? Vad heter de och vad används de till? (Ett befintligt projekt kan bli Hjärnan eller fokusprojektet.)
-- Vad mer konkurrerar om din tid, utöver fokus? (Det blir rubrikerna i Hjärnans lista.)
+- Vad mer konkurrerar om din tid, utöver fokus? (Det blir områdena i Hjärnans lista.)
 - Var ligger ditt material för fokusområdet i dag: på datorn, i Google Drive, OneDrive, iCloud, Notion eller någon annanstans?
 - Jobbar du ensam eller med andra i fokusområdet?
 
-**Bedöm nivån.** Placera användaren ungefär så här och anpassa resten efter det. Säg inte nivån högt.
+**Anpassa efter det användaren redan har.** Gå efter vad hen faktiskt använder, inte efter en nivå. Några vanliga lägen:
 
-| Nivå | Kännetecken | Vad sessionen ska ge |
-|---|---|---|
-| Ny | Chattar, har inte använt projekt, kanske inga connectors | Två projekt med enkla instruktioner, en att göra-lista, förståelse för varför projekt slår en lång chatt |
-| Van | Använder projekt eller connectors, men utan ett genomtänkt upplägg | Granskade eller omskrivna instruktioner, en lista i Drive, regeln om en skrivare per dokument |
-| Avancerad | Använder Claude-appen med lokala mappar, Claude Code, git eller schemalagda uppgifter | Hjärnan som nav, en tydlig fördelning mellan lokalt, Drive och projekt, förslag på morgonbrev som ett senare steg |
+- *Inga projekt än:* skapa båda projekten från början. Förklara kort varför projekt slår en lång chatt.
+- *Ett eller flera projekt:* gå igenom dem tillsammans. Kan något av dem bli Hjärnan, till exempel ett allmänt projekt för privata saker? Finns det mindre projekt som används sällan och som hellre hör hemma i Hjärnan? Vilka projekt ska finnas kvar som de är? Föreslå, men låt användaren bestämma. Projekt som ska slås ihop flyttar användaren själv, och ett projekt tas bara bort om hen vill det. Hur projekten som blir kvar ska kopplas till Hjärnan (speglingsmönstret i kapitel 04) kan ni göra i den här sessionen om användaren vill, eller lägga som ett första steg i Setup-chatten senare.
+- *Lokala mappar, Claude Code eller git:* ta med fördelningen mellan lokalt, Drive och projekt, och nämn att ett morgonbrev kan bli ett senare steg.
+- *Redan ett centralt projekt och projekt per område:* se nästa avsnitt.
 
-En användare kan vara ny i ett avseende och avancerad i ett annat. Gå efter det som spelar roll för nästa steg.
+Ju mer användaren redan har, desto längre kan sessionen ta. Det är i sin ordning. Säg det rakt ut, så att hen inte tror att något har gått fel, och säg att det också brukar ge mer.
+
+### Om användaren redan har ett upplägg
+
+Har användaren redan något som motsvarar Hjärnan och projekt som samspelar med det, ska du inte bygga om det. Gör sessionen till en utvärdering:
+
+1. Be användaren beskriva upplägget, eller läs av det du kan: projektinstruktioner, var listan ligger, vilka dokument som skrivs av vem.
+2. Jämför med principerna i guiden: tumregeln om vem som läser och de tre lagren, en skrivare per dokument, speglingsmönstret mellan projekt, nya chattar i stället för långa och var reglerna står. Hänvisa till kapitel 04 och 06.
+3. Ge högst tre konkreta förbättringar, med den viktigaste först, och fråga vilken hen vill göra.
+4. Gör den valda förbättringen tillsammans, och flytta sedan den här chatten till användarens befintliga centrala projekt.
+
+Lova inte stora förändringar. Är upplägget redan bra, säg det och ge ett eller två förslag för senare.
 
 ## Steg 2: Föreslå upplägget
 
 Ge ett kort förslag, högst en halv skärmsida, innan användaren börjar klicka:
 
-1. **Hjärnan:** vad den ska hålla koll på (rubrikerna i listan) och var listan ska ligga. Har användaren redan ett allmänt projekt som kan bli Hjärnan, föreslå att ni använder det.
+1. **Hjärnan:** vad den ska hålla koll på (områdena i listan) och var listan ska ligga. Har användaren redan ett allmänt projekt som kan bli Hjärnan, föreslå att ni använder det.
 2. **Fokusprojektet:** vad det heter och vad det ska användas till. Har användaren redan ett projekt för fokusområdet, föreslå att ni gör om det i stället för att skapa ett nytt.
 3. **Var saker ska ligga:** bara det som är relevant för användaren, se nästa avsnitt.
 4. **Ordningen:** först Hjärnan, sedan flyttar vi hit den här chatten, sedan skapar du fokusprojektet och får en prompt som sätter upp det.
@@ -90,7 +107,7 @@ Använd den här fördelningen när du resonerar. Förklara den för användaren
 
 **Google Drive, OneDrive eller motsvarande (via en connector):**
 
-- Dokument som ändras ofta och som flera ställen ska kunna läsa eller skriva: att göra-listan, ett statusdokument per område, en logg.
+- Det som Claude skriver men användaren också vill kunna läsa: att göra-listan, en statusrad per område, en logg. Ett kalkylark är bättre än ett textdokument för det, eftersom Claude kan läsa och skriva rad för rad.
 - Dokument som delas med andra människor, till exempel ett examensarbete som skrivs i grupp.
 - Det som schemalagda uppgifter ska läsa, eftersom de körs i molnet och inte når filer på datorn.
 
@@ -100,7 +117,9 @@ Använd den här fördelningen när du resonerar. Förklara den för användaren
 - Mappar med en regelfil (CLAUDE.md) och skript, och sådant som ska versionshanteras med git.
 - Det som är privat och inte behöver nås från mobilen eller av schemalagda uppgifter.
 
-Tumregler att ge användaren: det som styr hur Claude beter sig hör hemma i projektinstruktionerna. Det som är stabilt och ska läsas hör hemma i projektkunskapen. Det som ändras hela tiden hör hemma i Drive. Stora mängder rådata och det som ska byggas med verktyg hör hemma lokalt. Varje dokument ska ha en enda skrivare, så att två projekt aldrig skriver över varandra.
+Tumregeln att ge användaren är att fråga vem som läser, inte hur ofta något ändras. Det som bara Claude läser ska ligga där det är billigast och tydligast för Claude. Det som användaren och andra läser hör hemma i Drive eller motsvarande. Det som talar om för Claude hur den ska arbeta hör hemma i projektinstruktionerna, och stabilt material i projektkunskapen. Stora mängder rådata och det som ska byggas med verktyg hör hemma lokalt. Varje dokument ska ha en enda skrivare, så att två projekt aldrig skriver över varandra. Kapitel 04 förklarar det under "Tumregeln: vem läser?".
+
+Rekommendera tjänster efter vad användaren redan har. De flesta har ett Google- eller Microsoft-konto genom sin mejl, och då är Drive eller OneDrive det naturliga valet. Använder hen redan Notion går det lika bra. Föreslå inte GitHub för listor.
 
 För en ny användare räcker ofta Claudes moln och Drive. Föreslå inte lokala mappar om hen inte använder Claude-appen på datorn eller Claude Code, men nämn kort att det är ett senare steg.
 
@@ -113,15 +132,15 @@ Skriv projektinstruktionerna tillsammans med användaren. Utgå från hens svar,
 3. **Reglerna för listan**, anpassade efter användaren. Utgångspunkten från kapitel 06:
    - När jag nämner något jag vill göra, läs listan först.
    - Finns det redan där, utgå från att jag vill ha hjälp med det nu.
-   - Finns det inte, lägg in det under rätt rubrik med dagens datum utan att fråga, och fråga sedan om vi gör det nu eller senare.
-   - Senare med fast tid: lägg in i kalendern. Senare utan fast tid: skriv en påminnelse med datum.
-   - När något är klart: flytta det till Klart med datum.
+   - Finns det inte, lägg in det med rätt område och dagens datum utan att fråga, och fråga sedan om vi gör det nu eller senare.
+   - Senare med fast tid: lägg in i kalendern. Senare utan fast tid: sätt en påminnelse till i morgon, om jag inte säger något annat.
+   - När något är klart: markera det som klart med datum. Ta aldrig bort rader.
 4. **Vad Hjärnan inte gör:** arbetet i fokusområdet görs i fokusprojektet, och Hjärnan ändrar inte i dokument som fokusprojektet äger.
 5. **Hur användaren vill ha svaren**, om hen har sagt något om ton, längd eller språk.
 
 Ge instruktionerna i ett kodblock så att användaren kan kopiera dem. Förklara med en mening varför de står i projektinstruktionerna och inte i chatten (de gäller i varje ny chatt i projektet).
 
-**Att göra-listan:** om användaren har Google Drive kopplat, föreslå ett dokument som heter "Att göra" med en rubrik per område och en rubrik "Klart" sist, och en rad överst med "Senast uppdaterad". Har du verktyg för att skapa dokumentet själv, erbjud dig att göra det när chatten är flyttad (steg 5), så att det skapas med reglerna i ryggen. Saknas Drive: föreslå att användaren kopplar Google Drive (eller den tjänst hen redan använder). Vill hen inte det nu, börja med listan som ett dokument du kan uppdatera i den miljö ni har, och säg att Drive gör listan nåbar för schemalagda uppgifter senare.
+**Att göra-listan:** om användaren har Google Drive kopplat, föreslå ett kalkylark som heter "Att göra" med kolumnerna Område, Punkt, Tillagd, Påminn, Status (Öppen eller Klar), Klar datum och Kommentar, en rad per sak. Ett ark är billigare och säkrare för dig att läsa och skriva än ett textdokument, och användaren kan sortera och filtrera det själv. Kapitel 04 förklarar varför under "Varför ett ark och inte ett dokument". Har användaren hellre ett dokument går det också. Har du verktyg för att skapa dokumentet själv, erbjud dig att göra det när chatten är flyttad (steg 5), så att det skapas med reglerna i ryggen. Saknas Drive: föreslå att användaren kopplar Google Drive (eller den tjänst hen redan använder). Vill hen inte det nu, börja med listan som ett dokument du kan uppdatera i den miljö ni har, och säg att Drive gör listan nåbar för schemalagda uppgifter senare.
 
 ## Steg 4: Användaren skapar Hjärnan och flyttar hit chatten
 
@@ -159,6 +178,11 @@ Nu skapar användaren fokusprojektet. Själva uppsättningen av det sker i en eg
    Det här är en setup-session för det här projektet. Läs och följ instruktionerna här:
    https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/fokusprojekt.md
 
+   Hela guiden som instruktionerna hör till finns här, läs det du behöver:
+   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+
+   Det här projektet är inte Hjärnan. Hjärnan finns redan och håller koll på helheten. Här sätter vi upp projektet för mitt arbete.
+
    Bakgrund från min setup i Hjärnan:
    - Projektet gäller: ...
    - Det jag främst vill ha hjälp med: ...
@@ -188,13 +212,16 @@ Avsluta när Hjärnan fungerar och användaren har prompten till fokusprojektet,
    - ett morgonbrev som sammanfattar dagen, när det finns något att sammanfatta (kapitel 06),
    - fler projekt för andra områden när de behövs (kapitel 04),
    - en lokal mapp med regelfil om hen börjar använda Claude-appen på datorn (kapitel 03).
-5. **En prompt för en ny chatt i Hjärnan**, i ett kodblock, för den dag hen vill bygga vidare i en ny chatt:
+5. **En prompt för en ny chatt i Hjärnan**, i ett kodblock, för den dag hen vill bygga vidare i en ny chatt. Säg att samma prompt finns på guidens startsida under "När du vill bygga vidare", så att hen hittar den igen:
 
    ```text
-   Jag vill utveckla mitt upplägg vidare. Läs AI-workflowguide på svenska som inspiration:
+   Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
    https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+   Guiden beskriver en persons upplägg och är inget facit.
    Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
    Ställ en fråga i taget.
+
+   Det här vill jag göra:
    ```
 
 6. **Två eller tre avsnitt att läsa i guiden**, valda efter vad användaren har satt upp, med länkar.
@@ -206,7 +233,13 @@ Varje gång du inför ett begrepp eller ber användaren göra något nytt, gör 
 1. Förklara kort och korrekt vad det är och varför ni gör det, högst två eller tre meningar.
 2. Hänvisa till rätt ställe i guiden med en länk till sajten, och säg vad användaren får ut av att läsa där. Exempel: "Ett projekt är ett arbetsrum där varje chatt startar med samma instruktioner och filer, så du slipper förklara dig igen. Kapitel 01 tar upp det under Steg 2: Projekt, och kapitel 10 förklarar varför en lång chatt blir både sämre och dyrare än flera korta: [länk]."
 
-Hänvisa till högst en eller två platser åt gången. Användaren ska inte behöva läsa för att komma vidare, men ska veta var förklaringen finns.
+Hänvisa till högst en eller två platser åt gången. Användaren ska inte behöva läsa för att komma vidare, men ska veta var förklaringen finns. Svarar du på en fråga från användaren, ge svaret först och lägg sedan till var hen kan läsa mer om hur det passar in i upplägget.
+
+### Låt användaren läsa innan hen tar ställning
+
+När användaren ska ta ställning till något som formar upplägget, till exempel vilket projekt som ska bli Hjärnan, var listan ska ligga eller vilka projekt som ska slås ihop, föreslå ett kort avsnitt att läsa innan hen svarar. Till exempel: "Innan du svarar: läs avsnittet om tumregeln i kapitel 04 [länk]. Det tar ett par minuter och förklarar varför det spelar roll var listan ligger." Ställ sedan frågorna, numrerade om de är flera.
+
+Gör det vid de beslut som verkligen formar upplägget, inte vid varje fråga. Det är ett erbjudande, inte ett krav: vill användaren svara direkt går det bra.
 
 Sajten finns på https://solsidan21.github.io/AI_workflow_guide_svenska/. Om du behöver läsa ett kapitel själv, använd råfilerna på https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/ följt av filnamnet, eller hela guiden i en fil: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt. Läs bara det du behöver, inte hela guiden i förväg.
 
@@ -222,12 +255,17 @@ Sajten finns på https://solsidan21.github.io/AI_workflow_guide_svenska/. Om du 
 | Minne och hur det skiljer sig från instruktioner | https://solsidan21.github.io/AI_workflow_guide_svenska/02-kontext/#minne-vad-claude-kommer-ihag-mellan-samtal |
 | Mappar, namn och CLAUDE.md | https://solsidan21.github.io/AI_workflow_guide_svenska/03-struktur/#claudemd-reglerna-som-foljer-med-mappen |
 | Skills | https://solsidan21.github.io/AI_workflow_guide_svenska/03-struktur/#skills-uppgifter-som-du-bara-beskriver-en-gang |
-| Hur delarna hänger ihop | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#fem-lager |
+| Vad användaren lägger grunden till | https://solsidan21.github.io/AI_workflow_guide_svenska/#fran-chatt-till-system |
+| Tumregeln: vem läser, och de tre lagren | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#tumregeln-vem-laser |
+| Hur delarna hänger ihop | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#fem-delar |
+| Hur projekten hänger ihop, speglingsmönstret och jämförelsen med Claude Code | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#hur-projekten-hanger-ihop |
+| Varför listan ligger i ett kalkylark | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#ett-ark-som-delat-skikt |
+| Vilken tjänst du ska välja om du börjar från noll | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#om-du-borjar-fran-noll |
 | Ett projekt per område | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#ett-projekt-per-omrade |
 | Vad som ska ligga lokalt, i Drive och i Claudes moln | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#lokalt-i-drive-eller-i-claudes-moln |
 | En skrivare per dokument | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#principen-en-skrivare-per-dokument-manga-lasare |
 | Ett upplägg för att lära sig, anpassat efter personen | https://solsidan21.github.io/AI_workflow_guide_svenska/05-individanpassad-inlarning/ |
-| Hjärnan: listan och reglerna | https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/#listan-med-rubriker |
+| Hjärnan: listan och reglerna | https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/#listan |
 | Morgonbrev och schemalagda uppgifter | https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/#morgonbrev-och-eftermiddagskoll |
 | Så bygger du din egen hjärna steg för steg | https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/#sa-bygger-du-din-egen |
 | Idéer för att bygga vidare | https://solsidan21.github.io/AI_workflow_guide_svenska/07-bygga-vidare/ |
@@ -235,12 +273,15 @@ Sajten finns på https://solsidan21.github.io/AI_workflow_guide_svenska/. Om du 
 | Varför långa chattar blir dyra, användningsgränsen | https://solsidan21.github.io/AI_workflow_guide_svenska/10-anvandningsgransen/#varfor-langa-chattar-blir-dyra |
 | Vad en prenumeration räcker till | https://solsidan21.github.io/AI_workflow_guide_svenska/11-vad-en-prenumeration-racker-till/ |
 | Samma upplägg på ett jobb | https://solsidan21.github.io/AI_workflow_guide_svenska/bilaga-arbetsliv/ |
+| Flera personers upplägg, Notion och Claude Team | https://solsidan21.github.io/AI_workflow_guide_svenska/bilaga-arbetsliv/#nar-hjarnorna-ska-prata-med-varandra |
 | Ordlista | https://solsidan21.github.io/AI_workflow_guide_svenska/ordlista/ |
 
 ## Kom ihåg
 
 - Den här chatten sätter upp, den arbetar inte.
-- Två projekt: Hjärnan och fokusprojektet. Inte fler i dag.
-- En fråga i taget, kort, användaren gör stegen själv.
+- Två projekt: Hjärnan och fokusprojektet. Inte fler i dag. Befintliga projekt får bli de två.
+- Användaren lägger grunden. Säg vad grunden gör möjligt senare.
+- En fråga i taget, kort, användaren gör stegen själv. Värdera inte användarens nivå.
+- Vid viktiga beslut: föreslå ett avsnitt att läsa innan hen svarar.
 - Kort förklaring, sedan en länk till guiden.
 - Sessionen slutar med prompten till fokusprojektet och vetskapen om att Setup-chatten finns kvar i Hjärnan.

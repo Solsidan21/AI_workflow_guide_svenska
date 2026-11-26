@@ -80,6 +80,39 @@ Norvik bygger ett minne utanför modellen. Efter en slutförd uppgift frågar Cl
 
 Granskningen är ingen formalitet. En felaktig lärdom som inarbetas upprepas av Claude vid varje uppgift, och för många inarbetade lärdomar gör regelfilerna långa och trögläsliga. Poängen är densamma som i kapitel 07: det som ska bli bestående ska passera en människa.
 
+## När hjärnorna ska prata med varandra
+
+För en privatperson räcker ett eget upplägg: en hjärna, några projekt och ett kalkylark. På ett bolag är det inte slutmålet. Även om varje anställd har ett välfungerande eget upplägg behöver det prata med kollegornas. Beslut, kunder, projektstatus och lärdomar behöver finnas i ett gemensamt lager som allas Claude kan läsa från, och skriva till enligt tydliga regler. Annars blir varje persons hjärna en egen ö.
+
+Det är samma tanke som speglingsmönstret i [kapitel 04](04-arkitekturen.md#hur-projekten-hanger-ihop), fast mellan människor i stället för mellan projekt. Varje person eller team äger sin del och skriver där, och alla andra läser.
+
+Det finns några sorters verktyg för det gemensamma lagret.
+
+| Verktyg | Vad det är bra på |
+|---|---|
+| Notion | Sidor och databaser med behörigheter, byggt för att vara ett gemensamt arbetsutrymme. Via sin connector kan Claude söka, läsa, skapa och ändra sidor och databaser. |
+| Delade enheter i Google Drive, SharePoint och OneDrive | Dokument och ark där bolaget redan arbetar, med behörigheter som följer organisationen. |
+| Confluence och liknande wikis | Dokumentation och beslut, ofta ihop med ärendehantering som Jira. |
+| GitHub | Regelfiler, skills och mallar som ska versionshanteras och granskas innan de ändras. Det är så Norvik delar sin gemensamma infrastruktur. |
+| Claude Team och Enterprise | Delade projekt i Claude, se nedan. |
+
+Vilket som passar beror mest på vad bolaget redan använder. Ett bolag som lever i Microsofts verktyg väljer SharePoint, och ett som redan har sin wiki i Notion låter Claude läsa och skriva där. För en privatperson med Drive tillför Notion sällan något nytt, men i ett team är det just den här rollen Notion är byggt för.
+
+### Delade projekt i Claude
+
+På Team och Enterprise kan ett projekt delas med andra i organisationen: med enskilda personer, med flera på en gång eller med hela organisationen. Den som får läsrätt kan se innehållet och chatta i projektet. Den som får redigeringsrätt kan också ändra instruktioner och kunskap och bjuda in fler. Administratörer kan stänga av delningen eller begränsa den. Detaljerna står på [Anthropics hjälpsida om delade projekt](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing).
+
+Ett delat projekt löser en del av problemet: alla får samma instruktioner och samma kunskap. Men varje person har fortfarande sina egna chattar, så projektet är en gemensam utgångspunkt snarare än ett gemensamt minne. Det som flera ska ändra löpande, som status och beslut, passar därför bättre i det gemensamma lagret ovan, som projektet läser via en connector.
+
+En rimlig fördelning blir ungefär så här:
+
+| Vad | Var |
+|---|---|
+| Gemensamma regler och stabilt underlag | Delade projekt i Claude |
+| Det som ändras löpande: status, beslut, kunder | Ett gemensamt arbetsutrymme, till exempel Notion, SharePoint eller en delad enhet i Drive |
+| Regelfiler och skills som ska granskas innan de ändras | Ett repo |
+| Utkast, hypoteser och personlig planering | Var och ens egen hjärna och egna projekt |
+
 ## Mallarna i repot
 
 Det finns färdiga filer att utgå från i mappen [`templates/`](https://github.com/Solsidan21/AI_workflow_guide_svenska/tree/main/templates/). Ge dem till Claude Code, beskriv vad du vill ändra, och låt Claude bygga resten.

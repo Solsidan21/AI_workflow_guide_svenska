@@ -57,6 +57,8 @@ En brasklapp: du styr inte själv när RAG används, och svaret blir beroende av
 
 **Samla frågor.** Tre relaterade frågor i ett komplett meddelande är billigare än tre separata, eftersom varje separat meddelande ger ett nytt varv över hela konversationen.
 
+**Lägg ingen tid på oanvända connectors.** Varje connector som är påslagen beskrivs för Claude när en chatt startar, och schemalagda uppgifter får som standard alla kontots kopplingar. Det kostar en del tokens, men sällan mycket jämfört med en lång chatt. Att starta nya chattar ofta gör betydligt mer, både för förbrukningen och för kvaliteten.
+
 ## Orkestrering: låt en agent delegera
 
 När jag arbetar aktivt, alltså bygger om ett system, går igenom många filer eller skriver längre texter, räcker inte ovanstående. Då låter jag huvudkonversationen delegera till subagenter.

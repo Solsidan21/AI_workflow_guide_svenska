@@ -10,6 +10,22 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 
 *Samma AI-modeller finns tillgängliga för alla. Det som skiljer ett generiskt svar från ett användbart är vad modellen får att arbeta med, och med en vanlig prenumeration kan du bygga ett eget system som ger den rätt förutsättningar.*
 
+## Från chatt till system
+
+De flesta använder AI som en chatt: du frågar, får ett svar och börjar om från noll nästa gång. Ett system är när Claude redan vet vem du är, vad du arbetar med, var ditt material ligger och hur du vill ha hjälp, innan du har skrivit något. Det byggs av några enkla delar: ett projekt per område med egna instruktioner, ett centralt projekt som håller koll på helheten och material som ligger där Claude hittar det. Inget av det kräver att du kan programmera.
+
+## Känner du igen dig?
+
+- **Du skriver långa prompter** och förklarar vem du är och vad som gäller, varje gång.
+- **Det tar tid att komma igång i en ny chatt**, så du stannar i samma chatt i veckor eller månader. Men Claude har inte koll på allt i en så lång chatt. Det äldre komprimeras, detaljer faller bort och svaren blir sämre, samtidigt som varje nytt meddelande drar mer av din användning.
+- **Du laddar upp samma filer om och om igen**, gärna stora PDF:er som gör svaren sämre.
+- **Du slår i användningsgränsen**, fast du bara pluggar eller jobbar.
+- **Det du ska göra finns i huvudet** eller på lösa lappar, och ingen håller koll på helheten.
+
+Det är just de problemen upplägget i guiden löser. [Kapitel 02](02-kontext.md) förklarar varför kontext slår långa prompter, och [kapitel 10](10-anvandningsgransen.md#varfor-langa-chattar-blir-dyra) varför en lång chatt blir både sämre och dyrare än flera korta.
+
+**Har du redan ett genomtänkt upplägg?** Kanske har du flera projekt, mappar på datorn och till och med ett projekt som håller koll på helheten. Då kan setup-sessionen ändå vara värd att testa. Jag kan inte lova några stora förändringar. Se den snarare som en utvärdering av det du redan har, på samma sätt som jag själv hela tiden prövar och förbättrar mitt eget upplägg. Claude utgår från dina projekt och letar efter det som går att göra bättre.
+
 ## Börja här: en setup-session med din egen Claude
 
 Du behöver inte läsa guiden för att komma igång. Öppna en helt ny chatt i Claude (eller ChatGPT), utanför alla projekt, och klistra in det här:
@@ -21,9 +37,25 @@ https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setu
 Använd den här chatten bara till att sätta upp mitt arbetssätt, inte till att jobba med mina uppgifter.
 ```
 
-Claude frågar hur du arbetar i dag, föreslår ett upplägg som passar dig och guidar dig genom att skapa ett projekt som blir din "hjärna". Sedan flyttar du in chatten dit och fortsätter därifrån. [Kom igång](kom-igang.md) beskriver vad som händer steg för steg.
+Claude frågar hur du arbetar i dag och vad du använder den till, och anpassar sig efter det.
 
-Guiden här på sajten är till för när du vill förstå varför. Setup-sessionen länkar hit när det passar.
+Det du gör i sessionen är att lägga grunden, inte att bygga ett stort system på en gång. Efter ungefär en halvtimme har du två projekt: Hjärnan, som håller koll på helheten och där setup-chatten bor kvar, och ett projekt för det du främst vill få gjort, till exempel ett examensarbete. Sedan är du igång med ditt arbete. Grunden gör att du senare kan bygga vidare utan att börja om: fler projekt, ett morgonbrev som sammanfattar dagen eller ett upplägg anpassat efter hur du lär dig bäst. Har du redan projekt utgår Claude från dem. Då kan det ta lite längre tid, men det ger också mer. [Kom igång](kom-igang.md) beskriver vad som händer steg för steg.
+
+## När du vill bygga vidare
+
+När grunden fungerar och du vill ta nästa steg, till exempel ett nytt projekt, ett morgonbrev eller en bättre ordning på dina filer: öppna en ny chatt i ditt Hjärnan-projekt och klistra in det här. Claude läser hela guiden och utgår från hur du arbetar i dag.
+
+```text
+Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+Guiden beskriver en persons upplägg och är inget facit.
+Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+Ställ en fråga i taget.
+
+Det här vill jag göra:
+```
+
+Skriv det du vill göra på sista raden, eller lämna den tom om du vill att Claude ska föreslå något. Guiden här på sajten är till för när du vill förstå varför, och både setup-sessionen och Claude länkar hit när det passar.
 
 ## Hitta det du behöver
 
@@ -34,8 +66,9 @@ Guiden här på sajten är till för när du vill förstå varför. Setup-sessio
 | Måste jag skriva långa prompter för att få bra svar? | [02 Kontext i stället för långa prompter](02-kontext.md) |
 | Hur ordnar jag mina filer så att Claude hittar rätt? | [03 Struktur som kontext](03-struktur.md) |
 | Hur hänger projekt, GitHub, Drive och schemalagda uppgifter ihop? | [04 Arkitekturen](04-arkitekturen.md) |
+| Hur hänger projekten ihop med varandra, och vad har det med Claude Code att göra? | [04 Arkitekturen](04-arkitekturen.md#hur-projekten-hanger-ihop) |
 | Hur får jag ett upplägg som passar hur jag lär mig? | [05 Individanpassad inlärning](05-individanpassad-inlarning.md) |
-| Vad ska ligga på datorn, i Drive och i Claude? | [04 Arkitekturen](04-arkitekturen.md#lokalt-i-drive-eller-i-claudes-moln) |
+| Var ska saker ligga: på datorn, i Drive eller i Claude? | [04 Arkitekturen](04-arkitekturen.md#tumregeln-vem-laser) |
 | Kan Claude hålla koll på helheten och skicka en plan varje morgon? | [06 Hjärnan](06-hjarnan.md) |
 | Vad kan jag bygga till när grunden fungerar? | [07 Att bygga vidare på](07-bygga-vidare.md) |
 | Vilken modell ska jag använda, och spelar benchmarks någon roll? | [08 Modellerna](08-modellerna.md) |
@@ -43,6 +76,7 @@ Guiden här på sajten är till för när du vill förstå varför. Setup-sessio
 | Varför slår jag i användningsgränsen hela tiden? | [10 Därför slår du i taket](10-anvandningsgransen.md) |
 | Behöver jag betala för fler AI-tjänster? | [11 Vad en prenumeration räcker till](11-vad-en-prenumeration-racker-till.md) |
 | Hur ser det här ut på ett jobb? | [Bilaga: Arbetslivet](bilaga-arbetsliv.md) |
+| Hur kopplar man ihop flera personers upplägg, och var passar Notion och Claude Team in? | [Bilaga: Arbetslivet](bilaga-arbetsliv.md#nar-hjarnorna-ska-prata-med-varandra) |
 | Vad betyder ett ord? | [Ordlista](ordlista.md) |
 
 Varje kapitel börjar med en kort version på några rader och slutar med en prompt som du klistrar in i en ny chatt i ett av dina projekt, så att du gör kapitlets steg tillsammans med din Claude. Nya begrepp förklaras i hopfällda rutor som du fäller ut vid behov.
@@ -73,9 +107,9 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 !!! abstract "Kort version"
     - Klistra in prompten nedan i en helt ny chatt, utanför alla projekt.
     - Chatten är en setup-session och används bara till att sätta upp ditt upplägg, inte till att jobba med dina uppgifter.
-    - Claude frågar hur du arbetar i dag och vad du främst vill få gjort, och anpassar sig efter hur van du är.
-    - Du får två projekt: Hjärnan, som håller koll på helheten och där setup-chatten bor kvar, och ett projekt för det du främst vill göra.
-    - Sedan börjar du arbeta. Upplägget växer med tiden, och ingen bygger allt i ett svep.
+    - Claude frågar hur du arbetar i dag, vad du använder den till och vad du främst vill få gjort, och anpassar sig efter det.
+    - Du får två projekt: Hjärnan, som håller koll på helheten och där setup-chatten bor kvar, och ett projekt för det du främst vill göra. Har du redan projekt kan de bli de två.
+    - Sedan börjar du arbeta. Du har lagt grunden, och upplägget växer med tiden. Ingen bygger allt i ett svep.
 
 ## Prompten
 
@@ -92,13 +126,19 @@ Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och
 
 ## Vad som händer
 
-1. **Claude tar reda på var du står.** Den läser av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan om resten. Den viktigaste frågan är vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete. Det blir ditt fokusprojekt.
+1. **Claude tar reda på var du står.** Den läser av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan vad du använder Claude till och vilka projekt du har. Den viktigaste frågan är vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete. Det blir ditt fokusprojekt.
 2. **Ni sätter upp Hjärnan.** Claude skriver instruktionerna med dig, du skapar projektet och flyttar in chatten dit. Där blir den kvar som din Setup-chatt.
 3. **Du skapar fokusprojektet.** Claude ger dig en prompt som du klistrar in i en ny chatt i det projektet. Där gör ni en kort setup för just ditt arbete: mål, material, hur du vill ha hjälp och om du jobbar med andra.
 4. **Du börjar arbeta.** När fokusprojektet är uppsatt startar du en ny chatt där och sätter igång.
 5. **Du kommer tillbaka när du vill.** Setup-chatten i Hjärnan finns kvar för när du vill utveckla upplägget, till exempel organisera vardagen, ta reda på hur du lär dig bäst eller lägga till fler projekt.
 
-Räkna med 20 till 30 minuter för Hjärnan och 10 till 20 minuter för fokusprojektet.
+Räkna med 20 till 30 minuter för Hjärnan och 10 till 20 minuter för fokusprojektet. Har du redan många projekt kan det ta längre tid, eftersom ni då också går igenom vad som ska bli kvar, slås ihop eller kopplas till Hjärnan.
+
+Ibland ber Claude dig ta ställning till något och föreslår ett avsnitt i guiden att läsa först. Det är inget måste, men det tar ett par minuter och gör att du förstår vad du väljer och vilket problem det löser.
+
+## Om du redan har ett upplägg
+
+Har du redan flera projekt utgår sessionen från dem. Ni tar reda på om något av dem kan bli Hjärnan, om några mindre projekt hellre hör hemma i den och hur de projekt som blir kvar ska hänga ihop med den. Har du redan något som motsvarar Hjärnan blir sessionen mer av en utvärdering: Claude går igenom ditt upplägg och föreslår det som går att förbättra. Jag kan inte lova stora förändringar, men det brukar finnas något att hämta.
 
 ## Varför en egen chatt för setupen?
 
@@ -106,7 +146,19 @@ Om du börjar jobba med en uppgift i samma chatt som du sätter upp ditt uppläg
 
 ## Efter setupen
 
-Hjärnan och dina projekt blir bättre av att användas. När du märker att något skaver, gå tillbaka till Setup-chatten i Hjärnan, eller starta en ny chatt där, och be om att bygga vidare. Kapitlen i guiden slutar med prompter som du klistrar in i ett av dina projekt för att ta nästa steg. Vill du se hur långt det går att ta, beskriver [kapitel 04](04-arkitekturen.md) och [kapitel 06](06-hjarnan.md) mitt eget upplägg.
+Hjärnan och dina projekt blir bättre av att användas. När du märker att något skaver, gå tillbaka till Setup-chatten i Hjärnan, eller starta en ny chatt där och klistra in prompten nedan.
+
+```text
+Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+Guiden beskriver en persons upplägg och är inget facit.
+Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+Ställ en fråga i taget.
+
+Det här vill jag göra:
+```
+
+Samma prompt finns på startsidan, så att du hittar den när du behöver den. Kapitlen i guiden slutar med prompter som du klistrar in i ett av dina projekt för att ta nästa steg. Vill du se hur långt det går att ta, beskriver [kapitel 04](04-arkitekturen.md) och [kapitel 06](06-hjarnan.md) mitt eget upplägg.
 
 ??? note "Hela instruktionen, om din AI inte kan öppna länken"
     Kopiera allt i rutan och klistra in det i en ny chatt.
@@ -647,23 +699,35 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 
 # Kapitel 04 — Arkitekturen
 
-> *Några mappar, några projekt och ett par dokument räcker långt, så länge det är tydligt vem som skriver vad och var saker bor. Här visar jag hur delarna hänger ihop i min egen setup.*
+> *Några mappar, några projekt och ett kalkylark räcker långt, så länge det är tydligt vem som skriver vad och var saker bor. Här visar jag hur delarna hänger ihop i min egen setup.*
 
 !!! abstract "Kort version"
-    - Upplägget består av fem lager, från sådant som sällan ändras till sådant som ändras varje dag.
-    - Ett projekt per område ger ren kontext, och Drive eller liknande fungerar som delat skikt.
+    - Tumregeln för var något ska ligga är vem som läser det, inte hur ofta det ändras.
+    - Det ger tre lager: maskinlagret som Claude läser, människolagret som du och andra läser, och kunskapslagret som talar om för Claude vad den vet och hur den ska arbeta.
+    - Ett projekt per område ger ren kontext. Projekt fungerar ungefär som mappar, men de kan inte ligga i varandra och ser inte varandra.
+    - Därför speglar varje projekt sitt läge till ett delat kalkylark, som Hjärnan och de schemalagda uppgifterna läser.
     - Varje dokument har en enda skrivare men många läsare, vilket förhindrar dubbletter och inaktuell information.
-    - Det stabila och delade hålls isär från det föränderliga och privata.
-    - Regler hör hemma i projektinstruktioner, stabilt material i projektkunskap, det som ändras ofta i Drive och stora mängder rådata lokalt.
-    - Du bygger lagren i den takt behovet uppstår, och inget av dem måste göras om i efterhand.
+    - Du bygger delarna i den takt behovet uppstår, och inget av dem måste göras om i efterhand.
 
 Hittills har guiden handlat om enskilda delar: hur du skriver prompter, hur du ordnar material i mappar och hur CLAUDE.md styr arbetet. Det här kapitlet handlar om helheten. När du har fler än ett område, till exempel flera kurser samtidigt, behöver delarna ett gemensamt upplägg. Annars börjar information ligga på fel ställen, bli inaktuell eller dupliceras.
 
 Jag använder mina kurser som exempel eftersom det är där jag byggt mest. Upplägget är inte bundet till plugg. Mot slutet av kapitlet visar jag hur exakt samma arkitektur ser ut i ett jobb.
 
-## Fem lager
+## Tumregeln: vem läser?
 
-Min setup består av fem lager. Det enklaste sättet att se dem är en skiss där information rör sig från sådant som sällan ändras till sådant som ändras varje dag.
+Den vanligaste frågan när man bygger sitt upplägg är var saker ska ligga. Tidigare gav jag tumregeln att det som ändras ofta hör hemma i Drive. Den är inte fel, men den leder lätt fel. En bättre fråga är vem som läser. Då faller innehållet i tre lager.
+
+| Lager | Vad det är | Var det hör hemma |
+|---|---|---|
+| Maskinlagret | Det som främst Claude läser och skriver: att göra-listan, läget per område, loggar och speglingar mellan projekt | Där det är billigast och tydligast för Claude, och där dina schemalagda uppgifter når det |
+| Människolagret | Det du och andra läser: en affärsplan, ett CV, en text ni skriver tillsammans | Drive eller motsvarande, eftersom delning och mobilen spelar roll |
+| Kunskapslagret | Det som talar om för Claude vad den vet och hur den ska arbeta: kursmaterial, regelfiler, projektinstruktioner och minne | Repon, projektinstruktioner, projektkunskap och minnet |
+
+Lagren går in i varandra. Även maskinlagret bör gå att läsa för en människa ibland. Jag öppnar sällan min att göra-lista, eftersom morgonbrevet berättar det jag behöver veta. Men när jag blir klar med något mellan två brev vill jag kunna se allt på en gång. Därför ligger listan i ett kalkylark med flikar för Claude och en flik för mig, som [avsnittet om arket](#ett-ark-som-delat-skikt) visar. Frågan om vem som läser avgör alltså inte bara var något ska ligga, utan också vilket format det ska ha.
+
+## Fem delar
+
+Min setup består av fem delar. Det enklaste sättet att se dem är en skiss där information rör sig från sådant som sällan ändras till sådant som ändras varje dag.
 
 ```
   LOKALT (~/Projects/Plugg)             GITHUB
@@ -676,8 +740,8 @@ Min setup består av fem lager. Det enklaste sättet att se dem är en skiss dä
                                    |                       ^
                   skriver status   |                       | läser
                                    v                       |
-                    GOOGLE DRIVE, en delad mapp
-                    en att göra-lista + ett statusdokument per kurs
+                    GOOGLE-ARKET "HJÄRNAN" I DRIVE
+                    Att göra + en rad per kurs + logg + Översikt
                                    |
                   läses av         v
                     SCHEMALAGDA UPPGIFTER (morgon, eftermiddag, natt)
@@ -731,11 +795,45 @@ Att ha ett projekt per område och inte ett enda stort projekt för allt har tv�
 
 Utöver kursprojekten har jag ett centralt projekt som håller koll på helheten. Det får ett eget kapitel, kapitel 06.
 
-## Drive som delat skikt
+## Hur projekten hänger ihop
 
-Här kommer arkitekturens viktigaste beslut. Kursprojekten behöver ett sätt att berätta för varandra, och för mina schemalagda uppgifter, hur det går. Jag valde Google Drive för det. I en delad mapp finns två sorters dokument: en att göra-lista och ett statusdokument per kurs.
+Ett projekt kan liknas vid en mapp. Det som finns i den är det Claude har att arbeta med när du startar en chatt där. Det mesta i ditt Claude-konto går att tänka på som textfiler i sådana mappar:
 
-Statusdokumentet har samma sektioner i varje kurs: nästa examination, läget, vad som är kvar, nästa pass, vad jag är osäker på och en logg. Det skrivs av kursprojektet, i takt med att jag arbetar. Det är kort, daterat och handlar bara om nuläget.
+- *Projektinstruktionerna* är en regelfil som läses först i varje chatt i projektet.
+- *Projektkunskapen* är filerna i mappen.
+- *Minnet* är korta anteckningar som Claude själv för om dig. Kontots minne gäller överallt. Varje projekt har dessutom ett eget minne som bara gäller där, och i projektets inställningar väljer du om det ska vara kopplat till kontots minne eller hållas helt för sig. [Kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom minnet närmare.
+- *Chattar och projektdokument* stannar i sitt projekt.
+- *Artifacts*, alltså de dokument och sidor Claude gör åt dig, ligger på kontot och kan nås från alla projekt.
+
+Det betyder att projekten inte ser varandra. Ett kursprojekt vet inte vad som händer i ett annat, och ett centralt projekt ser inte in i kursprojekten av sig självt. Det är en fördel, eftersom kontexten blir ren, men det lämnar frågan om vem som ser helheten.
+
+Lösningen i min setup kallar jag speglingsmönstret. Varje projekt skriver en kort status till ett delat ställe som det centrala projektet och de schemalagda uppgifterna läser. Hos mig är det en rad per kurs i ett kalkylark, plus en loggrad efter varje pass. Kursens egen plan bor kvar i kursprojektet. Det som speglas är bara det helheten behöver veta: nästa examination, läget och nästa steg.
+
+??? note "För dig som kan Claude Code: samma byggstenar med lägre tröskel"
+    Har du använt Claude Code finns det en liknelse som gör hela upplägget lättare att förstå.
+
+    Tänk dig att du utvecklar tre appar. I Claude Code får varje app en egen mapp med en egen CLAUDE.md, och de tre mapparna kan ligga i en gemensam övermapp som också har en CLAUDE.md. I den övre står det som gäller allt: vem du är, hur du vill arbeta och hur apparna hänger ihop. I varje undermapp står bara det som gäller just den appen.
+
+    Du utvecklar inte apparna från övermappen. Startar du en session där ser Claude allt på en gång, och då ökar risken att den arbetar i fel app eller blandar ihop reglerna. När du bygger en viss app öppnar du sessionen i dess mapp. Övermappen använder du till annat: att se helheten, planera mellan apparna och ändra det som gäller alla.
+
+    Översatt till Claude är varje projekt en sådan undermapp. Projektinstruktionerna motsvarar undermappens CLAUDE.md, projektkunskapen motsvarar filerna i mappen och projektets minne motsvarar en anteckningsfil som Claude själv för. Kontots minne och dina allmänna inställningar motsvarar övermappens CLAUDE.md, som gäller överallt. Varje chatt motsvarar en session.
+
+    Skillnaden är att Claude inte låter dig lägga projekt i projekt. Det finns ingen övermapp som ser in i undermapparna. Hjärnan i [kapitel 06](06-hjarnan.md) är mitt sätt att gå runt det: ett vanligt projekt som spelar övermappens roll och som ser vad som händer i de andra projekten genom att de speglar sitt läge till ett delat ark.
+
+    Jag ser därför Claude som en tillämpning av samma byggstenar som Claude Code, paketerade för att sänka den tekniska tröskeln. I Claude Code behöver du hålla ordning på mappar, filer och en terminal. I Claude får du ett bekvämare gränssnitt och mobilen, men byggstenarna är i grunden desamma. Det hänger ihop med min tes i [kapitel 09](09-troskeln.md#min-tes), att mycket av Anthropics produktutveckling handlar om att sänka tröskeln till det som redan gick att göra. Anthropic presenterade själva Cowork, som numera är en del av Claude-appen, som Claude Code för resten av ditt arbete.
+
+    Liknelsen är en tankemodell, inte en beskrivning av hur produkterna byggdes. Projekt fanns i Claude innan Claude Code släpptes, och allt motsvarar inte varandra exakt. I Claude Code kan Claude själv ändra sin CLAUDE.md, medan du i Claude klistrar in ändringar i projektinstruktionerna själv. Som karta tycker jag ändå att den stämmer, och den förklarar varför samma principer fungerar i båda. Anthropic har dessutom börjat föra in projekt i Claude Code, i beta när det här skrevs, vilket pekar åt samma håll. Ser du det annorlunda vill jag gärna höra det.
+
+## Ett ark som delat skikt
+
+Kursprojekten behöver ett sätt att berätta för det centrala projektet och för mina schemalagda uppgifter hur det går, och jag behöver ett ställe där allt jag ska göra står. Båda bor i ett och samma Google-ark som heter Hjärnan, med fyra flikar:
+
+- **Att göra:** en rad per sak, med kolumner för område, vad det är, när det lades till, när jag vill bli påmind, status, när det blev klart och en kommentar.
+- **Plugg:** en rad per kurs med nästa examination, läget och nästa pass. Varje rad skrivs av sitt eget kursprojekt.
+- **Plugglogg:** en rad per pass, också skriven av kursprojekten.
+- **Översikt:** min dashboard. Den består bara av formler som läser de andra flikarna, och ingen skriver där.
+
+Arket fyller alltså två lager på en gång. Dataflikarna är maskinlager som Claude läser och skriver rad för rad, och Översikt är människolagret som jag kan öppna i mobilen när jag vill se allt på en gång.
 
 Anslutningen mellan Claude och Drive sker via en connector.
 
@@ -748,9 +846,23 @@ Anslutningen mellan Claude och Drive sker via en connector.
 
     [Se alla begrepp i ordlistan](ordlista.md#connector)
 
-Varför Drive och inte GitHub? Två skäl. Jag ville inte behöva pusha något manuellt för att en plan ska uppdateras. Och de schemalagda uppgifterna körs i molnet, utan att min dator är påslagen, så de behöver komma åt statusen utan att något körs lokalt. Ett dokument i Drive uppfyller båda kraven.
+### Varför ett ark och inte ett dokument
 
-Allt som har en fast tid bor i kalendern. Det som saknar tid bor i listan eller statusdokumenten. Det går att tycka att det är en liten sak, men regeln gör att jag aldrig behöver fundera på var en uppgift hör hemma.
+Jag började med vanliga Google-dokument: en att göra-lista med rubriker och ett statusdokument per kurs. Det fungerade, men det var dyrt och klumpigt för Claude. Att göra-listan var drygt 5 kB text, men när Claude läste den via kopplingen till Google Docs blev det ungefär 186 000 tecken, eftersom hela dokumentets struktur och formatering följer med. För att ändra en rad behövde Claude dessutom räkna ut var i dokumentet texten stod. I ett ark läser Claude bara de kolumner den behöver och skriver en rad i taget. Det blir snabbare, billigare och svårare att göra fel, och det är ett bra exempel på varför formatet spelar lika stor roll som platsen.
+
+### Varför inte GitHub
+
+Tidigare skrev jag att jag valde Drive för att slippa pusha manuellt. Det argumentet håller inte. Claude kan pusha själv, och min nattliga synk klonar redan ett repo varje natt.
+
+GitHub är ändå fel ställe för just det här, av ett annat skäl. GitHub är byggt för filer och versionshantering, inte för en lista som en människa vill öppna och överblicka. Även om jag oftast bara läser morgonbrevet vill jag kunna gå in i listan och se varje sak, till exempel när jag blivit klar med något mellan två brev. Det gör jag enkelt i ett ark i mobilen, men inte i en datafil i ett repo. Till det kommer att varje session måste klona repot innan den kan läsa, och att två skrivare som ändrar samtidigt kan krocka.
+
+### Om du börjar från noll
+
+Drive är inte det enda svaret. Välj i första hand det du redan har. Nästan alla har ett Google- eller Microsoft-konto genom sin mejl, och då ligger Google Drive eller OneDrive nära till hands. Använder du redan Notion fungerar det lika bra, och Notion har en connector där Claude kan läsa och skriva sidor och databaser. GitHub har färre konto på, och det passar bättre för material som ska versionshanteras än för listor du vill överblicka.
+
+Det viktiga är att listan finns där Claude, dina schemalagda uppgifter och du själv når den. För min del tillför Notion inget, eftersom Drive, GitHub och mina lokala filer redan täcker samma behov. Det säger mer om min setup än om Notion. För den som jobbar i ett team ser frågan annorlunda ut, vilket [bilagan om arbetslivet](bilaga-arbetsliv.md#nar-hjarnorna-ska-prata-med-varandra) tar upp.
+
+Allt som har en fast tid bor i kalendern. Det som saknar tid bor i arket. Det går att tycka att det är en liten sak, men regeln gör att jag aldrig behöver fundera på var en uppgift hör hemma.
 
 ## Schemalagda uppgifter
 
@@ -765,7 +877,7 @@ Ovanpå Drive och kalendern ligger schemalagda uppgifter, alltså instruktioner 
 
     [Se alla begrepp i ordlistan](ordlista.md#schemalagd-uppgift)
 
-Jag har tre. En körs på morgonen och sammanfattar läget, en körs på eftermiddagen och gör en kort avstämning, och en körs på natten och synkar ett hobbyprojekts statusfiler till ett kalkylark. Två av dem läser bara. Den tredje skriver, men bara i ett enda ark och enligt strikta regler: aldrig ta bort något, alltid logga ändringen. De två första beskrivs i kapitel 06.
+Jag har tre. En körs på morgonen och sammanfattar läget, en körs på eftermiddagen och gör en kort avstämning, och en körs på natten och synkar ett hobbyprojekts statusfiler till ett eget kalkylark. Två av dem läser bara. Den tredje skriver, men bara i ett enda ark och enligt strikta regler: aldrig ta bort något, alltid logga ändringen. De två första beskrivs i kapitel 06.
 
 ## Principen: en skrivare per dokument, många läsare
 
@@ -774,14 +886,15 @@ Det som håller ihop arkitekturen är en enda regel. Varje dokument har exakt en
 | Vad | Vem skriver | Vem läser |
 |---|---|---|
 | Kursrepot | jag och Claude Code, vid uppsättning | kursprojektet |
-| Statusdokument per kurs | kursprojektet | det centrala projektet och de schemalagda uppgifterna |
-| Att göra-listan | det centrala projektet, när jag nämner något | de schemalagda uppgifterna |
+| Kursens rad i fliken Plugg och dess loggrader | kursprojektet | det centrala projektet och de schemalagda uppgifterna |
+| Fliken Att göra | det centrala projektet, när jag nämner något | de schemalagda uppgifterna och jag |
+| Fliken Översikt | ingen, bara formler | jag |
 | Kalendern | det centrala projektet, för sådant med fast tid | alla |
 | Speglingsarket för hobbyprojektet | bara den nattliga uppgiften | jag |
 
 Regeln löser ett problem som annars dyker upp snabbt. Om två projekt kan skriva i samma dokument skriver de över varandra, eller så uppstår två versioner av sanningen och ingen vet vilken som gäller. Med en skrivare per dokument finns alltid ett svar på frågan "var ska jag titta?", och ett fel går att spåra till en enda källa.
 
-Det betyder också att det centrala projektet aldrig ändrar i kursernas statusdokument, hur frestande det än är när det ser att något är fel. Det rätta är att rapportera felet och låta kursprojektet rätta det. Ett litet extra steg, men det gör att jag kan lita på att varje dokument speglar vad dess ägare faktiskt vet.
+Det betyder också att det centrala projektet aldrig ändrar i kursernas rader, hur frestande det än är när det ser att något är fel. Det rätta är att rapportera felet och låta kursprojektet rätta det. Ett litet extra steg, men det gör att jag kan lita på att varje dokument speglar vad dess ägare faktiskt vet.
 
 ## Stabilt och delat, föränderligt och privat
 
@@ -789,7 +902,7 @@ Arkitekturen delar upp information efter två egenskaper på samma gång.
 
 Kursmaterial är stabilt. Det ändras sällan, det är detsamma för alla som läser kursen och det är ofta redan offentligt. Det passar i ett repo på GitHub, där det är versionshanterat och där flera verktyg kan läsa det.
 
-Status är föränderlig och personlig. Hur långt jag har kommit, vad jag är osäker på och vad jag ska göra i morgon ändras varje dag och angår ingen annan. Det passar i Drive, där det kan skrivas om utan att något behöver versioneras eller pushas.
+Status är föränderlig och personlig. Hur långt jag har kommit, vad jag är osäker på och vad jag ska göra i morgon ändras varje dag och angår ingen annan. Det passar i arket i Drive, där en rad kan skrivas om utan att något behöver versioneras, och där jag själv kan läsa den.
 
 En praktisk konsekvens är att gränsen mellan offentligt och privat följer lagren. Det som ligger i repona kan jag visa upp. Det som ligger i Drive är mitt. Därför skriver jag i varje CLAUDE.md en kort regel om vad som får hamna i repot, så att inget privat av misstag följer med vid nästa push.
 
@@ -804,7 +917,7 @@ En praktisk konsekvens är att gränsen mellan offentligt och privat följer lag
 
 ## Lokalt, i Drive eller i Claudes moln
 
-Den vanligaste frågan när man bygger sitt första upplägg är var saker ska ligga. Det finns tre platser, och de är bra på olika saker.
+Tumregeln om vem som läser säger vilket lager något hör till. Här är platserna, och vad var och en är bra på.
 
 **Claudes moln** är allt som ligger i ditt Claude-konto. Det består av fyra delar som ofta blandas ihop:
 
@@ -813,7 +926,7 @@ Den vanligaste frågan när man bygger sitt första upplägg är var saker ska l
 - *Minne* är det Claude själv väljer att spara om dig mellan chattar. Det är bra för bestående fakta men går inte att styra exakt, vilket [kapitel 02](02-kontext.md#minne-vad-claude-kommer-ihag-mellan-samtal) går igenom.
 - *Chatthistorik och artifacts* är samtalen och de dokument eller sidor Claude har gjort, som du kan gå tillbaka till.
 
-**Google Drive** (eller OneDrive, Notion och liknande, via en connector) är platsen för det som ändras ofta och som flera ska kunna läsa: att göra-listan, statusdokumenten, sådant du skriver tillsammans med andra. Det är också det enda av de tre som mina schemalagda uppgifter når, eftersom de körs i molnet utan att min dator är på.
+**Google Drive** (eller OneDrive, Notion och liknande, via en connector) är platsen för det som människor ska läsa och dela, och för maskinlager som du själv också vill kunna öppna, som min att göra-lista. Schemalagda uppgifter körs i molnet utan att din dator är på, så de når det som ligger där, alltså Drive, GitHub och ditt Claude-konto, men inte filer på datorn.
 
 **Lokalt på datorn** kräver Claude-appen med kopplade mappar eller Claude Code. Här ligger det som är stort, det som ska bearbetas med verktyg och det som ska versionshanteras: mina kursrepon med fulltext och skript, regelfiler som CLAUDE.md och material som jag gör om från PDF till Markdown.
 
@@ -822,7 +935,8 @@ Den vanligaste frågan när man bygger sitt första upplägg är var saker ska l
 | Regler för hur Claude ska arbeta i ett område | Projektinstruktioner |
 | Stabilt material som ska läsas, till exempel en kursplan | Projektkunskap |
 | Fakta om dig som är bra att Claude minns | Minne |
-| Det som ändras varje dag, till exempel listor och status | Drive |
+| Listor och status som Claude skriver och du vill kunna läsa | Ett ark i Drive |
+| Det som bara Claude läser | Där det är billigast för Claude, till exempel ett repo eller en fil i projektet |
 | Det du delar med andra människor | Drive, i en delad mapp |
 | Stora mängder rådata, skript och sådant som versionshanteras | Lokalt, och vid behov GitHub |
 
@@ -836,14 +950,14 @@ Inget i det här är specifikt för kurser. Byt ut orden så ser det ut så här
 |---|---|
 | Ett repo per kurs | En mapp per kund, projekt eller affär med avtal, underlag och mallar |
 | Kursprojekt med repot som kunskap | Ett Claude-projekt per kund eller team med mappen som kunskap |
-| Statusdokument per kurs | Ett statusdokument per kund: läget, nästa steg, öppna frågor |
+| En rad per kurs i fliken Plugg | Ett statusdokument eller en rad per kund: läget, nästa steg, öppna frågor |
 | Att göra-listan | En gemensam lista över åtaganden |
 | Kalender | Kalender, precis som förut |
 | Morgon och eftermiddag | En sammanfattning inför dagens möten och en avstämning på eftermiddagen |
 
-Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt och privat blir status, anteckningar och bedömningar. Principen om en skrivare per dokument gäller oförändrad: den som äger kundrelationen skriver statusdokumentet, andra läser. Samma upplägg fungerar för en hobby med flera delprojekt, för ett föreningsuppdrag eller för ett litet företag.
+Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt och privat blir status, anteckningar och bedömningar. Principen om en skrivare per dokument gäller oförändrad: den som äger kundrelationen skriver statusdokumentet, andra läser. Samma upplägg fungerar för en hobby med flera delprojekt, för ett föreningsuppdrag eller för ett litet företag. Hur flera personers upplägg kan prata med varandra tar [bilagan om arbetslivet](bilaga-arbetsliv.md#nar-hjarnorna-ska-prata-med-varandra) upp.
 
-Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till ett statusdokument när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.
+Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till en statusrad när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.
 
 !!! tip "Gör det med din Claude"
     Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
@@ -1162,8 +1276,8 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 
 !!! abstract "Kort version"
     - Hjärnan är ett centralt projekt som överblickar helheten i vardagen, så att du slipper hålla allt i huvudet.
-    - Kärnan är en lista med fasta rubriker och en tydlig prioriteringsordning.
-    - Dokument från andra projekt läses men ändras aldrig härifrån.
+    - Kärnan är en att göra-lista i ett kalkylark, med ett område per rad och en tydlig prioriteringsordning.
+    - Det som andra projekt speglar dit läses men ändras aldrig härifrån.
     - Ett morgonbrev och en eftermiddagskoll gör att viktiga saker kommer till dig.
     - Regeln att aldrig hitta på gör att du kan lita på det som står i brevet.
 
@@ -1188,31 +1302,35 @@ Hjärnan är ett vanligt Claude-projekt. Det som gör det till något särskilt 
 
 Instruktionerna gör tre saker. De anger en prioritetsordning mellan livsområdena. De talar om var saker finns. Och de beskriver vad Claude ska göra när jag nämner något jag behöver eller vill göra. Jag skriver inget hårt schema, för ett schema som inte överlever första veckan är värre än inget. I stället finns en ordning att luta sig mot när något måste väljas bort: tentor och administration kring studierna först, därefter vardagssysslor, jobb och till sist sådant som är roligt.
 
-## Listan med rubriker
+## Listan
 
-Hjärnans kärna är ett enda dokument med en lista. Den har en rubrik per livsområde, och en sista rubrik för det som är klart. Jag har valt rubriker som motsvarar de områden jag faktiskt delar upp mitt liv i, och du väljer dina egna. Antalet spelar mindre roll än att varje sak har ett självklart hem.
+Hjärnans kärna är en att göra-lista. Hos mig är det fliken Att göra i Google-arket Hjärnan, med en rad per sak och kolumner för område, vad det är, när det lades till, när jag vill bli påmind, status, när det blev klart och en kommentar. Områdena motsvarar de delar jag faktiskt delar upp mitt liv i: plugg, vardag, jobb och kul. Du väljer dina egna. Antalet spelar mindre roll än att varje sak har ett självklart hem.
+
+Från början var listan ett vanligt dokument med en rubrik per område. Varför jag bytte till ett ark, och varför det blev ett ark och inte en fil på GitHub, står i [kapitel 04](04-arkitekturen.md#ett-ark-som-delat-skikt). Kort sagt är ett ark både billigare för Claude att läsa och lättare för mig att överblicka.
 
 Reglerna för hur listan används är korta och ger mig mycket:
 
 1. När jag nämner något jag vill göra läser Claude först listan.
 2. Finns det redan där, utgår Claude från att jag vill ha hjälp med det nu och sätter igång.
-3. Finns det inte, läggs det in under rätt rubrik med dagens datum, utan att Claude frågar. Därefter frågar Claude kort om vi ska göra det nu eller senare.
-4. Om det blir senare och saken har en fast tid hamnar den i kalendern. Annars får den en påminnelse med ett datum, som fångas upp av nästa morgonbrev.
-5. När något är klart flyttas det till den sista rubriken, med datum.
+3. Finns det inte, läggs en ny rad in med rätt område, dagens datum och status Öppen, utan att Claude frågar. Därefter frågar Claude kort om vi ska göra det nu eller senare.
+4. Om det blir senare och saken har en fast tid hamnar den i kalendern. Annars får den ett påminnelsedatum, som standard i morgon, och fångas upp av nästa morgonbrev.
+5. När något är klart sätts status till Klar med datum, gärna med en kort kommentar. Rader tas aldrig bort.
 
-Det viktiga är punkt 3. Att behöva avgöra var en sak ska stå, och sedan formulera den, är exakt det som gör att man skjuter upp att skriva ned den. Om Claude gör det direkt kostar det mig ingenting att fånga en tanke. Jag vill inte heller behöva förklara mer än nödvändigt, så Claude väljer rubrik själv och skriver kort. Listan har en rad överst som visar när den senast uppdaterades, så att jag och de schemalagda uppgifterna kan se hur färsk den är.
+Det viktiga är punkt 3. Att behöva avgöra var en sak ska stå, och sedan formulera den, är exakt det som gör att man skjuter upp att skriva ned den. Om Claude gör det direkt kostar det mig ingenting att fånga en tanke. Jag vill inte heller behöva förklara mer än nödvändigt, så Claude väljer område själv och skriver kort.
 
-## Kursdokument som läses men aldrig ändras
+Att påminnelsen som standard blir nästa dag är medvetet. Säger jag "senare" utan datum är risken stor att det blir aldrig. En påminnelse i morgon gör att saken kommer tillbaka i nästa morgonbrev, och vill jag något annat säger jag till, till exempel "efter tentan".
 
-Förutom listan läser Hjärnan ett statusdokument per kurs. De skrivs av kursprojekten, som kapitel 04 beskrev. Här gäller ägarregeln utan undantag: Hjärnan läser dem och ändrar aldrig i dem.
+## Kursrader som läses men aldrig ändras
 
-Det kan kännas krångligt att inte låta det centrala projektet rätta ett uppenbart fel. Men det är precis regeln som gör att systemet håller. Om Hjärnan skrev i kursdokumenten skulle kursprojekten och Hjärnan kunna ha olika bilder av samma kurs, och då vet jag inte längre vilken jag ska tro. När Hjärnan ser något som inte stämmer säger den det till mig, och jag tar det med kursprojektet.
+Förutom listan läser Hjärnan en rad per kurs i fliken Plugg och loggraderna i fliken Plugglogg. De skrivs av kursprojekten, enligt speglingsmönstret i [kapitel 04](04-arkitekturen.md#hur-projekten-hanger-ihop). Här gäller ägarregeln utan undantag: Hjärnan läser dem och ändrar aldrig i dem.
+
+Det kan kännas krångligt att inte låta det centrala projektet rätta ett uppenbart fel. Men det är precis regeln som gör att systemet håller. Om Hjärnan skrev i kursraderna skulle kursprojekten och Hjärnan kunna ha olika bilder av samma kurs, och då vet jag inte längre vilken jag ska tro. När Hjärnan ser något som inte stämmer säger den det till mig, och jag tar det med kursprojektet.
 
 Läsningen ger ändå mycket. Hjärnan vet hur nära nästa examination är, hur många timmar som är kvar och vad jag själv har markerat som osäkert. Det räcker för att föreslå vad som är rimligt att göra en viss dag, utan att jag behöver sammanfatta något.
 
 ## Morgonbrev och eftermiddagskoll
 
-De två schemalagda uppgifterna som läser listan och kursdokumenten är det som gör att Hjärnan märks i vardagen. Jag behöver inte öppna något, utan informationen kommer till mig.
+De två schemalagda uppgifterna som läser listan och kursraderna är det som gör att Hjärnan märks i vardagen. Jag behöver inte öppna något, utan informationen kommer till mig.
 
 ??? begrepp "Begrepp: Schemalagd uppgift"
     **Vad det är:** En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.
@@ -1223,9 +1341,9 @@ De två schemalagda uppgifterna som läser listan och kursdokumenten är det som
 
     [Se alla begrepp i ordlistan](ordlista.md#schemalagd-uppgift)
 
-Morgonbrevet kommer tidigt varje dag. Det läser listan, statusdokumenten och kalendern och skriver en sammanfattning av dagen. Ju närmare en examination, desto tydligare blir förslagen om hur mycket plugg dagen kräver. Brevet kan också hämta en nyhet eller en idé utifrån mina intressen, men bara som krydda.
+Morgonbrevet kommer tidigt varje dag. Det läser listan, kursraderna och kalendern och skriver en sammanfattning av dagen. Ju närmare en examination, desto tydligare blir förslagen om hur mycket plugg dagen kräver. Brevet kan också hämta en nyhet eller en idé utifrån mina intressen, men bara som krydda.
 
-Eftermiddagskollen är kortare. Den tittar på vad som har flyttats till den färdiga rubriken under dagen, på loggraderna i kursdokumenten och på resten av kvällens kalender, och skickar ett kort, uppmuntrande meddelande. Poängen är att det ska märkas när något har gått bra, och att jag ska få en lugn bild av hur resten av dagen ser ut.
+Eftermiddagskollen är kortare. Den tittar på vad som har markerats som klart under dagen, på loggraderna från kurserna och på resten av kvällens kalender, och skickar ett kort, uppmuntrande meddelande. Poängen är att det ska märkas när något har gått bra, och att jag ska få en lugn bild av hur resten av dagen ser ut.
 
 Ingen av dem ändrar något i källorna. De läser och skriver ett meddelande, och det är allt. En uppgift som körs utan att jag ser den ska ha så litet utrymme att göra fel som möjligt.
 
@@ -1250,7 +1368,7 @@ Brevet slutar alltid med en färdig prompt i ett kodblock. Den innehåller det f
 
 ## Regeln "hitta aldrig på"
 
-Alla mina schemalagda uppgifter har en gemensam regel i sina instruktioner: hitta aldrig på. Något får bara påstås om det syns i källorna. Om en uppgift inte finns i listan nämns den inte som klar. Om ett statusdokument inte uppdaterats skriver brevet att det inte uppdaterats, och gissar inte vad som kan ha hänt.
+Alla mina schemalagda uppgifter har en gemensam regel i sina instruktioner: hitta aldrig på. Något får bara påstås om det syns i källorna. Om en uppgift inte finns i listan nämns den inte som klar. Om en kursrad inte uppdaterats skriver brevet att det inte uppdaterats, och gissar inte vad som kan ha hänt.
 
 Regeln kan verka självklar, men den är nödvändig av en särskild anledning. När en uppgift körs utan att jag tittar på kan jag inte fånga ett påhitt i stunden. Och ett morgonbrev som ibland ljuger om läget är värre än inget brev, eftersom jag då måste kontrollera allt som står i det. Förtroendet för hela systemet hänger på att texten går att lita på utan kontroll.
 
@@ -1260,10 +1378,10 @@ I praktiken innebär regeln att varje påstående i ett brev ska kunna kopplas t
 
 Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar för att komma igång. Setup-sessionen på sidan [Kom igång](kom-igang.md) gör de två första stegen tillsammans med dig.
 
-1. Skapa ett projekt och en lista med rubriker för de områden du faktiskt har. Börja med tre eller fyra.
+1. Skapa ett projekt och en att göra-lista för de områden du faktiskt har, gärna som ett kalkylark i Drive eller motsvarande. Börja med tre eller fyra områden.
 2. Skriv projektinstruktioner med en prioritetsordning, var saker finns och de fem reglerna för hur listan används.
-3. Låt det gå en vecka med bara listan. Justera rubrikerna efter vad som känns fel.
-4. Lägg till ett statusdokument för det område som tar mest tid, med en tydlig regel om vem som skriver.
+3. Låt det gå en vecka med bara listan. Justera områdena efter vad som känns fel.
+4. Låt det projekt som tar mest tid spegla sitt läge till listan, till exempel med en egen flik och en rad per område, med en tydlig regel om vem som skriver.
 5. Lägg till ett morgonbrev när du har något att sammanfatta. Börja enkelt, med en uppgift som bara läser, och ge den regeln om att aldrig hitta på från första dagen.
 
 Det går att göra i vilken ordning du vill, och det går att stanna efter första steget. Redan ett projekt med en lista och några tydliga regler ersätter mycket av det som annars bor i huvudet eller på lösa lappar.
@@ -1276,7 +1394,7 @@ Det går att göra i vilken ordning du vill, och det går att stanna efter förs
     Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
     Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
     Titta på mina projektinstruktioner och min att göra-lista om jag har en. Fråga vad som inte fungerar och vad jag oftast glömmer eller tappar bort.
-    Hjälp mig sedan att justera rubrikerna och reglerna, eller att ta nästa steg i listan i kapitlet om jag är redo för det.
+    Hjälp mig sedan att justera områdena och reglerna, eller att ta nästa steg i listan i kapitlet om jag är redo för det.
     Ställ en fråga i taget innan du föreslår något.
     ```
 
@@ -1367,7 +1485,7 @@ Specialtjänster för flashcards gör just det här färdigt och snyggt, och jag
 
 ## Föra upp lärdomar till repot
 
-Det som jag lär mig i ett kursprojekt hamnar i statusdokumenten på Drive, medan det varaktiga materialet bor i repot. Ett avslutande steg efter varje pass kunde knyta ihop dem: de begrepp som loggats som osäkra sammanställs och föreslås som ändringar i `begrepp/`. Kursprojektet föreslår, jag läser igenom och pushar med det skript jag redan använder. Då har ingen automatisk process rätt att skriva i det som är offentligt, och en människa har sista ordet.
+Det som jag lär mig i ett kursprojekt hamnar i loggraderna i arket på Drive, medan det varaktiga materialet bor i repot. Ett avslutande steg efter varje pass kunde knyta ihop dem: de begrepp som loggats som osäkra sammanställs och föreslås som ändringar i `begrepp/`. Kursprojektet föreslår, jag läser igenom och pushar med det skript jag redan använder. Då har ingen automatisk process rätt att skriva i det som är offentligt, och en människa har sista ordet.
 
 Samma mönster är användbart i vilket system som helst med två lager. Det föränderliga får hållas lösligt, men det som ska bli bestående passerar en granskning på vägen.
 
@@ -1780,6 +1898,8 @@ En brasklapp: du styr inte själv när RAG används, och svaret blir beroende av
 
 **Samla frågor.** Tre relaterade frågor i ett komplett meddelande är billigare än tre separata, eftersom varje separat meddelande ger ett nytt varv över hela konversationen.
 
+**Lägg ingen tid på oanvända connectors.** Varje connector som är påslagen beskrivs för Claude när en chatt startar, och schemalagda uppgifter får som standard alla kontots kopplingar. Det kostar en del tokens, men sällan mycket jämfört med en lång chatt. Att starta nya chattar ofta gör betydligt mer, både för förbrukningen och för kvaliteten.
+
 ## Orkestrering: låt en agent delegera
 
 När jag arbetar aktivt, alltså bygger om ett system, går igenom många filer eller skriver längre texter, räcker inte ovanstående. Då låter jag huvudkonversationen delegera till subagenter.
@@ -2025,6 +2145,39 @@ Verktygen skiftar efter roll. Analytikern arbetar mest i Claude Code och bygger 
 Norvik bygger ett minne utanför modellen. Efter en slutförd uppgift frågar Claude sig vad som lärdes om data, struktur, format och arbetsgång, och skriver en kort lärdom i en gemensam fil. Varje lärdom har en status: ny, granskad, inarbetad eller arkiverad. Först när en människa har granskat den förs den in i en regelfil eller en skill.
 
 Granskningen är ingen formalitet. En felaktig lärdom som inarbetas upprepas av Claude vid varje uppgift, och för många inarbetade lärdomar gör regelfilerna långa och trögläsliga. Poängen är densamma som i kapitel 07: det som ska bli bestående ska passera en människa.
+
+## När hjärnorna ska prata med varandra
+
+För en privatperson räcker ett eget upplägg: en hjärna, några projekt och ett kalkylark. På ett bolag är det inte slutmålet. Även om varje anställd har ett välfungerande eget upplägg behöver det prata med kollegornas. Beslut, kunder, projektstatus och lärdomar behöver finnas i ett gemensamt lager som allas Claude kan läsa från, och skriva till enligt tydliga regler. Annars blir varje persons hjärna en egen ö.
+
+Det är samma tanke som speglingsmönstret i [kapitel 04](04-arkitekturen.md#hur-projekten-hanger-ihop), fast mellan människor i stället för mellan projekt. Varje person eller team äger sin del och skriver där, och alla andra läser.
+
+Det finns några sorters verktyg för det gemensamma lagret.
+
+| Verktyg | Vad det är bra på |
+|---|---|
+| Notion | Sidor och databaser med behörigheter, byggt för att vara ett gemensamt arbetsutrymme. Via sin connector kan Claude söka, läsa, skapa och ändra sidor och databaser. |
+| Delade enheter i Google Drive, SharePoint och OneDrive | Dokument och ark där bolaget redan arbetar, med behörigheter som följer organisationen. |
+| Confluence och liknande wikis | Dokumentation och beslut, ofta ihop med ärendehantering som Jira. |
+| GitHub | Regelfiler, skills och mallar som ska versionshanteras och granskas innan de ändras. Det är så Norvik delar sin gemensamma infrastruktur. |
+| Claude Team och Enterprise | Delade projekt i Claude, se nedan. |
+
+Vilket som passar beror mest på vad bolaget redan använder. Ett bolag som lever i Microsofts verktyg väljer SharePoint, och ett som redan har sin wiki i Notion låter Claude läsa och skriva där. För en privatperson med Drive tillför Notion sällan något nytt, men i ett team är det just den här rollen Notion är byggt för.
+
+### Delade projekt i Claude
+
+På Team och Enterprise kan ett projekt delas med andra i organisationen: med enskilda personer, med flera på en gång eller med hela organisationen. Den som får läsrätt kan se innehållet och chatta i projektet. Den som får redigeringsrätt kan också ändra instruktioner och kunskap och bjuda in fler. Administratörer kan stänga av delningen eller begränsa den. Detaljerna står på [Anthropics hjälpsida om delade projekt](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing).
+
+Ett delat projekt löser en del av problemet: alla får samma instruktioner och samma kunskap. Men varje person har fortfarande sina egna chattar, så projektet är en gemensam utgångspunkt snarare än ett gemensamt minne. Det som flera ska ändra löpande, som status och beslut, passar därför bättre i det gemensamma lagret ovan, som projektet läser via en connector.
+
+En rimlig fördelning blir ungefär så här:
+
+| Vad | Var |
+|---|---|
+| Gemensamma regler och stabilt underlag | Delade projekt i Claude |
+| Det som ändras löpande: status, beslut, kunder | Ett gemensamt arbetsutrymme, till exempel Notion, SharePoint eller en delad enhet i Drive |
+| Regelfiler och skills som ska granskas innan de ändras | Ett repo |
+| Utkast, hypoteser och personlig planering | Var och ens egen hjärna och egna projekt |
 
 ## Mallarna i repot
 

@@ -71,7 +71,7 @@ Specialtjänster för flashcards gör just det här färdigt och snyggt, och jag
 
 ## Föra upp lärdomar till repot
 
-Det som jag lär mig i ett kursprojekt hamnar i statusdokumenten på Drive, medan det varaktiga materialet bor i repot. Ett avslutande steg efter varje pass kunde knyta ihop dem: de begrepp som loggats som osäkra sammanställs och föreslås som ändringar i `begrepp/`. Kursprojektet föreslår, jag läser igenom och pushar med det skript jag redan använder. Då har ingen automatisk process rätt att skriva i det som är offentligt, och en människa har sista ordet.
+Det som jag lär mig i ett kursprojekt hamnar i loggraderna i arket på Drive, medan det varaktiga materialet bor i repot. Ett avslutande steg efter varje pass kunde knyta ihop dem: de begrepp som loggats som osäkra sammanställs och föreslås som ändringar i `begrepp/`. Kursprojektet föreslår, jag läser igenom och pushar med det skript jag redan använder. Då har ingen automatisk process rätt att skriva i det som är offentligt, och en människa har sista ordet.
 
 Samma mönster är användbart i vilket system som helst med två lager. Det föränderliga får hållas lösligt, men det som ska bli bestående passerar en granskning på vägen.
 
