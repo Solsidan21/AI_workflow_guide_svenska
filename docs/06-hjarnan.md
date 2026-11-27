@@ -94,7 +94,7 @@ I praktiken innebär regeln att varje påstående i ett brev ska kunna kopplas t
 
 ## Så bygger du din egen
 
-Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar för att komma igång. Setup-sessionen på sidan [Kom igång](kom-igang.md) gör de två första stegen tillsammans med dig.
+Du behöver inte kopiera mitt upplägg, och du behöver inte en Hjärna för att komma igång. Grunden är projekten. Ett projekt som håller koll på helheten blir värt det först när du har flera projekt, eller när det är vardagen i sig som behöver ordning. Fundera först på vad du vill åstadkomma: vad ska det hålla koll på, vem ska läsa det och när? Det här är sedan en ordning som fungerar. Setup-sessionen på sidan [Kom igång](kom-igang.md) kan hjälpa dig med de två första stegen om du ber om det.
 
 1. Skapa ett projekt och en att göra-lista för de områden du faktiskt har, gärna som ett kalkylark i Drive eller motsvarande. Börja med tre eller fyra områden.
 2. Skriv projektinstruktioner med en prioritetsordning, var saker finns och de fem reglerna för hur listan används.
@@ -105,7 +105,7 @@ Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar fö
 Det går att göra i vilken ordning du vill, och det går att stanna efter första steget. Redan ett projekt med en lista och några tydliga regler ersätter mycket av det som annars bor i huvudet eller på lösa lappar.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md

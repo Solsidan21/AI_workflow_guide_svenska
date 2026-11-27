@@ -4,7 +4,7 @@
 
 ## Från chatt till system
 
-De flesta använder AI som en chatt: du frågar, får ett svar och börjar om från noll nästa gång. Ett system är när Claude redan vet vem du är, vad du arbetar med, var ditt material ligger och hur du vill ha hjälp, innan du har skrivit något. Det byggs av några enkla delar: ett projekt per område med egna instruktioner, ett centralt projekt som håller koll på helheten och material som ligger där Claude hittar det. Inget av det kräver att du kan programmera.
+De flesta använder AI som en chatt: du frågar, får ett svar och börjar om från noll nästa gång. Ett system är när Claude redan vet vem du är, vad du arbetar med, var ditt material ligger och hur du vill ha hjälp, innan du har skrivit något. Grunden är enkel: ett projekt per sak du gör, med materialet i en form som Claude läser bra och tydliga regler för hur Claude ska arbeta där. Allt annat byggs ovanpå, till exempel ett projekt som håller koll på helheten eller ett morgonbrev, när du behöver det. Inget av det kräver att du kan programmera.
 
 ## Känner du igen dig?
 
@@ -16,7 +16,7 @@ De flesta använder AI som en chatt: du frågar, får ett svar och börjar om fr
 
 Det är just de problemen upplägget i guiden löser. [Kapitel 02](02-kontext.md) förklarar varför kontext slår långa prompter, och [kapitel 10](10-anvandningsgransen.md#varfor-langa-chattar-blir-dyra) varför en lång chatt blir både sämre och dyrare än flera korta.
 
-**Har du redan ett genomtänkt upplägg?** Kanske har du flera projekt, mappar på datorn och till och med ett projekt som håller koll på helheten. Då kan setup-sessionen ändå vara värd att testa. Jag kan inte lova några stora förändringar. Se den snarare som en utvärdering av det du redan har, på samma sätt som jag själv hela tiden prövar och förbättrar mitt eget upplägg. Claude utgår från dina projekt och letar efter det som går att göra bättre.
+**Har du redan ett genomtänkt upplägg?** Kanske har du flera projekt, mappar på datorn och till och med ett projekt som håller koll på helheten. Då kan setup-sessionen ändå vara värd att testa. Jag kan inte lova några stora förändringar. Se den snarare som en utvärdering av det du redan har, på samma sätt som jag själv hela tiden prövar och förbättrar mitt eget upplägg. Claude frågar vilka projekt du har och ger dig en prompt till det viktigaste, så att utvärderingen görs inne i projektet, där instruktionerna, materialet och chattarna finns.
 
 ## Börja här: en setup-session med din egen Claude
 
@@ -31,11 +31,11 @@ Använd den här chatten bara till att sätta upp mitt arbetssätt, inte till at
 
 Claude frågar hur du arbetar i dag och vad du använder den till, och anpassar sig efter det.
 
-Det du gör i sessionen är att lägga grunden, inte att bygga ett stort system på en gång. Efter ungefär en halvtimme har du två projekt: Hjärnan, som håller koll på helheten och där setup-chatten bor kvar, och ett projekt för det du främst vill få gjort, till exempel ett examensarbete. Sedan är du igång med ditt arbete. Grunden gör att du senare kan bygga vidare utan att börja om: fler projekt, ett morgonbrev som sammanfattar dagen eller ett upplägg anpassat efter hur du lär dig bäst. Har du redan projekt utgår Claude från dem. Då kan det ta lite längre tid, men det ger också mer. [Kom igång](kom-igang.md) beskriver vad som händer steg för steg.
+Det du gör i sessionen är att lägga grunden, inte att bygga ett stort system på en gång. Har du inga projekt skapar du ett för det du främst vill få gjort, till exempel ett examensarbete. Har du redan projekt utgår Claude från dem och börjar med det viktigaste. I båda fallen sätts projektet upp inifrån: materialet görs om till Markdown och instruktionerna skrivs efter det. Sedan är du igång med ditt arbete. Grunden gör att du senare kan bygga vidare utan att börja om: fler projekt, ett projekt som håller koll på helheten, ett morgonbrev som sammanfattar dagen eller ett upplägg anpassat efter hur du lär dig bäst. [Kom igång](kom-igang.md) beskriver vad som händer steg för steg.
 
 ## När du vill bygga vidare
 
-När grunden fungerar och du vill ta nästa steg, till exempel ett nytt projekt, ett morgonbrev eller en bättre ordning på dina filer: öppna en ny chatt i ditt Hjärnan-projekt och klistra in det här. Claude läser hela guiden och utgår från hur du arbetar i dag.
+När grunden fungerar och du vill ta nästa steg, till exempel ett nytt projekt, ett morgonbrev eller en bättre ordning på dina filer: öppna en ny chatt i det projekt det gäller, eller en ny chatt utanför projekt om det gäller helheten, och klistra in det här. Claude läser hela guiden och utgår från hur du arbetar i dag.
 
 ```text
 Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:

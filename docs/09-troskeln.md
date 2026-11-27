@@ -111,7 +111,7 @@ En ironisk slutpoäng: med den här guiden arbetar jag på sätt och vis gratis 
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/09-troskeln.md

@@ -237,7 +237,7 @@ Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt
 Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till en statusrad när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md

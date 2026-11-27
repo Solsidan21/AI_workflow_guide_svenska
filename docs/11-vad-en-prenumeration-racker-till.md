@@ -57,7 +57,7 @@ Den verkliga skillnaden mellan ett eget system och en färdig tjänst är inte t
 Det avgörande är alltså vad du gör med prenumerationen. Du har redan samma modeller som tjänsterna bygger på. Det du lägger till är dina egna källor, dina egna regler och en rutin som får systemet att fortsätta fungera. Det går att börja på en eftermiddag, det blir bättre för varje vecka, och det följer med dig från studierna till ett jobb.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/11-vad-en-prenumeration-racker-till.md

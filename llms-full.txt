@@ -12,7 +12,7 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 
 ## Från chatt till system
 
-De flesta använder AI som en chatt: du frågar, får ett svar och börjar om från noll nästa gång. Ett system är när Claude redan vet vem du är, vad du arbetar med, var ditt material ligger och hur du vill ha hjälp, innan du har skrivit något. Det byggs av några enkla delar: ett projekt per område med egna instruktioner, ett centralt projekt som håller koll på helheten och material som ligger där Claude hittar det. Inget av det kräver att du kan programmera.
+De flesta använder AI som en chatt: du frågar, får ett svar och börjar om från noll nästa gång. Ett system är när Claude redan vet vem du är, vad du arbetar med, var ditt material ligger och hur du vill ha hjälp, innan du har skrivit något. Grunden är enkel: ett projekt per sak du gör, med materialet i en form som Claude läser bra och tydliga regler för hur Claude ska arbeta där. Allt annat byggs ovanpå, till exempel ett projekt som håller koll på helheten eller ett morgonbrev, när du behöver det. Inget av det kräver att du kan programmera.
 
 ## Känner du igen dig?
 
@@ -24,7 +24,7 @@ De flesta använder AI som en chatt: du frågar, får ett svar och börjar om fr
 
 Det är just de problemen upplägget i guiden löser. [Kapitel 02](02-kontext.md) förklarar varför kontext slår långa prompter, och [kapitel 10](10-anvandningsgransen.md#varfor-langa-chattar-blir-dyra) varför en lång chatt blir både sämre och dyrare än flera korta.
 
-**Har du redan ett genomtänkt upplägg?** Kanske har du flera projekt, mappar på datorn och till och med ett projekt som håller koll på helheten. Då kan setup-sessionen ändå vara värd att testa. Jag kan inte lova några stora förändringar. Se den snarare som en utvärdering av det du redan har, på samma sätt som jag själv hela tiden prövar och förbättrar mitt eget upplägg. Claude utgår från dina projekt och letar efter det som går att göra bättre.
+**Har du redan ett genomtänkt upplägg?** Kanske har du flera projekt, mappar på datorn och till och med ett projekt som håller koll på helheten. Då kan setup-sessionen ändå vara värd att testa. Jag kan inte lova några stora förändringar. Se den snarare som en utvärdering av det du redan har, på samma sätt som jag själv hela tiden prövar och förbättrar mitt eget upplägg. Claude frågar vilka projekt du har och ger dig en prompt till det viktigaste, så att utvärderingen görs inne i projektet, där instruktionerna, materialet och chattarna finns.
 
 ## Börja här: en setup-session med din egen Claude
 
@@ -39,11 +39,11 @@ Använd den här chatten bara till att sätta upp mitt arbetssätt, inte till at
 
 Claude frågar hur du arbetar i dag och vad du använder den till, och anpassar sig efter det.
 
-Det du gör i sessionen är att lägga grunden, inte att bygga ett stort system på en gång. Efter ungefär en halvtimme har du två projekt: Hjärnan, som håller koll på helheten och där setup-chatten bor kvar, och ett projekt för det du främst vill få gjort, till exempel ett examensarbete. Sedan är du igång med ditt arbete. Grunden gör att du senare kan bygga vidare utan att börja om: fler projekt, ett morgonbrev som sammanfattar dagen eller ett upplägg anpassat efter hur du lär dig bäst. Har du redan projekt utgår Claude från dem. Då kan det ta lite längre tid, men det ger också mer. [Kom igång](kom-igang.md) beskriver vad som händer steg för steg.
+Det du gör i sessionen är att lägga grunden, inte att bygga ett stort system på en gång. Har du inga projekt skapar du ett för det du främst vill få gjort, till exempel ett examensarbete. Har du redan projekt utgår Claude från dem och börjar med det viktigaste. I båda fallen sätts projektet upp inifrån: materialet görs om till Markdown och instruktionerna skrivs efter det. Sedan är du igång med ditt arbete. Grunden gör att du senare kan bygga vidare utan att börja om: fler projekt, ett projekt som håller koll på helheten, ett morgonbrev som sammanfattar dagen eller ett upplägg anpassat efter hur du lär dig bäst. [Kom igång](kom-igang.md) beskriver vad som händer steg för steg.
 
 ## När du vill bygga vidare
 
-När grunden fungerar och du vill ta nästa steg, till exempel ett nytt projekt, ett morgonbrev eller en bättre ordning på dina filer: öppna en ny chatt i ditt Hjärnan-projekt och klistra in det här. Claude läser hela guiden och utgår från hur du arbetar i dag.
+När grunden fungerar och du vill ta nästa steg, till exempel ett nytt projekt, ett morgonbrev eller en bättre ordning på dina filer: öppna en ny chatt i det projekt det gäller, eller en ny chatt utanför projekt om det gäller helheten, och klistra in det här. Claude läser hela guiden och utgår från hur du arbetar i dag.
 
 ```text
 Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
@@ -107,8 +107,8 @@ Källa: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/m
 !!! abstract "Kort version"
     - Klistra in prompten nedan i en helt ny chatt, utanför alla projekt.
     - Chatten är en setup-session och används bara till att sätta upp ditt upplägg, inte till att jobba med dina uppgifter.
-    - Claude frågar hur du arbetar i dag, vad du använder den till och vad du främst vill få gjort, och anpassar sig efter det.
-    - Du får två projekt: Hjärnan, som håller koll på helheten och där setupen fortsätter och bor kvar, och ett projekt för det du främst vill göra. Har du redan projekt kan de bli de två.
+    - Claude frågar hur du arbetar i dag, vilka projekt du har och vad du främst vill få gjort, och anpassar sig efter det.
+    - Grunden är projekt. Har du inga skapar du ett för det du främst vill göra. Har du redan projekt börjar ni med det viktigaste, och det utvärderas inifrån.
     - Sedan börjar du arbeta. Du har lagt grunden, och upplägget växer med tiden. Ingen bygger allt i ett svep.
 
 ## Prompten
@@ -126,33 +126,33 @@ Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och
 
 ## Vad som händer
 
-1. **Claude tar reda på var du står.** Först ber den dig öppna Claude-appen för datorn om du har den och skicka versionsnumret och en skärmdump, eftersom appen ser olika ut hos olika användare. Sedan läser den av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator, och frågar sedan vad du använder Claude till och vilka projekt du har. Den viktigaste frågan är vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete. Det blir ditt fokusprojekt.
-2. **Ni sätter upp Hjärnan.** Du skapar projektet och ger det ett namn, inget mer. Sedan får du en prompt som du klistrar in i en ny chatt i Hjärnan. Där skriver ni instruktionerna och testar att det fungerar, och den chatten blir kvar som din Setup-chatt.
-3. **Du skapar fokusprojektet.** Samma sak: bara namnet, sedan en prompt som du klistrar in i en ny chatt i det projektet. Där börjar ni med ditt material. Claude går igenom det, strukturerar det och skriver om det till Markdown i en egen mapp, utan att röra originalen. Först därefter skriver ni instruktionerna: mål, hur du vill ha hjälp och om du jobbar med andra.
-4. **Du börjar arbeta.** När fokusprojektet är uppsatt startar du en ny chatt där och sätter igång.
-5. **Du kommer tillbaka när du vill.** Setup-chatten i Hjärnan finns kvar för när du vill utveckla upplägget, till exempel organisera vardagen, ta reda på hur du lär dig bäst eller lägga till fler projekt.
+1. **Claude tar reda på var du står.** Först ber den dig öppna Claude-appen för datorn om du har den och skicka versionsnumret och en skärmdump, eftersom appen ser olika ut hos olika användare. Sedan läser den av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator. Den frågar vilka projekt du har och vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete.
+2. **Claude förklarar vad du lägger grunden till.** Kort om du mest chattar, mer konkret om du redan har projekt. Grunden är projekt med materialet i en form som Claude läser bra och tydliga regler för hur Claude ska arbeta, regler som blir bra först när de justeras med användning.
+3. **Du får en prompt till ett projekt.** Har du inga projekt skapar du ett och ger det ett namn, inget mer. Har du redan projekt väljer ni det viktigaste. I båda fallen klistrar du in prompten i en ny chatt i projektet.
+4. **Projektet sätts upp inifrån.** Är projektet redan i bruk går Claude först igenom instruktionerna, materialet och hur projektet har använts, och frågar vad som skaver. Sedan tar ni materialet: Claude strukturerar det och skriver om det till Markdown i en egen mapp, utan att röra originalen. Filer du har laddat upp direkt i projektet tas via en mapp på datorn. Vill du nå materialet från mobilen läggs en kopia i molnet. Först därefter skrivs instruktionerna: mål, hur du vill ha hjälp, hur Claude ska hantera det den producerar och om du jobbar med andra.
+5. **Du börjar arbeta.** När projektet är uppsatt startar du en ny chatt där och sätter igång.
 
-Räkna med 20 till 30 minuter för Hjärnan och 10 till 20 minuter för fokusprojektet. Har du redan många projekt kan det ta längre tid, eftersom ni då också går igenom vad som ska bli kvar, slås ihop eller kopplas till Hjärnan.
+Räkna med en kvart för setup-sessionen och 10 till 20 minuter för ett nytt projekt. Ett projekt som redan används kan ta längre tid, eftersom det finns mer att gå igenom. Det brukar också ge mer.
 
 Ibland ber Claude dig ta ställning till något och föreslår ett avsnitt i guiden att läsa först. Det är inget måste, men det tar ett par minuter och gör att du förstår vad du väljer och vilket problem det löser.
 
 ## Om din app ser annorlunda ut
 
-Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Nya projekt får den först, så har du projekt sedan tidigare kan Hjärnan se annorlunda ut än dem. Appen på datorn kan dessutom se annorlunda ut än Claude i webbläsaren. Upplägget är detsamma, men knapparna sitter på olika ställen. Därför börjar setup-sessionen med att be dig öppna appen för datorn, skicka versionsnumret (Claude i menyraden, About Claude) och en skärmdump, och anpassar sedan stegen efter det du ser.
+Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Nya projekt får den först, så ett nytt projekt kan se annorlunda ut än dina gamla. Appen på datorn kan dessutom se annorlunda ut än Claude i webbläsaren. Upplägget är detsamma, men knapparna sitter på olika ställen. Därför börjar setup-sessionen med att be dig öppna appen för datorn, skicka versionsnumret (Claude i menyraden, About Claude) och en skärmdump, och anpassar sedan stegen efter det du ser.
 
 Varje prompt du får för en ny chatt börjar med samma text som prompten under "När du vill bygga vidare" nedan och på startsidan. Den har länken till guiden, så att varje ny chatt vet vad den bygger. [Kapitel 01](01-fran-chatt-till-system.md#projekten-ser-olika-ut-hos-olika-anvandare) förklarar skillnaden.
 
 ## Om du redan har ett upplägg
 
-Har du redan flera projekt utgår sessionen från dem. Ni tar reda på om något av dem kan bli Hjärnan, om några mindre projekt hellre hör hemma i den och hur de projekt som blir kvar ska hänga ihop med den. Har du redan något som motsvarar Hjärnan blir sessionen mer av en utvärdering: Claude går igenom ditt upplägg och föreslår det som går att förbättra. Jag kan inte lova stora förändringar, men det brukar finnas något att hämta.
+Har du redan flera projekt utgår sessionen från dem. Claude frågar vad de används till och var det skaver, och ger dig en prompt till det viktigaste. Utvärderingen görs sedan inne i projektet, eftersom det är där Claude ser instruktionerna, materialet och hur du har använt det. De andra projekten kan du ta ett i taget med samma prompt. Har du redan något som håller ihop dem, som ett centralt projekt eller ett morgonbrev, byggs det inte om. Jag kan inte lova stora förändringar, men det brukar finnas något att hämta.
 
 ## Varför en egen chatt för setupen?
 
-Om du börjar jobba med en uppgift i samma chatt som du sätter upp ditt upplägg i, hamnar allt i en lång chatt utan instruktioner, och det är just det upplägget ska ersätta. Därför blir det två projekt, setupen flyttas in i Hjärnan när den är klar, och det riktiga arbetet görs i nya chattar i fokusprojektet. [Kapitel 01](01-fran-chatt-till-system.md#trappan) förklarar skillnaden mellan chatt och projekt, och [kapitel 10](10-anvandningsgransen.md#varfor-langa-chattar-blir-dyra) varför en lång chatt blir både sämre och dyrare än flera korta.
+Om du börjar jobba med en uppgift i samma chatt som du sätter upp ditt upplägg i, hamnar allt i en lång chatt utan instruktioner, och det är just det upplägget ska ersätta. Därför används setup-chatten bara till att komma fram till rätt projekt, och det riktiga arbetet görs i nya chattar i projektet. [Kapitel 01](01-fran-chatt-till-system.md#trappan) förklarar skillnaden mellan chatt och projekt, och [kapitel 10](10-anvandningsgransen.md#varfor-langa-chattar-blir-dyra) varför en lång chatt blir både sämre och dyrare än flera korta.
 
 ## Efter setupen
 
-Hjärnan och dina projekt blir bättre av att användas. När du märker att något skaver, gå tillbaka till Setup-chatten i Hjärnan, eller starta en ny chatt där och klistra in prompten nedan.
+Dina projekt blir bättre av att användas och justeras. När du märker att något skaver, starta en ny chatt i det projekt det gäller och klistra in prompten nedan. Gäller det helheten, till exempel ett nytt projekt, en lista eller ett morgonbrev, starta en ny chatt utanför projekt, eller i ett projekt som håller koll på helheten om du har byggt ett.
 
 ```text
 Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
@@ -164,7 +164,7 @@ Ställ en fråga i taget.
 Det här vill jag göra:
 ```
 
-Samma prompt finns på startsidan, så att du hittar den när du behöver den. Kapitlen i guiden slutar med prompter som du klistrar in i ett av dina projekt för att ta nästa steg. Vill du se hur långt det går att ta, beskriver [kapitel 04](04-arkitekturen.md) och [kapitel 06](06-hjarnan.md) mitt eget upplägg.
+Samma prompt finns på startsidan, så att du hittar den när du behöver den. Kapitlen i guiden slutar med prompter som du klistrar in i ett av dina projekt för att ta nästa steg. Vill du se hur långt det går att ta, beskriver [kapitel 04](04-arkitekturen.md) och [kapitel 06](06-hjarnan.md) mitt eget upplägg. Det är ett exempel, inget facit.
 
 ??? note "Hela instruktionen, om din AI inte kan öppna länken"
     Kopiera allt i rutan och klistra in det i en ny chatt.
@@ -322,7 +322,7 @@ Det viktigaste i kapitlet är att modellen inte blir smartare på vägen uppför
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/01-fran-chatt-till-system.md
@@ -493,7 +493,7 @@ Det viktigaste att ta med sig är att kontext slår promptkvalitet. En kort frå
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/02-kontext.md
@@ -692,7 +692,7 @@ Det viktigaste är inte att strukturen är perfekt från början. Den ska vara t
 Struktur är det som gör att en vanlig prenumeration börjar fungera som ett eget system. Nästa steg är att se hur flera sådana mappar hänger ihop.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/03-struktur.md
@@ -972,7 +972,7 @@ Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt
 Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till en statusrad när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md
@@ -1265,7 +1265,7 @@ Det som bär hela vägen är en enkel tanke. Modellen är densamma för dig som 
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/05-individanpassad-inlarning.md
@@ -1388,7 +1388,7 @@ I praktiken innebär regeln att varje påstående i ett brev ska kunna kopplas t
 
 ## Så bygger du din egen
 
-Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar för att komma igång. Setup-sessionen på sidan [Kom igång](kom-igang.md) gör de två första stegen tillsammans med dig.
+Du behöver inte kopiera mitt upplägg, och du behöver inte en Hjärna för att komma igång. Grunden är projekten. Ett projekt som håller koll på helheten blir värt det först när du har flera projekt, eller när det är vardagen i sig som behöver ordning. Fundera först på vad du vill åstadkomma: vad ska det hålla koll på, vem ska läsa det och när? Det här är sedan en ordning som fungerar. Setup-sessionen på sidan [Kom igång](kom-igang.md) kan hjälpa dig med de två första stegen om du ber om det.
 
 1. Skapa ett projekt och en att göra-lista för de områden du faktiskt har, gärna som ett kalkylark i Drive eller motsvarande. Börja med tre eller fyra områden.
 2. Skriv projektinstruktioner med en prioritetsordning, var saker finns och de fem reglerna för hur listan används.
@@ -1399,7 +1399,7 @@ Du behöver inte kopiera mitt upplägg. Det här är en ordning som fungerar fö
 Det går att göra i vilken ordning du vill, och det går att stanna efter första steget. Redan ett projekt med en lista och några tydliga regler ersätter mycket av det som annars bor i huvudet eller på lösa lappar.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md
@@ -1560,7 +1560,7 @@ Det här är samma byggstenar i andra miljöer, utan att något av det är beslu
 Gemensamt för alla fyra är att ingen av dem kräver mer än en vanlig prenumeration och en mapp. Börja med det som skaver mest i just din vardag, bygg det minsta som hjälper, och låt nästa steg komma ur det du märker.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/07-bygga-vidare.md
@@ -1680,7 +1680,7 @@ Det jag landar i är att frågan "vilken modell är bäst?" är mindre användba
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/08-modellerna.md
@@ -1826,7 +1826,7 @@ En ironisk slutpoäng: med den här guiden arbetar jag på sätt och vis gratis 
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/09-troskeln.md
@@ -1963,7 +1963,7 @@ Ett sista råd är att inte jaga det perfekta upplägget. Börja med att byta ch
 ---
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/10-anvandningsgransen.md
@@ -2047,7 +2047,7 @@ Den verkliga skillnaden mellan ett eget system och en färdig tjänst är inte t
 Det avgörande är alltså vad du gör med prenumerationen. Du har redan samma modeller som tjänsterna bygger på. Det du lägger till är dina egna källor, dina egna regler och en rutin som får systemet att fortsätta fungera. Det går att börja på en eftermiddag, det blir bättre för varje vecka, och det följer med dig från studierna till ett jobb.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/11-vad-en-prenumeration-racker-till.md
@@ -2204,7 +2204,7 @@ Mallarna är utgångspunkter, inte färdiga sanningar. Byt ut siffrorna, ersätt
 Om du är på väg in i ett nytt jobb går samma tänk att använda för att lära sig det. Bygg en begreppsmapp för branschens ord, en regelfil som beskriver hur din chef vill ha saker levererade, och en enkel logg över vad som gick fel. Det är kapitel 05 och 07 i ett annat sammanhang.
 
 !!! tip "Gör det med din Claude"
-    Klistra in det här i en ny chatt i ditt Hjärnan-projekt, eller i det projekt som kapitlet gäller. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
+    Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med [setup-sessionen](kom-igang.md).
 
     ```text
     Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/bilaga-arbetsliv.md
