@@ -1,0 +1,1753 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/kom-igang/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../01-fran-chatt-till-system/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Kom igång - AI-workflowguide på svenska: från chatt till eget system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/begrepp.css">
+    
+      <link rel="stylesheet" href="../stylesheets/consent.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+    <meta name="google-site-verification" content="hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4">
+  
+    
+  
+  
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="Kom igång - AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta property="og:url" content="https://solsidan21.github.io/AI_workflow_guide_svenska/kom-igang/">
+  <meta property="og:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kom igång - AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta name="twitter:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kom-igang" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-header__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-workflowguide på svenska: från chatt till eget system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kom igång
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kom igång
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-fran-chatt-till-system/" class="md-tabs__link">
+          
+  
+  
+  Del 1: Grunden
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-arkitekturen/" class="md-tabs__link">
+          
+  
+  
+  Del 2: Mitt system
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-modellerna/" class="md-tabs__link">
+          
+  
+  
+  Del 3: Helheten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-nav__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-workflowguide på svenska: från chatt till eget system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kom igång
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kom igång
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vad-som-hander" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad som händer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#om-din-app-ser-annorlunda-ut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Om din app ser annorlunda ut
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#om-du-redan-har-ett-upplagg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Om du redan har ett upplägg
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varfor-en-egen-chatt-for-setupen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför en egen chatt för setupen?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efter-setupen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efter setupen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1: Grunden
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1: Grunden
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fran-chatt-till-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Från chatt till system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Kontext i stället för långa prompter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-struktur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Struktur som kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2: Mitt system
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2: Mitt system
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arkitekturen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Arkitekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-individanpassad-inlarning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Individanpassad inlärning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-hjarnan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Hjärnan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bygga-vidare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Att bygga vidare på
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 3: Helheten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 3: Helheten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-modellerna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 Modellerna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-troskeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Tröskeln, inte förmågan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-anvandningsgransen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Därför slår du i taket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vad-en-prenumeration-racker-till/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Vad en prenumeration räcker till
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bilaga-arbetsliv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilaga: Arbetslivet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vad-som-hander" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad som händer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#om-din-app-ser-annorlunda-ut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Om din app ser annorlunda ut
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#om-du-redan-har-ett-upplagg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Om du redan har ett upplägg
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varfor-en-egen-chatt-for-setupen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför en egen chatt för setupen?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efter-setupen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efter setupen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kom-igang">Kom igång<a class="headerlink" href="#kom-igang" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Du läser inte guiden först. Du klistrar in en prompt, och din egen Claude sätter upp ditt arbetssätt tillsammans med dig. Guiden finns sedan här när du vill förstå varför.</em></p>
+</blockquote>
+<div class="admonition abstract">
+<p class="admonition-title">Kort version</p>
+<ul>
+<li>Klistra in prompten nedan i en helt ny chatt, utanför alla projekt.</li>
+<li>Chatten är en setup-session och används bara till att sätta upp ditt upplägg, inte till att jobba med dina uppgifter.</li>
+<li>Claude frågar hur du arbetar i dag, vilka projekt du har och vad du främst vill få gjort, och anpassar sig efter det.</li>
+<li>Grunden är projekt. Har du inga skapar du ett för det du främst vill göra. Har du redan projekt börjar ni med det viktigaste, och det utvärderas inifrån.</li>
+<li>Sedan börjar du arbeta. Du har lagt grunden, och upplägget växer med tiden. Ingen bygger allt i ett svep.</li>
+</ul>
+</div>
+<h2 id="prompten">Prompten<a class="headerlink" href="#prompten" title="Permanent link">&para;</a></h2>
+<p>Öppna en ny chatt i Claude (eller ChatGPT), inte inne i något projekt, och klistra in det här:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Det här är en setup-session. Läs och följ instruktionerna här:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/setup-session.md
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Använd den här chatten bara till att sätta upp mitt arbetssätt, inte till att jobba med mina uppgifter.
+</code></pre></div>
+<p>Om din AI säger att den inte kan öppna länken, fäll ut rutan längst ned och klistra in hela instruktionen i stället.</p>
+<h2 id="vad-som-hander">Vad som händer<a class="headerlink" href="#vad-som-hander" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Claude tar reda på var du står.</strong> Först ber den dig öppna Claude-appen för datorn om du har den och skicka versionsnumret och en skärmdump, eftersom appen ser olika ut hos olika användare. Sedan läser den av det den kan själv, till exempel ditt minne, vilka tjänster som är kopplade och om den når din dator. Den frågar vilka projekt du har och vad du främst vill få gjort med Claude just nu, till exempel ett examensarbete.</li>
+<li><strong>Claude förklarar vad du lägger grunden till.</strong> Kort om du mest chattar, mer konkret om du redan har projekt. Grunden är projekt med materialet i en form som Claude läser bra och tydliga regler för hur Claude ska arbeta, regler som blir bra först när de justeras med användning.</li>
+<li><strong>Du får en prompt till ett projekt.</strong> Har du inga projekt skapar du ett och ger det ett namn, inget mer. Har du redan projekt väljer ni det viktigaste. I båda fallen klistrar du in prompten i en ny chatt i projektet.</li>
+<li><strong>Projektet sätts upp inifrån.</strong> Är projektet redan i bruk går Claude först igenom instruktionerna, materialet och hur projektet har använts, och frågar vad som skaver. Sedan tar ni materialet: Claude strukturerar det och skriver om det till Markdown i en egen mapp, utan att röra originalen. Filer du har laddat upp direkt i projektet tas via en mapp på datorn. Vill du nå materialet från mobilen läggs en kopia i molnet. Först därefter skrivs instruktionerna: mål, hur du vill ha hjälp, hur Claude ska hantera det den producerar och om du jobbar med andra.</li>
+<li><strong>Du börjar arbeta.</strong> När projektet är uppsatt startar du en ny chatt där och sätter igång.</li>
+</ol>
+<p>Räkna med en kvart för setup-sessionen och 10 till 20 minuter för ett nytt projekt. Ett projekt som redan används kan ta längre tid, eftersom det finns mer att gå igenom. Det brukar också ge mer.</p>
+<p>Ibland ber Claude dig ta ställning till något och föreslår ett avsnitt i guiden att läsa först. Det är inget måste, men det tar ett par minuter och gör att du förstår vad du väljer och vilket problem det löser.</p>
+<h2 id="om-din-app-ser-annorlunda-ut">Om din app ser annorlunda ut<a class="headerlink" href="#om-din-app-ser-annorlunda-ut" title="Permanent link">&para;</a></h2>
+<p>Claude-appen ser inte likadan ut för alla just nu. Anthropic rullar ut en ny projektvy gradvis, där ett projekt öppnas som en konversation med flikarna Threads och Context till höger. Nya projekt får den först, så ett nytt projekt kan se annorlunda ut än dina gamla. Appen på datorn kan dessutom se annorlunda ut än Claude i webbläsaren. Upplägget är detsamma, men knapparna sitter på olika ställen. Därför börjar setup-sessionen med att be dig öppna appen för datorn, skicka versionsnumret (Claude i menyraden, About Claude) och en skärmdump, och anpassar sedan stegen efter det du ser.</p>
+<p>Varje prompt du får för en ny chatt börjar med samma text som prompten under "När du vill bygga vidare" nedan och på startsidan. Den har länken till guiden, så att varje ny chatt vet vad den bygger. <a href="../01-fran-chatt-till-system/#projekten-ser-olika-ut-hos-olika-anvandare">Kapitel 01</a> förklarar skillnaden.</p>
+<h2 id="om-du-redan-har-ett-upplagg">Om du redan har ett upplägg<a class="headerlink" href="#om-du-redan-har-ett-upplagg" title="Permanent link">&para;</a></h2>
+<p>Har du redan flera projekt utgår sessionen från dem. Claude frågar vad de används till och var det skaver, och ger dig en prompt till det viktigaste. Utvärderingen görs sedan inne i projektet, eftersom det är där Claude ser instruktionerna, materialet och hur du har använt det. De andra projekten kan du ta ett i taget med samma prompt. Har du redan något som håller ihop dem, som ett centralt projekt eller ett morgonbrev, byggs det inte om. Jag kan inte lova stora förändringar, men det brukar finnas något att hämta.</p>
+<h2 id="varfor-en-egen-chatt-for-setupen">Varför en egen chatt för setupen?<a class="headerlink" href="#varfor-en-egen-chatt-for-setupen" title="Permanent link">&para;</a></h2>
+<p>Om du börjar jobba med en uppgift i samma chatt som du sätter upp ditt upplägg i, hamnar allt i en lång chatt utan instruktioner, och det är just det upplägget ska ersätta. Därför används setup-chatten bara till att komma fram till rätt projekt, och det riktiga arbetet görs i nya chattar i projektet. <a href="../01-fran-chatt-till-system/#trappan">Kapitel 01</a> förklarar skillnaden mellan chatt och projekt, och <a href="../10-anvandningsgransen/#varfor-langa-chattar-blir-dyra">kapitel 10</a> varför en lång chatt blir både sämre och dyrare än flera korta.</p>
+<h2 id="efter-setupen">Efter setupen<a class="headerlink" href="#efter-setupen" title="Permanent link">&para;</a></h2>
+<p>Dina projekt blir bättre av att användas och justeras. När du märker att något skaver, starta en ny chatt i det projekt det gäller och klistra in prompten nedan. Gäller det helheten, till exempel ett nytt projekt, en lista eller ett morgonbrev, starta en ny chatt utanför projekt, eller i ett projekt som håller koll på helheten om du har byggt ett.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Guiden beskriver en persons upplägg och är inget facit.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Ställ en fråga i taget.
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Det här vill jag göra:
+</code></pre></div>
+<p>Samma prompt finns på startsidan, så att du hittar den när du behöver den. Kapitlen i guiden slutar med prompter som du klistrar in i ett av dina projekt för att ta nästa steg. Vill du se hur långt det går att ta, beskriver <a href="../04-arkitekturen/">kapitel 04</a> och <a href="../06-hjarnan/">kapitel 06</a> mitt eget upplägg. Det är ett exempel, inget facit.</p>
+<details class="note">
+<summary>Hela instruktionen, om din AI inte kan öppna länken</summary>
+<p>Kopiera allt i rutan och klistra in det i en ny chatt.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># Setup-session: instruktioner till dig som är användarens AI
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Användaren har klistrat in en kort prompt som pekar hit. Den här filen är din instruktion för hela sessionen. Läs den i sin helhet innan du skriver något till användaren, och följ den tills sessionen är slut.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Filen hör till AI-workflowguide på svenska, en guide om att bygga ett eget arbetssätt med Claude (och ChatGPT) med en vanlig prenumeration. Guiden beskriver en persons upplägg och är inget facit. Användaren ska inte få samma upplägg som guiden beskriver, utan ett som utgår från hur hen arbetar i dag. Ditt jobb är att hjälpa just den här användaren att komma igång, i den takt hen klarar, och sedan släppa iväg hen till det hen faktiskt vill göra.
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>## Sessionens syfte
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Grunden i ett eget system är projekt: ett arbetsrum per sak användaren gör, med materialet strukturerat och tydliga regler för hur Claude ska arbeta där. Den här chatten är en setup-session som lägger den grunden, och ingenting annat. Den ska sluta med det här:
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>1. **Ett projekt som är uppsatt för det användaren främst vill få gjort**, till exempel ett examensarbete, en kurs, ett jobb eller ett eget projekt. Har användaren inga projekt skapar hen ett nytt. Har hen redan projekt utgår ni från det som är viktigast för hen, och det projektet utvärderas och förbättras i stället för att något nytt skapas.
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>2. **En prompt som startar arbetet i det projektet.** Själva uppsättningen görs inne i projektet, i en egen chatt som följer `setup/fokusprojekt.md`. Där analyseras materialet och skrivs om till Markdown, och där skrivs projektinstruktionerna.
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>3. **Vetskap om vad grunden är till för och hur det fortsätter:** att fler projekt kan komma när de behövs, och att hen bygger vidare med prompten från startsidan.
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Inget mer än så krävs. Ett centralt projekt som håller koll på helheten (som Hjärnan i guiden), en att göra-lista eller ett morgonbrev är något användaren kan vilja ha senare. Det är inte grunden, och du skapar det inte i den här sessionen om inte användaren själv vill det (se "Om användaren vill ha mer" nedan).
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Det här gäller genom hela sessionen:
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>- **Arbeta inte med användarens uppgifter här.** Om användaren klistrar in, bifogar eller börjar beskriva något hen jobbar med, gör inte jobbet. Säg vänligt att det hör hemma i projektet, notera vad det är så att det kommer med i prompten till projektet, och fortsätt setupen. Du får titta på materialet för att förstå vilket upplägg som behövs, men du löser inte uppgiften.
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>- **Håll det kort och kom fram.** De flesta vill igång med sitt arbete. Kom snabbt fram till vilket projekt det gäller och ge prompten dit. Det tunga arbetet, att analysera materialet och skriva instruktionerna, görs inne i projektet.
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>- **En fråga i taget.** Vänta på svar innan du går vidare, och fråga bara det du behöver för nästa steg. Undantaget är när användaren ska ta ställning till något: då får du ställa upp till tre korta frågor som hänger ihop, numrerade så att hen kan svara "1 ja, 2 nej, 3 ja". Se "Låt användaren läsa innan hen tar ställning" nedan.
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>- **Värdera inte användaren.** Säg aldrig, och utgå inte från, att hen är nybörjare eller avancerad. Fråga vad hen använder Claude till och hur, och anpassa stegen efter svaren.
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>- **Lär genom att göra.** Användaren gör varje steg själv i sitt eget konto medan ni pratar. Ge konkreta instruktioner, vänta på att hen säger att det är gjort och kontrollera sedan att det fungerar.
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>- **Hänvisa till guiden genomgående.** Se avsnittet "Så hänvisar du till guiden" nedan.
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>- **Skriv kort.** Förklara det som behövs för nästa steg och länka till guiden för resten.
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>- **Ett nytt projekt skapas med två saker, inget mer.** När användaren ska skapa ett nytt projekt ger du bara: 1) instruktionen för att skapa projektet och döpa det, och 2) prompten som startar en ny chatt i det. Ge inga projektinstruktioner, inga filer att ladda upp och inga mappar att koppla i samma veva. Det görs inne i projektets egen chatt, när materialet är på plats, eftersom instruktioner som skrivs innan dess blir inaktuella så fort materialet struktureras. Det användaren har berättat om material, mappar och arbetssätt skriver du i stället in i promptens bakgrund.
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>- **Varje ny chatt startas med startsidans prompt.** Varje prompt du ger användaren för att starta en ny chatt (eller tråd) i ett projekt börjar ordagrant med prompten under "När du vill bygga vidare" på guidens startsida, och fortsätter efter raden "Det här vill jag göra:" med det som gäller just den chatten: länken till rätt setupfil, vad ni har kommit fram till och vad som är kvar. Då har den nya chatten alltid länken till guiden och vet vad den bygger, oavsett hur appen ser ut och om chatten går att flytta. Säg till användaren att första delen är samma prompt som på startsidan, så att hen känner igen den och kan hämta den där. Se avsnittet "Prompten från startsidan" nedan.
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>- **Svara på användarens språk.** Guiden är på svenska. Skriver användaren på ett annat språk, byt språk men behåll länkarna.
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>## Prompten från startsidan
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>Det här är prompten under "När du vill bygga vidare" på startsidan (https://solsidan21.github.io/AI_workflow_guide_svenska/#nar-du-vill-bygga-vidare). Alla prompter du ger för nya chattar börjar med den, ordagrant:
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>```text
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>Guiden beskriver en persons upplägg och är inget facit.
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>Ställ en fråga i taget.
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>Det här vill jag göra:
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>```
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>Efter "Det här vill jag göra:" skriver du tillägget för den aktuella chatten. Ändra aldrig i första delen.
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>## Om du inte är Claude, eller om något ser annorlunda ut
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>Guiden utgår från Claude på claude.ai och i Claude-appen. Är du ChatGPT eller en annan assistent: översätt varje steg till motsvarande funktion (projekt, projektinstruktioner, connectors eller appar, schemalagda uppgifter) och säg tydligt när en funktion saknas eller fungerar annorlunda. Kapitel 01 har en tabell över vad sakerna heter hos Claude och ChatGPT.
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>## Appen ser olika ut hos olika användare
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>Anthropic håller på att göra om hur projekt fungerar och ser ut, och det rullas ut gradvis. Två användare med samma plan kan därför ha helt olika vyer, och en ny installation kan se annorlunda ut än en äldre. Vyn kan också skilja sig mellan projekt hos samma användare: projekt som skapas med en uppdaterad app får den nya vyn, medan projekt som fanns innan behåller den klassiska tills Anthropic uppgraderar dem. Ett nytt projekt kan alltså se annorlunda ut än användarens gamla projekt. Ta reda på vilken vy användaren har innan du ger instruktioner om projekt (se Steg 1).
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>- *Den klassiska vyn:* projektsidan visar projektets chattar, en ruta för projektinstruktionerna och rutan Kontext (Project knowledge i den engelska appen) för materialet. En befintlig chatt kan flyttas in i projektet via menyn vid chattens namn.
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>- *Den nya vyn:* ett projekt öppnas som en egen konversation, och till höger finns flikarna Threads och Context. Threads är trådar som projektet startar, var och en en egen session som gör en del av arbetet och rapporterar tillbaka. Under Context finns Instructions (där Project instructions ligger), Memory, Files och Artifacts. Materialet läggs under Files och reglerna under Project instructions.
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>Funktionerna som upplägget bygger på finns i båda: instruktioner som gäller varje gång, material som alla samtal i projektet kan läsa och ett eget minne per projekt. Det är namnen och var knapparna sitter som skiljer, så upplägget i den här filen gäller i båda vyerna. Där filen säger "en ny chatt i projektet" gäller i den nya vyn det sätt appen erbjuder för att starta ett nytt samtal eller en ny tråd i projektet. Kapitel 01 förklarar skillnaden för användaren: https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#projekten-ser-olika-ut-hos-olika-anvandare. Är du osäker på hur något görs i den nya vyn, till exempel om en befintlig chatt går att flytta in, kontrollera på support.claude.com om du kan söka på webben, och fråga annars användaren vad hen ser.
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>Säg aldrig att användaren har en gammal version eller att något är fel. Säg bara att appen ser olika ut hos olika personer just nu och att du anpassar stegen efter det hen ser.
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>## Namnen i appen
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>Använd de namn som står i användarens app, inte egna översättningar. Det du vet om Claude är oftast skrivet på engelska, och en direktöversättning stämmer inte alltid med den svenska appen. Det viktigaste exemplet: materialet som alla chattar i ett projekt kan läsa heter Kontext på projektsidan i den svenska klassiska vyn, Project knowledge i den engelska och Files under fliken Context i den nya vyn. Säg aldrig "projektkunskap" till användaren, det ordet finns inte i appen.
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>Kan du se användarens app, till exempel via en skärmdump, webbläsaren eller skärmen, använd namnen som står där. Annars: fråga en gång om appen är på svenska eller engelska, eller ge namnet på båda språken första gången, till exempel "Kontext (Project knowledge om appen är på engelska)". Gäller det en knapp eller meny du inte vet det svenska namnet på, ge det engelska namnet och beskriv var den sitter.
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>Menyer och knappnamn ändras. Beskriv var användaren hittar något så gott du kan, men be hen säga till om det ser annorlunda ut, och anpassa dig efter vad hen ser. Om du kan söka på webben och är osäker på hur en funktion fungerar just nu, kontrollera på support.claude.com (eller motsvarande hjälpsida) innan du ger instruktionen.
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>## Steg 1: Ta reda på var användaren står och vad fokus är
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>Börja med några meningar om vad som ska hända: "Vi ska lägga grunden för ditt eget upplägg i Claude. Det börjar med ett projekt för det du främst vill få gjort, eller med ett av de projekt du redan har. Den här chatten används bara till att komma dit. Själva uppsättningen gör vi sedan inne i projektet."
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a>**Läs av det du kan själv först.** Om du har verktyg för det: titta i ditt minne om användaren, sök i tidigare chattar efter vad hen brukar använda Claude till, och se vilka connectors (till exempel Google Drive, Gmail, Kalender, GitHub) som är kopplade. Berätta kort vad du hittade, med ett par meningar, så att användaren slipper svara på sådant du redan vet. Läs bara så mycket som behövs för att förstå upplägget, inte innehållet i privata dokument i detalj. Du kan inte se användarens projekt härifrån, så fråga om dem.
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a>**Ta reda på vilken app och version användaren har.** Gör det först av allt efter introduktionen. Appen ser olika ut i webbläsaren och i Claude-appen för datorn, och mellan olika versioner av appen (se "Appen ser olika ut hos olika användare" ovan), så alla instruktioner om var användaren ska klicka hänger på det.
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a>
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a>1. Fråga om hen har Claude-appen för datorn. Har hen den, be hen öppna den här chatten där och fortsätta i appen, eftersom setupen bygger på appen och den kan se helt annorlunda ut än webbläsaren. Har hen den inte, se punkten om datorn nedan.
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>2. Be om versionsnumret: på Mac klickar hen på Claude i menyraden högst upp och väljer About Claude, på Windows finns samma val i appens meny. Be hen samtidigt välja Check for Updates och uppdatera om det finns en ny version, så att ni utgår från den senaste.
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a>3. Be om en skärmdump där sidomenyn syns, gärna med ett projekt öppet eller sidan Projects. Kan du se skärmen själv, titta i stället.
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a>
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a>Versionsnumret säger vilken app hen har, men den nya projektvyn rullas ut per konto och gäller nya projekt först, så det är skärmdumpen som avgör vilken vy det är. Visar skärmdumpen ett äldre projekt, säg att ett nytt projekt kan se annorlunda ut. Kan du söka på webben och är osäker, jämför versionen med Anthropics release notes. Använd sedan den variant som stämmer genom hela sessionen, och be användaren säga till om något ser annorlunda ut än du beskriver.
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a>**Kolla om du når användarens dator.** Se efter om du har verktyg för användarens lokala filer eller mappar (i Claude-appen på datorn kan användaren koppla mappar som du då kan läsa och skriva i). Det avgör mycket av upplägget, så ta upp det tidigt:
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a>
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a>- *Du når datorn:* användaren sitter i Claude-appen. Säg det kort och fråga vilka mappar som är kopplade och vad som ligger i dem.
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>- *Du når inte datorn:* utgå från att användaren sitter vid en dator men använder Claude i webbläsaren på claude.ai. Det är det vanligaste, och många stannar där utan att veta vad appen ger. Fråga om hen har laddat ned Claude-appen för datorn. Har hen inte det, förklara med en eller två meningar vad appen ger: Claude kan arbeta direkt i mappar på datorn som du väljer, ta längre uppdrag och köra schemalagda uppgifter. Hänvisa till kapitel 01 under Steg 3 (se kartan nedan). Appen finns för Mac och Windows (och Linux i beta) på claude.ai/download och kan användas på alla planer, men arbetet med lokala filer kräver en betalplan. Föreslå att användaren laddar ned och loggar in nu om hen har en betalplan och vill ha en lokal del. Chattarna följer med mellan webben och appen, så hen kan öppna den här chatten i appen och fortsätta där. Vill hen vänta, fortsätt i webbläsaren och lägg appen som ett senare steg.
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a>- *Användaren sitter i mobilen:* det går också bra. Fortsätt med det som går att göra där (projekt, instruktioner, connectors) och spara steg som kräver datorn, som lokala mappar, till när hen sitter vid den. Säg det i avslutningen.
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a>
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a>Fråga hellre än att gissa om du är osäker på vilken av situationerna det är.
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a>**Fråga om projekten hen redan har.** Det är den fråga som styr resten av sessionen: "Har du några projekt i Claude i dag? Vad heter de och vad använder du dem till?" Be gärna om en skärmdump av sidan Projects. Fråga också vilka av dem hen använder mest och var det skaver mest.
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a>
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a>**Hitta fokus.** Fråga vad användaren främst vill få gjort med Claude just nu. Har hen projekt kan svaret vara ett av dem. Svarar användaren med flera saker, hjälp hen välja den som tar mest tid eller är viktigast just nu, och säg att resten kan komma senare. Har hen inget tydligt svar, välj det område hen lägger mest tid på (studierna, jobbet).
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>
+<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a>**Fråga sedan om det som saknas**, en fråga i taget och bara det du behöver. Hoppa över det du redan vet:
+<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a>
+<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a>- Vilken plan har du (gratis, Pro, Max, Team eller Enterprise)? Det avgör vilka funktioner som finns.
+<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a>- Var ligger ditt material för fokusområdet i dag: på datorn, i Google Drive, OneDrive, iCloud, Notion, uppladdat i ett projekt eller någon annanstans?
+<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>- Jobbar du ensam eller med andra i fokusområdet?
+<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a>- Vill du kunna nå materialet från mobilen?
+<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a>
+<a id="__codelineno-2-102" name="__codelineno-2-102" href="#__codelineno-2-102"></a>## Steg 2: Förklara vad användaren lägger grunden till
+<a id="__codelineno-2-103" name="__codelineno-2-103" href="#__codelineno-2-103"></a>
+<a id="__codelineno-2-104" name="__codelineno-2-104" href="#__codelineno-2-104"></a>När du vet hur användaren använder Claude i dag och vad fokus är, förklara vad ni bygger. Utgå från att hen inte har läst något mer än det som tog hen hit. Anpassa längd och djup efter vad hen redan använder, inte efter en nivå:
+<a id="__codelineno-2-105" name="__codelineno-2-105" href="#__codelineno-2-105"></a>
+<a id="__codelineno-2-106" name="__codelineno-2-106" href="#__codelineno-2-106"></a>- *Använder Claude mest som en chatt:* två eller tre meningar. Grunden är ett projekt per sak du gör. Varje chatt i projektet startar med samma material och samma regler, så du slipper förklara dig och kan hålla chattarna korta. När du gör fler saker får de egna projekt, och därifrån kan mer byggas: en ordning för vardagen, ett upplägg för hur du lär dig, ett morgonbrev.
+<a id="__codelineno-2-107" name="__codelineno-2-107" href="#__codelineno-2-107"></a>- *Har redan projekt:* knyt förklaringen till hens egna projekt. Projekten är redan en del av grunden. Det som ofta saknas är att materialet ligger i en form som Claude läser bra, och regler som säger hur Claude ska arbeta och som justeras när något går fel. Säg vad det skulle ge i just de projekt hen nämnt.
+<a id="__codelineno-2-108" name="__codelineno-2-108" href="#__codelineno-2-108"></a>
+<a id="__codelineno-2-109" name="__codelineno-2-109" href="#__codelineno-2-109"></a>Säg i båda fallen den viktigaste principen rakt ut: strukturerat material är ingenting utan tydliga regler för hur Claude ska bete sig, och reglerna blir bra först när de prövas och justeras med användning. Därför är det här en början och inget färdigt system. Lova inte mer än sessionen ger. Hänvisa till startsidan under "Från chatt till system" och till kapitel 02 om den som vill läsa mer.
+<a id="__codelineno-2-110" name="__codelineno-2-110" href="#__codelineno-2-110"></a>
+<a id="__codelineno-2-111" name="__codelineno-2-111" href="#__codelineno-2-111"></a>Fråga om det låter rimligt, och gå sedan till steg 3a eller 3b.
+<a id="__codelineno-2-112" name="__codelineno-2-112" href="#__codelineno-2-112"></a>
+<a id="__codelineno-2-113" name="__codelineno-2-113" href="#__codelineno-2-113"></a>## Steg 3a: Användaren har inga projekt
+<a id="__codelineno-2-114" name="__codelineno-2-114" href="#__codelineno-2-114"></a>
+<a id="__codelineno-2-115" name="__codelineno-2-115" href="#__codelineno-2-115"></a>Användaren skapar ett projekt för fokus. Ge bara de två sakerna (se "Ett nytt projekt skapas med två saker" ovan), och anpassa efter vyn hen har (steg 1).
+<a id="__codelineno-2-116" name="__codelineno-2-116" href="#__codelineno-2-116"></a>
+<a id="__codelineno-2-117" name="__codelineno-2-117" href="#__codelineno-2-117"></a>1. **Skapa projektet.** Klicka på Projects i sidomenyn och skapa ett nytt projekt. Döp det efter området, till exempel Examensarbete. Namn och beskrivning är bara för användaren, Claude läser dem inte. Lägg inte in något annat än. Be hen skriva "klart" när projektet finns, gärna med en skärmdump, eftersom ett nytt projekt kan ha en annan vy än du har utgått från.
+<a id="__codelineno-2-118" name="__codelineno-2-118" href="#__codelineno-2-118"></a>2. **Prompten.** När användaren skriver "klart", ge prompten som startar setupen i projektet. Den följer "Prompten från startsidan" och har det här tillägget efter "Det här vill jag göra:", med bakgrunden ifylld utifrån det ni har pratat om:
+<a id="__codelineno-2-119" name="__codelineno-2-119" href="#__codelineno-2-119"></a>
+<a id="__codelineno-2-120" name="__codelineno-2-120" href="#__codelineno-2-120"></a>   ```text
+<a id="__codelineno-2-121" name="__codelineno-2-121" href="#__codelineno-2-121"></a>   Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+<a id="__codelineno-2-122" name="__codelineno-2-122" href="#__codelineno-2-122"></a>   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+<a id="__codelineno-2-123" name="__codelineno-2-123" href="#__codelineno-2-123"></a>   Guiden beskriver en persons upplägg och är inget facit.
+<a id="__codelineno-2-124" name="__codelineno-2-124" href="#__codelineno-2-124"></a>   Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+<a id="__codelineno-2-125" name="__codelineno-2-125" href="#__codelineno-2-125"></a>   Ställ en fråga i taget.
+<a id="__codelineno-2-126" name="__codelineno-2-126" href="#__codelineno-2-126"></a>
+<a id="__codelineno-2-127" name="__codelineno-2-127" href="#__codelineno-2-127"></a>   Det här vill jag göra:
+<a id="__codelineno-2-128" name="__codelineno-2-128" href="#__codelineno-2-128"></a>   Sätta upp det här projektet. Det är nytt och tomt. Läs och följ instruktionerna här:
+<a id="__codelineno-2-129" name="__codelineno-2-129" href="#__codelineno-2-129"></a>   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/fokusprojekt.md
+<a id="__codelineno-2-130" name="__codelineno-2-130" href="#__codelineno-2-130"></a>
+<a id="__codelineno-2-131" name="__codelineno-2-131" href="#__codelineno-2-131"></a>   Bakgrund från min setup-session:
+<a id="__codelineno-2-132" name="__codelineno-2-132" href="#__codelineno-2-132"></a>   - Projektet gäller: ...
+<a id="__codelineno-2-133" name="__codelineno-2-133" href="#__codelineno-2-133"></a>   - Det jag främst vill ha hjälp med: ...
+<a id="__codelineno-2-134" name="__codelineno-2-134" href="#__codelineno-2-134"></a>   - Material och var det ligger (inte flyttat eller uppladdat än): ...
+<a id="__codelineno-2-135" name="__codelineno-2-135" href="#__codelineno-2-135"></a>   - Jobbar med andra: ... (plan: ...)
+<a id="__codelineno-2-136" name="__codelineno-2-136" href="#__codelineno-2-136"></a>   - Vill nå materialet från mobilen: ...
+<a id="__codelineno-2-137" name="__codelineno-2-137" href="#__codelineno-2-137"></a>   - App, vy och om Claude når min dator: ...
+<a id="__codelineno-2-138" name="__codelineno-2-138" href="#__codelineno-2-138"></a>   - Hur jag använder Claude i dag: ...
+<a id="__codelineno-2-139" name="__codelineno-2-139" href="#__codelineno-2-139"></a>   - Annat som är bra att veta: ...
+<a id="__codelineno-2-140" name="__codelineno-2-140" href="#__codelineno-2-140"></a>   ```
+<a id="__codelineno-2-141" name="__codelineno-2-141" href="#__codelineno-2-141"></a>
+<a id="__codelineno-2-142" name="__codelineno-2-142" href="#__codelineno-2-142"></a>   Skriv bakgrunden kort och sakligt, med användarens egna ord där det går. Ta inte med privata detaljer som inte behövs för projektet.
+<a id="__codelineno-2-143" name="__codelineno-2-143" href="#__codelineno-2-143"></a>
+<a id="__codelineno-2-144" name="__codelineno-2-144" href="#__codelineno-2-144"></a>Säg till användaren att klistra in den i en ny chatt i projektet (i den nya vyn: i projektets konversation), och att första delen är samma prompt som på startsidan under "När du vill bygga vidare". Säg med en eller två meningar varför: en chatt i ett projekt startar med projektets instruktioner och material, så användaren slipper förklara sig igen, och varje nytt ämne kan få en ny kort chatt i stället för att allt hamnar i en lång. Hänvisa till kapitel 01 och 10 (se kartan nedan). Gå sedan till steg 4.
+<a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a>
+<a id="__codelineno-2-146" name="__codelineno-2-146" href="#__codelineno-2-146"></a>## Steg 3b: Användaren har redan projekt
+<a id="__codelineno-2-147" name="__codelineno-2-147" href="#__codelineno-2-147"></a>
+<a id="__codelineno-2-148" name="__codelineno-2-148" href="#__codelineno-2-148"></a>Bygg inte om något härifrån. Det du kan se härifrån är bara det användaren berättar, och det riktiga underlaget, alltså instruktionerna, materialet och chattarna, finns inne i projekten. Kom därför snabbt fram till ett projekt och fortsätt där.
+<a id="__codelineno-2-149" name="__codelineno-2-149" href="#__codelineno-2-149"></a>
+<a id="__codelineno-2-150" name="__codelineno-2-150" href="#__codelineno-2-150"></a>1. **Välj ett projekt.** Utgå från svaren i steg 1: det projekt hen använder mest, det som är viktigast just nu eller det där det skaver mest. Föreslå ett och låt användaren bestämma. De andra projekten kan tas ett i taget senare, med samma prompt.
+<a id="__codelineno-2-151" name="__codelineno-2-151" href="#__codelineno-2-151"></a>2. **Prompten.** Ge en prompt som användaren klistrar in i en ny chatt i det projektet (i den nya vyn: i projektets konversation). Den följer "Prompten från startsidan" och har det här tillägget:
+<a id="__codelineno-2-152" name="__codelineno-2-152" href="#__codelineno-2-152"></a>
+<a id="__codelineno-2-153" name="__codelineno-2-153" href="#__codelineno-2-153"></a>   ```text
+<a id="__codelineno-2-154" name="__codelineno-2-154" href="#__codelineno-2-154"></a>   Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+<a id="__codelineno-2-155" name="__codelineno-2-155" href="#__codelineno-2-155"></a>   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+<a id="__codelineno-2-156" name="__codelineno-2-156" href="#__codelineno-2-156"></a>   Guiden beskriver en persons upplägg och är inget facit.
+<a id="__codelineno-2-157" name="__codelineno-2-157" href="#__codelineno-2-157"></a>   Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+<a id="__codelineno-2-158" name="__codelineno-2-158" href="#__codelineno-2-158"></a>   Ställ en fråga i taget.
+<a id="__codelineno-2-159" name="__codelineno-2-159" href="#__codelineno-2-159"></a>
+<a id="__codelineno-2-160" name="__codelineno-2-160" href="#__codelineno-2-160"></a>   Det här vill jag göra:
+<a id="__codelineno-2-161" name="__codelineno-2-161" href="#__codelineno-2-161"></a>   Utvärdera och förbättra det här projektet, som jag redan använder. Läs och följ instruktionerna här:
+<a id="__codelineno-2-162" name="__codelineno-2-162" href="#__codelineno-2-162"></a>   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/setup/fokusprojekt.md
+<a id="__codelineno-2-163" name="__codelineno-2-163" href="#__codelineno-2-163"></a>
+<a id="__codelineno-2-164" name="__codelineno-2-164" href="#__codelineno-2-164"></a>   Bakgrund från min setup-session:
+<a id="__codelineno-2-165" name="__codelineno-2-165" href="#__codelineno-2-165"></a>   - Projektet används till: ...
+<a id="__codelineno-2-166" name="__codelineno-2-166" href="#__codelineno-2-166"></a>   - Det som skaver: ...
+<a id="__codelineno-2-167" name="__codelineno-2-167" href="#__codelineno-2-167"></a>   - Material och var det ligger: ...
+<a id="__codelineno-2-168" name="__codelineno-2-168" href="#__codelineno-2-168"></a>   - Mina andra projekt: ...
+<a id="__codelineno-2-169" name="__codelineno-2-169" href="#__codelineno-2-169"></a>   - Jobbar med andra: ...
+<a id="__codelineno-2-170" name="__codelineno-2-170" href="#__codelineno-2-170"></a>   - Vill nå materialet från mobilen: ...
+<a id="__codelineno-2-171" name="__codelineno-2-171" href="#__codelineno-2-171"></a>   - App, vy och om Claude når min dator: ...
+<a id="__codelineno-2-172" name="__codelineno-2-172" href="#__codelineno-2-172"></a>   - Hur jag använder Claude i dag: ...
+<a id="__codelineno-2-173" name="__codelineno-2-173" href="#__codelineno-2-173"></a>   ```
+<a id="__codelineno-2-174" name="__codelineno-2-174" href="#__codelineno-2-174"></a>
+<a id="__codelineno-2-175" name="__codelineno-2-175" href="#__codelineno-2-175"></a>Säg att första delen är samma prompt som på startsidan, och att det är inne i projektet som analysen och förbättringarna görs, eftersom det är där Claude ser instruktionerna, materialet och hur projektet har använts. Säg också att det kan ta längre tid ju mer hen redan har, och att det brukar ge mer. Gå sedan till steg 4.
+<a id="__codelineno-2-176" name="__codelineno-2-176" href="#__codelineno-2-176"></a>
+<a id="__codelineno-2-177" name="__codelineno-2-177" href="#__codelineno-2-177"></a>Har användaren redan något som håller ihop flera projekt, till exempel ett centralt projekt, en lista eller schemalagda uppgifter, ta upp det kort i bakgrunden. Bygg inte om det. Det kan utvärderas på samma sätt som ett annat projekt, när hen vill.
+<a id="__codelineno-2-178" name="__codelineno-2-178" href="#__codelineno-2-178"></a>
+<a id="__codelineno-2-179" name="__codelineno-2-179" href="#__codelineno-2-179"></a>## Steg 4: Avsluta
+<a id="__codelineno-2-180" name="__codelineno-2-180" href="#__codelineno-2-180"></a>
+<a id="__codelineno-2-181" name="__codelineno-2-181" href="#__codelineno-2-181"></a>Avsluta när användaren har prompten till projektet, eller tidigare om hen vill sluta. Försök inte bygga mer här. Avslutningen ska vara kort och innehålla:
+<a id="__codelineno-2-182" name="__codelineno-2-182" href="#__codelineno-2-182"></a>
+<a id="__codelineno-2-183" name="__codelineno-2-183" href="#__codelineno-2-183"></a>1. **Vad som händer nu:** klistra in prompten i projektet. Där går Claude igenom materialet, skriver om det till Markdown och skriver instruktionerna tillsammans med hen. Sedan börjar hen arbeta i nya chattar i projektet.
+<a id="__codelineno-2-184" name="__codelineno-2-184" href="#__codelineno-2-184"></a>2. **Att upplägget växer:** det här är en första version. Ingen bygger ett utbyggt upplägg i ett svep, och det blir bättre av att användas och justeras.
+<a id="__codelineno-2-185" name="__codelineno-2-185" href="#__codelineno-2-185"></a>3. **Vad som kan komma senare**, valt efter vad du vet om användaren, några korta idéer:
+<a id="__codelineno-2-186" name="__codelineno-2-186" href="#__codelineno-2-186"></a>   - fler projekt för andra områden när de behövs (kapitel 04),
+<a id="__codelineno-2-187" name="__codelineno-2-187" href="#__codelineno-2-187"></a>   - ta reda på hur hen lär sig och arbetar bäst, och låta projekten ta hänsyn till det (kapitel 05),
+<a id="__codelineno-2-188" name="__codelineno-2-188" href="#__codelineno-2-188"></a>   - en lista och en ordning för vardagen, eller ett projekt som håller koll på helheten när det finns flera projekt (kapitel 06),
+<a id="__codelineno-2-189" name="__codelineno-2-189" href="#__codelineno-2-189"></a>   - ett morgonbrev som sammanfattar dagen, när det finns något att sammanfatta (kapitel 06),
+<a id="__codelineno-2-190" name="__codelineno-2-190" href="#__codelineno-2-190"></a>   - en lokal mapp med regelfil om hen börjar använda Claude-appen på datorn (kapitel 03).
+<a id="__codelineno-2-191" name="__codelineno-2-191" href="#__codelineno-2-191"></a>4. **Prompten från startsidan**, i ett kodblock, för den dag hen vill bygga vidare. Säg att den klistras in i en ny chatt i det projekt det gäller, eller i en ny chatt utanför projekt om det gäller helheten, och att den finns på guidens startsida under "När du vill bygga vidare":
+<a id="__codelineno-2-192" name="__codelineno-2-192" href="#__codelineno-2-192"></a>
+<a id="__codelineno-2-193" name="__codelineno-2-193" href="#__codelineno-2-193"></a>   ```text
+<a id="__codelineno-2-194" name="__codelineno-2-194" href="#__codelineno-2-194"></a>   Jag vill bygga vidare på mitt upplägg. Läs AI-workflowguide på svenska:
+<a id="__codelineno-2-195" name="__codelineno-2-195" href="#__codelineno-2-195"></a>   https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt
+<a id="__codelineno-2-196" name="__codelineno-2-196" href="#__codelineno-2-196"></a>   Guiden beskriver en persons upplägg och är inget facit.
+<a id="__codelineno-2-197" name="__codelineno-2-197" href="#__codelineno-2-197"></a>   Utgå från hur jag arbetar i dag, fråga var det skaver och föreslå ett nästa steg.
+<a id="__codelineno-2-198" name="__codelineno-2-198" href="#__codelineno-2-198"></a>   Ställ en fråga i taget.
+<a id="__codelineno-2-199" name="__codelineno-2-199" href="#__codelineno-2-199"></a>
+<a id="__codelineno-2-200" name="__codelineno-2-200" href="#__codelineno-2-200"></a>   Det här vill jag göra:
+<a id="__codelineno-2-201" name="__codelineno-2-201" href="#__codelineno-2-201"></a>   ```
+<a id="__codelineno-2-202" name="__codelineno-2-202" href="#__codelineno-2-202"></a>
+<a id="__codelineno-2-203" name="__codelineno-2-203" href="#__codelineno-2-203"></a>5. **Två eller tre avsnitt att läsa i guiden**, valda efter vad användaren ska göra, med länkar.
+<a id="__codelineno-2-204" name="__codelineno-2-204" href="#__codelineno-2-204"></a>
+<a id="__codelineno-2-205" name="__codelineno-2-205" href="#__codelineno-2-205"></a>## Om användaren vill ha mer
+<a id="__codelineno-2-206" name="__codelineno-2-206" href="#__codelineno-2-206"></a>
+<a id="__codelineno-2-207" name="__codelineno-2-207" href="#__codelineno-2-207"></a>Ibland vill användaren redan nu ha något av det guiden beskriver utöver projekten, till exempel ett morgonbrev med dagens uppgifter, en att göra-lista som Claude håller i ordning eller ett projekt som håller koll på helheten. Skapa inget direkt. Gör först det här:
+<a id="__codelineno-2-208" name="__codelineno-2-208" href="#__codelineno-2-208"></a>
+<a id="__codelineno-2-209" name="__codelineno-2-209" href="#__codelineno-2-209"></a>1. **Ta reda på vad hen vill åstadkomma.** Vilket problem ska det lösa? Vad ska det innehålla, till exempel uppgifter från flera områden, kalendern, nyheter eller något roligt? Vem ska läsa det och när?
+<a id="__codelineno-2-210" name="__codelineno-2-210" href="#__codelineno-2-210"></a>2. **Ta reda på vad som behövs för att det ska fungera.** Var ska listan ligga så att schemalagda uppgifter når den? Vilka connectors behövs? Vilka projekt ska skriva till den och vilka ska bara läsa?
+<a id="__codelineno-2-211" name="__codelineno-2-211" href="#__codelineno-2-211"></a>3. **Föreslå det minsta som löser problemet.** Det kan bli ett nytt projekt, men det kan också räcka med ett kalkylark och en schemalagd uppgift, eller med en rad i ett befintligt projekts instruktioner. Hänvisa till kapitel 06 för hur det ser ut hos mig, och säg att det är ett exempel och inget facit.
+<a id="__codelineno-2-212" name="__codelineno-2-212" href="#__codelineno-2-212"></a>
+<a id="__codelineno-2-213" name="__codelineno-2-213" href="#__codelineno-2-213"></a>Ska det bli ett nytt projekt gäller samma regel som annars: namn och startprompt, och resten görs inne i projektet. Är fokusprojektet inte satt upp än, gör det först och lägg det här som nästa steg.
+<a id="__codelineno-2-214" name="__codelineno-2-214" href="#__codelineno-2-214"></a>
+<a id="__codelineno-2-215" name="__codelineno-2-215" href="#__codelineno-2-215"></a>## Var saker ska ligga
+<a id="__codelineno-2-216" name="__codelineno-2-216" href="#__codelineno-2-216"></a>
+<a id="__codelineno-2-217" name="__codelineno-2-217" href="#__codelineno-2-217"></a>Använd den här fördelningen när du resonerar, i den här sessionen och när användaren frågar. Förklara den för användaren med hens egna saker som exempel, inte som en lista över allt.
+<a id="__codelineno-2-218" name="__codelineno-2-218" href="#__codelineno-2-218"></a>
+<a id="__codelineno-2-219" name="__codelineno-2-219" href="#__codelineno-2-219"></a>**Claudes moln (det som finns i Claude-kontot):**
+<a id="__codelineno-2-220" name="__codelineno-2-220" href="#__codelineno-2-220"></a>
+<a id="__codelineno-2-221" name="__codelineno-2-221" href="#__codelineno-2-221"></a>- *Projektinstruktioner:* reglerna för hur Claude ska arbeta i projektet. Läses i början av varje chatt i projektet. Det som måste gälla varje gång ska stå här.
+<a id="__codelineno-2-222" name="__codelineno-2-222" href="#__codelineno-2-222"></a>- *Projektets kontext* (rutan Kontext på projektsidan, Project knowledge i den engelska appen, Files under Context i den nya vyn): stabilt referensmaterial som sällan ändras, till exempel en kursplan, riktlinjer för ett examensarbete, en mall eller en beskrivning av dig själv. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som ett GitHub-repo eller en fil från Drive, kan följa med ändringar.
+<a id="__codelineno-2-223" name="__codelineno-2-223" href="#__codelineno-2-223"></a>- *Minne:* det Claude själv väljer att spara om användaren mellan chattar. Bra för bestående fakta, men inte exakt styrbart. Varje projekt har sitt eget minne.
+<a id="__codelineno-2-224" name="__codelineno-2-224" href="#__codelineno-2-224"></a>- *Chatthistorik och artifacts:* samtal och färdiga dokument eller sidor som användaren vill komma tillbaka till.
+<a id="__codelineno-2-225" name="__codelineno-2-225" href="#__codelineno-2-225"></a>
+<a id="__codelineno-2-226" name="__codelineno-2-226" href="#__codelineno-2-226"></a>**Google Drive, OneDrive eller motsvarande (via en connector):**
+<a id="__codelineno-2-227" name="__codelineno-2-227" href="#__codelineno-2-227"></a>
+<a id="__codelineno-2-228" name="__codelineno-2-228" href="#__codelineno-2-228"></a>- Det som Claude skriver men användaren också vill kunna läsa: att göra-listan, en statusrad per område, en logg. Ett kalkylark är bättre än ett textdokument för det, eftersom Claude kan läsa och skriva rad för rad.
+<a id="__codelineno-2-229" name="__codelineno-2-229" href="#__codelineno-2-229"></a>- Dokument som delas med andra människor, till exempel ett examensarbete som skrivs i grupp.
+<a id="__codelineno-2-230" name="__codelineno-2-230" href="#__codelineno-2-230"></a>- Det som schemalagda uppgifter ska läsa, eftersom de körs i molnet och inte når filer på datorn.
+<a id="__codelineno-2-231" name="__codelineno-2-231" href="#__codelineno-2-231"></a>
+<a id="__codelineno-2-232" name="__codelineno-2-232" href="#__codelineno-2-232"></a>**Lokalt på datorn (kräver Claude-appen på datorn med kopplade mappar, eller Claude Code):**
+<a id="__codelineno-2-233" name="__codelineno-2-233" href="#__codelineno-2-233"></a>
+<a id="__codelineno-2-234" name="__codelineno-2-234" href="#__codelineno-2-234"></a>- Större mängder material som ska bearbetas, till exempel PDF:er som görs om till Markdown.
+<a id="__codelineno-2-235" name="__codelineno-2-235" href="#__codelineno-2-235"></a>- Mappar med en regelfil (CLAUDE.md) och skript, och sådant som ska versionshanteras med git.
+<a id="__codelineno-2-236" name="__codelineno-2-236" href="#__codelineno-2-236"></a>- Det som är privat och inte behöver nås från mobilen eller av schemalagda uppgifter.
+<a id="__codelineno-2-237" name="__codelineno-2-237" href="#__codelineno-2-237"></a>
+<a id="__codelineno-2-238" name="__codelineno-2-238" href="#__codelineno-2-238"></a>Tumregeln att ge användaren är att fråga vem som läser, inte hur ofta något ändras. Det som bara Claude läser ska ligga där det är billigast och tydligast för Claude. Det som användaren och andra läser hör hemma i Drive eller motsvarande. Det som talar om för Claude hur den ska arbeta hör hemma i projektinstruktionerna, och stabilt material i projektets kontext. Stora mängder rådata och det som ska byggas med verktyg hör hemma lokalt. Varje dokument ska ha en enda skrivare, så att två projekt aldrig skriver över varandra. Kapitel 04 förklarar det under "Tumregeln: vem läser?".
+<a id="__codelineno-2-239" name="__codelineno-2-239" href="#__codelineno-2-239"></a>
+<a id="__codelineno-2-240" name="__codelineno-2-240" href="#__codelineno-2-240"></a>Rekommendera tjänster efter vad användaren redan har. De flesta har ett Google- eller Microsoft-konto genom sin mejl, och då är Drive eller OneDrive det naturliga valet. Använder hen redan Notion går det lika bra. Föreslå inte GitHub för listor.
+<a id="__codelineno-2-241" name="__codelineno-2-241" href="#__codelineno-2-241"></a>
+<a id="__codelineno-2-242" name="__codelineno-2-242" href="#__codelineno-2-242"></a>För en ny användare räcker ofta Claudes moln och Drive. Föreslå inte lokala mappar om hen inte använder Claude-appen på datorn eller Claude Code, men nämn kort att det är ett senare steg.
+<a id="__codelineno-2-243" name="__codelineno-2-243" href="#__codelineno-2-243"></a>
+<a id="__codelineno-2-244" name="__codelineno-2-244" href="#__codelineno-2-244"></a>## Så hänvisar du till guiden
+<a id="__codelineno-2-245" name="__codelineno-2-245" href="#__codelineno-2-245"></a>
+<a id="__codelineno-2-246" name="__codelineno-2-246" href="#__codelineno-2-246"></a>Varje gång du inför ett begrepp eller ber användaren göra något nytt, gör så här:
+<a id="__codelineno-2-247" name="__codelineno-2-247" href="#__codelineno-2-247"></a>
+<a id="__codelineno-2-248" name="__codelineno-2-248" href="#__codelineno-2-248"></a>1. Förklara kort och korrekt vad det är och varför ni gör det, högst två eller tre meningar.
+<a id="__codelineno-2-249" name="__codelineno-2-249" href="#__codelineno-2-249"></a>2. Hänvisa till rätt ställe i guiden med en länk till sajten, och säg vad användaren får ut av att läsa där. Exempel: "Ett projekt är ett arbetsrum där varje chatt startar med samma instruktioner och filer, så du slipper förklara dig igen. Kapitel 01 tar upp det under Steg 2: Projekt, och kapitel 10 förklarar varför en lång chatt blir både sämre och dyrare än flera korta: [länk]."
+<a id="__codelineno-2-250" name="__codelineno-2-250" href="#__codelineno-2-250"></a>
+<a id="__codelineno-2-251" name="__codelineno-2-251" href="#__codelineno-2-251"></a>Hänvisa till högst en eller två platser åt gången. Användaren ska inte behöva läsa för att komma vidare, men ska veta var förklaringen finns. Svarar du på en fråga från användaren, ge svaret först och lägg sedan till var hen kan läsa mer om hur det passar in i upplägget.
+<a id="__codelineno-2-252" name="__codelineno-2-252" href="#__codelineno-2-252"></a>
+<a id="__codelineno-2-253" name="__codelineno-2-253" href="#__codelineno-2-253"></a>### Låt användaren läsa innan hen tar ställning
+<a id="__codelineno-2-254" name="__codelineno-2-254" href="#__codelineno-2-254"></a>
+<a id="__codelineno-2-255" name="__codelineno-2-255" href="#__codelineno-2-255"></a>När användaren ska ta ställning till något som formar upplägget, till exempel vilket projekt ni ska börja med, var materialet ska ligga eller vilka projekt som ska slås ihop, föreslå ett kort avsnitt att läsa innan hen svarar. Till exempel: "Innan du svarar: läs avsnittet om tumregeln i kapitel 04 [länk]. Det tar ett par minuter och förklarar varför det spelar roll var listan ligger." Ställ sedan frågorna, numrerade om de är flera.
+<a id="__codelineno-2-256" name="__codelineno-2-256" href="#__codelineno-2-256"></a>
+<a id="__codelineno-2-257" name="__codelineno-2-257" href="#__codelineno-2-257"></a>Gör det vid de beslut som verkligen formar upplägget, inte vid varje fråga. Det är ett erbjudande, inte ett krav: vill användaren svara direkt går det bra.
+<a id="__codelineno-2-258" name="__codelineno-2-258" href="#__codelineno-2-258"></a>
+<a id="__codelineno-2-259" name="__codelineno-2-259" href="#__codelineno-2-259"></a>Sajten finns på https://solsidan21.github.io/AI_workflow_guide_svenska/. Om du behöver läsa ett kapitel själv, använd råfilerna på https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/ följt av filnamnet, eller hela guiden i en fil: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/llms-full.txt. Läs bara det du behöver, inte hela guiden i förväg.
+<a id="__codelineno-2-260" name="__codelineno-2-260" href="#__codelineno-2-260"></a>
+<a id="__codelineno-2-261" name="__codelineno-2-261" href="#__codelineno-2-261"></a>### Karta över guiden
+<a id="__codelineno-2-262" name="__codelineno-2-262" href="#__codelineno-2-262"></a>
+<a id="__codelineno-2-263" name="__codelineno-2-263" href="#__codelineno-2-263"></a>| Ämne | Länk för användaren |
+<a id="__codelineno-2-264" name="__codelineno-2-264" href="#__codelineno-2-264"></a>|---|---|
+<a id="__codelineno-2-265" name="__codelineno-2-265" href="#__codelineno-2-265"></a>| Varför projekt och inte bara chatt, trappan från chatt till Claude Code | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#trappan |
+<a id="__codelineno-2-266" name="__codelineno-2-266" href="#__codelineno-2-266"></a>| Vad ett projekt är | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#steg-2-projekt |
+<a id="__codelineno-2-267" name="__codelineno-2-267" href="#__codelineno-2-267"></a>| Claude-appen på datorn, lokala mappar, schemalagda uppgifter | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#steg-3-claude-appen-pa-datorn |
+<a id="__codelineno-2-268" name="__codelineno-2-268" href="#__codelineno-2-268"></a>| Projekten ser olika ut hos olika användare, klassisk och ny vy | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#projekten-ser-olika-ut-hos-olika-anvandare |
+<a id="__codelineno-2-269" name="__codelineno-2-269" href="#__codelineno-2-269"></a>| Vad funktionerna heter hos Claude och ChatGPT | https://solsidan21.github.io/AI_workflow_guide_svenska/01-fran-chatt-till-system/#samma-ting-under-olika-namn |
+<a id="__codelineno-2-270" name="__codelineno-2-270" href="#__codelineno-2-270"></a>| Varför instruktioner och kontext slår långa prompter | https://solsidan21.github.io/AI_workflow_guide_svenska/02-kontext/#kort-fraga-ratt-svar |
+<a id="__codelineno-2-271" name="__codelineno-2-271" href="#__codelineno-2-271"></a>| Minne och hur det skiljer sig från instruktioner | https://solsidan21.github.io/AI_workflow_guide_svenska/02-kontext/#minne-vad-claude-kommer-ihag-mellan-samtal |
+<a id="__codelineno-2-272" name="__codelineno-2-272" href="#__codelineno-2-272"></a>| Mappar, namn och CLAUDE.md | https://solsidan21.github.io/AI_workflow_guide_svenska/03-struktur/#claudemd-reglerna-som-foljer-med-mappen |
+<a id="__codelineno-2-273" name="__codelineno-2-273" href="#__codelineno-2-273"></a>| Skills | https://solsidan21.github.io/AI_workflow_guide_svenska/03-struktur/#skills-uppgifter-som-du-bara-beskriver-en-gang |
+<a id="__codelineno-2-274" name="__codelineno-2-274" href="#__codelineno-2-274"></a>| Vad användaren lägger grunden till | https://solsidan21.github.io/AI_workflow_guide_svenska/#fran-chatt-till-system |
+<a id="__codelineno-2-275" name="__codelineno-2-275" href="#__codelineno-2-275"></a>| Tumregeln: vem läser, och de tre lagren | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#tumregeln-vem-laser |
+<a id="__codelineno-2-276" name="__codelineno-2-276" href="#__codelineno-2-276"></a>| Hur delarna hänger ihop | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#fem-delar |
+<a id="__codelineno-2-277" name="__codelineno-2-277" href="#__codelineno-2-277"></a>| Hur projekten hänger ihop, speglingsmönstret och jämförelsen med Claude Code | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#hur-projekten-hanger-ihop |
+<a id="__codelineno-2-278" name="__codelineno-2-278" href="#__codelineno-2-278"></a>| Varför listan ligger i ett kalkylark | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#ett-ark-som-delat-skikt |
+<a id="__codelineno-2-279" name="__codelineno-2-279" href="#__codelineno-2-279"></a>| Vilken tjänst du ska välja om du börjar från noll | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#om-du-borjar-fran-noll |
+<a id="__codelineno-2-280" name="__codelineno-2-280" href="#__codelineno-2-280"></a>| Ett projekt per område | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#ett-projekt-per-omrade |
+<a id="__codelineno-2-281" name="__codelineno-2-281" href="#__codelineno-2-281"></a>| Vad som ska ligga lokalt, i Drive och i Claudes moln | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#lokalt-i-drive-eller-i-claudes-moln |
+<a id="__codelineno-2-282" name="__codelineno-2-282" href="#__codelineno-2-282"></a>| En skrivare per dokument | https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/#principen-en-skrivare-per-dokument-manga-lasare |
+<a id="__codelineno-2-283" name="__codelineno-2-283" href="#__codelineno-2-283"></a>| Ett upplägg för att lära sig, anpassat efter personen | https://solsidan21.github.io/AI_workflow_guide_svenska/05-individanpassad-inlarning/ |
+<a id="__codelineno-2-284" name="__codelineno-2-284" href="#__codelineno-2-284"></a>| Hjärnan: listan och reglerna | https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/#listan |
+<a id="__codelineno-2-285" name="__codelineno-2-285" href="#__codelineno-2-285"></a>| Morgonbrev och schemalagda uppgifter | https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/#morgonbrev-och-eftermiddagskoll |
+<a id="__codelineno-2-286" name="__codelineno-2-286" href="#__codelineno-2-286"></a>| Så bygger du din egen hjärna steg för steg | https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/#sa-bygger-du-din-egen |
+<a id="__codelineno-2-287" name="__codelineno-2-287" href="#__codelineno-2-287"></a>| Idéer för att bygga vidare | https://solsidan21.github.io/AI_workflow_guide_svenska/07-bygga-vidare/ |
+<a id="__codelineno-2-288" name="__codelineno-2-288" href="#__codelineno-2-288"></a>| Vilken modell som passar vad | https://solsidan21.github.io/AI_workflow_guide_svenska/08-modellerna/ |
+<a id="__codelineno-2-289" name="__codelineno-2-289" href="#__codelineno-2-289"></a>| Varför långa chattar blir dyra, användningsgränsen | https://solsidan21.github.io/AI_workflow_guide_svenska/10-anvandningsgransen/#varfor-langa-chattar-blir-dyra |
+<a id="__codelineno-2-290" name="__codelineno-2-290" href="#__codelineno-2-290"></a>| Vad en prenumeration räcker till | https://solsidan21.github.io/AI_workflow_guide_svenska/11-vad-en-prenumeration-racker-till/ |
+<a id="__codelineno-2-291" name="__codelineno-2-291" href="#__codelineno-2-291"></a>| Samma upplägg på ett jobb | https://solsidan21.github.io/AI_workflow_guide_svenska/bilaga-arbetsliv/ |
+<a id="__codelineno-2-292" name="__codelineno-2-292" href="#__codelineno-2-292"></a>| Flera personers upplägg, Notion och Claude Team | https://solsidan21.github.io/AI_workflow_guide_svenska/bilaga-arbetsliv/#nar-hjarnorna-ska-prata-med-varandra |
+<a id="__codelineno-2-293" name="__codelineno-2-293" href="#__codelineno-2-293"></a>| Ordlista | https://solsidan21.github.io/AI_workflow_guide_svenska/ordlista/ |
+<a id="__codelineno-2-294" name="__codelineno-2-294" href="#__codelineno-2-294"></a>
+<a id="__codelineno-2-295" name="__codelineno-2-295" href="#__codelineno-2-295"></a>## Kom ihåg
+<a id="__codelineno-2-296" name="__codelineno-2-296" href="#__codelineno-2-296"></a>
+<a id="__codelineno-2-297" name="__codelineno-2-297" href="#__codelineno-2-297"></a>- Den här chatten sätter upp, den arbetar inte.
+<a id="__codelineno-2-298" name="__codelineno-2-298" href="#__codelineno-2-298"></a>- Grunden är projekt. Sessionen slutar med en prompt till ett projekt för det användaren främst vill göra: ett nytt om hen inte har några, annars ett befintligt som utvärderas.
+<a id="__codelineno-2-299" name="__codelineno-2-299" href="#__codelineno-2-299"></a>- Hjärnan, listor och morgonbrev är inte grunden. Skapa dem bara om användaren vill, och ta först reda på vad hen vill åstadkomma.
+<a id="__codelineno-2-300" name="__codelineno-2-300" href="#__codelineno-2-300"></a>- Ett nytt projekt skapas med namn och startprompt, inget mer. Instruktioner, filer och mappar tas inne i projektet.
+<a id="__codelineno-2-301" name="__codelineno-2-301" href="#__codelineno-2-301"></a>- Ta först reda på app, version och vy (helst Claude-appen för datorn, versionsnummer och skärmdump) och följ den varianten.
+<a id="__codelineno-2-302" name="__codelineno-2-302" href="#__codelineno-2-302"></a>- Varje prompt för en ny chatt börjar ordagrant med prompten från startsidan, följd av länken till rätt setupfil och vad ni har kommit fram till.
+<a id="__codelineno-2-303" name="__codelineno-2-303" href="#__codelineno-2-303"></a>- Förklara vad användaren lägger grunden till när du vet hur hen arbetar, anpassat efter det, och att reglerna blir bra först när de justeras med användning.
+<a id="__codelineno-2-304" name="__codelineno-2-304" href="#__codelineno-2-304"></a>- En fråga i taget, kort, användaren gör stegen själv. Värdera inte användarens nivå.
+<a id="__codelineno-2-305" name="__codelineno-2-305" href="#__codelineno-2-305"></a>- Vid viktiga beslut: föreslå ett avsnitt att läsa innan hen svarar.
+<a id="__codelineno-2-306" name="__codelineno-2-306" href="#__codelineno-2-306"></a>- Kort förklaring, sedan en länk till guiden.
+</code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="#__consent">Ändra cookie-inställningar</a> · <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Cookies</h4>
+<p>Jag respekterar din integritet. Utan cookies räknar jag bara att sidan har besökts och från vilken webbplats besöket kom, inget som kan kopplas till dig. Får jag också använda Google Analytics för att se mer om hur guiden används? Det sätter cookies och skickar uppgifter om ditt besök till Google. Avvisar du laddas det inte. Du kan ändra ditt val när som helst längst ner på sidan. Läs mer på sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Acceptera</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Acceptera inte</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+  
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "082df3d8cc544b5aae1c39e3bb90c79d"}'></script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,1895 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/">
+      
+      
+        <link rel="prev" href="../03-struktur/">
+      
+      
+        <link rel="next" href="../05-individanpassad-inlarning/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>04 Arkitekturen - AI-workflowguide på svenska: från chatt till eget system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/begrepp.css">
+    
+      <link rel="stylesheet" href="../stylesheets/consent.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+    <meta name="google-site-verification" content="hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4">
+  
+    
+  
+  
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="04 Arkitekturen - AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta property="og:url" content="https://solsidan21.github.io/AI_workflow_guide_svenska/04-arkitekturen/">
+  <meta property="og:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="04 Arkitekturen - AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta name="twitter:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-04-arkitekturen" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-header__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-workflowguide på svenska: från chatt till eget system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04 Arkitekturen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kom-igang/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kom igång
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-fran-chatt-till-system/" class="md-tabs__link">
+          
+  
+  
+  Del 1: Grunden
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Del 2: Mitt system
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-modellerna/" class="md-tabs__link">
+          
+  
+  
+  Del 3: Helheten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-nav__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-workflowguide på svenska: från chatt till eget system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kom-igang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kom igång
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1: Grunden
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1: Grunden
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fran-chatt-till-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Från chatt till system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Kontext i stället för långa prompter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-struktur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Struktur som kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2: Mitt system
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2: Mitt system
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Arkitekturen
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Arkitekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tumregeln-vem-laser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tumregeln: vem läser?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fem-delar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fem delar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lokala-mappar-och-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lokala mappar och GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ett-projekt-per-omrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ett projekt per område
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hur-projekten-hanger-ihop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur projekten hänger ihop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ett-ark-som-delat-skikt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ett ark som delat skikt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ett ark som delat skikt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varfor-ett-ark-och-inte-ett-dokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför ett ark och inte ett dokument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-inte-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför inte GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#om-du-borjar-fran-noll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Om du börjar från noll
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemalagda-uppgifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schemalagda uppgifter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principen-en-skrivare-per-dokument-manga-lasare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principen: en skrivare per dokument, många läsare
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stabilt-och-delat-foranderligt-och-privat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stabilt och delat, föränderligt och privat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lokalt-i-drive-eller-i-claudes-moln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lokalt, i Drive eller i Claudes moln
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samma-arkitektur-i-ett-jobb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samma arkitektur i ett jobb
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-individanpassad-inlarning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Individanpassad inlärning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-hjarnan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Hjärnan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bygga-vidare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Att bygga vidare på
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 3: Helheten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 3: Helheten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-modellerna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 Modellerna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-troskeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Tröskeln, inte förmågan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-anvandningsgransen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Därför slår du i taket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vad-en-prenumeration-racker-till/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Vad en prenumeration räcker till
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bilaga-arbetsliv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilaga: Arbetslivet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tumregeln-vem-laser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tumregeln: vem läser?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fem-delar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fem delar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lokala-mappar-och-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lokala mappar och GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ett-projekt-per-omrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ett projekt per område
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hur-projekten-hanger-ihop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hur projekten hänger ihop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ett-ark-som-delat-skikt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ett ark som delat skikt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ett ark som delat skikt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varfor-ett-ark-och-inte-ett-dokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför ett ark och inte ett dokument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varfor-inte-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varför inte GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#om-du-borjar-fran-noll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Om du börjar från noll
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemalagda-uppgifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schemalagda uppgifter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principen-en-skrivare-per-dokument-manga-lasare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principen: en skrivare per dokument, många läsare
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stabilt-och-delat-foranderligt-och-privat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stabilt och delat, föränderligt och privat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lokalt-i-drive-eller-i-claudes-moln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lokalt, i Drive eller i Claudes moln
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samma-arkitektur-i-ett-jobb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samma arkitektur i ett jobb
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kapitel-04-arkitekturen">Kapitel 04 — Arkitekturen<a class="headerlink" href="#kapitel-04-arkitekturen" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Några mappar, några projekt och ett kalkylark räcker långt, så länge det är tydligt vem som skriver vad och var saker bor. Här visar jag hur delarna hänger ihop i min egen setup.</em></p>
+</blockquote>
+<div class="admonition abstract">
+<p class="admonition-title">Kort version</p>
+<ul>
+<li>Tumregeln för var något ska ligga är vem som läser det, inte hur ofta det ändras.</li>
+<li>Det ger tre lager: maskinlagret som Claude läser, människolagret som du och andra läser, och kunskapslagret som talar om för Claude vad den vet och hur den ska arbeta.</li>
+<li>Ett projekt per område ger ren kontext. Projekt fungerar ungefär som mappar, men de kan inte ligga i varandra och ser inte varandra.</li>
+<li>Därför speglar varje projekt sitt läge till ett delat kalkylark, som Hjärnan och de schemalagda uppgifterna läser.</li>
+<li>Varje dokument har en enda skrivare men många läsare, vilket förhindrar dubbletter och inaktuell information.</li>
+<li>Du bygger delarna i den takt behovet uppstår, och inget av dem måste göras om i efterhand.</li>
+</ul>
+</div>
+<p>Hittills har guiden handlat om enskilda delar: hur du skriver prompter, hur du ordnar material i mappar och hur CLAUDE.md styr arbetet. Det här kapitlet handlar om helheten. När du har fler än ett område, till exempel flera kurser samtidigt, behöver delarna ett gemensamt upplägg. Annars börjar information ligga på fel ställen, bli inaktuell eller dupliceras.</p>
+<p>Jag använder mina kurser som exempel eftersom det är där jag byggt mest. Upplägget är inte bundet till plugg. Mot slutet av kapitlet visar jag hur exakt samma arkitektur ser ut i ett jobb.</p>
+<h2 id="tumregeln-vem-laser">Tumregeln: vem läser?<a class="headerlink" href="#tumregeln-vem-laser" title="Permanent link">&para;</a></h2>
+<p>Den vanligaste frågan när man bygger sitt upplägg är var saker ska ligga. Tidigare gav jag tumregeln att det som ändras ofta hör hemma i Drive. Den är inte fel, men den leder lätt fel. En bättre fråga är vem som läser. Då faller innehållet i tre lager.</p>
+<table>
+<thead>
+<tr>
+<th>Lager</th>
+<th>Vad det är</th>
+<th>Var det hör hemma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maskinlagret</td>
+<td>Det som främst Claude läser och skriver: att göra-listan, läget per område, loggar och speglingar mellan projekt</td>
+<td>Där det är billigast och tydligast för Claude, och där dina schemalagda uppgifter når det</td>
+</tr>
+<tr>
+<td>Människolagret</td>
+<td>Det du och andra läser: en affärsplan, ett CV, en text ni skriver tillsammans</td>
+<td>Drive eller motsvarande, eftersom delning och mobilen spelar roll</td>
+</tr>
+<tr>
+<td>Kunskapslagret</td>
+<td>Det som talar om för Claude vad den vet och hur den ska arbeta: kursmaterial, regelfiler, projektinstruktioner och minne</td>
+<td>Repon, projektinstruktioner, projektets kontext och minnet</td>
+</tr>
+</tbody>
+</table>
+<p>Lagren går in i varandra. Även maskinlagret bör gå att läsa för en människa ibland. Jag öppnar sällan min att göra-lista, eftersom morgonbrevet berättar det jag behöver veta. Men när jag blir klar med något mellan två brev vill jag kunna se allt på en gång. Därför ligger listan i ett kalkylark med flikar för Claude och en flik för mig, som <a href="#ett-ark-som-delat-skikt">avsnittet om arket</a> visar. Frågan om vem som läser avgör alltså inte bara var något ska ligga, utan också vilket format det ska ha.</p>
+<h2 id="fem-delar">Fem delar<a class="headerlink" href="#fem-delar" title="Permanent link">&para;</a></h2>
+<p>Min setup består av fem delar. Det enklaste sättet att se dem är en skiss där information rör sig från sådant som sällan ändras till sådant som ändras varje dag.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  LOKALT (~/Projects/Plugg)             GITHUB
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  en mapp = ett repo per kurs   ---&gt;    samma repo, pushas med ett skript
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  (kursmaterial, fulltext, tentor)            |
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                                              | läggs till i projektets kontext
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                                              v
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                             CLAUDE-PROJEKT, ett per kurs
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                             (+ ett centralt projekt för helheten)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                                   |                       ^
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                  skriver status   |                       | läser
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                                   v                       |
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                    GOOGLE-ARKET "HJÄRNAN" I DRIVE
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                    Att göra + en rad per kurs + logg + Översikt
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                                   |
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                  läses av         v
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                    SCHEMALAGDA UPPGIFTER (morgon, eftermiddag, natt)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                    + GOOGLE KALENDER (allt som har en fast tid)
+</code></pre></div>
+<p>Gå igenom skissen uppifrån och ned. Det som ligger högst upp är stabilt och delat. Det som ligger längst ned är föränderligt och personligt. Den fördelningen är hela poängen med arkitekturen, och jag återkommer till den.</p>
+<h2 id="lokala-mappar-och-github">Lokala mappar och GitHub<a class="headerlink" href="#lokala-mappar-och-github" title="Permanent link">&para;</a></h2>
+<p>Alla mina kursmappar ligger på samma ställe på datorn, och varje kurs är ett eget repo. Alla repon har samma skelett: en mapp för översikt och index, en för kursmaterial, en för föreläsningar, en för studieplan, en för gamla tentor, en för bokens innehåll, en för fulltext och en för skript. Att skelettet är detsamma gör att Claude hittar rätt oavsett kurs. Kapitel 03 går igenom varför.</p>
+<details class="begrepp">
+<summary>Begrepp: Repo</summary>
+<p><strong>Vad det är:</strong> Förkortning för repository: en projektmapp som Git håller koll på, med alla filer och hela ändringshistoriken.</p>
+<p><strong>Liknelse:</strong> En projektmapp med inbyggd dagbok som skriver ned varje ändring.</p>
+<p><strong>Varför det spelar roll här:</strong> I mitt upplägg har varje kurs ett eget repo med samma skelett. Då vet både jag och Claude var tentor, fulltext och studieplan ligger, oavsett kurs.</p>
+<p><a href="../ordlista/#repo">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Repona synkas till GitHub. Där kan de läggas till i ett Claude-projekts kontext, vilket är kopplingen mellan filerna på min dator och det Claude faktiskt har framför sig när jag pratar med den.</p>
+<details class="begrepp">
+<summary>Begrepp: GitHub</summary>
+<p><strong>Vad det är:</strong> En webbtjänst där Git-repon lagras och kan delas. Ett repo kan vara privat eller offentligt, och man kan lägga till det i ett Claude-projekts kontext.</p>
+<p><strong>Liknelse:</strong> Ett gemensamt arkiv i molnet där alla ser samma senaste version av mappen.</p>
+<p><strong>Varför det spelar roll här:</strong> GitHub gör att samma material når både Claude Code på datorn och Claude i ett projekt. Du bearbetar underlaget en gång och återanvänder det överallt.</p>
+<p><a href="../ordlista/#github">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Själva pushandet sköter jag med ett litet skript som pushar alla kursrepon i ett svep. Det går att dubbelklicka på i filhanteraren, så att synken inte kräver att jag öppnar en terminal. Det är en detalj som låter obetydlig, men en rutin som är besvärlig att köra är en rutin som slutar köras.</p>
+<p>Vem skriver här? Jag och Claude Code bygger repona tillsammans. Efter att en kurs är uppsatt är innehållet i huvudsak statiskt. Claude i kursprojektet läser repot men skriver aldrig till det.</p>
+<h2 id="ett-projekt-per-omrade">Ett projekt per område<a class="headerlink" href="#ett-projekt-per-omrade" title="Permanent link">&para;</a></h2>
+<p>Varje kurs har ett eget Claude-projekt med kursens repo i projektets kontext. Projektinstruktionerna är en kortversion av CLAUDE.md i repot. Anledningen är praktisk: instruktionerna i projektet är det första Claude ser, så de viktigaste reglerna ska stå där utan att Claude först behöver läsa hela filträdet.</p>
+<details class="begrepp">
+<summary>Begrepp: Projekt</summary>
+<p><strong>Vad det är:</strong> Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.</p>
+<p><strong>Liknelse:</strong> En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.</p>
+<p><strong>Varför det spelar roll här:</strong> Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.</p>
+<p><a href="../ordlista/#projekt">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Att ha ett projekt per område och inte ett enda stort projekt för allt har två fördelar. Kontexten blir ren, så Claude blandar inte ihop reglerna för en kurs med en annans. Och det går att ge varje projekt just de regler som passar området. En kurs där matematisk kommunikation examineras kräver andra instruktioner än en kurs som bygger på modeller och begreppsdistinktioner.</p>
+<p>Utöver kursprojekten har jag ett centralt projekt som håller koll på helheten. Det får ett eget kapitel, kapitel 06.</p>
+<h2 id="hur-projekten-hanger-ihop">Hur projekten hänger ihop<a class="headerlink" href="#hur-projekten-hanger-ihop" title="Permanent link">&para;</a></h2>
+<p>Ett projekt kan liknas vid en mapp. Det som finns i den är det Claude har att arbeta med när du startar en chatt där. Det mesta i ditt Claude-konto går att tänka på som textfiler i sådana mappar:</p>
+<ul>
+<li><em>Projektinstruktionerna</em> är en regelfil som läses först i varje chatt i projektet.</li>
+<li><em>Projektets kontext</em> är filerna i mappen. I appen heter det Kontext på projektsidan, eller Project knowledge om appen är på engelska. I den nya projektvyn ligger det under Files i fliken Context.</li>
+<li><em>Minnet</em> är korta anteckningar som Claude själv för om dig. Kontots minne gäller överallt. Varje projekt har dessutom ett eget minne som bara gäller där, och i projektets inställningar väljer du om det ska vara kopplat till kontots minne eller hållas helt för sig. <a href="../02-kontext/#minne-vad-claude-kommer-ihag-mellan-samtal">Kapitel 02</a> går igenom minnet närmare.</li>
+<li><em>Chattar och projektdokument</em> stannar i sitt projekt.</li>
+<li><em>Artifacts</em>, alltså de dokument och sidor Claude gör åt dig, ligger på kontot och kan nås från alla projekt.</li>
+</ul>
+<p>Det betyder att projekten inte ser varandra. Ett kursprojekt vet inte vad som händer i ett annat, och ett centralt projekt ser inte in i kursprojekten av sig självt. Det är en fördel, eftersom kontexten blir ren, men det lämnar frågan om vem som ser helheten.</p>
+<p>Lösningen i min setup kallar jag speglingsmönstret. Varje projekt skriver en kort status till ett delat ställe som det centrala projektet och de schemalagda uppgifterna läser. Hos mig är det en rad per kurs i ett kalkylark, plus en loggrad efter varje pass. Kursens egen plan bor kvar i kursprojektet. Det som speglas är bara det helheten behöver veta: nästa examination, läget och nästa steg.</p>
+<details class="note">
+<summary>För dig som kan Claude Code: samma byggstenar med lägre tröskel</summary>
+<p>Har du använt Claude Code finns det en liknelse som gör hela upplägget lättare att förstå.</p>
+<p>Tänk dig att du utvecklar tre appar. I Claude Code får varje app en egen mapp med en egen CLAUDE.md, och de tre mapparna kan ligga i en gemensam övermapp som också har en CLAUDE.md. I den övre står det som gäller allt: vem du är, hur du vill arbeta och hur apparna hänger ihop. I varje undermapp står bara det som gäller just den appen.</p>
+<p>Du utvecklar inte apparna från övermappen. Startar du en session där ser Claude allt på en gång, och då ökar risken att den arbetar i fel app eller blandar ihop reglerna. När du bygger en viss app öppnar du sessionen i dess mapp. Övermappen använder du till annat: att se helheten, planera mellan apparna och ändra det som gäller alla.</p>
+<p>Översatt till Claude är varje projekt en sådan undermapp. Projektinstruktionerna motsvarar undermappens CLAUDE.md, projektets kontext motsvarar filerna i mappen och projektets minne motsvarar en anteckningsfil som Claude själv för. Kontots minne och dina allmänna inställningar motsvarar övermappens CLAUDE.md, som gäller överallt. Varje chatt motsvarar en session.</p>
+<p>Skillnaden är att Claude inte låter dig lägga projekt i projekt. Det finns ingen övermapp som ser in i undermapparna. Hjärnan i <a href="../06-hjarnan/">kapitel 06</a> är mitt sätt att gå runt det: ett vanligt projekt som spelar övermappens roll och som ser vad som händer i de andra projekten genom att de speglar sitt läge till ett delat ark.</p>
+<p>Jag ser därför Claude som en tillämpning av samma byggstenar som Claude Code, paketerade för att sänka den tekniska tröskeln. I Claude Code behöver du hålla ordning på mappar, filer och en terminal. I Claude får du ett bekvämare gränssnitt och mobilen, men byggstenarna är i grunden desamma. Det hänger ihop med min tes i <a href="../09-troskeln/#min-tes">kapitel 09</a>, att mycket av Anthropics produktutveckling handlar om att sänka tröskeln till det som redan gick att göra. Anthropic presenterade själva Cowork, som numera är en del av Claude-appen, som Claude Code för resten av ditt arbete.</p>
+<p>Liknelsen är en tankemodell, inte en beskrivning av hur produkterna byggdes. Projekt fanns i Claude innan Claude Code släpptes, och allt motsvarar inte varandra exakt. I Claude Code kan Claude själv ändra sin CLAUDE.md, medan du i Claude klistrar in ändringar i projektinstruktionerna själv. Som karta tycker jag ändå att den stämmer, och den förklarar varför samma principer fungerar i båda. Anthropic har dessutom börjat föra in projekt i Claude Code, i beta när det här skrevs, vilket pekar åt samma håll. Ser du det annorlunda vill jag gärna höra det.</p>
+</details>
+<h2 id="ett-ark-som-delat-skikt">Ett ark som delat skikt<a class="headerlink" href="#ett-ark-som-delat-skikt" title="Permanent link">&para;</a></h2>
+<p>Kursprojekten behöver ett sätt att berätta för det centrala projektet och för mina schemalagda uppgifter hur det går, och jag behöver ett ställe där allt jag ska göra står. Båda bor i ett och samma Google-ark som heter Hjärnan, med fyra flikar:</p>
+<ul>
+<li><strong>Att göra:</strong> en rad per sak, med kolumner för område, vad det är, när det lades till, när jag vill bli påmind, status, när det blev klart och en kommentar.</li>
+<li><strong>Plugg:</strong> en rad per kurs med nästa examination, läget och nästa pass. Varje rad skrivs av sitt eget kursprojekt.</li>
+<li><strong>Plugglogg:</strong> en rad per pass, också skriven av kursprojekten.</li>
+<li><strong>Översikt:</strong> min dashboard. Den består bara av formler som läser de andra flikarna, och ingen skriver där.</li>
+</ul>
+<p>Arket fyller alltså två lager på en gång. Dataflikarna är maskinlager som Claude läser och skriver rad för rad, och Översikt är människolagret som jag kan öppna i mobilen när jag vill se allt på en gång.</p>
+<p>Anslutningen mellan Claude och Drive sker via en connector.</p>
+<details class="begrepp">
+<summary>Begrepp: Connector</summary>
+<p><strong>Vad det är:</strong> En koppling mellan Claude och en annan tjänst, till exempel Google Drive, Kalender eller GitHub, så att Claude kan läsa eller skriva där du tillåter det.</p>
+<p><strong>Liknelse:</strong> Ett uttag i väggen: apparaten fungerar utan det, men får tillgång till något den inte hade själv.</p>
+<p><strong>Varför det spelar roll här:</strong> Connectors gör att Claude kan läsa din kalender eller ett delat dokument i stället för att du kopierar in innehållet. Det är en förutsättning för ett system som hänger ihop.</p>
+<p><a href="../ordlista/#connector">Se alla begrepp i ordlistan</a></p>
+</details>
+<h3 id="varfor-ett-ark-och-inte-ett-dokument">Varför ett ark och inte ett dokument<a class="headerlink" href="#varfor-ett-ark-och-inte-ett-dokument" title="Permanent link">&para;</a></h3>
+<p>Jag började med vanliga Google-dokument: en att göra-lista med rubriker och ett statusdokument per kurs. Det fungerade, men det var dyrt och klumpigt för Claude. Att göra-listan var drygt 5 kB text, men när Claude läste den via kopplingen till Google Docs blev det ungefär 186 000 tecken, eftersom hela dokumentets struktur och formatering följer med. För att ändra en rad behövde Claude dessutom räkna ut var i dokumentet texten stod. I ett ark läser Claude bara de kolumner den behöver och skriver en rad i taget. Det blir snabbare, billigare och svårare att göra fel, och det är ett bra exempel på varför formatet spelar lika stor roll som platsen.</p>
+<h3 id="varfor-inte-github">Varför inte GitHub<a class="headerlink" href="#varfor-inte-github" title="Permanent link">&para;</a></h3>
+<p>Tidigare skrev jag att jag valde Drive för att slippa pusha manuellt. Det argumentet håller inte. Claude kan pusha själv, och min nattliga synk klonar redan ett repo varje natt.</p>
+<p>GitHub är ändå fel ställe för just det här, av ett annat skäl. GitHub är byggt för filer och versionshantering, inte för en lista som en människa vill öppna och överblicka. Även om jag oftast bara läser morgonbrevet vill jag kunna gå in i listan och se varje sak, till exempel när jag blivit klar med något mellan två brev. Det gör jag enkelt i ett ark i mobilen, men inte i en datafil i ett repo. Till det kommer att varje session måste klona repot innan den kan läsa, och att två skrivare som ändrar samtidigt kan krocka.</p>
+<h3 id="om-du-borjar-fran-noll">Om du börjar från noll<a class="headerlink" href="#om-du-borjar-fran-noll" title="Permanent link">&para;</a></h3>
+<p>Drive är inte det enda svaret. Välj i första hand det du redan har. Nästan alla har ett Google- eller Microsoft-konto genom sin mejl, och då ligger Google Drive eller OneDrive nära till hands. Använder du redan Notion fungerar det lika bra, och Notion har en connector där Claude kan läsa och skriva sidor och databaser. GitHub har färre konto på, och det passar bättre för material som ska versionshanteras än för listor du vill överblicka.</p>
+<p>Det viktiga är att listan finns där Claude, dina schemalagda uppgifter och du själv når den. För min del tillför Notion inget, eftersom Drive, GitHub och mina lokala filer redan täcker samma behov. Det säger mer om min setup än om Notion. För den som jobbar i ett team ser frågan annorlunda ut, vilket <a href="../bilaga-arbetsliv/#nar-hjarnorna-ska-prata-med-varandra">bilagan om arbetslivet</a> tar upp.</p>
+<p>Allt som har en fast tid bor i kalendern. Det som saknar tid bor i arket. Det går att tycka att det är en liten sak, men regeln gör att jag aldrig behöver fundera på var en uppgift hör hemma.</p>
+<h2 id="schemalagda-uppgifter">Schemalagda uppgifter<a class="headerlink" href="#schemalagda-uppgifter" title="Permanent link">&para;</a></h2>
+<p>Ovanpå Drive och kalendern ligger schemalagda uppgifter, alltså instruktioner som Claude kör på bestämda tider utan att jag är inblandad.</p>
+<details class="begrepp">
+<summary>Begrepp: Schemalagd uppgift</summary>
+<p><strong>Vad det är:</strong> En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.</p>
+<p><strong>Liknelse:</strong> En väckarklocka som inte bara ringer utan också gör jobbet.</p>
+<p><strong>Varför det spelar roll här:</strong> Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.</p>
+<p><a href="../ordlista/#schemalagd-uppgift">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Jag har tre. En körs på morgonen och sammanfattar läget, en körs på eftermiddagen och gör en kort avstämning, och en körs på natten och synkar ett hobbyprojekts statusfiler till ett eget kalkylark. Två av dem läser bara. Den tredje skriver, men bara i ett enda ark och enligt strikta regler: aldrig ta bort något, alltid logga ändringen. De två första beskrivs i kapitel 06.</p>
+<h2 id="principen-en-skrivare-per-dokument-manga-lasare">Principen: en skrivare per dokument, många läsare<a class="headerlink" href="#principen-en-skrivare-per-dokument-manga-lasare" title="Permanent link">&para;</a></h2>
+<p>Det som håller ihop arkitekturen är en enda regel. Varje dokument har exakt en skrivare. Alla andra får läsa.</p>
+<table>
+<thead>
+<tr>
+<th>Vad</th>
+<th>Vem skriver</th>
+<th>Vem läser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kursrepot</td>
+<td>jag och Claude Code, vid uppsättning</td>
+<td>kursprojektet</td>
+</tr>
+<tr>
+<td>Kursens rad i fliken Plugg och dess loggrader</td>
+<td>kursprojektet</td>
+<td>det centrala projektet och de schemalagda uppgifterna</td>
+</tr>
+<tr>
+<td>Fliken Att göra</td>
+<td>det centrala projektet, när jag nämner något</td>
+<td>de schemalagda uppgifterna och jag</td>
+</tr>
+<tr>
+<td>Fliken Översikt</td>
+<td>ingen, bara formler</td>
+<td>jag</td>
+</tr>
+<tr>
+<td>Kalendern</td>
+<td>det centrala projektet, för sådant med fast tid</td>
+<td>alla</td>
+</tr>
+<tr>
+<td>Speglingsarket för hobbyprojektet</td>
+<td>bara den nattliga uppgiften</td>
+<td>jag</td>
+</tr>
+</tbody>
+</table>
+<p>Regeln löser ett problem som annars dyker upp snabbt. Om två projekt kan skriva i samma dokument skriver de över varandra, eller så uppstår två versioner av sanningen och ingen vet vilken som gäller. Med en skrivare per dokument finns alltid ett svar på frågan "var ska jag titta?", och ett fel går att spåra till en enda källa.</p>
+<p>Det betyder också att det centrala projektet aldrig ändrar i kursernas rader, hur frestande det än är när det ser att något är fel. Det rätta är att rapportera felet och låta kursprojektet rätta det. Ett litet extra steg, men det gör att jag kan lita på att varje dokument speglar vad dess ägare faktiskt vet.</p>
+<h2 id="stabilt-och-delat-foranderligt-och-privat">Stabilt och delat, föränderligt och privat<a class="headerlink" href="#stabilt-och-delat-foranderligt-och-privat" title="Permanent link">&para;</a></h2>
+<p>Arkitekturen delar upp information efter två egenskaper på samma gång.</p>
+<p>Kursmaterial är stabilt. Det ändras sällan, det är detsamma för alla som läser kursen och det är ofta redan offentligt. Det passar i ett repo på GitHub, där det är versionshanterat och där flera verktyg kan läsa det.</p>
+<p>Status är föränderlig och personlig. Hur långt jag har kommit, vad jag är osäker på och vad jag ska göra i morgon ändras varje dag och angår ingen annan. Det passar i arket i Drive, där en rad kan skrivas om utan att något behöver versioneras, och där jag själv kan läsa den.</p>
+<p>En praktisk konsekvens är att gränsen mellan offentligt och privat följer lagren. Det som ligger i repona kan jag visa upp. Det som ligger i Drive är mitt. Därför skriver jag i varje CLAUDE.md en kort regel om vad som får hamna i repot, så att inget privat av misstag följer med vid nästa push.</p>
+<details class="begrepp">
+<summary>Begrepp: CLAUDE.md</summary>
+<p><strong>Vad det är:</strong> En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.</p>
+<p><strong>Liknelse:</strong> Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.</p>
+<p><strong>Varför det spelar roll här:</strong> Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.</p>
+<p><a href="../ordlista/#claude-md">Se alla begrepp i ordlistan</a></p>
+</details>
+<h2 id="lokalt-i-drive-eller-i-claudes-moln">Lokalt, i Drive eller i Claudes moln<a class="headerlink" href="#lokalt-i-drive-eller-i-claudes-moln" title="Permanent link">&para;</a></h2>
+<p>Tumregeln om vem som läser säger vilket lager något hör till. Här är platserna, och vad var och en är bra på.</p>
+<p><strong>Claudes moln</strong> är allt som ligger i ditt Claude-konto. Det består av fyra delar som ofta blandas ihop:</p>
+<ul>
+<li><em>Projektinstruktioner</em> är reglerna för hur Claude ska arbeta i projektet. De läses i början av varje chatt i projektet, så det som måste gälla varje gång hör hemma här.</li>
+<li><em>Projektets kontext</em> (rutan Kontext på projektsidan, Project knowledge i den engelska appen, Files under Context i den nya projektvyn) är referensmaterial som Claude kan läsa i alla chattar i projektet: en kursplan, riktlinjer, en mall, en beskrivning av dig. En uppladdad fil är en ögonblicksbild och uppdateras inte av sig själv. En kopplad källa, som mina GitHub-repon, följer med när källan ändras.</li>
+<li><em>Minne</em> är det Claude själv väljer att spara om dig mellan chattar. Det är bra för bestående fakta men går inte att styra exakt, vilket <a href="../02-kontext/#minne-vad-claude-kommer-ihag-mellan-samtal">kapitel 02</a> går igenom.</li>
+<li><em>Chatthistorik och artifacts</em> är samtalen och de dokument eller sidor Claude har gjort, som du kan gå tillbaka till.</li>
+</ul>
+<p><strong>Google Drive</strong> (eller OneDrive, Notion och liknande, via en connector) är platsen för det som människor ska läsa och dela, och för maskinlager som du själv också vill kunna öppna, som min att göra-lista. Schemalagda uppgifter körs i molnet utan att din dator är på, så de når det som ligger där, alltså Drive, GitHub och ditt Claude-konto, men inte filer på datorn.</p>
+<p><strong>Lokalt på datorn</strong> kräver Claude-appen med kopplade mappar eller Claude Code. Här ligger det som är stort, det som ska bearbetas med verktyg och det som ska versionshanteras: mina kursrepon med fulltext och skript, regelfiler som CLAUDE.md och material som jag gör om från PDF till Markdown.</p>
+<table>
+<thead>
+<tr>
+<th>Vad det är</th>
+<th>Var det hör hemma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regler för hur Claude ska arbeta i ett område</td>
+<td>Projektinstruktioner</td>
+</tr>
+<tr>
+<td>Stabilt material som ska läsas, till exempel en kursplan</td>
+<td>Projektets kontext</td>
+</tr>
+<tr>
+<td>Fakta om dig som är bra att Claude minns</td>
+<td>Minne</td>
+</tr>
+<tr>
+<td>Listor och status som Claude skriver och du vill kunna läsa</td>
+<td>Ett ark i Drive</td>
+</tr>
+<tr>
+<td>Det som bara Claude läser</td>
+<td>Där det är billigast för Claude, till exempel ett repo eller en fil i projektet</td>
+</tr>
+<tr>
+<td>Det du delar med andra människor</td>
+<td>Drive, i en delad mapp</td>
+</tr>
+<tr>
+<td>Stora mängder rådata, skript och sådant som versionshanteras</td>
+<td>Lokalt, och vid behov GitHub</td>
+</tr>
+</tbody>
+</table>
+<p>Du behöver inte alla tre från början. Med bara projekt och Drive kommer man långt, och det fungerar på alla enheter. Den lokala delen blir intressant först när du vill att Claude ska arbeta med många filer på en gång eller bygga saker åt dig. Setup-sessionen på sidan <a href="../kom-igang/">Kom igång</a> går igenom fördelningen utifrån vad du har.</p>
+<h2 id="samma-arkitektur-i-ett-jobb">Samma arkitektur i ett jobb<a class="headerlink" href="#samma-arkitektur-i-ett-jobb" title="Permanent link">&para;</a></h2>
+<p>Inget i det här är specifikt för kurser. Byt ut orden så ser det ut så här.</p>
+<table>
+<thead>
+<tr>
+<th>I mitt plugg</th>
+<th>I ett jobb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ett repo per kurs</td>
+<td>En mapp per kund, projekt eller affär med avtal, underlag och mallar</td>
+</tr>
+<tr>
+<td>Kursprojekt med repot i projektets kontext</td>
+<td>Ett Claude-projekt per kund eller team med mappen i projektets kontext</td>
+</tr>
+<tr>
+<td>En rad per kurs i fliken Plugg</td>
+<td>Ett statusdokument eller en rad per kund: läget, nästa steg, öppna frågor</td>
+</tr>
+<tr>
+<td>Att göra-listan</td>
+<td>En gemensam lista över åtaganden</td>
+</tr>
+<tr>
+<td>Kalender</td>
+<td>Kalender, precis som förut</td>
+</tr>
+<tr>
+<td>Morgon och eftermiddag</td>
+<td>En sammanfattning inför dagens möten och en avstämning på eftermiddagen</td>
+</tr>
+</tbody>
+</table>
+<p>Stabilt och delat blir kundens underlag, era mallar och policyer. Föränderligt och privat blir status, anteckningar och bedömningar. Principen om en skrivare per dokument gäller oförändrad: den som äger kundrelationen skriver statusdokumentet, andra läser. Samma upplägg fungerar för en hobby med flera delprojekt, för ett föreningsuppdrag eller för ett litet företag. Hur flera personers upplägg kan prata med varandra tar <a href="../bilaga-arbetsliv/#nar-hjarnorna-ska-prata-med-varandra">bilagan om arbetslivet</a> upp.</p>
+<p>Du behöver inte bygga allt på en gång. Börja med en mapp och ett projekt för det område där du tillbringar mest tid. Lägg till en statusrad när du märker att du förklarar läget för Claude om och om igen. Lägg till schemalagda uppgifter först när du har något som är värt att sammanfatta varje dag. Arkitekturen växer med behovet, och varje lager går att lägga till i efterhand utan att det som redan finns behöver göras om.</p>
+<div class="admonition tip">
+<p class="admonition-title">Gör det med din Claude</p>
+<p>Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med <a href="../kom-igang/">setup-sessionen</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/04-arkitekturen.md
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Fråga vilka områden jag har parallellt och var information hamnar fel eller blir inaktuell.
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Hjälp mig sedan att rita upp vilka lager jag behöver nu och vilket som är det första jag ska skapa.
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Ställ en fråga i taget innan du föreslår något.
+</code></pre></div>
+</div>
+<p>Nästa: <a href="../05-individanpassad-inlarning/">Kapitel 05: Individanpassad inlärning</a></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="#__consent">Ändra cookie-inställningar</a> · <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Cookies</h4>
+<p>Jag respekterar din integritet. Utan cookies räknar jag bara att sidan har besökts och från vilken webbplats besöket kom, inget som kan kopplas till dig. Får jag också använda Google Analytics för att se mer om hur guiden används? Det sätter cookies och skickar uppgifter om ditt besök till Google. Avvisar du laddas det inte. Du kan ändra ditt val när som helst längst ner på sidan. Läs mer på sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Acceptera</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Acceptera inte</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+  
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "082df3d8cc544b5aae1c39e3bb90c79d"}'></script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,1778 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/05-individanpassad-inlarning/">
+      
+      
+        <link rel="prev" href="../04-arkitekturen/">
+      
+      
+        <link rel="next" href="../06-hjarnan/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>05 Individanpassad inlärning - AI-workflowguide på svenska: från chatt till eget system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/begrepp.css">
+    
+      <link rel="stylesheet" href="../stylesheets/consent.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+    <meta name="google-site-verification" content="hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4">
+  
+    
+  
+  
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="05 Individanpassad inlärning - AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta property="og:url" content="https://solsidan21.github.io/AI_workflow_guide_svenska/05-individanpassad-inlarning/">
+  <meta property="og:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="05 Individanpassad inlärning - AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta name="twitter:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-05-individanpassad-inlarning" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-header__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-workflowguide på svenska: från chatt till eget system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              05 Individanpassad inlärning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kom-igang/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kom igång
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-fran-chatt-till-system/" class="md-tabs__link">
+          
+  
+  
+  Del 1: Grunden
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../04-arkitekturen/" class="md-tabs__link">
+          
+  
+  
+  Del 2: Mitt system
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-modellerna/" class="md-tabs__link">
+          
+  
+  
+  Del 3: Helheten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-nav__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-workflowguide på svenska: från chatt till eget system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kom-igang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kom igång
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1: Grunden
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1: Grunden
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fran-chatt-till-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Från chatt till system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Kontext i stället för långa prompter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-struktur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Struktur som kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2: Mitt system
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2: Mitt system
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arkitekturen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Arkitekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Individanpassad inlärning
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Individanpassad inlärning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problemet-med-den-genomsnittliga-studenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemet med den genomsnittliga studenten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitt-fall-flervariabelanalys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitt fall: Flervariabelanalys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mitt fall: Flervariabelanalys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot-cirkusen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot-cirkusen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-1-kartlaggning-fore-uppgifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: kartläggning före uppgifter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-2-ordning-efter-begreppens-beroenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: ordning efter begreppens beroenden
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-3-konkreta-bilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: konkreta bilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-4-regler-som-tvingar-fram-forstaelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: regler som tvingar fram förståelse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-5-teorin-precis-dar-den-behovs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 5: teorin precis där den behövs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-6-veckoplan-med-mal-som-formagor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 6: veckoplan med mål som förmågor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-7-gamla-tentor-som-test-misstag-pa-felniva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 7: gamla tentor som test, misstag på felnivå
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vad-claude-gor-och-vad-jag-gor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad Claude gör, och vad jag gör
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sa-formar-du-ditt-eget-upplagg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Så formar du ditt eget upplägg
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samma-tank-nar-du-lar-dig-ett-jobb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samma tänk när du lär dig ett jobb
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-hjarnan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Hjärnan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bygga-vidare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Att bygga vidare på
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 3: Helheten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 3: Helheten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-modellerna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 Modellerna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-troskeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Tröskeln, inte förmågan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-anvandningsgransen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Därför slår du i taket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vad-en-prenumeration-racker-till/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Vad en prenumeration räcker till
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bilaga-arbetsliv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilaga: Arbetslivet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problemet-med-den-genomsnittliga-studenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemet med den genomsnittliga studenten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitt-fall-flervariabelanalys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitt fall: Flervariabelanalys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mitt fall: Flervariabelanalys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot-cirkusen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot-cirkusen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-1-kartlaggning-fore-uppgifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 1: kartläggning före uppgifter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-2-ordning-efter-begreppens-beroenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 2: ordning efter begreppens beroenden
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-3-konkreta-bilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 3: konkreta bilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-4-regler-som-tvingar-fram-forstaelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 4: regler som tvingar fram förståelse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-5-teorin-precis-dar-den-behovs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 5: teorin precis där den behövs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-6-veckoplan-med-mal-som-formagor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 6: veckoplan med mål som förmågor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steg-7-gamla-tentor-som-test-misstag-pa-felniva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steg 7: gamla tentor som test, misstag på felnivå
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vad-claude-gor-och-vad-jag-gor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad Claude gör, och vad jag gör
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sa-formar-du-ditt-eget-upplagg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Så formar du ditt eget upplägg
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samma-tank-nar-du-lar-dig-ett-jobb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samma tänk när du lär dig ett jobb
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kapitel-05-individanpassad-inlarning">Kapitel 05 — Individanpassad inlärning<a class="headerlink" href="#kapitel-05-individanpassad-inlarning" title="Permanent link">&para;</a></h1>
+<p><em>En kurs är byggd för 500 studenter, eller 30. Med AI kan upplägget formas efter hur just du lär dig, och kursens ramar och mål ligger kvar. Kapitlet visar hur jag gjort det i Flervariabelanalys, och hur du gör ditt eget.</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">Kort version</p>
+<ul>
+<li>Kurser är byggda för en genomsnittlig student, och med AI kan upplägget formas efter hur just du lär dig.</li>
+<li>Det börjar med en kartläggning av kursen och hur kapitlen hänger ihop, innan några uppgifter.</li>
+<li>Ordningen följer begreppens beroenden, och konkreta bilder gör att abstrakta begrepp fastnar.</li>
+<li>Regler i projektet tvingar fram förståelse i stället för memorering, och gamla tentor används som test.</li>
+<li>Du formar ditt eget upplägg genom att beskriva hur du lär dig och vilka regler Claude ska följa.</li>
+</ul>
+</div>
+<hr />
+<h2 id="problemet-med-den-genomsnittliga-studenten">Problemet med den genomsnittliga studenten<a class="headerlink" href="#problemet-med-den-genomsnittliga-studenten" title="Permanent link">&para;</a></h2>
+<p>En kurs har en bok, en föreläsningsserie och en ordning som passar ungefär alla. Det är rimligt. Ingen lärare kan bygga trettio olika kurser, och ännu mindre femhundra. Resultatet är ändå att ordningen, tempot och förklaringarna är valda för en student som inte finns.</p>
+<p>Jag är en sådan student som inte passar ordningen. Jag lär mig nerifrån och upp. Jag har svårt att acceptera en regel innan jag förstår varför den gäller, och när en bit saknas faller jag tillbaka på att memorera procedurer. Det tar mig igenom en tenta men det känns inte som förståelse, och det håller inte till nästa kurs. Det som får något att klicka är en helhetsbild och en konkret bild, till exempel att uppskatta var en bil befinner sig när man vet hur fort den kör. Och jag lär mig mer av det som intresserar mig än av det som är svårt.</p>
+<p>Med en vanlig prenumeration på Claude går det att bygga ett upplägg runt det. Det handlar inte om att kringgå kursen. Tentan, målen och kursboken är desamma. Det som ändras är vägen dit: vilken ordning jag läser i, hur saker förklaras, vad jag övar på och vad som följs upp.</p>
+<p>Allt det här ryms i den prenumeration jag redan har. Det krävs ingen särskild studieapp, bara att modellen får rätt material och rätt regler.</p>
+<p>Plugget är exemplet i det här kapitlet, inte ämnet. Allt som beskrivs nedan fungerar likadant när du ska lära dig ett nytt jobb, en bransch eller en hobby. Jag återkommer till det i slutet.</p>
+<hr />
+<h2 id="mitt-fall-flervariabelanalys">Mitt fall: Flervariabelanalys<a class="headerlink" href="#mitt-fall-flervariabelanalys" title="Permanent link">&para;</a></h2>
+<p>Kursen är MATB21 Flervariabelanalys på Lunds universitet, hösten 2026. Boken är Adams och Essex <em>Calculus</em>. Hela upplägget ligger öppet på GitHub, så du kan titta på de riktiga filerna: <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26">Flervariabelanalys_ht26</a>. Jag hänvisar dit genom hela kapitlet.</p>
+<p>Innan jag går in på mekanismerna vill jag visa var det började.</p>
+<h3 id="screenshot-cirkusen">Screenshot-cirkusen<a class="headerlink" href="#screenshot-cirkusen" title="Permanent link">&para;</a></h3>
+<p>På vårterminen läste jag Algebra och vektorgeometri. Jag satt med en uppgift, tog en screenshot och skickade den till Claude. Claude löste den snabbt och korrekt, men med Gauss-eliminering. Min kurs hade inte kommit dit. Vi använde ekvivalenta ekvationer och substitution.</p>
+<p>Jag tog en ny screenshot, den här gången på facit, och skrev: "Lös som de gör här istället." Claude anpassade sig halvvägs men blandade fortfarande in notation som inte hörde till kursen. Tredje försöket var att tvinga Claude att läsa en hel föreläsnings-PDF på fyrtio sidor. Det funkade till slut, men det tog femton minuter. Nästa dag, ny uppgift, och Claude hade glömt allt.</p>
+<p>Felet låg inte i modellen. Den fick kursens material i fel format, utan regler och utan minne mellan samtalen. Det här kapitlet handlar om vad som hände när jag i stället byggde ett system där kursens egen text och mina egna regler alltid finns med. De tekniska delarna, alltså mappar, Markdown och CLAUDE.md, förklaras i <a href="../03-struktur/">kapitel 03</a>. Här visar jag vad de används till för att lära sig.</p>
+<hr />
+<h2 id="steg-1-kartlaggning-fore-uppgifter">Steg 1: kartläggning före uppgifter<a class="headerlink" href="#steg-1-kartlaggning-fore-uppgifter" title="Permanent link">&para;</a></h2>
+<p>De flesta pluggplaner börjar med uppgifterna. Räkna 13.1 uppgift 5, 7, 14, sedan 13.2. Det är rimligt om man redan har en bild av området. Jag har ingen sådan bild på förhand, och uppgifter utan bild blir mekanik.</p>
+<p>Därför börjar mitt upplägg med en kartläggning av kursen. Innan jag räknar något går Claude och jag igenom hur kapitlen hänger ihop och vad kursen i stort handlar om. I kursrepot finns det på två ställen. Det ena är <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/01_kursmaterial/kapitelguide.md">kapitelguiden</a>, som för varje sektion anger ämnet, rekommenderade uppgifter och vad som är en "typisk lösning", alltså vilken sorts tänkande uppgifterna kräver. Det andra är en sammanfattning per kapitel i <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/06_bokinnehall/kap_13_partiella_derivator.md"><code>06_bokinnehall/</code></a>. Sammanfattningen av kapitel 13 börjar så här:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Kapitlet bygger upp begreppen i en tydlig kedja: funktioner av flera
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>variabler och deras grafer/nivåkurvor (13.1) -&gt; gränsvärden och
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>kontinuitet (13.2) -&gt; partiella derivator, en variabel i taget (13.3)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-&gt; ... -&gt; gradienten och riktningsderivator (13.7) -&gt; implicita
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>funktioner (13.8) -&gt; Taylors formel för flera variabler (13.9).
+</code></pre></div>
+<p>Det är en kedja jag kan hålla i huvudet. Och längre ned i samma fil står varför kapitlet spelar roll: det är förutsättningen för kapitel 14 om extremvärden, och Jacobideterminanten från 13.8 återkommer i variabelbytena i kapitel 15. När jag sedan sitter med en uppgift vet jag var i kedjan jag befinner mig.</p>
+<p>Planen i mitt kursdokument är med flit omvänd mot en vanlig uppgiftsplan. Först kartläggning och förståelse, sedan en genomgång per avsnitt, och först därefter en uppgift per avsnitt som test. Uppgiften visar om jag förstått. Den är inte själva inlärningen.</p>
+<details class="begrepp">
+<summary>Begrepp: Markdown</summary>
+<p><strong>Vad det är:</strong> Ett sätt att formatera text med vanliga tecken. Rubriker skrivs med brädgård, listor med bindestreck och fetstil med stjärnor. Filerna får ändelsen .md.</p>
+<p><strong>Liknelse:</strong> I Word klickar du på knappar för att formatera. I Markdown skriver du formateringen rakt i texten, så att den syns även utan program.</p>
+<p><strong>Varför det spelar roll här:</strong> Markdown är lättläst för både människor och modeller och kostar få tokens. Därför omvandlar man PDF:er och anteckningar till Markdown, och därför skrivs regelfiler som CLAUDE.md i samma format.</p>
+<p><a href="../ordlista/#markdown">Se alla begrepp i ordlistan</a></p>
+</details>
+<hr />
+<h2 id="steg-2-ordning-efter-begreppens-beroenden">Steg 2: ordning efter begreppens beroenden<a class="headerlink" href="#steg-2-ordning-efter-begreppens-beroenden" title="Permanent link">&para;</a></h2>
+<p>Boken har en ordning, och den är inte alltid min. När jag byggde om planen flyttade jag Taylors formel före kritiska punkter. Skälet är beroendet: andraderivatatestet för extremvärden använder Hessianen, och Hessianen bygger på Taylorutvecklingen till andra ordningen. Läser man kritiska punkter först får man en regel för hur man klassificerar dem utan att veta varför regeln ser ut som den gör. Det är precis den sortens regel jag har svårt att acceptera.</p>
+<p>Det syns i kursens egen text också. I sammanfattningen av kapitel 14 står att andraderivatatestet bygger på definitheten hos Hessianmatrisen, och att beviset går via Taylors formel. Beroendet finns alltså redan i materialet. Det som saknades var att planen följde det.</p>
+<p>Veckoplanen i <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/04_studieplan/veckoplan.md"><code>04_studieplan/veckoplan.md</code></a> är byggd så. Taylors formel (13.9) ligger vecka 4 och extremvärden (14.1 och 14.2) vecka 5. En sak till är värd att nämna om den filen: varje vecka har ett fält "Mål" som är skrivet som en förmåga och inte som ett kapitelnummer. Veckan med Taylor har målet att kunna ställa upp Taylorpolynom av andra ordningen för funktioner av flera variabler. Veckan efter har målet att kunna klassificera kritiska punkter med Hessianen. Den som läser planen ser direkt vad som ska sitta, och vad som i så fall bygger på vad.</p>
+<p>Så här kan du få fram ordningen i din egen kurs. Be Claude läsa kursplanen och kapitelrubrikerna och göra en lista över vilka begrepp som förutsätter vilka. Titta sedan på var boken eller föreläsningarna går emot den ordningen. Du behöver inte ändra på något, men du vet var du kommer att behöva gå tillbaka.</p>
+<hr />
+<h2 id="steg-3-konkreta-bilder">Steg 3: konkreta bilder<a class="headerlink" href="#steg-3-konkreta-bilder" title="Permanent link">&para;</a></h2>
+<p>När ett begrepp inte klickar ber jag om en bild. Mitt tydligaste exempel är gradienten. Den är en regel, men den ser olika ut beroende på vad man tillämpar den på. Bilden som fungerade för mig var ett berg. Tänk dig en graf z = h(x, y) som ett landskap och nivåkurvorna som höjdkurvorna på en vandringskarta. Gradienten av h pekar uppför, åt det håll där berget stiger brantast, och den är vinkelrät mot höjdkurvan. Kursboken säger samma sak som en sats:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>THEOREM 6: If f(x, y) is differentiable at the point (a, b) and
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>grad f(a, b) is not 0, then grad f(a, b) is a normal vector to the
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>level curve of f that passes through (a, b).
+</code></pre></div>
+<p>Satsen har jag läst många gånger. Berget är det som gjorde att jag trodde på den. Och bilden bär längre än till den ena satsen: tät gruppering av nivåkurvor betyder brant terräng, vilket kapitel 13 också påpekar med en hänvisning till topografiska kartor.</p>
+<p>Bilder kommer med en risk. En liknelse som är nästan rätt kan ge ett fel som sitter kvar. Därför har jag en fråga som jag ställer själv, och det är den som ligger kvar under rubriken "Osäkert" i mitt kursdokument. Om grafen är z = h(x, y), pekar gradienten av h uppför i kartan, medan gradienten av F(x, y, z) = z minus h(x, y) är normal till tangentplanet i rummet. Två gradienter, två olika objekt, samma regel. Jag lät den stå som osäker tills jag testat den på en riktig tentauppgift. En bild är en genväg till förståelse, och förståelsen prövas mot uppgifter.</p>
+<hr />
+<h2 id="steg-4-regler-som-tvingar-fram-forstaelse">Steg 4: regler som tvingar fram förståelse<a class="headerlink" href="#steg-4-regler-som-tvingar-fram-forstaelse" title="Permanent link">&para;</a></h2>
+<p>Det som flyttar upplägget från att vara en idé till att fungera varje dag är reglerna i <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/CLAUDE.md"><code>CLAUDE.md</code></a>. Där står sådant som annars hade stått i en prompt jag skrev om varje dag.</p>
+<details class="begrepp">
+<summary>Begrepp: CLAUDE.md</summary>
+<p><strong>Vad det är:</strong> En Markdown-fil i projektets rot som Claude Code läser i början av varje session. Där står vad projektet är och vilka regler som gäller.</p>
+<p><strong>Liknelse:</strong> Ett introduktionsdokument som en ny konsult får första dagen: så jobbar vi, de här filerna är viktiga, så här vill vi ha det.</p>
+<p><strong>Varför det spelar roll här:</strong> Med en CLAUDE.md slipper du upprepa dina regler i varje chatt. Assistenten börjar inte från noll, utan känner till projektet och hur du vill ha svaren.</p>
+<p><a href="../ordlista/#claude-md">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Tre regler gör mest för förståelsen. Den första är att visa hela lösningen och inte bara svaret. Så här står det i filen, i min förkortning:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Visa fullständiga steg, inte bara svar. Kursen examinerar matematisk
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kommunikation lika mycket som rätt svar: motivera varje steg, definiera
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>symboler du inför, och ange vilken sats eller metod som används.
+</code></pre></div>
+<p>Den andra är att varje ny symbol definieras och varje sats får sitt namn och sin sektion. Då slipper jag stå med ett h eller ett theta som dykt upp utan förklaring. Den tredje är att teorin läses först. Innan Claude löser en uppgift ska den läsa hela sektionens text, inklusive definitioner, satser och lösta exempel, och lösningen ska utgå från kursens egen text. Det löser en stor del av screenshot-problemet: Claude gissar inte längre vilken metod kursen använder, den slår upp den.</p>
+<p>Kursen följer dessutom 10:e upplagan medan min fulltext kommer ur den 9:e. Det finns en regel för det också: nämn alltid båda numren. Det är en liten sak, men den visar vad en regelfil är bra till. Allt som annars hade blivit en förvirring om och om igen skrivs ned en gång.</p>
+<p>Ett tips om regler: skriv dem när något går fel. Varje gång Claude gör något som irriterar mig, till exempel hoppar över ett steg, byter notation eller lånar en metod från en annan kurs, frågar jag mig om det ska bli en rad i CLAUDE.md. Efter några veckor har filen blivit en beskrivning av hur jag vill ha det.</p>
+<details class="begrepp">
+<summary>Begrepp: Projekt</summary>
+<p><strong>Vad det är:</strong> Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.</p>
+<p><strong>Liknelse:</strong> En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.</p>
+<p><strong>Varför det spelar roll här:</strong> Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.</p>
+<p><a href="../ordlista/#projekt">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Kursen har sitt eget projekt i Claude, med repot i projektets kontext. Projektinstruktionerna är en kortare version av CLAUDE.md, så att de viktigaste reglerna alltid finns med. Det är samma upplägg som i kapitel 04, men tillämpat på en enda kurs.</p>
+<hr />
+<h2 id="steg-5-teorin-precis-dar-den-behovs">Steg 5: teorin precis där den behövs<a class="headerlink" href="#steg-5-teorin-precis-dar-den-behovs" title="Permanent link">&para;</a></h2>
+<p>Regeln om att läsa teorin först fungerar bara om Claude hittar rätt text snabbt. Femton minuter med en PDF på fyrtio sidor är precis det jag ville bort från. Så fulltexten är byggd för att gå att slå upp i.</p>
+<p>Varje sektion i boken ligger som en egen fil, <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/07_fulltext/kap_13/13.7.md"><code>07_fulltext/kap_13/13.7.md</code></a> för sektion 13.7 om gradienter. I filen har varje definition, sats och exempel en egen rubrik:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>## DEFINITION 6
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>## EXAMPLE 1
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>## THEOREM 6
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>### PROOF
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>...
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>## Exercises 13.7
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>### Uppgift 1
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>### Uppgift 2
+</code></pre></div>
+<p>Varje övning har alltså en egen rubrik, och en rubrik är ett ankare man kan länka till. När jag skriver "uppgift 11 i 13.5" går Claude direkt till <code>07_fulltext/kap_13/13.5.md#uppgift-11</code>, läser teorin som står ovanför och löser uppgiften med den. Boksidorna finns kvar som markörer i texten, så jag kan alltid gå till boken om jag vill se figuren.</p>
+<p>Ovanpå det ligger <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/00_index/uppgiftsindex.md"><code>00_index/uppgiftsindex.md</code></a>, en tabell över sektion, uppgiftsspann och filväg. Den är inte skriven för hand. Ett skript, <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/blob/main/scripts/build_uppgiftsindex.py"><code>scripts/build_uppgiftsindex.py</code></a>, genererar den ur de faktiska rubrikerna, så att indexet inte kan komma ur synk med texterna. Det är ett litet exempel på något jag har lärt mig av det här: allt som kan genereras bör genereras. Då behöver jag aldrig fråga mig om indexet stämmer.</p>
+<p>Skripten ersätter inte tänkandet, men de tar bort en sorts fel. Jag har också ett skript som kontrollerar att ingen sats eller definition försvunnit när jag extraherade boken ur PDF, för där hade jag tappat innehåll vid sidgränser. Det kan du läsa mer om i <a href="../03-struktur/">kapitel 03</a>.</p>
+<hr />
+<h2 id="steg-6-veckoplan-med-mal-som-formagor">Steg 6: veckoplan med mål som förmågor<a class="headerlink" href="#steg-6-veckoplan-med-mal-som-formagor" title="Permanent link">&para;</a></h2>
+<p>Veckoplanen nämnde jag redan i samband med ordningen. Det finns en poäng till med den. En kursplan säger vilka kapitel som hör till vilken vecka. Den säger inte vad jag ska kunna efteråt.</p>
+<p>Jag skriver varje veckas mål som en förmåga som går att pröva: "avgöra om ett gränsvärde existerar genom att jämföra olika vägar", "tillämpa kedjeregeln med variabelträd i flera led", "verifiera villkoren i implicita funktionssatsen". Ett kapitelnummer kan jag läsa utan att ha förstått något. En förmåga kan jag inte intyga utan att visa den. När veckan är slut är frågan om jag kan göra det, och inte om jag har läst klart.</p>
+<p>Tidsstyrningen sköts av kursdokumentet i mitt projekt, som har samma sektioner för varje kurs: Nästa examination, Läget, Kvar (med timmar per avsnitt), Nästa pass, Osäkert och Logg. Jag skriver inte mycket i det själv. Kursprojektet uppdaterar det när jag har pluggat klart, och en schemalagd uppgift läser det varje morgon och föreslår hur mycket plugg dagen kräver. Ju närmare tentan, desto tydligare förslag. Hur det hänger ihop beskrivs i <a href="../04-arkitekturen/">kapitel 04</a> och <a href="../06-hjarnan/">kapitel 06</a>.</p>
+<details class="begrepp">
+<summary>Begrepp: Schemalagd uppgift</summary>
+<p><strong>Vad det är:</strong> En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.</p>
+<p><strong>Liknelse:</strong> En väckarklocka som inte bara ringer utan också gör jobbet.</p>
+<p><strong>Varför det spelar roll här:</strong> Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.</p>
+<p><a href="../ordlista/#schemalagd-uppgift">Se alla begrepp i ordlistan</a></p>
+</details>
+<hr />
+<h2 id="steg-7-gamla-tentor-som-test-misstag-pa-felniva">Steg 7: gamla tentor som test, misstag på felnivå<a class="headerlink" href="#steg-7-gamla-tentor-som-test-misstag-pa-felniva" title="Permanent link">&para;</a></h2>
+<p>Gamla tentor är den bästa testen jag har. I repot ligger de som <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/tree/main/05_tentor/skarpa_tentor">skarpa tentor</a> med <a href="https://github.com/Solsidan21/Flervariabelanalys_ht26/tree/main/05_tentor/losningsforslag">lösningsförslag</a> i samma format, <code>### Uppgift N</code> och <code>### Lösning N</code>. Eftersom formatet är detsamma kan Claude plocka ut en uppgift, låta mig försöka och sedan jämföra med lösningsförslaget.</p>
+<p>Jag använder dem på tre sätt. De visar vilken sorts uppgifter som brukar komma, så att jag vet vilka förmågor veckomålen egentligen ska leda till. De avgör om en bild håller: den osäkra frågan om de två gradienterna prövas mot en tentauppgift och inte mot min känsla. Och de är sista kontrollen före en tenta, där jag räknar en hel tenta på tid och ser vilka sektioner som inte sitter.</p>
+<p>Det som gör att det bygger på sig själv är loggen. Den är skriven på felnivå. En rad säger inte "repetera kedjeregeln", den säger vad som gick fel: "räknade e upphöjt till 1 som 1", eller "teckenfel när ekvationerna adderades, fångat vid kontroll". Nästa pass bygger på det som faktiskt gick fel och inte på ett allmänt behov av repetition. Det är skillnaden mellan att plugga mer och att plugga rätt sak.</p>
+<p>Loggen är också där jag ser mönster. Skriver jag tre gånger att jag tappar ett minustecken i samma typ av uppgift är det inte ett slumpfel. Då är det en vana, och den kan jag arbeta med.</p>
+<hr />
+<h2 id="vad-claude-gor-och-vad-jag-gor">Vad Claude gör, och vad jag gör<a class="headerlink" href="#vad-claude-gor-och-vad-jag-gor" title="Permanent link">&para;</a></h2>
+<p>Jag vill vara tydlig med en sak, eftersom det är lätt att få fel intryck. Systemet gör inte jobbet åt mig. Reglerna är byggda för att göra det motsatta: Claude ska visa stegen, motivera dem och utgå från kursens text, så att jag kan följa med och göra om det själv. Skulle jag använda upplägget för att få färdiga lösningar att skriva av skulle det fungera sämre än att inte ha något system alls, eftersom jag då skulle sakna det som tentan prövar.</p>
+<p>Arbetsfördelningen ser ut så här. Claude Code och jag bygger repot: extraherar boken, skriver skripten, justerar reglerna. Det är jobb som görs ibland. Claude i kursprojektet läser repot och är min studiekamrat i det dagliga: förklarar, ger bilder, rättar mina lösningar, föreslår nästa pass. Jag gör själva räknandet och själva tänkandet. Claude-appen på datorn kan arbeta i mina lokala mappar, och det betyder att jag kan lägga till nytt material i en mapp och att det finns med nästa gång jag frågar.</p>
+<p>Det är också en gräns. Repot är offentligt, så det innehåller bara kursmaterial och arbetssätt. Det som är personligt, som hur det går för mig och vad som är på gång, ligger i privata dokument. Mer om den gränsen finns i kapitel 04.</p>
+<hr />
+<h2 id="sa-formar-du-ditt-eget-upplagg">Så formar du ditt eget upplägg<a class="headerlink" href="#sa-formar-du-ditt-eget-upplagg" title="Permanent link">&para;</a></h2>
+<p>Du behöver inte kopiera mitt. Det är viktigare att du hittar ditt eget, och det första steget är att ta reda på hur du lär dig. Det kan du göra tillsammans med Claude. Börja en ny konversation och be den intervjua dig. Du kan klistra in något i stil med det här:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Jag ska läsa [kurs] och vill att du hjälper mig bygga ett upplägg som
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>passar hur jag lär mig. Intervjua mig först, en fråga i taget. Fråga
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>bland annat:
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>1. Behöver jag förstå varför en regel gäller innan jag kan använda den,
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>   eller räcker det att jag ser ett exempel?
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>2. Lär jag mig bäst uppifrån (helheten först) eller nerifrån
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>   (detaljerna först)?
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>3. Vilken sorts förklaring har fungerat bäst för mig tidigare? Be mig
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>   ge ett exempel.
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>4. Vad är det som får mig att tappa intresset?
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>5. Vad brukar gå fel när jag räknar: slarvfel, saknad förståelse, tid?
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>6. Hur ska jag veta att jag har förstått något?
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Sammanfatta svaren i ett utkast till regler som jag kan lägga i en
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>CLAUDE.md för kursen.
+</code></pre></div>
+<p>När du har svaren går du igenom mekanismerna ovan och väljer ut dem som passar:</p>
+<table>
+<thead>
+<tr>
+<th>Om du känner igen dig i det här</th>
+<th>Prova det här</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Du kastas runt av ordningen i boken</td>
+<td>Be om en kartläggning av kursen först och en ordning efter begreppens beroenden</td>
+</tr>
+<tr>
+<td>Du accepterar inte en regel utan skäl</td>
+<td>Lägg in "motivera varje steg" och "definiera varje symbol" i CLAUDE.md</td>
+</tr>
+<tr>
+<td>Du lär dig av bilder</td>
+<td>Skriv ned de bilder som fungerat, och be om en bild när ett begrepp inte klickar</td>
+</tr>
+<tr>
+<td>Du tappar tid på att leta</td>
+<td>Dela upp boken i en fil per avsnitt med ankare per uppgift</td>
+</tr>
+<tr>
+<td>Du repeterar fel saker</td>
+<td>Logga misstag på felnivå och låt nästa pass bygga på dem</td>
+</tr>
+<tr>
+<td>Du vet inte om du har förstått</td>
+<td>Skriv veckomål som förmågor och testa mot gamla tentor</td>
+</tr>
+</tbody>
+</table>
+<p>Börja med en kurs och med det som stör dig mest. En enda regel i CLAUDE.md som löser ett återkommande irritationsmoment är en bra början, och det är bättre än att bygga hela systemet på en gång.</p>
+<p>Mallen för CLAUDE.md kan se ut så här i sin enklaste form:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>## Om mig
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Jag lär mig nerifrån och upp. Jag behöver förstå varför innan jag
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>accepterar en regel.
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>## Regler
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- Visa hela lösningen med motivering av varje steg.
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>- Definiera varje symbol första gången den används.
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>- Läs kursens egen text först och använd bara kursens metoder.
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>- Börja alltid nytt avsnitt med hur det hänger ihop med det förra.
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>- När jag ber om en förklaring: ge en konkret bild först.
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>## Efter varje pass
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>- Föreslå en loggrad som beskriver vad som gick fel, inte bara vad
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>  jag ska repetera.
+</code></pre></div>
+<hr />
+<h2 id="samma-tank-nar-du-lar-dig-ett-jobb">Samma tänk när du lär dig ett jobb<a class="headerlink" href="#samma-tank-nar-du-lar-dig-ett-jobb" title="Permanent link">&para;</a></h2>
+<p>Allt det här gäller lika mycket utanför universitetet. Den som börjar ett nytt jobb står inför samma problem som en student: ett område man inte har en bild av, en ordning som någon annan har valt, begrepp som bygger på varandra och en omgivning som antar att man redan kan en massa.</p>
+<p>Det finns en direkt översättning. Kartläggningen blir en genomgång av företaget, branschen eller rollen innan du börjar på de första uppgifterna. Beroendena blir frågan om vilka begrepp i jobbet som bygger på vilka. Fulltexten blir de interna dokumenten, uppdelade så att du hittar rätt avsnitt. Veckoplanens mål som förmågor blir "vad ska jag kunna efter min första månad". Gamla tentor blir tidigare projekt, avslutade affärer eller genomförda leveranser. Och loggen på felnivå blir en lista över vad som gick fel och varför, så att samma sak inte händer två gånger.</p>
+<p>Det finns ett exempel på hur en sådan översättning kan se ut i <a href="../bilaga-arbetsliv/">bilagan om arbetslivet</a>. Det är också ett bra ställe att börja om du inte studerar just nu.</p>
+<p>Det som bär hela vägen är en enkel tanke. Modellen är densamma för dig som för alla andra. Det som skiljer är vad du ger den att arbeta med och vilka regler du sätter. Det går att göra på en eftermiddag, med den prenumeration du redan har, och det blir bättre för varje vecka.</p>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Gör det med din Claude</p>
+<p>Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med <a href="../kom-igang/">setup-sessionen</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/05-individanpassad-inlarning.md
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Fråga hur jag lär mig bäst, vad jag har svårt för och vilken kurs eller vilket ämne jag vill börja med.
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Hjälp mig sedan att skriva ett första utkast till en personlig beskrivning och några regler för mitt eget upplägg.
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Ställ en fråga i taget innan du föreslår något.
+</code></pre></div>
+</div>
+<p><em>Nästa: <a href="../06-hjarnan/">Kapitel 06: Hjärnan</a></em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="#__consent">Ändra cookie-inställningar</a> · <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Cookies</h4>
+<p>Jag respekterar din integritet. Utan cookies räknar jag bara att sidan har besökts och från vilken webbplats besöket kom, inget som kan kopplas till dig. Får jag också använda Google Analytics för att se mer om hur guiden används? Det sätter cookies och skickar uppgifter om ditt besök till Google. Avvisar du laddas det inte. Du kan ändra ditt val när som helst längst ner på sidan. Läs mer på sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Acceptera</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Acceptera inte</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+  
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "082df3d8cc544b5aae1c39e3bb90c79d"}'></script>
+  
+
+  </body>
+</html>

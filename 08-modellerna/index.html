@@ -1,0 +1,1486 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/08-modellerna/">
+      
+      
+        <link rel="prev" href="../07-bygga-vidare/">
+      
+      
+        <link rel="next" href="../09-troskeln/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>08 Modellerna - AI-workflowguide på svenska: från chatt till eget system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/begrepp.css">
+    
+      <link rel="stylesheet" href="../stylesheets/consent.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+    <meta name="google-site-verification" content="hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4">
+  
+    
+  
+  
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="08 Modellerna - AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta property="og:url" content="https://solsidan21.github.io/AI_workflow_guide_svenska/08-modellerna/">
+  <meta property="og:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="08 Modellerna - AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta name="twitter:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-08-modellerna" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-header__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-workflowguide på svenska: från chatt till eget system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              08 Modellerna
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kom-igang/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kom igång
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-fran-chatt-till-system/" class="md-tabs__link">
+          
+  
+  
+  Del 1: Grunden
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-arkitekturen/" class="md-tabs__link">
+          
+  
+  
+  Del 2: Mitt system
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Del 3: Helheten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-nav__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-workflowguide på svenska: från chatt till eget system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kom-igang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kom igång
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1: Grunden
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1: Grunden
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fran-chatt-till-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Från chatt till system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Kontext i stället för långa prompter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-struktur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Struktur som kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2: Mitt system
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2: Mitt system
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arkitekturen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Arkitekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-individanpassad-inlarning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Individanpassad inlärning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-hjarnan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Hjärnan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bygga-vidare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Att bygga vidare på
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 3: Helheten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 3: Helheten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 Modellerna
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 Modellerna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vad-en-modell-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad en modell är
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anthropics-trappa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anthropics trappa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motsvarigheter-hos-openai-och-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motsvarigheter hos OpenAI och Google
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vad-benchmarks-sager-och-inte-sager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad benchmarks säger och inte säger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min-tes-jamfor-produkterna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Min tes: jämför produkterna
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-troskeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Tröskeln, inte förmågan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-anvandningsgransen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Därför slår du i taket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vad-en-prenumeration-racker-till/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Vad en prenumeration räcker till
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bilaga-arbetsliv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilaga: Arbetslivet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vad-en-modell-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad en modell är
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anthropics-trappa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anthropics trappa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motsvarigheter-hos-openai-och-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motsvarigheter hos OpenAI och Google
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vad-benchmarks-sager-och-inte-sager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad benchmarks säger och inte säger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min-tes-jamfor-produkterna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Min tes: jämför produkterna
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kapitel-08-modellerna">Kapitel 08 — Modellerna<a class="headerlink" href="#kapitel-08-modellerna" title="Permanent link">&para;</a></h1>
+<p><em>Claude, ChatGPT och Gemini erbjuder var sin trappa av modeller. Det mesta av det som skiljer dem märks i verktygen runt omkring, mindre i modellerna själva.</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">Kort version</p>
+<ul>
+<li>Anthropic har fyra nivåer: Haiku, Sonnet, Opus och Fable. Högre nivå betyder bättre förmåga, men också högre pris och snabbare förbrukning av användningsgränsen.</li>
+<li>Välj den billigaste nivån som klarar uppgiften. Toppmodellen behövs sällan.</li>
+<li>Benchmarks är användbara för att se grov skillnad, men små skillnader i toppen märks sällan i vardagsbruk.</li>
+<li>Min tes är att toppmodellerna hos de stora bolagen är ungefär lika bra utanför avancerad kodning. Jämför därför produkterna: verktyg, integrationer och appar.</li>
+<li>Välj produkt efter vad du ska göra och vilka verktyg du använder.</li>
+</ul>
+</div>
+<hr />
+<p>I de här kapitlen har jag mest skrivit "Claude" som om det vore en sak. I själva verket är det en familj av modeller, och valet mellan dem påverkar både kvalitet, hastighet och hur snabbt du når användningsgränsen som kapitel 10 handlar om. Det här kapitlet går igenom trappan och ger mig anledning att säga något om hur mycket modellvalet egentligen spelar roll.</p>
+<h2 id="vad-en-modell-ar">Vad en modell är<a class="headerlink" href="#vad-en-modell-ar" title="Permanent link">&para;</a></h2>
+<details class="begrepp">
+<summary>Begrepp: Modell</summary>
+<p><strong>Vad det är:</strong> Den språkmodell som genererar svaren, till exempel Claude, GPT eller Gemini. Den är tränad av ett AI-labb och finns tillgänglig för alla via tjänster och API.</p>
+<p><strong>Liknelse:</strong> Motorn i bilen.</p>
+<p><strong>Varför det spelar roll här:</strong> Modellen är densamma för alla som använder den. Det du själv kan påverka är vad den får veta, vilka verktyg den når och vilka regler den följer.</p>
+<p><a href="../ordlista/#modell">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Namnet du ser i appen, till exempel Claude, är en produkt. Under den ligger en eller flera modeller. Produkten är modellen plus allt som sitter runt den: projekt, minne, filhantering, kopplingar till andra tjänster och appar på mobil och dator. Skillnaden mellan modell och produkt är hela poängen med kapitlet.</p>
+<h2 id="anthropics-trappa">Anthropics trappa<a class="headerlink" href="#anthropics-trappa" title="Permanent link">&para;</a></h2>
+<p>Anthropic har fyra nivåer, från billig och snabb till kraftfull och dyr.</p>
+<table>
+<thead>
+<tr>
+<th>Nivå</th>
+<th>Typisk användning</th>
+<th>API-pris per miljon tokens (indata / utdata)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Haiku</td>
+<td>Genomläsning, sortering, kontroller, enkel extraktion</td>
+<td>Klart billigast</td>
+</tr>
+<tr>
+<td>Sonnet</td>
+<td>Skrivande, research, vardaglig problemlösning</td>
+<td>2 / 10 dollar</td>
+</tr>
+<tr>
+<td>Opus</td>
+<td>Långa uppgifter, kodning, krävande kunskapsarbete</td>
+<td>4 / 20 dollar</td>
+</tr>
+<tr>
+<td>Fable</td>
+<td>De svåraste avvägningarna och längsta agentiska uppgifterna</td>
+<td>8 / 40 dollar</td>
+</tr>
+</tbody>
+</table>
+<p>Priserna kommer från Anthropics modellöversikt och gäller API:t, alltså det man betalar när man bygger egna program. Som privatperson med abonnemang betalar du inte per token, men siffrorna är ett bra relativt mått. Fable kostar fyra gånger så mycket som Sonnet. Det säger något om hur mycket mer beräkning som ligger bakom varje svar, och det är beräkningen som äter av din användningsgräns.</p>
+<p>Den praktiska konsekvensen är att toppmodellen drar gränsen snabbare än de andra. Anthropic skriver det uttryckligen om Fable, och det stämmer med logiken i priserna. Vilka modeller som ingår i vilken plan ändras ofta, och det enda jag kunnat belägga är Fable: den finns på alla betalplaner men inte på gratisnivån. På Pro körs den mot usage credits, alltså extra betalning, medan den på Max och Ultra ingår i planen men förbrukar veckogränsen snabbare. Titta i appen eller på Anthropics sida om din plan innan du räknar med något.</p>
+<p>Så här använder jag nivåerna:</p>
+<ul>
+<li>Haiku när jag vill att något ska läsas igenom eller kontrolleras, till exempel att gå igenom ett kapitel och lista vad som inte stämmer med reglerna.</li>
+<li>Sonnet till det mesta: förklaringar, research, skrivande och att bygga vidare på ett system.</li>
+<li>Opus när en uppgift är lång och har många delar som måste hänga ihop.</li>
+<li>Fable bara när jag fastnat på en svår avvägning och vill ha den bästa bedömningen, inte för rutinarbete.</li>
+</ul>
+<p>Det är min egen tumregel. Anthropic själva rekommenderar Opus som standardval för de flesta arbetsbelastningar, så välj gärna högre än jag gör om du har gott om utrymme i din plan. Principen är densamma: börja på en lägre nivå och gå upp först när resultatet inte räcker.</p>
+<h2 id="motsvarigheter-hos-openai-och-google">Motsvarigheter hos OpenAI och Google<a class="headerlink" href="#motsvarigheter-hos-openai-och-google" title="Permanent link">&para;</a></h2>
+<p>OpenAI har en liknande trappa. I ChatGPT drivs de betalda planerna av GPT-6 Sol, medan gratisnivån och Go-nivån drivs av GPT-6 Luna. Det är alltså en enklare uppdelning för användaren, där nivån följer planen. Under GPT-5.6 fanns också en mellannivå som hette Terra. Jag har inte hittat några uppgifter om API-priser för GPT-6 och påstår därför inget om dem. Codex, OpenAIs verktyg för kodning och agentarbete, har precis som Claude Code stöd för subagenter med eget modellval.</p>
+<p>Google har Gemini i två huvudspår, Pro och Flash, där Flash är den snabba och billiga och Pro den kraftfulla. Versionsnumren byts snabbt och jag har inte kunnat fastställa vilken som i dag är toppmodellen i Gemini-appen, så jag låter bli att ange någon. Allt jag skriver om konkreta modellnamn är dessutom en ögonblicksbild från november 2026 och kommer att vara förlegad snart. Trappstrukturen, med en billig, en mellan och en dyr nivå, är det som består.</p>
+<h2 id="vad-benchmarks-sager-och-inte-sager">Vad benchmarks säger och inte säger<a class="headerlink" href="#vad-benchmarks-sager-och-inte-sager" title="Permanent link">&para;</a></h2>
+<p>När en ny modell släpps följer en tabell med siffror. Några vanliga:</p>
+<ul>
+<li>SWE-bench Verified: riktiga felrapporter från öppna kodprojekt där modellen ska skriva en rättning som klarar projektets tester.</li>
+<li>GPQA Diamond: naturvetenskapliga frågor på forskarnivå. Testet är i princip mättat, och de bästa modellerna ligger kring 94 procent.</li>
+<li>Humanity's Last Exam: ungefär 2 500 mycket svåra frågor från experter, framtagna så att tidiga modeller skulle misslyckas.</li>
+</ul>
+<details class="begrepp">
+<summary>Begrepp: Benchmark</summary>
+<p><strong>Vad det är:</strong> Ett standardiserat test som många modeller får köra, så att resultaten går att jämföra i en tabell. Exempel är frågor på forskarnivå eller riktiga felrapporter från kodprojekt.</p>
+<p><strong>Liknelse:</strong> Som ett standardiserat prov i skolan. Det ger en jämförbar siffra, men visar inte hur du klarar en riktig uppgift.</p>
+<p><strong>Varför det spelar roll här:</strong> Små skillnader i toppen märks sällan i vardagsbruk, och leverantörerna väljer själva vilka siffror de visar.</p>
+<p><a href="../ordlista/#benchmark">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Det finns flera skäl att ta siffrorna med ro. När toppmodellerna närmar sig taket på ett test blir skillnaderna små och kan vara brus. Den som tränar en modell kan dessutom ha optimerat för just provet, och bland populära frågetester har granskningar hittat att en del frågor läckt in i träningsdata. Leverantörerna väljer också själva vilka siffror de visar, och det är rimligt att anta att de lyfter fram de där de står sig bäst. Det sista är mitt eget resonemang och inget jag funnit belagt, men det följer av incitamenten.</p>
+<p>Rangordningen beror dessutom på hur man mäter. En sammanställning från Artificial Analysis i oktober 2026 hade de fyra främsta modellerna inom två poäng från varandra, där Opus låg på 58 och tre andra modeller på 56. I en annan sammanställning låg en av OpenAIs modeller på 58,9. Den som läser en enda tabell kan alltså få bilden att en modell vinner, och en annan tabell säger något annat. Glappet som verkligen var stort i den första sammanställningen låg mellan de slutna och de öppna modellerna, inte mellan de stora bolagens toppmodeller.</p>
+<h2 id="min-tes-jamfor-produkterna">Min tes: jämför produkterna<a class="headerlink" href="#min-tes-jamfor-produkterna" title="Permanent link">&para;</a></h2>
+<p>Det leder till det jag själv tror, och jag vill vara tydlig med att det är en bedömning och inte ett faktum. För de flesta uppgifter utanför avancerad kodning är toppmodellerna hos de stora bolagen ungefär lika bra. Förklara ett begrepp, sammanfatta en text, skriv ett utkast, hjälp mig tänka igenom ett problem: det klarar de alla, och skillnaden jag märker mellan dem är mindre än skillnaden mellan en bra och en dålig prompt. Det är också vad den som sammanställde siffrorna ovan landar i, men det är en tolkning och inget bevisat.</p>
+<p>Det som skiljer sig mer är runt omkring: vilka verktyg som finns, hur väl de kopplas till dina andra tjänster och hur apparna fungerar.</p>
+<details class="begrepp">
+<summary>Begrepp: MCP</summary>
+<p><strong>Vad det är:</strong> Förkortning för Model Context Protocol, en öppen standard för hur AI-verktyg kopplas till andra tjänster och datakällor.</p>
+<p><strong>Liknelse:</strong> Ett gemensamt kontaktdon. Alla tjänster som följer standarden passar i alla verktyg som stöder den.</p>
+<p><strong>Varför det spelar roll här:</strong> MCP ligger bakom många connectors. Du behöver inte kunna detaljerna, men det förklarar varför samma tjänst kan kopplas till flera olika AI-verktyg.</p>
+<p><a href="../ordlista/#mcp">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Jag valde Claude av just det skälet. Den ligger enligt min bedömning långt fram på verktyg och integrationer: projekt med egen kunskap, Claude Code med subagenter, och kopplingar till tjänster som mejl, kalender och dokument. Anthropic har också fokuserat på företag, vilket syns i vad de bygger. Det finns en siffra som pekar åt samma håll. Menlo Ventures angav i sin rapport från november 2026 att Anthropics andel av företagens utgifter för LLM-API:er steg från 40 till 55 procent, medan OpenAI gick från 27 till 31 och Google föll från 21 till 9. Läs den med försiktighet. Menlo Ventures är en riskkapitalfirma som själva är investerare i Anthropic, och siffran mäter företagens API-utgifter, inte vad en student har nytta av i vardagen.</p>
+<p>ChatGPT har sina egna starka sidor, och de är inte små. Enligt Sensor Towers mätning från maj 2026 hade ChatGPT 46,4 procent av konsumentmarknaden, Gemini 27,7 och Claude 10,3. Antalet månadsanvändare låg på över 1,1 miljarder för ChatGPT mot 245 miljoner för Claude. OpenAI uppger själva över 1,2 miljarder veckoanvändare, men siffrorna mäter olika saker och går inte att jämföra rakt av. Många fler människor använder alltså ChatGPT, och bredden i erbjudandet är större på konsumentsidan: interaktiva element som diagram och formulär i svaren, och Codex i både skrivbordsapp, terminal och kodredigerare. Är det ChatGPT dina vänner, kurskamrater eller kollegor använder kan det i sig vara ett skäl att välja den, eftersom du då delar exempel och arbetssätt.</p>
+<p>Det jag landar i är att frågan "vilken modell är bäst?" är mindre användbar än "vad ska jag göra, och vilka verktyg använder jag?". Använder du mest en chatt för frågor och förklaringar duger vilken som helst av de stora. Vill du bygga upp projekt med egen kunskap, koppla in dina tjänster och låta en agent arbeta i dina mappar, jämför då vad respektive produkt faktiskt kan göra, och prova gärna båda under en vecka med en riktig uppgift. Guiden är skriven med Claude eftersom det är vad jag använder, men upplägget går att flytta över.</p>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Gör det med din Claude</p>
+<p>Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med <a href="../kom-igang/">setup-sessionen</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/08-modellerna.md
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Fråga vad jag mest använder AI till och vilken plan och vilka verktyg jag har i dag.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Hjälp mig sedan att välja modellnivå för tre av mina vanligaste uppgifter och att ta ett konkret första steg.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Ställ en fråga i taget innan du föreslår något.
+</code></pre></div>
+</div>
+<p>Nästa: <a href="../09-troskeln/">Kapitel 09: Tröskeln, inte förmågan</a></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="#__consent">Ändra cookie-inställningar</a> · <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Cookies</h4>
+<p>Jag respekterar din integritet. Utan cookies räknar jag bara att sidan har besökts och från vilken webbplats besöket kom, inget som kan kopplas till dig. Får jag också använda Google Analytics för att se mer om hur guiden används? Det sätter cookies och skickar uppgifter om ditt besök till Google. Avvisar du laddas det inte. Du kan ändra ditt val när som helst längst ner på sidan. Läs mer på sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Acceptera</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Acceptera inte</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+  
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "082df3d8cc544b5aae1c39e3bb90c79d"}'></script>
+  
+
+  </body>
+</html>

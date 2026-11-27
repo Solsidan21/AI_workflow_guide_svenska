@@ -1,0 +1,1516 @@
+
+<!doctype html>
+<html lang="sv" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+      
+      
+      
+        <link rel="canonical" href="https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/">
+      
+      
+        <link rel="prev" href="../05-individanpassad-inlarning/">
+      
+      
+        <link rel="next" href="../07-bygga-vidare/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>06 Hjärnan - AI-workflowguide på svenska: från chatt till eget system</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/begrepp.css">
+    
+      <link rel="stylesheet" href="../stylesheets/consent.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YDFX3B82KF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YDFX3B82KF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YDFX3B82KF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+    <meta name="google-site-verification" content="hUEKbQgmLFbhiKHtTyx-k8Jzjp6YFeoOhKEFrp8EBu4">
+  
+    
+  
+  
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="06 Hjärnan - AI-workflowguide på svenska: från chatt till eget system">
+  <meta property="og:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta property="og:url" content="https://solsidan21.github.io/AI_workflow_guide_svenska/06-hjarnan/">
+  <meta property="og:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="06 Hjärnan - AI-workflowguide på svenska: från chatt till eget system">
+  <meta name="twitter:description" content="Så bygger du ditt eget AI-system med en vanlig prenumeration, med plugget som exempel">
+  <meta name="twitter:image" content="https://solsidan21.github.io/AI_workflow_guide_svenska/assets/og-image.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-06-hjarnan" class="md-skip">
+          Gå till innehållet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidhuvud">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-header__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-workflowguide på svenska: från chatt till eget system
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              06 Hjärnan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till mörkt läge"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Byt till mörkt läge" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Byt till ljust läge"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Byt till ljust läge" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Sök" placeholder="Sök" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Sök">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Rensa" aria-label="Rensa" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialiserar sök
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Flikar" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kom-igang/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kom igång
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-fran-chatt-till-system/" class="md-tabs__link">
+          
+  
+  
+  Del 1: Grunden
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../04-arkitekturen/" class="md-tabs__link">
+          
+  
+  
+  Del 2: Mitt system
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-modellerna/" class="md-tabs__link">
+          
+  
+  
+  Del 3: Helheten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ordlista/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ordlista
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-workflowguide på svenska: från chatt till eget system" class="md-nav__button md-logo" aria-label="AI-workflowguide på svenska: från chatt till eget system" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-workflowguide på svenska: från chatt till eget system
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Solsidan21/AI_workflow_guide_svenska" title="Gå till datakatalog" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Solsidan21/AI_workflow_guide_svenska
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kom-igang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kom igång
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 1: Grunden
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 1: Grunden
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fran-chatt-till-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Från chatt till system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kontext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Kontext i stället för långa prompter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-struktur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Struktur som kontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 2: Mitt system
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 2: Mitt system
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arkitekturen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Arkitekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-individanpassad-inlarning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Individanpassad inlärning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Hjärnan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Hjärnan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vad-projektet-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad projektet är
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kursrader-som-lases-men-aldrig-andras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kursrader som läses men aldrig ändras
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#morgonbrev-och-eftermiddagskoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Morgonbrev och eftermiddagskoll
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brevet-som-en-text-inte-en-lista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brevet som en text, inte en lista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regeln-hitta-aldrig-pa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regeln "hitta aldrig på"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sa-bygger-du-din-egen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Så bygger du din egen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bygga-vidare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Att bygga vidare på
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Del 3: Helheten
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Del 3: Helheten
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-modellerna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 Modellerna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-troskeln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Tröskeln, inte förmågan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-anvandningsgransen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Därför slår du i taket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vad-en-prenumeration-racker-till/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Vad en prenumeration räcker till
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bilaga-arbetsliv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilaga: Arbetslivet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordlista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ordlista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Innehållsförteckning">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Innehållsförteckning
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vad-projektet-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vad projektet är
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kursrader-som-lases-men-aldrig-andras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kursrader som läses men aldrig ändras
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#morgonbrev-och-eftermiddagskoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Morgonbrev och eftermiddagskoll
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brevet-som-en-text-inte-en-lista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brevet som en text, inte en lista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regeln-hitta-aldrig-pa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regeln "hitta aldrig på"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sa-bygger-du-din-egen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Så bygger du din egen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kapitel-06-hjarnan">Kapitel 06 — Hjärnan<a class="headerlink" href="#kapitel-06-hjarnan" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Ett centralt projekt som håller koll på helheten, så att jag slipper hålla allt i huvudet. Det här kapitlet visar hur det är uppbyggt och vilka regler som gör att jag kan lita på det.</em></p>
+</blockquote>
+<div class="admonition abstract">
+<p class="admonition-title">Kort version</p>
+<ul>
+<li>Hjärnan är ett centralt projekt som överblickar helheten i vardagen, så att du slipper hålla allt i huvudet.</li>
+<li>Kärnan är en att göra-lista i ett kalkylark, med ett område per rad och en tydlig prioriteringsordning.</li>
+<li>Det som andra projekt speglar dit läses men ändras aldrig härifrån.</li>
+<li>Ett morgonbrev och en eftermiddagskoll gör att viktiga saker kommer till dig.</li>
+<li>Regeln att aldrig hitta på gör att du kan lita på det som står i brevet.</li>
+</ul>
+</div>
+<p>I kapitel 04 beskrev jag arkitekturen med ett projekt per område. Det ger ren kontext, men det lämnar en fråga öppen: vem ser helheten? Ett kursprojekt vet hur det går i sin kurs, men inte vad som är viktigast just nu när flera saker pockar på uppmärksamhet samtidigt.</p>
+<p>Det är den uppgiften jag har gett åt ett eget projekt som jag kallar Hjärnan. Namnet är en halv skämtsamhet, men beskrivningen stämmer: det är ett ställe som minns och överblickar, så att jag inte behöver göra det.</p>
+<p>Mitt exempel är hur en student kan organisera sin vardag. Samma konstruktion passar för ett jobb med många parallella spår, för ett företag eller för vilken period som helst där flera saker konkurrerar om tid.</p>
+<h2 id="vad-projektet-ar">Vad projektet är<a class="headerlink" href="#vad-projektet-ar" title="Permanent link">&para;</a></h2>
+<p>Hjärnan är ett vanligt Claude-projekt. Det som gör det till något särskilt är instruktionerna och vilka källor det får läsa.</p>
+<details class="begrepp">
+<summary>Begrepp: Projekt</summary>
+<p><strong>Vad det är:</strong> Ett arbetsrum i Claude med egna instruktioner och eget material, till exempel uppladdade filer eller ett kopplat GitHub-repo. Materialet läggs under Kontext på projektsidan (Project knowledge i den engelska appen). I den nya projektvyn, som rullas ut gradvis, öppnas projektet som en konversation och materialet ligger under Files i fliken Context. Instruktionerna gäller i alla chattar i projektet.</p>
+<p><strong>Liknelse:</strong> En pärm per ämne på hyllan, där allt som hör till ämnet redan ligger.</p>
+<p><strong>Varför det spelar roll här:</strong> Ett projekt per kurs eller område håller kontexten samlad. Du kan ställa en fråga utan att först förklara vem du är och vad kursen handlar om.</p>
+<p><a href="../ordlista/#projekt">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Instruktionerna gör tre saker. De anger en prioritetsordning mellan livsområdena. De talar om var saker finns. Och de beskriver vad Claude ska göra när jag nämner något jag behöver eller vill göra. Jag skriver inget hårt schema, för ett schema som inte överlever första veckan är värre än inget. I stället finns en ordning att luta sig mot när något måste väljas bort: tentor och administration kring studierna först, därefter vardagssysslor, jobb och till sist sådant som är roligt.</p>
+<h2 id="listan">Listan<a class="headerlink" href="#listan" title="Permanent link">&para;</a></h2>
+<p>Hjärnans kärna är en att göra-lista. Hos mig är det fliken Att göra i Google-arket Hjärnan, med en rad per sak och kolumner för område, vad det är, när det lades till, när jag vill bli påmind, status, när det blev klart och en kommentar. Områdena motsvarar de delar jag faktiskt delar upp mitt liv i: plugg, vardag, jobb och kul. Du väljer dina egna. Antalet spelar mindre roll än att varje sak har ett självklart hem.</p>
+<p>Från början var listan ett vanligt dokument med en rubrik per område. Varför jag bytte till ett ark, och varför det blev ett ark och inte en fil på GitHub, står i <a href="../04-arkitekturen/#ett-ark-som-delat-skikt">kapitel 04</a>. Kort sagt är ett ark både billigare för Claude att läsa och lättare för mig att överblicka.</p>
+<p>Reglerna för hur listan används är korta och ger mig mycket:</p>
+<ol>
+<li>När jag nämner något jag vill göra läser Claude först listan.</li>
+<li>Finns det redan där, utgår Claude från att jag vill ha hjälp med det nu och sätter igång.</li>
+<li>Finns det inte, läggs en ny rad in med rätt område, dagens datum och status Öppen, utan att Claude frågar. Därefter frågar Claude kort om vi ska göra det nu eller senare.</li>
+<li>Om det blir senare och saken har en fast tid hamnar den i kalendern. Annars får den ett påminnelsedatum, som standard i morgon, och fångas upp av nästa morgonbrev.</li>
+<li>När något är klart sätts status till Klar med datum, gärna med en kort kommentar. Rader tas aldrig bort.</li>
+</ol>
+<p>Det viktiga är punkt 3. Att behöva avgöra var en sak ska stå, och sedan formulera den, är exakt det som gör att man skjuter upp att skriva ned den. Om Claude gör det direkt kostar det mig ingenting att fånga en tanke. Jag vill inte heller behöva förklara mer än nödvändigt, så Claude väljer område själv och skriver kort.</p>
+<p>Att påminnelsen som standard blir nästa dag är medvetet. Säger jag "senare" utan datum är risken stor att det blir aldrig. En påminnelse i morgon gör att saken kommer tillbaka i nästa morgonbrev, och vill jag något annat säger jag till, till exempel "efter tentan".</p>
+<h2 id="kursrader-som-lases-men-aldrig-andras">Kursrader som läses men aldrig ändras<a class="headerlink" href="#kursrader-som-lases-men-aldrig-andras" title="Permanent link">&para;</a></h2>
+<p>Förutom listan läser Hjärnan en rad per kurs i fliken Plugg och loggraderna i fliken Plugglogg. De skrivs av kursprojekten, enligt speglingsmönstret i <a href="../04-arkitekturen/#hur-projekten-hanger-ihop">kapitel 04</a>. Här gäller ägarregeln utan undantag: Hjärnan läser dem och ändrar aldrig i dem.</p>
+<p>Det kan kännas krångligt att inte låta det centrala projektet rätta ett uppenbart fel. Men det är precis regeln som gör att systemet håller. Om Hjärnan skrev i kursraderna skulle kursprojekten och Hjärnan kunna ha olika bilder av samma kurs, och då vet jag inte längre vilken jag ska tro. När Hjärnan ser något som inte stämmer säger den det till mig, och jag tar det med kursprojektet.</p>
+<p>Läsningen ger ändå mycket. Hjärnan vet hur nära nästa examination är, hur många timmar som är kvar och vad jag själv har markerat som osäkert. Det räcker för att föreslå vad som är rimligt att göra en viss dag, utan att jag behöver sammanfatta något.</p>
+<h2 id="morgonbrev-och-eftermiddagskoll">Morgonbrev och eftermiddagskoll<a class="headerlink" href="#morgonbrev-och-eftermiddagskoll" title="Permanent link">&para;</a></h2>
+<p>De två schemalagda uppgifterna som läser listan och kursraderna är det som gör att Hjärnan märks i vardagen. Jag behöver inte öppna något, utan informationen kommer till mig.</p>
+<details class="begrepp">
+<summary>Begrepp: Schemalagd uppgift</summary>
+<p><strong>Vad det är:</strong> En uppgift som Claude utför vid en bestämd tid utan att du startar den, till exempel varje morgon. Den kan köras i molnet medan datorn är avstängd.</p>
+<p><strong>Liknelse:</strong> En väckarklocka som inte bara ringer utan också gör jobbet.</p>
+<p><strong>Varför det spelar roll här:</strong> Schemalagda uppgifter gör att systemet arbetar när du inte gör det. Jag låter ett brev sammanställas varje morgon ur mina egna dokument.</p>
+<p><a href="../ordlista/#schemalagd-uppgift">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Morgonbrevet kommer tidigt varje dag. Det läser listan, kursraderna och kalendern och skriver en sammanfattning av dagen. Ju närmare en examination, desto tydligare blir förslagen om hur mycket plugg dagen kräver. Brevet kan också hämta en nyhet eller en idé utifrån mina intressen, men bara som krydda.</p>
+<p>Eftermiddagskollen är kortare. Den tittar på vad som har markerats som klart under dagen, på loggraderna från kurserna och på resten av kvällens kalender, och skickar ett kort, uppmuntrande meddelande. Poängen är att det ska märkas när något har gått bra, och att jag ska få en lugn bild av hur resten av dagen ser ut.</p>
+<p>Ingen av dem ändrar något i källorna. De läser och skriver ett meddelande, och det är allt. En uppgift som körs utan att jag ser den ska ha så litet utrymme att göra fel som möjligt.</p>
+<h2 id="brevet-som-en-text-inte-en-lista">Brevet som en text, inte en lista<a class="headerlink" href="#brevet-som-en-text-inte-en-lista" title="Permanent link">&para;</a></h2>
+<p>Morgonbrevet är skrivet som ett brev. Det beror på något jag lärde mig tidigt: en punktlista med dagens uppgifter känns som en order, och jag börjar undvika den. Ett brev i löpande text, där förslagen formuleras som "du skulle kunna", känns som hjälp.</p>
+<p>Några av de val jag gjort i utformningen:</p>
+<ul>
+<li>Nyheter och idéer sprids ut mellan de delar som handlar om arbete, så att brevet inte blir en lång arbetslista med en bilaga.</li>
+<li>Förslag är förslag. Brevet talar om vad som vore klokt, men bestämmer ingenting.</li>
+<li>Brevet håller en vänlig men saklig ton. Det ska inte peppa, och det ska inte skuldbelägga om något blivit liggande.</li>
+</ul>
+<details class="begrepp">
+<summary>Begrepp: Prompt</summary>
+<p><strong>Vad det är:</strong> Den instruktion eller fråga du ger en modell. Den kan vara en enda mening eller en lång beskrivning med exempel och krav.</p>
+<p><strong>Varför det spelar roll här:</strong> I en chatt är prompten nästan allt du har. I ett system med regelfiler och mappar är den bara en del av kontexten, och därför behöver den inte upprepa det som redan står i reglerna.</p>
+<p><a href="../ordlista/#prompt">Se alla begrepp i ordlistan</a></p>
+</details>
+<p>Brevet slutar alltid med en färdig prompt i ett kodblock. Den innehåller det första jag skulle vilja be Hjärnan om den dagen, till exempel att gå igenom en viss sak eller sätta igång med dagens viktigaste pass. Jag kopierar den, klistrar in den i Hjärnan och är igång på några sekunder. Det tar bort det besvärligaste ögonblicket i en arbetsdag, nämligen att sitta framför en tom ruta och inte veta var man ska börja.</p>
+<h2 id="regeln-hitta-aldrig-pa">Regeln "hitta aldrig på"<a class="headerlink" href="#regeln-hitta-aldrig-pa" title="Permanent link">&para;</a></h2>
+<p>Alla mina schemalagda uppgifter har en gemensam regel i sina instruktioner: hitta aldrig på. Något får bara påstås om det syns i källorna. Om en uppgift inte finns i listan nämns den inte som klar. Om en kursrad inte uppdaterats skriver brevet att det inte uppdaterats, och gissar inte vad som kan ha hänt.</p>
+<p>Regeln kan verka självklar, men den är nödvändig av en särskild anledning. När en uppgift körs utan att jag tittar på kan jag inte fånga ett påhitt i stunden. Och ett morgonbrev som ibland ljuger om läget är värre än inget brev, eftersom jag då måste kontrollera allt som står i det. Förtroendet för hela systemet hänger på att texten går att lita på utan kontroll.</p>
+<p>I praktiken innebär regeln att varje påstående i ett brev ska kunna kopplas till en rad i en källa. Saknas underlag skriver uppgiften det rakt ut, och föreslår hellre att jag kollar än att den fyller i luckan.</p>
+<h2 id="sa-bygger-du-din-egen">Så bygger du din egen<a class="headerlink" href="#sa-bygger-du-din-egen" title="Permanent link">&para;</a></h2>
+<p>Du behöver inte kopiera mitt upplägg, och du behöver inte en Hjärna för att komma igång. Grunden är projekten. Ett projekt som håller koll på helheten blir värt det först när du har flera projekt, eller när det är vardagen i sig som behöver ordning. Fundera först på vad du vill åstadkomma: vad ska det hålla koll på, vem ska läsa det och när? Det här är sedan en ordning som fungerar. Setup-sessionen på sidan <a href="../kom-igang/">Kom igång</a> kan hjälpa dig med de två första stegen om du ber om det.</p>
+<ol>
+<li>Skapa ett projekt och en att göra-lista för de områden du faktiskt har, gärna som ett kalkylark i Drive eller motsvarande. Börja med tre eller fyra områden.</li>
+<li>Skriv projektinstruktioner med en prioritetsordning, var saker finns och de fem reglerna för hur listan används.</li>
+<li>Låt det gå en vecka med bara listan. Justera områdena efter vad som känns fel.</li>
+<li>Låt det projekt som tar mest tid spegla sitt läge till listan, till exempel med en egen flik och en rad per område, med en tydlig regel om vem som skriver.</li>
+<li>Lägg till ett morgonbrev när du har något att sammanfatta. Börja enkelt, med en uppgift som bara läser, och ge den regeln om att aldrig hitta på från första dagen.</li>
+</ol>
+<p>Det går att göra i vilken ordning du vill, och det går att stanna efter första steget. Redan ett projekt med en lista och några tydliga regler ersätter mycket av det som annars bor i huvudet eller på lösa lappar.</p>
+<div class="admonition tip">
+<p class="admonition-title">Gör det med din Claude</p>
+<p>Klistra in det här i en ny chatt i det projekt som kapitlet gäller, eller i ett projekt som håller koll på helheten om du har ett. Har du inget projekt än, börja med <a href="../kom-igang/">setup-sessionen</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Läs det här kapitlet ur en guide om AI-arbetsflöden: https://raw.githubusercontent.com/Solsidan21/AI_workflow_guide_svenska/main/docs/06-hjarnan.md
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Guiden beskriver en persons upplägg och är inget facit. Ta det som passar mig.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Utgå från det du redan vet om mig i det här projektet och fråga bara om det som saknas.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Titta på mina projektinstruktioner och min att göra-lista om jag har en. Fråga vad som inte fungerar och vad jag oftast glömmer eller tappar bort.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Hjälp mig sedan att justera områdena och reglerna, eller att ta nästa steg i listan i kapitlet om jag är redo för det.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Ställ en fråga i taget innan du föreslår något.
+</code></pre></div>
+</div>
+<p>Nästa: <a href="../07-bygga-vidare/">Kapitel 07: Att bygga vidare på</a></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tillbaka till toppen
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="#__consent">Ändra cookie-inställningar</a> · <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Cookies</h4>
+<p>Jag respekterar din integritet. Utan cookies räknar jag bara att sidan har besökts och från vilken webbplats besöket kom, inget som kan kopplas till dig. Får jag också använda Google Analytics för att se mer om hur guiden används? Det sätter cookies och skickar uppgifter om ditt besök till Google. Avvisar du laddas det inte. Du kan ändra ditt val när som helst längst ner på sidan. Läs mer på sidan <a href="/AI_workflow_guide_svenska/integritet/">Integritet</a>.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+      
+        
+  
+  
+    
+    
+      
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Acceptera</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Acceptera inte</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopierat till urklipp", "clipboard.copy": "Kopiera till urklipp", "search.result.more.one": "1 till p\u00e5 denna sida", "search.result.more.other": "# till p\u00e5 denna sida", "search.result.none": "Inga s\u00f6kresultat", "search.result.one": "1 s\u00f6kresultat", "search.result.other": "# s\u00f6kresultat", "search.result.placeholder": "Skriv s\u00f6kord", "search.result.term.missing": "Saknas", "select.version": "V\u00e4lj version"}, "version": null}</script>
+    
+    
+  
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "082df3d8cc544b5aae1c39e3bb90c79d"}'></script>
+  
+
+  </body>
+</html>
